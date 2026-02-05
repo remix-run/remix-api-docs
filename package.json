@@ -1,0 +1,9 @@
+{
+  "name": "remix-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "./sync.sh",
+    "serve": "npx http-server -p 3000 docs"
+  }
+}
