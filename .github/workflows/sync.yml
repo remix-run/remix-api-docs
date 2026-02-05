@@ -1,0 +1,61 @@
+name: Update API Documentation
+
+on:
+  # TODO: add a remote trigger so remix can trigger after releases
+  workflow_dispatch:
+
+jobs:
+  docs:
+    name: Update API Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout remix-docs
+        uses: actions/checkout@v4
+        with:
+          path: remix-docs
+          ref: main
+
+      - name: Checkout remix
+        uses: actions/checkout@v4
+        with:
+          repository: remix-run/remix
+          path: remix
+          ref: main
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: "pnpm"
+          cache-dependency-path: remix/pnpm-lock.yaml
+
+      - name: Install Remix dependencies
+        id: remix
+        working-directory: remix
+        run: |
+          pnpm install --frozen-lockfile
+          echo "remix_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Generate/Sync Docs
+        working-directory: remix-docs
+        run: |
+          pnpm run sync
+          git add docs/
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes detected"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Updated API documentation from Remix SHA ${{ steps.remix.outputs.remix_sha }}"
+          git push
+
+          echo "Pushed docs changes https://github.com/$GITHUB_REPOSITORY/commit/$(git rev-parse HEAD)"
