@@ -3,7 +3,7 @@
 REMIX_REPO_DIR="../remix"
 REMIX_DOCS_DIR="docs/site"
 
-set +x
+set -x
 
 if [ ! -d "${REMIX_REPO_DIR}" ]; then
   echo "Error: ${REMIX_REPO_DIR} directory does not exist"
@@ -22,6 +22,10 @@ popd # pop to remix-docs
 
 rm -rf docs/
 mkdir docs
-cp -r "${REMIX_REPO_DIR}/docs/site/*" docs/
+pwd
+ls ../remix
+ls ../remix/docs
+ls ../remix/docs/site
+cp -r "${REMIX_REPO_DIR}/${REMIX_DOCS_DIR}/*" docs/
 
-set -x
+set +x
