@@ -1,4 +1,4 @@
-name: Update API Documentation
+name: Sync API Documentation
 
 on:
   # TODO: add a remote trigger so remix can trigger after releases
@@ -6,7 +6,7 @@ on:
 
 jobs:
   docs:
-    name: Update API Documentation
+    name: Sync API Documentation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout remix-docs
@@ -20,7 +20,7 @@ jobs:
         with:
           repository: remix-run/remix
           path: remix
-          ref: main
+          ref: brophdawg11/docs-auto-generate
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
