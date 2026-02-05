@@ -15,7 +15,7 @@ pnpm install --frozen-lockfile
 
 pushd docs
 pnpm run docs
-pnpm run prerender --dir "site" --websiteDocsPath ""
+pnpm run prerender
 
 popd # pop to remix
 popd # pop to remix-docs
