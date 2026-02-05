@@ -18,7 +18,7 @@ pnpm run docs
 pnpm run prerender
 
 popd # pop to remix
-popd # pop to remix-docs
+popd # pop to remix-api-docs
 
 rm -rf docs/
 mkdir docs

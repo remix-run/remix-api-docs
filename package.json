@@ -1,5 +1,5 @@
 {
-  "name": "remix-docs",
+  "name": "remix-api-docs",
   "private": true,
   "type": "module",
   "scripts": {

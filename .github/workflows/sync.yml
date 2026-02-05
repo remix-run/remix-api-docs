@@ -9,10 +9,10 @@ jobs:
     name: Sync API Documentation
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout remix-docs
+      - name: Checkout remix-api-docs
         uses: actions/checkout@v4
         with:
-          path: remix-docs
+          path: remix-api-docs
           ref: main
 
       - name: Checkout remix
@@ -42,7 +42,7 @@ jobs:
           echo "remix_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Generate/Sync Docs
-        working-directory: remix-docs
+        working-directory: remix-api-docs
         run: |
           pnpm run sync
           git add docs/
