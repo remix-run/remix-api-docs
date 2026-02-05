@@ -21,6 +21,7 @@ popd # pop to remix
 popd # pop to remix-docs
 
 rm -rf docs/
+mkdir docs
 cp -r "${REMIX_REPO_DIR}/docs/site/*" docs/
 
 set -x
