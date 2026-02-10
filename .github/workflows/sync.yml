@@ -1,7 +1,10 @@
 name: Sync API Documentation
 
 on:
-  # TODO: add a remote trigger so remix can trigger after releases
+  # Remote trigger from Remix release process
+  #repository_dispatch:
+  #  types: [release]
+  # Manual trigger from repo
   workflow_dispatch:
 
 jobs:
@@ -21,6 +24,8 @@ jobs:
           repository: remix-run/remix
           path: remix
           ref: brophdawg11/docs-auto-generate
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -41,12 +46,12 @@ jobs:
           pnpm install --frozen-lockfile
           echo "remix_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
-      - name: Generate/Sync Docs
+      - name: Sync Docs
         working-directory: remix-api-docs
         run: |
-          pnpm run sync
-          git add docs/
+          ./sync.sh
 
+          git add docs/
           if [ -z "$(git status --porcelain)" ]; then
             echo "No changes detected"
             exit 0
@@ -54,8 +59,6 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git commit -m "Updated API documentation from Remix SHA ${{ steps.remix.outputs.remix_sha }}"
+          git commit -m "Updated API documentation - remix SHA ${{ steps.remix.outputs.remix_sha }}"
           git push
-
           echo "Pushed docs changes https://github.com/$GITHUB_REPOSITORY/commit/$(git rev-parse HEAD)"

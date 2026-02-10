@@ -1,27 +1,14 @@
 #!/bin/bash
 
-REMIX_REPO_DIR="../remix"
-REMIX_DOCS_DIR="docs/site"
-
 set -x
+set -e
 
-if [ ! -d ${REMIX_REPO_DIR} ]; then
-  echo "Error: ${REMIX_REPO_DIR} directory does not exist"
-  exit 1
-fi
+# Clear prior "latest" build so we don't leave stranded files for removed APIx
+rm -f docs/index.html
+rm -rf docs/assets
+rm -rf docs/api
 
-pushd ${REMIX_REPO_DIR}
-pnpm install --frozen-lockfile
-
-pushd docs
+pushd ../remix/docs
 pnpm run docs
-pnpm run prerender
-
-popd # pop to remix
-popd # pop to remix-api-docs
-
-rm -rf docs/
-mkdir docs
-cp -r ${REMIX_REPO_DIR}/${REMIX_DOCS_DIR}/* docs/
-
-set +x
+pnpm run prerender --all --dir ../../remix-api-docs/docs
+popd
