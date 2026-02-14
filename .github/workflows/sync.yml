@@ -54,7 +54,7 @@ jobs:
       - name: Sync Docs
         working-directory: remix-api-docs
         run: |
-          ./sync.sh ${{ github.event_name == "repository_dispatch" && github.event.client_payload.tag || github.event.inputs.tag }}
+          ./sync.sh ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || github.event.inputs.tag }}
 
           git add docs/
           if [ -z "$(git status --porcelain)" ]; then
