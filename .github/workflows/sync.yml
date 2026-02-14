@@ -2,10 +2,14 @@ name: Sync API Documentation
 
 on:
   # Remote trigger from Remix release process
-  #repository_dispatch:
-  #  types: [release]
+  repository_dispatch:
+    types: [release]
   # Manual trigger from repo
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag"
+        required: true
 
 jobs:
   docs:
@@ -23,6 +27,7 @@ jobs:
         with:
           repository: remix-run/remix
           path: remix
+          # TODO: Once merged, update this to checkout the tag
           ref: brophdawg11/docs-auto-generate
           fetch-depth: 0
           fetch-tags: true
@@ -49,7 +54,7 @@ jobs:
       - name: Sync Docs
         working-directory: remix-api-docs
         run: |
-          ./sync.sh
+          ./sync.sh ${{ github.event_name == "repository_dispatch" && github.event.client_payload.tag || github.event.inputs.tag }}
 
           git add docs/
           if [ -z "$(git status --porcelain)" ]; then
