@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Release tag'
+        description: "Release tag"
         required: true
 
 jobs:
@@ -27,7 +27,8 @@ jobs:
         with:
           repository: remix-run/remix
           path: remix
-          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || github.event.inputs.tag }}
+          # TODO: Once merged, update this to checkout the tag
+          ref: brophdawg11/docs-auto-generate
           fetch-depth: 0
           fetch-tags: true
 
@@ -40,33 +41,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'pnpm'
+          cache: "pnpm"
           cache-dependency-path: remix/pnpm-lock.yaml
 
-      - name: Install/Build remix-api-docs
-        working-directory: remix-api-docs
-        run: pnpm install --frozen-lockfile
-
-      - name: Install/Build remix
+      - name: Install Remix dependencies
         id: remix
         working-directory: remix
         run: |
           pnpm install --frozen-lockfile
-          pnpm build
           echo "remix_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Sync Docs
         working-directory: remix-api-docs
         run: |
-          rm -f docs/index.html
-          rm -rf docs/assets
-          rm -rf docs/api
-
-          pnpm run docs --tag ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || github.event.inputs.tag }}
-          pnpm run prerender --all
+          ./sync.sh ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || github.event.inputs.tag }}
 
           git add docs/
-
           if [ -z "$(git status --porcelain)" ]; then
             echo "No changes detected"
             exit 0
