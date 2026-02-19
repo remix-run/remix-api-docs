@@ -1,0 +1,36 @@
+<div><h1>MultipartPart</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/multipart-parser/src/lib/multipart.ts#L336" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>A part of a <code>multipart/*</code> HTTP message.</p>
+<h2>Constructor</h2>
+<h3>header</h3>
+<p>The raw header bytes</p>
+<h3>content</h3>
+<p>The content chunks</p>
+<h2>Properties</h2>
+<h3>content</h3>
+<p>The raw content of this part as an array of <code>Uint8Array</code> chunks.</p>
+<h3>arrayBuffer</h3>
+<p>The content of this part as an <code>ArrayBuffer</code>.</p>
+<h3>bytes</h3>
+<p>The content of this part as a single <code>Uint8Array</code>. In <code>multipart/form-data</code> messages, this is useful
+for reading the value of files that were uploaded using <code>&lt;input type=&quot;file&quot;&gt;</code> fields.</p>
+<h3>filename</h3>
+<p>The filename of the part, if it is a file upload.</p>
+<h3>headers</h3>
+<p>The headers associated with this part.</p>
+<h3>isFile</h3>
+<p>True if this part originated from a file upload.</p>
+<h3>isText</h3>
+<p>True if this part originated from a text input field in a form submission.</p>
+<h3>mediaType</h3>
+<p>The media type of the part.</p>
+<h3>name</h3>
+<p>The name of the part, usually the <code>name</code> of the field in the <code>&lt;form&gt;</code> that submitted the request.</p>
+<h3>size</h3>
+<p>The size of the content in bytes.</p>
+<h3>text</h3>
+<p>The content of this part as a string. In <code>multipart/form-data</code> messages, this is useful for
+reading the value of parts that originated from <code>&lt;input type=&quot;text&quot;&gt;</code> fields.</p>
+<p>Note: Do not use this for binary data, use <code>part.bytes</code> or <code>part.arrayBuffer</code> instead.</p>
+</div><!-- rmx:h:hfaf896a5 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hfaf896a5":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

@@ -1,0 +1,42 @@
+<div><h1>RequestContext</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/fetch-router/src/lib/request-context.ts#L14" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>A context object that contains information about the current request. Every request
+handler or middleware in the lifecycle of a request receives the same context object.</p>
+<h2>Constructor</h2>
+<h3>request</h3>
+<p>The incoming request</p>
+<h2>Properties</h2>
+<h3>headers</h3>
+<p>The headers of the request.</p>
+<h3>method</h3>
+<p>The request method. This may differ from <code>request.method</code> when using the <code>methodOverride</code>
+middleware, which allows HTML forms to simulate RESTful API request methods like <code>PUT</code> and
+<code>DELETE</code> using a hidden input field.</p>
+<h3>params</h3>
+<p>Params that were parsed from the URL.</p>
+<h3>request</h3>
+<p>The original request that was dispatched to the router.</p>
+<p>Note: Various properties of the original request may not be available or may have been
+modified by middleware. For example, the request&#39;s body may already have been consumed by
+the <code>formData</code> middleware (available as <code>context.formData</code>), or its method may have been
+overridden by the <code>methodOverride</code> middleware (available as <code>context.method</code>). You should
+always default to using properties of the <code>context</code> object instead of the original request.
+However, the original request is made available in case you need it for some edge case.</p>
+<h3>storage</h3>
+<p>Shared application-specific storage.</p>
+<h3>url</h3>
+<p>The URL that was matched by the route.</p>
+<h3>files</h3>
+<p>A map of files that were uploaded in the request.</p>
+<p>Note: For requests without a body (e.g. <code>GET</code> or <code>HEAD</code>), this map will be empty.</p>
+<h3>formData</h3>
+<p>Parsed <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData"><code>FormData</code></a> from the
+request body.</p>
+<p>Note: This is only available for requests with a body (not <code>GET</code> or <code>HEAD</code>).</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">MDN Reference</a></p>
+<h3>session</h3>
+<p>The current session.</p>
+<h3>sessionStarted</h3>
+<p>Whether the session has been started.</p>
+</div><!-- rmx:h:h40e27cf8 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h40e27cf8":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

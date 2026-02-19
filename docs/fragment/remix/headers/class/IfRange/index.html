@@ -1,0 +1,32 @@
+<div><h1>IfRange</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/if-range.ts#L14" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>The value of an <code>If-Range</code> HTTP header.</p>
+<p>The <code>If-Range</code> header can contain either an entity tag (ETag) or an HTTP date.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Range">MDN <code>If-Range</code> Reference</a></p>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc7233#section-3.2">HTTP/1.1 Specification</a></p>
+<h2>Constructor</h2>
+<h3>init</h3>
+<h2>Properties</h2>
+<h3>value</h3>
+<h2>Methods</h2>
+<h3>matches(resource: { etag?: string | null; lastModified?: number | Date | null }): boolean</h3>
+<p>Checks if the <code>If-Range</code> condition is satisfied for the current resource state.</p>
+<p>This method always returns <code>true</code> if the <code>If-Range</code> header is not present,
+meaning the range request should proceed unconditionally.</p>
+<p>The <code>If-Range</code> header can contain either:</p>
+<ul>
+<li>An HTTP date (RFC 7231 IMF-fixdate format)</li>
+<li>An entity tag (ETag)</li>
+</ul>
+<p>When comparing ETags, only strong entity tags are matched as per RFC 7233.
+Weak entity tags (prefixed with <code>W/</code>) are never considered a match.</p>
+<h4>resource</h4>
+<p>The current resource state to compare against</p>
+<h3>toString(): string</h3>
+<p>Returns the string representation of the header value.</p>
+<h3>from(value: string | Date | null): IfRange</h3>
+<p>Parse an If-Range header value.</p>
+<h4>value</h4>
+<p>The header value (string, Date, or null)</p>
+</div><!-- rmx:h:hc81bafc4 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hc81bafc4":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

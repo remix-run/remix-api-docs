@@ -1,0 +1,16 @@
+<div><h1>ListResult</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/file-storage/src/lib/file-storage.ts#L161" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>The result of listing files in storage.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">interface</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> ListResult</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0">T</span><span style="color:#24292E;--shiki-dark:#E1E4E8">> {</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  cursor</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  files</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="color:#6F42C1;--shiki-dark:#B392F0">T</span><span style="color:#D73A49;--shiki-dark:#F97583"> extends</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="color:#E36209;--shiki-dark:#FFAB70">includeMetadata</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> true</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> } </span><span style="color:#D73A49;--shiki-dark:#F97583">?</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/3.0.0-alpha.2/api/remix/file-storage/interface/FileMetadata">FileMetadata</a></span><span style="color:#D73A49;--shiki-dark:#F97583"> :</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/3.0.0-alpha.2/api/remix/file-storage/interface/FileKey">FileKey</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">)[];</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre><h2>Properties</h2>
+<h3>cursor</h3>
+<p>An opaque string that allows you to paginate over the keys in storage. Pass this back in the
+<code>options</code> object on the next <code>list()</code> call to get the next page of results.</p>
+<h3>files</h3>
+<p>A list of the files in storage.</p>
+</div><!-- rmx:h:hdd8da429 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hdd8da429":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

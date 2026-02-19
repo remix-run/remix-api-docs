@@ -1,0 +1,28 @@
+<div><h1>mimeTypeToContentType</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/mime-type-to-content-type.ts#L30" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Converts a MIME type to a Content-Type header value, adding charset when appropriate.</p>
+<p>By default, adds <code>; charset=utf-8</code> to text-based MIME types:</p>
+<ul>
+<li>All <code>text/*</code> types (except <code>text/xml</code>)</li>
+<li>All <code>+json</code> suffixed types (RFC 8259 defines JSON as UTF-8)</li>
+<li><code>application/json</code>, <code>application/javascript</code></li>
+</ul>
+<p>Custom charset registered via <code>defineMimeType()</code> takes precedence over built-in rules.</p>
+<p>Note: <code>text/xml</code> is excluded because XML has built-in encoding detection.
+Per the XML spec, documents without an encoding declaration must be UTF-8 or
+UTF-16, detectable from byte patterns. Adding an external charset parameter
+is redundant and can conflict with the document&#39;s internal declaration.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> mimeTypeToContentType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#E36209;--shiki-dark:#FFAB70">mimeType</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre><h2>Example</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">mimeTypeToContentType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'text/html'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)           </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'text/html; charset=utf-8'</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">mimeTypeToContentType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'application/json'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)    </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'application/json; charset=utf-8'</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">mimeTypeToContentType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'application/ld+json'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">) </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'application/ld+json; charset=utf-8'</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">mimeTypeToContentType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'image/png'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)           </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'image/png'</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">mimeTypeToContentType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'text/xml'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)            </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'text/xml'</span></span></code></pre><h2>Params</h2>
+<h3>mimeType</h3>
+<p>The MIME type (e.g. &quot;text/css&quot;, &quot;image/png&quot;)</p>
+<h2>Returns</h2>
+<p>The Content-Type value with charset if appropriate</p>
+</div><!-- rmx:h:h85352be2 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h85352be2":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

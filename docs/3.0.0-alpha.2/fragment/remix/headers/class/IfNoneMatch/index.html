@@ -1,0 +1,28 @@
+<div><h1>IfNoneMatch</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/if-none-match.ts#L21" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>The value of an <code>If-None-Match</code> HTTP header.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match">MDN <code>If-None-Match</code> Reference</a></p>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc7232#section-3.2">HTTP/1.1 Specification</a></p>
+<h2>Constructor</h2>
+<h3>init</h3>
+<h2>Properties</h2>
+<h3>tags</h3>
+<p>The entity tags to compare against the current entity.</p>
+<h2>Methods</h2>
+<h3>has(tag: string): boolean</h3>
+<p>Checks if the header contains the given entity tag.</p>
+<p>Note: This method checks only for exact matches and does not consider wildcards.</p>
+<h4>tag</h4>
+<p>The entity tag to check for</p>
+<h3>matches(tag: string): boolean</h3>
+<p>Checks if this header matches the given entity tag.</p>
+<h4>tag</h4>
+<p>The entity tag to check for</p>
+<h3>toString(): string</h3>
+<p>Returns the string representation of the header value.</p>
+<h3>from(value: string | string[] | IfNoneMatchInit | null): IfNoneMatch</h3>
+<p>Parse an If-None-Match header value.</p>
+<h4>value</h4>
+<p>The header value (string, string[], init object, or null)</p>
+</div><!-- rmx:h:hc02b0f3f --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hc02b0f3f":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

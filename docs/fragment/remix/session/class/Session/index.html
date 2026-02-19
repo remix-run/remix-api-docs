@@ -1,0 +1,55 @@
+<div><h1>Session</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/session/src/lib/session.ts#L11" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>A session persists data for a specific user across multiple requests to a server.</p>
+<h2>Constructor</h2>
+<h3>id</h3>
+<p>The session ID</p>
+<h3>initialData</h3>
+<p>The initial session data</p>
+<h2>Properties</h2>
+<h3>data</h3>
+<p>The raw session data in a format suitable for storage.</p>
+<p>Note: Do not use this for normal reading of session data. Use the <code>get</code> method instead.</p>
+<h3>deleteId</h3>
+<p>The session ID that will be deleted when the session is saved. This is set to the original
+session ID when the session ID is regenerated with the <code>deleteOldSession</code> option.</p>
+<h3>destroyed</h3>
+<p>Whether this session has been destroyed.</p>
+<h3>dirty</h3>
+<p>Whether this session has been modified since it was created.</p>
+<h3>id</h3>
+<p>The unique identifier for this session.</p>
+<h3>size</h3>
+<p>The number of key/value pairs in the session.</p>
+<h2>Methods</h2>
+<h3>destroy(): void</h3>
+<p>Mark this session as destroyed.</p>
+<p>This prevents all further modifications to the session.</p>
+<h3>flash(key: key, value: flashData[key]): void</h3>
+<p>Set a value in the session that will be available only during the next request.</p>
+<h4>key</h4>
+<h4>value</h4>
+<p>The value to flash</p>
+<h3>get(key: key): valueData[key] | undefined</h3>
+<p>Get a value from the session.</p>
+<h4>key</h4>
+<h3>has(key: keyof valueData | keyof flashData): boolean</h3>
+<p>Check if a value is stored for the given key.</p>
+<h4>key</h4>
+<p>The key to check</p>
+<h3>regenerateId(deleteOldSession: boolean): void</h3>
+<p>Regenerate the session ID while preserving the session data. This should be called after login
+or other privilege changes.</p>
+<h4>deleteOldSession</h4>
+<p>Whether to delete the old session data when the session is saved (default: <code>false</code>)</p>
+<h3>set(key: key, value: valueData[key]): void</h3>
+<p>Set a value in the session.</p>
+<h4>key</h4>
+<h4>value</h4>
+<p>The value to set</p>
+<h3>unset(key: keyof valueData): void</h3>
+<p>Remove a value from the session.</p>
+<h4>key</h4>
+<p>The key of the value to remove</p>
+</div><!-- rmx:h:h6e9aa373 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h6e9aa373":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

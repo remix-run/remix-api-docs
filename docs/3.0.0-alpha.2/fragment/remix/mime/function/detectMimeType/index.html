@@ -1,0 +1,17 @@
+<div><h1>detectMimeType</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/detect-mime-type.ts#L18" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Detects the MIME type for a given file extension or filename.</p>
+<p>Custom MIME types registered via <code>defineMimeType()</code> take precedence over built-in types.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> detectMimeType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#E36209;--shiki-dark:#FFAB70">extension</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> undefined</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre><h2>Example</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">detectMimeType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'txt'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)           </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'text/plain'</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">detectMimeType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'.txt'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)          </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'text/plain'</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">detectMimeType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'file.txt'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)      </span><span style="color:#6A737D;--shiki-dark:#6A737D">// 'text/plain'</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">detectMimeType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'unknown'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)       </span><span style="color:#6A737D;--shiki-dark:#6A737D">// undefined</span></span></code></pre><h2>Params</h2>
+<h3>extension</h3>
+<p>The file extension (e.g. &quot;txt&quot;, &quot;.txt&quot;) or filename (e.g. &quot;file.txt&quot;)</p>
+<h2>Returns</h2>
+<p>The MIME type string, or undefined if not found</p>
+</div><!-- rmx:h:h060b9dc0 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h060b9dc0":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

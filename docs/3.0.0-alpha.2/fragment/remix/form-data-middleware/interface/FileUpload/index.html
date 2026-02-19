@@ -1,0 +1,56 @@
+<div><h1>FileUpload</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/form-data-parser/src/lib/form-data.ts#L31" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>A file that was uploaded as part of a <code>multipart/form-data</code> request.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">interface</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> FileUpload</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  fieldName</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  lastModified</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/number">number</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  name</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  size</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/number">number</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  type</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  webkitRelativePath</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  arrayBuffer</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Promise</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer" target="_blank">ArrayBuffer</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">>;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  bytes</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Promise</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array" target="_blank">Uint8Array</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer" target="_blank">ArrayBuffer</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">>>;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  slice</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#E36209;--shiki-dark:#FFAB70">start</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/number">number</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#E36209;--shiki-dark:#FFAB70">end</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/number">number</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#E36209;--shiki-dark:#FFAB70">contentType</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob" target="_blank">Blob</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  stream</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream" target="_blank">ReadableStream</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array" target="_blank">Uint8Array</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer" target="_blank">ArrayBuffer</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">>>;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  text</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Promise</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#005CC5;--shiki-dark:#79B8FF"><a href="/3.0.0-alpha.2/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">>;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre><h2>Properties</h2>
+<h3>fieldName</h3>
+<p>The name of the <code>&lt;input&gt;</code> field used to upload the file.</p>
+<h3>lastModified</h3>
+<p>The <strong><code>lastModified</code></strong> read-only property of the File interface provides the last modified date of the file as the number of milliseconds since the Unix epoch (January 1, 1970 at midnight).</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/File/lastModified">MDN Reference</a></p>
+<h3>name</h3>
+<p>The <strong><code>name</code></strong> read-only property of the File interface returns the name of the file represented by a File object.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/File/name">MDN Reference</a></p>
+<h3>size</h3>
+<p>The <strong><code>size</code></strong> read-only property of the Blob interface returns the size of the Blob or File in bytes.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/Blob/size">MDN Reference</a></p>
+<h3>type</h3>
+<p>The <strong><code>type</code></strong> read-only property of the Blob interface returns the MIME type of the file.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/Blob/type">MDN Reference</a></p>
+<h3>webkitRelativePath</h3>
+<p>The <strong><code>webkitRelativePath</code></strong> read-only property of the File interface contains a string which specifies the file&#39;s path relative to the directory selected by the user in an input element with its <code>webkitdirectory</code> attribute set.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/File/webkitRelativePath">MDN Reference</a></p>
+<h2>Methods</h2>
+<h3>arrayBuffer(): Promise<ArrayBuffer></h3>
+<p>The <strong><code>arrayBuffer()</code></strong> method of the Blob interface returns a Promise that resolves with the contents of the blob as binary data contained in an ArrayBuffer.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer">MDN Reference</a></p>
+<h3>bytes(): Promise&lt;Uint8Array<ArrayBuffer>&gt;</h3>
+<p>The <strong><code>bytes()</code></strong> method of the Blob interface returns a Promise that resolves with a Uint8Array containing the contents of the blob as an array of bytes.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/Blob/bytes">MDN Reference</a></p>
+<h3>slice(start: number, end: number, contentType: string): Blob</h3>
+<p>The <strong><code>slice()</code></strong> method of the Blob interface creates and returns a new <code>Blob</code> object which contains data from a subset of the blob on which it&#39;s called.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/Blob/slice">MDN Reference</a></p>
+<h4>start</h4>
+<h4>end</h4>
+<h4>contentType</h4>
+<h3>stream(): ReadableStream&lt;Uint8Array<ArrayBuffer>&gt;</h3>
+<p>The <strong><code>stream()</code></strong> method of the Blob interface returns a ReadableStream which upon reading returns the data contained within the <code>Blob</code>.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/Blob/stream">MDN Reference</a></p>
+<h3>text(): Promise<string></h3>
+<p>The <strong><code>text()</code></strong> method of the string containing the contents of the blob, interpreted as UTF-8.</p>
+<p><a href="https://developer.mozilla.org/docs/Web/API/Blob/text">MDN Reference</a></p>
+</div><!-- rmx:h:h3ae5b3a0 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h3ae5b3a0":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

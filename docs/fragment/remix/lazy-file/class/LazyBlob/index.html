@@ -1,0 +1,54 @@
+<div><h1>LazyBlob</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/lazy-file/src/lib/lazy-file.ts#L53" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>A lazy, streaming alternative to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob"><code>Blob</code></a>.</p>
+<p><strong>Important:</strong> Since <code>LazyBlob</code> is not a <code>Blob</code> subclass, you cannot pass it directly to APIs
+that expect a real <code>Blob</code> (like <code>new Response(blob)</code> or <code>formData.append(&#39;file&#39;, blob)</code>).
+Instead, use one of:</p>
+<ul>
+<li><code>.stream()</code> - Returns a <code>ReadableStream</code> for <code>Response</code> and other streaming APIs</li>
+<li><code>.toBlob()</code> - Returns a <code>Promise&lt;Blob&gt;</code> for non-streaming APIs that require a complete <code>Blob</code> (e.g. <code>FormData</code>)</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">MDN <code>Blob</code> Reference</a></p>
+<h2>Constructor</h2>
+<h3>parts</h3>
+<p>The blob parts or lazy content</p>
+<h3>options</h3>
+<p>Options for the blob</p>
+<h2>Properties</h2>
+<h3>[toStringTag]</h3>
+<h3>size</h3>
+<p>The size of the blob in bytes.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/size">MDN Reference</a></p>
+<h3>type</h3>
+<p>The MIME type of the blob.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/type">MDN Reference</a></p>
+<h2>Methods</h2>
+<h3>arrayBuffer(): Promise<ArrayBuffer></h3>
+<p>Returns the blob&#39;s contents as an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a>.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer">MDN Reference</a></p>
+<h3>bytes(): Promise&lt;Uint8Array<ArrayBuffer>&gt;</h3>
+<p>Returns the blob&#39;s contents as a byte array.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/bytes">MDN Reference</a></p>
+<h3>slice(start: number, end: number, contentType: string): LazyBlob</h3>
+<p>Returns a new <code>LazyBlob</code> that contains the data in the specified range.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice">MDN Reference</a></p>
+<h4>start</h4>
+<p>The start index (inclusive)</p>
+<h4>end</h4>
+<p>The end index (exclusive)</p>
+<h4>contentType</h4>
+<p>The content type of the new blob</p>
+<h3>stream(): ReadableStream&lt;Uint8Array<ArrayBuffer>&gt;</h3>
+<p>Returns a stream that can be used to read the blob&#39;s contents.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream">MDN Reference</a></p>
+<h3>text(): Promise<string></h3>
+<p>Returns the blob&#39;s contents as a string.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/text">MDN Reference</a></p>
+<h3>toBlob(): Promise<Blob></h3>
+<p>Converts this <code>LazyBlob</code> to a native <code>Blob</code>.</p>
+<p><strong>Warning:</strong> This reads the entire content into memory, which defeats the purpose of using
+a lazy blob for large files. Only use this for non-streaming APIs that require a complete <code>Blob</code>.
+Use <code>.stream()</code> to get a <code>ReadableStream</code> for <code>Response</code> and other streaming APIs.</p>
+<h3>toString(): never</h3>
+</div><!-- rmx:h:h9d06fced --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h9d06fced":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

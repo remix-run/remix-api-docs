@@ -1,0 +1,36 @@
+<div><h1>Range</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/range.ts#L27" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>The value of a <code>Range</code> HTTP header.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range">MDN <code>Range</code> Reference</a></p>
+<p><a href="https://httpwg.org/specs/rfc9110.html#field.range">HTTP/1.1 Specification</a></p>
+<h2>Constructor</h2>
+<h3>init</h3>
+<h2>Properties</h2>
+<h3>ranges</h3>
+<p>The ranges requested. Each range has optional start and end values.</p>
+<ul>
+<li>{start: 0, end: 99} = bytes 0-99</li>
+<li>{start: 100} = bytes 100- (from 100 to end)</li>
+<li>{end: 500} = bytes -500 (last 500 bytes)</li>
+</ul>
+<h3>unit</h3>
+<p>The unit of the range, typically &quot;bytes&quot;</p>
+<h2>Methods</h2>
+<h3>canSatisfy(resourceSize: number): boolean</h3>
+<p>Checks if this range can be satisfied for a resource of the given size.</p>
+<h4>resourceSize</h4>
+<p>The size of the resource in bytes</p>
+<h3>normalize(resourceSize: number): { end: number; start: number }[]</h3>
+<p>Normalizes the ranges for a resource of the given size.
+Returns an array of ranges with resolved start and end values.
+Returns an empty array if the range cannot be satisfied.</p>
+<h4>resourceSize</h4>
+<p>The size of the resource in bytes</p>
+<h3>toString(): string</h3>
+<p>Returns the string representation of the header value.</p>
+<h3>from(value: string | RangeInit | null): Range</h3>
+<p>Parse a Range header value.</p>
+<h4>value</h4>
+<p>The header value (string, init object, or null)</p>
+</div><!-- rmx:h:h48c2067a --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h48c2067a":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

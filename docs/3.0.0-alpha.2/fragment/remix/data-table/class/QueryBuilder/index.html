@@ -1,0 +1,103 @@
+<div><h1>QueryBuilder</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/database.ts#L780" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Immutable query builder used by <code>db.query(table)</code>.</p>
+<h2>Constructor</h2>
+<h3>database</h3>
+<h3>table</h3>
+<h3>state</h3>
+<h2>Methods</h2>
+<h3>all(): Promise&lt;(row &amp; loaded)[]&gt;</h3>
+<p>Executes the query and returns all rows.</p>
+<h3>count(): Promise<number></h3>
+<p>Executes a count query.</p>
+<h3>delete(options: { returning?: ReturningInput<row> }): Promise&lt;WriteResult | WriteRowsResult<row>&gt;</h3>
+<p>Deletes scoped rows.</p>
+<h4>options</h4>
+<p>Delete options.</p>
+<h3>distinct(value: boolean): QueryBuilder&lt;columnTypes, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Toggles <code>distinct</code> selection.</p>
+<h4>value</h4>
+<p>When <code>true</code>, eliminates duplicate rows.</p>
+<h3>exists(): Promise<boolean></h3>
+<p>Executes an existence query.</p>
+<h3>find(value: PrimaryKeyInputForRow&lt;row, primaryKey&gt;): Promise&lt;row &amp; loaded | null&gt;</h3>
+<p>Loads a single row by primary key.</p>
+<h4>value</h4>
+<p>Primary-key value or composite-key object.</p>
+<h3>first(): Promise&lt;row &amp; loaded | null&gt;</h3>
+<p>Executes the query and returns the first row.</p>
+<h3>groupBy(columns: QueryColumnInput<columnTypes>[]): QueryBuilder&lt;columnTypes, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Appends group-by columns.</p>
+<h4>columns</h4>
+<p>Columns to include in the grouping set.</p>
+<h3>having(input: WhereInput&lt;Extract&lt;keyof columnTypes, string&gt;&gt;): QueryBuilder&lt;columnTypes, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Adds a having predicate.</p>
+<h4>input</h4>
+<p>Predicate expression or aggregate filter shorthand.</p>
+<h3>insert(values: Partial<row>, options: { returning?: ReturningInput<row>; touch?: boolean }): Promise&lt;WriteResult | WriteRowResult<row>&gt;</h3>
+<p>Inserts one row.</p>
+<h4>values</h4>
+<p>Values to insert.</p>
+<h4>options</h4>
+<p>Insert options.</p>
+<h3>insertMany(values: Partial<row>[], options: { returning?: ReturningInput<row>; touch?: boolean }): Promise&lt;WriteResult | WriteRowsResult<row>&gt;</h3>
+<p>Inserts many rows.</p>
+<h4>values</h4>
+<p>Values to insert.</p>
+<h4>options</h4>
+<p>Insert options.</p>
+<h3>join(target: target, on: Predicate&lt;Extract&lt;keyof columnTypes, string&gt; | QueryColumnName<target>&gt;, type: JoinType): QueryBuilder&lt;{ [key in string]: { [column in string]: column extends RowColumnName&lt;{ [key in string]: { [column in string]: InferOutput&lt;(...)&gt; }[key] }&gt; | <code>${TableName&lt;target&gt;}.${RowColumnName&lt;{ [key in string]: { [column in (...)]: (...) }[key] }&gt;}</code> ? column<column> extends keyof columnTypes ? columnTypes[column<column>] | { [key in string]: QueryColumnTypeMapFromRow&lt;(...), (...)&gt;[key] }[column<column>] : { [key in string]: QueryColumnTypeMapFromRow&lt;TableName&lt;(...)&gt;, { [key in (...)]: (...) }&gt;[key] }[column<column>] : column extends keyof columnTypes ? columnTypes[column<column>] : never }[key] }, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Adds a join clause.</p>
+<h4>target</h4>
+<h4>on</h4>
+<p>Join predicate.</p>
+<h4>type</h4>
+<p>Join type.</p>
+<h3>leftJoin(target: target, on: Predicate&lt;Extract&lt;keyof columnTypes, string&gt; | QueryColumnName<target>&gt;): QueryBuilder&lt;{ [key in string]: { [column in string]: column extends RowColumnName&lt;{ [key in string]: { [column in string]: InferOutput&lt;(...)&gt; }[key] }&gt; | <code>${TableName&lt;target&gt;}.${RowColumnName&lt;{ [key in string]: { [column in (...)]: (...) }[key] }&gt;}</code> ? column<column> extends keyof columnTypes ? columnTypes[column<column>] | { [key in string]: QueryColumnTypeMapFromRow&lt;(...), (...)&gt;[key] }[column<column>] : { [key in string]: QueryColumnTypeMapFromRow&lt;TableName&lt;(...)&gt;, { [key in (...)]: (...) }&gt;[key] }[column<column>] : column extends keyof columnTypes ? columnTypes[column<column>] : never }[key] }, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Adds a left join clause.</p>
+<h4>target</h4>
+<h4>on</h4>
+<p>Join predicate.</p>
+<h3>limit(value: number): QueryBuilder&lt;columnTypes, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Limits returned rows.</p>
+<h4>value</h4>
+<p>Maximum number of rows to return.</p>
+<h3>offset(value: number): QueryBuilder&lt;columnTypes, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Skips returned rows.</p>
+<h4>value</h4>
+<p>Number of rows to skip.</p>
+<h3>orderBy(column: QueryColumnInput<columnTypes>, direction: OrderDirection): QueryBuilder&lt;columnTypes, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Appends an order-by clause.</p>
+<h4>column</h4>
+<p>Column to sort by.</p>
+<h4>direction</h4>
+<p>Sort direction.</p>
+<h3>rightJoin(target: target, on: Predicate&lt;Extract&lt;keyof columnTypes, string&gt; | QueryColumnName<target>&gt;): QueryBuilder&lt;{ [key in string]: { [column in string]: column extends RowColumnName&lt;{ [key in string]: { [column in string]: InferOutput&lt;(...)&gt; }[key] }&gt; | <code>${TableName&lt;target&gt;}.${RowColumnName&lt;{ [key in string]: { [column in (...)]: (...) }[key] }&gt;}</code> ? column<column> extends keyof columnTypes ? columnTypes[column<column>] | { [key in string]: QueryColumnTypeMapFromRow&lt;(...), (...)&gt;[key] }[column<column>] : { [key in string]: QueryColumnTypeMapFromRow&lt;TableName&lt;(...)&gt;, { [key in (...)]: (...) }&gt;[key] }[column<column>] : column extends keyof columnTypes ? columnTypes[column<column>] : never }[key] }, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Adds a right join clause.</p>
+<h4>target</h4>
+<h4>on</h4>
+<p>Join predicate.</p>
+<h3>select(columns: selection): QueryBuilder&lt;columnTypes, Pick&lt;row, selection[number]&gt;, loaded, tableName, primaryKey&gt;</h3>
+<p>Narrows selected columns, optionally with aliases.</p>
+<h4>columns</h4>
+<h3>update(changes: Partial<row>, options: { returning?: ReturningInput<row>; touch?: boolean }): Promise&lt;WriteResult | WriteRowsResult<row>&gt;</h3>
+<p>Updates scoped rows.</p>
+<h4>changes</h4>
+<p>Column changes to apply.</p>
+<h4>options</h4>
+<p>Update options.</p>
+<h3>upsert(values: Partial<row>, options: { conflictTarget?: (keyof row &amp; string)[]; returning?: ReturningInput<row>; touch?: boolean; update?: Partial<row> }): Promise&lt;WriteResult | WriteRowResult<row>&gt;</h3>
+<p>Performs an upsert operation.</p>
+<h4>values</h4>
+<p>Values to insert.</p>
+<h4>options</h4>
+<p>Upsert options.</p>
+<h3>where(input: WhereInput&lt;Extract&lt;keyof columnTypes, string&gt;&gt;): QueryBuilder&lt;columnTypes, row, loaded, tableName, primaryKey&gt;</h3>
+<p>Adds a where predicate.</p>
+<h4>input</h4>
+<p>Predicate expression or column-value shorthand.</p>
+<h3>with(relations: relations): QueryBuilder&lt;columnTypes, row, loaded &amp; { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult&lt;relations[name]&gt; }[key] }, tableName, primaryKey&gt;</h3>
+<p>Configures eager-loaded relations.</p>
+<h4>relations</h4>
+</div><!-- rmx:h:h2f67d297 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h2f67d297":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

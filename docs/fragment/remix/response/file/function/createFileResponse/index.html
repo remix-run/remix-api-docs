@@ -1,0 +1,28 @@
+<div><h1>createFileResponse</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/response/src/lib/file.ts#L128" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Creates a file <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response"><code>Response</code></a>
+with full HTTP semantics including ETags, Last-Modified, conditional requests, and Range support.</p>
+<p>Accepts both native <code>File</code> objects and <code>LazyFile</code> from <code>@remix-run/lazy-file</code>.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createFileResponse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  file</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> file</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  request</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank">Request</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  options</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/response/file/interface/FileResponseOptions">FileResponseOptions</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0">file</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Promise</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">Response</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">>;</span></span>
+<span class="line"></span></code></pre><h2>Example</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createFileResponse } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/response/file'</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { openLazyFile } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/fs'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> lazyFile </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/fs/function/openLazyFile">openLazyFile</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'./public/image.jpg'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">return</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createFileResponse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(lazyFile, request, {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  cacheControl: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'public, max-age=3600'</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">})</span></span></code></pre><h2>Params</h2>
+<h3>file</h3>
+<h3>request</h3>
+<p>The request object</p>
+<h3>options</h3>
+<p>Configuration options</p>
+<h2>Returns</h2>
+<p>A <code>Response</code> object containing the file</p>
+</div><!-- rmx:h:h9fdde19d --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h9fdde19d":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

@@ -1,0 +1,29 @@
+<div><h1>PostgresDatabaseAdapter</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table-postgres/src/lib/adapter.ts#L65" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p><code>DatabaseAdapter</code> implementation for postgres-compatible clients.</p>
+<h2>Constructor</h2>
+<h3>client</h3>
+<h3>options</h3>
+<h2>Properties</h2>
+<h3>capabilities</h3>
+<h3>dialect</h3>
+<h2>Methods</h2>
+<h3>beginTransaction(options: TransactionOptions): Promise<TransactionToken></h3>
+<h4>options</h4>
+<h3>commitTransaction(token: TransactionToken): Promise<void></h3>
+<h4>token</h4>
+<h3>createSavepoint(token: TransactionToken, name: string): Promise<void></h3>
+<h4>token</h4>
+<h4>name</h4>
+<h3>execute(request: AdapterExecuteRequest): Promise<AdapterResult></h3>
+<h4>request</h4>
+<h3>releaseSavepoint(token: TransactionToken, name: string): Promise<void></h3>
+<h4>token</h4>
+<h4>name</h4>
+<h3>rollbackToSavepoint(token: TransactionToken, name: string): Promise<void></h3>
+<h4>token</h4>
+<h4>name</h4>
+<h3>rollbackTransaction(token: TransactionToken): Promise<void></h3>
+<h4>token</h4>
+</div><!-- rmx:h:hc2c9ab1e --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hc2c9ab1e":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

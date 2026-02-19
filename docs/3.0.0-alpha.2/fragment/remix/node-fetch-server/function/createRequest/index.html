@@ -1,0 +1,26 @@
+<div><h1>createRequest</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/node-fetch-server/src/lib/request-listener.ts#L132" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Creates a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request"><code>Request</code></a> object from</p>
+<ul>
+<li>a <a href="https://nodejs.org/api/http.html#class-httpincomingmessage"><code>http.IncomingMessage</code></a>/<a href="https://nodejs.org/api/http.html#class-httpserverresponse"><code>http.ServerResponse</code></a> pair</li>
+<li>a <a href="https://nodejs.org/api/http2.html#class-http2http2serverrequest"><code>http2.Http2ServerRequest</code></a>/<a href="https://nodejs.org/api/http2.html#class-http2http2serverresponse"><code>http2.Http2ServerResponse</code></a> pair</li>
+</ul>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createRequest</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  req</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> IncomingMessage</span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Http2ServerRequest</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  res</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    |</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Http2ServerResponse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0">Http2ServerRequest</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    |</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> ServerResponse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0">IncomingMessage</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  options</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/3.0.0-alpha.2/api/remix/node-fetch-server/type/RequestOptions">RequestOptions</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank">Request</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre><h2>Params</h2>
+<h3>req</h3>
+<p>The incoming request object</p>
+<h3>res</h3>
+<p>The server response object</p>
+<h3>options</h3>
+<p>Options for creating the request</p>
+<h2>Returns</h2>
+<p>A <code>Request</code> object</p>
+</div><!-- rmx:h:hf25a7148 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hf25a7148":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>
