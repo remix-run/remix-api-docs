@@ -17,6 +17,7 @@ rm -rf docs/assets
 rm -rf docs/api
 
 pushd ../remix/docs
-pnpm run docs --tag ${TAG_NAME}
-pnpm run prerender --all --dir ${DOCS_DIR}
+pnpm run docs --tag "${TAG_NAME}"
+pnpm run build
+pnpm run prerender --all --dir "${DOCS_DIR}"
 popd
