@@ -1,0 +1,20 @@
+<div><h1>isCompressibleMimeType</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/is-compressible-mime-type.ts#L18" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Checks if a MIME type is known to be compressible.</p>
+<p>Returns true for:</p>
+<ul>
+<li>Compressible MIME types from mime-db</li>
+<li>Any text/* type</li>
+<li>Types with +json, +text, or +xml suffix</li>
+<li>MIME types explicitly registered as compressible via <code>defineMimeType()</code></li>
+</ul>
+<p>Accepts either a bare MIME type or a full Content-Type header value with parameters.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> isCompressibleMimeType</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#E36209;--shiki-dark:#FFAB70">mimeType</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/boolean">boolean</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre><h2>Params</h2>
+<h3>mimeType</h3>
+<p>The MIME type to check (e.g. &quot;application/json&quot; or &quot;text/html; charset=utf-8&quot;)</p>
+<h2>Returns</h2>
+<p>true if the MIME type is known to be compressible</p>
+</div><!-- rmx:h:hf140e2c4 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hf140e2c4":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

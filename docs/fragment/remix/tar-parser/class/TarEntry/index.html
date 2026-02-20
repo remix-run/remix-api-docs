@@ -1,0 +1,29 @@
+<div><h1>TarEntry</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/tar-parser/src/lib/tar.ts#L454" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>An entry in a tar archive.</p>
+<h2>Constructor</h2>
+<h3>header</h3>
+<p>The header info for this entry</p>
+<h3>body</h3>
+<p>The entry&#39;s content as a stream</p>
+<h2>Properties</h2>
+<h3>body</h3>
+<p>The content of this entry as a <code>ReadableStream&lt;Uint8Array&gt;</code>.</p>
+<h3>bodyUsed</h3>
+<p>Whether the body of this entry has been consumed.</p>
+<h3>header</h3>
+<p>The raw header info associated with this entry.</p>
+<h3>name</h3>
+<p>The name of this entry.</p>
+<h3>size</h3>
+<p>The size of this entry in bytes.</p>
+<h2>Methods</h2>
+<h3>arrayBuffer(): Promise<ArrayBuffer></h3>
+<p>The content of this entry as an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a>.</p>
+<h3>bytes(): Promise&lt;Uint8Array<ArrayBufferLike>&gt;</h3>
+<p>The content of this entry buffered into a single typed array.</p>
+<h3>text(): Promise<string></h3>
+<p>The content of this entry as a string.</p>
+<p>Note: Do not use this for binary data, use <code>await entry.bytes()</code> or stream <code>entry.body</code> directly instead.</p>
+</div><!-- rmx:h:h86bc0500 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h86bc0500":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

@@ -1,0 +1,64 @@
+<div><h1>AcceptEncoding</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/accept-encoding.ts#L17" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>The value of a <code>Accept-Encoding</code> HTTP header.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding">MDN <code>Accept-Encoding</code> Reference</a></p>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.3.4">HTTP/1.1 Specification</a></p>
+<h2>Constructor</h2>
+<h3>init</h3>
+<h2>Properties</h2>
+<h3>encodings</h3>
+<p>An array of all encodings in the header.</p>
+<h3>size</h3>
+<p>The number of encodings in the header.</p>
+<h3>weights</h3>
+<p>An array of all weights (q values) in the header.</p>
+<h2>Methods</h2>
+<h3><a href="">iterator</a>: IterableIterator&lt;[string, number]&gt;</h3>
+<h3>accepts(encoding: string): boolean</h3>
+<p>Returns <code>true</code> if the header matches the given encoding (i.e. it is &quot;acceptable&quot;).</p>
+<h4>encoding</h4>
+<p>The encoding to check</p>
+<h3>clear(): void</h3>
+<p>Removes all encodings from the header.</p>
+<h3>delete(encoding: string): void</h3>
+<p>Removes the given encoding from the header.</p>
+<h4>encoding</h4>
+<p>The encoding to remove</p>
+<h3>entries(): IterableIterator&lt;[string, number]&gt;</h3>
+<p>Returns an iterator of all encoding and weight pairs.</p>
+<h3>forEach(callback: (encoding: string, weight: number, header: AcceptEncoding) =&gt; void, thisArg: any): void</h3>
+<p>Invokes the callback for each encoding and weight pair.</p>
+<h4>callback</h4>
+<p>The function to call for each pair</p>
+<h4>thisArg</h4>
+<p>The value to use as <code>this</code> when calling the callback</p>
+<h3>get(encoding: string): number | null</h3>
+<p>Gets the weight of an encoding. If it is not in the header verbatim, this returns <code>null</code>.</p>
+<h4>encoding</h4>
+<p>The encoding to get</p>
+<h3>getPreferred(encodings: readonly encoding[]): encoding | null</h3>
+<p>Returns the most preferred encoding from the given list of encodings.</p>
+<h4>encodings</h4>
+<p>The encodings to choose from</p>
+<h3>getWeight(encoding: string): number</h3>
+<p>Gets the weight an encoding. Performs wildcard matching so <code>*</code> matches all encodings.</p>
+<h4>encoding</h4>
+<p>The encoding to get</p>
+<h3>has(encoding: string): boolean</h3>
+<p>Checks if the header contains a given encoding.</p>
+<h4>encoding</h4>
+<p>The encoding to check</p>
+<h3>set(encoding: string, weight: number): void</h3>
+<p>Sets an encoding with the given weight.</p>
+<h4>encoding</h4>
+<p>The encoding to set</p>
+<h4>weight</h4>
+<p>The weight of the encoding (default: <code>1</code>)</p>
+<h3>toString(): string</h3>
+<p>Returns the string representation of the header value.</p>
+<h3>from(value: string | AcceptEncodingInit | null): AcceptEncoding</h3>
+<p>Parse an Accept-Encoding header value.</p>
+<h4>value</h4>
+<p>The header value (string, init object, or null)</p>
+</div><!-- rmx:h:h5793f8c7 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h5793f8c7":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

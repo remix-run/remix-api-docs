@@ -1,0 +1,38 @@
+<div><h1>compressResponse</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/response/src/lib/compress.ts#L78" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Compresses a Response based on the client&#39;s Accept-Encoding header.</p>
+<p>Compression is skipped for:</p>
+<ul>
+<li>Responses with no Accept-Encoding header (RFC 7231)</li>
+<li>Empty responses</li>
+<li>Already compressed responses</li>
+<li>Responses with Content-Length below threshold (default: 1024 bytes)</li>
+<li>Responses with Cache-Control: no-transform</li>
+<li>Responses advertising range support (Accept-Ranges: bytes)</li>
+<li>Partial content responses (206 status)</li>
+</ul>
+<p>When compressing, this function:</p>
+<ul>
+<li>Sets Content-Encoding header</li>
+<li>Removes Content-Length header</li>
+<li>Sets Accept-Ranges to &#39;none&#39;</li>
+<li>Adds &#39;Accept-Encoding&#39; to Vary header</li>
+<li>Converts strong ETags to weak ETags (per RFC 7232)</li>
+</ul>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> compressResponse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  response</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">Response</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  request</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank">Request</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  options</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> CompressResponseOptions</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Promise</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">Response</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">>;</span></span>
+<span class="line"></span></code></pre><h2>Params</h2>
+<h3>response</h3>
+<p>The response to compress</p>
+<h3>request</h3>
+<p>The request (needed to check Accept-Encoding header)</p>
+<h3>options</h3>
+<p>Optional compression settings</p>
+<h2>Returns</h2>
+<p>A compressed Response or the original if no compression is suitable</p>
+</div><!-- rmx:h:h1749c2b4 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h1749c2b4":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

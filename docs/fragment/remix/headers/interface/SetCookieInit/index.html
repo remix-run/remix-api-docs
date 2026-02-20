@@ -1,0 +1,51 @@
+<div><h1>SetCookieInit</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/set-cookie.ts#L66" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Initializer for a <code>Set-Cookie</code> header value.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">interface</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> SetCookieInit</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  domain</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  expires</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Date</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  httpOnly</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/boolean">boolean</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  maxAge</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/number">number</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  name</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  partitioned</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/boolean">boolean</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  path</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  sameSite</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> SameSiteValue</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  secure</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/boolean">boolean</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  value</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre><h2>Properties</h2>
+<h3>domain</h3>
+<p>The domain of the cookie. For example, <code>example.com</code>.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#domaindomain-value">MDN Reference</a></p>
+<h3>expires</h3>
+<p>The expiration date of the cookie. If not specified, the cookie is a session cookie that is
+removed when the browser is closed.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#expiresdate">MDN Reference</a></p>
+<h3>httpOnly</h3>
+<p>Indicates this cookie should not be accessible via JavaScript.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#httponly">MDN Reference</a></p>
+<h3>maxAge</h3>
+<p>The maximum age of the cookie in seconds.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#max-age">MDN Reference</a></p>
+<h3>name</h3>
+<p>The name of the cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie-namecookie-value">MDN Reference</a></p>
+<h3>partitioned</h3>
+<p>Indicates this cookie is a partitioned cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#partitioned">MDN Reference</a></p>
+<h3>path</h3>
+<p>The path of the cookie. For example, <code>/</code> or <code>/admin</code>.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#pathpath-value">MDN Reference</a></p>
+<h3>sameSite</h3>
+<p>The <code>SameSite</code> attribute of the cookie. This attribute lets servers require that a cookie shouldn&#39;t be sent with
+cross-site requests, which provides some protection against cross-site request forgery attacks.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value">MDN Reference</a></p>
+<h3>secure</h3>
+<p>Indicates the cookie should only be sent over HTTPS.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure">MDN Reference</a></p>
+<h3>value</h3>
+<p>The value of the cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie-namecookie-value">MDN Reference</a></p>
+</div><!-- rmx:h:ha97151bc --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"ha97151bc":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

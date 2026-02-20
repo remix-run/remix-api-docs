@@ -1,0 +1,66 @@
+<div><h1>AcceptLanguage</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/accept-language.ts#L17" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>The value of a <code>Accept-Language</code> HTTP header.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language">MDN <code>Accept-Language</code> Reference</a></p>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.3.5">HTTP/1.1 Specification</a></p>
+<h2>Constructor</h2>
+<h3>init</h3>
+<h2>Properties</h2>
+<h3>languages</h3>
+<p>An array of all languages in the header.</p>
+<h3>size</h3>
+<p>The number of languages in the header.</p>
+<h3>weights</h3>
+<p>An array of all weights (q values) in the header.</p>
+<h2>Methods</h2>
+<h3><a href="">iterator</a>: IterableIterator&lt;[string, number]&gt;</h3>
+<h3>accepts(language: string): boolean</h3>
+<p>Returns <code>true</code> if the header matches the given language (i.e. it is &quot;acceptable&quot;).</p>
+<h4>language</h4>
+<p>The locale identifier of the language to check</p>
+<h3>clear(): void</h3>
+<p>Removes all languages from the header.</p>
+<h3>delete(language: string): void</h3>
+<p>Removes a language with the given locale identifier.</p>
+<h4>language</h4>
+<p>The locale identifier of the language to remove</p>
+<h3>entries(): IterableIterator&lt;[string, number]&gt;</h3>
+<p>Returns an iterator of all language and weight pairs.</p>
+<h3>forEach(callback: (language: string, weight: number, header: AcceptLanguage) =&gt; void, thisArg: any): void</h3>
+<p>Invokes the callback for each language and weight pair.</p>
+<h4>callback</h4>
+<p>The function to call for each pair</p>
+<h4>thisArg</h4>
+<p>The value to use as <code>this</code> when calling the callback</p>
+<h3>get(language: string): number | null</h3>
+<p>Gets the weight of a language with the given locale identifier. If it is not in the header
+verbatim, this returns <code>null</code>.</p>
+<h4>language</h4>
+<p>The locale identifier of the language to get</p>
+<h3>getPreferred(languages: readonly language[]): language | null</h3>
+<p>Returns the most preferred language from the given list of languages.</p>
+<h4>languages</h4>
+<p>The locale identifiers of the languages to choose from</p>
+<h3>getWeight(language: string): number</h3>
+<p>Gets the weight of a language with the given locale identifier. Performs wildcard and subtype
+matching, so <code>en</code> matches <code>en-US</code> and <code>en-GB</code>, and <code>*</code> matches all languages.</p>
+<h4>language</h4>
+<p>The locale identifier of the language to get</p>
+<h3>has(language: string): boolean</h3>
+<p>Checks if the header contains a language with the given locale identifier.</p>
+<h4>language</h4>
+<p>The locale identifier of the language to check</p>
+<h3>set(language: string, weight: number): void</h3>
+<p>Sets a language with the given weight.</p>
+<h4>language</h4>
+<p>The locale identifier of the language to set</p>
+<h4>weight</h4>
+<p>The weight of the language (default: <code>1</code>)</p>
+<h3>toString(): string</h3>
+<p>Returns the string representation of the header value.</p>
+<h3>from(value: string | AcceptLanguageInit | null): AcceptLanguage</h3>
+<p>Parse an Accept-Language header value.</p>
+<h4>value</h4>
+<p>The header value (string, init object, or null)</p>
+</div><!-- rmx:h:hd52ae4bf --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"hd52ae4bf":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

@@ -1,0 +1,54 @@
+<div><h1>Cookie</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/cookie/src/lib/cookie.ts#L53" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Represents a HTTP cookie.</p>
+<p>Supports parsing and serializing the cookie to/from <code>Cookie</code> and <code>Set-Cookie</code> headers.</p>
+<p>Also supports cryptographic signing of the cookie value to ensure it&#39;s not tampered with, and
+secret rotation to easily rotate secrets without breaking existing cookies.</p>
+<h2>Constructor</h2>
+<h3>name</h3>
+<p>The name of the cookie</p>
+<h3>options</h3>
+<p>Options for the cookie</p>
+<h2>Properties</h2>
+<h3>domain</h3>
+<p>The domain of the cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#domaindomain-value">MDN Reference</a></p>
+<h3>expires</h3>
+<p>The expiration date of the cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#expiresdate">MDN Reference</a></p>
+<h3>httpOnly</h3>
+<p>True if the cookie is HTTP-only.</p>
+<p><a href="https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#httponly">MDN Reference</a></p>
+<h3>maxAge</h3>
+<p>The maximum age of the cookie in seconds.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#max-agenumber">MDN Reference</a></p>
+<h3>name</h3>
+<p>The name of the cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#cookie-namecookie-value">MDN Reference</a></p>
+<h3>partitioned</h3>
+<p>True if the cookie is partitioned.</p>
+<p><a href="https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#partitioned">MDN Reference</a></p>
+<h3>path</h3>
+<p>The path of the cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#pathpath-value">MDN Reference</a></p>
+<h3>sameSite</h3>
+<p>The <code>SameSite</code> attribute of the cookie.</p>
+<p><a href="https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value">MDN Reference</a></p>
+<h3>secure</h3>
+<p>True if the cookie is secure (only sent over HTTPS).</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure">MDN Reference</a></p>
+<h3>signed</h3>
+<p>True if this cookie uses one or more secrets for verification.</p>
+<h2>Methods</h2>
+<h3>parse(headerValue: string | null): Promise&lt;string | null&gt;</h3>
+<p>Extracts the value of this cookie from a <code>Cookie</code> header value.</p>
+<h4>headerValue</h4>
+<p>The <code>Cookie</code> header to parse</p>
+<h3>serialize(value: string, props: CookieProperties): Promise<string></h3>
+<p>Returns the value to use in a <code>Set-Cookie</code> header for this cookie.</p>
+<h4>value</h4>
+<p>The value to serialize</p>
+<h4>props</h4>
+<p>Additional properties to use when serializing the cookie</p>
+</div><!-- rmx:h:ha02694d7 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"ha02694d7":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>

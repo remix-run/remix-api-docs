@@ -1,0 +1,24 @@
+<div><h1>RequestListenerOptions</h1>
+<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/node-fetch-server/src/lib/request-listener.ts#L10" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Options for creating a Node.js request listener.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">interface</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> RequestListenerOptions</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  host</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  onError</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/node-fetch-server/function/ErrorHandler">ErrorHandler</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  protocol</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> <a href="/api/remix/data-schema/function/string">string</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre><h2>Properties</h2>
+<h3>host</h3>
+<p>Overrides the host portion of the incoming request URL. By default the request URL host is
+derived from the HTTP <code>Host</code> header.</p>
+<p>For example, if you have a <code>$HOST</code> environment variable that contains the hostname of your
+server, you can use it to set the host of all incoming request URLs like so:</p>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0"><a href="/api/remix/node-fetch-server/function/createRequestListener">createRequestListener</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">(handler, { host: process.env.</span><span style="color:#005CC5;--shiki-dark:#79B8FF">HOST</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span></code></pre><h3>onError</h3>
+<p>An error handler that determines the response when the request handler throws an error. By
+default a 500 Internal Server Error response will be sent.</p>
+<h3>protocol</h3>
+<p>Overrides the protocol of the incoming request URL. By default the request URL protocol is
+derived from the connection protocol. So e.g. when serving over HTTPS (using
+<code>https.createServer()</code>), the request URL will begin with <code>https:</code>.</p>
+</div><!-- rmx:h:h97c13ef8 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h97c13ef8":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>
