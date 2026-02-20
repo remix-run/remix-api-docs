@@ -12,9 +12,10 @@ TAG_NAME="$1"
 DOCS_DIR="../../remix-api-docs/docs"
 
 # Clear prior "latest" build so we don't leave stranded files for removed APIs
-rm -f docs/index.html
-rm -rf docs/assets
 rm -rf docs/api
+rm -rf docs/assets
+rm -rf docs/fragment
+rm -f docs/index.html
 
 pushd ../remix/docs
 pnpm run docs --tag "${TAG_NAME}"
