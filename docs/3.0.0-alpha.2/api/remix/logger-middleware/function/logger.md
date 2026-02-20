@@ -4,7 +4,7 @@ title: logger
 
 # logger
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/logger-middleware/src/lib/logger.ts#L48" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/3.0.0-alpha.2/packages/logger-middleware/src/lib/logger.ts#L48" target="_blank">View Source</a>
 
 ## Summary
 

@@ -8,6 +8,8 @@ import {
 } from "./chunk-3UCC5XUO.js";
 
 // src/client/client-router.tsx
+var $ = (s) => document.querySelector(s);
+var $$ = (s) => Array.from(document.querySelectorAll(s));
 var ClientRouter = clientEntry(
   `${routes.assets.href({ asset: "client-router.js" })}#ClientRouter`,
   (handle) => {
@@ -38,6 +40,8 @@ var ClientRouter = clientEntry(
               if (signal.aborted) return;
               handle.frame.src = routes.fragment.href(nextMatch.params);
               await handle.frame.reload();
+              $$("nav a.active").forEach((e) => e.classList.remove("active"));
+              $(`nav a[href="${routes.docs.href(nextMatch.params)}"]`)?.classList.add("active");
             }
           });
         }
