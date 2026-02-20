@@ -1,6 +1,6 @@
 import {
   routes
-} from "./chunk-VLPCFPWK.js";
+} from "./chunk-I2PUA76T.js";
 import {
   clientEntry,
   jsx
