@@ -1,14 +1,14 @@
 name: Sync API Documentation
 
 on:
-  # Remote trigger from Remix release process
+  # Remote trigger from remix repo (post release process)
   repository_dispatch:
-    types: [release]
-  # Manual trigger from repo
+    types: [update-docs]
+  # Manual trigger from remix-api-docs repo
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag"
+        description: "Tag"
         required: true
 
 jobs:
