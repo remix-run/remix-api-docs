@@ -4,7 +4,7 @@ title: BuildRoute
 
 # BuildRoute
 
-<a href="https://github.com/remix-run/remix/blob/3.0.0-alpha.2/packages/fetch-router/src/lib/route-map.ts#L65" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/fetch-router/src/lib/route-map.ts#L65" target="_blank">View Source</a>
 
 ## Summary
 

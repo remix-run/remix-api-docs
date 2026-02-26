@@ -4,7 +4,7 @@ title: FetchHandler
 
 # FetchHandler
 
-<a href="https://github.com/remix-run/remix/blob/3.0.0-alpha.2/packages/node-fetch-server/src/lib/fetch-handler.ts#L50" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/node-fetch-server/src/lib/fetch-handler.ts#L50" target="_blank">View Source</a>
 
 ## Summary
 

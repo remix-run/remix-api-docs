@@ -4,7 +4,7 @@ title: methodOverride
 
 # methodOverride
 
-<a href="https://github.com/remix-run/remix/blob/3.0.0-alpha.2/packages/method-override-middleware/src/lib/method-override.ts#L25" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/method-override-middleware/src/lib/method-override.ts#L25" target="_blank">View Source</a>
 
 ## Summary
 

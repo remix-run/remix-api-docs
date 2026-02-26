@@ -4,7 +4,7 @@ title: RequestContext
 
 # RequestContext
 
-<a href="https://github.com/remix-run/remix/blob/3.0.0-alpha.2/packages/fetch-router/src/lib/request-context.ts#L14" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/fetch-router/src/lib/request-context.ts#L15" target="_blank">View Source</a>
 
 ## Summary
 
@@ -66,6 +66,10 @@ request body.
 Note: This is only available for requests with a body (not `GET` or `HEAD`).
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
+
+### router
+
+The router handling this request.
 
 ### session
 

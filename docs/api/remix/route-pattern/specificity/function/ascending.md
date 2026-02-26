@@ -4,7 +4,7 @@ title: ascending
 
 # ascending
 
-<a href="https://github.com/remix-run/remix/blob/3.0.0-alpha.2/packages/route-pattern/src/lib/specificity.ts#L43" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/route-pattern/src/lib/specificity.ts#L43" target="_blank">View Source</a>
 
 ## Summary
 

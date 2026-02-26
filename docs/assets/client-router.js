@@ -42,6 +42,10 @@ var ClientRouter = clientEntry(
               await handle.frame.reload();
               $$("nav a.active").forEach((e) => e.classList.remove("active"));
               $(`nav a[href="${routes.docs.href(nextMatch.params)}"]`)?.classList.add("active");
+              let toggle = $("#nav-toggle");
+              if (toggle) {
+                toggle.checked = false;
+              }
             }
           });
         }
