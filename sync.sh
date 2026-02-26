@@ -20,5 +20,5 @@ rm -f docs/index.html
 pushd ../remix/docs
 pnpm run docs --tag "${TAG_NAME}"
 pnpm run build
-pnpm run prerender --all --dir "${DOCS_DIR}"
+pnpm run prerender --dir "${DOCS_DIR}"
 popd
