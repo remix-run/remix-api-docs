@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Remix Tag"
+        description: "Remix Tag (i.e., remix@3.0.0)"
         required: true
 
 jobs:
