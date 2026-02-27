@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Tag"
+        description: "Remix Tag"
         required: true
 
 jobs:
@@ -27,8 +27,8 @@ jobs:
         with:
           repository: remix-run/remix
           path: remix
-          # TODO: Once merged, update this to checkout the tag
-          ref: brophdawg11/docs-auto-generate
+          ref: main
+          # ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || github.event.inputs.tag }}
           fetch-depth: 0
           fetch-tags: true
 
