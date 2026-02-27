@@ -22,8 +22,8 @@ function on(target: target, listeners: EventListeners<target>): () => void;
 ## Example
 
 ```ts
-import { on } from 'remix/interaction'
-import { longPress } from 'remix/interaction/press'
+import { on } from '@remix-run/interaction'
+import { longPress } from '@remix-run/interaction/press'
 
 let button = document.createElement('button')
 let dispose = on(button, {

@@ -1176,10 +1176,128 @@ function processStyle(styleObj, styleCache2) {
   return result;
 }
 
-// ../packages/component/src/lib/diff-props.ts
-var SVG_NS = "http://www.w3.org/2000/svg";
+// ../packages/component/src/lib/svg-attributes.ts
 var XLINK_NS = "http://www.w3.org/1999/xlink";
 var XML_NS = "http://www.w3.org/XML/1998/namespace";
+var CANONICAL_CAMEL_SVG_ATTRS = /* @__PURE__ */ new Set([
+  "accentHeight",
+  "attributeName",
+  "attributeType",
+  "baseFrequency",
+  "baseProfile",
+  "calcMode",
+  "viewBox",
+  "preserveAspectRatio",
+  "externalResourcesRequired",
+  "filterRes",
+  "gradientUnits",
+  "gradientTransform",
+  "glyphRef",
+  "kernelMatrix",
+  "kernelUnitLength",
+  "keyPoints",
+  "keySplines",
+  "keyTimes",
+  "lengthAdjust",
+  "limitingConeAngle",
+  "markerHeight",
+  "patternUnits",
+  "patternContentUnits",
+  "patternTransform",
+  "markerWidth",
+  "numOctaves",
+  "pathLength",
+  "pointsAtX",
+  "pointsAtY",
+  "pointsAtZ",
+  "preserveAlpha",
+  "clipPathUnits",
+  "maskUnits",
+  "maskContentUnits",
+  "filterUnits",
+  "primitiveUnits",
+  "refX",
+  "refY",
+  "requiredExtensions",
+  "requiredFeatures",
+  "specularConstant",
+  "specularExponent",
+  "spreadMethod",
+  "startOffset",
+  "stdDeviation",
+  "stitchTiles",
+  "surfaceScale",
+  "systemLanguage",
+  "tableValues",
+  "targetX",
+  "targetY",
+  "textLength",
+  "viewTarget",
+  "xChannelSelector",
+  "yChannelSelector",
+  "zoomAndPan",
+  "edgeMode",
+  "diffuseConstant",
+  "markerUnits"
+]);
+var SVG_ATTR_ALIASES = /* @__PURE__ */ new Map();
+for (let attr of CANONICAL_CAMEL_SVG_ATTRS) {
+  SVG_ATTR_ALIASES.set(camelToKebab2(attr), attr);
+}
+var NAMESPACED_SVG_ALIASES = /* @__PURE__ */ new Map([
+  ["xlinkHref", { ns: XLINK_NS, attr: "xlink:href" }],
+  ["xlink:href", { ns: XLINK_NS, attr: "xlink:href" }],
+  ["xlink-href", { ns: XLINK_NS, attr: "xlink:href" }],
+  ["xlinkActuate", { ns: XLINK_NS, attr: "xlink:actuate" }],
+  ["xlink:actuate", { ns: XLINK_NS, attr: "xlink:actuate" }],
+  ["xlink-actuate", { ns: XLINK_NS, attr: "xlink:actuate" }],
+  ["xlinkArcrole", { ns: XLINK_NS, attr: "xlink:arcrole" }],
+  ["xlink:arcrole", { ns: XLINK_NS, attr: "xlink:arcrole" }],
+  ["xlink-arcrole", { ns: XLINK_NS, attr: "xlink:arcrole" }],
+  ["xlinkRole", { ns: XLINK_NS, attr: "xlink:role" }],
+  ["xlink:role", { ns: XLINK_NS, attr: "xlink:role" }],
+  ["xlink-role", { ns: XLINK_NS, attr: "xlink:role" }],
+  ["xlinkShow", { ns: XLINK_NS, attr: "xlink:show" }],
+  ["xlink:show", { ns: XLINK_NS, attr: "xlink:show" }],
+  ["xlink-show", { ns: XLINK_NS, attr: "xlink:show" }],
+  ["xlinkTitle", { ns: XLINK_NS, attr: "xlink:title" }],
+  ["xlink:title", { ns: XLINK_NS, attr: "xlink:title" }],
+  ["xlink-title", { ns: XLINK_NS, attr: "xlink:title" }],
+  ["xlinkType", { ns: XLINK_NS, attr: "xlink:type" }],
+  ["xlink:type", { ns: XLINK_NS, attr: "xlink:type" }],
+  ["xlink-type", { ns: XLINK_NS, attr: "xlink:type" }],
+  ["xmlBase", { ns: XML_NS, attr: "xml:base" }],
+  ["xml:base", { ns: XML_NS, attr: "xml:base" }],
+  ["xml-base", { ns: XML_NS, attr: "xml:base" }],
+  ["xmlLang", { ns: XML_NS, attr: "xml:lang" }],
+  ["xml:lang", { ns: XML_NS, attr: "xml:lang" }],
+  ["xml-lang", { ns: XML_NS, attr: "xml:lang" }],
+  ["xmlSpace", { ns: XML_NS, attr: "xml:space" }],
+  ["xml:space", { ns: XML_NS, attr: "xml:space" }],
+  ["xml-space", { ns: XML_NS, attr: "xml:space" }],
+  ["xmlnsXlink", { attr: "xmlns:xlink" }],
+  ["xmlns:xlink", { attr: "xmlns:xlink" }],
+  ["xmlns-xlink", { attr: "xmlns:xlink" }]
+]);
+function normalizeSvgAttributeName(name) {
+  let alias = SVG_ATTR_ALIASES.get(name);
+  if (alias) return alias;
+  if (CANONICAL_CAMEL_SVG_ATTRS.has(name)) return name;
+  return camelToKebab2(name);
+}
+function normalizeSvgAttribute(name) {
+  let namespaced = NAMESPACED_SVG_ALIASES.get(name);
+  if (namespaced) {
+    return namespaced;
+  }
+  return { attr: normalizeSvgAttributeName(name) };
+}
+function camelToKebab2(input) {
+  return input.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/_/g, "-").toLowerCase();
+}
+
+// ../packages/component/src/lib/diff-props.ts
+var SVG_NS = "http://www.w3.org/2000/svg";
 var styleCache = /* @__PURE__ */ new Map();
 var globalStyleManager = typeof window !== "undefined" ? createStyleManager() : null;
 var defaultStyleManager = globalStyleManager;
@@ -1247,16 +1365,12 @@ function normalizePropName(name, isSvg) {
     if (name === "httpEquiv") return { attr: "http-equiv" };
     return { attr: name.toLowerCase() };
   }
-  if (name === "xlinkHref") return { ns: XLINK_NS, attr: "xlink:href" };
-  if (name === "xmlLang") return { ns: XML_NS, attr: "xml:lang" };
-  if (name === "xmlSpace") return { ns: XML_NS, attr: "xml:space" };
-  if (name === "viewBox" || name === "preserveAspectRatio" || name === "gradientUnits" || name === "gradientTransform" || name === "patternUnits" || name === "patternTransform" || name === "clipPathUnits" || name === "maskUnits" || name === "maskContentUnits") {
-    return { attr: name };
-  }
-  return { attr: camelToKebab2(name) };
+  return normalizeSvgAttribute(name);
 }
-function camelToKebab2(input) {
-  return input.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/_/g, "-").toLowerCase();
+function toLocalName(attrName) {
+  let separatorIndex = attrName.indexOf(":");
+  if (separatorIndex === -1) return attrName;
+  return attrName.slice(separatorIndex + 1);
 }
 function clearRuntimePropertyOnRemoval(dom, name) {
   try {
@@ -1286,7 +1400,7 @@ function diffHostProps(curr, next, dom, styles) {
         clearRuntimePropertyOnRemoval(dom, name);
       }
       let { ns, attr } = normalizePropName(name, isSvg);
-      if (ns) dom.removeAttributeNS(ns, attr);
+      if (ns) dom.removeAttributeNS(ns, toLocalName(attr));
       else dom.removeAttribute(attr);
     }
   }
@@ -1317,7 +1431,7 @@ function diffHostProps(curr, next, dom, styles) {
         if (ns) dom.setAttributeNS(ns, attr, attrValue);
         else dom.setAttribute(attr, attrValue);
       } else {
-        if (ns) dom.removeAttributeNS(ns, attr);
+        if (ns) dom.removeAttributeNS(ns, toLocalName(attr));
         else dom.removeAttribute(attr);
       }
     }

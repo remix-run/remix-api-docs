@@ -5,7 +5,7 @@ import {
   Fragment,
   clientEntry,
   jsx
-} from "./chunk-3UCC5XUO.js";
+} from "./chunk-FVIRR6GM.js";
 
 // src/client/client-router.tsx
 var $ = (s) => document.querySelector(s);

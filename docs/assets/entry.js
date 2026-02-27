@@ -1,6 +1,6 @@
 import {
   run
-} from "./chunk-3UCC5XUO.js";
+} from "./chunk-FVIRR6GM.js";
 
 // src/client/entry.tsx
 var app = run(document, {

@@ -4,7 +4,7 @@ import {
 import {
   clientEntry,
   jsx
-} from "./chunk-3UCC5XUO.js";
+} from "./chunk-FVIRR6GM.js";
 
 // src/client/light-dark-toggle.tsx
 var LightDarkToggle = clientEntry(
