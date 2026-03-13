@@ -1,0 +1,20 @@
+---
+title: VirtualRootEventMap
+---
+
+# VirtualRootEventMap
+
+<a href="https://github.com/remix-run/remix/blob/main/packages/component/src/lib/vdom.ts#L21" target="_blank">View Source</a>
+
+## Summary
+
+Events emitted by virtual roots.
+
+## Signature
+
+```ts
+type VirtualRootEventMap = {
+  error: ComponentErrorEvent;
+};
+
+```

@@ -1,5 +1,5 @@
 <div><h1>mimeTypeToContentType</h1>
-<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/mime-type-to-content-type.ts#L30" target="_blank">View Source</a></p>
+<p><a href="https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/mime-type-to-content-type.ts#L31" target="_blank">View Source</a></p>
 <h2>Summary</h2>
 <p>Converts a MIME type to a Content-Type header value, adding charset when appropriate.</p>
 <p>By default, adds <code>; charset=utf-8</code> to text-based MIME types:</p>
@@ -8,7 +8,8 @@
 <li>All <code>+json</code> suffixed types (RFC 8259 defines JSON as UTF-8)</li>
 <li><code>application/json</code>, <code>application/javascript</code></li>
 </ul>
-<p>Custom charset registered via <code>defineMimeType()</code> takes precedence over built-in rules.</p>
+<p>Custom charset registered via import(&#39;./define-mime-type.ts&#39;).defineMimeType
+takes precedence over built-in rules.</p>
 <p>Note: <code>text/xml</code> is excluded because XML has built-in encoding detection.
 Per the XML spec, documents without an encoding declaration must be UTF-8 or
 UTF-16, detectable from byte patterns. Adding an external charset parameter
@@ -25,4 +26,4 @@ is redundant and can conflict with the document&#39;s internal declaration.</p>
 <p>The MIME type (e.g. &quot;text/css&quot;, &quot;image/png&quot;)</p>
 <h2>Returns</h2>
 <p>The Content-Type value with charset if appropriate</p>
-</div><!-- rmx:h:h4160d734 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h4160d734":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>
+</div>

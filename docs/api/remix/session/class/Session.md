@@ -4,13 +4,54 @@ title: Session
 
 # Session
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/session/src/lib/session.ts#L11" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session.ts#L11" target="_blank">View Source</a>
 
 ## Summary
 
 A session persists data for a specific user across multiple requests to a server.
 
-## Constructor
+## Signature
+
+```ts
+class Session<valueData, flashData> {
+  constructor(
+    id: string,
+    initialData: SessionData<valueData, flashData>,
+  ): Session<valueData, flashData>;
+
+  // Accessors
+  get data(): SessionData<valueData, flashData>;
+  get deleteId(): string | undefined;
+  get destroyed(): boolean;
+  get dirty(): boolean;
+  get id(): string;
+  get size(): number;
+
+  // Methods
+  destroy(): void;
+  flash<key extends string | number | symbol>(
+    key: key,
+    value: flashData[key],
+  ): void;
+  get<key extends string | number | symbol>(
+    key: key,
+  ): valueData[key] | undefined;
+  get<key extends string | number | symbol>(
+    key: key,
+  ): flashData[key] | undefined;
+  get(key: string): undefined;
+  has(key: keyof valueData | keyof flashData): boolean;
+  regenerateId(deleteOldSession: boolean): void;
+  set<key extends string | number | symbol>(
+    key: key,
+    value: valueData[key],
+  ): void;
+  unset(key: keyof valueData): void;
+}
+
+```
+
+## Constructor Params
 
 ### id
 
@@ -20,7 +61,7 @@ The session ID
 
 The initial session data
 
-## Properties
+## Accessors
 
 ### data
 
@@ -57,7 +98,7 @@ Mark this session as destroyed.
 
 This prevents all further modifications to the session.
 
-### flash(key: key, value: flashData[key]): void
+### flash<key extends string | number | symbol>(key: key, value: flashData[key]): void
 
 Set a value in the session that will be available only during the next request.
 
@@ -67,11 +108,25 @@ Set a value in the session that will be available only during the next request.
 
 The value to flash
 
-### get(key: key): valueData[key] | undefined
+### get<key extends string | number | symbol>(key: key): valueData[key] | undefined
 
 Get a value from the session.
 
 #### key
+
+### get<key extends string | number | symbol>(key: key): flashData[key] | undefined
+
+Get a value from the session.
+
+#### key
+
+### get(key: string): undefined
+
+Get a value from the session.
+
+#### key
+
+The key of the value to get
 
 ### has(key: keyof valueData | keyof flashData): boolean
 
@@ -90,7 +145,7 @@ or other privilege changes.
 
 Whether to delete the old session data when the session is saved (default: `false`)
 
-### set(key: key, value: valueData[key]): void
+### set<key extends string | number | symbol>(key: key, value: valueData[key]): void
 
 Set a value in the session.
 

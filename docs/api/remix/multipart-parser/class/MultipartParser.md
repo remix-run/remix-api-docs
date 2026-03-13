@@ -4,13 +4,34 @@ title: MultipartParser
 
 # MultipartParser
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/multipart-parser/src/lib/multipart.ts#L158" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L161" target="_blank">View Source</a>
 
 ## Summary
 
 A streaming parser for `multipart/*` HTTP messages.
 
-## Constructor
+## Signature
+
+```ts
+class MultipartParser {
+  constructor(
+    boundary: string,
+    options: MultipartParserOptions,
+  ): MultipartParser;
+
+  // Properties
+  boundary: string;
+  maxFileSize: number;
+  maxHeaderSize: number;
+
+  // Methods
+  finish(): void;
+  write(chunk: Uint8Array): Generator<MultipartPart, void, unknown>;
+}
+
+```
+
+## Constructor Params
 
 ### boundary
 
@@ -24,9 +45,15 @@ Options for the parser
 
 ### boundary
 
+Boundary string used to detect part separators.
+
 ### maxFileSize
 
+Maximum file size allowed for each multipart part.
+
 ### maxHeaderSize
+
+Maximum header size allowed for each multipart part.
 
 ## Methods
 

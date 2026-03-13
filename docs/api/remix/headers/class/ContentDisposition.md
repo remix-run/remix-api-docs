@@ -4,7 +4,7 @@ title: ContentDisposition
 
 # ContentDisposition
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/content-disposition.ts#L34" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-disposition.ts#L34" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,7 +14,29 @@ The value of a `Content-Disposition` HTTP header.
 
 [RFC 6266](https://tools.ietf.org/html/rfc6266)
 
-## Constructor
+## Signature
+
+```ts
+class ContentDisposition {
+  constructor(init: string | ContentDispositionInit): ContentDisposition;
+
+  // Properties
+  filename?: string;
+  filenameSplat?: string;
+  name?: string;
+  type?: string;
+
+  // Accessors
+  get preferredFilename(): string | undefined;
+
+  // Methods
+  toString(): string;
+  from(value: string | ContentDispositionInit | null): ContentDisposition;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
@@ -22,20 +44,21 @@ The value of a `Content-Disposition` HTTP header.
 
 ### filename
 
-For file uploads, the name of the file that the user selected.
+The `filename` parameter value.
 
 ### filenameSplat
 
-For file uploads, the name of the file that the user selected, encoded as a [RFC 8187](https://tools.ietf.org/html/rfc8187) `filename*` parameter.
-This parameter allows non-ASCII characters in filenames, and specifies the character encoding.
+The RFC 8187-encoded `filename*` parameter value.
 
 ### name
 
-For `multipart/form-data` requests, the name of the `<input>` field associated with this content.
+The associated multipart field name.
 
 ### type
 
-The disposition type of the content, such as `attachment` or `inline`.
+The disposition type such as `attachment` or `inline`.
+
+## Accessors
 
 ### preferredFilename
 

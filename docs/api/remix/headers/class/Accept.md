@@ -4,7 +4,7 @@ title: Accept
 
 # Accept
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/accept.ts#L17" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept.ts#L17" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,11 +14,45 @@ The value of a `Accept` HTTP header.
 
 [HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7231#section-5.3.2)
 
-## Constructor
+## Signature
+
+```ts
+class Accept {
+  constructor(init: string | AcceptInit): Accept;
+
+  // Accessors
+  get mediaTypes(): string[];
+  get size(): number;
+  get weights(): number[];
+
+  // Methods
+  [iterator](): IterableIterator<[string, number]>;
+  accepts(mediaType: string): boolean;
+  clear(): void;
+  delete(mediaType: string): void;
+  entries(): IterableIterator<[string, number]>;
+  forEach(
+    callback: (mediaType: string, weight: number, header: Accept) => void,
+    thisArg: any,
+  ): void;
+  get(mediaType: string): number | null;
+  getPreferred<mediaType extends string>(
+    mediaTypes: readonly mediaType[],
+  ): mediaType | null;
+  getWeight(mediaType: string): number;
+  has(mediaType: string): boolean;
+  set(mediaType: string, weight: number): void;
+  toString(): string;
+  from(value: string | AcceptInit | null): Accept;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
-## Properties
+## Accessors
 
 ### mediaTypes
 
@@ -35,6 +69,8 @@ An array of all weights (q values) in the header.
 ## Methods
 
 ### [iterator](): IterableIterator<[string, number]>
+
+Iterates over media type and weight pairs in preference order.
 
 ### accepts(mediaType: string): boolean
 
@@ -80,7 +116,7 @@ Returns the weight of a media type. If it is not in the header verbatim, this re
 
 The media type to get the weight of
 
-### getPreferred(mediaTypes: readonly mediaType[]): mediaType | null
+### getPreferred<mediaType extends string>(mediaTypes: readonly mediaType[]): mediaType | null
 
 Returns the most preferred media type from the given list of media types.
 

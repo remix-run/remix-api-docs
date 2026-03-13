@@ -4,7 +4,7 @@ title: AcceptEncoding
 
 # AcceptEncoding
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/accept-encoding.ts#L17" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-encoding.ts#L17" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,11 +14,49 @@ The value of a `Accept-Encoding` HTTP header.
 
 [HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7231#section-5.3.4)
 
-## Constructor
+## Signature
+
+```ts
+class AcceptEncoding {
+  constructor(init: string | AcceptEncodingInit): AcceptEncoding;
+
+  // Accessors
+  get encodings(): string[];
+  get size(): number;
+  get weights(): number[];
+
+  // Methods
+  [iterator](): IterableIterator<[string, number]>;
+  accepts(encoding: string): boolean;
+  clear(): void;
+  delete(encoding: string): void;
+  entries(): IterableIterator<[string, number]>;
+  forEach(
+    callback: (
+      encoding: string,
+      weight: number,
+      header: AcceptEncoding,
+    ) => void,
+    thisArg: any,
+  ): void;
+  get(encoding: string): number | null;
+  getPreferred<encoding extends string>(
+    encodings: readonly encoding[],
+  ): encoding | null;
+  getWeight(encoding: string): number;
+  has(encoding: string): boolean;
+  set(encoding: string, weight: number): void;
+  toString(): string;
+  from(value: string | AcceptEncodingInit | null): AcceptEncoding;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
-## Properties
+## Accessors
 
 ### encodings
 
@@ -35,6 +73,8 @@ An array of all weights (q values) in the header.
 ## Methods
 
 ### [iterator](): IterableIterator<[string, number]>
+
+Iterates over encoding and weight pairs in preference order.
 
 ### accepts(encoding: string): boolean
 
@@ -80,7 +120,7 @@ Gets the weight of an encoding. If it is not in the header verbatim, this return
 
 The encoding to get
 
-### getPreferred(encodings: readonly encoding[]): encoding | null
+### getPreferred<encoding extends string>(encodings: readonly encoding[]): encoding | null
 
 Returns the most preferred encoding from the given list of encodings.
 

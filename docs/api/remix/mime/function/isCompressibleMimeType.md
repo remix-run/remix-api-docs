@@ -4,7 +4,7 @@ title: isCompressibleMimeType
 
 # isCompressibleMimeType
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/is-compressible-mime-type.ts#L18" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/is-compressible-mime-type.ts#L19" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,7 +14,8 @@ Returns true for:
 - Compressible MIME types from mime-db
 - Any text/* type
 - Types with +json, +text, or +xml suffix
-- MIME types explicitly registered as compressible via `defineMimeType()`
+- MIME types explicitly registered as compressible via
+  import('./define-mime-type.ts').defineMimeType
 
 Accepts either a bare MIME type or a full Content-Type header value with parameters.
 

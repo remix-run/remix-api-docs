@@ -4,9 +4,11 @@ title: FetchProxy
 
 # FetchProxy
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/fetch-proxy/src/lib/fetch-proxy.ts#L44" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L47" target="_blank">View Source</a>
 
 ## Summary
+
+Forwards a request to the configured proxy target.
 
 ## Signature
 
@@ -16,17 +18,3 @@ interface FetchProxy {
 }
 
 ```
-
-## Params
-
-### input
-
-The URL or request to forward
-
-### init
-
-Optional request init options
-
-## Returns
-
-A promise that resolves to the proxied response

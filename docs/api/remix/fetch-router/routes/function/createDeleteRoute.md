@@ -4,7 +4,7 @@ title: createDeleteRoute
 
 # createDeleteRoute
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/fetch-router/src/lib/route-helpers/method.ts#L12" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-helpers/method.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,7 +17,7 @@ del
 ## Signature
 
 ```ts
-function createDeleteRoute(
+function createDeleteRoute<source extends string>(
   pattern: source | RoutePattern<source>,
 ): Route<"DELETE", source>;
 

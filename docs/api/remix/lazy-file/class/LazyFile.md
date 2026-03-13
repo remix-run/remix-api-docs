@@ -4,7 +4,7 @@ title: LazyFile
 
 # LazyFile
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/lazy-file/src/lib/lazy-file.ts#L195" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L198" target="_blank">View Source</a>
 
 ## Summary
 
@@ -20,7 +20,40 @@ Instead, use one of:
 
 [MDN `File` Reference](https://developer.mozilla.org/en-US/docs/Web/API/File)
 
-## Constructor
+## Signature
+
+```ts
+class LazyFile {
+  constructor(
+    parts: LazyContent | BlobPartLike[],
+    name: string,
+    options: LazyFileOptions,
+  ): LazyFile;
+
+  // Properties
+  lastModified: number;
+  name: string;
+  webkitRelativePath: "";
+
+  // Accessors
+  get [toStringTag](): string;
+  get size(): number;
+  get type(): string;
+
+  // Methods
+  arrayBuffer(): Promise<ArrayBuffer>;
+  bytes(): Promise<Uint8Array<ArrayBuffer>>;
+  slice(start: number, end: number, contentType: string): LazyBlob;
+  stream(): ReadableStream<Uint8Array<ArrayBuffer>>;
+  text(): Promise<string>;
+  toBlob(): Promise<Blob>;
+  toFile(): Promise<File>;
+  toString(): never;
+}
+
+```
+
+## Constructor Params
 
 ### parts
 
@@ -56,7 +89,11 @@ with the `webkitdirectory` attribute, which doesn't apply to programmatically cr
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath)
 
+## Accessors
+
 ### [toStringTag]
+
+The brand string exposed by `Object.prototype.toString.call()`.
 
 ### size
 

@@ -4,7 +4,7 @@ title: createFormRoutes
 
 # createFormRoutes
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/fetch-router/src/lib/route-helpers/form.ts#L32" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-helpers/form.ts#L35" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,7 @@ URL.
 ## Signature
 
 ```ts
-function createFormRoutes(pattern: pattern | RoutePattern<pattern>, options: options): { [K in string]: { -readonly [name in string]: ({ [key in string]: { method: "GET"; pattern: "/" } } & { [key in string]: { method: options extends { formMethod: formMethod } ? formMethod : "POST"; pattern: "/" } })[name] extends Route<method, pattern> ? Route<method, Stringify<{ hostname: JoinOriginField<Parse<pattern>, Parse<pattern>, "hostname">; pathname: JoinPathnames<Parse<pattern>["pathname"], Parse<pattern>["pathname"]>; port: JoinOriginField<Parse<pattern>, Parse<pattern>, "port">; protocol: JoinOriginField<Parse<pattern>, Parse<pattern>, "protocol">; search: JoinSearch<Parse<pattern>["search"], Parse<pattern>["search"]> }>> : ({ [key in string]: { method: "GET"; pattern: "/" } } & { [key in string]: { method: options extends { formMethod: ... } ? formMethod : "POST"; pattern: "/" } })[name] extends RouteDef<string> ? BuildRouteWithBase<pattern, any[any]> : ({ [key in string]: { method: "GET"; pattern: "/" } } & { [key in string]: { method: (...) extends (...) ? (...) : (...); pattern: "/" } })[name] extends RouteDefs ? { [K in string | number | symbol]: { -readonly [name in string | number | symbol]: (...)[(...)] extends Route<(...), (...)> ? Route<(...), (...)> : (...) extends (...) ? (...) : (...) }[K] } : never }[K] }
+function createFormRoutes<pattern extends string, options extends FormOptions>(pattern: pattern | RoutePattern<pattern>, options: options): { [K in string]: { -readonly [name in string]: ({ [key in string]: { method: "GET"; pattern: "/" } } & { [key in string]: { method: options extends { formMethod: formMethod } ? formMethod : "POST"; pattern: "/" } })[name] extends Route<method, pattern> ? Route<method, Stringify<{ hostname: JoinOriginField<Parse<pattern>, Parse<pattern>, "hostname">; pathname: JoinPathnames<Parse<pattern>["pathname"], Parse<pattern>["pathname"]>; port: JoinOriginField<Parse<pattern>, Parse<pattern>, "port">; protocol: JoinOriginField<Parse<pattern>, Parse<pattern>, "protocol">; search: JoinSearch<Parse<pattern>["search"], Parse<pattern>["search"]> }>> : ({ [key in string]: { method: "GET"; pattern: "/" } } & { [key in string]: { method: options extends { formMethod: ... } ? formMethod : "POST"; pattern: "/" } })[name] extends RouteDef<string> ? BuildRouteWithBase<pattern, any[any]> : ({ [key in string]: { method: "GET"; pattern: "/" } } & { [key in string]: { method: (...) extends (...) ? (...) : (...); pattern: "/" } })[name] extends RouteDefs ? { [K in string | number | symbol]: { -readonly [name in string | number | symbol]: (...)[(...)] extends Route<(...), (...)> ? Route<(...), (...)> : (...) extends (...) ? (...) : (...) }[K] } : never }[K] }
 ```
 
 ## Params

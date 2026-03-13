@@ -4,13 +4,37 @@ title: TarEntry
 
 # TarEntry
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/tar-parser/src/lib/tar.ts#L454" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L505" target="_blank">View Source</a>
 
 ## Summary
 
 An entry in a tar archive.
 
-## Constructor
+## Signature
+
+```ts
+class TarEntry {
+  constructor(
+    header: TarHeader,
+    body: ReadableStream<Uint8Array<ArrayBufferLike>>,
+  ): TarEntry;
+
+  // Accessors
+  get body(): ReadableStream<Uint8Array<ArrayBufferLike>>;
+  get bodyUsed(): boolean;
+  get header(): TarHeader;
+  get name(): string;
+  get size(): number;
+
+  // Methods
+  arrayBuffer(): Promise<ArrayBuffer>;
+  bytes(): Promise<Uint8Array<ArrayBufferLike>>;
+  text(): Promise<string>;
+}
+
+```
+
+## Constructor Params
 
 ### header
 
@@ -20,7 +44,7 @@ The header info for this entry
 
 The entry's content as a stream
 
-## Properties
+## Accessors
 
 ### body
 

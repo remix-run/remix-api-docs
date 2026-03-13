@@ -4,13 +4,33 @@ title: MaxFilesExceededError
 
 # MaxFilesExceededError
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/form-data-parser/src/lib/form-data.ts#L21" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L21" target="_blank">View Source</a>
 
 ## Summary
 
 An error thrown when the maximum number of files allowed in a request is exceeded.
 
-## Constructor
+## Signature
+
+```ts
+class MaxFilesExceededError {
+  constructor(maxFiles: number): MaxFilesExceededError;
+
+  // Properties
+  cause?: unknown;
+  message: string;
+  name: string;
+  stack?: string;
+  stackTraceLimit: number;
+
+  // Methods
+  captureStackTrace(targetObject: object, constructorOpt: Function): void;
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+}
+
+```
+
+## Constructor Params
 
 ### maxFiles
 

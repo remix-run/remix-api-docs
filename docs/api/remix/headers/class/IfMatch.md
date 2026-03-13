@@ -4,7 +4,7 @@ title: IfMatch
 
 # IfMatch
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/if-match.ts#L21" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-match.ts#L21" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,7 +14,25 @@ The value of an `If-Match` HTTP header.
 
 [HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7232#section-3.1)
 
-## Constructor
+## Signature
+
+```ts
+class IfMatch {
+  constructor(init: string | string[] | IfMatchInit): IfMatch;
+
+  // Properties
+  tags: string[];
+
+  // Methods
+  has(tag: string): boolean;
+  matches(tag: string): boolean;
+  toString(): string;
+  from(value: string | string[] | IfMatchInit | null): IfMatch;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
@@ -22,7 +40,7 @@ The value of an `If-Match` HTTP header.
 
 ### tags
 
-The entity tags to compare against the current entity.
+Entity tags carried by the header.
 
 ## Methods
 

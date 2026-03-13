@@ -4,7 +4,7 @@ title: LazyBlob
 
 # LazyBlob
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/lazy-file/src/lib/lazy-file.ts#L53" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L53" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +19,33 @@ Instead, use one of:
 
 [MDN `Blob` Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
 
-## Constructor
+## Signature
+
+```ts
+class LazyBlob {
+  constructor(
+    parts: LazyContent | BlobPartLike[],
+    options: LazyBlobOptions,
+  ): LazyBlob;
+
+  // Accessors
+  get [toStringTag](): string;
+  get size(): number;
+  get type(): string;
+
+  // Methods
+  arrayBuffer(): Promise<ArrayBuffer>;
+  bytes(): Promise<Uint8Array<ArrayBuffer>>;
+  slice(start: number, end: number, contentType: string): LazyBlob;
+  stream(): ReadableStream<Uint8Array<ArrayBuffer>>;
+  text(): Promise<string>;
+  toBlob(): Promise<Blob>;
+  toString(): never;
+}
+
+```
+
+## Constructor Params
 
 ### parts
 
@@ -29,9 +55,11 @@ The blob parts or lazy content
 
 Options for the blob
 
-## Properties
+## Accessors
 
 ### [toStringTag]
+
+The brand string exposed by `Object.prototype.toString.call()`.
 
 ### size
 

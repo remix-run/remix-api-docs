@@ -4,7 +4,7 @@ title: Vary
 
 # Vary
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/vary.ts#L22" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/vary.ts#L25" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,11 +19,37 @@ Header names are normalized to lowercase for case-insensitive comparison.
 
 [HTTP/1.1 Specification](https://httpwg.org/specs/rfc9110.html#field.vary)
 
-## Constructor
+## Signature
+
+```ts
+class Vary {
+  constructor(init: string | string[] | VaryInit): Vary;
+
+  // Accessors
+  get headerNames(): string[];
+  get size(): number;
+
+  // Methods
+  [iterator](): IterableIterator<string>;
+  add(headerName: string): void;
+  clear(): void;
+  delete(headerName: string): void;
+  forEach(
+    callback: (headerName: string, vary: Vary) => void,
+    thisArg: any,
+  ): void;
+  has(headerName: string): boolean;
+  toString(): string;
+  from(value: string | string[] | VaryInit | null): Vary;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
-## Properties
+## Accessors
 
 ### headerNames
 
@@ -36,6 +62,8 @@ The number of header names in the Vary header.
 ## Methods
 
 ### [iterator](): IterableIterator<string>
+
+Iterates over normalized header names in the `Vary` set.
 
 ### add(headerName: string): void
 
@@ -79,6 +107,8 @@ Checks if the Vary header includes the given header name (case-insensitive).
 The header name to check for.
 
 ### toString(): string
+
+Returns the serialized `Vary` header value.
 
 ### from(value: string | string[] | VaryInit | null): Vary
 

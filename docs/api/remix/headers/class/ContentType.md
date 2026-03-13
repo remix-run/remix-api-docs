@@ -4,7 +4,7 @@ title: ContentType
 
 # ContentType
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/content-type.ts#L35" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-type.ts#L35" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,7 +14,25 @@ The value of a `Content-Type` HTTP header.
 
 [HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7231#section-3.1.1.5)
 
-## Constructor
+## Signature
+
+```ts
+class ContentType {
+  constructor(init: string | ContentTypeInit): ContentType;
+
+  // Properties
+  boundary?: string;
+  charset?: string;
+  mediaType?: string;
+
+  // Methods
+  toString(): string;
+  from(value: string | ContentTypeInit | null): ContentType;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
@@ -22,21 +40,15 @@ The value of a `Content-Type` HTTP header.
 
 ### boundary
 
-For multipart entities, the boundary that separates the different parts of the message.
+Multipart boundary parameter value.
 
 ### charset
 
-Indicates the [character encoding](https://developer.mozilla.org/en-US/docs/Glossary/Character_encoding) of the content.
-
-For example, `utf-8`, `iso-8859-1`.
+Character set parameter value.
 
 ### mediaType
 
-The media type (or MIME type) of the content. This consists of a type and subtype, separated by a slash.
-
-For example, `text/html`, `application/json`, `image/png`.
-
-[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+Media type such as `text/html` or `application/json`.
 
 ## Methods
 

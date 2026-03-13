@@ -4,7 +4,7 @@ title: AcceptLanguage
 
 # AcceptLanguage
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/accept-language.ts#L17" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-language.ts#L17" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,11 +14,49 @@ The value of a `Accept-Language` HTTP header.
 
 [HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7231#section-5.3.5)
 
-## Constructor
+## Signature
+
+```ts
+class AcceptLanguage {
+  constructor(init: string | AcceptLanguageInit): AcceptLanguage;
+
+  // Accessors
+  get languages(): string[];
+  get size(): number;
+  get weights(): number[];
+
+  // Methods
+  [iterator](): IterableIterator<[string, number]>;
+  accepts(language: string): boolean;
+  clear(): void;
+  delete(language: string): void;
+  entries(): IterableIterator<[string, number]>;
+  forEach(
+    callback: (
+      language: string,
+      weight: number,
+      header: AcceptLanguage,
+    ) => void,
+    thisArg: any,
+  ): void;
+  get(language: string): number | null;
+  getPreferred<language extends string>(
+    languages: readonly language[],
+  ): language | null;
+  getWeight(language: string): number;
+  has(language: string): boolean;
+  set(language: string, weight: number): void;
+  toString(): string;
+  from(value: string | AcceptLanguageInit | null): AcceptLanguage;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
-## Properties
+## Accessors
 
 ### languages
 
@@ -35,6 +73,8 @@ An array of all weights (q values) in the header.
 ## Methods
 
 ### [iterator](): IterableIterator<[string, number]>
+
+Iterates over language and weight pairs in preference order.
 
 ### accepts(language: string): boolean
 
@@ -81,7 +121,7 @@ verbatim, this returns `null`.
 
 The locale identifier of the language to get
 
-### getPreferred(languages: readonly language[]): language | null
+### getPreferred<language extends string>(languages: readonly language[]): language | null
 
 Returns the most preferred language from the given list of languages.
 

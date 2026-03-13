@@ -1,0 +1,23 @@
+<div><h1>on</h1>
+<p><a href="https://github.com/remix-run/remix/blob/main/packages/component/src/lib/mixins/on-mixin.tsx#L73" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Attaches a typed DOM event handler through the mixin system.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> on</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0">target</span><span style="color:#D73A49;--shiki-dark:#F97583"> extends</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Element</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6F42C1;--shiki-dark:#B392F0">type</span><span style="color:#D73A49;--shiki-dark:#F97583"> extends</span><span style="color:#D73A49;--shiki-dark:#F97583"> keyof</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> ElementEventMap</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>(</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  type</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> type</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  handler</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> ListenerFor</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0">target</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6F42C1;--shiki-dark:#B392F0">type</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  captureBoolean</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> boolean</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/component/type/MixinDescriptor">MixinDescriptor</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  target</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  [</span><span style="color:#6F42C1;--shiki-dark:#B392F0">type</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6F42C1;--shiki-dark:#B392F0">ListenerFor</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#6F42C1;--shiki-dark:#B392F0">target</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#6F42C1;--shiki-dark:#B392F0">type</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">boolean</span><span style="color:#D73A49;--shiki-dark:#F97583">?</span><span style="color:#24292E;--shiki-dark:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  ElementProps</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">>;</span></span>
+<span class="line"></span></code></pre><h2>Params</h2>
+<h3>type</h3>
+<h3>handler</h3>
+<p>Event handler.</p>
+<h3>captureBoolean</h3>
+<p>Whether to listen during capture.</p>
+<h2>Returns</h2>
+<p>A mixin descriptor for the target element.</p>
+</div>

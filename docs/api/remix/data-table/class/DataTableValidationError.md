@@ -4,13 +4,40 @@ title: DataTableValidationError
 
 # DataTableValidationError
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/errors.ts#L26" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/errors.ts#L33" target="_blank">View Source</a>
 
 ## Summary
 
 Thrown when input data fails schema validation.
 
-## Constructor
+## Signature
+
+```ts
+class DataTableValidationError {
+  constructor(
+    message: string,
+    issues: readonly unknown[],
+    options: { cause?: unknown; metadata?: Record<string, unknown> },
+  ): DataTableValidationError;
+
+  // Properties
+  cause?: unknown;
+  code: string;
+  issues: readonly unknown[];
+  message: string;
+  metadata?: Record<string, unknown>;
+  name: string;
+  stack?: string;
+  stackTraceLimit: number;
+
+  // Methods
+  captureStackTrace(targetObject: object, constructorOpt: Function): void;
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+}
+
+```
+
+## Constructor Params
 
 ### message
 
@@ -24,11 +51,17 @@ Thrown when input data fails schema validation.
 
 ### code
 
+Stable error code identifying the failure category.
+
 ### issues
+
+Validation issues reported by the schema validator.
 
 ### message
 
 ### metadata
+
+Optional structured metadata attached to the failure.
 
 ### name
 

@@ -4,11 +4,11 @@ title: TarParserOptions
 
 # TarParserOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/tar-parser/src/lib/tar.ts#L217" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L268" target="_blank">View Source</a>
 
 ## Summary
 
-Options for configuring a `TarParser`.
+Options for configuring a TarParser.
 
 ## Signature
 

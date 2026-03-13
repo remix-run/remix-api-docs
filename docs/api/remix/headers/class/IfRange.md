@@ -4,7 +4,7 @@ title: IfRange
 
 # IfRange
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/if-range.ts#L14" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-range.ts#L14" target="_blank">View Source</a>
 
 ## Summary
 
@@ -16,13 +16,35 @@ The `If-Range` header can contain either an entity tag (ETag) or an HTTP date.
 
 [HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7233#section-3.2)
 
-## Constructor
+## Signature
+
+```ts
+class IfRange {
+  constructor(init: string | Date): IfRange;
+
+  // Properties
+  value: string;
+
+  // Methods
+  matches(resource: {
+    etag?: string | null;
+    lastModified?: number | Date | null;
+  }): boolean;
+  toString(): string;
+  from(value: string | Date | null): IfRange;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
 ## Properties
 
 ### value
+
+Raw header value, either an entity tag or an HTTP date.
 
 ## Methods
 

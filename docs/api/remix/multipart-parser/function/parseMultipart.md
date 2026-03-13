@@ -4,14 +4,16 @@ title: parseMultipart
 
 # parseMultipart
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/multipart-parser/src/lib/multipart.ts#L85" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L87" target="_blank">View Source</a>
 
 ## Summary
 
-Parse a `multipart/*` message from a buffer/iterable and yield each part as a `MultipartPart` object.
+Parse a `multipart/*` message from a buffer/iterable and yield each part as a
+MultipartPart object.
 
-Note: This is a low-level API that requires manual handling of the content and boundary. If you're
-building a web server, consider using `parseMultipartRequest(request)` instead.
+Note: This is a low-level API that requires manual handling of the content and boundary.
+If you're building a web server, consider using
+import('./multipart-request.ts').parseMultipartRequest instead.
 
 ## Signature
 
@@ -37,4 +39,4 @@ Options for the parser
 
 ## Returns
 
-A generator that yields `MultipartPart` objects
+A generator that yields [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart) objects

@@ -4,13 +4,14 @@ title: detectMimeType
 
 # detectMimeType
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/detect-mime-type.ts#L18" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/detect-mime-type.ts#L19" target="_blank">View Source</a>
 
 ## Summary
 
 Detects the MIME type for a given file extension or filename.
 
-Custom MIME types registered via `defineMimeType()` take precedence over built-in types.
+Custom MIME types registered via import('./define-mime-type.ts').defineMimeType
+take precedence over built-in types.
 
 ## Signature
 

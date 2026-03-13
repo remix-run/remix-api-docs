@@ -4,11 +4,11 @@ title: session
 
 # session
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/session-middleware/src/lib/session.ts#L12" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/session-middleware/src/lib/session.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
-Middleware that manages `context.session` based on the session cookie.
+Middleware that manages request session state on request context.
 
 ## Signature
 

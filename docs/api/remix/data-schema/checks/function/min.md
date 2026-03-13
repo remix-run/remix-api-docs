@@ -4,7 +4,7 @@ title: min
 
 # min
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-schema/src/lib/checks.ts#L78" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L78" target="_blank">View Source</a>
 
 ## Summary
 
@@ -25,4 +25,4 @@ The inclusive minimum value
 
 ## Returns
 
-A `Check` that enforces the lower bound
+A [`Check`](/api/remix/data-schema/type/Check) that enforces the lower bound

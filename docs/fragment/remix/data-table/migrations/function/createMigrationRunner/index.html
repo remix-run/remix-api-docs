@@ -1,0 +1,26 @@
+<div><h1>createMigrationRunner</h1>
+<p><a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations/runner.ts#L317" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Creates a migration runner for applying/reverting migrations against an adapter.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">function</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMigrationRunner</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  adapter</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/data-table/interface/DatabaseAdapter">DatabaseAdapter</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  migrations</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/data-table/migrations/type/MigrationDescriptor">MigrationDescriptor</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">[] </span><span style="color:#D73A49;--shiki-dark:#F97583">|</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/data-table/migrations/type/MigrationRegistry">MigrationRegistry</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  options</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/data-table/migrations/type/MigrationRunnerOptions">MigrationRunnerOptions</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/data-table/migrations/type/MigrationRunner">MigrationRunner</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre><h2>Example</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createMigrationRunner } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/data-table/migrations'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> runner </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMigrationRunner</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(adapter, migrations, {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  journalTable: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'app_migrations'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">})</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">await</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> runner.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">up</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span></span></code></pre><h2>Params</h2>
+<h3>adapter</h3>
+<p>Database adapter used to compile and execute migration operations.</p>
+<h3>migrations</h3>
+<p>Migration descriptors or registry.</p>
+<h3>options</h3>
+<p>Optional runner configuration.</p>
+<h2>Returns</h2>
+<p>A migration runner instance.</p>
+</div>

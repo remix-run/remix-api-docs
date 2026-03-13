@@ -4,7 +4,7 @@ title: Range
 
 # Range
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/range.ts#L27" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/range.ts#L27" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,7 +14,26 @@ The value of a `Range` HTTP header.
 
 [HTTP/1.1 Specification](https://httpwg.org/specs/rfc9110.html#field.range)
 
-## Constructor
+## Signature
+
+```ts
+class Range {
+  constructor(init: string | RangeInit): Range;
+
+  // Properties
+  ranges: { end?: number; start?: number }[];
+  unit: string;
+
+  // Methods
+  canSatisfy(resourceSize: number): boolean;
+  normalize(resourceSize: number): { end: number; start: number }[];
+  toString(): string;
+  from(value: string | RangeInit | null): Range;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
@@ -22,14 +41,11 @@ The value of a `Range` HTTP header.
 
 ### ranges
 
-The ranges requested. Each range has optional start and end values.
-- {start: 0, end: 99} = bytes 0-99
-- {start: 100} = bytes 100- (from 100 to end)
-- {end: 500} = bytes -500 (last 500 bytes)
+Requested byte ranges from the header.
 
 ### unit
 
-The unit of the range, typically "bytes"
+The range unit, typically `bytes`.
 
 ## Methods
 

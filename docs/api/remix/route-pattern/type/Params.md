@@ -4,15 +4,15 @@ title: Params
 
 # Params
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/route-pattern/src/lib/types/params.ts#L7" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern/params.ts#L7" target="_blank">View Source</a>
 
 ## Summary
 
-The parameters that are parsed when a pattern matches a URL.
+Extracted route params for a route-pattern source string.
 
 ## Signature
 
 ```ts
-type Params<T> = T extends string ? BuildParams<T> : never;
+type Params<source> = Simplify<Omit<ParseParams<Split<source>>, "*">>;
 
 ```

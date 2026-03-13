@@ -4,7 +4,7 @@ title: mimeTypeToContentType
 
 # mimeTypeToContentType
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/mime-type-to-content-type.ts#L30" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/mime-type-to-content-type.ts#L31" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,8 @@ By default, adds `; charset=utf-8` to text-based MIME types:
 - All `+json` suffixed types (RFC 8259 defines JSON as UTF-8)
 - `application/json`, `application/javascript`
 
-Custom charset registered via `defineMimeType()` takes precedence over built-in rules.
+Custom charset registered via import('./define-mime-type.ts').defineMimeType
+takes precedence over built-in rules.
 
 Note: `text/xml` is excluded because XML has built-in encoding detection.
 Per the XML spec, documents without an encoding declaration must be UTF-8 or

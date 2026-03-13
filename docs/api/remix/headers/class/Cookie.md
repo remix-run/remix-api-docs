@@ -4,7 +4,7 @@ title: Cookie
 
 # Cookie
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/cookie.ts#L17" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/cookie.ts#L17" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,11 +14,40 @@ The value of a `Cookie` HTTP header.
 
 [HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc6265#section-4.2)
 
-## Constructor
+## Signature
+
+```ts
+class Cookie {
+  constructor(init: string | CookieInit): Cookie;
+
+  // Accessors
+  get names(): string[];
+  get size(): number;
+  get values(): string[];
+
+  // Methods
+  [iterator](): IterableIterator<[string, string]>;
+  clear(): void;
+  delete(name: string): void;
+  entries(): IterableIterator<[string, string]>;
+  forEach(
+    callback: (name: string, value: string, header: Cookie) => void,
+    thisArg: any,
+  ): void;
+  get(name: string): string | null;
+  has(name: string): boolean;
+  set(name: string, value: string): void;
+  toString(): string;
+  from(value: string | CookieInit | null): Cookie;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
-## Properties
+## Accessors
 
 ### names
 
@@ -35,6 +64,8 @@ An array of the values of the cookies in the header.
 ## Methods
 
 ### [iterator](): IterableIterator<[string, string]>
+
+Iterates over cookie name and value pairs.
 
 ### clear(): void
 

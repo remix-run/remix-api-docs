@@ -4,7 +4,7 @@ title: variant
 
 # variant
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-schema/src/lib/schema.ts#L978" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L1004" target="_blank">View Source</a>
 
 ## Summary
 
@@ -16,7 +16,10 @@ based on that value.
 ## Signature
 
 ```ts
-function variant(
+function variant<
+  key extends PropertyKey,
+  variants extends Record<PropertyKey, Schema<any, any>>,
+>(
   discriminator: key,
   variants: variants,
 ): Schema<unknown, InferOutput<variants[keyof variants]>>;

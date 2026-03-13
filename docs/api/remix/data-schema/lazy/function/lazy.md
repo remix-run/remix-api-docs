@@ -4,7 +4,7 @@ title: lazy
 
 # lazy
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-schema/src/lib/lazy.ts#L12" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/lazy.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,7 @@ This is useful for recursive schemas without circular module references.
 ## Signature
 
 ```ts
-function lazy(
+function lazy<schema extends Schema<any, any>>(
   getSchema: () => schema,
 ): Schema<InferInput<schema>, InferOutput<schema>>;
 

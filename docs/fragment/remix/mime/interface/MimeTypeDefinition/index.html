@@ -1,0 +1,26 @@
+<div><h1>MimeTypeDefinition</h1>
+<p><a href="https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/define-mime-type.ts#L4" target="_blank">View Source</a></p>
+<h2>Summary</h2>
+<p>Definition used to register a custom MIME type.</p>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">interface</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> MimeTypeDefinition</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  charset</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  compressible</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> boolean</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  extensions</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">[];</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  mimeType</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre><h2>Properties</h2>
+<h3>charset</h3>
+<p>Charset to include in Content-Type header.</p>
+<ul>
+<li><code>&#39;utf-8&#39;</code> or other string → &#39;; charset={value}&#39;</li>
+<li><code>undefined</code> → falls back to default heuristics (<code>&#39;utf-8&#39;</code> for <code>text/*</code>, <code>application/json</code>, <code>+json</code>)</li>
+</ul>
+<h3>compressible</h3>
+<p>Whether this MIME type is compressible.
+If omitted, falls back to default heuristics (text/*, +json, +text, +xml).</p>
+<h3>extensions</h3>
+<p>The file extension(s) to register (e.g., [&#39;x-myformat&#39;])</p>
+<h3>mimeType</h3>
+<p>The MIME type for these extensions (e.g., &#39;application/x-myformat&#39;)</p>
+</div>

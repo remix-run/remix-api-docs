@@ -4,13 +4,42 @@ title: DataTableError
 
 # DataTableError
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/errors.ts#L4" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/errors.ts#L4" target="_blank">View Source</a>
 
 ## Summary
 
 Base error for all `data-table` failures.
 
-## Constructor
+## Signature
+
+```ts
+class DataTableError {
+  constructor(
+    message: string,
+    options: {
+      cause?: unknown;
+      code?: string;
+      metadata?: Record<string, unknown>;
+    },
+  ): DataTableError;
+
+  // Properties
+  cause?: unknown;
+  code: string;
+  message: string;
+  metadata?: Record<string, unknown>;
+  name: string;
+  stack?: string;
+  stackTraceLimit: number;
+
+  // Methods
+  captureStackTrace(targetObject: object, constructorOpt: Function): void;
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+}
+
+```
+
+## Constructor Params
 
 ### message
 
@@ -22,9 +51,13 @@ Base error for all `data-table` failures.
 
 ### code
 
+Stable error code identifying the failure category.
+
 ### message
 
 ### metadata
+
+Optional structured metadata attached to the failure.
 
 ### name
 

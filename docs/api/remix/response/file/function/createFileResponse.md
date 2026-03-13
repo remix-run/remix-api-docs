@@ -4,19 +4,20 @@ title: createFileResponse
 
 # createFileResponse
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/response/src/lib/file.ts#L128" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/response/src/lib/file.ts#L129" target="_blank">View Source</a>
 
 ## Summary
 
 Creates a file [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 with full HTTP semantics including ETags, Last-Modified, conditional requests, and Range support.
 
-Accepts both native `File` objects and `LazyFile` from `@remix-run/lazy-file`.
+Accepts both native `File` objects and
+import('@remix-run/lazy-file').LazyFile values.
 
 ## Signature
 
 ```ts
-function createFileResponse(
+function createFileResponse<file extends FileLike>(
   file: file,
   request: Request,
   options: FileResponseOptions<file>,

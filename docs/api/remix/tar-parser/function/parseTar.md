@@ -4,7 +4,7 @@ title: parseTar
 
 # parseTar
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/tar-parser/src/lib/tar.ts#L193" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L244" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,6 +21,11 @@ await parseTar(archive, (entry) => {
 ## Signature
 
 ```ts
+function parseTar(
+  archive: TarArchiveSource,
+  handler: TarEntryHandler,
+): Promise<void>;
+
 function parseTar(
   archive: TarArchiveSource,
   options: ParseTarHeaderOptions,

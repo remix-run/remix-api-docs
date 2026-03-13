@@ -1,5 +1,5 @@
 <div><h1>isCompressibleMimeType</h1>
-<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/mime/src/lib/is-compressible-mime-type.ts#L18" target="_blank">View Source</a></p>
+<p><a href="https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/is-compressible-mime-type.ts#L19" target="_blank">View Source</a></p>
 <h2>Summary</h2>
 <p>Checks if a MIME type is known to be compressible.</p>
 <p>Returns true for:</p>
@@ -7,7 +7,8 @@
 <li>Compressible MIME types from mime-db</li>
 <li>Any text/* type</li>
 <li>Types with +json, +text, or +xml suffix</li>
-<li>MIME types explicitly registered as compressible via <code>defineMimeType()</code></li>
+<li>MIME types explicitly registered as compressible via
+import(&#39;./define-mime-type.ts&#39;).defineMimeType</li>
 </ul>
 <p>Accepts either a bare MIME type or a full Content-Type header value with parameters.</p>
 <h2>Signature</h2>
@@ -17,4 +18,4 @@
 <p>The MIME type to check (e.g. &quot;application/json&quot; or &quot;text/html; charset=utf-8&quot;)</p>
 <h2>Returns</h2>
 <p>true if the MIME type is known to be compressible</p>
-</div><!-- rmx:h:h6f8a928e --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h6f8a928e":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>
+</div>

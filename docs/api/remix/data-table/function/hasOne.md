@@ -4,7 +4,7 @@ title: hasOne
 
 # hasOne
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/table.ts#L516" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L861" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,7 +13,7 @@ Defines a one-to-one relation from `source` to `target` where the foreign key li
 ## Signature
 
 ```ts
-function hasOne(
+function hasOne<source extends AnyTable, target extends AnyTable>(
   source: source,
   target: target,
   relationOptions: HasOneOptions<source, target>,

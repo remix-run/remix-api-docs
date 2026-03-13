@@ -4,13 +4,40 @@ title: MultipartPart
 
 # MultipartPart
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/multipart-parser/src/lib/multipart.ts#L416" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L430" target="_blank">View Source</a>
 
 ## Summary
 
 A part of a `multipart/*` HTTP message.
 
-## Constructor
+## Signature
+
+```ts
+class MultipartPart {
+  constructor(
+    header: Uint8Array,
+    content: Uint8Array<ArrayBufferLike>[],
+  ): MultipartPart;
+
+  // Properties
+  content: Uint8Array<ArrayBufferLike>[];
+
+  // Accessors
+  get arrayBuffer(): ArrayBuffer;
+  get bytes(): Uint8Array;
+  get filename(): string | undefined;
+  get headers(): Headers;
+  get isFile(): boolean;
+  get isText(): boolean;
+  get mediaType(): string | undefined;
+  get name(): string | undefined;
+  get size(): number;
+  get text(): string;
+}
+
+```
+
+## Constructor Params
 
 ### header
 
@@ -25,6 +52,8 @@ The content chunks
 ### content
 
 The raw content of this part as an array of `Uint8Array` chunks.
+
+## Accessors
 
 ### arrayBuffer
 

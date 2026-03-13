@@ -4,11 +4,11 @@ title: FormDataOptions
 
 # FormDataOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/form-data-middleware/src/lib/form-data.ts#L12" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/form-data-middleware/src/lib/form-data.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
-Options for the `formData` middleware.
+Options for the formData middleware.
 
 ## Signature
 

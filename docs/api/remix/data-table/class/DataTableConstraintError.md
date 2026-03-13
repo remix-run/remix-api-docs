@@ -4,13 +4,38 @@ title: DataTableConstraintError
 
 # DataTableConstraintError
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/errors.ts#L93" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/errors.ts#L103" target="_blank">View Source</a>
 
 ## Summary
 
 Thrown when a database constraint is violated.
 
-## Constructor
+## Signature
+
+```ts
+class DataTableConstraintError {
+  constructor(
+    message: string,
+    options: { cause?: unknown; metadata?: Record<string, unknown> },
+  ): DataTableConstraintError;
+
+  // Properties
+  cause?: unknown;
+  code: string;
+  message: string;
+  metadata?: Record<string, unknown>;
+  name: string;
+  stack?: string;
+  stackTraceLimit: number;
+
+  // Methods
+  captureStackTrace(targetObject: object, constructorOpt: Function): void;
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+}
+
+```
+
+## Constructor Params
 
 ### message
 
@@ -22,9 +47,13 @@ Thrown when a database constraint is violated.
 
 ### code
 
+Stable error code identifying the failure category.
+
 ### message
 
 ### metadata
+
+Optional structured metadata attached to the failure.
 
 ### name
 

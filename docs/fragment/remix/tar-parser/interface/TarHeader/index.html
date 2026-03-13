@@ -1,5 +1,5 @@
 <div><h1>TarHeader</h1>
-<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/tar-parser/src/lib/tar.ts#L31" target="_blank">View Source</a></p>
+<p><a href="https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L31" target="_blank">View Source</a></p>
 <h2>Summary</h2>
 <p>The parsed header of a tar entry.</p>
 <h2>Signature</h2>
@@ -20,16 +20,29 @@
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre><h2>Properties</h2>
 <h3>devmajor</h3>
+<p>Major device number for device entries, or <code>null</code> when unavailable.</p>
 <h3>devminor</h3>
+<p>Minor device number for device entries, or <code>null</code> when unavailable.</p>
 <h3>gid</h3>
+<p>Numeric group ID parsed from the header, or <code>null</code> when unavailable.</p>
 <h3>gname</h3>
+<p>Group name parsed from the header.</p>
 <h3>linkname</h3>
+<p>Linked path target for link entries, or <code>null</code> when not present.</p>
 <h3>mode</h3>
+<p>File mode parsed from the header, or <code>null</code> when unavailable.</p>
 <h3>mtime</h3>
+<p>Last modification time parsed from the header, or <code>null</code> when unavailable.</p>
 <h3>name</h3>
+<p>Entry path stored in the archive.</p>
 <h3>pax</h3>
+<p>Decoded PAX metadata attached to the entry, or <code>null</code> when none is present.</p>
 <h3>size</h3>
+<p>Entry size in bytes.</p>
 <h3>type</h3>
+<p>Normalized entry type such as <code>file</code> or <code>directory</code>.</p>
 <h3>uid</h3>
+<p>Numeric user ID parsed from the header, or <code>null</code> when unavailable.</p>
 <h3>uname</h3>
-</div><!-- rmx:h:haff1f393 --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"haff1f393":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>
+<p>User name parsed from the header.</p>
+</div>

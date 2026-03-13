@@ -4,7 +4,7 @@ title: inList
 
 # inList
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/operators.ts#L180" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L183" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,7 +13,7 @@ Builds an `IN` predicate.
 ## Signature
 
 ```ts
-function inList(
+function inList<column extends string | ColumnReferenceLike>(
   column: column,
   values: readonly unknown[],
 ): Predicate<PredicateColumn<column>>;

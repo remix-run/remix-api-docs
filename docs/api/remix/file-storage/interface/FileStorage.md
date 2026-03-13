@@ -4,7 +4,7 @@ title: FileStorage
 
 # FileStorage
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/file-storage/src/lib/file-storage.ts#L4" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L4" target="_blank">View Source</a>
 
 ## Summary
 
@@ -16,7 +16,9 @@ A key/value interface for storing `File` objects.
 interface FileStorage {
   get(key: string): File | Promise<File | null> | null;
   has(key: string): boolean | Promise<boolean>;
-  list(options: T): ListResult<T> | Promise<ListResult<T>>;
+  list<T extends ListOptions>(
+    options: T,
+  ): ListResult<T> | Promise<ListResult<T>>;
   put(key: string, file: File): File | Promise<File>;
   remove(key: string): void | Promise<void>;
   set(key: string, file: File): void | Promise<void>;
@@ -42,7 +44,7 @@ Check if a file with the given key exists.
 
 The key to look up
 
-### list(options: T): ListResult<T> | Promise<ListResult<T>>
+### list<T extends ListOptions>(options: T): ListResult<T> | Promise<ListResult<T>>
 
 List the files in storage.
 

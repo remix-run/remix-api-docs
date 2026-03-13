@@ -4,13 +4,34 @@ title: ValidationError
 
 # ValidationError
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-schema/src/lib/schema.ts#L1072" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L1098" target="_blank">View Source</a>
 
 ## Summary
 
-Error thrown by `parse()` when validation fails.
+Error thrown by parse when validation fails.
 
-## Constructor
+## Signature
+
+```ts
+class ValidationError {
+  constructor(issues: readonly Issue[], message: string): ValidationError;
+
+  // Properties
+  cause?: unknown;
+  issues: readonly Issue[];
+  message: string;
+  name: string;
+  stack?: string;
+  stackTraceLimit: number;
+
+  // Methods
+  captureStackTrace(targetObject: object, constructorOpt: Function): void;
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+}
+
+```
+
+## Constructor Params
 
 ### issues
 

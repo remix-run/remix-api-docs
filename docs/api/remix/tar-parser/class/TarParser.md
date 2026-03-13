@@ -4,13 +4,25 @@ title: TarParser
 
 # TarParser
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/tar-parser/src/lib/tar.ts#L222" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L273" target="_blank">View Source</a>
 
 ## Summary
 
 A parser for tar archives.
 
-## Constructor
+## Signature
+
+```ts
+class TarParser {
+  constructor(options: ParseTarHeaderOptions): TarParser;
+
+  // Methods
+  parse(archive: TarArchiveSource, handler: TarEntryHandler): Promise<void>;
+}
+
+```
+
+## Constructor Params
 
 ### options
 

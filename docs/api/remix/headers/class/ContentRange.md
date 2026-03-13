@@ -4,7 +4,7 @@ title: ContentRange
 
 # ContentRange
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/content-range.ts#L35" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-range.ts#L35" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,7 +14,26 @@ The value of a `Content-Range` HTTP header.
 
 [HTTP/1.1 Specification](https://httpwg.org/specs/rfc9110.html#field.content-range)
 
-## Constructor
+## Signature
+
+```ts
+class ContentRange {
+  constructor(init: string | ContentRangeInit): ContentRange;
+
+  // Properties
+  end: number | null;
+  size?: number | "*";
+  start: number | null;
+  unit: string;
+
+  // Methods
+  toString(): string;
+  from(value: string | ContentRangeInit | null): ContentRange;
+}
+
+```
+
+## Constructor Params
 
 ### init
 
@@ -22,22 +41,19 @@ The value of a `Content-Range` HTTP header.
 
 ### end
 
-The end position of the range (inclusive)
-Set to null for unsatisfied ranges
+The inclusive end offset, or `null` for unsatisfied ranges.
 
 ### size
 
-The total size of the resource
-Set to '*' for unknown size
+The total resource size, or `'*'` when unknown.
 
 ### start
 
-The start position of the range (inclusive)
-Set to null for unsatisfied ranges
+The inclusive start offset, or `null` for unsatisfied ranges.
 
 ### unit
 
-The unit of the range, typically "bytes"
+The range unit, typically `bytes`.
 
 ## Methods
 

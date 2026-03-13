@@ -4,9 +4,11 @@ title: ErrorHandler
 
 # ErrorHandler
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/node-fetch-server/src/lib/fetch-handler.ts#L35" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/fetch-handler.ts#L38" target="_blank">View Source</a>
 
 ## Summary
+
+Handles a thrown request-processing error and may return a custom response.
 
 ## Signature
 
@@ -16,13 +18,3 @@ interface ErrorHandler {
 }
 
 ```
-
-## Params
-
-### error
-
-The error that was thrown
-
-## Returns
-
-A response to send to the client, or `undefined` for the default error response

@@ -4,7 +4,7 @@ title: Cookie
 
 # Cookie
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/cookie/src/lib/cookie.ts#L53" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L53" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,32 @@ Supports parsing and serializing the cookie to/from `Cookie` and `Set-Cookie` he
 Also supports cryptographic signing of the cookie value to ensure it's not tampered with, and
 secret rotation to easily rotate secrets without breaking existing cookies.
 
-## Constructor
+## Signature
+
+```ts
+class Cookie {
+  constructor(name: string, options: CookieOptions): Cookie;
+
+  // Accessors
+  get domain(): string | undefined;
+  get expires(): Date | undefined;
+  get httpOnly(): boolean;
+  get maxAge(): number | undefined;
+  get name(): string;
+  get partitioned(): boolean;
+  get path(): string;
+  get sameSite(): SameSiteValue;
+  get secure(): boolean;
+  get signed(): boolean;
+
+  // Methods
+  parse(headerValue: string | null): Promise<string | null>;
+  serialize(value: string, props: CookieProperties): Promise<string>;
+}
+
+```
+
+## Constructor Params
 
 ### name
 
@@ -25,7 +50,7 @@ The name of the cookie
 
 Options for the cookie
 
-## Properties
+## Accessors
 
 ### domain
 

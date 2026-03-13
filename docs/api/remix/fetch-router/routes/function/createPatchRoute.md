@@ -4,7 +4,7 @@ title: createPatchRoute
 
 # createPatchRoute
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/fetch-router/src/lib/route-helpers/method.ts#L64" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-helpers/method.ts#L64" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,7 +17,7 @@ patch
 ## Signature
 
 ```ts
-function createPatchRoute(
+function createPatchRoute<source extends string>(
   pattern: source | RoutePattern<source>,
 ): Route<"PATCH", source>;
 

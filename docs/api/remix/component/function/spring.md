@@ -4,36 +4,38 @@ title: spring
 
 # spring
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/component/src/lib/spring.ts#L65" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/component/src/lib/spring.ts#L87" target="_blank">View Source</a>
 
 ## Summary
 
-Create a spring iterator for animations.
+Creates a spring iterator from explicit spring options.
 
 ## Signature
 
 ```ts
+function spring(
+  preset: SpringPreset,
+  overrides: Omit<SpringOptions, "bounce">,
+): SpringIterator;
+
 function spring(options: SpringOptions): SpringIterator;
 
-```
-
-## Example
-
-```ts
-let s = spring('bouncy')
-
-// As CSS transition
-element.style.transition = `transform ${s}`
-
-// Spread for WAAPI
-element.animate(keyframes, { ...spring() })
-
-// Iterate for JS animation
-for (let position of spring()) {
-  element.style.transform = `translateX(${position * 100}px)`
-}
 ```
 
 ## Params
 
 ### options
+
+Spring parameters.
+
+### preset
+
+Preset spring profile to start from.
+
+### overrides
+
+Optional preset overrides.
+
+## Returns
+
+A spring iterator.

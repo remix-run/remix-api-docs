@@ -4,7 +4,7 @@ title: AdapterCapabilities
 
 # AdapterCapabilities
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/adapter.ts#L185" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/adapter.ts#L606" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,8 +14,10 @@ Declares adapter feature support.
 
 ```ts
 type AdapterCapabilities = {
+  migrationLock: boolean;
   returning: boolean;
   savepoints: boolean;
+  transactionalDdl: boolean;
   upsert: boolean;
 };
 

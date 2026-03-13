@@ -4,7 +4,7 @@ title: clientEntry
 
 # clientEntry
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/component/src/lib/client-entries.ts#L86" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/component/src/lib/client-entries.ts#L86" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,7 +13,11 @@ Marks a component as a client entry for client-side hydration.
 ## Signature
 
 ```ts
-function clientEntry(
+function clientEntry<
+  context,
+  setup extends SerializableValue,
+  props extends SerializableProps,
+>(
   href: string,
   component: (
     handle: Handle<context>,
@@ -34,12 +38,12 @@ export const Counter = clientEntry(
     return ({ label }: { label: string }) => (
       <button
         type="button"
-        on={{
-          click: () => {
+        mix={[
+          on('click', () => {
             count++
             handle.update()
-          },
-        }}
+          }),
+        ]}
       >
         {label} {count}
       </button>

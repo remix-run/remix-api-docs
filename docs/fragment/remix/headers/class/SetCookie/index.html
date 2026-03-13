@@ -1,44 +1,52 @@
 <div><h1>SetCookie</h1>
-<p><a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/headers/src/lib/set-cookie.ts#L88" target="_blank">View Source</a></p>
+<p><a href="https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/set-cookie.ts#L88" target="_blank">View Source</a></p>
 <h2>Summary</h2>
 <p>The value of a <code>Set-Cookie</code> HTTP header.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">MDN <code>Set-Cookie</code> Reference</a></p>
 <p><a href="https://datatracker.ietf.org/doc/html/rfc6265#section-4.1">HTTP/1.1 Specification</a></p>
-<h2>Constructor</h2>
+<h2>Signature</h2>
+<pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">class</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> SetCookie</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  constructor</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#E36209;--shiki-dark:#FFAB70">init</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/headers/interface/SetCookieInit">SetCookieInit</a></span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> SetCookie</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Properties</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  domain</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  expires</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Date</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  httpOnly</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> boolean</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  maxAge</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  name</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  partitioned</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> boolean</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  path</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  sameSite</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> SameSiteValue</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  secure</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> boolean</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  value</span><span style="color:#D73A49;--shiki-dark:#F97583">?:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  // Methods</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  toString</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">  from</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#E36209;--shiki-dark:#FFAB70">value</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> <a href="/api/remix/headers/interface/SetCookieInit">SetCookieInit</a></span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> null</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> SetCookie</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre><h2>Constructor Params</h2>
 <h3>init</h3>
 <h2>Properties</h2>
 <h3>domain</h3>
-<p>The domain of the cookie. For example, <code>example.com</code>.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#domaindomain-value">MDN Reference</a></p>
+<p>The cookie domain attribute.</p>
 <h3>expires</h3>
-<p>The expiration date of the cookie. If not specified, the cookie is a session cookie that is
-removed when the browser is closed.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#expiresdate">MDN Reference</a></p>
+<p>The cookie expiration date.</p>
 <h3>httpOnly</h3>
-<p>Indicates this cookie should not be accessible via JavaScript.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#httponly">MDN Reference</a></p>
+<p>Whether the <code>HttpOnly</code> attribute is present.</p>
 <h3>maxAge</h3>
-<p>The maximum age of the cookie in seconds.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#max-age">MDN Reference</a></p>
+<p>The <code>Max-Age</code> attribute value in seconds.</p>
 <h3>name</h3>
-<p>The name of the cookie.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie-namecookie-value">MDN Reference</a></p>
+<p>The cookie name.</p>
 <h3>partitioned</h3>
-<p>Indicates this cookie is a partitioned cookie.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#partitioned">MDN Reference</a></p>
+<p>Whether the <code>Partitioned</code> attribute is present.</p>
 <h3>path</h3>
-<p>The path of the cookie. For example, <code>/</code> or <code>/admin</code>.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#pathpath-value">MDN Reference</a></p>
+<p>The cookie path attribute.</p>
 <h3>sameSite</h3>
-<p>The <code>SameSite</code> attribute of the cookie. This attribute lets servers require that a cookie shouldn&#39;t be sent with
-cross-site requests, which provides some protection against cross-site request forgery attacks.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value">MDN Reference</a></p>
+<p>The <code>SameSite</code> attribute value.</p>
 <h3>secure</h3>
-<p>Indicates the cookie should only be sent over HTTPS.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure">MDN Reference</a></p>
+<p>Whether the <code>Secure</code> attribute is present.</p>
 <h3>value</h3>
-<p>The value of the cookie.</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie-namecookie-value">MDN Reference</a></p>
+<p>The cookie value.</p>
 <h2>Methods</h2>
 <h3>toString(): string</h3>
 <p>Returns the string representation of the header value.</p>
@@ -46,4 +54,4 @@ cross-site requests, which provides some protection against cross-site request f
 <p>Parse a Set-Cookie header value.</p>
 <h4>value</h4>
 <p>The header value (string, init object, or null)</p>
-</div><!-- rmx:h:h41610afe --><!-- /rmx:h --><script type="application/json" id="rmx-data">{"h":{"h41610afe":{"moduleUrl":"/assets/client-router.js","exportName":"ClientRouter","props":{}}}}</script>
+</div>

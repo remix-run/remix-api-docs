@@ -4,7 +4,7 @@ title: eq
 
 # eq
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/operators.ts#L76" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L79" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,7 +13,18 @@ Builds an equality predicate.
 ## Signature
 
 ```ts
-function eq(column: column, value: unknown): Predicate<PredicateColumn<column>>;
+function eq<
+  left extends ColumnInput<`${string}.${string}`>,
+  right extends ColumnInput<`${string}.${string}`>,
+>(
+  column: left,
+  value: right & (right extends `${string}@${string}` ? never : right),
+): Predicate<PredicateColumn<left> | PredicateColumn<right>>;
+
+function eq<column extends string | ColumnReferenceLike>(
+  column: column,
+  value: unknown,
+): Predicate<PredicateColumn<column>>;
 
 ```
 

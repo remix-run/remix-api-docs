@@ -4,7 +4,7 @@ title: nullable
 
 # nullable
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-schema/src/lib/schema.ts#L585" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L611" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,7 +13,7 @@ Allow `null` as an input value, short-circuiting validation when `null` is provi
 ## Signature
 
 ```ts
-function nullable(
+function nullable<input, output>(
   schema: Schema<input, output>,
 ): Schema<input | null, output | null>;
 

@@ -4,13 +4,33 @@ title: MultipartParseError
 
 # MultipartParseError
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/multipart-parser/src/lib/multipart.ts#L14" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L14" target="_blank">View Source</a>
 
 ## Summary
 
 The base class for errors thrown by the multipart parser.
 
-## Constructor
+## Signature
+
+```ts
+class MultipartParseError {
+  constructor(message: string): MultipartParseError;
+
+  // Properties
+  cause?: unknown;
+  message: string;
+  name: string;
+  stack?: string;
+  stackTraceLimit: number;
+
+  // Methods
+  captureStackTrace(targetObject: object, constructorOpt: Function): void;
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+}
+
+```
+
+## Constructor Params
 
 ### message
 

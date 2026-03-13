@@ -4,13 +4,33 @@ title: TarParseError
 
 # TarParseError
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/tar-parser/src/lib/tar.ts#L18" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L18" target="_blank">View Source</a>
 
 ## Summary
 
 An error thrown when parsing a tar archive fails.
 
-## Constructor
+## Signature
+
+```ts
+class TarParseError {
+  constructor(message: string): TarParseError;
+
+  // Properties
+  cause?: unknown;
+  message: string;
+  name: string;
+  stack?: string;
+  stackTraceLimit: number;
+
+  // Methods
+  captureStackTrace(targetObject: object, constructorOpt: Function): void;
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+}
+
+```
+
+## Constructor Params
 
 ### message
 

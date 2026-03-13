@@ -4,9 +4,11 @@ title: FileUploadHandler
 
 # FileUploadHandler
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/form-data-parser/src/lib/form-data.ts#L53" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L56" target="_blank">View Source</a>
 
 ## Summary
+
+Transforms an uploaded file into the value stored in the parsed FormData.
 
 ## Signature
 
@@ -18,13 +20,3 @@ interface FileUploadHandler {
 }
 
 ```
-
-## Params
-
-### file
-
-The uploaded file
-
-## Returns
-
-A value to store in `FormData`, or `void`/`null` to skip

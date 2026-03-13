@@ -4,7 +4,7 @@ title: rawSql
 
 # rawSql
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.2/packages/data-table/src/lib/sql.ts#L65" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql.ts#L82" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,11 +17,19 @@ function rawSql(text: string, values: unknown[]): SqlStatement;
 
 ```
 
+## Example
+
+```ts
+import { rawSql } from 'remix/data-table'
+
+let statement = rawSql('select * from users where id = ?', [1])
+```
+
 ## Params
 
 ### text
 
-SQL text containing `?` placeholders.
+SQL text containing placeholders expected by the target adapter.
 
 ### values
 
