@@ -4,7 +4,7 @@ title: RefCallback
 
 # RefCallback
 
-<a href="https://github.com/remix-run/remix/blob/main/packages/component/src/lib/mixins/ref-mixin.tsx#L7" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/mixins/ref-mixin.tsx#L7" target="_blank">View Source</a>
 
 ## Summary
 

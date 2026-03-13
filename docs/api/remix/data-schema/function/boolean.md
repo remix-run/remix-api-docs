@@ -4,7 +4,7 @@ title: boolean
 
 # boolean
 
-<a href="https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L416" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-schema/src/lib/schema.ts#L416" target="_blank">View Source</a>
 
 ## Summary
 

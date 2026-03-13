@@ -4,7 +4,7 @@ title: TrieMatcher
 
 # TrieMatcher
 
-<a href="https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/trie-matcher.ts#L18" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/route-pattern/src/lib/trie-matcher.ts#L18" target="_blank">View Source</a>
 
 ## Summary
 

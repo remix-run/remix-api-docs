@@ -4,7 +4,7 @@ title: CopOptions
 
 # CopOptions
 
-<a href="https://github.com/remix-run/remix/blob/main/packages/cop-middleware/src/lib/cop.ts#L33" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/cop-middleware/src/lib/cop.ts#L33" target="_blank">View Source</a>
 
 ## Summary
 

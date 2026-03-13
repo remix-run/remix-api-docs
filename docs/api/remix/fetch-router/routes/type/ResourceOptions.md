@@ -4,7 +4,7 @@ title: ResourceOptions
 
 # ResourceOptions
 
-<a href="https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-helpers/resource.ts#L16" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/fetch-router/src/lib/route-helpers/resource.ts#L16" target="_blank">View Source</a>
 
 ## Summary
 

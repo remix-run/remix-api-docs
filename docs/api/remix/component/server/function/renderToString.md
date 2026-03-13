@@ -4,7 +4,7 @@ title: renderToString
 
 # renderToString
 
-<a href="https://github.com/remix-run/remix/blob/main/packages/component/src/lib/stream.ts#L1075" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/stream.ts#L1075" target="_blank">View Source</a>
 
 ## Summary
 
