@@ -27,8 +27,7 @@ jobs:
         with:
           repository: remix-run/remix
           path: remix
-          ref: main
-          # ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || github.event.inputs.tag }}
+          ref: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || github.event.inputs.tag }}
           fetch-depth: 0
           fetch-tags: true
 
