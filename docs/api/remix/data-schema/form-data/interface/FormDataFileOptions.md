@@ -1,0 +1,26 @@
+---
+title: FormDataFileOptions
+---
+
+# FormDataFileOptions
+
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-schema/src/lib/form-data.ts#L50" target="_blank">View Source</a>
+
+## Summary
+
+Options for parsing a single file field from `FormData`.
+
+## Signature
+
+```ts
+interface FormDataFileOptions {
+  name?: string;
+}
+
+```
+
+## Properties
+
+### name
+
+The form field name to read. Defaults to the object key passed to `object()`.

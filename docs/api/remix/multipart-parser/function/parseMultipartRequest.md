@@ -34,4 +34,4 @@ Optional parser options, such as `maxHeaderSize` and `maxFileSize`
 
 ## Returns
 
-An async generator yielding [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart) objects
+An async generator yielding [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) objects

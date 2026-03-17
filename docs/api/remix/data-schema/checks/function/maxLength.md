@@ -25,4 +25,4 @@ The maximum number of characters
 
 ## Returns
 
-A [`Check`](/api/remix/data-schema/type/Check) that enforces the maximum length
+A [`Check`](/api/remix/data-schema/type/Check/) that enforces the maximum length

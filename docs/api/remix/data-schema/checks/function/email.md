@@ -19,4 +19,4 @@ function email(): Check<string>;
 
 ## Returns
 
-A [`Check`](/api/remix/data-schema/type/Check) that validates email-like strings
+A [`Check`](/api/remix/data-schema/type/Check/) that validates email-like strings

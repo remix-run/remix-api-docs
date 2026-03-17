@@ -35,8 +35,8 @@ Template string parts.
 
 ### values
 
-Interpolated values or nested [`SqlStatement`](/api/remix/data-table/type/SqlStatement) values.
+Interpolated values or nested [`SqlStatement`](/api/remix/data-table/type/SqlStatement/) values.
 
 ## Returns
 
-A normalized [`SqlStatement`](/api/remix/data-table/type/SqlStatement).
+A normalized [`SqlStatement`](/api/remix/data-table/type/SqlStatement/).

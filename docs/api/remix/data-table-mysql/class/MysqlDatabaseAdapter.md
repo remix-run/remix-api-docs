@@ -4,7 +4,7 @@ title: MysqlDatabaseAdapter
 
 # MysqlDatabaseAdapter
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table-mysql/src/lib/adapter.ts#L79" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table-mysql/src/lib/adapter.ts#L55" target="_blank">View Source</a>
 
 ## Summary
 

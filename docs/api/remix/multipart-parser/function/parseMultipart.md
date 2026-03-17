@@ -39,4 +39,4 @@ Options for the parser
 
 ## Returns
 
-A generator that yields [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart) objects
+A generator that yields [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) objects

@@ -49,4 +49,4 @@ Optional runtime options.
 
 ## Returns
 
-A [`Database`](/api/remix/data-table/type/Database) API instance.
+A [`Database`](/api/remix/data-table/type/Database/) API instance.

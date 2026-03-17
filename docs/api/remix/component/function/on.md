@@ -4,7 +4,7 @@ title: on
 
 # on
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/mixins/on-mixin.tsx#L73" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/mixins/on-mixin.tsx#L74" target="_blank">View Source</a>
 
 ## Summary
 

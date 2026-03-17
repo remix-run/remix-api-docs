@@ -33,4 +33,4 @@ The directory where files are stored
 
 ## Returns
 
-A new [`FileStorage`](/api/remix/file-storage/interface/FileStorage) backed by a filesystem directory
+A new [`FileStorage`](/api/remix/file-storage/interface/FileStorage/) backed by a filesystem directory

@@ -919,26 +919,26 @@ function clearRuntimePropertyOnRemoval(dom, name) {
   } catch {
   }
 }
-function normalizeClassProps(props) {
-  if (!("class" in props) && !("className" in props)) return props;
+function getMergedClassName(props) {
   let classAttr = typeof props.class === "string" ? props.class : "";
   let className = typeof props.className === "string" ? props.className : "";
   let mergedClassName = classAttr && className ? `${classAttr} ${className}` : classAttr || className;
-  let normalizedProps = { ...props };
-  delete normalizedProps.class;
-  if (mergedClassName) {
-    normalizedProps.className = mergedClassName;
-  } else {
-    delete normalizedProps.className;
-  }
-  return normalizedProps;
+  return mergedClassName || void 0;
 }
 function diffHostProps(curr, next, dom) {
   let isSvg = dom.namespaceURI === SVG_NS;
-  curr = normalizeClassProps(curr);
-  next = normalizeClassProps(next);
+  let currClassName = getMergedClassName(curr);
+  let nextClassName = getMergedClassName(next);
+  if (currClassName !== nextClassName) {
+    if (nextClassName) {
+      dom.setAttribute("class", nextClassName);
+    } else {
+      dom.removeAttribute("class");
+    }
+  }
   for (let name in curr) {
     if (isFrameworkProp(name)) continue;
+    if (name === "class" || name === "className") continue;
     if (!(name in next) || next[name] == null) {
       if (canUseProperty(dom, name, isSvg)) {
         clearRuntimePropertyOnRemoval(dom, name);
@@ -950,6 +950,7 @@ function diffHostProps(curr, next, dom) {
   }
   for (let name in next) {
     if (isFrameworkProp(name)) continue;
+    if (name === "class" || name === "className") continue;
     let nextValue = next[name];
     if (nextValue == null) continue;
     let prevValue = curr[name];
@@ -1550,7 +1551,7 @@ function ensureControlledReflection(node, scheduler) {
     }
   };
   node._controlledState = state;
-  scheduler.enqueueCommitPhase([
+  scheduler.enqueueTasks([
     () => {
       if (state.disposed) return;
       node._dom.addEventListener("input", state.onInput);
@@ -1570,6 +1571,9 @@ function syncControlledReflection(node, props) {
   state.hasControlledChecked = state.managesChecked && hasControlledCheckedProp(props);
   state.controlledChecked = props.checked;
   state.pendingRestoreVersion++;
+}
+function shouldTrackControlledReflection(props) {
+  return hasControlledValueProp(props) || hasControlledCheckedProp(props);
 }
 function scheduleControlledRestore(node, state) {
   if (state.disposed) return;
@@ -1622,6 +1626,12 @@ function setPropertyReflection(element, key, value) {
   element[key] = value == null ? "" : value;
 }
 function resolveNodeMixProps(node, frame, scheduler, state) {
+  let mix2 = node.props.mix;
+  if (state == null && (mix2 == null || Array.isArray(mix2) && mix2.length === 0)) {
+    node._mixState = void 0;
+    node._mixedProps = node.props;
+    return node.props;
+  }
   let resolved = resolveMixedProps({
     hostType: node.type,
     frame,
@@ -1633,6 +1643,24 @@ function resolveNodeMixProps(node, frame, scheduler, state) {
   node._mixedProps = resolved.props;
   return resolved.props;
 }
+function enqueueMixinBindingUpdate(done) {
+  let node = this.target;
+  let state = node._mixState;
+  this.scheduler.enqueueWork([
+    () => {
+      if (state?.aborted) {
+        done(getMixinRuntimeSignal(state));
+        return;
+      }
+      dispatchMixinBeforeUpdate(state);
+      let prevProps = getHostProps(node);
+      let nextProps = resolveNodeMixProps(node, this.frame, this.scheduler, state);
+      diffHostProps(prevProps, nextProps, this.node);
+      dispatchMixinCommit(state);
+      done(state ? getMixinRuntimeSignal(state) : AbortSignal.abort());
+    }
+  ]);
+}
 function bindNodeMixRuntime(node, frame, scheduler, styles, reclaimed = false, parent) {
   let state = node._mixState;
   bindMixinRuntime(
@@ -1641,22 +1669,10 @@ function bindNodeMixRuntime(node, frame, scheduler, styles, reclaimed = false, p
       node: node._dom,
       parent: parent ?? node._dom.parentNode,
       key: node.key,
-      enqueueUpdate(done) {
-        scheduler.enqueueWork([
-          () => {
-            if (state?.aborted) {
-              done(getMixinRuntimeSignal(state));
-              return;
-            }
-            dispatchMixinBeforeUpdate(state);
-            let prevProps = getHostProps(node);
-            let nextProps = resolveNodeMixProps(node, frame, scheduler, state);
-            diffHostProps(prevProps, nextProps, node._dom);
-            dispatchMixinCommit(state);
-            done(state ? getMixinRuntimeSignal(state) : AbortSignal.abort());
-          }
-        ]);
-      }
+      target: node,
+      frame,
+      scheduler,
+      enqueueUpdate: enqueueMixinBindingUpdate
     },
     { dispatchReclaimed: reclaimed }
   );
@@ -1729,10 +1745,19 @@ function diffVNodes(curr, next, domParent, frame, scheduler, styles, vParent, ro
 function replace(curr, next, domParent, frame, scheduler, styles, vParent, rootTarget, anchor) {
   let currAnchor = findFirstDomAnchor(curr);
   if (currAnchor && currAnchor.parentNode === domParent) {
-    anchor = currAnchor;
+    let replacementAnchor2 = document.createComment("rmx:replace");
+    domParent.insertBefore(replacementAnchor2, currAnchor);
+    try {
+      remove(curr, domParent, scheduler, styles);
+      insert(next, domParent, frame, scheduler, styles, vParent, rootTarget, replacementAnchor2);
+    } finally {
+      replacementAnchor2.parentNode?.removeChild(replacementAnchor2);
+    }
+    return;
   }
-  insert(next, domParent, frame, scheduler, styles, vParent, rootTarget, anchor);
+  let replacementAnchor = findNextSiblingDomAnchor(curr, vParent) ?? anchor;
   remove(curr, domParent, scheduler, styles);
+  insert(next, domParent, frame, scheduler, styles, vParent, rootTarget, replacementAnchor);
 }
 function diffHost(curr, next, frame, scheduler, styles, vParent, rootTarget) {
   let mixState = curr._mixState;
@@ -1763,8 +1788,10 @@ function diffHost(curr, next, frame, scheduler, styles, vParent, rootTarget) {
   next._parent = vParent;
   next._controller = curr._controller;
   next._controlledState = curr._controlledState;
-  ensureControlledReflection(next, scheduler);
-  syncControlledReflection(next, nextProps);
+  if (next._controlledState || shouldTrackControlledReflection(nextProps)) {
+    ensureControlledReflection(next, scheduler);
+    syncControlledReflection(next, nextProps);
+  }
   bindNodeMixRuntime(next, frame, scheduler, styles);
   if (shouldDispatchInlineMixinLifecycle(curr._dom)) {
     scheduler.enqueueCommitPhase([
@@ -1777,8 +1804,10 @@ function setupHostNode(node, dom, scheduler) {
   node._dom = dom;
   let props = getHostProps(node);
   let committedNode = node;
-  ensureControlledReflection(committedNode, scheduler);
-  syncControlledReflection(committedNode, props);
+  if (shouldTrackControlledReflection(props)) {
+    ensureControlledReflection(committedNode, scheduler);
+    syncControlledReflection(committedNode, props);
+  }
 }
 function diffText(curr, next, vParent) {
   if (curr._text !== next._text) {
@@ -2401,20 +2430,27 @@ function performHostNodeRemoval(node, domParent, scheduler, styles) {
 function diffChildren(curr, next, domParent, frame, scheduler, styles, vParent, rootTarget, cursor, anchor) {
   let nextLength = next.length;
   let hasKeys = false;
-  let seenKeys = /* @__PURE__ */ new Set();
-  let duplicateKeys = /* @__PURE__ */ new Set();
+  let seenKeys;
+  let duplicateKeys;
   for (let i = 0; i < nextLength; i++) {
     let node = next[i];
     if (node && node.key != null) {
       hasKeys = true;
+      if (!seenKeys) {
+        seenKeys = /* @__PURE__ */ new Set([node.key]);
+        continue;
+      }
       if (seenKeys.has(node.key)) {
+        if (!duplicateKeys) {
+          duplicateKeys = /* @__PURE__ */ new Set();
+        }
         duplicateKeys.add(node.key);
       } else {
         seenKeys.add(node.key);
       }
     }
   }
-  if (duplicateKeys.size > 0) {
+  if (duplicateKeys?.size) {
     let quotedKeys = Array.from(duplicateKeys, (key) => `"${key}"`);
     console.warn(
       `Duplicate keys detected in siblings: ${quotedKeys.join(", ")}. Keys should be unique.`
@@ -3213,6 +3249,13 @@ function diffElementChildren(current, next, context) {
       if (cursor) {
         let nextEndIdx = nextChildren.indexOf(cursor);
         let currEndIdx = findHydrationEndIndex(currentChildren, mi);
+        for (let j = i + 1; j <= nextEndIdx; j++) {
+          let matchedIndex = matchIndexForNext[j];
+          if (matchedIndex > currEndIdx) {
+            used[matchedIndex] = false;
+          }
+          matchIndexForNext[j] = -1;
+        }
         for (let k = mi; k <= currEndIdx; k++) used[k] = true;
         committed[i] = curChild;
         committed[nextEndIdx] = currentChildren[currEndIdx];
@@ -3329,6 +3372,18 @@ function isVirtualRootEndMarker(node) {
 // ../packages/component/src/lib/frame.ts
 var bufferedFrameTemplates = /* @__PURE__ */ new Map();
 var frameTemplateListeners = /* @__PURE__ */ new Map();
+function syncElementAttributes(target, source) {
+  for (let attribute of Array.from(target.attributes)) {
+    if (!source.hasAttribute(attribute.name)) {
+      target.removeAttribute(attribute.name);
+    }
+  }
+  for (let attribute of Array.from(source.attributes)) {
+    if (target.getAttribute(attribute.name) !== attribute.value) {
+      target.setAttribute(attribute.name, attribute.value);
+    }
+  }
+}
 function createFrame(root, init) {
   let container = createContainer(root);
   let observers = [];
@@ -3418,6 +3473,9 @@ function createFrame(root, init) {
       disposeSubFrames(previousBodyNodes, context);
       let parsed = new DOMParser().parseFromString(content, "text/html");
       mergeRmxDataFromDocument(context.data, parsed);
+      syncElementAttributes(container.doc.documentElement, parsed.documentElement);
+      syncElementAttributes(container.doc.head, parsed.head);
+      syncElementAttributes(container.doc.body, parsed.body);
       diffNodes(Array.from(container.doc.head.childNodes), Array.from(parsed.head.childNodes), {
         ...context,
         regionParent: container.doc.head,
@@ -4202,12 +4260,14 @@ function getSourceElementNavigationState(event) {
   let sourceEvent = event;
   let sourceElement = sourceEvent.sourceElement;
   if (!(sourceElement instanceof Element)) return;
-  if (!sourceElement.matches("a, area")) return;
-  if (sourceElement.hasAttribute("rmx-document")) return;
+  let linkElement = sourceElement.closest("a, area");
+  if (!(linkElement instanceof Element)) return;
+  if (linkElement.hasAttribute("rmx-document")) return;
+  if (linkElement.hasAttribute("download")) return;
   return {
-    target: sourceElement.getAttribute("rmx-target") ?? void 0,
-    src: sourceElement.getAttribute("rmx-src") ?? event.destination.url,
-    resetScroll: sourceElement.getAttribute("rmx-reset-scroll") !== "false",
+    target: linkElement.getAttribute("rmx-target") ?? void 0,
+    src: linkElement.getAttribute("rmx-src") ?? event.destination.url,
+    resetScroll: linkElement.getAttribute("rmx-reset-scroll") !== "false",
     $rmx: true
   };
 }
@@ -4263,6 +4323,7 @@ var onMixin = createMixin((handle) => {
   };
   let currentType = "";
   let currentCapture = false;
+  let currentNode = null;
   let reentry = null;
   let stableHandler = (event) => {
     reentry?.abort(new DOMException("", "EventReentry"));
@@ -4270,12 +4331,13 @@ var onMixin = createMixin((handle) => {
     void currentHandler(event, reentry.signal);
   };
   handle.addEventListener("insert", (event) => {
-    let node = event.node;
-    node.addEventListener(currentType, stableHandler, currentCapture);
-    handle.addEventListener("remove", () => {
-      node.removeEventListener(currentType, stableHandler, currentCapture);
-      reentry?.abort(new DOMException("", "AbortError"));
-    });
+    currentNode = event.node;
+    currentNode.addEventListener(currentType, stableHandler, currentCapture);
+  });
+  handle.addEventListener("remove", () => {
+    currentNode?.removeEventListener(currentType, stableHandler, currentCapture);
+    currentNode = null;
+    reentry?.abort(new DOMException("", "AbortError"));
   });
   return (type, handler, captureBoolean = false) => {
     let previousType = currentType;
@@ -4284,11 +4346,9 @@ var onMixin = createMixin((handle) => {
     currentType = type;
     currentHandler = handler;
     currentCapture = captureBoolean;
-    if (needsRebind) {
-      handle.queueTask((node) => {
-        node.removeEventListener(previousType, stableHandler, previousCapture);
-        node.addEventListener(type, stableHandler, captureBoolean);
-      });
+    if (needsRebind && currentNode) {
+      currentNode.removeEventListener(previousType, stableHandler, previousCapture);
+      currentNode.addEventListener(type, stableHandler, captureBoolean);
     }
     return handle.element;
   };

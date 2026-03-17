@@ -25,4 +25,4 @@ The inclusive minimum value
 
 ## Returns
 
-A [`Check`](/api/remix/data-schema/type/Check) that enforces the lower bound
+A [`Check`](/api/remix/data-schema/type/Check/) that enforces the lower bound

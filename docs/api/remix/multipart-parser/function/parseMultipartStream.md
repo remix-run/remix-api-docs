@@ -36,4 +36,4 @@ Options for the parser
 
 ## Returns
 
-An async generator that yields [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart) objects
+An async generator that yields [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) objects

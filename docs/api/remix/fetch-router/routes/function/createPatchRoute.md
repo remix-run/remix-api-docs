@@ -27,7 +27,7 @@ function createPatchRoute<source extends string>(
 
 ### pattern
 
-The route pattern string or [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern) object
+The route pattern string or [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/) object
 
 ## Returns
 

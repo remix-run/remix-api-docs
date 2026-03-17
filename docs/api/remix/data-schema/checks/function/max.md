@@ -25,4 +25,4 @@ The inclusive maximum value
 
 ## Returns
 
-A [`Check`](/api/remix/data-schema/type/Check) that enforces the upper bound
+A [`Check`](/api/remix/data-schema/type/Check/) that enforces the upper bound

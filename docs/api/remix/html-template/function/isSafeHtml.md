@@ -25,4 +25,4 @@ The value to check
 
 ## Returns
 
-`true` if the value is a [`SafeHtml`](/api/remix/html-template/type/SafeHtml) string
+`true` if the value is a [`SafeHtml`](/api/remix/html-template/type/SafeHtml/) string

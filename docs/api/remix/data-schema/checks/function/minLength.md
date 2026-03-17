@@ -25,4 +25,4 @@ The minimum number of characters
 
 ## Returns
 
-A [`Check`](/api/remix/data-schema/type/Check) that enforces the minimum length
+A [`Check`](/api/remix/data-schema/type/Check/) that enforces the minimum length
