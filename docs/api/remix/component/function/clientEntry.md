@@ -4,7 +4,7 @@ title: clientEntry
 
 # clientEntry
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/client-entries.ts#L86" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/component/src/lib/client-entries.ts#L86" target="_blank">View Source</a>
 
 ## Summary
 
@@ -18,7 +18,7 @@ function clientEntry<
   setup extends SerializableValue,
   props extends SerializableProps,
 >(
-  href: string,
+  entryId: string,
   component: (
     handle: Handle<context>,
     setup: setup,
@@ -54,9 +54,10 @@ export const Counter = clientEntry(
 
 ## Params
 
-### href
+### entryId
 
-Module URL with optional export name (format: "/js/module.js#ExportName")
+Module URL with optional export name (format: "/js/module.js#ExportName") by
+default, or a custom entry identifier when paired with `resolveClientEntry`
 
 ### component
 

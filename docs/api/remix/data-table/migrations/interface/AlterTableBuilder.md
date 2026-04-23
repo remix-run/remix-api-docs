@@ -4,7 +4,7 @@ title: AlterTableBuilder
 
 # AlterTableBuilder
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table/src/lib/migrations.ts#L219" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table/src/lib/migrations.ts#L214" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,7 +17,7 @@ interface AlterTableBuilder {
   addCheck(expression: string, options: NamedConstraintOptions): void;
   addColumn(
     name: string,
-    definition: ColumnBuilder<unknown> | ColumnDefinition,
+    definition: ColumnDefinition | ColumnBuilder<unknown>,
   ): void;
   addForeignKey(
     columns: KeyColumns,
@@ -30,7 +30,7 @@ interface AlterTableBuilder {
   addUnique(columns: KeyColumns, options: NamedConstraintOptions): void;
   changeColumn(
     name: string,
-    definition: ColumnBuilder<unknown> | ColumnDefinition,
+    definition: ColumnDefinition | ColumnBuilder<unknown>,
   ): void;
   comment(text: string): void;
   dropCheck(name: string): void;
@@ -54,7 +54,7 @@ Adds a check constraint during an `alterTable` migration.
 
 #### options
 
-### addColumn(name: string, definition: ColumnBuilder<unknown> | ColumnDefinition): void
+### addColumn(name: string, definition: ColumnDefinition | ColumnBuilder<unknown>): void
 
 Adds a column during an `alterTable` migration.
 
@@ -98,7 +98,7 @@ Adds a unique constraint during an `alterTable` migration.
 
 #### options
 
-### changeColumn(name: string, definition: ColumnBuilder<unknown> | ColumnDefinition): void
+### changeColumn(name: string, definition: ColumnDefinition | ColumnBuilder<unknown>): void
 
 Changes an existing column during an `alterTable` migration.
 

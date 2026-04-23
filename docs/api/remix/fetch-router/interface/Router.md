@@ -4,71 +4,71 @@ title: Router
 
 # Router
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/fetch-router/src/lib/router.ts#L77" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-router/src/lib/router.ts#L202" target="_blank">View Source</a>
 
 ## Summary
 
-A router maps incoming requests to request handlers and middleware.
+A router maps incoming requests to request handlers.
 
 ## Signature
 
 ```ts
-interface Router {
-  delete<pattern extends string>(
-    route: pattern | RoutePattern<pattern> | Route<"DELETE" | "ANY", pattern>,
-    action: Action<"DELETE", pattern>,
-  ): void;
+interface Router<context> {
+  delete: VerbMethod<"DELETE", context>;
+  get: VerbMethod<"GET", context>;
+  head: VerbMethod<"HEAD", context>;
+  map: MapMethod<context>;
+  options: VerbMethod<"OPTIONS", context>;
+  patch: VerbMethod<"PATCH", context>;
+  post: VerbMethod<"POST", context>;
+  put: VerbMethod<"PUT", context>;
+  route: RouteMethod<context>;
   fetch(input: string | Request | URL, init: RequestInit): Promise<Response>;
-  get<pattern extends string>(
-    route: pattern | RoutePattern<pattern> | Route<"GET" | "ANY", pattern>,
-    action: Action<"GET", pattern>,
-  ): void;
-  head<pattern extends string>(
-    route: pattern | RoutePattern<pattern> | Route<"HEAD" | "ANY", pattern>,
-    action: Action<"HEAD", pattern>,
-  ): void;
-  map<target extends MapTarget>(
-    target: target,
-    handler: MapHandler<target>,
-  ): void;
-  options<pattern extends string>(
-    route: pattern | RoutePattern<pattern> | Route<"OPTIONS" | "ANY", pattern>,
-    action: Action<"OPTIONS", pattern>,
-  ): void;
-  patch<pattern extends string>(
-    route: pattern | RoutePattern<pattern> | Route<"PATCH" | "ANY", pattern>,
-    action: Action<"PATCH", pattern>,
-  ): void;
-  post<pattern extends string>(
-    route: pattern | RoutePattern<pattern> | Route<"POST" | "ANY", pattern>,
-    action: Action<"POST", pattern>,
-  ): void;
-  put<pattern extends string>(
-    route: pattern | RoutePattern<pattern> | Route<"PUT" | "ANY", pattern>,
-    action: Action<"PUT", pattern>,
-  ): void;
-  route<method extends RequestMethod | "ANY", pattern extends string>(
-    method: method,
-    pattern: pattern | RoutePattern<pattern> | Route<"ANY" | method, pattern>,
-    action: Action<method, pattern>,
-  ): void;
 }
 
 ```
 
+## Properties
+
+### delete
+
+Shorthand for registering a `DELETE` route.
+
+### get
+
+Shorthand for registering a `GET` route.
+
+### head
+
+Shorthand for registering a `HEAD` route.
+
+### map
+
+Maps either a single route target to an action or a route map to a controller.
+
+### options
+
+Shorthand for registering an `OPTIONS` route.
+
+### patch
+
+Shorthand for registering a `PATCH` route.
+
+### post
+
+Shorthand for registering a `POST` route.
+
+### put
+
+Shorthand for registering a `PUT` route.
+
+### route
+
+Registers a handler for a specific request method and route target.
+
+Accepts either a plain request handler or an action object with optional inline middleware.
+
 ## Methods
-
-### delete<pattern extends string>(route: pattern | RoutePattern<pattern> | Route<"DELETE" | "ANY", pattern>, action: Action<"DELETE", pattern>): void
-
-Map a `DELETE` route/pattern to an action.
-
-#### route
-
-The route/pattern to match
-
-#### action
-
-The action to invoke when the route matches
 
 ### fetch(input: string | Request | URL, init: RequestInit): Promise<Response>
 
@@ -81,97 +81,3 @@ The request input to fetch
 #### init
 
 The request init options
-
-### get<pattern extends string>(route: pattern | RoutePattern<pattern> | Route<"GET" | "ANY", pattern>, action: Action<"GET", pattern>): void
-
-Map a `GET` route/pattern to an action.
-
-#### route
-
-The route/pattern to match
-
-#### action
-
-The action to invoke when the route matches
-
-### head<pattern extends string>(route: pattern | RoutePattern<pattern> | Route<"HEAD" | "ANY", pattern>, action: Action<"HEAD", pattern>): void
-
-Map a `HEAD` route/pattern to an action.
-
-#### route
-
-The route/pattern to match
-
-#### action
-
-The action to invoke when the route matches
-
-### map<target extends MapTarget>(target: target, handler: MapHandler<target>): void
-
-Map a route or route map to an action or controller.
-
-#### target
-
-#### handler
-
-The action or controller to invoke when the route(s) match
-
-### options<pattern extends string>(route: pattern | RoutePattern<pattern> | Route<"OPTIONS" | "ANY", pattern>, action: Action<"OPTIONS", pattern>): void
-
-Map an `OPTIONS` route/pattern to an action.
-
-#### route
-
-The route/pattern to match
-
-#### action
-
-The action to invoke when the route matches
-
-### patch<pattern extends string>(route: pattern | RoutePattern<pattern> | Route<"PATCH" | "ANY", pattern>, action: Action<"PATCH", pattern>): void
-
-Map a `PATCH` route/pattern to an action.
-
-#### route
-
-The route/pattern to match
-
-#### action
-
-The action to invoke when the route matches
-
-### post<pattern extends string>(route: pattern | RoutePattern<pattern> | Route<"POST" | "ANY", pattern>, action: Action<"POST", pattern>): void
-
-Map a `POST` route/pattern to an action.
-
-#### route
-
-The route/pattern to match
-
-#### action
-
-The action to invoke when the route matches
-
-### put<pattern extends string>(route: pattern | RoutePattern<pattern> | Route<"PUT" | "ANY", pattern>, action: Action<"PUT", pattern>): void
-
-Map a `PUT` route/pattern to an action.
-
-#### route
-
-The route/pattern to match
-
-#### action
-
-The action to invoke when the route matches
-
-### route<method extends RequestMethod | "ANY", pattern extends string>(method: method, pattern: pattern | RoutePattern<pattern> | Route<"ANY" | method, pattern>, action: Action<method, pattern>): void
-
-Add a route to the router.
-
-#### method
-
-#### pattern
-
-#### action
-
-The action to invoke when the route matches

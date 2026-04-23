@@ -4,18 +4,16 @@ title: jsxDEV
 
 # jsxDEV
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/jsx.ts#L94" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/component/src/lib/jsx.ts#L92" target="_blank">View Source</a>
 
 ## Summary
 
-Creates a Remix virtual element from a component function.
+Creates a Remix virtual element.
 
 ## Signature
 
 ```ts
-function jsx(type: string, props: ElementProps, key: string): RemixElement;
-
-function jsx(type: Function, props: ElementProps, key: string): RemixElement;
+function jsx(type: ElementType, props: ElementProps, key: string): RemixElement;
 
 ```
 
@@ -23,7 +21,7 @@ function jsx(type: Function, props: ElementProps, key: string): RemixElement;
 
 ### type
 
-Component function.
+Host tag or component function.
 
 ### props
 

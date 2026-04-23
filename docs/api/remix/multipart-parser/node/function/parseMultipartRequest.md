@@ -4,7 +4,7 @@ title: parseMultipartRequest
 
 # parseMultipartRequest
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/multipart-parser/src/lib/multipart.node.ts#L65" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/multipart-parser/src/lib/multipart.node.ts#L69" target="_blank">View Source</a>
 
 ## Summary
 
@@ -28,7 +28,8 @@ The Node.js `http.IncomingMessage` object containing multipart data
 
 ### options
 
-Options for the parser
+Options for the parser, such as `maxHeaderSize`, `maxFileSize`, `maxParts`,
+and `maxTotalSize`
 
 ## Returns
 

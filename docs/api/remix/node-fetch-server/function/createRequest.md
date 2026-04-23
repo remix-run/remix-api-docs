@@ -4,7 +4,7 @@ title: createRequest
 
 # createRequest
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/node-fetch-server/src/lib/request-listener.ts#L132" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/node-fetch-server/src/lib/request-listener.ts#L132" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,8 +19,8 @@ Creates a [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) 
 function createRequest(
   req: IncomingMessage | Http2ServerRequest,
   res:
-    | Http2ServerResponse<Http2ServerRequest>
-    | ServerResponse<IncomingMessage>,
+    | ServerResponse<IncomingMessage>
+    | Http2ServerResponse<Http2ServerRequest>,
   options: RequestOptions,
 ): Request;
 

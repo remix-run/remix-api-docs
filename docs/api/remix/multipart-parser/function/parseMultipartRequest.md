@@ -4,7 +4,7 @@ title: parseMultipartRequest
 
 # parseMultipartRequest
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/multipart-parser/src/lib/multipart-request.ts#L35" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/multipart-parser/src/lib/multipart-request.ts#L37" target="_blank">View Source</a>
 
 ## Summary
 
@@ -30,7 +30,8 @@ The `Request` object containing multipart data
 
 ### options
 
-Optional parser options, such as `maxHeaderSize` and `maxFileSize`
+Optional parser options, such as `maxHeaderSize`, `maxFileSize`, `maxParts`,
+and `maxTotalSize`
 
 ## Returns
 

@@ -4,7 +4,7 @@ title: FetchProxyOptions
 
 # FetchProxyOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,7 @@ Options for createFetchProxy.
 ```ts
 interface FetchProxyOptions {
   fetch?: {
-    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
+    (input: URL | RequestInfo, init?: RequestInit): Promise<Response>;
     (input: string | Request | URL, init?: RequestInit): Promise<Response>;
   };
   rewriteCookieDomain?: boolean;

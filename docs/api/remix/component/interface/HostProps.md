@@ -4,7 +4,7 @@ title: HostProps
 
 # HostProps
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/dom.ts#L27" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/component/src/lib/dom.ts#L29" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,7 +17,7 @@ interface HostProps<eventTarget> {
   children?: RemixNode;
   innerHTML?: string;
   key?: any;
-  mix?: MixValue<eventTarget>;
+  mix?: MixInput<eventTarget>;
 }
 
 ```

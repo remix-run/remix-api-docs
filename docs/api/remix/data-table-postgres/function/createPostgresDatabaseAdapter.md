@@ -4,7 +4,7 @@ title: createPostgresDatabaseAdapter
 
 # createPostgresDatabaseAdapter
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table-postgres/src/lib/adapter.ts#L330" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table-postgres/src/lib/adapter.ts#L326" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,6 @@ Creates a postgres `DatabaseAdapter`.
 ```ts
 function createPostgresDatabaseAdapter(
   client: PostgresQueryable,
-  options: PostgresDatabaseAdapterOptions,
 ): PostgresDatabaseAdapter;
 
 ```
@@ -37,10 +36,6 @@ let db = createDatabase(adapter)
 ### client
 
 `pg` pool or pool client.
-
-### options
-
-Optional adapter capability overrides.
 
 ## Returns
 

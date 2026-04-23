@@ -1,0 +1,41 @@
+---
+title: XAuthProviderOptions
+---
+
+# XAuthProviderOptions
+
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/auth/src/lib/providers/x.ts#L20" target="_blank">View Source</a>
+
+## Summary
+
+Options for creating the built-in X auth provider.
+
+## Signature
+
+```ts
+interface XAuthProviderOptions {
+  clientId: string;
+  clientSecret: string;
+  redirectUri: string | URL;
+  scopes?: string[];
+}
+
+```
+
+## Properties
+
+### clientId
+
+OAuth client identifier for your X application.
+
+### clientSecret
+
+OAuth client secret for your X application.
+
+### redirectUri
+
+Callback URL registered with X.
+
+### scopes
+
+Requested scopes for the X login flow.

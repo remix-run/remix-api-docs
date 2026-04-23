@@ -4,7 +4,7 @@ title: greaterThan
 
 # greaterThan
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/route-pattern/src/lib/specificity.ts#L21" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/route-pattern/src/lib/specificity.ts#L22" target="_blank">View Source</a>
 
 ## Summary
 

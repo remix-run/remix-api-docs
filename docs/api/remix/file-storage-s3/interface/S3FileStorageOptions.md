@@ -4,7 +4,7 @@ title: S3FileStorageOptions
 
 # S3FileStorageOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/file-storage-s3/src/lib/s3.ts#L16" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/file-storage-s3/src/lib/s3.ts#L16" target="_blank">View Source</a>
 
 ## Summary
 
@@ -18,7 +18,7 @@ interface S3FileStorageOptions {
   bucket: string;
   endpoint?: string;
   fetch?: {
-    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
+    (input: URL | RequestInfo, init?: RequestInit): Promise<Response>;
     (input: string | Request | URL, init?: RequestInit): Promise<Response>;
   };
   forcePathStyle?: boolean;

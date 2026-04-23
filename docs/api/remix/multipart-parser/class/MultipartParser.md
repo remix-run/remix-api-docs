@@ -4,7 +4,7 @@ title: MultipartParser
 
 # MultipartParser
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/multipart-parser/src/lib/multipart.ts#L161" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/multipart-parser/src/lib/multipart.ts#L209" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,6 +23,8 @@ class MultipartParser {
   boundary: string;
   maxFileSize: number;
   maxHeaderSize: number;
+  maxParts: number;
+  maxTotalSize: number;
 
   // Methods
   finish(): void;
@@ -54,6 +56,14 @@ Maximum file size allowed for each multipart part.
 ### maxHeaderSize
 
 Maximum header size allowed for each multipart part.
+
+### maxParts
+
+Maximum number of parts allowed in a multipart message.
+
+### maxTotalSize
+
+Maximum aggregate content size allowed across all parts.
 
 ## Methods
 

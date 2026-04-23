@@ -4,7 +4,7 @@ title: formData
 
 # formData
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/form-data-middleware/src/lib/form-data.ts#L33" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/form-data-middleware/src/lib/form-data.ts#L50" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,7 +13,9 @@ Middleware that parses `FormData` from the request body and populates request co
 ## Signature
 
 ```ts
-function formData(options: FormDataOptions): Middleware;
+function formData(
+  options: FormDataOptions,
+): Middleware<any, any, SetFormDataContextTransform>;
 
 ```
 

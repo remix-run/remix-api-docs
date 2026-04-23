@@ -4,11 +4,11 @@ title: spring
 
 # spring
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/spring.ts#L87" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/component/src/lib/spring.ts#L87" target="_blank">View Source</a>
 
 ## Summary
 
-Creates a spring iterator from explicit spring options.
+Creates a spring iterator from a named preset.
 
 ## Signature
 

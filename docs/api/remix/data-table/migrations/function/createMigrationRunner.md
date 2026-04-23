@@ -4,7 +4,7 @@ title: createMigrationRunner
 
 # createMigrationRunner
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table/src/lib/migrations/runner.ts#L317" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table/src/lib/migrations/runner.ts#L314" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,7 @@ Creates a migration runner for applying/reverting migrations against an adapter.
 ```ts
 function createMigrationRunner(
   adapter: DatabaseAdapter,
-  migrations: MigrationDescriptor[] | MigrationRegistry,
+  migrations: MigrationRegistry | MigrationDescriptor[],
   options: MigrationRunnerOptions,
 ): MigrationRunner;
 

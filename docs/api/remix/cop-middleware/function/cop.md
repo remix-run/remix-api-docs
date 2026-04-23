@@ -4,7 +4,7 @@ title: cop
 
 # cop
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/cop-middleware/src/lib/cop.ts#L139" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/cop-middleware/src/lib/cop.ts#L139" target="_blank">View Source</a>
 
 ## Summary
 

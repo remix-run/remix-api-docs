@@ -4,7 +4,7 @@ title: Route
 
 # Route
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/fetch-router/src/lib/route-map.ts#L20" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-router/src/lib/route-map.ts#L20" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,12 +15,12 @@ A route definition that includes a request method and pattern.
 ```ts
 class Route<method, pattern> {
   constructor(
-    method: method | "ANY",
+    method: "ANY" | method,
     pattern: pattern | RoutePattern<pattern>,
   ): Route<method, pattern>;
 
   // Properties
-  method: method | "ANY";
+  method: "ANY" | method;
   pattern: RoutePattern<pattern>;
 
   // Methods

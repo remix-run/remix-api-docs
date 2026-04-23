@@ -4,7 +4,7 @@ title: createMysqlDatabaseAdapter
 
 # createMysqlDatabaseAdapter
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table-mysql/src/lib/adapter.ts#L368" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table-mysql/src/lib/adapter.ts#L360" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,6 @@ Creates a mysql `DatabaseAdapter`.
 ```ts
 function createMysqlDatabaseAdapter(
   client: MysqlQueryable,
-  options: MysqlDatabaseAdapterOptions,
 ): MysqlDatabaseAdapter;
 
 ```
@@ -37,10 +36,6 @@ let db = createDatabase(adapter)
 ### client
 
 Mysql pool or connection.
-
-### options
-
-Optional adapter capability overrides.
 
 ## Returns
 

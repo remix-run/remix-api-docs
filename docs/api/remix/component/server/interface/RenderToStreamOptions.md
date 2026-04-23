@@ -4,7 +4,7 @@ title: RenderToStreamOptions
 
 # RenderToStreamOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/stream.ts#L22" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/component/src/lib/stream.ts#L22" target="_blank">View Source</a>
 
 ## Summary
 
@@ -16,6 +16,10 @@ Options for server-side rendering to a byte stream.
 interface RenderToStreamOptions {
   frameSrc?: string | URL;
   onError?: (error: unknown) => void;
+  resolveClientEntry?: (
+    entryId: string,
+    component: EntryComponent,
+  ) => ResolvedClientEntry | Promise<ResolvedClientEntry>;
   resolveFrame?: (
     src: string,
     target?: string,
@@ -38,6 +42,10 @@ Source URL to associate with the current frame render.
 ### onError
 
 Error hook invoked when rendering work throws.
+
+### resolveClientEntry
+
+Callback used to resolve runtime module metadata for client entry modules during SSR.
 
 ### resolveFrame
 

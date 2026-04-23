@@ -4,18 +4,20 @@ title: Controller
 
 # Controller
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/fetch-router/src/lib/controller.ts#L11" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-router/src/lib/controller.ts#L58" target="_blank">View Source</a>
 
 ## Summary
 
-Controller object that mirrors a route map with matching action handlers.
+A controller object that mirrors a route map with matching action handlers.
+
+Controllers let you store a subtree of route handlers in one object while preserving the
+params and request-context contract for each nested action.
 
 ## Signature
 
 ```ts
-type Controller<routes> = {
-  actions: ControllerActions<routes>;
-  middleware?: Middleware[];
-};
+type Controller<routes, context> =
+  | ControllerWithoutMiddleware<routes, context>
+  | ControllerWithMiddleware<routes, context, readonly AnyMiddleware[]>;
 
 ```

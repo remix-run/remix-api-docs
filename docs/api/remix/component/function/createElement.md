@@ -4,7 +4,7 @@ title: createElement
 
 # createElement
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/component/src/lib/create-element.ts#L12" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/component/src/lib/create-element.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,7 +14,7 @@ Creates a Remix virtual element from a JSX-like call signature.
 
 ```ts
 function createElement(
-  type: string,
+  type: ElementType,
   props: Record<string, any>,
   children: any[],
 ): RemixElement;
@@ -25,7 +25,7 @@ function createElement(
 
 ### type
 
-Host tag or component function.
+Host tag, component function, or mixin host placeholder.
 
 ### props
 

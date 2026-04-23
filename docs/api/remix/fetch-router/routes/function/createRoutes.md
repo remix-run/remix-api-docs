@@ -4,11 +4,11 @@ title: createRoutes
 
 # createRoutes
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/fetch-router/src/lib/route-map.ts#L87" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-router/src/lib/route-map.ts#L87" target="_blank">View Source</a>
 
 ## Summary
 
-Create a route map from a set of route definitions with a base pattern.
+Create a route map from a set of route definitions.
 
 ## Signature
 

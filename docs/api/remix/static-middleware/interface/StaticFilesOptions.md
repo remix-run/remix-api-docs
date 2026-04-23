@@ -4,7 +4,7 @@ title: StaticFilesOptions
 
 # StaticFilesOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/static-middleware/src/lib/static.ts#L20" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/static-middleware/src/lib/static.ts#L20" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,7 +17,7 @@ interface StaticFilesOptions {
   acceptRanges?: boolean | AcceptRangesFunction;
   cacheControl?: string;
   digest?: AlgorithmIdentifier | FileDigestFunction<File>;
-  etag?: false | "strong" | "weak";
+  etag?: false | "weak" | "strong";
   filter?: (path: string) => boolean;
   index?: boolean | string[];
   lastModified?: boolean;

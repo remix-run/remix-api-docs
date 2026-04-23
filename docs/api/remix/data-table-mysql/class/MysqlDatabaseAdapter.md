@@ -4,7 +4,7 @@ title: MysqlDatabaseAdapter
 
 # MysqlDatabaseAdapter
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table-mysql/src/lib/adapter.ts#L55" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table-mysql/src/lib/adapter.ts#L47" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,10 +14,7 @@ title: MysqlDatabaseAdapter
 
 ```ts
 class MysqlDatabaseAdapter {
-  constructor(
-    client: MysqlQueryable,
-    options: MysqlDatabaseAdapterOptions,
-  ): MysqlDatabaseAdapter;
+  constructor(client: MysqlQueryable): MysqlDatabaseAdapter;
 
   // Properties
   capabilities: {
@@ -76,8 +73,6 @@ class MysqlDatabaseAdapter {
 ## Constructor Params
 
 ### client
-
-### options
 
 ## Properties
 

@@ -10,11 +10,18 @@ function normalizeElementProps(props) {
   return normalizedMix === void 0 ? rest : { ...rest, mix: normalizedMix };
 }
 function normalizeMixValue(mix2) {
-  if (mix2 == null) return void 0;
-  if (Array.isArray(mix2)) {
-    return mix2.length === 0 ? void 0 : [...mix2];
+  if (!mix2) return void 0;
+  let normalizedMix = flattenMixValue(mix2);
+  return normalizedMix.length === 0 ? void 0 : normalizedMix;
+}
+function flattenMixValue(mix2) {
+  if (!mix2) return [];
+  if (!Array.isArray(mix2)) return [mix2];
+  let flattened = [];
+  for (let item of mix2) {
+    flattened.push(...flattenMixValue(item));
   }
-  return [mix2];
+  return flattened;
 }
 
 // ../packages/component/src/lib/typed-event-target.ts
@@ -61,7 +68,7 @@ function createComponent(config) {
     },
     context,
     get signal() {
-      return getConnectedSignal();
+      return config.signal ?? getConnectedSignal();
     }
   };
   function dequeueTasks() {
@@ -82,7 +89,7 @@ function createComponent(config) {
       renderCtrl = null;
     }
     if (!getContent) {
-      let { setup, ...propsWithoutSetup } = props;
+      let { setup } = props;
       let result = config.type(handle, setup);
       if (typeof result !== "function") {
         let name = config.type.name || "Anonymous";
@@ -102,8 +109,8 @@ function createComponent(config) {
     renderCtrl?.abort();
     return dequeueTasks();
   }
-  function setScheduleUpdate(_scheduleUpdate) {
-    scheduleUpdate = _scheduleUpdate;
+  function setScheduleUpdate(nextScheduleUpdate) {
+    scheduleUpdate = nextScheduleUpdate;
   }
   function getContextValue() {
     return contextValue;
@@ -111,6 +118,7 @@ function createComponent(config) {
   return { render, remove: remove2, setScheduleUpdate, frame: config.frame, getContextValue };
 }
 function Frame(handle) {
+  void handle;
   return (_) => null;
 }
 function Fragment() {
@@ -466,12 +474,8 @@ function createStyleManager(layer = "rmx") {
     }
     let sheet = getStylesheet();
     let index = sheet.cssRules.length;
-    try {
-      sheet.insertRule(`@layer ${layer} { ${rule} }`, index);
-      ruleMap.set(className, { count: 1, index });
-    } catch (error) {
-      throw error;
-    }
+    sheet.insertRule(`@layer ${layer} { ${rule} }`, index);
+    ruleMap.set(className, { count: 1, index });
   }
   function remove2(className) {
     let entry = ruleMap.get(className);
@@ -485,7 +489,7 @@ function createStyleManager(layer = "rmx") {
     if (indexToDelete < 0) return;
     if (!stylesheet) return;
     stylesheet.deleteRule(indexToDelete);
-    for (let [name, data] of ruleMap.entries()) {
+    for (let [, data] of ruleMap.entries()) {
       if (data.index > indexToDelete) {
         data.index--;
       }
@@ -1030,6 +1034,10 @@ function toVNode(node) {
 }
 
 // ../packages/component/src/lib/mixin.ts
+function renderMixinElement(element, props) {
+  let { key, ...rest } = props ?? {};
+  return jsx(element, rest, key);
+}
 var mixinHandleId = 0;
 function createMixin(type) {
   return (...args) => ({
@@ -1046,7 +1054,8 @@ function resolveMixedProps(input) {
       hostType: input.hostType,
       frame: input.frame,
       scheduler: input.scheduler,
-      getSignal: () => getMixinRuntimeSignal(state),
+      getContext: input.getContext ?? (() => void 0),
+      getRuntimeSignal: () => getMixinRuntimeSignal(state),
       getBinding: () => state.binding
     });
     state.handle = handle;
@@ -1054,6 +1063,7 @@ function resolveMixedProps(input) {
   let hostType = input.hostType;
   let descriptors = resolveMixDescriptors(input.props);
   let composedProps = withoutMix(input.props);
+  let mixinProps = withoutMixinTreeProps(composedProps);
   let maxDescriptors = 1024;
   for (let index = 0; index < descriptors.length && index < maxDescriptors; index++) {
     let descriptor = descriptors[index];
@@ -1080,10 +1090,15 @@ function resolveMixedProps(input) {
       }
     }
     handle.setActiveScope(entry.scope);
-    let result = entry.runner(...descriptor.args, composedProps);
+    let result = entry.runner(...descriptor.args, mixinProps);
     handle.setActiveScope(void 0);
     if (!result) continue;
     if (isMixinElement(result)) continue;
+    let returnedDescriptors = resolveReturnedMixDescriptors(result);
+    if (returnedDescriptors) {
+      for (let returned of returnedDescriptors) descriptors.push(returned);
+      continue;
+    }
     if (!isRemixElement2(result)) {
       console.error(new Error("mixins must return a remix element"));
       continue;
@@ -1096,9 +1111,11 @@ function resolveMixedProps(input) {
     if (result.type !== resultType) {
       result = { ...result, type: resultType };
     }
-    let nestedDescriptors = resolveMixDescriptors(result.props);
+    let nextProps = sanitizeReturnedMixinProps(result.props);
+    let nestedDescriptors = resolveMixDescriptors(nextProps);
     for (let nested of nestedDescriptors) descriptors.push(nested);
-    composedProps = composeMixinProps(composedProps, withoutMix(result.props));
+    composedProps = composeMixinProps(composedProps, withoutMix(nextProps));
+    mixinProps = withoutMixinTreeProps(composedProps);
   }
   for (let index = descriptors.length; index < state.runners.length; index++) {
     let entry = state.runners[index];
@@ -1196,6 +1213,7 @@ function createMixinHandle(options) {
 }
 var MixinHandleImpl = class extends TypedEventTarget {
   id;
+  context;
   frame;
   element;
   #options;
@@ -1204,6 +1222,7 @@ var MixinHandleImpl = class extends TypedEventTarget {
     commit: 0
   };
   #activeScope;
+  #scopeSignals = /* @__PURE__ */ new Map();
   #scopeTargets = /* @__PURE__ */ new Map();
   #scopePhaseCounts = /* @__PURE__ */ new Map();
   #onSchedulerBeforeUpdate = (event) => {
@@ -1216,6 +1235,9 @@ var MixinHandleImpl = class extends TypedEventTarget {
     super();
     this.#options = options;
     this.id = options.id;
+    this.context = {
+      get: options.getContext
+    };
     this.frame = options.frame;
     let element = ((_, __) => (props) => ({
       $rmx: true,
@@ -1227,7 +1249,12 @@ var MixinHandleImpl = class extends TypedEventTarget {
     this.element = element;
   }
   get signal() {
-    return this.#options.getSignal();
+    let scope = this.#activeScope;
+    invariant(
+      scope,
+      "handle.signal is only available during mixin setup, render, or lifecycle callbacks"
+    );
+    return this.#getScopeSignal(scope);
   }
   addEventListener(type, listener, options) {
     let target = this.#getActiveScopeTarget();
@@ -1273,7 +1300,7 @@ var MixinHandleImpl = class extends TypedEventTarget {
   }
   update() {
     return new Promise((resolve) => {
-      let signal = this.#options.getSignal();
+      let signal = this.#options.getRuntimeSignal();
       if (signal.aborted) {
         resolve(signal);
         return;
@@ -1291,7 +1318,7 @@ var MixinHandleImpl = class extends TypedEventTarget {
       () => {
         let binding = this.#options.getBinding();
         invariant(binding);
-        task(binding.node, this.#options.getSignal());
+        task(binding.node, this.#options.getRuntimeSignal());
       }
     ]);
   }
@@ -1302,6 +1329,7 @@ var MixinHandleImpl = class extends TypedEventTarget {
     this.#activeScope = scope;
     if (!scope) return;
     if (this.#scopeTargets.has(scope)) return;
+    this.#scopeSignals.set(scope, new AbortController());
     this.#scopeTargets.set(scope, new TypedEventTarget());
     this.#scopePhaseCounts.set(scope, { beforeUpdate: 0, commit: 0 });
   }
@@ -1317,6 +1345,8 @@ var MixinHandleImpl = class extends TypedEventTarget {
       this.#decrementGlobalPhaseCount("beforeUpdate", scopePhaseCounts.beforeUpdate);
       this.#decrementGlobalPhaseCount("commit", scopePhaseCounts.commit);
     }
+    this.#scopeSignals.get(scope)?.abort();
+    this.#scopeSignals.delete(scope);
     this.#scopePhaseCounts.delete(scope);
     this.#scopeTargets.delete(scope);
     if (this.#activeScope === scope) {
@@ -1339,6 +1369,11 @@ var MixinHandleImpl = class extends TypedEventTarget {
     let target = this.#scopeTargets.get(scope);
     invariant(target);
     return target;
+  }
+  #getScopeSignal(scope) {
+    let controller = this.#scopeSignals.get(scope);
+    invariant(controller);
+    return controller.signal;
   }
   #decrementGlobalPhaseCount(type, amount) {
     if (amount <= 0) return;
@@ -1455,10 +1490,10 @@ function isBindingInUpdateScope(binding, parents) {
 }
 function resolveMixDescriptors(props) {
   let mix2 = props.mix;
-  if (mix2 == null) return [];
+  if (!mix2) return [];
   if (Array.isArray(mix2)) {
     if (mix2.length === 0) return [];
-    return [...mix2];
+    return mix2.filter(Boolean);
   }
   return [mix2];
 }
@@ -1468,12 +1503,56 @@ function withoutMix(props) {
   delete output.mix;
   return output;
 }
+function withoutMixinTreeProps(props) {
+  if (!("children" in props) && !("innerHTML" in props)) return props;
+  let output = { ...props };
+  delete output.children;
+  delete output.innerHTML;
+  return output;
+}
+function sanitizeReturnedMixinProps(props) {
+  if (!("children" in props) && !("innerHTML" in props)) return props;
+  console.error(new Error("mixins must not return children or innerHTML"));
+  return withoutMixinTreeProps(props);
+}
 function composeMixinProps(previous, next) {
   return { ...previous, ...next };
+}
+function resolveReturnedMixDescriptors(value) {
+  let descriptors = [];
+  if (!collectReturnedMixDescriptors(value, descriptors)) {
+    return null;
+  }
+  return descriptors;
+}
+function collectReturnedMixDescriptors(value, output) {
+  if (!value) {
+    return true;
+  }
+  if (Array.isArray(value)) {
+    for (let item of value) {
+      if (!collectReturnedMixDescriptors(item, output)) {
+        return false;
+      }
+    }
+    return true;
+  }
+  if (!isMixinDescriptor(value)) {
+    return false;
+  }
+  output.push(value);
+  return true;
 }
 function isRemixElement2(value) {
   if (!value || typeof value !== "object") return false;
   return value.$rmx === true;
+}
+function isMixinDescriptor(value) {
+  if (!value || typeof value !== "object" || isRemixElement2(value)) {
+    return false;
+  }
+  let descriptor = value;
+  return typeof descriptor.type === "function" && Array.isArray(descriptor.args);
 }
 function isMixinElement(value) {
   if (typeof value !== "function") return false;
@@ -1530,6 +1609,11 @@ function findMatchingPersistedMixinNode(type, key, domParent) {
   }
   return null;
 }
+function shouldRestoreControlledReflectionOnInput(node, state) {
+  if (state.hasControlledChecked) return false;
+  if (node.type === "select") return false;
+  return true;
+}
 function ensureControlledReflection(node, scheduler) {
   let existing = node._controlledState;
   if (existing) return existing;
@@ -1544,6 +1628,7 @@ function ensureControlledReflection(node, scheduler) {
     hasControlledChecked: false,
     controlledChecked: void 0,
     onInput: () => {
+      if (!shouldRestoreControlledReflectionOnInput(node, state)) return;
       scheduleControlledRestore(node, state);
     },
     onChange: () => {
@@ -1636,6 +1721,12 @@ function resolveNodeMixProps(node, frame, scheduler, state) {
     hostType: node.type,
     frame,
     scheduler,
+    getContext: (type) => {
+      if (typeof type !== "function") {
+        return void 0;
+      }
+      return findContextFromAncestry(node, type);
+    },
     props: node.props,
     state
   });
@@ -2031,7 +2122,7 @@ function diffFrame(curr, next, domParent, frame, scheduler, styles, vParent, roo
     }
     let runtime = getFrameRuntime(frame);
     if (runtime) {
-      resolveClientFrame(next, runtime, rootTarget);
+      resolveClientFrame(next, runtime);
     }
   }
   if (!next._frameResolved && next._frameFallbackRoot) {
@@ -2116,10 +2207,10 @@ function insertFrame(node, domParent, frame, scheduler, styles, vParent, rootTar
   });
   node._frameInstance = instance;
   runtime.frameInstances.set(start, instance);
-  resolveClientFrame(node, runtime, rootTarget);
+  resolveClientFrame(node, runtime);
   return cursor;
 }
-function resolveClientFrame(node, runtime, rootTarget) {
+function resolveClientFrame(node, runtime) {
   let frameSrc = getFrameSrc(node);
   let instance = node._frameInstance;
   if (!instance) return;
@@ -4317,7 +4408,27 @@ function run(init) {
   });
 }
 
-// ../packages/component/src/lib/mixins/on-mixin.tsx
+// ../packages/component/src/lib/create-element.ts
+function createElement2(type, props, ...children) {
+  let nextProps = { ...props ?? {} };
+  if (isMixinElementType(type)) {
+    if (children.length > 0) {
+      console.error(new Error("mixin elements must not receive children"));
+    }
+  } else {
+    nextProps.children = children;
+  }
+  if (nextProps.key != null) {
+    let { key, ...rest } = nextProps;
+    return jsx(type, rest, key);
+  }
+  return jsx(type, nextProps);
+}
+function isMixinElementType(type) {
+  return typeof type === "function" && "__rmxMixinElementType" in type;
+}
+
+// ../packages/component/src/lib/mixins/on-mixin.ts
 var onMixin = createMixin((handle) => {
   let currentHandler = () => {
   };
@@ -4361,22 +4472,19 @@ function on(type, handler, captureBoolean) {
   );
 }
 
-// ../packages/component/src/lib/mixins/link-mixin.tsx
+// ../packages/component/src/lib/mixins/link-mixin.ts
 var nativeLinkHostTypes = /* @__PURE__ */ new Set(["a", "area"]);
 var link = createMixin((handle, hostType) => {
   let suppressKeyboardClick = false;
   return (href, options, props) => {
     if (nativeLinkHostTypes.has(hostType)) {
-      return /* @__PURE__ */ jsx(
-        handle.element,
-        {
-          ...props,
-          href,
-          ...options?.target == null ? {} : { "rmx-target": options.target },
-          ...options?.src == null ? {} : { "rmx-src": options.src },
-          ...options?.resetScroll === false ? { "rmx-reset-scroll": "false" } : {}
-        }
-      );
+      return renderMixinElement(handle.element, {
+        ...props ?? {},
+        href,
+        ...options?.target == null ? {} : { "rmx-target": options.target },
+        ...options?.src == null ? {} : { "rmx-src": options.src },
+        ...options?.resetScroll === false ? { "rmx-reset-scroll": "false" } : {}
+      });
     }
     let nextProps = { ...props };
     if (nextProps.role == null) {
@@ -4391,72 +4499,69 @@ var link = createMixin((handle, hostType) => {
     if (hostType !== "button" && nextProps.tabIndex == null && nextProps.tabindex == null && nextProps.contentEditable == null && nextProps.contenteditable == null) {
       nextProps.tabIndex = 0;
     }
-    return /* @__PURE__ */ jsx(
-      handle.element,
-      {
-        ...nextProps,
-        mix: [
-          on("click", (event) => {
-            if (event.detail === 0 && suppressKeyboardClick) {
-              suppressKeyboardClick = false;
-              event.preventDefault();
-              return;
-            }
+    return renderMixinElement(handle.element, {
+      ...nextProps,
+      mix: [
+        on("click", (event) => {
+          if (event.detail === 0 && suppressKeyboardClick) {
             suppressKeyboardClick = false;
-            if (isDisabledElement(event.currentTarget)) {
-              event.preventDefault();
-              return;
-            }
-            if (event.button !== 0) return;
             event.preventDefault();
-            if (event.metaKey || event.ctrlKey) {
-              globalThis.open(href, "_blank");
-              return;
-            }
-            void navigate(href, options);
-          }),
-          on("auxclick", (event) => {
-            suppressKeyboardClick = false;
-            if (isDisabledElement(event.currentTarget)) {
-              event.preventDefault();
-              return;
-            }
-            if (event.button !== 1) return;
+            return;
+          }
+          suppressKeyboardClick = false;
+          if (isDisabledElement(event.currentTarget)) {
             event.preventDefault();
+            return;
+          }
+          if (event.button !== 0) return;
+          event.preventDefault();
+          if (event.metaKey || event.ctrlKey) {
             globalThis.open(href, "_blank");
-          }),
-          on("keydown", (event) => {
-            if (event.key === "Enter") {
-              if (event.repeat) return;
-              if (isDisabledElement(event.currentTarget)) {
-                event.preventDefault();
-                return;
-              }
-              suppressKeyboardClick = hostType === "button";
+            return;
+          }
+          void navigate(href, options);
+        }),
+        on("auxclick", (event) => {
+          suppressKeyboardClick = false;
+          if (isDisabledElement(event.currentTarget)) {
+            event.preventDefault();
+            return;
+          }
+          if (event.button !== 1) return;
+          event.preventDefault();
+          globalThis.open(href, "_blank");
+        }),
+        on("keydown", (event) => {
+          if (event.key === "Enter") {
+            if (event.repeat) return;
+            if (isDisabledElement(event.currentTarget)) {
               event.preventDefault();
-              void navigate(href, options);
               return;
             }
-            if (hostType === "button" && event.key === " ") {
-              suppressKeyboardClick = true;
-              event.preventDefault();
-            }
-          }),
-          on("keyup", (event) => {
-            if (hostType === "button" && event.key === " ") {
-              event.preventDefault();
-            }
-          })
-        ]
-      }
-    );
+            suppressKeyboardClick = hostType === "button";
+            event.preventDefault();
+            void navigate(href, options);
+            return;
+          }
+          if (hostType === "button" && event.key === " ") {
+            suppressKeyboardClick = true;
+            event.preventDefault();
+          }
+        }),
+        on("keyup", (event) => {
+          if (hostType === "button" && event.key === " ") {
+            event.preventDefault();
+          }
+        })
+      ]
+    });
   };
 });
 function isDisabledElement(node) {
   return "disabled" in node && node.disabled === true || node.getAttribute("aria-disabled") === "true";
 }
 
-// ../packages/component/src/lib/mixins/keys-mixin.tsx
+// ../packages/component/src/lib/mixins/keys-mixin.ts
 var escapeEventType = "keydown:Escape";
 var enterEventType = "keydown:Enter";
 var spaceEventType = "keydown: ";
@@ -4485,10 +4590,9 @@ var keyToEventType = {
   PageUp: pageUpEventType,
   PageDown: pageDownEventType
 };
-var baseKeysEvents = createMixin((handle) => (props) => /* @__PURE__ */ jsx(
-  handle.element,
-  {
-    ...props,
+var baseKeysEvents = createMixin(
+  (handle) => (props) => renderMixinElement(handle.element, {
+    ...props ?? {},
     mix: [
       on("keydown", (event) => {
         let type = keyToEventType[event.key];
@@ -4501,9 +4605,9 @@ var baseKeysEvents = createMixin((handle) => (props) => /* @__PURE__ */ jsx(
         );
       })
     ]
-  }
-));
-var keysEvents = Object.assign(baseKeysEvents, {
+  })
+);
+var keys = Object.assign(baseKeysEvents, {
   escape: escapeEventType,
   enter: enterEventType,
   space: spaceEventType,
@@ -4519,7 +4623,7 @@ var keysEvents = Object.assign(baseKeysEvents, {
   pageDown: pageDownEventType
 });
 
-// ../packages/component/src/lib/mixins/press-mixin.tsx
+// ../packages/component/src/lib/mixins/press-mixin.ts
 var pressEventType = "rmx:press";
 var pressDownEventType = "rmx:press-down";
 var pressUpEventType = "rmx:press-up";
@@ -4673,26 +4777,41 @@ var pressEvents = Object.assign(basePressEvents, {
   cancel: pressCancelEventType
 });
 
-// ../packages/component/src/lib/mixins/ref-mixin.tsx
-var ref = createMixin((handle) => {
-  let controller;
-  handle.addEventListener("insert", (event) => {
-    controller = new AbortController();
-    callback(event.node, controller.signal);
-  });
-  handle.addEventListener("remove", () => {
-    controller?.abort(new DOMException("", "AbortError"));
-    controller = void 0;
-  });
-  let callback = () => {
-  };
-  return (nextCallback) => {
-    callback = nextCallback;
-    return handle.element;
-  };
-});
+// ../packages/component/src/lib/mixins/ref-mixin.ts
+var ref = createMixin(
+  (handle) => {
+    let controller;
+    handle.addEventListener("insert", (event) => {
+      controller = new AbortController();
+      callback(event.node, controller.signal);
+    });
+    handle.addEventListener("remove", () => {
+      controller?.abort(new DOMException("", "AbortError"));
+      controller = void 0;
+    });
+    let callback = () => {
+    };
+    return (nextCallback) => {
+      callback = nextCallback;
+      return handle.element;
+    };
+  }
+);
 
-// ../packages/component/src/lib/mixins/css-mixin.tsx
+// ../packages/component/src/lib/mixins/attrs-mixin.tsx
+var attrsMixin = createMixin(
+  (handle) => (defaults, props) => {
+    let nextProps = props;
+    for (let key in defaults) {
+      if (props[key] !== void 0) continue;
+      if (nextProps === props) nextProps = { ...props };
+      nextProps[key] = defaults[key];
+    }
+    return nextProps === props ? handle.element : createElement2(handle.element, nextProps);
+  }
+);
+
+// ../packages/component/src/lib/mixins/css-mixin.ts
 var clientStyleCache = /* @__PURE__ */ new Map();
 var css = createMixin((handle) => {
   let activeSelector = "";
@@ -4723,13 +4842,10 @@ var css = createMixin((handle) => {
     if (!selector) {
       return handle.element;
     }
-    return /* @__PURE__ */ jsx(
-      handle.element,
-      {
-        ...props,
-        className: props.className ? `${props.className} ${selector}` : selector
-      }
-    );
+    return renderMixinElement(handle.element, {
+      ...props ?? {},
+      className: props?.className ? `${props.className} ${selector}` : selector
+    });
   };
 });
 function resolveStyleTarget(runtime) {
@@ -4739,7 +4855,7 @@ function resolveStyleTarget(runtime) {
   };
 }
 
-// ../packages/component/src/lib/mixins/animate-mixins.tsx
+// ../packages/component/src/lib/mixins/animate-mixins.ts
 var DEFAULT_ENTER = {
   opacity: 0,
   duration: 150,
@@ -4933,7 +5049,7 @@ var animateExitMixin = createMixin((handle) => {
   };
 });
 
-// ../packages/component/src/lib/mixins/animate-layout-mixin.tsx
+// ../packages/component/src/lib/mixins/animate-layout-mixin.ts
 var DEFAULT_DURATION = 200;
 var DEFAULT_EASING = "ease-out";
 var SCALE_PRECISION = 1e-4;
@@ -4968,9 +5084,10 @@ function calcAxisDelta(delta, source, target, origin = 0.5) {
     delta.translate = 0;
   }
 }
-function calcBoxDelta(delta, source, target) {
-  calcAxisDelta(delta.x, source.x, target.x, 0.5);
-  calcAxisDelta(delta.y, source.y, target.y, 0.5);
+function calcBoxDelta(delta, source, target, layoutConfig) {
+  let origin = layoutConfig.size === false ? 0 : 0.5;
+  calcAxisDelta(delta.x, source.x, target.x, origin);
+  calcAxisDelta(delta.y, source.y, target.y, origin);
 }
 function mixAxisDelta(output, delta, progress) {
   output.translate = mix(delta.translate, 0, progress);
@@ -4992,15 +5109,12 @@ function copyDeltaInto(target, source) {
   copyAxisDeltaInto(target.x, source.x);
   copyAxisDeltaInto(target.y, source.y);
 }
-function isDeltaZero(delta) {
-  return isNear(delta.x.translate, 0, TRANSLATE_PRECISION) && isNear(delta.y.translate, 0, TRANSLATE_PRECISION) && isNear(delta.x.scale, 1, SCALE_PRECISION) && isNear(delta.y.scale, 1, SCALE_PRECISION);
-}
-function buildProjectionTransform(delta) {
+function buildProjectionTransform(delta, layoutConfig) {
   let transform = "";
   if (delta.x.translate || delta.y.translate) {
     transform = `translate3d(${delta.x.translate}px, ${delta.y.translate}px, 0)`;
   }
-  if (delta.x.scale !== 1 || delta.y.scale !== 1) {
+  if (layoutConfig.size !== false && (delta.x.scale !== 1 || delta.y.scale !== 1)) {
     transform += transform ? " " : "";
     transform += `scale(${delta.x.scale}, ${delta.y.scale})`;
   }
@@ -5029,6 +5143,9 @@ function resolveLayoutConfig(config) {
   if (!config) return null;
   if (config === true) return {};
   return config;
+}
+function isVisualDeltaZero(delta, layoutConfig) {
+  return isNear(delta.x.translate, 0, TRANSLATE_PRECISION) && isNear(delta.y.translate, 0, TRANSLATE_PRECISION) && (layoutConfig.size === false || isNear(delta.x.scale, 1, SCALE_PRECISION) && isNear(delta.y.scale, 1, SCALE_PRECISION));
 }
 var animateLayoutMixin = createMixin((handle) => {
   let snapshot = null;
@@ -5077,8 +5194,8 @@ var animateLayoutMixin = createMixin((handle) => {
       return;
     }
     let targetDelta = createDelta();
-    calcBoxDelta(targetDelta, latest, snapshot);
-    if (isDeltaZero(targetDelta)) {
+    calcBoxDelta(targetDelta, latest, snapshot, layoutConfig);
+    if (isVisualDeltaZero(targetDelta, layoutConfig)) {
       snapshot = latest;
       return;
     }
@@ -5096,7 +5213,7 @@ var animateLayoutMixin = createMixin((handle) => {
     if (!currentDelta) currentDelta = createDelta();
     copyDeltaInto(currentDelta, targetDelta);
     animationProgress = 0;
-    let invert = buildProjectionTransform(targetDelta);
+    let invert = buildProjectionTransform(targetDelta, layoutConfig);
     let origin = buildTransformOrigin(targetDelta);
     htmlNode.style.transform = invert;
     htmlNode.style.transformOrigin = origin;

@@ -4,7 +4,7 @@ title: RequestContext
 
 # RequestContext
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/fetch-router/src/lib/request-context.ts#L36" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-router/src/lib/request-context.ts#L125" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,8 +14,8 @@ handler or middleware in the lifecycle of a request receives the same context ob
 ## Signature
 
 ```ts
-class RequestContext<params> {
-  constructor(request: Request): RequestContext<params>;
+class RequestContext<params, entries> {
+  constructor(request: Request): RequestContext<params, entries>;
 
   // Properties
   headers: Headers;
@@ -25,10 +25,10 @@ class RequestContext<params> {
   url: URL;
 
   // Accessors
-  get router(): Router;
+  get router(): Router<RequestContext<any, entries>>;
 
   // Methods
-  get<key extends object>(key: key): ContextValue<key>;
+  get<key extends object>(key: key): ResolveContextEntryValue<entries, key>;
   has<key extends object>(key: key): boolean;
   set<key extends object>(key: key, value: ContextValue<key>): void;
 }
@@ -70,7 +70,7 @@ However, the original request is made available in case you need it for some edg
 
 ### url
 
-The URL that was matched by the route.
+The URL of the current request.
 
 ## Accessors
 
@@ -80,7 +80,7 @@ The router handling this request.
 
 ## Methods
 
-### get<key extends object>(key: key): ContextValue<key>
+### get<key extends object>(key: key): ResolveContextEntryValue<entries, key>
 
 Get a value from request context.
 

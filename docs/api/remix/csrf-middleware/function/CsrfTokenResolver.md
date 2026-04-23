@@ -4,7 +4,7 @@ title: CsrfTokenResolver
 
 # CsrfTokenResolver
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/csrf-middleware/src/lib/csrf.ts#L44" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/csrf-middleware/src/lib/csrf.ts#L44" target="_blank">View Source</a>
 
 ## Summary
 

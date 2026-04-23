@@ -4,7 +4,7 @@ title: FormDataOptions
 
 # FormDataOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/form-data-middleware/src/lib/form-data.ts#L12" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/form-data-middleware/src/lib/form-data.ts#L28" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,6 +17,8 @@ interface FormDataOptions {
   maxFiles?: number;
   maxFileSize?: number;
   maxHeaderSize?: number;
+  maxParts?: number;
+  maxTotalSize?: number;
   suppressErrors?: boolean;
   uploadHandler?: FileUploadHandler;
 }
@@ -40,9 +42,20 @@ exceeds this size, a `MaxFileSizeExceededError` will be thrown.
 The maximum allowed size of a header in bytes. If an individual part's header
 exceeds this size, a `MaxHeaderSizeExceededError` will be thrown.
 
+### maxParts
+
+The maximum allowed number of parts in the multipart message. If this limit
+is exceeded, a `MaxPartsExceededError` will be thrown.
+
+### maxTotalSize
+
+The maximum allowed aggregate size of all part content in bytes. If this
+limit is exceeded, a `MaxTotalSizeExceededError` will be thrown.
+
 ### suppressErrors
 
-Set `true` to suppress parse errors.
+Set `true` to suppress malformed form-data parse errors. Multipart limit violations always
+surface as errors even when suppression is enabled.
 
 ### uploadHandler
 

@@ -4,7 +4,7 @@ title: descending
 
 # descending
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/route-pattern/src/lib/specificity.ts#L52" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/route-pattern/src/lib/specificity.ts#L53" target="_blank">View Source</a>
 
 ## Summary
 

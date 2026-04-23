@@ -4,11 +4,12 @@ title: createDatabase
 
 # createDatabase
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table/src/lib/database.ts#L916" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table/src/lib/database.ts#L827" target="_blank">View Source</a>
 
 ## Summary
 
 Creates a database runtime from an adapter.
+Thin wrapper around `new Database(adapter, options)`.
 
 ## Signature
 
@@ -49,4 +50,4 @@ Optional runtime options.
 
 ## Returns
 
-A [`Database`](/api/remix/data-table/type/Database/) API instance.
+A [`Database`](/api/remix/data-table/class/Database/) API instance.

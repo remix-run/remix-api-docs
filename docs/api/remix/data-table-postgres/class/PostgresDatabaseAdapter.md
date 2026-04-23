@@ -4,7 +4,7 @@ title: PostgresDatabaseAdapter
 
 # PostgresDatabaseAdapter
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.3/packages/data-table-postgres/src/lib/adapter.ts#L43" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table-postgres/src/lib/adapter.ts#L39" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,10 +14,7 @@ title: PostgresDatabaseAdapter
 
 ```ts
 class PostgresDatabaseAdapter {
-  constructor(
-    client: PostgresQueryable,
-    options: PostgresDatabaseAdapterOptions,
-  ): PostgresDatabaseAdapter;
+  constructor(client: PostgresQueryable): PostgresDatabaseAdapter;
 
   // Properties
   capabilities: {
@@ -76,8 +73,6 @@ class PostgresDatabaseAdapter {
 ## Constructor Params
 
 ### client
-
-### options
 
 ## Properties
 
