@@ -1,0 +1,33 @@
+---
+title: createAtmosphereAuthProvider
+---
+
+# createAtmosphereAuthProvider
+
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/atmosphere.ts#L220" target="_blank">View Source</a>
+
+## Summary
+
+Creates an Atmosphere auth provider with shared client options.
+
+Because atproto discovery is account-specific, call `prepare(handleOrDid)`
+before passing this provider to `startExternalAuth()`.
+
+## Signature
+
+```ts
+function createAtmosphereAuthProvider<profile extends AtmosphereAuthProfile>(
+  options: AtmosphereAuthProviderOptions<profile>,
+): AtmosphereAuthProvider<profile>;
+
+```
+
+## Params
+
+### options
+
+Atmosphere client configuration, session encryption secret, and optional profile mapping hooks.
+
+## Returns
+
+A provider that can be prepared for `startExternalAuth()` and passed directly to `finishExternalAuth()` and `refreshExternalAuth()`.

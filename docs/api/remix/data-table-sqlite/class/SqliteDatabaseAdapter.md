@@ -4,17 +4,17 @@ title: SqliteDatabaseAdapter
 
 # SqliteDatabaseAdapter
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/data-table-sqlite/src/lib/adapter.ts#L28" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table-sqlite/src/lib/adapter.ts#L58" target="_blank">View Source</a>
 
 ## Summary
 
-`DatabaseAdapter` implementation for Better SQLite3.
+`DatabaseAdapter` implementation for synchronous SQLite clients.
 
 ## Signature
 
 ```ts
 class SqliteDatabaseAdapter {
-  constructor(database: Database): SqliteDatabaseAdapter;
+  constructor(database: SqliteDatabase): SqliteDatabaseAdapter;
 
   // Properties
   capabilities: {

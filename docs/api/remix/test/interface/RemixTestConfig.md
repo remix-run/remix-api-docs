@@ -4,7 +4,7 @@ title: RemixTestConfig
 
 # RemixTestConfig
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/test/src/lib/config.ts#L86" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/test/src/lib/config.ts#L164" target="_blank">View Source</a>
 
 ## Signature
 
@@ -12,7 +12,18 @@ title: RemixTestConfig
 interface RemixTestConfig {
   browser?: { echo?: boolean; open?: boolean };
   concurrency?: string | number;
-  glob?: { e2e?: string; test?: string };
+  coverage?:
+    | boolean
+    | {
+        branches?: string | number;
+        dir?: string;
+        exclude?: string[];
+        functions?: string | number;
+        include?: string[];
+        lines?: string | number;
+        statements?: string | number;
+      };
+  glob?: { browser?: string; e2e?: string; exclude?: string; test?: string };
   playwrightConfig?: string | PlaywrightTestConfig;
   project?: string;
   reporter?: string;
@@ -35,11 +46,18 @@ Options for controlling the playwright browser
 
 Max number of concurrent test workers (--concurrency)
 
+### coverage
+
+Coverage configuration. `true` enables with defaults; an object enables with settings;
+`false` disables. CLI `--coverage` flag overrides the boolean aspect.
+
 ### glob
 
 Glob patterns to identify test files
  - `glob.test`: Glob pattern for all test files (--glob.test)
+ - `glob.browser`: Glob pattern for the subset of browser test files (--glob.browser)
  - `glob.e2e`: Glob pattern for the subset of e2e test files (--glob.e2e)
+ - `glob.exclude`: Glob pattern for paths to exclude from discovery (--glob.exclude)
 
 ### playwrightConfig
 

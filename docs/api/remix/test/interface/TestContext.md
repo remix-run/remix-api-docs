@@ -4,7 +4,7 @@ title: TestContext
 
 # TestContext
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/test/src/lib/context.ts#L19" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/test/src/lib/context.ts#L29" target="_blank">View Source</a>
 
 ## Summary
 
@@ -17,7 +17,8 @@ passed as the first argument to the test/it functions.
 interface TestContext {
   mock: { fn: any; method: any };
   after(fn: () => void): void;
-  serve(handler: (req: Request) => Promise<Response>): Promise<Page>;
+  serve(server: TestServer): Promise<Page>;
+  useFakeTimers(): FakeTimers;
 }
 
 ```
@@ -39,10 +40,17 @@ Registers a cleanup function to be called after the test completes.
 
 The cleanup function to execute
 
-### serve(handler: (req: Request) => Promise<Response>): Promise<Page>
+### serve(server: TestServer): Promise<Page>
 
-Starts a test server with the provided request handler.
+Wires a running test server up to a Playwright page so the test can drive
+it. The server is closed automatically when the test ends. Pair with
+`createTestServer` from `@remix-run/node-fetch-server/test` (or any other
+source of a `{ baseUrl, close }` handle) to spin up the server first.
 
-#### handler
+#### server
 
-Function handling incoming requests
+The running server the page should target
+
+### useFakeTimers(): FakeTimers
+
+Activates fake timers for testing time-dependent code.

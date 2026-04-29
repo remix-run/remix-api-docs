@@ -4,7 +4,7 @@ title: notEqual
 
 # notEqual
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/assert/src/lib/assert.ts#L98" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L98" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,7 +13,11 @@ Asserts strict inequality (`!==`) between `actual` and `expected`.
 ## Signature
 
 ```ts
-function notEqual<T>(actual: unknown, expected: unknown, message: string): void;
+function notEqual<_value>(
+  actual: unknown,
+  expected: unknown,
+  message: string,
+): void;
 
 ```
 

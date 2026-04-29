@@ -4,7 +4,7 @@ title: createOktaAuthProvider
 
 # createOktaAuthProvider
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/auth/src/lib/providers/okta.ts#L26" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/okta.ts#L26" target="_blank">View Source</a>
 
 ## Summary
 
@@ -15,7 +15,7 @@ Creates an Okta provider backed by the shared OIDC runtime.
 ```ts
 function createOktaAuthProvider(
   options: OktaAuthProviderOptions,
-): OAuthProvider<OktaAuthProfile, "okta">;
+): OAuthProvider<OktaAuthProfile, "okta", OAuthStandardTokens>;
 
 ```
 

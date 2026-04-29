@@ -4,7 +4,7 @@ title: LoggerOptions
 
 # LoggerOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/logger-middleware/src/lib/logger.ts#L6" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/logger-middleware/src/lib/logger.ts#L8" target="_blank">View Source</a>
 
 ## Summary
 
@@ -14,6 +14,7 @@ Options for the logger middleware.
 
 ```ts
 interface LoggerOptions {
+  colors?: boolean;
   format?: string;
   log?: (message: string) => void;
 }
@@ -21,6 +22,21 @@ interface LoggerOptions {
 ```
 
 ## Properties
+
+### colors
+
+Enables ANSI colors for high-signal log tokens.
+
+By default, colors are enabled when terminal color detection allows them. Set this to `false`
+to opt out or `true` to force colors on. When the `process` global is defined, color
+detection respects `CI`, `NO_COLOR`, `FORCE_COLOR`, `TERM=dumb`, and TTY output streams.
+
+The following tokens are colorized when colors are enabled:
+
+- `%method`
+- `%status`
+- `%duration`
+- `%contentLength`
 
 ### format
 

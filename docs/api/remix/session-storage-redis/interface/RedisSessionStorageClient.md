@@ -4,7 +4,7 @@ title: RedisSessionStorageClient
 
 # RedisSessionStorageClient
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/session-storage-redis/src/lib/redis-storage.ts#L9" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/session-storage-redis/src/lib/redis-storage.ts#L9" target="_blank">View Source</a>
 
 ## Summary
 

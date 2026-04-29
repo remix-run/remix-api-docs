@@ -1,34 +1,34 @@
-// ../packages/component/src/lib/jsx.ts
+// ../packages/ui/src/runtime/jsx.ts
 function jsx(type, props, key) {
   return { type, props: normalizeElementProps(props), key, $rmx: true };
 }
 function normalizeElementProps(props) {
   if (!props) return {};
   if (!("mix" in props)) return props;
-  let { mix: mix2, ...rest } = props;
-  let normalizedMix = normalizeMixValue(mix2);
+  let { mix, ...rest } = props;
+  let normalizedMix = normalizeMixValue(mix);
   return normalizedMix === void 0 ? rest : { ...rest, mix: normalizedMix };
 }
-function normalizeMixValue(mix2) {
-  if (!mix2) return void 0;
-  let normalizedMix = flattenMixValue(mix2);
+function normalizeMixValue(mix) {
+  if (!mix) return void 0;
+  let normalizedMix = flattenMixValue(mix);
   return normalizedMix.length === 0 ? void 0 : normalizedMix;
 }
-function flattenMixValue(mix2) {
-  if (!mix2) return [];
-  if (!Array.isArray(mix2)) return [mix2];
+function flattenMixValue(mix) {
+  if (!mix) return [];
+  if (!Array.isArray(mix)) return [mix];
   let flattened = [];
-  for (let item of mix2) {
+  for (let item of mix) {
     flattened.push(...flattenMixValue(item));
   }
   return flattened;
 }
 
-// ../packages/component/src/lib/typed-event-target.ts
+// ../packages/ui/src/runtime/typed-event-target.ts
 var TypedEventTarget = class extends EventTarget {
 };
 
-// ../packages/component/src/lib/component.ts
+// ../packages/ui/src/runtime/component.ts
 function createComponent(config) {
   let taskQueue = [];
   let renderCtrl = null;
@@ -42,6 +42,7 @@ function createComponent(config) {
   let scheduleUpdate = () => {
     throw new Error("scheduleUpdate not implemented");
   };
+  let props = {};
   let context = {
     set: (value) => {
       contextValue = value;
@@ -50,6 +51,7 @@ function createComponent(config) {
   };
   let handle = {
     id: config.id,
+    props,
     update: () => new Promise((resolve) => {
       taskQueue.push((signal) => resolve(signal));
       scheduleUpdate();
@@ -79,7 +81,7 @@ function createComponent(config) {
     let signal = renderCtrl?.signal;
     return taskQueue.splice(0, taskQueue.length).map((task) => () => task(signal));
   }
-  function render(props) {
+  function render(props2) {
     if (connectedCtrl?.signal.aborted) {
       console.warn("render called after component was removed, potential application memory leak");
       return [null, []];
@@ -88,20 +90,22 @@ function createComponent(config) {
       renderCtrl.abort();
       renderCtrl = null;
     }
-    if (!getContent) {
-      let { setup } = props;
-      let result = config.type(handle, setup);
+    syncProps(handle.props, props2);
+    let renderContent = getContent;
+    if (!renderContent) {
+      let result = config.type(handle);
       if (typeof result !== "function") {
         let name = config.type.name || "Anonymous";
         throw new Error(`${name} must return a render function, received ${typeof result}`);
       } else {
-        getContent = (props2) => {
-          let { setup: _, ...rest } = props2;
-          return result(rest);
-        };
+        getContent = result;
+        renderContent = result;
       }
     }
-    let node = getContent(props);
+    if (!renderContent) {
+      throw new Error("component render function was not initialized");
+    }
+    let node = renderContent(handle.props);
     return [node, dequeueTasks()];
   }
   function remove2() {
@@ -117,12 +121,23 @@ function createComponent(config) {
   }
   return { render, remove: remove2, setScheduleUpdate, frame: config.frame, getContextValue };
 }
+function syncProps(target, next) {
+  for (let key in target) {
+    if (!(key in next)) {
+      delete target[key];
+    }
+  }
+  for (let key in next) {
+    target[key] = next[key];
+  }
+}
 function Frame(handle) {
   void handle;
-  return (_) => null;
+  return () => null;
 }
-function Fragment() {
-  return (_) => null;
+function Fragment(handle) {
+  void handle;
+  return () => null;
 }
 function createFrameHandle(def) {
   return Object.assign(
@@ -141,7 +156,7 @@ function notImplemented(msg) {
   };
 }
 
-// ../packages/component/src/lib/error-event.ts
+// ../packages/ui/src/runtime/error-event.ts
 function createComponentErrorEvent(error) {
   return new ErrorEvent("error", { error });
 }
@@ -149,14 +164,14 @@ function getComponentError(event) {
   return event.error;
 }
 
-// ../packages/component/src/lib/invariant.ts
+// ../packages/ui/src/runtime/invariant.ts
 function invariant(assertion, message) {
   let prefix = "Framework invariant";
   if (assertion) return;
   throw new Error(message ? `${prefix}: ${message}` : prefix);
 }
 
-// ../packages/component/src/lib/document-state.ts
+// ../packages/ui/src/runtime/document-state.ts
 function createDocumentState(_doc) {
   let doc = _doc ?? document;
   function getActiveElement() {
@@ -239,7 +254,7 @@ function createDocumentState(_doc) {
   return { capture, restore };
 }
 
-// ../packages/component/src/lib/vnode.ts
+// ../packages/ui/src/runtime/vnode.ts
 var TEXT_NODE = Symbol("TEXT_NODE");
 var ROOT_VNODE = Symbol("ROOT_VNODE");
 function isFragmentNode(node) {
@@ -277,175 +292,60 @@ function findContextFromAncestry(node, type) {
   return void 0;
 }
 
-// ../packages/component/src/lib/style/lib/stylesheet.ts
-var serverStyleState = null;
-var activeManagers = /* @__PURE__ */ new Set();
+// ../packages/ui/src/style/stylesheet.ts
+var SERVER_STYLE_SELECTOR = "style[data-rmx]";
+var DEFAULT_STYLE_LAYER = "rmx";
+function getStyleLayerName(className, layer = DEFAULT_STYLE_LAYER) {
+  return `${layer}.${className}`;
+}
+function compareNodesInDocumentOrder(a, b) {
+  if (a === b) return 0;
+  let position = a.compareDocumentPosition(b);
+  if (position & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+  if (position & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+  return 0;
+}
+function isParentNode(value) {
+  return "querySelectorAll" in value;
+}
+function collectServerStyleTagsFromNode(node, into) {
+  if (isHtmlStyleElement(node) && node.matches(SERVER_STYLE_SELECTOR)) {
+    into.add(node);
+    return;
+  }
+  if (!(node instanceof Element) && !(node instanceof Document) && !(node instanceof DocumentFragment)) {
+    return;
+  }
+  let nested = node.querySelectorAll?.(SERVER_STYLE_SELECTOR) ?? [];
+  for (let i = 0; i < nested.length; i++) {
+    let el = nested[i];
+    if (isHtmlStyleElement(el)) {
+      into.add(el);
+    }
+  }
+}
+function collectServerStyleTags(source) {
+  let styles = /* @__PURE__ */ new Set();
+  if (isParentNode(source)) {
+    collectServerStyleTagsFromNode(source, styles);
+  } else {
+    for (let node of source) {
+      collectServerStyleTagsFromNode(node, styles);
+    }
+  }
+  return Array.from(styles).sort(compareNodesInDocumentOrder);
+}
 function isHtmlStyleElement(node) {
   return typeof node === "object" && node !== null && node instanceof HTMLStyleElement;
 }
-function getLayerName(rule) {
-  if (typeof globalThis.CSSLayerBlockRule === "undefined") return null;
-  if (!(rule instanceof globalThis.CSSLayerBlockRule)) return null;
-  return rule.name ?? null;
-}
-function isCssStyleRule(rule) {
-  if (typeof globalThis.CSSStyleRule === "undefined") return false;
-  return rule instanceof globalThis.CSSStyleRule;
-}
-function walkRulesForSelectors(rules, layerName, addSelector) {
-  for (let i = 0; i < rules.length; i++) {
-    let rule = rules[i];
-    if (!rule) continue;
-    let nextLayerName = getLayerName(rule) ?? layerName;
-    if (isCssStyleRule(rule)) {
-      if (!nextLayerName) continue;
-      let classMatches = rule.selectorText.matchAll(/\.((?:rmxc-[a-z0-9]+))/g);
-      for (let match of classMatches) {
-        let selector = match[1];
-        if (selector) addSelector(nextLayerName, selector);
-      }
-      continue;
-    }
-    let childRules = rule.cssRules;
-    if (childRules) {
-      walkRulesForSelectors(childRules, nextLayerName, addSelector);
-    }
-  }
-}
-function seedManagersWithServerSelectors(layerName, selectors) {
-  for (let mgr of activeManagers) {
-    if (mgr.layer !== layerName) continue;
-    for (let selector of selectors) {
-      if (!mgr.ruleMap.has(selector)) {
-        mgr.ruleMap.set(selector, { count: 1, index: -1 });
-      }
-    }
-  }
-}
-function ensureServerStyleState() {
-  if (serverStyleState) return serverStyleState;
-  let sheet = new CSSStyleSheet();
-  document.adoptedStyleSheets.push(sheet);
-  serverStyleState = {
-    sheet,
-    text: "",
-    refCount: 0,
-    observer: null,
-    processed: /* @__PURE__ */ new WeakSet(),
-    adoptedTexts: /* @__PURE__ */ new Set(),
-    selectorsByLayer: /* @__PURE__ */ new Map()
-  };
-  adoptAllServerStyleTags();
-  startServerStyleObserver();
-  return serverStyleState;
-}
-function adoptAllServerStyleTags() {
-  if (!serverStyleState) return;
-  let styles = document.querySelectorAll("style[data-rmx-styles]");
-  for (let i = 0; i < styles.length; i++) {
-    let el = styles[i];
-    if (isHtmlStyleElement(el)) adoptServerStyleTag(el);
-  }
-}
-function startServerStyleObserver() {
-  if (!serverStyleState) return;
-  if (serverStyleState.observer) return;
-  let root = document.documentElement;
-  if (!root) return;
-  serverStyleState.observer = new MutationObserver((mutations) => {
-    for (let mutation of mutations) {
-      for (let node of mutation.addedNodes) {
-        if (!node) continue;
-        if (isHtmlStyleElement(node)) {
-          if (node.matches("style[data-rmx-styles]")) adoptServerStyleTag(node);
-          continue;
-        }
-        if (node instanceof Element) {
-          let nested = node.querySelectorAll?.("style[data-rmx-styles]") ?? [];
-          for (let i = 0; i < nested.length; i++) {
-            let el = nested[i];
-            if (isHtmlStyleElement(el)) adoptServerStyleTag(el);
-          }
-        }
-      }
-    }
-  });
-  serverStyleState.observer.observe(root, { childList: true, subtree: true });
-}
-function adoptServerStyleTag(styleEl) {
-  if (!serverStyleState) return;
-  if (serverStyleState.processed.has(styleEl)) return;
-  serverStyleState.processed.add(styleEl);
-  let addedSelectorsByLayer = /* @__PURE__ */ new Map();
-  function addSelector(layerName, selector) {
-    let layerSet = serverStyleState.selectorsByLayer.get(layerName);
-    if (!layerSet) {
-      layerSet = /* @__PURE__ */ new Set();
-      serverStyleState.selectorsByLayer.set(layerName, layerSet);
-    }
-    if (layerSet.has(selector)) return;
-    layerSet.add(selector);
-    let addedSet = addedSelectorsByLayer.get(layerName);
-    if (!addedSet) {
-      addedSet = /* @__PURE__ */ new Set();
-      addedSelectorsByLayer.set(layerName, addedSet);
-    }
-    addedSet.add(selector);
-  }
-  try {
-    if (styleEl.sheet) {
-      walkRulesForSelectors(styleEl.sheet.cssRules, null, addSelector);
-    }
-  } catch {
-  }
-  let adopted = false;
-  let cssText = styleEl.textContent?.trim() ?? "";
-  if (cssText.length === 0) {
-    adopted = true;
-  } else if (serverStyleState.adoptedTexts.has(cssText)) {
-    adopted = true;
-  } else {
-    try {
-      if (typeof serverStyleState.sheet.replaceSync === "function") {
-        serverStyleState.text += (serverStyleState.text ? "\n" : "") + cssText;
-        serverStyleState.sheet.replaceSync(serverStyleState.text);
-        serverStyleState.adoptedTexts.add(cssText);
-        adopted = true;
-      } else if (styleEl.sheet) {
-        let rules = styleEl.sheet.cssRules;
-        for (let i = 0; i < rules.length; i++) {
-          let rule = rules[i];
-          serverStyleState.sheet.insertRule(rule.cssText, serverStyleState.sheet.cssRules.length);
-        }
-        serverStyleState.adoptedTexts.add(cssText);
-        adopted = true;
-      }
-    } catch {
-    }
-  }
-  if (adopted) {
-    styleEl.remove();
-  }
-  for (let [layerName, selectors] of addedSelectorsByLayer) {
-    seedManagersWithServerSelectors(layerName, selectors);
-  }
-}
-function teardownServerStyleStateIfUnused() {
-  if (!serverStyleState) return;
-  if (serverStyleState.refCount > 0) return;
-  if (serverStyleState.observer) {
-    serverStyleState.observer.disconnect();
-  }
-  document.adoptedStyleSheets = Array.from(document.adoptedStyleSheets).filter(
-    (s) => s !== serverStyleState.sheet
-  );
-  serverStyleState = null;
+function getStyleSelector(styleEl) {
+  let selector = styleEl.getAttribute("data-rmx")?.trim();
+  return selector ? selector : null;
 }
 function createStyleManager(layer = "rmx") {
-  let server = ensureServerStyleState();
-  server.refCount++;
-  adoptAllServerStyleTags();
   let stylesheet = null;
+  let generation = 0;
+  let ruleMap = /* @__PURE__ */ new Map();
   function getStylesheet() {
     if (!stylesheet) {
       stylesheet = new CSSStyleSheet();
@@ -453,18 +353,46 @@ function createStyleManager(layer = "rmx") {
     }
     return stylesheet;
   }
-  let ruleMap = /* @__PURE__ */ new Map();
-  let serverSelectors = server.selectorsByLayer.get(layer);
-  if (serverSelectors) {
-    for (let selector of serverSelectors) {
-      ruleMap.set(selector, { count: 1, index: -1 });
+  function removeStylesheet() {
+    if (!stylesheet) return;
+    document.adoptedStyleSheets = Array.from(document.adoptedStyleSheets).filter(
+      (s) => s !== stylesheet
+    );
+    stylesheet = null;
+  }
+  function clearStylesheet() {
+    if (!stylesheet) return;
+    for (let i = stylesheet.cssRules.length - 1; i >= 0; i--) {
+      stylesheet.deleteRule(i);
     }
   }
-  let manager = { layer, ruleMap };
-  activeManagers.add(manager);
+  function adoptServerStyleTag(styleEl) {
+    let selector = getStyleSelector(styleEl);
+    if (!selector) return;
+    if (ruleMap.has(selector)) {
+      styleEl.remove();
+      return;
+    }
+    let cssText = styleEl.textContent?.trim() ?? "";
+    if (cssText.length === 0) {
+      styleEl.remove();
+      return;
+    }
+    try {
+      let sheet = getStylesheet();
+      let index = sheet.cssRules.length;
+      sheet.insertRule(cssText, index);
+      ruleMap.set(selector, { count: 1, index });
+      styleEl.remove();
+    } catch {
+    }
+  }
   function has(className) {
     let entry = ruleMap.get(className);
     return entry !== void 0 && entry.count > 0;
+  }
+  function getGeneration() {
+    return generation;
   }
   function insert2(className, rule) {
     let entry = ruleMap.get(className);
@@ -474,7 +402,7 @@ function createStyleManager(layer = "rmx") {
     }
     let sheet = getStylesheet();
     let index = sheet.cssRules.length;
-    sheet.insertRule(`@layer ${layer} { ${rule} }`, index);
+    sheet.insertRule(`@layer ${getStyleLayerName(className, layer)} { ${rule} }`, index);
     ruleMap.set(className, { count: 1, index });
   }
   function remove2(className) {
@@ -486,7 +414,6 @@ function createStyleManager(layer = "rmx") {
     }
     let indexToDelete = entry.index;
     ruleMap.delete(className);
-    if (indexToDelete < 0) return;
     if (!stylesheet) return;
     stylesheet.deleteRule(indexToDelete);
     for (let [, data] of ruleMap.entries()) {
@@ -495,21 +422,27 @@ function createStyleManager(layer = "rmx") {
       }
     }
   }
-  function dispose() {
-    if (stylesheet) {
-      document.adoptedStyleSheets = Array.from(document.adoptedStyleSheets).filter(
-        (s) => s !== stylesheet
-      );
-    }
+  function reset() {
+    clearStylesheet();
     ruleMap.clear();
-    activeManagers.delete(manager);
-    server.refCount--;
-    teardownServerStyleStateIfUnused();
+    removeStylesheet();
+    generation++;
   }
-  return { insert: insert2, remove: remove2, has, dispose };
+  function adoptServerStyles(source) {
+    let styles = collectServerStyleTags(source);
+    for (let styleEl of styles) {
+      adoptServerStyleTag(styleEl);
+    }
+  }
+  function dispose() {
+    removeStylesheet();
+    ruleMap.clear();
+    generation++;
+  }
+  return { insert: insert2, remove: remove2, has, getGeneration, reset, adoptServerStyles, dispose };
 }
 
-// ../packages/component/src/lib/style/lib/style.ts
+// ../packages/ui/src/style/style.ts
 function camelToKebab(str) {
   return str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 }
@@ -542,198 +475,8 @@ function normalizeCssValue(key, value) {
   }
   return String(value);
 }
-function isComplexSelector(key) {
-  return key.startsWith("&") || key.startsWith("@") || key.startsWith(":") || key.startsWith("[") || key.startsWith(".");
-}
-function isKeyframesAtRule(key) {
-  if (!key.startsWith("@")) return false;
-  let lower = key.toLowerCase();
-  return lower.startsWith("@keyframes") || lower.startsWith("@-webkit-keyframes") || lower.startsWith("@-moz-keyframes") || lower.startsWith("@-o-keyframes");
-}
-function hashStyle(obj) {
-  let sortedEntries = Object.entries(obj).sort(([a], [b]) => a.localeCompare(b));
-  let str = JSON.stringify(sortedEntries);
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    let char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash = hash & hash;
-  }
-  return Math.abs(hash).toString(36);
-}
-function styleToCss(styles, selector = "") {
-  let baseDeclarations = [];
-  let nestedBlocks = [];
-  let atRules = [];
-  let preludeAtRules = [];
-  for (let [key, value] of Object.entries(styles)) {
-    if (isComplexSelector(key)) {
-      if (key.startsWith("@")) {
-        let record2 = toRecord(value);
-        if (!record2) continue;
-        if (key.startsWith("@function")) {
-          let body = atRuleBodyToCss(record2);
-          if (body.trim().length > 0) {
-            preludeAtRules.push(`${key} {
-${indent(body, 2)}
-}`);
-          } else {
-            preludeAtRules.push(`${key} {
-}`);
-          }
-        } else if (isKeyframesAtRule(key)) {
-          let body = keyframesBodyToCss(record2);
-          if (body.trim().length > 0) {
-            preludeAtRules.push(`${key} {
-${indent(body, 2)}
-}`);
-          } else {
-            preludeAtRules.push(`${key} {
-}`);
-          }
-        } else {
-          let inner = styleToCss(record2, selector);
-          if (inner.trim().length > 0) {
-            atRules.push(`${key} {
-${indent(inner, 2)}
-}`);
-          } else {
-            atRules.push(`${key} {
-  ${selector} {
-  }
-}`);
-          }
-        }
-        continue;
-      }
-      let record = toRecord(value);
-      if (!record) continue;
-      let nestedContent = "";
-      for (let [prop, propValue] of Object.entries(record)) {
-        if (propValue != null) {
-          let normalizedValue = normalizeCssValue(prop, propValue);
-          nestedContent += `    ${camelToKebab(prop)}: ${normalizedValue};
-`;
-        }
-      }
-      if (nestedContent) {
-        nestedBlocks.push(`  ${key} {
-${nestedContent}  }`);
-      }
-    } else {
-      if (value != null) {
-        let normalizedValue = normalizeCssValue(key, value);
-        baseDeclarations.push(`  ${camelToKebab(key)}: ${normalizedValue};`);
-      }
-    }
-  }
-  let css2 = "";
-  if (preludeAtRules.length > 0) {
-    css2 += preludeAtRules.join("\n");
-  }
-  if (selector && (baseDeclarations.length > 0 || nestedBlocks.length > 0)) {
-    css2 += (css2 ? "\n" : "") + `${selector} {
-`;
-    if (baseDeclarations.length > 0) {
-      css2 += baseDeclarations.join("\n") + "\n";
-    }
-    if (nestedBlocks.length > 0) {
-      css2 += nestedBlocks.join("\n") + "\n";
-    }
-    css2 += "}";
-  }
-  if (atRules.length > 0) {
-    css2 += (css2 ? "\n" : "") + atRules.join("\n");
-  }
-  return css2;
-}
-function indent(text, spaces) {
-  let pad = " ".repeat(spaces);
-  return text.split("\n").map((line) => line.length ? pad + line : line).join("\n");
-}
-function isRecord(value) {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-function toRecord(value) {
-  return isRecord(value) ? value : null;
-}
-function keyframesBodyToCss(frames) {
-  let blocks = [];
-  for (let [frameSelector, frameValue] of Object.entries(frames)) {
-    if (!isRecord(frameValue)) {
-      continue;
-    }
-    let declarations = [];
-    for (let [prop, propValue] of Object.entries(frameValue)) {
-      if (propValue == null) continue;
-      if (isComplexSelector(prop)) continue;
-      let normalizedValue = normalizeCssValue(prop, propValue);
-      declarations.push(`  ${camelToKebab(prop)}: ${normalizedValue};`);
-    }
-    if (declarations.length > 0) {
-      blocks.push(`${frameSelector} {
-${declarations.join("\n")}
-}`);
-    } else {
-      blocks.push(`${frameSelector} {
-}`);
-    }
-  }
-  return blocks.join("\n");
-}
-function atRuleBodyToCss(styles) {
-  let declarations = [];
-  let nested = [];
-  for (let [key, value] of Object.entries(styles)) {
-    if (isComplexSelector(key)) {
-      if (key.startsWith("@")) {
-        let record = toRecord(value);
-        if (!record) continue;
-        let inner = atRuleBodyToCss(record);
-        if (inner.trim().length > 0) {
-          nested.push(`${key} {
-${indent(inner, 2)}
-}`);
-        } else {
-          nested.push(`${key} {
-}`);
-        }
-      } else {
-        continue;
-      }
-    } else {
-      if (value != null) {
-        let normalizedValue = normalizeCssValue(key, value);
-        declarations.push(`  ${camelToKebab(key)}: ${normalizedValue};`);
-      }
-    }
-  }
-  let body = "";
-  if (declarations.length > 0) {
-    body += declarations.join("\n");
-  }
-  if (nested.length > 0) {
-    body += (body ? "\n" : "") + nested.join("\n");
-  }
-  return body;
-}
-function processStyleClass(styleObj, styleCache) {
-  if (Object.keys(styleObj).length === 0) {
-    return { selector: "", css: "" };
-  }
-  let hash = hashStyle(styleObj);
-  let selector = `rmxc-${hash}`;
-  let cached = styleCache.get(hash);
-  if (cached) {
-    return cached;
-  }
-  let css2 = styleToCss(styleObj, `.${selector}`);
-  let result = { selector, css: css2 };
-  styleCache.set(hash, result);
-  return result;
-}
 
-// ../packages/component/src/lib/svg-attributes.ts
+// ../packages/ui/src/runtime/svg-attributes.ts
 var XLINK_NS = "http://www.w3.org/1999/xlink";
 var XML_NS = "http://www.w3.org/XML/1998/namespace";
 var CANONICAL_CAMEL_SVG_ATTRS = /* @__PURE__ */ new Set([
@@ -853,7 +596,7 @@ function camelToKebab2(input) {
   return input.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/_/g, "-").toLowerCase();
 }
 
-// ../packages/component/src/lib/diff-props.ts
+// ../packages/ui/src/runtime/diff-props.ts
 var SVG_NS = "http://www.w3.org/2000/svg";
 var globalStyleManager = typeof window !== "undefined" ? createStyleManager() : null;
 var defaultStyleManager = globalStyleManager;
@@ -876,7 +619,7 @@ function canUseProperty(dom, name, isSvg) {
   return name in dom;
 }
 function isFrameworkProp(name) {
-  return name === "children" || name === "mix" || name === "key" || name === "setup" || name === "animate" || name === "innerHTML";
+  return name === "children" || name === "mix" || name === "key" || name === "animate" || name === "innerHTML";
 }
 function serializeStyleObject(style) {
   let parts = [];
@@ -987,7 +730,7 @@ function diffHostProps(curr, next, dom) {
   }
 }
 
-// ../packages/component/src/lib/client-entries.ts
+// ../packages/ui/src/runtime/client-entries.ts
 function logHydrationMismatch(...msg) {
   console.error("Hydration mismatch:", ...msg);
 }
@@ -998,7 +741,7 @@ function skipComments(cursor) {
   return cursor;
 }
 
-// ../packages/component/src/lib/to-vnode.ts
+// ../packages/ui/src/runtime/to-vnode.ts
 function flatMapChildrenToVNodes(node) {
   return "children" in node.props ? Array.isArray(node.props.children) ? node.props.children.flat(Infinity).map(toVNode) : [toVNode(node.props.children)] : [];
 }
@@ -1033,18 +776,8 @@ function toVNode(node) {
   invariant(false, "Unexpected RemixNode");
 }
 
-// ../packages/component/src/lib/mixin.ts
-function renderMixinElement(element, props) {
-  let { key, ...rest } = props ?? {};
-  return jsx(element, rest, key);
-}
+// ../packages/ui/src/runtime/mixins/mixin.ts
 var mixinHandleId = 0;
-function createMixin(type) {
-  return (...args) => ({
-    type,
-    args
-  });
-}
 function resolveMixedProps(input) {
   let state = input.state ?? createMixinRuntimeState();
   let handle = state.handle;
@@ -1489,13 +1222,13 @@ function isBindingInUpdateScope(binding, parents) {
   return false;
 }
 function resolveMixDescriptors(props) {
-  let mix2 = props.mix;
-  if (!mix2) return [];
-  if (Array.isArray(mix2)) {
-    if (mix2.length === 0) return [];
-    return mix2.filter(Boolean);
+  let mix = props.mix;
+  if (!mix) return [];
+  if (Array.isArray(mix)) {
+    if (mix.length === 0) return [];
+    return mix.filter(Boolean);
   }
-  return [mix2];
+  return [mix];
 }
 function withoutMix(props) {
   if (!("mix" in props)) return props;
@@ -1568,7 +1301,7 @@ function normalizeMixinRunner(result, handle) {
   return () => result;
 }
 
-// ../packages/component/src/lib/reconcile.ts
+// ../packages/ui/src/runtime/reconcile.ts
 var SVG_NS2 = "http://www.w3.org/2000/svg";
 var INSERT_VNODE = 1 << 0;
 var MATCHED = 1 << 1;
@@ -1711,8 +1444,8 @@ function setPropertyReflection(element, key, value) {
   element[key] = value == null ? "" : value;
 }
 function resolveNodeMixProps(node, frame, scheduler, state) {
-  let mix2 = node.props.mix;
-  if (state == null && (mix2 == null || Array.isArray(mix2) && mix2.length === 0)) {
+  let mix = node.props.mix;
+  if (state == null && (mix == null || Array.isArray(mix) && mix.length === 0)) {
     node._mixState = void 0;
     node._mixedProps = node.props;
     return node.props;
@@ -2161,7 +1894,6 @@ function insertFrame(node, domParent, frame, scheduler, styles, vParent, rootTar
           resolveFrame: runtime.resolveFrame,
           pendingClientEntries: runtime.pendingClientEntries,
           scheduler: runtime.scheduler,
-          styleManager: runtime.styleManager,
           data: runtime.data,
           moduleCache: runtime.moduleCache,
           moduleLoads: runtime.moduleLoads,
@@ -2198,7 +1930,6 @@ function insertFrame(node, domParent, frame, scheduler, styles, vParent, rootTar
     resolveFrame: runtime.resolveFrame,
     pendingClientEntries: runtime.pendingClientEntries,
     scheduler: runtime.scheduler,
-    styleManager: runtime.styleManager,
     data: runtime.data,
     moduleCache: runtime.moduleCache,
     moduleLoads: runtime.moduleLoads,
@@ -2828,7 +2559,7 @@ function reclaimPersistedMixinNode(persistedNode, newNode, frame, scheduler, sty
   }
 }
 
-// ../packages/component/src/lib/scheduler.ts
+// ../packages/ui/src/runtime/scheduler.ts
 var MAX_CASCADING_UPDATES = 50;
 function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
   let documentState = createDocumentState(doc);
@@ -2853,6 +2584,10 @@ function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
       cascadingUpdateCount = 0;
       resetScheduled = false;
     }, 0);
+  }
+  function getFrameStyleManager(vnode) {
+    let runtime = vnode._handle?.frame.$runtime;
+    return runtime?.styleManager ?? styles;
   }
   function flush() {
     if (flushing) return;
@@ -2885,6 +2620,7 @@ function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
             let vParent = vnode._parent;
             let anchor = findNextSiblingDomAnchor(vnode, vParent) || void 0;
             try {
+              let updateStyles = getFrameStyleManager(vnode);
               renderComponent(
                 handle,
                 curr,
@@ -2892,7 +2628,7 @@ function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
                 domParent,
                 handle.frame,
                 scheduler,
-                styles,
+                updateStyles,
                 rootTarget,
                 vParent,
                 anchor
@@ -2982,7 +2718,7 @@ function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
   return scheduler;
 }
 
-// ../packages/component/src/lib/vdom.ts
+// ../packages/ui/src/runtime/vdom.ts
 function getHydrationComponentIdFromRangeStart(start) {
   if (!(start instanceof Comment)) return void 0;
   let marker = start.data.trim();
@@ -3166,7 +2902,7 @@ function createRootFrameHandle(init) {
   return frame;
 }
 
-// ../packages/component/src/lib/diff-dom.ts
+// ../packages/ui/src/runtime/diff-dom.ts
 function diffNodes(curr, next, context) {
   let parent = curr[0]?.parentNode ?? context.regionParent ?? null;
   invariant(parent, "Parent node not found");
@@ -3363,22 +3099,22 @@ function diffElementChildren(current, next, context) {
   for (let i = committed.length - 1; i >= 0; i--) {
     let node = committed[i];
     if (!node) continue;
-    let ref2 = anchor && anchor.parentNode === current ? anchor : null;
+    let ref = anchor && anchor.parentNode === current ? anchor : null;
     if (isVirtualRootStartMarker(node) || isVirtualRootEndMarker(node)) {
       if (node.parentNode !== current) {
-        current.insertBefore(node, ref2);
+        current.insertBefore(node, ref);
       }
       anchor = node;
       continue;
     }
     if (node.parentNode === current) {
-      let targetNext = ref2;
+      let targetNext = ref;
       let alreadyInPlace = targetNext === null && node.nextSibling === null || node.nextSibling === targetNext;
       if (!alreadyInPlace) {
         current.insertBefore(node, targetNext);
       }
     } else {
-      current.insertBefore(node, ref2);
+      current.insertBefore(node, ref);
     }
     if (node.parentNode === current) {
       anchor = node;
@@ -3460,7 +3196,7 @@ function isVirtualRootEndMarker(node) {
   return isCommentNode(node) && node.data.trim() === "/rmx:h";
 }
 
-// ../packages/component/src/lib/frame.ts
+// ../packages/ui/src/runtime/frame.ts
 var bufferedFrameTemplates = /* @__PURE__ */ new Map();
 var frameTemplateListeners = /* @__PURE__ */ new Map();
 function syncElementAttributes(target, source) {
@@ -3481,8 +3217,9 @@ function createFrame(root, init) {
   let subscriptions = [];
   let contentRoot;
   let reloadController;
+  let styleManager = init.styleManager ?? createStyleManager();
   mergeRmxDataFromDocument(init.data, container.doc);
-  let runtime = createFrameRuntime(init);
+  let runtime = createFrameRuntime({ ...init, styleManager });
   let frame = createFrameHandle({
     src: init.src,
     $runtime: runtime,
@@ -3523,7 +3260,7 @@ function createFrame(root, init) {
     pendingClientEntries: init.pendingClientEntries,
     scheduler: init.scheduler,
     frame,
-    styleManager: init.styleManager,
+    styleManager,
     data: init.data,
     moduleCache: init.moduleCache,
     moduleLoads: init.moduleLoads,
@@ -3564,6 +3301,10 @@ function createFrame(root, init) {
       disposeSubFrames(previousBodyNodes, context);
       let parsed = new DOMParser().parseFromString(content, "text/html");
       mergeRmxDataFromDocument(context.data, parsed);
+      context.styleManager.reset();
+      context.styleManager.adoptServerStyles(
+        collectFrameServerStyleTags(createElementContainer(parsed))
+      );
       syncElementAttributes(container.doc.documentElement, parsed.documentElement);
       syncElementAttributes(container.doc.head, parsed.head);
       syncElementAttributes(container.doc.body, parsed.body);
@@ -3584,7 +3325,11 @@ function createFrame(root, init) {
       return;
     }
     let fragment = typeof content === "string" ? createFragmentFromString(container.doc, content) : content;
-    moveServerStylesToHead(container.doc, fragment);
+    context.styleManager.reset();
+    context.styleManager.adoptServerStyles(
+      collectFrameServerStyleTags(createElementContainer(fragment))
+    );
+    removeEmptyHeads(fragment);
     mergeRmxDataFromFragment(context.data, fragment);
     let nextContainer = createContainer(fragment);
     if (options?.signal?.aborted) return;
@@ -3629,21 +3374,19 @@ function createFrame(root, init) {
   }
   async function hydrateInitial() {
     let initialHydrationTracker = createInitialHydrationTracker();
+    context.styleManager.reset();
+    context.styleManager.adoptServerStyles(collectFrameServerStyleTags(container));
     createSubFrames(container.childNodes, context);
     scheduleHydrationInContainer(container, context, initialHydrationTracker);
     if (init.marker?.status === "pending") {
       let markerId = init.marker.id;
       let early = consumeFrameTemplate(markerId) ?? getEarlyFrameContent(markerId);
       if (early) {
-        moveServerStylesToHead(container.doc, early);
-        mergeRmxDataFromFragment(context.data, early);
         await render(early, { initialHydrationTracker });
       } else {
         let observer = setupTemplateObserver();
         let unsubscribe = subscribeFrameTemplate(markerId, async (fragment) => {
           unsubscribe();
-          moveServerStylesToHead(container.doc, fragment);
-          mergeRmxDataFromFragment(context.data, fragment);
           await render(fragment);
           observer.disconnect();
         });
@@ -3651,8 +3394,6 @@ function createFrame(root, init) {
         let buffered = consumeFrameTemplate(markerId);
         if (buffered) {
           unsubscribe();
-          moveServerStylesToHead(container.doc, buffered);
-          mergeRmxDataFromFragment(context.data, buffered);
           await render(buffered);
           observer.disconnect();
         }
@@ -3677,6 +3418,7 @@ function createFrame(root, init) {
     subscriptions.length = 0;
     removeVirtualRoots(container.childNodes);
     disposeSubFrames(container.childNodes, context);
+    context.styleManager.dispose();
     if (frameName) {
       if (init.namedFrames.get(frameName) === frame) {
         init.namedFrames.delete(frameName);
@@ -3757,19 +3499,34 @@ function mergeRmxDataFromFragment(into, fragment) {
     script.remove();
   }
 }
-function moveServerStylesToHead(doc, fragment) {
-  let target = doc.head;
-  if (!target) return;
-  let styles = Array.from(fragment.querySelectorAll("style[data-rmx-styles]"));
-  for (let style of styles) {
-    if (style instanceof HTMLStyleElement) {
-      target.appendChild(style);
-    }
-  }
+function removeEmptyHeads(fragment) {
   let heads = Array.from(fragment.querySelectorAll("head"));
   for (let head of heads) {
     if (!head.childNodes.length) {
       head.remove();
+    }
+  }
+}
+function collectFrameServerStyleTags(container) {
+  let styles = [];
+  let nodes = container.root instanceof Document ? [...Array.from(container.doc.head.childNodes), ...Array.from(container.doc.body.childNodes)] : container.childNodes;
+  collectOwnedServerStyleTags(nodes, styles);
+  return styles;
+}
+function collectOwnedServerStyleTags(nodes, styles) {
+  for (let i = 0; i < nodes.length; i++) {
+    let node = nodes[i];
+    if (isFrameStart(node)) {
+      let end = findEndMarker(node, isFrameStart, isFrameEnd);
+      i = nodes.indexOf(end);
+      continue;
+    }
+    if (node instanceof HTMLStyleElement && node.matches("style[data-rmx]")) {
+      styles.push(node);
+      continue;
+    }
+    if (node instanceof Element || node instanceof Document || node instanceof DocumentFragment) {
+      collectOwnedServerStyleTags(Array.from(node.childNodes), styles);
     }
   }
 }
@@ -3923,7 +3680,6 @@ function createSubFrames(nodes, context) {
             resolveFrame: context.resolveFrame,
             pendingClientEntries: context.pendingClientEntries,
             scheduler: context.scheduler,
-            styleManager: context.styleManager,
             data: context.data,
             moduleCache: context.moduleCache,
             moduleLoads: context.moduleLoads,
@@ -4278,17 +4034,7 @@ function hasBalancedMarkerSummary(summary) {
   return summary.frameStarts === summary.frameEnds && summary.hydrationStarts === summary.hydrationEnds;
 }
 
-// ../packages/component/src/lib/navigation.ts
-async function navigate(href, options) {
-  let state = {
-    target: options?.target,
-    src: options?.src ?? href,
-    resetScroll: options?.resetScroll !== false,
-    $rmx: true
-  };
-  let transition2 = window.navigation.navigate(href, { state, history: options?.history });
-  await transition2.finished;
-}
+// ../packages/ui/src/runtime/navigation.ts
 function startNavigationListener(signal) {
   let navigation = window.navigation;
   navigation.updateCurrentEntry({
@@ -4363,7 +4109,7 @@ function getSourceElementNavigationState(event) {
   };
 }
 
-// ../packages/component/src/lib/run.ts
+// ../packages/ui/src/runtime/run.ts
 var topFrame;
 function getTopFrame() {
   if (!topFrame) throw new Error("app runtime not initialized");
@@ -4374,7 +4120,7 @@ function getNamedFrame(name) {
   return namedFrames.get(name) ?? getTopFrame();
 }
 function run(init) {
-  let styleManager = defaultStyleManager;
+  let styleManager = createStyleManager();
   let errorTarget = new TypedEventTarget();
   let scheduler = createScheduler(document, errorTarget, styleManager);
   let resolveFrame = init.resolveFrame ?? (() => "<p>resolve frame unimplemented</p>");
@@ -4408,985 +4154,6 @@ function run(init) {
   });
 }
 
-// ../packages/component/src/lib/create-element.ts
-function createElement2(type, props, ...children) {
-  let nextProps = { ...props ?? {} };
-  if (isMixinElementType(type)) {
-    if (children.length > 0) {
-      console.error(new Error("mixin elements must not receive children"));
-    }
-  } else {
-    nextProps.children = children;
-  }
-  if (nextProps.key != null) {
-    let { key, ...rest } = nextProps;
-    return jsx(type, rest, key);
-  }
-  return jsx(type, nextProps);
-}
-function isMixinElementType(type) {
-  return typeof type === "function" && "__rmxMixinElementType" in type;
-}
-
-// ../packages/component/src/lib/mixins/on-mixin.ts
-var onMixin = createMixin((handle) => {
-  let currentHandler = () => {
-  };
-  let currentType = "";
-  let currentCapture = false;
-  let currentNode = null;
-  let reentry = null;
-  let stableHandler = (event) => {
-    reentry?.abort(new DOMException("", "EventReentry"));
-    reentry = new AbortController();
-    void currentHandler(event, reentry.signal);
-  };
-  handle.addEventListener("insert", (event) => {
-    currentNode = event.node;
-    currentNode.addEventListener(currentType, stableHandler, currentCapture);
-  });
-  handle.addEventListener("remove", () => {
-    currentNode?.removeEventListener(currentType, stableHandler, currentCapture);
-    currentNode = null;
-    reentry?.abort(new DOMException("", "AbortError"));
-  });
-  return (type, handler, captureBoolean = false) => {
-    let previousType = currentType;
-    let previousCapture = currentCapture;
-    let needsRebind = currentType !== type || currentCapture !== captureBoolean;
-    currentType = type;
-    currentHandler = handler;
-    currentCapture = captureBoolean;
-    if (needsRebind && currentNode) {
-      currentNode.removeEventListener(previousType, stableHandler, previousCapture);
-      currentNode.addEventListener(type, stableHandler, captureBoolean);
-    }
-    return handle.element;
-  };
-});
-function on(type, handler, captureBoolean) {
-  return onMixin(
-    type,
-    handler,
-    captureBoolean
-  );
-}
-
-// ../packages/component/src/lib/mixins/link-mixin.ts
-var nativeLinkHostTypes = /* @__PURE__ */ new Set(["a", "area"]);
-var link = createMixin((handle, hostType) => {
-  let suppressKeyboardClick = false;
-  return (href, options, props) => {
-    if (nativeLinkHostTypes.has(hostType)) {
-      return renderMixinElement(handle.element, {
-        ...props ?? {},
-        href,
-        ...options?.target == null ? {} : { "rmx-target": options.target },
-        ...options?.src == null ? {} : { "rmx-src": options.src },
-        ...options?.resetScroll === false ? { "rmx-reset-scroll": "false" } : {}
-      });
-    }
-    let nextProps = { ...props };
-    if (nextProps.role == null) {
-      nextProps.role = "link";
-    }
-    if (nextProps.disabled === true && nextProps["aria-disabled"] == null) {
-      nextProps["aria-disabled"] = "true";
-    }
-    if (hostType === "button" && nextProps.type == null) {
-      nextProps.type = "button";
-    }
-    if (hostType !== "button" && nextProps.tabIndex == null && nextProps.tabindex == null && nextProps.contentEditable == null && nextProps.contenteditable == null) {
-      nextProps.tabIndex = 0;
-    }
-    return renderMixinElement(handle.element, {
-      ...nextProps,
-      mix: [
-        on("click", (event) => {
-          if (event.detail === 0 && suppressKeyboardClick) {
-            suppressKeyboardClick = false;
-            event.preventDefault();
-            return;
-          }
-          suppressKeyboardClick = false;
-          if (isDisabledElement(event.currentTarget)) {
-            event.preventDefault();
-            return;
-          }
-          if (event.button !== 0) return;
-          event.preventDefault();
-          if (event.metaKey || event.ctrlKey) {
-            globalThis.open(href, "_blank");
-            return;
-          }
-          void navigate(href, options);
-        }),
-        on("auxclick", (event) => {
-          suppressKeyboardClick = false;
-          if (isDisabledElement(event.currentTarget)) {
-            event.preventDefault();
-            return;
-          }
-          if (event.button !== 1) return;
-          event.preventDefault();
-          globalThis.open(href, "_blank");
-        }),
-        on("keydown", (event) => {
-          if (event.key === "Enter") {
-            if (event.repeat) return;
-            if (isDisabledElement(event.currentTarget)) {
-              event.preventDefault();
-              return;
-            }
-            suppressKeyboardClick = hostType === "button";
-            event.preventDefault();
-            void navigate(href, options);
-            return;
-          }
-          if (hostType === "button" && event.key === " ") {
-            suppressKeyboardClick = true;
-            event.preventDefault();
-          }
-        }),
-        on("keyup", (event) => {
-          if (hostType === "button" && event.key === " ") {
-            event.preventDefault();
-          }
-        })
-      ]
-    });
-  };
-});
-function isDisabledElement(node) {
-  return "disabled" in node && node.disabled === true || node.getAttribute("aria-disabled") === "true";
-}
-
-// ../packages/component/src/lib/mixins/keys-mixin.ts
-var escapeEventType = "keydown:Escape";
-var enterEventType = "keydown:Enter";
-var spaceEventType = "keydown: ";
-var backspaceEventType = "keydown:Backspace";
-var deleteEventType = "keydown:Delete";
-var arrowLeftEventType = "keydown:ArrowLeft";
-var arrowRightEventType = "keydown:ArrowRight";
-var arrowUpEventType = "keydown:ArrowUp";
-var arrowDownEventType = "keydown:ArrowDown";
-var homeEventType = "keydown:Home";
-var endEventType = "keydown:End";
-var pageUpEventType = "keydown:PageUp";
-var pageDownEventType = "keydown:PageDown";
-var keyToEventType = {
-  Escape: escapeEventType,
-  Enter: enterEventType,
-  " ": spaceEventType,
-  Backspace: backspaceEventType,
-  Delete: deleteEventType,
-  ArrowLeft: arrowLeftEventType,
-  ArrowRight: arrowRightEventType,
-  ArrowUp: arrowUpEventType,
-  ArrowDown: arrowDownEventType,
-  Home: homeEventType,
-  End: endEventType,
-  PageUp: pageUpEventType,
-  PageDown: pageDownEventType
-};
-var baseKeysEvents = createMixin(
-  (handle) => (props) => renderMixinElement(handle.element, {
-    ...props ?? {},
-    mix: [
-      on("keydown", (event) => {
-        let type = keyToEventType[event.key];
-        if (!type) return;
-        event.preventDefault();
-        event.currentTarget.dispatchEvent(
-          new KeyboardEvent(type, {
-            key: event.key
-          })
-        );
-      })
-    ]
-  })
-);
-var keys = Object.assign(baseKeysEvents, {
-  escape: escapeEventType,
-  enter: enterEventType,
-  space: spaceEventType,
-  backspace: backspaceEventType,
-  del: deleteEventType,
-  arrowLeft: arrowLeftEventType,
-  arrowRight: arrowRightEventType,
-  arrowUp: arrowUpEventType,
-  arrowDown: arrowDownEventType,
-  home: homeEventType,
-  end: endEventType,
-  pageUp: pageUpEventType,
-  pageDown: pageDownEventType
-});
-
-// ../packages/component/src/lib/mixins/press-mixin.ts
-var pressEventType = "rmx:press";
-var pressDownEventType = "rmx:press-down";
-var pressUpEventType = "rmx:press-up";
-var longPressEventType = "rmx:long-press";
-var pressCancelEventType = "rmx:press-cancel";
-var PressEvent = class extends Event {
-  /**
-   * The horizontal pointer coordinate for the press event.
-   */
-  clientX;
-  /**
-   * The vertical pointer coordinate for the press event.
-   */
-  clientY;
-  constructor(type, init = {}) {
-    super(type, { bubbles: true, cancelable: true });
-    this.clientX = init.clientX ?? 0;
-    this.clientY = init.clientY ?? 0;
-  }
-};
-var basePressEvents = createMixin((handle) => {
-  let target = null;
-  let doc = null;
-  let isPointerDown = false;
-  let isKeyboardDown = false;
-  let longPressTimer = 0;
-  let suppressNextUp = false;
-  let clearLongTimer = () => {
-    if (longPressTimer) {
-      clearTimeout(longPressTimer);
-      longPressTimer = 0;
-    }
-  };
-  let startLongTimer = () => {
-    if (!target) return;
-    clearLongTimer();
-    longPressTimer = window.setTimeout(() => {
-      if (!target) return;
-      suppressNextUp = !target.dispatchEvent(new PressEvent(longPressEventType));
-    }, 500);
-  };
-  let onPointerDown = (event) => {
-    if (!target) return;
-    if (event.isPrimary === false) return;
-    if (isPointerDown) return;
-    isPointerDown = true;
-    target.dispatchEvent(
-      new PressEvent(pressDownEventType, {
-        clientX: event.clientX,
-        clientY: event.clientY
-      })
-    );
-    startLongTimer();
-  };
-  let onPointerUp = (event) => {
-    if (!target) return;
-    if (!isPointerDown) return;
-    isPointerDown = false;
-    clearLongTimer();
-    if (suppressNextUp) {
-      suppressNextUp = false;
-      return;
-    }
-    target.dispatchEvent(
-      new PressEvent(pressUpEventType, {
-        clientX: event.clientX,
-        clientY: event.clientY
-      })
-    );
-    target.dispatchEvent(
-      new PressEvent(pressEventType, {
-        clientX: event.clientX,
-        clientY: event.clientY
-      })
-    );
-  };
-  let onPointerLeave = () => {
-    if (!isPointerDown) return;
-    clearLongTimer();
-  };
-  let onKeyDown = (event) => {
-    if (!target) return;
-    let key = event.key;
-    if (key == "Escape" && (isKeyboardDown || isPointerDown)) {
-      clearLongTimer();
-      suppressNextUp = true;
-      target.dispatchEvent(new PressEvent(pressCancelEventType));
-      return;
-    }
-    if (!(key === "Enter" || key === " ")) return;
-    if (event.repeat) return;
-    if (isKeyboardDown) return;
-    isKeyboardDown = true;
-    target.dispatchEvent(new PressEvent(pressDownEventType));
-    startLongTimer();
-  };
-  let onKeyUp = (event) => {
-    if (!target) return;
-    let key = event.key;
-    if (!(key === "Enter" || key === " ")) return;
-    if (!isKeyboardDown) return;
-    isKeyboardDown = false;
-    clearLongTimer();
-    if (suppressNextUp) {
-      suppressNextUp = false;
-      return;
-    }
-    target.dispatchEvent(new PressEvent(pressUpEventType));
-    target.dispatchEvent(new PressEvent(pressEventType));
-  };
-  let onDocumentPointerUp = () => {
-    if (!target) return;
-    if (!isPointerDown) return;
-    isPointerDown = false;
-    target.dispatchEvent(new PressEvent(pressCancelEventType));
-  };
-  handle.addEventListener("insert", (event) => {
-    target = event.node;
-    doc = target.ownerDocument;
-    target.addEventListener("pointerdown", onPointerDown);
-    target.addEventListener("pointerup", onPointerUp);
-    target.addEventListener("pointerleave", onPointerLeave);
-    target.addEventListener("keydown", onKeyDown);
-    target.addEventListener("keyup", onKeyUp);
-    doc.addEventListener("pointerup", onDocumentPointerUp);
-  });
-  handle.addEventListener("remove", () => {
-    clearLongTimer();
-    if (target) {
-      target.removeEventListener("pointerdown", onPointerDown);
-      target.removeEventListener("pointerup", onPointerUp);
-      target.removeEventListener("pointerleave", onPointerLeave);
-      target.removeEventListener("keydown", onKeyDown);
-      target.removeEventListener("keyup", onKeyUp);
-    }
-    if (doc) {
-      doc.removeEventListener("pointerup", onDocumentPointerUp);
-    }
-    target = null;
-    doc = null;
-    isPointerDown = false;
-    isKeyboardDown = false;
-    suppressNextUp = false;
-  });
-});
-var pressEvents = Object.assign(basePressEvents, {
-  press: pressEventType,
-  down: pressDownEventType,
-  up: pressUpEventType,
-  long: longPressEventType,
-  cancel: pressCancelEventType
-});
-
-// ../packages/component/src/lib/mixins/ref-mixin.ts
-var ref = createMixin(
-  (handle) => {
-    let controller;
-    handle.addEventListener("insert", (event) => {
-      controller = new AbortController();
-      callback(event.node, controller.signal);
-    });
-    handle.addEventListener("remove", () => {
-      controller?.abort(new DOMException("", "AbortError"));
-      controller = void 0;
-    });
-    let callback = () => {
-    };
-    return (nextCallback) => {
-      callback = nextCallback;
-      return handle.element;
-    };
-  }
-);
-
-// ../packages/component/src/lib/mixins/attrs-mixin.tsx
-var attrsMixin = createMixin(
-  (handle) => (defaults, props) => {
-    let nextProps = props;
-    for (let key in defaults) {
-      if (props[key] !== void 0) continue;
-      if (nextProps === props) nextProps = { ...props };
-      nextProps[key] = defaults[key];
-    }
-    return nextProps === props ? handle.element : createElement2(handle.element, nextProps);
-  }
-);
-
-// ../packages/component/src/lib/mixins/css-mixin.ts
-var clientStyleCache = /* @__PURE__ */ new Map();
-var css = createMixin((handle) => {
-  let activeSelector = "";
-  let currentStyles = {};
-  handle.addEventListener("remove", () => {
-    if (!activeSelector) return;
-    let runtime = handle.frame.$runtime;
-    invariant(runtime, "css mixin requires frame runtime");
-    let styleTarget = resolveStyleTarget(runtime);
-    styleTarget.styleManager?.remove(activeSelector);
-    activeSelector = "";
-  });
-  return (styles, props) => {
-    currentStyles = styles;
-    let runtime = handle.frame.$runtime;
-    invariant(runtime, "css mixin requires frame runtime");
-    let styleTarget = resolveStyleTarget(runtime);
-    let { selector, css: cssText } = processStyleClass(currentStyles, styleTarget.styleCache);
-    if (styleTarget.styleManager) {
-      if (activeSelector && activeSelector !== selector) {
-        styleTarget.styleManager.remove(activeSelector);
-      }
-      if (selector && activeSelector !== selector) {
-        styleTarget.styleManager.insert(selector, cssText);
-      }
-      activeSelector = selector;
-    }
-    if (!selector) {
-      return handle.element;
-    }
-    return renderMixinElement(handle.element, {
-      ...props ?? {},
-      className: props?.className ? `${props.className} ${selector}` : selector
-    });
-  };
-});
-function resolveStyleTarget(runtime) {
-  return {
-    styleCache: runtime.styleCache ?? clientStyleCache,
-    styleManager: runtime.styleManager
-  };
-}
-
-// ../packages/component/src/lib/mixins/animate-mixins.ts
-var DEFAULT_ENTER = {
-  opacity: 0,
-  duration: 150,
-  easing: "ease-out"
-};
-var DEFAULT_EXIT = {
-  opacity: 0,
-  duration: 150,
-  easing: "ease-in"
-};
-var animatingNodes = /* @__PURE__ */ new WeakMap();
-var initialEntranceSeenByParent = /* @__PURE__ */ new WeakMap();
-function extractStyleProps(config) {
-  let result = {};
-  for (let key in config) {
-    if (key === "duration" || key === "easing" || key === "delay" || key === "composite" || key === "initial") {
-      continue;
-    }
-    let value = config[key];
-    if (value === void 0) continue;
-    if (typeof value !== "string" && typeof value !== "number") continue;
-    result[key] = value;
-  }
-  return result;
-}
-function buildEnterKeyframes(config) {
-  let keyframe = extractStyleProps(config);
-  return [keyframe, {}];
-}
-function buildExitKeyframes(config) {
-  let keyframe = extractStyleProps(config);
-  return [{}, keyframe];
-}
-function resolveEnterConfig(config) {
-  if (!config) return null;
-  if (config === true) return DEFAULT_ENTER;
-  return config;
-}
-function resolveExitConfig(config) {
-  if (!config) return null;
-  if (config === true) return DEFAULT_EXIT;
-  return config;
-}
-function createAnimationOptions(config, fill) {
-  return {
-    duration: config.duration,
-    delay: config.delay,
-    easing: config.easing,
-    composite: config.composite,
-    fill
-  };
-}
-function collectAnimatedProperties(keyframes) {
-  let properties = /* @__PURE__ */ new Set();
-  for (let keyframe of keyframes) {
-    for (let key in keyframe) {
-      if (key === "offset" || key === "easing" || key === "composite") continue;
-      properties.add(key);
-    }
-  }
-  return [...properties];
-}
-function toCssPropertyName(property) {
-  return property.includes("-") ? property : property.replace(/[A-Z]/g, (char) => `-${char.toLowerCase()}`);
-}
-function readInlineStyle(style, property) {
-  return style.getPropertyValue(toCssPropertyName(property));
-}
-function writeInlineStyle(style, property, value) {
-  let cssProperty = toCssPropertyName(property);
-  if (value === "") {
-    style.removeProperty(cssProperty);
-    return;
-  }
-  style.setProperty(cssProperty, value);
-}
-function trackAnimation(node, animation, keyframes) {
-  let properties = collectAnimatedProperties(keyframes);
-  animatingNodes.set(node, { animation, properties });
-  animation.finished.catch(() => {
-  }).finally(() => {
-    let current = animatingNodes.get(node);
-    if (current?.animation !== animation) return;
-    animatingNodes.delete(node);
-  });
-}
-function waitForAnimationOrAbort(animation, signal) {
-  if (signal.aborted) return Promise.resolve();
-  return new Promise((resolve) => {
-    let settled = false;
-    let settle = () => {
-      if (settled) return;
-      settled = true;
-      signal.removeEventListener("abort", settle);
-      resolve();
-    };
-    signal.addEventListener("abort", settle, { once: true });
-    void animation.finished.catch(() => {
-    }).finally(settle);
-  });
-}
-function shouldSkipInitialEntrance(event, config) {
-  if (config.initial !== false) return false;
-  if (event.key == null) return false;
-  let seenForParent = initialEntranceSeenByParent.get(event.parent);
-  if (!seenForParent) {
-    seenForParent = /* @__PURE__ */ new Set();
-    initialEntranceSeenByParent.set(event.parent, seenForParent);
-  }
-  if (seenForParent.has(event.key)) return false;
-  seenForParent.add(event.key);
-  return true;
-}
-var animateEntranceMixin = createMixin(
-  (handle) => {
-    let currentConfig = true;
-    handle.addEventListener("insert", (event) => {
-      let node = event.node;
-      let current = animatingNodes.get(node);
-      if (current && current.animation.playState === "running") {
-        return;
-      }
-      let config = resolveEnterConfig(currentConfig);
-      if (!config) return;
-      if (shouldSkipInitialEntrance(event, config)) return;
-      let keyframes = buildEnterKeyframes(config);
-      let options = createAnimationOptions(config, "backwards");
-      let animation = node.animate(keyframes, options);
-      trackAnimation(node, animation, keyframes);
-    });
-    return (config) => {
-      currentConfig = config;
-      return handle.element;
-    };
-  }
-);
-var animateExitMixin = createMixin((handle) => {
-  let currentConfig = true;
-  let node = null;
-  handle.addEventListener("insert", (event) => {
-    node = event.node;
-  });
-  handle.addEventListener("reclaimed", (event) => {
-    node = event.node;
-    let current = animatingNodes.get(event.node);
-    if (current && current.animation.playState === "running") {
-      try {
-        current.animation.commitStyles();
-      } catch {
-      }
-      current.animation.cancel();
-      let style = event.node.style;
-      let computed = getComputedStyle(event.node);
-      let from = {};
-      for (let property of current.properties) {
-        let cssProperty = toCssPropertyName(property);
-        let value = readInlineStyle(style, property) || computed.getPropertyValue(cssProperty);
-        if (value !== "") {
-          from[property] = value;
-        }
-        writeInlineStyle(style, property, "");
-      }
-      let enterConfig = resolveEnterConfig(currentConfig) ?? DEFAULT_ENTER;
-      let keyframes = [from, {}];
-      let options = createAnimationOptions(enterConfig, "none");
-      let animation = event.node.animate(keyframes, options);
-      trackAnimation(event.node, animation, keyframes);
-    }
-  });
-  handle.addEventListener("beforeRemove", (event) => {
-    let config = resolveExitConfig(currentConfig);
-    if (!config) return;
-    event.persistNode(async (signal) => {
-      invariant(node);
-      let current = animatingNodes.get(node);
-      if (current && current.animation.playState === "running") {
-        current.animation.reverse();
-        await waitForAnimationOrAbort(current.animation, signal);
-        return;
-      }
-      let keyframes = buildExitKeyframes(config);
-      let options = createAnimationOptions(config, "forwards");
-      let animation = node.animate(keyframes, options);
-      trackAnimation(node, animation, keyframes);
-      await waitForAnimationOrAbort(animation, signal);
-    });
-  });
-  return (config) => {
-    currentConfig = config;
-    return handle.element;
-  };
-});
-
-// ../packages/component/src/lib/mixins/animate-layout-mixin.ts
-var DEFAULT_DURATION = 200;
-var DEFAULT_EASING = "ease-out";
-var SCALE_PRECISION = 1e-4;
-var TRANSLATE_PRECISION = 0.01;
-function createAxisDelta() {
-  return { translate: 0, scale: 1, origin: 0.5, originPoint: 0 };
-}
-function createDelta() {
-  return { x: createAxisDelta(), y: createAxisDelta() };
-}
-function mix(from, to, progress) {
-  return from + (to - from) * progress;
-}
-function isNear(value, target, threshold) {
-  return Math.abs(value - target) <= threshold;
-}
-function calcLength(axis) {
-  return axis.max - axis.min;
-}
-function calcAxisDelta(delta, source, target, origin = 0.5) {
-  delta.origin = origin;
-  delta.originPoint = mix(source.min, source.max, origin);
-  let sourceLength = calcLength(source);
-  let targetLength = calcLength(target);
-  delta.scale = sourceLength !== 0 ? targetLength / sourceLength : 1;
-  let targetOriginPoint = mix(target.min, target.max, origin);
-  delta.translate = targetOriginPoint - delta.originPoint;
-  if (isNear(delta.scale, 1, SCALE_PRECISION) || Number.isNaN(delta.scale)) {
-    delta.scale = 1;
-  }
-  if (isNear(delta.translate, 0, TRANSLATE_PRECISION) || Number.isNaN(delta.translate)) {
-    delta.translate = 0;
-  }
-}
-function calcBoxDelta(delta, source, target, layoutConfig) {
-  let origin = layoutConfig.size === false ? 0 : 0.5;
-  calcAxisDelta(delta.x, source.x, target.x, origin);
-  calcAxisDelta(delta.y, source.y, target.y, origin);
-}
-function mixAxisDelta(output, delta, progress) {
-  output.translate = mix(delta.translate, 0, progress);
-  output.scale = mix(delta.scale, 1, progress);
-  output.origin = delta.origin;
-  output.originPoint = delta.originPoint;
-}
-function mixDelta(output, delta, progress) {
-  mixAxisDelta(output.x, delta.x, progress);
-  mixAxisDelta(output.y, delta.y, progress);
-}
-function copyAxisDeltaInto(target, source) {
-  target.translate = source.translate;
-  target.scale = source.scale;
-  target.origin = source.origin;
-  target.originPoint = source.originPoint;
-}
-function copyDeltaInto(target, source) {
-  copyAxisDeltaInto(target.x, source.x);
-  copyAxisDeltaInto(target.y, source.y);
-}
-function buildProjectionTransform(delta, layoutConfig) {
-  let transform = "";
-  if (delta.x.translate || delta.y.translate) {
-    transform = `translate3d(${delta.x.translate}px, ${delta.y.translate}px, 0)`;
-  }
-  if (layoutConfig.size !== false && (delta.x.scale !== 1 || delta.y.scale !== 1)) {
-    transform += transform ? " " : "";
-    transform += `scale(${delta.x.scale}, ${delta.y.scale})`;
-  }
-  return transform || "none";
-}
-function buildTransformOrigin(delta) {
-  return `${delta.x.origin * 100}% ${delta.y.origin * 100}%`;
-}
-function rectToBox(rect) {
-  return {
-    x: { min: rect.left, max: rect.right },
-    y: { min: rect.top, max: rect.bottom }
-  };
-}
-function measureNaturalBox(node) {
-  let prevTransform = node.style.transform;
-  let prevOrigin = node.style.transformOrigin;
-  node.style.transform = "none";
-  node.style.transformOrigin = "";
-  let rect = node.getBoundingClientRect();
-  node.style.transform = prevTransform;
-  node.style.transformOrigin = prevOrigin;
-  return rectToBox(rect);
-}
-function resolveLayoutConfig(config) {
-  if (!config) return null;
-  if (config === true) return {};
-  return config;
-}
-function isVisualDeltaZero(delta, layoutConfig) {
-  return isNear(delta.x.translate, 0, TRANSLATE_PRECISION) && isNear(delta.y.translate, 0, TRANSLATE_PRECISION) && (layoutConfig.size === false || isNear(delta.x.scale, 1, SCALE_PRECISION) && isNear(delta.y.scale, 1, SCALE_PRECISION));
-}
-var animateLayoutMixin = createMixin((handle) => {
-  let snapshot = null;
-  let currentConfig = true;
-  let currentDelta = null;
-  let animationProgress = 0;
-  let animation = null;
-  let scheduleProgressTracking = (duration, active) => {
-    let start = performance.now();
-    let tick = () => {
-      if (animation !== active) return;
-      animationProgress = Math.min(1, (performance.now() - start) / duration);
-      if (animationProgress < 1) {
-        requestAnimationFrame(tick);
-      }
-    };
-    requestAnimationFrame(tick);
-  };
-  let clearProjectionStyles = (node) => {
-    node.style.transform = "";
-    node.style.transformOrigin = "";
-  };
-  let resetAnimation = () => {
-    animation = null;
-    currentDelta = null;
-    animationProgress = 0;
-  };
-  handle.addEventListener("beforeUpdate", (event) => {
-    let layoutConfig = resolveLayoutConfig(currentConfig);
-    if (!layoutConfig) return;
-    snapshot = measureNaturalBox(event.node);
-  });
-  handle.addEventListener("commit", (event) => {
-    let layoutConfig = resolveLayoutConfig(currentConfig);
-    let htmlNode = event.node;
-    let latest = measureNaturalBox(htmlNode);
-    if (!layoutConfig) {
-      animation?.cancel();
-      clearProjectionStyles(htmlNode);
-      resetAnimation();
-      snapshot = latest;
-      return;
-    }
-    if (!snapshot) {
-      snapshot = latest;
-      return;
-    }
-    let targetDelta = createDelta();
-    calcBoxDelta(targetDelta, latest, snapshot, layoutConfig);
-    if (isVisualDeltaZero(targetDelta, layoutConfig)) {
-      snapshot = latest;
-      return;
-    }
-    if (animation && animation.playState === "running") {
-      animation.cancel();
-      if (currentDelta && animationProgress > 0 && animationProgress < 1) {
-        let visual = createDelta();
-        mixDelta(visual, currentDelta, animationProgress);
-        targetDelta.x.translate += visual.x.translate;
-        targetDelta.y.translate += visual.y.translate;
-        targetDelta.x.scale *= visual.x.scale;
-        targetDelta.y.scale *= visual.y.scale;
-      }
-    }
-    if (!currentDelta) currentDelta = createDelta();
-    copyDeltaInto(currentDelta, targetDelta);
-    animationProgress = 0;
-    let invert = buildProjectionTransform(targetDelta, layoutConfig);
-    let origin = buildTransformOrigin(targetDelta);
-    htmlNode.style.transform = invert;
-    htmlNode.style.transformOrigin = origin;
-    let duration = layoutConfig.duration ?? DEFAULT_DURATION;
-    let easing = layoutConfig.easing ?? DEFAULT_EASING;
-    let active = htmlNode.animate(
-      [
-        { transform: invert, transformOrigin: origin },
-        { transform: "none", transformOrigin: origin }
-      ],
-      { duration, easing, fill: "forwards" }
-    );
-    animation = active;
-    scheduleProgressTracking(duration, active);
-    active.finished.then(() => {
-      if (animation !== active) return;
-      clearProjectionStyles(htmlNode);
-      resetAnimation();
-      snapshot = rectToBox(htmlNode.getBoundingClientRect());
-    }).catch(() => {
-    });
-  });
-  handle.addEventListener("remove", () => {
-    animation?.cancel();
-    resetAnimation();
-    snapshot = null;
-  });
-  return (config = true) => {
-    currentConfig = config;
-    return handle.element;
-  };
-});
-
-// ../packages/component/src/lib/spring.ts
-var presets = {
-  smooth: { duration: 400, bounce: -0.3 },
-  snappy: { duration: 200, bounce: 0 },
-  bouncy: { duration: 400, bounce: 0.3 }
-};
-var restSpeed = 0.01;
-var restDelta = 5e-3;
-var maxSettlingTime = 2e4;
-var frameMs = 1e3 / 60;
-function spring(presetOrOptions, overrides) {
-  let options = resolveOptions(presetOrOptions, overrides);
-  let { position, settlingTime, easing } = computeSpring(options);
-  let duration = Math.round(settlingTime);
-  function* generator() {
-    let t = 0;
-    while (t < settlingTime) {
-      yield position(t);
-      t += frameMs;
-    }
-    yield 1;
-  }
-  let iter = generator();
-  Object.defineProperties(iter, {
-    duration: { value: duration, enumerable: true },
-    easing: { value: easing, enumerable: true },
-    toString: {
-      value() {
-        return `${duration}ms ${easing}`;
-      }
-    }
-  });
-  return iter;
-}
-spring.transition = function transition(property, presetOrOptions, overrides) {
-  let s = typeof presetOrOptions === "string" ? spring(presetOrOptions, overrides) : spring(presetOrOptions);
-  let properties = Array.isArray(property) ? property : [property];
-  return properties.map((p) => `${p} ${s}`).join(", ");
-};
-spring.presets = presets;
-function resolveOptions(presetOrOptions, overrides) {
-  if (typeof presetOrOptions === "string") {
-    let preset = presets[presetOrOptions];
-    return {
-      duration: overrides?.duration ?? preset.duration,
-      bounce: preset.bounce,
-      velocity: overrides?.velocity
-    };
-  }
-  if (presetOrOptions) {
-    return presetOrOptions;
-  }
-  return presets.snappy;
-}
-function computeSpring(options) {
-  let { duration: durationMs = 300, bounce = 0, velocity = 0 } = options;
-  let durationSec = durationMs / 1e3;
-  let omega0 = 2 * Math.PI / durationSec;
-  bounce = Math.max(-1, Math.min(0.95, bounce));
-  let zeta = bounce >= 0 ? 1 - bounce : 1 / (1 + bounce);
-  let omega0Ms = omega0 / 1e3;
-  let velocityMs = -velocity / 1e3;
-  let position;
-  if (zeta < 1) {
-    let omegaD = omega0Ms * Math.sqrt(1 - zeta * zeta);
-    position = (t) => {
-      let envelope = Math.exp(-zeta * omega0Ms * t);
-      return 1 - envelope * ((velocityMs + zeta * omega0Ms) / omegaD * Math.sin(omegaD * t) + Math.cos(omegaD * t));
-    };
-  } else if (zeta > 1) {
-    let sqrtTerm = Math.sqrt(zeta * zeta - 1);
-    let s1 = omega0Ms * (-zeta + sqrtTerm);
-    let s2 = omega0Ms * (-zeta - sqrtTerm);
-    let A = (s2 + velocityMs) / (s2 - s1);
-    let B = 1 - A;
-    position = (t) => 1 - A * Math.exp(s1 * t) - B * Math.exp(s2 * t);
-  } else {
-    position = (t) => 1 - Math.exp(-omega0Ms * t) * (1 + (velocityMs + omega0Ms) * t);
-  }
-  let velocitySampleMs = 0.5;
-  function velocityAt(t) {
-    if (t < velocitySampleMs) {
-      return (position(velocitySampleMs) - position(0)) / velocitySampleMs * 1e3;
-    }
-    return (position(t) - position(t - velocitySampleMs)) / velocitySampleMs * 1e3;
-  }
-  let settlingTime = maxSettlingTime;
-  let step = 50;
-  for (let t = 0; t < maxSettlingTime; t += step) {
-    let pos = position(t);
-    let vel = Math.abs(velocityAt(t));
-    let displacement = Math.abs(1 - pos);
-    if (vel <= restSpeed && displacement <= restDelta) {
-      settlingTime = t;
-      break;
-    }
-  }
-  let easing = generateEasing(position, settlingTime);
-  return { position, settlingTime, easing };
-}
-function generateEasing(position, settlingTime) {
-  let points = adaptiveSample(position, settlingTime);
-  return `linear(${points.map((p, i) => {
-    let isLast = i === points.length - 1;
-    let value = isLast ? 1 : Math.round(p.value * 1e4) / 1e4;
-    if (i === 0 || isLast) {
-      return value === 1 ? "1" : value.toString();
-    }
-    let percent = Math.round(p.t / settlingTime * 1e3) / 10;
-    return `${value} ${percent}%`;
-  }).join(", ")})`;
-}
-function adaptiveSample(resolve, duration, tolerance = 2e-3, minSegment = 8) {
-  let points = [];
-  function addPoint(t, value) {
-    if (points.length === 0 || points[points.length - 1].t < t) {
-      points.push({ t, value });
-    }
-  }
-  function subdivide(t0, v0, t1, v1, depth = 0) {
-    if (depth > 12) {
-      addPoint(t0, v0);
-      return;
-    }
-    let tMid = (t0 + t1) / 2;
-    let vMid = resolve(tMid);
-    let vLinear = (v0 + v1) / 2;
-    let error = Math.abs(vMid - vLinear);
-    if (error > tolerance && t1 - t0 > minSegment) {
-      subdivide(t0, v0, tMid, vMid, depth + 1);
-      subdivide(tMid, vMid, t1, v1, depth + 1);
-    } else {
-      addPoint(t0, v0);
-    }
-  }
-  subdivide(0, resolve(0), duration, resolve(duration));
-  addPoint(duration, resolve(duration));
-  return points;
-}
-
 // src/client/entry.tsx
 var app = run({
   async loadModule(moduleUrl, exportName) {
@@ -5414,10 +4181,10 @@ window.navigation.addEventListener("navigate", () => {
   if (toggle) {
     toggle.checked = false;
   }
-  let transition2 = window.navigation.transition;
-  if (transition2) {
+  let transition = window.navigation.transition;
+  if (transition) {
     let overlay = document.getElementById("nav-overlay");
     overlay?.classList.add("active");
-    transition2.finished.finally(() => overlay?.classList.remove("active"));
+    transition.finished.finally(() => overlay?.classList.remove("active"));
   }
 });

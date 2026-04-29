@@ -4,7 +4,7 @@ title: AssetServerOptions
 
 # AssetServerOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/assets/src/lib/asset-server.ts#L56" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assets/src/lib/asset-server.ts#L56" target="_blank">View Source</a>
 
 ## Signature
 
@@ -14,29 +14,13 @@ interface AssetServerOptions {
   deny?: readonly string[];
   fileMap: Readonly<Record<string, string>>;
   fingerprint?: FingerprintOptions;
+  minify?: boolean;
   onError?: (error: unknown) => void | Response | Promise<void | Response>;
   rootDir?: string;
-  scripts?: {
-    define?: Record<string, string>;
-    external?: string[];
-    minify?: boolean;
-    sourceMaps?: "inline" | "external";
-    sourceMapSourcePaths?: "url" | "absolute";
-    target?:
-      | "es2015"
-      | "es2016"
-      | "es2017"
-      | "es2018"
-      | "es2019"
-      | "es2020"
-      | "es2021"
-      | "es2022"
-      | "es2023"
-      | "es2024"
-      | "es2025"
-      | "es2026"
-      | "esnext";
-  };
+  scripts?: AssetServerScriptOptions;
+  sourceMaps?: AssetSourceMaps;
+  sourceMapSourcePaths?: AssetSourceMapSourcePaths;
+  target?: AssetTarget;
   watch?: boolean | AssetServerWatchOptions;
 }
 
@@ -58,10 +42,14 @@ File patterns keyed by public URL patterns.
 
 ### fingerprint
 
-Controls optional source-based URL fingerprinting for rewritten import URLs.
+Controls optional source-based URL fingerprinting for rewritten asset URLs.
 
-When omitted, all served modules use stable non-fingerprinted URLs with `Cache-Control: no-cache`.
+When omitted, all served assets use stable non-fingerprinted URLs with `Cache-Control: no-cache`.
 Cannot be used together with active watch mode. Set `watch: false` when fingerprinting.
+
+### minify
+
+Minification setting for emitted scripts and styles.
 
 ### onError
 
@@ -74,7 +62,24 @@ Root directory used to resolve relative file paths. Defaults to `process.cwd()`.
 
 ### scripts
 
-Script pipeline configuration. Omit to use defaults.
+Script-only configuration.
+
+### sourceMaps
+
+Source map mode for scripts and styles.
+- `'external'`: serve source maps as separate `.map` files
+- `'inline'`: embed source maps as a base64 data URL in the compiled asset
+
+### sourceMapSourcePaths
+
+Source path strategy for source map `sources`.
+- `'url'` (default): use the stable server path (e.g. `'/assets/app/entry.ts'`)
+- `'absolute'`: use the original filesystem path on disk
+
+### target
+
+Shared compatibility target for scripts and styles. Browser targets apply to both
+pipelines, and `es` only affects scripts.
 
 ### watch
 

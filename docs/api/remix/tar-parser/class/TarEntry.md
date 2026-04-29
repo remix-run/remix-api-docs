@@ -4,7 +4,7 @@ title: TarEntry
 
 # TarEntry
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/tar-parser/src/lib/tar.ts#L505" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/tar-parser/src/lib/tar.ts#L506" target="_blank">View Source</a>
 
 ## Summary
 

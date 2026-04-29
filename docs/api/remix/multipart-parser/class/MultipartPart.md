@@ -4,7 +4,7 @@ title: MultipartPart
 
 # MultipartPart
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/multipart-parser/src/lib/multipart.ts#L507" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart.ts#L530" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,7 +26,7 @@ class MultipartPart {
   get arrayBuffer(): ArrayBuffer;
   get bytes(): Uint8Array;
   get filename(): string | undefined;
-  get headers(): Headers;
+  get headers(): MultipartHeaders;
   get isFile(): boolean;
   get isText(): boolean;
   get mediaType(): string | undefined;
@@ -70,7 +70,7 @@ The filename of the part, if it is a file upload.
 
 ### headers
 
-The headers associated with this part.
+The decoded headers associated with this part, keyed by lower-case header name.
 
 ### isFile
 

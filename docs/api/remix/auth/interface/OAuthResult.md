@@ -4,7 +4,7 @@ title: OAuthResult
 
 # OAuthResult
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/auth/src/lib/provider.ts#L34" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/provider.ts#L69" target="_blank">View Source</a>
 
 ## Summary
 
@@ -13,11 +13,11 @@ Normalized result returned by OAuth and OIDC callback handlers.
 ## Signature
 
 ```ts
-interface OAuthResult<profile, provider> {
+interface OAuthResult<profile, provider, tokens> {
   account: OAuthAccount<provider>;
   profile: profile;
   provider: provider;
-  tokens: OAuthTokens;
+  tokens: tokens;
 }
 
 ```

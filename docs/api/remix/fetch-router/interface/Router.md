@@ -4,7 +4,7 @@ title: Router
 
 # Router
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-router/src/lib/router.ts#L202" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/router.ts#L202" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,7 +23,7 @@ interface Router<context> {
   post: VerbMethod<"POST", context>;
   put: VerbMethod<"PUT", context>;
   route: RouteMethod<context>;
-  fetch(input: string | Request | URL, init: RequestInit): Promise<Response>;
+  fetch(input: string | URL | Request, init: RequestInit): Promise<Response>;
 }
 
 ```
@@ -70,7 +70,7 @@ Accepts either a plain request handler or an action object with optional inline 
 
 ## Methods
 
-### fetch(input: string | Request | URL, init: RequestInit): Promise<Response>
+### fetch(input: string | URL | Request, init: RequestInit): Promise<Response>
 
 Fetch a response from the router.
 

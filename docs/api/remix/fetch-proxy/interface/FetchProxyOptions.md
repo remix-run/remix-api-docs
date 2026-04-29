@@ -4,7 +4,7 @@ title: FetchProxyOptions
 
 # FetchProxyOptions
 
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.5/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6" target="_blank">View Source</a>
+<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6" target="_blank">View Source</a>
 
 ## Summary
 
@@ -16,7 +16,7 @@ Options for createFetchProxy.
 interface FetchProxyOptions {
   fetch?: {
     (input: URL | RequestInfo, init?: RequestInit): Promise<Response>;
-    (input: string | Request | URL, init?: RequestInit): Promise<Response>;
+    (input: string | URL | Request, init?: RequestInit): Promise<Response>;
   };
   rewriteCookieDomain?: boolean;
   rewriteCookiePath?: boolean;
@@ -43,4 +43,5 @@ default the portion of the pathname that matches the proxy target's pathname wil
 
 ### xForwardedHeaders
 
-Set `true` to add `X-Forwarded-Proto` and `X-Forwarded-Host` headers to the proxied request.
+Set `true` to add `X-Forwarded-Proto`, `X-Forwarded-Host`, and `X-Forwarded-Port`
+headers to the proxied request.
