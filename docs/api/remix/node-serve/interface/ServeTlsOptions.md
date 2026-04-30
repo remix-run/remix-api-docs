@@ -1,6 +1,6 @@
 ---
 title: ServeTlsOptions
-source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/server.ts#L42
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/node-serve/src/lib/server.ts#L42
 ---
 
 # ServeTlsOptions

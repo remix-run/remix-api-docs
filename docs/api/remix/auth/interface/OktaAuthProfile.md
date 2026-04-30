@@ -1,6 +1,6 @@
 ---
 title: OktaAuthProfile
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/okta.ts#L12
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/okta.ts#L12
 ---
 
 # OktaAuthProfile

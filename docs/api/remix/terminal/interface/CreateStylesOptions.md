@@ -1,6 +1,6 @@
 ---
 title: CreateStylesOptions
-source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/styles.ts#L214
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/terminal/src/lib/styles.ts#L214
 ---
 
 # CreateStylesOptions

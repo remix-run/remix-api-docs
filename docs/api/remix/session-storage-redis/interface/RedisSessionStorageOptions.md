@@ -1,6 +1,6 @@
 ---
 title: RedisSessionStorageOptions
-source: https://github.com/remix-run/remix/blob/main/packages/session-storage-redis/src/lib/redis-storage.ts#L39
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/session-storage-redis/src/lib/redis-storage.ts#L39
 ---
 
 # RedisSessionStorageOptions

@@ -1,6 +1,6 @@
 ---
 title: ErrorHandler
-source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/fetch-handler.ts#L38
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/node-serve/src/lib/fetch-handler.ts#L38
 ---
 
 # ErrorHandler

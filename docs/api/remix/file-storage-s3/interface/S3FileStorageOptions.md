@@ -1,6 +1,6 @@
 ---
 title: S3FileStorageOptions
-source: https://github.com/remix-run/remix/blob/main/packages/file-storage-s3/src/lib/s3.ts#L16
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/file-storage-s3/src/lib/s3.ts#L16
 ---
 
 # S3FileStorageOptions

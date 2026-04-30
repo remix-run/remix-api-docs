@@ -1,6 +1,6 @@
 ---
 title: CsrfFailureReason
-source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L50
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/csrf-middleware/src/lib/csrf.ts#L50
 ---
 
 # CsrfFailureReason

@@ -1,6 +1,6 @@
 ---
 title: Matcher
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/matcher.ts#L15
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/route-pattern/src/lib/matcher.ts#L15
 ---
 
 # Matcher

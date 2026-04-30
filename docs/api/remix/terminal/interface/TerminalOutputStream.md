@@ -1,6 +1,6 @@
 ---
 title: TerminalOutputStream
-source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/terminal.ts#L18
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/terminal/src/lib/terminal.ts#L18
 ---
 
 # TerminalOutputStream

@@ -1,6 +1,6 @@
 ---
 title: SetContextValue
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L116
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/request-context.ts#L116
 ---
 
 # SetContextValue

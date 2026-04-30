@@ -1,6 +1,6 @@
 ---
 title: CredentialsAuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/credentials.ts#L6
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/credentials.ts#L6
 ---
 
 # CredentialsAuthProvider

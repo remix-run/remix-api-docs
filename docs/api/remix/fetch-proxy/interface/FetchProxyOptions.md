@@ -1,6 +1,6 @@
 ---
 title: FetchProxyOptions
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6
 ---
 
 # FetchProxyOptions

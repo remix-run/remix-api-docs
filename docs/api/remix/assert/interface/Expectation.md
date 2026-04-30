@@ -1,6 +1,6 @@
 ---
 title: Expectation
-source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/expect.ts#L172
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/expect.ts#L172
 ---
 
 # Expectation

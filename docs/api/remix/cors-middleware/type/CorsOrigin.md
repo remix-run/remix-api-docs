@@ -1,6 +1,6 @@
 ---
 title: CorsOrigin
-source: https://github.com/remix-run/remix/blob/main/packages/cors-middleware/src/lib/cors.ts#L29
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/cors-middleware/src/lib/cors.ts#L29
 ---
 
 # CorsOrigin

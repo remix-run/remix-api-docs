@@ -1,6 +1,6 @@
 ---
 title: createSessionAuthScheme
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/session.ts#L30
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/schemes/session.ts#L30
 ---
 
 # createSessionAuthScheme

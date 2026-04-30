@@ -1,6 +1,6 @@
 ---
 title: ContentType
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-type.ts#L35
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/content-type.ts#L35
 ---
 
 # ContentType

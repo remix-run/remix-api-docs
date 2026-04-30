@@ -1,6 +1,6 @@
 ---
 title: RemixTestConfig
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/config.ts#L177
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/test/src/lib/config.ts#L177
 ---
 
 # RemixTestConfig

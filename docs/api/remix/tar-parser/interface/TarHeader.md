@@ -1,6 +1,6 @@
 ---
 title: TarHeader
-source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L31
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/tar-parser/src/lib/tar.ts#L31
 ---
 
 # TarHeader
