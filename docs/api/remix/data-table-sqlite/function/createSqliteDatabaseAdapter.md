@@ -1,10 +1,9 @@
 ---
 title: createSqliteDatabaseAdapter
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite/src/lib/adapter.ts#L298
 ---
 
 # createSqliteDatabaseAdapter
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table-sqlite/src/lib/adapter.ts#L297" target="_blank">View Source</a>
 
 ## Summary
 
@@ -33,7 +32,7 @@ let db = createDatabase(adapter)
 
 ## Params
 
-### database
+### `database`
 
 Synchronous SQLite database client.
 

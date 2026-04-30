@@ -1,10 +1,9 @@
 ---
 title: createAuth0AuthProvider
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/auth0.ts#L34
 ---
 
 # createAuth0AuthProvider
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/auth0.ts#L34" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function createAuth0AuthProvider(
 
 ## Params
 
-### options
+### `options`
 
 Auth0 domain and client settings for your application.
 

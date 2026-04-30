@@ -1,10 +1,9 @@
 ---
 title: match
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L181
 ---
 
 # match
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L177" target="_blank">View Source</a>
 
 ## Summary
 
@@ -25,14 +24,14 @@ assert.match(html, /Welcome Back/)
 
 ## Params
 
-### string
+### `string`
 
 The string to test.
 
-### regexp
+### `regexp`
 
 The pattern to match against.
 
-### message
+### `message`
 
 Optional failure message.

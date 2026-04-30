@@ -1,10 +1,9 @@
 ---
 title: quoteLiteral
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql-helpers.ts#L119
 ---
 
 # quoteLiteral
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/sql-helpers.ts#L119" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function quoteLiteral(
 
 ## Params
 
-### value
+### `value`
 
 Value to serialize.
 
-### options
+### `options`
 
 Serialization options.
 

@@ -1,10 +1,9 @@
 ---
 title: ThemeValue
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/theme/contract.ts#L128
 ---
 
 # ThemeValue
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/theme/contract.ts#L128" target="_blank">View Source</a>
 
 ## Signature
 

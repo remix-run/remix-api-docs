@@ -1,10 +1,9 @@
 ---
 title: doesNotThrow
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L262
 ---
 
 # doesNotThrow
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L255" target="_blank">View Source</a>
 
 ## Summary
 
@@ -25,10 +24,10 @@ assert.doesNotThrow(() => JSON.parse('{}'))
 
 ## Params
 
-### fn
+### `fn`
 
 The function expected not to throw.
 
-### message
+### `message`
 
 Optional failure message.

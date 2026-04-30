@@ -1,10 +1,9 @@
 ---
 title: createResourcesRoutes
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-helpers/resources.ts#L63
 ---
 
 # createResourcesRoutes
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/route-helpers/resources.ts#L63" target="_blank">View Source</a>
 
 ## Summary
 
@@ -18,9 +17,9 @@ function createResourcesRoutes<base extends string, options extends ResourcesOpt
 
 ## Params
 
-### base
+### `base`
 
-### options
+### `options`
 
 ## Returns
 

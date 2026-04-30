@@ -1,10 +1,9 @@
 ---
 title: createMixin
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L243
 ---
 
 # createMixin
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/mixins/mixin.ts#L243" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,7 +26,7 @@ function createMixin<
 
 ## Params
 
-### type
+### `type`
 
 Mixin setup function.
 

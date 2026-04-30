@@ -1,10 +1,9 @@
 ---
 title: RequireAuthOptions
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/require-auth.ts#L36
 ---
 
 # RequireAuthOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth-middleware/src/lib/require-auth.ts#L36" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: notDeepEqual
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L145
 ---
 
 # notDeepEqual
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L141" target="_blank">View Source</a>
 
 ## Summary
 
@@ -29,14 +28,14 @@ assert.notDeepEqual(result, { id: 1, name: 'Alice' })
 
 ## Params
 
-### actual
+### `actual`
 
 The value produced by the code under test.
 
-### expected
+### `expected`
 
 The value that `actual` must not deeply equal.
 
-### message
+### `message`
 
 Optional failure message.

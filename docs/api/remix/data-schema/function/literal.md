@@ -1,10 +1,9 @@
 ---
 title: literal
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L528
 ---
 
 # literal
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L528" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function literal<value>(literalValue: value): Schema<unknown, value>;
 
 ## Params
 
-### literalValue
+### `literalValue`
 
 The literal value to match
 

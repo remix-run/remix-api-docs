@@ -1,10 +1,9 @@
 ---
 title: map
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L550
 ---
 
 # map
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L550" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function map<keyInput, keyOutput, valueInput, valueOutput>(
 
 ## Params
 
-### keySchema
+### `keySchema`
 
 Schema for Map keys
 
-### valueSchema
+### `valueSchema`
 
 Schema for Map values
 

@@ -1,10 +1,9 @@
 ---
 title: formData
+source: https://github.com/remix-run/remix/blob/main/packages/form-data-middleware/src/lib/form-data.ts#L50
 ---
 
 # formData
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/form-data-middleware/src/lib/form-data.ts#L50" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function formData(
 
 ## Params
 
-### options
+### `options`
 
 Options for parsing form data
 

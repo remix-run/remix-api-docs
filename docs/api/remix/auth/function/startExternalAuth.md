@@ -1,10 +1,9 @@
 ---
 title: startExternalAuth
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/start-external-auth.ts#L30
 ---
 
 # startExternalAuth
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/start-external-auth.ts#L30" target="_blank">View Source</a>
 
 ## Summary
 
@@ -28,11 +27,11 @@ function startExternalAuth<
 
 ## Params
 
-### provider
+### `provider`
 
-### context
+### `context`
 
-### options
+### `options`
 
 Transaction storage and optional return-to settings.
 

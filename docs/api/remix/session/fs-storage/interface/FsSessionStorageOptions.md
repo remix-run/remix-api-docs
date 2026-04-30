@@ -1,10 +1,9 @@
 ---
 title: FsSessionStorageOptions
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session-storage/fs.ts#L11
 ---
 
 # FsSessionStorageOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/session/src/lib/session-storage/fs.ts#L11" target="_blank">View Source</a>
 
 ## Summary
 

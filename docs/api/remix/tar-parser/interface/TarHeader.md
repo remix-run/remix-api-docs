@@ -1,10 +1,9 @@
 ---
 title: TarHeader
+source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L31
 ---
 
 # TarHeader
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/tar-parser/src/lib/tar.ts#L31" target="_blank">View Source</a>
 
 ## Summary
 

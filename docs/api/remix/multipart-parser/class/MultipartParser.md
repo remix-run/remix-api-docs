@@ -1,10 +1,9 @@
 ---
 title: MultipartParser
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L209
 ---
 
 # MultipartParser
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart.ts#L209" target="_blank">View Source</a>
 
 ## Summary
 
@@ -35,49 +34,49 @@ class MultipartParser {
 
 ## Constructor Params
 
-### boundary
+### `boundary`
 
 The boundary string used to separate parts
 
-### options
+### `options`
 
 Options for the parser
 
 ## Properties
 
-### boundary
+### `boundary`
 
 Boundary string used to detect part separators.
 
-### maxFileSize
+### `maxFileSize`
 
 Maximum file size allowed for each multipart part.
 
-### maxHeaderSize
+### `maxHeaderSize`
 
 Maximum header size allowed for each multipart part.
 
-### maxParts
+### `maxParts`
 
 Maximum number of parts allowed in a multipart message.
 
-### maxTotalSize
+### `maxTotalSize`
 
 Maximum aggregate content size allowed across all parts.
 
 ## Methods
 
-### finish(): void
+### `finish(): void`
 
 Should be called after all data has been written to the parser.
 
 Note: This will throw if the multipart message is incomplete or
 wasn't properly terminated.
 
-### write(chunk: Uint8Array): Generator<MultipartPart, void, unknown>
+### `write(chunk: Uint8Array): Generator<MultipartPart, void, unknown>`
 
 Write a chunk of data to the parser.
 
-#### chunk
+#### `chunk`
 
 A chunk of data to write to the parser

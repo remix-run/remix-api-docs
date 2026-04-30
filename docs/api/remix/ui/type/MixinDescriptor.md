@@ -1,10 +1,9 @@
 ---
 title: MixinDescriptor
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L123
 ---
 
 # MixinDescriptor
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/mixins/mixin.ts#L123" target="_blank">View Source</a>
 
 ## Summary
 

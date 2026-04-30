@@ -1,10 +1,9 @@
 ---
 title: on
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/on-mixin.ts#L74
 ---
 
 # on
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/mixins/on-mixin.ts#L74" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,13 +26,13 @@ function on<target extends Element, type extends keyof ElementEventMap>(
 
 ## Params
 
-### type
+### `type`
 
-### handler
+### `handler`
 
 Event handler.
 
-### captureBoolean
+### `captureBoolean`
 
 Whether to listen during capture.
 

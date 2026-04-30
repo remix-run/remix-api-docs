@@ -1,10 +1,9 @@
 ---
 title: createFsSessionStorage
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session-storage/fs.ts#L30
 ---
 
 # createFsSessionStorage
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/session/src/lib/session-storage/fs.ts#L30" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,11 +25,11 @@ function createFsSessionStorage(
 
 ## Params
 
-### directory
+### `directory`
 
 The directory to store the session files in
 
-### options
+### `options`
 
 (optional) The options for the session storage
 

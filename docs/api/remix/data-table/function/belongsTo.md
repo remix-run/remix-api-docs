@@ -1,10 +1,9 @@
 ---
 title: belongsTo
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L895
 ---
 
 # belongsTo
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/table.ts#L895" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,11 +22,11 @@ function belongsTo<source extends AnyTable, target extends AnyTable>(
 
 ## Params
 
-### source
+### `source`
 
-### target
+### `target`
 
-### relationOptions
+### `relationOptions`
 
 Relation key configuration.
 

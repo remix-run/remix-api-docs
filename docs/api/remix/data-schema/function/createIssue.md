@@ -1,10 +1,9 @@
 ---
 title: createIssue
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L310
 ---
 
 # createIssue
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L310" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function createIssue(
 
 ## Params
 
-### message
+### `message`
 
 Human-readable validation message.
 
-### path
+### `path`
 
 Optional issue path within the input value.
 

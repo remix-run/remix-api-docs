@@ -1,10 +1,9 @@
 ---
 title: fail
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L326
 ---
 
 # fail
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L326" target="_blank">View Source</a>
 
 ## Summary
 
@@ -28,15 +27,15 @@ function fail(
 
 ## Params
 
-### message
+### `message`
 
 Human-readable validation message.
 
-### path
+### `path`
 
 Optional issue path within the input value.
 
-### options
+### `options`
 
 Optional issue metadata used for localized error mapping.
 

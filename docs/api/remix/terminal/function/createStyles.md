@@ -1,10 +1,9 @@
 ---
 title: createStyles
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/styles.ts#L298
 ---
 
 # createStyles
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/styles.ts#L298" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function createStyles(options: CreateStylesOptions): TerminalStyles;
 
 ## Params
 
-### options
+### `options`
 
 Style options
 

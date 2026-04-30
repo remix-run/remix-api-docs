@@ -1,10 +1,9 @@
 ---
 title: getCsrfToken
+source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L166
 ---
 
 # getCsrfToken
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/csrf-middleware/src/lib/csrf.ts#L166" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,11 +18,11 @@ function getCsrfToken(context: RequestContext, tokenKey: string): string;
 
 ## Params
 
-### context
+### `context`
 
 Request context with a started session
 
-### tokenKey
+### `tokenKey`
 
 Session key that stores the token
 

@@ -1,10 +1,9 @@
 ---
 title: Fragment
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/component.ts#L368
 ---
 
 # Fragment
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/component.ts#L368" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function Fragment(handle: Handle<FragmentProps>): () => null;
 
 ## Params
 
-### handle
+### `handle`
 
 Component handle for the fragment instance.
 

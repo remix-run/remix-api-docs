@@ -1,10 +1,9 @@
 ---
 title: FetchProxy
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L48
 ---
 
 # FetchProxy
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-proxy/src/lib/fetch-proxy.ts#L48" target="_blank">View Source</a>
 
 ## Summary
 

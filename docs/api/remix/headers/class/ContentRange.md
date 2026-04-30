@@ -1,10 +1,9 @@
 ---
 title: ContentRange
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-range.ts#L35
 ---
 
 # ContentRange
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/content-range.ts#L35" target="_blank">View Source</a>
 
 ## Summary
 
@@ -35,36 +34,36 @@ class ContentRange {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Properties
 
-### end
+### `end`
 
 The inclusive end offset, or `null` for unsatisfied ranges.
 
-### size
+### `size`
 
 The total resource size, or `'*'` when unknown.
 
-### start
+### `start`
 
 The inclusive start offset, or `null` for unsatisfied ranges.
 
-### unit
+### `unit`
 
 The range unit, typically `bytes`.
 
 ## Methods
 
-### toString(): string
+### `toString(): string`
 
 Returns the string representation of the header value.
 
-### from(value: string | ContentRangeInit | null): ContentRange
+### `from(value: string | ContentRangeInit | null): ContentRange`
 
 Parse a Content-Range header value.
 
-#### value
+#### `value`
 
 The header value (string, init object, or null)

@@ -1,10 +1,9 @@
 ---
 title: Handle
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/component.ts#L12
 ---
 
 # Handle
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/component.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
@@ -63,7 +62,7 @@ Useful for setup scope cleanup.
 
 Schedules a task to run after the next update.
 
-#### task
+#### `task`
 
 ### update(): Promise<AbortSignal>
 

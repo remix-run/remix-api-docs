@@ -1,10 +1,9 @@
 ---
 title: isCompressibleMimeType
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/is-compressible-mime-type.ts#L19
 ---
 
 # isCompressibleMimeType
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/mime/src/lib/is-compressible-mime-type.ts#L19" target="_blank">View Source</a>
 
 ## Summary
 
@@ -28,7 +27,7 @@ function isCompressibleMimeType(mimeType: string): boolean;
 
 ## Params
 
-### mimeType
+### `mimeType`
 
 The MIME type to check (e.g. "application/json" or "text/html; charset=utf-8")
 

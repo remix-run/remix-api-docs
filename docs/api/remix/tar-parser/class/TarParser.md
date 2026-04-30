@@ -1,10 +1,9 @@
 ---
 title: TarParser
+source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L273
 ---
 
 # TarParser
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/tar-parser/src/lib/tar.ts#L273" target="_blank">View Source</a>
 
 ## Summary
 
@@ -24,21 +23,21 @@ class TarParser {
 
 ## Constructor Params
 
-### options
+### `options`
 
 Options that control how the tar archive is parsed
 
 ## Methods
 
-### parse(archive: TarArchiveSource, handler: TarEntryHandler): Promise<void>
+### `parse(archive: TarArchiveSource, handler: TarEntryHandler): Promise<void>`
 
 Parse a stream/buffer tar archive and call the given handler for each entry it contains.
 Resolves when the parse is finished and all handlers resolve.
 
-#### archive
+#### `archive`
 
 The tar archive source data
 
-#### handler
+#### `handler`
 
 A function to call for each entry in the archive

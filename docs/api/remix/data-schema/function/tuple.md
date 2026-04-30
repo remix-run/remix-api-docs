@@ -1,10 +1,9 @@
 ---
 title: tuple
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L935
 ---
 
 # tuple
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L935" target="_blank">View Source</a>
 
 ## Summary
 
@@ -24,7 +23,7 @@ function tuple<items extends Schema<any, any>[]>(
 
 ## Params
 
-### items
+### `items`
 
 ## Returns
 

@@ -1,10 +1,9 @@
 ---
 title: detectContentType
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/detect-content-type.ts#L20
 ---
 
 # detectContentType
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/mime/src/lib/detect-content-type.ts#L20" target="_blank">View Source</a>
 
 ## Summary
 
@@ -32,7 +31,7 @@ detectContentType('unknown')       // undefined
 
 ## Params
 
-### extension
+### `extension`
 
 The file extension (e.g. "css", ".css") or filename (e.g. "style.css")
 

@@ -1,10 +1,9 @@
 ---
 title: CorsOptions
+source: https://github.com/remix-run/remix/blob/main/packages/cors-middleware/src/lib/cors.ts#L52
 ---
 
 # CorsOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/cors-middleware/src/lib/cors.ts#L52" target="_blank">View Source</a>
 
 ## Summary
 

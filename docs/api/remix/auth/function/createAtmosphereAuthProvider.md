@@ -1,10 +1,9 @@
 ---
 title: createAtmosphereAuthProvider
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L220
 ---
 
 # createAtmosphereAuthProvider
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/atmosphere.ts#L220" target="_blank">View Source</a>
 
 ## Summary
 
@@ -24,7 +23,7 @@ function createAtmosphereAuthProvider<profile extends AtmosphereAuthProfile>(
 
 ## Params
 
-### options
+### `options`
 
 Atmosphere client configuration, session encryption secret, and optional profile mapping hooks.
 

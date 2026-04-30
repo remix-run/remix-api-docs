@@ -1,10 +1,9 @@
 ---
 title: DatabaseAdapter
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/adapter.ts#L622
 ---
 
 # DatabaseAdapter
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/adapter.ts#L622" target="_blank">View Source</a>
 
 ## Summary
 
@@ -79,57 +78,57 @@ Acquires the adapter's migration lock when supported.
 
 Starts a new database transaction.
 
-#### options
+#### `options`
 
 ### commitTransaction(token: TransactionToken): Promise<void>
 
 Commits an open transaction.
 
-#### token
+#### `token`
 
 ### compileSql(operation: SelectOperation<AnyTable> | CountOperation<AnyTable> | ExistsOperation<AnyTable> | InsertOperation<AnyTable> | InsertManyOperation<AnyTable> | UpdateOperation<AnyTable> | DeleteOperation<AnyTable> | UpsertOperation<AnyTable> | RawOperation | CreateTableOperation | AlterTableOperation | RenameTableOperation | DropTableOperation | CreateIndexOperation | DropIndexOperation | RenameIndexOperation | AddForeignKeyOperation | DropForeignKeyOperation | AddCheckOperation | DropCheckOperation): SqlStatement[]
 
 Compiles a data or migration operation into executable SQL statements.
 
-#### operation
+#### `operation`
 
 ### createSavepoint(token: TransactionToken, name: string): Promise<void>
 
 Creates a savepoint inside an open transaction.
 
-#### token
+#### `token`
 
-#### name
+#### `name`
 
 ### execute(request: DataManipulationRequest): Promise<DataManipulationResult>
 
 Executes a data-manipulation request.
 
-#### request
+#### `request`
 
 ### hasColumn(table: TableRef, column: string, transaction: TransactionToken): Promise<boolean>
 
 Checks whether a column exists on a table.
 
-#### table
+#### `table`
 
-#### column
+#### `column`
 
-#### transaction
+#### `transaction`
 
 ### hasTable(table: TableRef, transaction: TransactionToken): Promise<boolean>
 
 Checks whether a table exists.
 
-#### table
+#### `table`
 
-#### transaction
+#### `transaction`
 
 ### migrate(request: DataMigrationRequest): Promise<DataMigrationResult>
 
 Executes a migration request.
 
-#### request
+#### `request`
 
 ### releaseMigrationLock(): Promise<void>
 
@@ -139,20 +138,20 @@ Releases the adapter's migration lock when supported.
 
 Releases a previously created savepoint.
 
-#### token
+#### `token`
 
-#### name
+#### `name`
 
 ### rollbackToSavepoint(token: TransactionToken, name: string): Promise<void>
 
 Rolls back to a previously created savepoint.
 
-#### token
+#### `token`
 
-#### name
+#### `name`
 
 ### rollbackTransaction(token: TransactionToken): Promise<void>
 
 Rolls back an open transaction.
 
-#### token
+#### `token`

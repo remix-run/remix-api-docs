@@ -1,10 +1,9 @@
 ---
 title: createRedirectResponse
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/redirect.ts#L9
 ---
 
 # createRedirectResponse
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/response/src/lib/redirect.ts#L9" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,11 +25,11 @@ function createRedirectResponse(
 
 ## Params
 
-### location
+### `location`
 
 The location to redirect to
 
-### init
+### `init`
 
 The `ResponseInit` object for the response, or a status code
 

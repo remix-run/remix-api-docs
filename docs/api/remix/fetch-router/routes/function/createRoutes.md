@@ -1,10 +1,9 @@
 ---
 title: createRoutes
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-map.ts#L87
 ---
 
 # createRoutes
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/route-map.ts#L87" target="_blank">View Source</a>
 
 ## Summary
 
@@ -20,9 +19,9 @@ function createRoutes<base extends string, defs extends RouteDefs>(base: base | 
 
 ## Params
 
-### base
+### `base`
 
-### defs
+### `defs`
 
 ## Returns
 

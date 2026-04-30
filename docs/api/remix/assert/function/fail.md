@@ -1,10 +1,9 @@
 ---
 title: fail
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L164
 ---
 
 # fail
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L160" target="_blank">View Source</a>
 
 ## Summary
 
@@ -25,6 +24,6 @@ assert.fail('this branch should never be reached')
 
 ## Params
 
-### message
+### `message`
 
 Optional failure message.

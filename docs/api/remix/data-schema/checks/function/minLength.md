@@ -1,10 +1,9 @@
 ---
 title: minLength
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L9
 ---
 
 # minLength
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/checks.ts#L9" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function minLength(length: number): Check<string>;
 
 ## Params
 
-### length
+### `length`
 
 The minimum number of characters
 

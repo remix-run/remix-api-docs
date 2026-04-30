@@ -1,10 +1,9 @@
 ---
 title: createFacebookAuthProvider
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/facebook.ts#L61
 ---
 
 # createFacebookAuthProvider
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/facebook.ts#L61" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function createFacebookAuthProvider(
 
 ## Params
 
-### options
+### `options`
 
 Facebook OAuth client settings for your application.
 

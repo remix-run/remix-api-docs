@@ -1,10 +1,9 @@
 ---
 title: createFetchProxy
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L58
 ---
 
 # createFetchProxy
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-proxy/src/lib/fetch-proxy.ts#L58" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function createFetchProxy(
 
 ## Params
 
-### target
+### `target`
 
 The URL of the server to proxy requests to
 
-### options
+### `options`
 
 Options to customize the behavior of the proxy
 

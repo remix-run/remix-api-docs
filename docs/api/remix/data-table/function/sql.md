@@ -1,10 +1,9 @@
 ---
 title: sql
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql.ts#L26
 ---
 
 # sql
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/sql.ts#L26" target="_blank">View Source</a>
 
 ## Summary
 
@@ -29,11 +28,11 @@ let statement = sql`select * from users where email = ${email}`
 
 ## Params
 
-### strings
+### `strings`
 
 Template string parts.
 
-### values
+### `values`
 
 Interpolated values or nested [`SqlStatement`](/api/remix/data-table/type/SqlStatement/) values.
 

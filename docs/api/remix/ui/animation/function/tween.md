@@ -1,10 +1,9 @@
 ---
 title: tween
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/tween.ts#L105
 ---
 
 # tween
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/animation/tween.ts#L105" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function tween(options: TweenOptions): Generator<number, number, number>;
 
 ## Params
 
-### options
+### `options`
 
 The tween configuration
 

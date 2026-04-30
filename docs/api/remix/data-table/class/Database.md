@@ -1,10 +1,9 @@
 ---
 title: Database
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/database.ts#L347
 ---
 
 # Database
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/database.ts#L347" target="_blank">View Source</a>
 
 ## Summary
 
@@ -47,134 +46,134 @@ class Database {
 
 ## Constructor Params
 
-### adapter
+### `adapter`
 
-### options
+### `options`
 
 ## Accessors
 
-### adapter
+### `adapter`
 
 ## Methods
 
-### [executeOperation](operation: DataManipulationOperation): Promise<DataManipulationResult>
+### `[executeOperation](operation: DataManipulationOperation): Promise<DataManipulationResult>`
 
-#### operation
+#### `operation`
 
-### count<table extends AnyTable>(table: table, options: CountOptions<table>): Promise<number>
+### `count<table extends AnyTable>(table: table, options: CountOptions<table>): Promise<number>`
 
-#### table
+#### `table`
 
-#### options
+#### `options`
 
-### create<table extends AnyTable>(table: table, values: Partial<TableRow<table>>, options: CreateResultOptions): Promise<WriteResult>
+### `create<table extends AnyTable>(table: table, values: Partial<TableRow<table>>, options: CreateResultOptions): Promise<WriteResult>`
 
-#### table
+#### `table`
 
-#### values
+#### `values`
 
-#### options
+#### `options`
 
-### create<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, values: Partial<TableRow<table>>, options: CreateRowOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] }>
+### `create<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, values: Partial<TableRow<table>>, options: CreateRowOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] }>`
 
-#### table
+#### `table`
 
-#### values
+#### `values`
 
-#### options
+#### `options`
 
-### createMany<table extends AnyTable>(table: table, values: Partial<{ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] }>[], options: CreateManyResultOptions): Promise<WriteResult>
+### `createMany<table extends AnyTable>(table: table, values: Partial<{ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] }>[], options: CreateManyResultOptions): Promise<WriteResult>`
 
-#### table
+#### `table`
 
-#### values
+#### `values`
 
-#### options
+#### `options`
 
-### createMany<table extends AnyTable>(table: table, values: Partial<{ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] }>[], options: CreateManyRowsOptions): Promise<{ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] }[]>
+### `createMany<table extends AnyTable>(table: table, values: Partial<{ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] }>[], options: CreateManyRowsOptions): Promise<{ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] }[]>`
 
-#### table
+#### `table`
 
-#### values
+#### `values`
 
-#### options
+#### `options`
 
-### delete<table extends AnyTable>(table: table, value: PrimaryKeyInput<table>): Promise<boolean>
+### `delete<table extends AnyTable>(table: table, value: PrimaryKeyInput<table>): Promise<boolean>`
 
-#### table
+#### `table`
 
-#### value
+#### `value`
 
-### deleteMany<table extends AnyTable>(table: table, options: DeleteManyOptions<table>): Promise<WriteResult>
+### `deleteMany<table extends AnyTable>(table: table, options: DeleteManyOptions<table>): Promise<WriteResult>`
 
-#### table
+#### `table`
 
-#### options
+#### `options`
 
-### exec(statement: string | SqlStatement, values: unknown[]): Promise<DataManipulationResult>
+### `exec(statement: string | SqlStatement, values: unknown[]): Promise<DataManipulationResult>`
 
-#### statement
+#### `statement`
 
-#### values
+#### `values`
 
-### exec<input extends AnyQuery>(input: input): Promise<QueryExecutionResult<input>>
+### `exec<input extends AnyQuery>(input: input): Promise<QueryExecutionResult<input>>`
 
-#### input
+#### `input`
 
-### find<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, value: PrimaryKeyInput<table>, options: { with?: relations }): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<(...)>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] } | null>
+### `find<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, value: PrimaryKeyInput<table>, options: { with?: relations }): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<(...)>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] } | null>`
 
-#### table
+#### `table`
 
-#### value
+#### `value`
 
-#### options
+#### `options`
 
-### findMany<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, options: FindManyOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<(...)>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] }[]>
+### `findMany<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, options: FindManyOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<(...)>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] }[]>`
 
-#### table
+#### `table`
 
-#### options
+#### `options`
 
-### findOne<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, options: FindOneOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<(...)>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] } | null>
+### `findOne<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, options: FindOneOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<(...)>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] } | null>`
 
-#### table
+#### `table`
 
-#### options
+#### `options`
 
-### now(): unknown
+### `now(): unknown`
 
-### query<tableName extends string, row extends Record<string, unknown>, primaryKey extends readonly (keyof row & string)[]>(table: QueryTableInput<tableName, row, primaryKey>): Query<QueryTableInput<tableName, row, primaryKey>, { [key in string]: QueryColumnTypeMapFromRow<tableName, row>[key] }, row, {}, BoundQueryPhase<"all">>
+### `query<tableName extends string, row extends Record<string, unknown>, primaryKey extends readonly (keyof row & string)[]>(table: QueryTableInput<tableName, row, primaryKey>): Query<QueryTableInput<tableName, row, primaryKey>, { [key in string]: QueryColumnTypeMapFromRow<tableName, row>[key] }, row, {}, BoundQueryPhase<"all">>`
 
-#### table
+#### `table`
 
-### transaction<result>(callback: (database: Database) => Promise<result>, options: TransactionOptions): Promise<result>
+### `transaction<result>(callback: (database: Database) => Promise<result>, options: TransactionOptions): Promise<result>`
 
-#### callback
+#### `callback`
 
-#### options
+#### `options`
 
-### update<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, value: PrimaryKeyInput<table>, changes: Partial<TableRow<table>>, options: UpdateOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] }>
+### `update<table extends AnyTable, relations extends RelationMapForSourceName<TableName<table>>>(table: table, value: PrimaryKeyInput<table>, changes: Partial<TableRow<table>>, options: UpdateOptions<table, relations>): Promise<{ [key in string | number | symbol]: ({ [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key] } & { [key in string | number | symbol]: { [name in string | number | symbol]: RelationResult<relations[name]> }[key] })[key] }>`
 
-#### table
+#### `table`
 
-#### value
+#### `value`
 
-#### changes
+#### `changes`
 
-#### options
+#### `options`
 
-### updateMany<table extends AnyTable>(table: table, changes: Partial<TableRow<table>>, options: UpdateManyOptions<table>): Promise<WriteResult>
+### `updateMany<table extends AnyTable>(table: table, changes: Partial<TableRow<table>>, options: UpdateManyOptions<table>): Promise<WriteResult>`
 
-#### table
+#### `table`
 
-#### changes
+#### `changes`
 
-#### options
+#### `options`
 
-### [createInternalDatabase](adapter: DatabaseAdapter, options: DatabaseOptions | undefined, internal: DatabaseInternalState): Database
+### `[createInternalDatabase](adapter: DatabaseAdapter, options: DatabaseOptions | undefined, internal: DatabaseInternalState): Database`
 
-#### adapter
+#### `adapter`
 
-#### options
+#### `options`
 
-#### internal
+#### `internal`

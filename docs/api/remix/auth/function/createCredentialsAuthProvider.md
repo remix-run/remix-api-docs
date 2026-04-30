@@ -1,10 +1,9 @@
 ---
 title: createCredentialsAuthProvider
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/credentials.ts#L37
 ---
 
 # createCredentialsAuthProvider
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/credentials.ts#L37" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function createCredentialsAuthProvider<input, result, provider extends string>(
 
 ## Params
 
-### options
+### `options`
 
 Options for parsing submitted credentials and verifying them.
 

@@ -1,10 +1,9 @@
 ---
 title: normalizeJoinType
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql-helpers.ts#L34
 ---
 
 # normalizeJoinType
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/sql-helpers.ts#L34" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function normalizeJoinType(type: string): string;
 
 ## Params
 
-### type
+### `type`
 
 Input join type.
 

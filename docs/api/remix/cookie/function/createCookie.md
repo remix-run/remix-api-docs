@@ -1,10 +1,9 @@
 ---
 title: createCookie
+source: https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L256
 ---
 
 # createCookie
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/cookie/src/lib/cookie.ts#L256" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,11 +18,11 @@ function createCookie(name: string, options: CookieOptions): Cookie;
 
 ## Params
 
-### name
+### `name`
 
 The name of the cookie
 
-### options
+### `options`
 
 Options for the cookie
 

@@ -1,10 +1,9 @@
 ---
 title: clientEntry
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/client-entries.ts#L89
 ---
 
 # clientEntry
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/client-entries.ts#L89" target="_blank">View Source</a>
 
 ## Summary
 
@@ -54,12 +53,12 @@ export const Counter = clientEntry(
 
 ## Params
 
-### entryId
+### `entryId`
 
 Module URL with optional export name (format: "/js/module.js#ExportName") by
 default, or a custom entry identifier when paired with `resolveClientEntry`
 
-### component
+### `component`
 
 Component function that will be hydrated on the client
 

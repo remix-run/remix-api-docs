@@ -1,10 +1,9 @@
 ---
 title: render
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/render.ts#L62
 ---
 
 # render
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/render.ts#L62" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,11 +18,11 @@ function render(node: RemixNode, opts: RenderOptions): RenderResult;
 
 ## Params
 
-### node
+### `node`
 
 The node to render
 
-### opts
+### `opts`
 
 [`RenderOptions`](/api/remix/ui/test/interface/RenderOptions/); pass `opts.container` to render into a specific
   element instead of a fresh `div` appended to `document.body`

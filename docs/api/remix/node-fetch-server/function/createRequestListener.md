@@ -1,10 +1,9 @@
 ---
 title: createRequestListener
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L70
 ---
 
 # createRequestListener
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/node-fetch-server/src/lib/request-listener.ts#L65" target="_blank">View Source</a>
 
 ## Summary
 
@@ -44,11 +43,11 @@ function createRequestListener(
 
 ## Params
 
-### handler
+### `handler`
 
 The fetch handler to use for processing incoming requests
 
-### options
+### `options`
 
 Request listener options
 

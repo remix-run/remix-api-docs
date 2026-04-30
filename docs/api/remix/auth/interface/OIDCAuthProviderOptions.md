@@ -1,10 +1,9 @@
 ---
 title: OIDCAuthProviderOptions
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/oidc.ts#L90
 ---
 
 # OIDCAuthProviderOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/oidc.ts#L90" target="_blank">View Source</a>
 
 ## Summary
 
@@ -77,4 +76,4 @@ Requested scopes for the login flow.
 
 Maps raw OIDC claims into an application-specific profile shape.
 
-#### input
+#### `input`

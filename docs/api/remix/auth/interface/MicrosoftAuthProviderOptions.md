@@ -1,10 +1,9 @@
 ---
 title: MicrosoftAuthProviderOptions
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/microsoft.ts#L24
 ---
 
 # MicrosoftAuthProviderOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/microsoft.ts#L24" target="_blank">View Source</a>
 
 ## Summary
 

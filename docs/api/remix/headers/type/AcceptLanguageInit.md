@@ -1,10 +1,9 @@
 ---
 title: AcceptLanguageInit
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-language.ts#L8
 ---
 
 # AcceptLanguageInit
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/accept-language.ts#L8" target="_blank">View Source</a>
 
 ## Summary
 

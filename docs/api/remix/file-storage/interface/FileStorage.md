@@ -1,10 +1,9 @@
 ---
 title: FileStorage
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L4
 ---
 
 # FileStorage
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/file-storage/src/lib/file-storage.ts#L4" target="_blank">View Source</a>
 
 ## Summary
 
@@ -32,7 +31,7 @@ interface FileStorage {
 
 Get a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) at the given key.
 
-#### key
+#### `key`
 
 The key to look up
 
@@ -40,7 +39,7 @@ The key to look up
 
 Check if a file with the given key exists.
 
-#### key
+#### `key`
 
 The key to look up
 
@@ -101,7 +100,7 @@ if (result.cursor !== undefined) {
 
 Use the `limit` option to limit how many results you get back in the `files` array.
 
-#### options
+#### `options`
 
 Options for the list operation
 
@@ -110,11 +109,11 @@ Options for the list operation
 Put a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) in storage and return a
 new file backed by this storage.
 
-#### key
+#### `key`
 
 The key to store the file under
 
-#### file
+#### `file`
 
 The file to store
 
@@ -122,7 +121,7 @@ The file to store
 
 Remove the file with the given key from storage.
 
-#### key
+#### `key`
 
 The key to remove
 
@@ -131,10 +130,10 @@ The key to remove
 Put a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) in storage at the given
 key.
 
-#### key
+#### `key`
 
 The key to store the file under
 
-#### file
+#### `file`
 
 The file to store

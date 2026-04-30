@@ -1,10 +1,9 @@
 ---
 title: finishExternalAuth
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/finish-external-auth.ts#L38
 ---
 
 # finishExternalAuth
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/finish-external-auth.ts#L38" target="_blank">View Source</a>
 
 ## Summary
 
@@ -28,11 +27,11 @@ function finishExternalAuth<
 
 ## Params
 
-### provider
+### `provider`
 
-### context
+### `context`
 
-### options
+### `options`
 
 Transaction lookup settings.
 

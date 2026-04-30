@@ -1,10 +1,9 @@
 ---
 title: sendResponse
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L264
 ---
 
 # sendResponse
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/node-fetch-server/src/lib/request-listener.ts#L205" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,10 +25,10 @@ function sendResponse(
 
 ## Params
 
-### res
+### `res`
 
 The server response object
 
-### response
+### `response`
 
 The response to send

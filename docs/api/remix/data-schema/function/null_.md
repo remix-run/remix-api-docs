@@ -1,10 +1,9 @@
 ---
 title: null_
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L612
 ---
 
 # null_
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L612" target="_blank">View Source</a>
 
 ## Summary
 

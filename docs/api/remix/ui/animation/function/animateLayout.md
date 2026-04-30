@@ -1,10 +1,9 @@
 ---
 title: animateLayout
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-layout-mixin.ts#L258
 ---
 
 # animateLayout
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/animation/animate-layout-mixin.ts#L258" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function animateLayout<target extends EventTarget>(
 
 ## Params
 
-### config
+### `config`
 
 Layout animation configuration.
 

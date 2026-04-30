@@ -1,10 +1,9 @@
 ---
 title: TerminalOutputStream
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/terminal.ts#L18
 ---
 
 # TerminalOutputStream
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/terminal.ts#L18" target="_blank">View Source</a>
 
 ## Summary
 
@@ -32,6 +31,6 @@ Whether the output stream is attached to a TTY.
 
 Writes a chunk of text to the output stream.
 
-#### chunk
+#### `chunk`
 
 Text chunk to write.

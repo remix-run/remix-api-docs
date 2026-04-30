@@ -1,10 +1,9 @@
 ---
 title: createMigrationRunner
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations/runner.ts#L314
 ---
 
 # createMigrationRunner
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/migrations/runner.ts#L314" target="_blank">View Source</a>
 
 ## Summary
 
@@ -34,15 +33,15 @@ await runner.up()
 
 ## Params
 
-### adapter
+### `adapter`
 
 Database adapter used to compile and execute migration operations.
 
-### migrations
+### `migrations`
 
 Migration descriptors or registry.
 
-### options
+### `options`
 
 Optional runner configuration.
 

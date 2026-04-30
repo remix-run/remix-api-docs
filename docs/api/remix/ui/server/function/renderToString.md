@@ -1,10 +1,9 @@
 ---
 title: renderToString
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/server/stream.ts#L1339
 ---
 
 # renderToString
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/server/stream.ts#L1334" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function renderToString(node: RemixNode): Promise<string>;
 
 ## Params
 
-### node
+### `node`
 
 Node tree to render.
 

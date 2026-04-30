@@ -1,10 +1,9 @@
 ---
 title: greaterThan
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L22
 ---
 
 # greaterThan
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/route-pattern/src/lib/specificity.ts#L22" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,11 +18,11 @@ function greaterThan(a: RoutePatternMatch, b: RoutePatternMatch): boolean;
 
 ## Params
 
-### a
+### `a`
 
 the first match to compare
 
-### b
+### `b`
 
 the second match to compare
 

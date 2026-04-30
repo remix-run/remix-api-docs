@@ -1,10 +1,9 @@
 ---
 title: SpringIterator
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/spring.ts#L32
 ---
 
 # SpringIterator
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/animation/spring.ts#L32" target="_blank">View Source</a>
 
 ## Summary
 
@@ -41,15 +40,15 @@ CSS linear() easing function
 
 ### next(__namedParameters: [] | [any]): IteratorResult<number, any>
 
-#### __namedParameters
+#### `__namedParameters`
 
 ### return(value: any): IteratorResult<number, any>
 
-#### value
+#### `value`
 
 ### throw(e: any): IteratorResult<number, any>
 
-#### e
+#### `e`
 
 ### toString(): string
 

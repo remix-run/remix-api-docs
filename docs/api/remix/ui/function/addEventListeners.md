@@ -1,10 +1,9 @@
 ---
 title: addEventListeners
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/event-listeners.ts#L137
 ---
 
 # addEventListeners
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/event-listeners.ts#L137" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,12 +22,12 @@ function addEventListeners<target extends EventTarget>(
 
 ## Params
 
-### target
+### `target`
 
-### signal
+### `signal`
 
 Lifetime signal used to remove all listeners.
 
-### listeners
+### `listeners`
 
 Listener map keyed by event type.

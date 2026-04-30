@@ -1,10 +1,9 @@
 ---
 title: compressResponse
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/compress.ts#L84
 ---
 
 # compressResponse
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/response/src/lib/compress.ts#L84" target="_blank">View Source</a>
 
 ## Summary
 
@@ -39,15 +38,15 @@ function compressResponse(
 
 ## Params
 
-### response
+### `response`
 
 The response to compress
 
-### request
+### `request`
 
 The request (needed to check Accept-Encoding header)
 
-### options
+### `options`
 
 Optional compression settings
 

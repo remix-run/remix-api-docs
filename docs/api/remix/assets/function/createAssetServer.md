@@ -1,10 +1,9 @@
 ---
 title: createAssetServer
+source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L191
 ---
 
 # createAssetServer
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assets/src/lib/asset-server.ts#L186" target="_blank">View Source</a>
 
 ## Summary
 
@@ -24,8 +23,9 @@ function createAssetServer(options: AssetServerOptions): AssetServer;
 
 ```ts
 let assetServer = createAssetServer({
+  basePath: '/assets',
   fileMap: {
-    '/assets/app/*path': 'app/*path',
+    '/app/*path': 'app/*path',
   },
   allow: ['app/**'],
 })
@@ -35,7 +35,7 @@ route('/assets/*path', ({ request }) => assetServer.fetch(request))
 
 ## Params
 
-### options
+### `options`
 
 Server configuration
 

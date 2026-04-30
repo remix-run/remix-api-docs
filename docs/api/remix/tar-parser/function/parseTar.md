@@ -1,10 +1,9 @@
 ---
 title: parseTar
+source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L244
 ---
 
 # parseTar
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/tar-parser/src/lib/tar.ts#L244" target="_blank">View Source</a>
 
 ## Summary
 
@@ -36,13 +35,13 @@ function parseTar(
 
 ## Params
 
-### archive
+### `archive`
 
 The tar archive source data
 
-### options
+### `options`
 
-### handler
+### `handler`
 
 A function to call for each entry in the archive
 

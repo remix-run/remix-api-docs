@@ -1,10 +1,9 @@
 ---
 title: RequestHandler
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/controller.ts#L122
 ---
 
 # RequestHandler
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/controller.ts#L122" target="_blank">View Source</a>
 
 ## Summary
 

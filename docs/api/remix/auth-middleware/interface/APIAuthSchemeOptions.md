@@ -1,10 +1,9 @@
 ---
 title: APIAuthSchemeOptions
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/api-key.ts#L8
 ---
 
 # APIAuthSchemeOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth-middleware/src/lib/schemes/api-key.ts#L8" target="_blank">View Source</a>
 
 ## Summary
 
@@ -40,6 +39,6 @@ Method name exposed on the resolved auth state.
 
 Verifies a parsed API key and returns the resolved identity on success.
 
-#### key
+#### `key`
 
-#### context
+#### `context`

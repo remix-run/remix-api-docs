@@ -1,10 +1,9 @@
 ---
 title: createHtmlResponse
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/html.ts#L15
 ---
 
 # createHtmlResponse
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/response/src/lib/html.ts#L15" target="_blank">View Source</a>
 
 ## Summary
 
@@ -20,11 +19,11 @@ function createHtmlResponse(body: HtmlBody, init: ResponseInit): Response;
 
 ## Params
 
-### body
+### `body`
 
 The body of the response
 
-### init
+### `init`
 
 The `ResponseInit` object for the response
 

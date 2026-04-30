@@ -1,10 +1,9 @@
 ---
 title: createRangeRoot
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L71
 ---
 
 # createRangeRoot
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/vdom.ts#L71" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function createRangeRoot(
 
 ## Params
 
-### boundaries
+### `boundaries`
 
 Start and end marker nodes that define the render region.
 
-### options
+### `options`
 
 Root configuration.
 

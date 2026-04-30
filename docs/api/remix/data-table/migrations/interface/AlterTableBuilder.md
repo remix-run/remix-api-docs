@@ -1,10 +1,9 @@
 ---
 title: AlterTableBuilder
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations.ts#L214
 ---
 
 # AlterTableBuilder
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/migrations.ts#L214" target="_blank">View Source</a>
 
 ## Summary
 
@@ -50,110 +49,110 @@ interface AlterTableBuilder {
 
 Adds a check constraint during an `alterTable` migration.
 
-#### expression
+#### `expression`
 
-#### options
+#### `options`
 
 ### addColumn(name: string, definition: ColumnDefinition | ColumnBuilder<unknown>): void
 
 Adds a column during an `alterTable` migration.
 
-#### name
+#### `name`
 
-#### definition
+#### `definition`
 
 ### addForeignKey(columns: KeyColumns, refTable: TableInput, refColumns: KeyColumns, options: ForeignKeyOptions): void
 
 Adds a foreign key during an `alterTable` migration.
 
-#### columns
+#### `columns`
 
-#### refTable
+#### `refTable`
 
-#### refColumns
+#### `refColumns`
 
-#### options
+#### `options`
 
 ### addIndex(columns: IndexColumns, options: CreateIndexOptions): void
 
 Adds an index during an `alterTable` migration.
 
-#### columns
+#### `columns`
 
-#### options
+#### `options`
 
 ### addPrimaryKey(columns: KeyColumns, options: NamedConstraintOptions): void
 
 Adds a primary key during an `alterTable` migration.
 
-#### columns
+#### `columns`
 
-#### options
+#### `options`
 
 ### addUnique(columns: KeyColumns, options: NamedConstraintOptions): void
 
 Adds a unique constraint during an `alterTable` migration.
 
-#### columns
+#### `columns`
 
-#### options
+#### `options`
 
 ### changeColumn(name: string, definition: ColumnDefinition | ColumnBuilder<unknown>): void
 
 Changes an existing column during an `alterTable` migration.
 
-#### name
+#### `name`
 
-#### definition
+#### `definition`
 
 ### comment(text: string): void
 
 Sets the table comment during an `alterTable` migration.
 
-#### text
+#### `text`
 
 ### dropCheck(name: string): void
 
 Drops a check constraint during an `alterTable` migration.
 
-#### name
+#### `name`
 
 ### dropColumn(name: string, options: { ifExists?: boolean }): void
 
 Drops a column during an `alterTable` migration.
 
-#### name
+#### `name`
 
-#### options
+#### `options`
 
 ### dropForeignKey(name: string): void
 
 Drops a foreign key during an `alterTable` migration.
 
-#### name
+#### `name`
 
 ### dropIndex(name: string): void
 
 Drops an index during an `alterTable` migration.
 
-#### name
+#### `name`
 
 ### dropPrimaryKey(name: string): void
 
 Drops a primary key during an `alterTable` migration.
 
-#### name
+#### `name`
 
 ### dropUnique(name: string): void
 
 Drops a unique constraint during an `alterTable` migration.
 
-#### name
+#### `name`
 
 ### renameColumn(from: string, to: string): void
 
 Renames a column during an `alterTable` migration.
 
-#### from
+#### `from`
 
-#### to
+#### `to`

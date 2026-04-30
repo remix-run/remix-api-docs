@@ -1,10 +1,9 @@
 ---
 title: parseMultipart
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.node.ts#L23
 ---
 
 # parseMultipart
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart.node.ts#L23" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,11 +26,11 @@ function parseMultipart(
 
 ## Params
 
-### message
+### `message`
 
 The multipart message as a `Buffer` or an iterable of `Buffer` chunks
 
-### options
+### `options`
 
 Options for the parser
 

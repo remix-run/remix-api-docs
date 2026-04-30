@@ -1,10 +1,9 @@
 ---
 title: TerminalEnvironment
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/env.ts#L4
 ---
 
 # TerminalEnvironment
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/env.ts#L4" target="_blank">View Source</a>
 
 ## Summary
 

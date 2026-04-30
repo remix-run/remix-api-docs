@@ -1,10 +1,9 @@
 ---
 title: FileMetadata
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L117
 ---
 
 # FileMetadata
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/file-storage/src/lib/file-storage.ts#L117" target="_blank">View Source</a>
 
 ## Summary
 

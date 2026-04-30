@@ -1,10 +1,9 @@
 ---
 title: getContext
+source: https://github.com/remix-run/remix/blob/main/packages/async-context-middleware/src/lib/async-context.ts#L30
 ---
 
 # getContext
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/async-context-middleware/src/lib/async-context.ts#L30" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: jsxDEV
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/jsx.ts#L103
 ---
 
 # jsxDEV
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/jsx.ts#L103" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,15 +18,15 @@ function jsx(type: ElementType, props: ElementProps, key: string): RemixElement;
 
 ## Params
 
-### type
+### `type`
 
 Host tag or component function.
 
-### props
+### `props`
 
 Element props.
 
-### key
+### `key`
 
 Optional reconciliation key.
 

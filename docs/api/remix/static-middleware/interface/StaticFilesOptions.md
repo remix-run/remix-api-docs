@@ -1,10 +1,9 @@
 ---
 title: StaticFilesOptions
+source: https://github.com/remix-run/remix/blob/main/packages/static-middleware/src/lib/static.ts#L20
 ---
 
 # StaticFilesOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/static-middleware/src/lib/static.ts#L20" target="_blank">View Source</a>
 
 ## Summary
 

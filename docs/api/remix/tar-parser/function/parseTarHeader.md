@@ -1,10 +1,9 @@
 ---
 title: parseTarHeader
+source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L147
 ---
 
 # parseTarHeader
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/tar-parser/src/lib/tar.ts#L147" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function parseTarHeader(
 
 ## Params
 
-### block
+### `block`
 
 The tar header block
 
-### options
+### `options`
 
 Options that control how the header is parsed
 

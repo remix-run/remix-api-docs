@@ -1,10 +1,9 @@
 ---
 title: createHeaders
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L245
 ---
 
 # createHeaders
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/node-fetch-server/src/lib/request-listener.ts#L185" target="_blank">View Source</a>
 
 ## Summary
 
@@ -20,7 +19,7 @@ function createHeaders(req: IncomingMessage | Http2ServerRequest): Headers;
 
 ## Params
 
-### req
+### `req`
 
 The incoming request object
 

@@ -1,10 +1,9 @@
 ---
 title: FileUploadHandler
+source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L60
 ---
 
 # FileUploadHandler
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/form-data-parser/src/lib/form-data.ts#L60" target="_blank">View Source</a>
 
 ## Summary
 

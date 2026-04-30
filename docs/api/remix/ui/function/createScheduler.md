@@ -1,10 +1,9 @@
 ---
 title: createScheduler
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/scheduler.ts#L37
 ---
 
 # createScheduler
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/scheduler.ts#L37" target="_blank">View Source</a>
 
 ## Summary
 
@@ -39,15 +38,15 @@ function createScheduler(
 
 ## Params
 
-### doc
+### `doc`
 
 Document associated with the rendered tree.
 
-### rootTarget
+### `rootTarget`
 
 Event target that receives runtime errors.
 
-### styles
+### `styles`
 
 Style manager used during reconciliation.
 

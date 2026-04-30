@@ -1,10 +1,9 @@
 ---
 title: FileUpload
+source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L35
 ---
 
 # FileUpload
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/form-data-parser/src/lib/form-data.ts#L35" target="_blank">View Source</a>
 
 ## Summary
 
@@ -85,11 +84,11 @@ The **`slice()`** method of the Blob interface creates and returns a new `Blob` 
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
 
-#### start
+#### `start`
 
-#### end
+#### `end`
 
-#### contentType
+#### `contentType`
 
 ### stream(): ReadableStream<Uint8Array<ArrayBuffer>>
 

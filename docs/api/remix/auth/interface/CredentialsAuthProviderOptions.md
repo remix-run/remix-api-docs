@@ -1,10 +1,9 @@
 ---
 title: CredentialsAuthProviderOptions
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/credentials.ts#L18
 ---
 
 # CredentialsAuthProviderOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/credentials.ts#L18" target="_blank">View Source</a>
 
 ## Summary
 
@@ -36,12 +35,12 @@ Provider name used for session metadata and diagnostics.
 
 Parses submitted credentials from the current request.
 
-#### context
+#### `context`
 
 ### verify(input: input, context: RequestContext): result | Promise<result | null> | null
 
 Verifies parsed credentials and returns the authenticated result on success.
 
-#### input
+#### `input`
 
-#### context
+#### `context`

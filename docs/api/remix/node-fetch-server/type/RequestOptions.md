@@ -1,10 +1,9 @@
 ---
 title: RequestOptions
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L179
 ---
 
 # RequestOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/node-fetch-server/src/lib/request-listener.ts#L119" target="_blank">View Source</a>
 
 ## Summary
 

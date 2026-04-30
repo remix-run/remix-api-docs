@@ -1,10 +1,9 @@
 ---
 title: ok
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L60
 ---
 
 # ok
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L56" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,10 +25,10 @@ assert.ok(cookie) // cookie is now `string` (not `string | null`)
 
 ## Params
 
-### value
+### `value`
 
 The value to test for truthiness.
 
-### message
+### `message`
 
 Optional failure message.

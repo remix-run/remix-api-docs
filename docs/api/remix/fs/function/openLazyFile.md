@@ -1,10 +1,9 @@
 ---
 title: openLazyFile
+source: https://github.com/remix-run/remix/blob/main/packages/fs/src/lib/fs.ts#L41
 ---
 
 # openLazyFile
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fs/src/lib/fs.ts#L41" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function openLazyFile(filename: string, options: OpenLazyFileOptions): LazyFile;
 
 ## Params
 
-### filename
+### `filename`
 
 The path to the file
 
-### options
+### `options`
 
 Options to override the file's metadata
 

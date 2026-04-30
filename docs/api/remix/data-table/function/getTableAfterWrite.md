@@ -1,10 +1,9 @@
 ---
 title: getTableAfterWrite
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L432
 ---
 
 # getTableAfterWrite
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/table.ts#L432" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,7 +26,7 @@ function getTableAfterWrite<table extends AnyTable>(
 
 ## Params
 
-### table
+### `table`
 
 ## Returns
 

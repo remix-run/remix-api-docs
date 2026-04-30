@@ -1,10 +1,9 @@
 ---
 title: getIndexes
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/byte-range.ts#L36
 ---
 
 # getIndexes
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/lazy-file/src/lib/byte-range.ts#L36" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,11 +18,11 @@ function getIndexes(range: ByteRange, size: number): [number, number];
 
 ## Params
 
-### range
+### `range`
 
 The byte range
 
-### size
+### `size`
 
 The total size of the buffer
 

@@ -1,10 +1,9 @@
 ---
 title: max
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L95
 ---
 
 # max
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/checks.ts#L95" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function max(limit: number): Check<number>;
 
 ## Params
 
-### limit
+### `limit`
 
 The inclusive maximum value
 

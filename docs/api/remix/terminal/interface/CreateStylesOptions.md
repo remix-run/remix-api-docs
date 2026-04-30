@@ -1,10 +1,9 @@
 ---
 title: CreateStylesOptions
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/styles.ts#L214
 ---
 
 # CreateStylesOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/styles.ts#L214" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: min
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L78
 ---
 
 # min
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/checks.ts#L78" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function min(limit: number): Check<number>;
 
 ## Params
 
-### limit
+### `limit`
 
 The inclusive minimum value
 

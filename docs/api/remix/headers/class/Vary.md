@@ -1,10 +1,9 @@
 ---
 title: Vary
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/vary.ts#L25
 ---
 
 # Vary
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/vary.ts#L25" target="_blank">View Source</a>
 
 ## Summary
 
@@ -47,73 +46,73 @@ class Vary {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Accessors
 
-### headerNames
+### `headerNames`
 
 An array of the header names (normalized to lowercase).
 
-### size
+### `size`
 
 The number of header names in the Vary header.
 
 ## Methods
 
-### [iterator](): IterableIterator<string>
+### `[iterator](): IterableIterator<string>`
 
 Iterates over normalized header names in the `Vary` set.
 
-### add(headerName: string): void
+### `add(headerName: string): void`
 
 Adds a header name to the Vary header (case-insensitive).
 If the header name already exists, this is a no-op.
 
-#### headerName
+#### `headerName`
 
 The header name to add.
 
-### clear(): void
+### `clear(): void`
 
 Removes all header names from the Vary header.
 
-### delete(headerName: string): void
+### `delete(headerName: string): void`
 
 Removes a header name from the Vary header (case-insensitive).
 
-#### headerName
+#### `headerName`
 
 The header name to remove.
 
-### forEach(callback: (headerName: string, vary: Vary) => void, thisArg: any): void
+### `forEach(callback: (headerName: string, vary: Vary) => void, thisArg: any): void`
 
 Calls a callback function for each header name in the Vary header.
 
-#### callback
+#### `callback`
 
 The callback function to call for each header name.
 
-#### thisArg
+#### `thisArg`
 
 Optional value to use as `this` when executing the callback.
 
-### has(headerName: string): boolean
+### `has(headerName: string): boolean`
 
 Checks if the Vary header includes the given header name (case-insensitive).
 
-#### headerName
+#### `headerName`
 
 The header name to check for.
 
-### toString(): string
+### `toString(): string`
 
 Returns the serialized `Vary` header value.
 
-### from(value: string | string[] | VaryInit | null): Vary
+### `from(value: string | string[] | VaryInit | null): Vary`
 
 Parse a Vary header value.
 
-#### value
+#### `value`
 
 The header value (string, string[], init object, or null)

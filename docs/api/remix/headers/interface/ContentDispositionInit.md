@@ -1,10 +1,9 @@
 ---
 title: ContentDispositionInit
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-disposition.ts#L7
 ---
 
 # ContentDispositionInit
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/content-disposition.ts#L7" target="_blank">View Source</a>
 
 ## Summary
 

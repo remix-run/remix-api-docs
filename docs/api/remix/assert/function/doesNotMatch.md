@@ -1,10 +1,9 @@
 ---
 title: doesNotMatch
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L202
 ---
 
 # doesNotMatch
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L198" target="_blank">View Source</a>
 
 ## Summary
 
@@ -25,14 +24,14 @@ assert.doesNotMatch(html, /Error/)
 
 ## Params
 
-### string
+### `string`
 
 The string to test.
 
-### regexp
+### `regexp`
 
 The pattern that must not match.
 
-### message
+### `message`
 
 Optional failure message.

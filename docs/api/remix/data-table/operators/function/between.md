@@ -1,10 +1,9 @@
 ---
 title: between
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L260
 ---
 
 # between
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/operators.ts#L260" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,13 +22,13 @@ function between<column extends string | ColumnReferenceLike>(
 
 ## Params
 
-### column
+### `column`
 
-### lower
+### `lower`
 
 Lower bound value.
 
-### upper
+### `upper`
 
 Upper bound value.
 

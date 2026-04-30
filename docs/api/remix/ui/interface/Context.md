@@ -1,10 +1,9 @@
 ---
 title: Context
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/component.ts#L122
 ---
 
 # Context
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/component.ts#L122" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,16 +26,16 @@ interface Context<C> {
 
 Reads the context value associated with the given component type.
 
-#### component
+#### `component`
 
 ### get(component: symbol | ElementType): unknown
 
 Reads the context value associated with the given component key.
 
-#### component
+#### `component`
 
 ### set(values: C): void
 
 Replaces the current context value for this component instance.
 
-#### values
+#### `values`

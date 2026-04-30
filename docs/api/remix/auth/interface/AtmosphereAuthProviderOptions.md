@@ -1,10 +1,9 @@
 ---
 title: AtmosphereAuthProviderOptions
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L140
 ---
 
 # AtmosphereAuthProviderOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/atmosphere.ts#L140" target="_blank">View Source</a>
 
 ## Summary
 
@@ -59,4 +58,4 @@ Secret used to encrypt per-flow DPoP state stored in the OAuth transaction sessi
 
 Maps the resolved atproto identity into an application-specific profile shape.
 
-#### input
+#### `input`

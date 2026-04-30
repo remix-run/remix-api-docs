@@ -1,10 +1,9 @@
 ---
 title: SetCookie
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/set-cookie.ts#L88
 ---
 
 # SetCookie
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/set-cookie.ts#L88" target="_blank">View Source</a>
 
 ## Summary
 
@@ -41,60 +40,60 @@ class SetCookie {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Properties
 
-### domain
+### `domain`
 
 The cookie domain attribute.
 
-### expires
+### `expires`
 
 The cookie expiration date.
 
-### httpOnly
+### `httpOnly`
 
 Whether the `HttpOnly` attribute is present.
 
-### maxAge
+### `maxAge`
 
 The `Max-Age` attribute value in seconds.
 
-### name
+### `name`
 
 The cookie name.
 
-### partitioned
+### `partitioned`
 
 Whether the `Partitioned` attribute is present.
 
-### path
+### `path`
 
 The cookie path attribute.
 
-### sameSite
+### `sameSite`
 
 The `SameSite` attribute value.
 
-### secure
+### `secure`
 
 Whether the `Secure` attribute is present.
 
-### value
+### `value`
 
 The cookie value.
 
 ## Methods
 
-### toString(): string
+### `toString(): string`
 
 Returns the string representation of the header value.
 
-### from(value: string | SetCookieInit | null): SetCookie
+### `from(value: string | SetCookieInit | null): SetCookie`
 
 Parse a Set-Cookie header value.
 
-#### value
+#### `value`
 
 The header value (string, init object, or null)

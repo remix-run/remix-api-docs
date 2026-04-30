@@ -1,10 +1,9 @@
 ---
 title: parse
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/raw-headers.ts#L16
 ---
 
 # parse
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/raw-headers.ts#L16" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,7 +26,7 @@ headers.get('cache-control') // 'no-cache'
 
 ## Params
 
-### raw
+### `raw`
 
 A raw HTTP header string with headers separated by CRLF (`\r\n`)
 

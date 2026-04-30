@@ -1,10 +1,9 @@
 ---
 title: parseMultipart
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L128
 ---
 
 # parseMultipart
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart.ts#L128" target="_blank">View Source</a>
 
 ## Summary
 
@@ -29,11 +28,11 @@ function parseMultipart(
 
 ## Params
 
-### message
+### `message`
 
 The multipart message as a `Uint8Array` or an iterable of `Uint8Array` chunks
 
-### options
+### `options`
 
 Options for the parser
 

@@ -1,10 +1,9 @@
 ---
 title: createDatabase
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/database.ts#L827
 ---
 
 # createDatabase
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/database.ts#L827" target="_blank">View Source</a>
 
 ## Summary
 
@@ -40,11 +39,11 @@ let rows = await db.query(users).where({ id: 1 }).all()
 
 ## Params
 
-### adapter
+### `adapter`
 
 Adapter implementation responsible for SQL execution.
 
-### options
+### `options`
 
 Optional runtime options.
 

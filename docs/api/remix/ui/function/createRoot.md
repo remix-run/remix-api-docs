@@ -1,10 +1,9 @@
 ---
 title: createRoot
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L172
 ---
 
 # createRoot
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/vdom.ts#L172" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function createRoot(
 
 ## Params
 
-### container
+### `container`
 
 Host element to render into.
 
-### options
+### `options`
 
 Root configuration.
 

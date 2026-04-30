@@ -1,10 +1,9 @@
 ---
 title: detectMimeType
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/detect-mime-type.ts#L19
 ---
 
 # detectMimeType
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/mime/src/lib/detect-mime-type.ts#L19" target="_blank">View Source</a>
 
 ## Summary
 
@@ -31,7 +30,7 @@ detectMimeType('unknown')       // undefined
 
 ## Params
 
-### extension
+### `extension`
 
 The file extension (e.g. "txt", ".txt") or filename (e.g. "file.txt")
 

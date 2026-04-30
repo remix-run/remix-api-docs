@@ -1,10 +1,9 @@
 ---
 title: getMultipartBoundary
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart-request.ts#L10
 ---
 
 # getMultipartBoundary
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart-request.ts#L10" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function getMultipartBoundary(contentType: string): string | null;
 
 ## Params
 
-### contentType
+### `contentType`
 
 The `Content-Type` header value from the request
 

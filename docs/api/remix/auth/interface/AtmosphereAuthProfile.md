@@ -1,10 +1,9 @@
 ---
 title: AtmosphereAuthProfile
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L30
 ---
 
 # AtmosphereAuthProfile
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/atmosphere.ts#L30" target="_blank">View Source</a>
 
 ## Summary
 

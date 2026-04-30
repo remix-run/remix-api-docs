@@ -1,10 +1,9 @@
 ---
 title: parseSafe
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L1167
 ---
 
 # parseSafe
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L1167" target="_blank">View Source</a>
 
 ## Summary
 
@@ -25,15 +24,15 @@ function parseSafe<input, output>(
 
 ## Params
 
-### schema
+### `schema`
 
 The schema to validate against
 
-### value
+### `value`
 
 The value to validate
 
-### options
+### `options`
 
 Validation options
 

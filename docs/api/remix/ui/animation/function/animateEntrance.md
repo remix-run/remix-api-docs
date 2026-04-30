@@ -1,10 +1,9 @@
 ---
 title: animateEntrance
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-mixins.ts#L268
 ---
 
 # animateEntrance
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/animation/animate-mixins.ts#L268" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function animateEntrance<target extends EventTarget>(
 
 ## Params
 
-### config
+### `config`
 
 Entrance animation configuration.
 

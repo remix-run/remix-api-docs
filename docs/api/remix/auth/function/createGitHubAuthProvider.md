@@ -1,10 +1,9 @@
 ---
 title: createGitHubAuthProvider
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/github.ts#L69
 ---
 
 # createGitHubAuthProvider
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/github.ts#L69" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function createGitHubAuthProvider(
 
 ## Params
 
-### options
+### `options`
 
 GitHub OAuth client settings for your application.
 

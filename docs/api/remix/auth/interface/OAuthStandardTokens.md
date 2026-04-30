@@ -1,10 +1,9 @@
 ---
 title: OAuthStandardTokens
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/provider.ts#L34
 ---
 
 # OAuthStandardTokens
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/provider.ts#L34" target="_blank">View Source</a>
 
 ## Summary
 

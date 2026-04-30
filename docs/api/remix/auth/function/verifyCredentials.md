@@ -1,10 +1,9 @@
 ---
 title: verifyCredentials
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/verify-credentials.ts#L12
 ---
 
 # verifyCredentials
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/verify-credentials.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,11 +25,11 @@ function verifyCredentials<
 
 ## Params
 
-### provider
+### `provider`
 
 The credentials provider that parses and verifies the submitted input.
 
-### context
+### `context`
 
 ## Returns
 

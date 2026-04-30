@@ -1,10 +1,9 @@
 ---
 title: SqliteStatement
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite/src/lib/adapter.ts#L38
 ---
 
 # SqliteStatement
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table-sqlite/src/lib/adapter.ts#L38" target="_blank">View Source</a>
 
 ## Summary
 

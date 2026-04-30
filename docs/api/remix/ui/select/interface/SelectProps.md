@@ -1,10 +1,9 @@
 ---
 title: SelectProps
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/select/select.tsx#L68
 ---
 
 # SelectProps
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/components/select/select.tsx#L68" target="_blank">View Source</a>
 
 ## Signature
 

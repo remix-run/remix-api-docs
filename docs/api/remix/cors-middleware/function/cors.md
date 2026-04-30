@@ -1,10 +1,9 @@
 ---
 title: cors
+source: https://github.com/remix-run/remix/blob/main/packages/cors-middleware/src/lib/cors.ts#L128
 ---
 
 # cors
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/cors-middleware/src/lib/cors.ts#L128" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function cors(options: CorsOptions): Middleware;
 
 ## Params
 
-### options
+### `options`
 
 CORS options
 

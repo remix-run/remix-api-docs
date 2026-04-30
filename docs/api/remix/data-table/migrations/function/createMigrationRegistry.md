@@ -1,10 +1,9 @@
 ---
 title: createMigrationRegistry
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations/registry.ts#L39
 ---
 
 # createMigrationRegistry
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/migrations/registry.ts#L39" target="_blank">View Source</a>
 
 ## Summary
 
@@ -30,7 +29,7 @@ registry.register({ id, name, migration })
 
 ## Params
 
-### initial
+### `initial`
 
 Optional initial migration list.
 

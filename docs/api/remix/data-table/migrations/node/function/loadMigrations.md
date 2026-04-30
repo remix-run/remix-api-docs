@@ -1,10 +1,9 @@
 ---
 title: loadMigrations
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations-node.ts#L22
 ---
 
 # loadMigrations
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/migrations-node.ts#L22" target="_blank">View Source</a>
 
 ## Summary
 
@@ -30,7 +29,7 @@ let migrations = await loadMigrations('./app/db/migrations')
 
 ## Params
 
-### directory
+### `directory`
 
 Absolute or relative directory containing migration files.
 

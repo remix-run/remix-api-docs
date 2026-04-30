@@ -1,10 +1,9 @@
 ---
 title: TypedEventTarget
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/typed-event-target.ts#L4
 ---
 
 # TypedEventTarget
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/typed-event-target.ts#L4" target="_blank">View Source</a>
 
 ## Summary
 
@@ -49,76 +48,76 @@ class TypedEventTarget<eventMap> {
 
 ## Properties
 
-### __eventMap
+### `__eventMap`
 
 Phantom property that carries the event map type on instances.
 
 ## Methods
 
-### addEventListener<type extends string>(type: type, listener: TypedEventListener<eventMap>[type], options: AddEventListenerOptions): void
+### `addEventListener<type extends string>(type: type, listener: TypedEventListener<eventMap>[type], options: AddEventListenerOptions): void`
 
 Adds a listener for a typed event name from the event map.
 
-#### type
+#### `type`
 
-#### listener
+#### `listener`
 
 Listener to invoke when the event fires.
 
-#### options
+#### `options`
 
 Listener registration options.
 
-### addEventListener(type: string, listener: EventListenerOrEventListenerObject | null, options: boolean | AddEventListenerOptions): void
+### `addEventListener(type: string, listener: EventListenerOrEventListenerObject | null, options: boolean | AddEventListenerOptions): void`
 
 Adds a listener using the standard untyped `EventTarget` signature.
 
-#### type
+#### `type`
 
 Event name to listen for.
 
-#### listener
+#### `listener`
 
 Listener to invoke when the event fires.
 
-#### options
+#### `options`
 
 Listener registration options.
 
-### dispatchEvent(event: Event): boolean
+### `dispatchEvent(event: Event): boolean`
 
 The **`dispatchEvent()`** method of the EventTarget sends an Event to the object, (synchronously) invoking the affected event listeners in the appropriate order.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
 
-#### event
+#### `event`
 
-### removeEventListener<type extends string>(type: type, listener: TypedEventListener<eventMap>[type], options: EventListenerOptions): void
+### `removeEventListener<type extends string>(type: type, listener: TypedEventListener<eventMap>[type], options: EventListenerOptions): void`
 
 Removes a listener for a typed event name from the event map.
 
-#### type
+#### `type`
 
-#### listener
+#### `listener`
 
 Previously registered listener.
 
-#### options
+#### `options`
 
 Listener removal options.
 
-### removeEventListener(type: string, listener: EventListenerOrEventListenerObject | null, options: EventListenerOptions): void
+### `removeEventListener(type: string, listener: EventListenerOrEventListenerObject | null, options: EventListenerOptions): void`
 
 Removes a listener using the standard untyped `EventTarget` signature.
 
-#### type
+#### `type`
 
 Event name to stop listening for.
 
-#### listener
+#### `listener`
 
 Previously registered listener.
 
-#### options
+#### `options`
 
 Listener removal options.

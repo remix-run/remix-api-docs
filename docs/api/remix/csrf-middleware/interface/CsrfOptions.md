@@ -1,10 +1,9 @@
 ---
 title: CsrfOptions
+source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L55
 ---
 
 # CsrfOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/csrf-middleware/src/lib/csrf.ts#L55" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: OpenLazyFileOptions
+source: https://github.com/remix-run/remix/blob/main/packages/fs/src/lib/fs.ts#L10
 ---
 
 # OpenLazyFileOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fs/src/lib/fs.ts#L10" target="_blank">View Source</a>
 
 ## Summary
 

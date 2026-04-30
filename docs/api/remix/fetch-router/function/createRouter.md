@@ -1,10 +1,9 @@
 ---
 title: createRouter
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L327
 ---
 
 # createRouter
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/router.ts#L316" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,7 +25,7 @@ function createRouter<
 
 ## Params
 
-### options
+### `options`
 
 Options to configure the router
 

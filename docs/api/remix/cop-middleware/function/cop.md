@@ -1,10 +1,9 @@
 ---
 title: cop
+source: https://github.com/remix-run/remix/blob/main/packages/cop-middleware/src/lib/cop.ts#L139
 ---
 
 # cop
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/cop-middleware/src/lib/cop.ts#L139" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function cop(options: CopOptions): Middleware;
 
 ## Params
 
-### options
+### `options`
 
 Cross-origin protection options.
 

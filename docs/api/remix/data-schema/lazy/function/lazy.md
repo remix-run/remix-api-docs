@@ -1,10 +1,9 @@
 ---
 title: lazy
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/lazy.ts#L12
 ---
 
 # lazy
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/lazy.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,7 +22,7 @@ function lazy<schema extends Schema<any, any>>(
 
 ## Params
 
-### getSchema
+### `getSchema`
 
 A function that returns the schema when first needed
 

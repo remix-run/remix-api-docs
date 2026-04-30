@@ -1,10 +1,9 @@
 ---
 title: like
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L221
 ---
 
 # like
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/operators.ts#L221" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,9 +21,9 @@ function like<column extends string | ColumnReferenceLike>(
 
 ## Params
 
-### column
+### `column`
 
-### value
+### `value`
 
 Match pattern.
 

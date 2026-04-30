@@ -1,10 +1,9 @@
 ---
 title: createBearerTokenAuthScheme
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/bearer.ts#L29
 ---
 
 # createBearerTokenAuthScheme
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth-middleware/src/lib/schemes/bearer.ts#L29" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function createBearerTokenAuthScheme<identity>(
 
 ## Params
 
-### options
+### `options`
 
 Header parsing and token verification options.
 

@@ -1,10 +1,9 @@
 ---
 title: createMysqlDatabaseAdapter
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-mysql/src/lib/adapter.ts#L360
 ---
 
 # createMysqlDatabaseAdapter
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table-mysql/src/lib/adapter.ts#L360" target="_blank">View Source</a>
 
 ## Summary
 
@@ -33,7 +32,7 @@ let db = createDatabase(adapter)
 
 ## Params
 
-### client
+### `client`
 
 Mysql pool or connection.
 

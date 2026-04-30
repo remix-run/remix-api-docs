@@ -1,10 +1,9 @@
 ---
 title: createRequest
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L192
 ---
 
 # createRequest
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/node-fetch-server/src/lib/request-listener.ts#L132" target="_blank">View Source</a>
 
 ## Summary
 
@@ -28,15 +27,15 @@ function createRequest(
 
 ## Params
 
-### req
+### `req`
 
 The incoming request object
 
-### res
+### `res`
 
 The server response object
 
-### options
+### `options`
 
 Options for creating the request
 

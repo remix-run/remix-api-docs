@@ -1,10 +1,9 @@
 ---
 title: IfNoneMatch
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-none-match.ts#L21
 ---
 
 # IfNoneMatch
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/if-none-match.ts#L21" target="_blank">View Source</a>
 
 ## Summary
 
@@ -34,42 +33,42 @@ class IfNoneMatch {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Properties
 
-### tags
+### `tags`
 
 Entity tags carried by the header.
 
 ## Methods
 
-### has(tag: string): boolean
+### `has(tag: string): boolean`
 
 Checks if the header contains the given entity tag.
 
 Note: This method checks only for exact matches and does not consider wildcards.
 
-#### tag
+#### `tag`
 
 The entity tag to check for
 
-### matches(tag: string): boolean
+### `matches(tag: string): boolean`
 
 Checks if this header matches the given entity tag.
 
-#### tag
+#### `tag`
 
 The entity tag to check for
 
-### toString(): string
+### `toString(): string`
 
 Returns the string representation of the header value.
 
-### from(value: string | string[] | IfNoneMatchInit | null): IfNoneMatch
+### `from(value: string | string[] | IfNoneMatchInit | null): IfNoneMatch`
 
 Parse an If-None-Match header value.
 
-#### value
+#### `value`
 
 The header value (string, string[], init object, or null)

@@ -1,10 +1,9 @@
 ---
 title: parseMultipartStream
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L166
 ---
 
 # parseMultipartStream
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart.ts#L166" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,11 +25,11 @@ function parseMultipartStream(
 
 ## Params
 
-### stream
+### `stream`
 
 A stream containing multipart data as a `ReadableStream<Uint8Array>`
 
-### options
+### `options`
 
 Options for the parser
 

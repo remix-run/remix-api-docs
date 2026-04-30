@@ -1,10 +1,9 @@
 ---
 title: stripAnsi
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/ansi.ts#L202
 ---
 
 # stripAnsi
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/ansi.ts#L202" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function stripAnsi(value: string): string;
 
 ## Params
 
-### value
+### `value`
 
 The string to strip
 

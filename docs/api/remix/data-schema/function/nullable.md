@@ -1,10 +1,9 @@
 ---
 title: nullable
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L632
 ---
 
 # nullable
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L632" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function nullable<input, output>(
 
 ## Params
 
-### schema
+### `schema`
 
 The wrapped schema
 

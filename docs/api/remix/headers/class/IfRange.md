@@ -1,10 +1,9 @@
 ---
 title: IfRange
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-range.ts#L14
 ---
 
 # IfRange
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/if-range.ts#L14" target="_blank">View Source</a>
 
 ## Summary
 
@@ -38,17 +37,17 @@ class IfRange {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Properties
 
-### value
+### `value`
 
 Raw header value, either an entity tag or an HTTP date.
 
 ## Methods
 
-### matches(resource: { etag?: string | null; lastModified?: number | Date | null }): boolean
+### `matches(resource: { etag?: string | null; lastModified?: number | Date | null }): boolean`
 
 Checks if the `If-Range` condition is satisfied for the current resource state.
 
@@ -62,18 +61,18 @@ The `If-Range` header can contain either:
 When comparing ETags, only strong entity tags are matched as per RFC 7233.
 Weak entity tags (prefixed with `W/`) are never considered a match.
 
-#### resource
+#### `resource`
 
 The current resource state to compare against
 
-### toString(): string
+### `toString(): string`
 
 Returns the string representation of the header value.
 
-### from(value: string | Date | null): IfRange
+### `from(value: string | Date | null): IfRange`
 
 Parse an If-Range header value.
 
-#### value
+#### `value`
 
 The header value (string, Date, or null)

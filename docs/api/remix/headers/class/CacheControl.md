@@ -1,10 +1,9 @@
 ---
 title: CacheControl
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/cache-control.ts#L164
 ---
 
 # CacheControl
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/cache-control.ts#L164" target="_blank">View Source</a>
 
 ## Summary
 
@@ -47,84 +46,84 @@ class CacheControl {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Properties
 
-### immutable
+### `immutable`
 
 Whether the `immutable` directive is present.
 
-### maxAge
+### `maxAge`
 
 The configured `max-age` directive value in seconds.
 
-### maxStale
+### `maxStale`
 
 The configured `max-stale` directive value in seconds.
 
-### minFresh
+### `minFresh`
 
 The configured `min-fresh` directive value in seconds.
 
-### mustRevalidate
+### `mustRevalidate`
 
 Whether the `must-revalidate` directive is present.
 
-### mustUnderstand
+### `mustUnderstand`
 
 Whether the `must-understand` directive is present.
 
-### noCache
+### `noCache`
 
 Whether the `no-cache` directive is present.
 
-### noStore
+### `noStore`
 
 Whether the `no-store` directive is present.
 
-### noTransform
+### `noTransform`
 
 Whether the `no-transform` directive is present.
 
-### onlyIfCached
+### `onlyIfCached`
 
 Whether the `only-if-cached` directive is present.
 
-### private
+### `private`
 
 Whether the `private` directive is present.
 
-### proxyRevalidate
+### `proxyRevalidate`
 
 Whether the `proxy-revalidate` directive is present.
 
-### public
+### `public`
 
 Whether the `public` directive is present.
 
-### sMaxage
+### `sMaxage`
 
 The configured `s-maxage` directive value in seconds.
 
-### staleIfError
+### `staleIfError`
 
 The configured `stale-if-error` directive value in seconds.
 
-### staleWhileRevalidate
+### `staleWhileRevalidate`
 
 The configured `stale-while-revalidate` directive value in seconds.
 
 ## Methods
 
-### toString(): string
+### `toString(): string`
 
 Returns the string representation of the header value.
 
-### from(value: string | CacheControlInit | null): CacheControl
+### `from(value: string | CacheControlInit | null): CacheControl`
 
 Parse a Cache-Control header value.
 
-#### value
+#### `value`
 
 The header value (string, init object, or null)

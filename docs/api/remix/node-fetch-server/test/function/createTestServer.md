@@ -1,10 +1,9 @@
 ---
 title: createTestServer
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/test-server.ts#L30
 ---
 
 # createTestServer
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/node-fetch-server/src/lib/test-server.ts#L29" target="_blank">View Source</a>
 
 ## Summary
 
@@ -24,7 +23,7 @@ function createTestServer(
 
 ## Params
 
-### handler
+### `handler`
 
 A fetch-style `(request) => Response | Promise<Response>`
   (e.g. `router.fetch` from `@remix-run/fetch-router`)

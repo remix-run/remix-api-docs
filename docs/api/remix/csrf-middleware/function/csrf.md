@@ -1,10 +1,9 @@
 ---
 title: csrf
+source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L117
 ---
 
 # csrf
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/csrf-middleware/src/lib/csrf.ts#L117" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function csrf(options: CsrfOptions): Middleware;
 
 ## Params
 
-### options
+### `options`
 
 CSRF options
 

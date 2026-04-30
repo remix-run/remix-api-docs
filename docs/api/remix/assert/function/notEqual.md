@@ -1,10 +1,9 @@
 ---
 title: notEqual
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L102
 ---
 
 # notEqual
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L98" target="_blank">View Source</a>
 
 ## Summary
 
@@ -29,14 +28,14 @@ assert.notEqual(response.status, 404)
 
 ## Params
 
-### actual
+### `actual`
 
 The value produced by the code under test.
 
-### expected
+### `expected`
 
 The value that `actual` must not equal.
 
-### message
+### `message`
 
 Optional failure message.

@@ -1,10 +1,9 @@
 ---
 title: hasManyThrough
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L929
 ---
 
 # hasManyThrough
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/table.ts#L929" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,11 +22,11 @@ function hasManyThrough<source extends AnyTable, target extends AnyTable>(
 
 ## Params
 
-### source
+### `source`
 
-### target
+### `target`
 
-### relationOptions
+### `relationOptions`
 
 Through relation configuration.
 

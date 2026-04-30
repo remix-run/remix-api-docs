@@ -1,10 +1,9 @@
 ---
 title: ascending
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L44
 ---
 
 # ascending
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/route-pattern/src/lib/specificity.ts#L44" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,11 +18,11 @@ function ascending(a: RoutePatternMatch, b: RoutePatternMatch): number;
 
 ## Params
 
-### a
+### `a`
 
 the first match to compare
 
-### b
+### `b`
 
 the second match to compare
 

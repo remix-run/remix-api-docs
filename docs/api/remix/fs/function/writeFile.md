@@ -1,10 +1,9 @@
 ---
 title: writeFile
+source: https://github.com/remix-run/remix/blob/main/packages/fs/src/lib/fs.ts#L93
 ---
 
 # writeFile
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fs/src/lib/fs.ts#L93" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,11 +25,11 @@ function writeFile(
 
 ## Params
 
-### to
+### `to`
 
 The path to write the file to, or an open file descriptor
 
-### file
+### `file`
 
 The file to write (any object with a `stream()` method)
 

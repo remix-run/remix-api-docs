@@ -1,10 +1,9 @@
 ---
 title: beforeAll
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L231
 ---
 
 # beforeAll
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/test/src/lib/framework.ts#L231" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,6 +20,6 @@ function beforeAll(fn: () => void | Promise<void>): void;
 
 ## Params
 
-### fn
+### `fn`
 
 The setup function to run once before all tests in the suite.

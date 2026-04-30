@@ -1,10 +1,9 @@
 ---
 title: requireAuth
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/require-auth.ts#L47
 ---
 
 # requireAuth
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth-middleware/src/lib/require-auth.ts#L47" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function requireAuth<identity>(
 
 ## Params
 
-### options
+### `options`
 
 Failure handling options for unauthenticated requests.
 

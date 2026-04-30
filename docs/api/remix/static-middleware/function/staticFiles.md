@@ -1,10 +1,9 @@
 ---
 title: staticFiles
+source: https://github.com/remix-run/remix/blob/main/packages/static-middleware/src/lib/static.ts#L83
 ---
 
 # staticFiles
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/static-middleware/src/lib/static.ts#L83" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function staticFiles(root: string, options: StaticFilesOptions): Middleware;
 
 ## Params
 
-### root
+### `root`
 
 The root directory to serve files from (absolute or relative to cwd)
 
-### options
+### `options`
 
 Configuration for file responses
 

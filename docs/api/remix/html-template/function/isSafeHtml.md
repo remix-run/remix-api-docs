@@ -1,10 +1,9 @@
 ---
 title: isSafeHtml
+source: https://github.com/remix-run/remix/blob/main/packages/html-template/src/lib/safe-html.ts#L21
 ---
 
 # isSafeHtml
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/html-template/src/lib/safe-html.ts#L21" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function isSafeHtml(value: unknown): value is SafeHtml;
 
 ## Params
 
-### value
+### `value`
 
 The value to check
 

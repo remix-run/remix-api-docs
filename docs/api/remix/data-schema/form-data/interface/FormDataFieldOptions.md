@@ -1,10 +1,9 @@
 ---
 title: FormDataFieldOptions
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/form-data.ts#L34
 ---
 
 # FormDataFieldOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/form-data.ts#L34" target="_blank">View Source</a>
 
 ## Summary
 

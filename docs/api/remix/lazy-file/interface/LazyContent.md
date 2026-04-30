@@ -1,10 +1,9 @@
 ---
 title: LazyContent
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L6
 ---
 
 # LazyContent
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/lazy-file/src/lib/lazy-file.ts#L6" target="_blank">View Source</a>
 
 ## Summary
 
@@ -34,10 +33,10 @@ Returns a stream that can be used to read the content. When given, the `start` i
 inclusive indicating the index of the first byte to read. The `end` index is exclusive
 indicating the index of the first byte not to read.
 
-#### start
+#### `start`
 
 The start index (inclusive)
 
-#### end
+#### `end`
 
 The end index (exclusive)

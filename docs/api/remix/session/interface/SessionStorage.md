@@ -1,10 +1,9 @@
 ---
 title: SessionStorage
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session-storage.ts#L6
 ---
 
 # SessionStorage
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/session/src/lib/session-storage.ts#L6" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,7 +25,7 @@ interface SessionStorage {
 
 Retrieve a new session from storage based on the session cookie.
 
-#### cookie
+#### `cookie`
 
 The session cookie value, or `null` if no session cookie is available
 
@@ -36,6 +35,6 @@ Save session data in storage and return the session cookie.
 
 Note: If no session cookie should be set, this method returns `null`.
 
-#### session
+#### `session`
 
 The session to save

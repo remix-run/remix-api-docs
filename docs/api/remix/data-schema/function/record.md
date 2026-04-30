@@ -1,10 +1,9 @@
 ---
 title: record
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L779
 ---
 
 # record
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L779" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,11 +26,11 @@ function record<
 
 ## Params
 
-### keySchema
+### `keySchema`
 
 Schema used to validate and transform each key
 
-### valueSchema
+### `valueSchema`
 
 Schema used to validate and transform each value
 

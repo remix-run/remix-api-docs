@@ -1,10 +1,9 @@
 ---
 title: VirtualRootOptions
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L37
 ---
 
 # VirtualRootOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/vdom.ts#L37" target="_blank">View Source</a>
 
 ## Summary
 

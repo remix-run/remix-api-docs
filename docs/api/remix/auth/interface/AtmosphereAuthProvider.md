@@ -1,10 +1,9 @@
 ---
 title: AtmosphereAuthProvider
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L128
 ---
 
 # AtmosphereAuthProvider
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/atmosphere.ts#L128" target="_blank">View Source</a>
 
 ## Summary
 
@@ -41,4 +40,4 @@ Provider name used for routing, callbacks, and persisted transactions.
 
 Resolves a request-time handle or DID into a prepared provider for `startExternalAuth()`.
 
-#### handleOrDid
+#### `handleOrDid`

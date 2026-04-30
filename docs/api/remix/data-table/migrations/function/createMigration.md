@@ -1,10 +1,9 @@
 ---
 title: createMigration
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations.ts#L75
 ---
 
 # createMigration
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/migrations.ts#L75" target="_blank">View Source</a>
 
 ## Summary
 
@@ -47,7 +46,7 @@ export default createMigration({
 
 ## Params
 
-### input
+### `input`
 
 Migration handlers and transaction mode.
 

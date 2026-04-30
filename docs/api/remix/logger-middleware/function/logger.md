@@ -1,10 +1,9 @@
 ---
 title: logger
+source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L67
 ---
 
 # logger
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/logger-middleware/src/lib/logger.ts#L67" target="_blank">View Source</a>
 
 ## Summary
 
@@ -19,7 +18,7 @@ function logger(options: LoggerOptions): Middleware;
 
 ## Params
 
-### options
+### `options`
 
 Options for the logger
 

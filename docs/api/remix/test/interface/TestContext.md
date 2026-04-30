@@ -1,10 +1,9 @@
 ---
 title: TestContext
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/context.ts#L29
 ---
 
 # TestContext
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/test/src/lib/context.ts#L29" target="_blank">View Source</a>
 
 ## Summary
 
@@ -36,7 +35,7 @@ Mock tracker for the current test. Mirrors the shape of Node's
 
 Registers a cleanup function to be called after the test completes.
 
-#### fn
+#### `fn`
 
 The cleanup function to execute
 
@@ -47,7 +46,7 @@ it. The server is closed automatically when the test ends. Pair with
 `createTestServer` from `@remix-run/node-fetch-server/test` (or any other
 source of a `{ baseUrl, close }` handle) to spin up the server first.
 
-#### server
+#### `server`
 
 The running server the page should target
 

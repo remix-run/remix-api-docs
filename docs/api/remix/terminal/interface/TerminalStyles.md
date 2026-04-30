@@ -1,10 +1,9 @@
 ---
 title: TerminalStyles
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/styles.ts#L20
 ---
 
 # TerminalStyles
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/styles.ts#L20" target="_blank">View Source</a>
 
 ## Summary
 
@@ -252,10 +251,10 @@ Formats text with bright yellow foreground color.
 
 Formats text with one or more named terminal styles.
 
-#### value
+#### `value`
 
 Text to format.
 
-#### styles
+#### `styles`
 
 Style names to apply, from outermost to innermost.

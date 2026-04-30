@@ -1,10 +1,9 @@
 ---
 title: RoutePattern
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern.ts#L61
 ---
 
 # RoutePattern
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/route-pattern/src/lib/route-pattern.ts#L61" target="_blank">View Source</a>
 
 ## Summary
 
@@ -44,76 +43,76 @@ class RoutePattern<source> {
 
 ## Constructor Params
 
-### source
+### `source`
 
 ## Properties
 
-### ast
+### `ast`
 
 Parsed route-pattern AST used for matching and href generation.
 
 ## Accessors
 
-### hostname
+### `hostname`
 
 The hostname portion of the pattern.
 
-### pathname
+### `pathname`
 
 The pathname portion of the pattern without a leading slash.
 
-### port
+### `port`
 
 The explicit port portion of the pattern.
 
-### protocol
+### `protocol`
 
 The protocol portion of the pattern without the trailing colon.
 
-### search
+### `search`
 
 The serialized search constraints without a leading `?`.
 
-### source
+### `source`
 
 The serialized route-pattern source string.
 
 ## Methods
 
-### href(args: HrefArgs<source>): string
+### `href(args: HrefArgs<source>): string`
 
 Builds an href from this pattern and the supplied params.
 
-#### args
+#### `args`
 
 Path params and optional search params.
 
-### join<other extends string>(other: other | RoutePattern<other>): RoutePattern<Join<source, other>>
+### `join<other extends string>(other: other | RoutePattern<other>): RoutePattern<Join<source, other>>`
 
 Joins this pattern with another pathname or route pattern.
 
-#### other
+#### `other`
 
-### match(url: string | URL, options: { ignoreCase?: boolean }): RoutePatternMatch<source> | null
+### `match(url: string | URL, options: { ignoreCase?: boolean }): RoutePatternMatch<source> | null`
 
 Match a URL against this pattern.
 
-#### url
+#### `url`
 
 The URL to match
 
-#### options
+#### `options`
 
 Match options
 
-### test(url: string | URL): boolean
+### `test(url: string | URL): boolean`
 
 Tests whether a URL matches this route pattern.
 
-#### url
+#### `url`
 
 URL to test.
 
-### toString(): string
+### `toString(): string`
 
 Returns the serialized route-pattern source string.

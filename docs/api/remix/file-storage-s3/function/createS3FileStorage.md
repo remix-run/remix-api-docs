@@ -1,10 +1,9 @@
 ---
 title: createS3FileStorage
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage-s3/src/lib/s3.ts#L61
 ---
 
 # createS3FileStorage
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/file-storage-s3/src/lib/s3.ts#L61" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,7 +21,7 @@ function createS3FileStorage(options: S3FileStorageOptions): FileStorage;
 
 ## Params
 
-### options
+### `options`
 
 Configuration for the S3 backend
 

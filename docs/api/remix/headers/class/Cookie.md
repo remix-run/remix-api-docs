@@ -1,10 +1,9 @@
 ---
 title: Cookie
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/cookie.ts#L17
 ---
 
 # Cookie
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/cookie.ts#L17" target="_blank">View Source</a>
 
 ## Summary
 
@@ -45,92 +44,92 @@ class Cookie {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Accessors
 
-### names
+### `names`
 
 An array of the names of the cookies in the header.
 
-### size
+### `size`
 
 The number of cookies in the header.
 
-### values
+### `values`
 
 An array of the values of the cookies in the header.
 
 ## Methods
 
-### [iterator](): IterableIterator<[string, string]>
+### `[iterator](): IterableIterator<[string, string]>`
 
 Iterates over cookie name and value pairs.
 
-### clear(): void
+### `clear(): void`
 
 Removes all cookies from the header.
 
-### delete(name: string): void
+### `delete(name: string): void`
 
 Removes a cookie with the given name from the header.
 
-#### name
+#### `name`
 
 The name of the cookie
 
-### entries(): IterableIterator<[string, string]>
+### `entries(): IterableIterator<[string, string]>`
 
 Returns an iterator of all cookie name and value pairs.
 
-### forEach(callback: (name: string, value: string, header: Cookie) => void, thisArg: any): void
+### `forEach(callback: (name: string, value: string, header: Cookie) => void, thisArg: any): void`
 
 Invokes the callback for each cookie name and value pair.
 
-#### callback
+#### `callback`
 
 The function to call for each pair
 
-#### thisArg
+#### `thisArg`
 
 The value to use as `this` when calling the callback
 
-### get(name: string): string | null
+### `get(name: string): string | null`
 
 Gets the value of a cookie with the given name from the header.
 
-#### name
+#### `name`
 
 The name of the cookie
 
-### has(name: string): boolean
+### `has(name: string): boolean`
 
 True if a cookie with the given name exists in the header.
 
-#### name
+#### `name`
 
 The name of the cookie
 
-### set(name: string, value: string): void
+### `set(name: string, value: string): void`
 
 Sets a cookie with the given name and value in the header.
 
-#### name
+#### `name`
 
 The name of the cookie
 
-#### value
+#### `value`
 
 The value of the cookie
 
-### toString(): string
+### `toString(): string`
 
 Returns the string representation of the header value.
 
-### from(value: string | CookieInit | null): Cookie
+### `from(value: string | CookieInit | null): Cookie`
 
 Parse a Cookie header value.
 
-#### value
+#### `value`
 
 The header value (string, init object, or null)

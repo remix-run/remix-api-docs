@@ -1,10 +1,9 @@
 ---
 title: createElement
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/create-element.ts#L12
 ---
 
 # createElement
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/create-element.ts#L12" target="_blank">View Source</a>
 
 ## Summary
 
@@ -23,15 +22,15 @@ function createElement(
 
 ## Params
 
-### type
+### `type`
 
 Host tag, component function, or mixin host placeholder.
 
-### props
+### `props`
 
 Element props.
 
-### children
+### `children`
 
 Child nodes.
 

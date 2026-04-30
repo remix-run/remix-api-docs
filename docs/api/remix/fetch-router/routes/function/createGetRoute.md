@@ -1,10 +1,9 @@
 ---
 title: createGetRoute
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-helpers/method.ts#L25
 ---
 
 # createGetRoute
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/route-helpers/method.ts#L25" target="_blank">View Source</a>
 
 ## Summary
 
@@ -25,7 +24,7 @@ function createGetRoute<source extends string>(
 
 ## Params
 
-### pattern
+### `pattern`
 
 The route pattern string or [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/) object
 

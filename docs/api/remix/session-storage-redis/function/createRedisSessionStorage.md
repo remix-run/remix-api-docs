@@ -1,10 +1,9 @@
 ---
 title: createRedisSessionStorage
+source: https://github.com/remix-run/remix/blob/main/packages/session-storage-redis/src/lib/redis-storage.ts#L69
 ---
 
 # createRedisSessionStorage
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/session-storage-redis/src/lib/redis-storage.ts#L69" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,11 +21,11 @@ function createRedisSessionStorage(
 
 ## Params
 
-### client
+### `client`
 
 Redis client with get/set/del methods
 
-### options
+### `options`
 
 Session storage options
 

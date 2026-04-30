@@ -1,10 +1,9 @@
 ---
 title: quotePath
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql-helpers.ts#L81
 ---
 
 # quotePath
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/sql-helpers.ts#L81" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,11 +20,11 @@ function quotePath(path: string, quoteIdentifier: QuoteIdentifier): string;
 
 ## Params
 
-### path
+### `path`
 
 Dotted path to quote.
 
-### quoteIdentifier
+### `quoteIdentifier`
 
 Dialect-specific identifier quote function.
 

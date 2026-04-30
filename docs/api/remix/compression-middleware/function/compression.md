@@ -1,10 +1,9 @@
 ---
 title: compression
+source: https://github.com/remix-run/remix/blob/main/packages/compression-middleware/src/lib/compression.ts#L63
 ---
 
 # compression
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/compression-middleware/src/lib/compression.ts#L63" target="_blank">View Source</a>
 
 ## Summary
 
@@ -29,7 +28,7 @@ let router = createRouter({
 
 ## Params
 
-### options
+### `options`
 
 Optional compression settings
 

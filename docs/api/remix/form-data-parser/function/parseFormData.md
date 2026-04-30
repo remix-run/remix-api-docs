@@ -1,10 +1,9 @@
 ---
 title: parseFormData
+source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L134
 ---
 
 # parseFormData
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/form-data-parser/src/lib/form-data.ts#L134" target="_blank">View Source</a>
 
 ## Summary
 
@@ -35,14 +34,14 @@ function parseFormData(
 
 ## Params
 
-### request
+### `request`
 
 The `Request` object to parse
 
-### options
+### `options`
 
 Options for the parser
 
-### uploadHandler
+### `uploadHandler`
 
 A function that handles file uploads. It receives a `File` object and may return any value that is valid in a `FormData` object

@@ -1,10 +1,9 @@
 ---
 title: enum_
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L480
 ---
 
 # enum_
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L480" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function enum_<values extends readonly [unknown, unknown]>(
 
 ## Params
 
-### values
+### `values`
 
 ## Returns
 

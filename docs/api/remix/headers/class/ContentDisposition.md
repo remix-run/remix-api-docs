@@ -1,10 +1,9 @@
 ---
 title: ContentDisposition
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-disposition.ts#L34
 ---
 
 # ContentDisposition
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/content-disposition.ts#L34" target="_blank">View Source</a>
 
 ## Summary
 
@@ -38,29 +37,29 @@ class ContentDisposition {
 
 ## Constructor Params
 
-### init
+### `init`
 
 ## Properties
 
-### filename
+### `filename`
 
 The `filename` parameter value.
 
-### filenameSplat
+### `filenameSplat`
 
 The RFC 8187-encoded `filename*` parameter value.
 
-### name
+### `name`
 
 The associated multipart field name.
 
-### type
+### `type`
 
 The disposition type such as `attachment` or `inline`.
 
 ## Accessors
 
-### preferredFilename
+### `preferredFilename`
 
 The preferred filename for the content, using the `filename*` parameter if present, falling back to the `filename` parameter.
 
@@ -73,14 +72,14 @@ sending both the more expressive "filename*" parameter, and the "filename" param
 
 ## Methods
 
-### toString(): string
+### `toString(): string`
 
 Returns the string representation of the header value.
 
-### from(value: string | ContentDispositionInit | null): ContentDisposition
+### `from(value: string | ContentDispositionInit | null): ContentDisposition`
 
 Parse a Content-Disposition header value.
 
-#### value
+#### `value`
 
 The header value (string, init object, or null)

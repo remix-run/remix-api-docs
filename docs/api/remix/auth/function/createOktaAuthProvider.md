@@ -1,10 +1,9 @@
 ---
 title: createOktaAuthProvider
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/okta.ts#L26
 ---
 
 # createOktaAuthProvider
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth/src/lib/providers/okta.ts#L26" target="_blank">View Source</a>
 
 ## Summary
 
@@ -21,7 +20,7 @@ function createOktaAuthProvider(
 
 ## Params
 
-### options
+### `options`
 
 Okta issuer and client settings for your application.
 

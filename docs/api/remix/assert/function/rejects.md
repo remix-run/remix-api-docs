@@ -1,10 +1,9 @@
 ---
 title: rejects
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L287
 ---
 
 # rejects
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assert/src/lib/assert.ts#L279" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,18 +25,19 @@ function rejects(
 
 ```ts
 await assert.rejects(fetch('/missing'), (err) => err.status === 404)
+await assert.rejects(fetch('/missing'), { code: 'ERR_INVALID_ARG_VALUE' })
 ```
 
 ## Params
 
-### fn
+### `fn`
 
 A function returning a promise, or a promise directly.
 
-### expectedError
+### `expectedError`
 
-Optional error constructor, instance, RegExp, or validator.
+Optional error constructor, instance, RegExp, object, or validator.
 
-### message
+### `message`
 
 Optional failure message.

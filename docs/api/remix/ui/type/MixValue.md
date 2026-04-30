@@ -1,10 +1,9 @@
 ---
 title: MixValue
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L153
 ---
 
 # MixValue
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/ui/src/runtime/mixins/mixin.ts#L153" target="_blank">View Source</a>
 
 ## Summary
 

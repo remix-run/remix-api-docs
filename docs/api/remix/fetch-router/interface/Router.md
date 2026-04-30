@@ -1,10 +1,9 @@
 ---
 title: Router
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L202
 ---
 
 # Router
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/router.ts#L202" target="_blank">View Source</a>
 
 ## Summary
 
@@ -74,10 +73,10 @@ Accepts either a plain request handler or an action object with optional inline 
 
 Fetch a response from the router.
 
-#### input
+#### `input`
 
 The request input to fetch
 
-#### init
+#### `init`
 
 The request init options

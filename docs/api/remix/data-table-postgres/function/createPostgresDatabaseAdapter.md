@@ -1,10 +1,9 @@
 ---
 title: createPostgresDatabaseAdapter
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-postgres/src/lib/adapter.ts#L326
 ---
 
 # createPostgresDatabaseAdapter
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table-postgres/src/lib/adapter.ts#L326" target="_blank">View Source</a>
 
 ## Summary
 
@@ -33,7 +32,7 @@ let db = createDatabase(adapter)
 
 ## Params
 
-### client
+### `client`
 
 `pg` pool or pool client.
 

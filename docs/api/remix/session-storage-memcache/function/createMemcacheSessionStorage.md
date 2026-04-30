@@ -1,10 +1,9 @@
 ---
 title: createMemcacheSessionStorage
+source: https://github.com/remix-run/remix/blob/main/packages/session-storage-memcache/src/lib/memcache-storage.ts#L42
 ---
 
 # createMemcacheSessionStorage
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/session-storage-memcache/src/lib/memcache-storage.ts#L42" target="_blank">View Source</a>
 
 ## Summary
 
@@ -24,11 +23,11 @@ function createMemcacheSessionStorage(
 
 ## Params
 
-### server
+### `server`
 
 The Memcache server in `host:port` format
 
-### options
+### `options`
 
 (optional) The options for the session storage
 

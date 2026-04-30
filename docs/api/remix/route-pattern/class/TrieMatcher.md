@@ -1,10 +1,9 @@
 ---
 title: TrieMatcher
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/trie-matcher.ts#L19
 ---
 
 # TrieMatcher
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/route-pattern/src/lib/trie-matcher.ts#L19" target="_blank">View Source</a>
 
 ## Summary
 
@@ -36,54 +35,54 @@ class TrieMatcher<data> {
 
 ## Constructor Params
 
-### options
+### `options`
 
 Constructor options
 
 ## Properties
 
-### ignoreCase
+### `ignoreCase`
 
 Whether pathname matching is case-insensitive.
 
-### trie
+### `trie`
 
 Trie storage used to index registered patterns.
 
 ## Methods
 
-### add(pattern: string | RoutePattern<string>, data: data): void
+### `add(pattern: string | RoutePattern<string>, data: data): void`
 
 Adds a pattern and associated data to the trie.
 
-#### pattern
+#### `pattern`
 
 Pattern to register.
 
-#### data
+#### `data`
 
 Data returned when the pattern matches.
 
-### match(url: string | URL, compareFn: (a: RoutePatternMatch, b: RoutePatternMatch) => number): Match<string, data> | null
+### `match(url: string | URL, compareFn: (a: RoutePatternMatch, b: RoutePatternMatch) => number): Match<string, data> | null`
 
 Returns the best matching pattern for a URL.
 
-#### url
+#### `url`
 
 URL to match.
 
-#### compareFn
+#### `compareFn`
 
 Specificity comparer used to rank matches.
 
-### matchAll(url: string | URL, compareFn: (a: RoutePatternMatch, b: RoutePatternMatch) => number): Match<string, data>[]
+### `matchAll(url: string | URL, compareFn: (a: RoutePatternMatch, b: RoutePatternMatch) => number): Match<string, data>[]`
 
 Returns every pattern that matches a URL.
 
-#### url
+#### `url`
 
 URL to match.
 
-#### compareFn
+#### `compareFn`
 
 Specificity comparer used to sort matches.

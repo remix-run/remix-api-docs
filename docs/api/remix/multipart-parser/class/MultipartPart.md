@@ -1,10 +1,9 @@
 ---
 title: MultipartPart
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L530
 ---
 
 # MultipartPart
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart.ts#L530" target="_blank">View Source</a>
 
 ## Summary
 
@@ -39,60 +38,60 @@ class MultipartPart {
 
 ## Constructor Params
 
-### header
+### `header`
 
 The raw header bytes
 
-### content
+### `content`
 
 The content chunks
 
 ## Properties
 
-### content
+### `content`
 
 The raw content of this part as an array of `Uint8Array` chunks.
 
 ## Accessors
 
-### arrayBuffer
+### `arrayBuffer`
 
 The content of this part as an `ArrayBuffer`.
 
-### bytes
+### `bytes`
 
 The content of this part as a single `Uint8Array`. In `multipart/form-data` messages, this is useful
 for reading the value of files that were uploaded using `<input type="file">` fields.
 
-### filename
+### `filename`
 
 The filename of the part, if it is a file upload.
 
-### headers
+### `headers`
 
 The decoded headers associated with this part, keyed by lower-case header name.
 
-### isFile
+### `isFile`
 
 True if this part originated from a file upload.
 
-### isText
+### `isText`
 
 True if this part originated from a text input field in a form submission.
 
-### mediaType
+### `mediaType`
 
 The media type of the part.
 
-### name
+### `name`
 
 The name of the part, usually the `name` of the field in the `<form>` that submitted the request.
 
-### size
+### `size`
 
 The size of the content in bytes.
 
-### text
+### `text`
 
 The content of this part as a string. In `multipart/form-data` messages, this is useful for
 reading the value of parts that originated from `<input type="text">` fields.

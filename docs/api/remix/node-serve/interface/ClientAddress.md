@@ -1,0 +1,41 @@
+---
+title: ClientAddress
+source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/fetch-handler.ts#L4
+---
+
+# ClientAddress
+
+## Summary
+
+Information about the client that sent a request.
+
+## Signature
+
+```ts
+interface ClientAddress {
+  address: string;
+  family: "IPv4" | "IPv6";
+  port: number;
+}
+
+```
+
+## Properties
+
+### address
+
+The IP address of the client that sent the request.
+
+[Node.js Reference](https://nodejs.org/api/net.html#socketremoteaddress)
+
+### family
+
+The family of the client IP address.
+
+[Node.js Reference](https://nodejs.org/api/net.html#socketremotefamily)
+
+### port
+
+The remote port of the client that sent the request.
+
+[Node.js Reference](https://nodejs.org/api/net.html#socketremoteport)

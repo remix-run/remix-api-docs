@@ -1,10 +1,9 @@
 ---
 title: stringify
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/raw-headers.ts#L39
 ---
 
 # stringify
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/raw-headers.ts#L39" target="_blank">View Source</a>
 
 ## Summary
 
@@ -26,7 +25,7 @@ stringify(headers) // 'Content-Type: text/html\r\nCache-Control: no-cache'
 
 ## Params
 
-### headers
+### `headers`
 
 A `Headers` object to stringify
 

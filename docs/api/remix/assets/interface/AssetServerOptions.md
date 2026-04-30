@@ -1,16 +1,16 @@
 ---
 title: AssetServerOptions
+source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L57
 ---
 
 # AssetServerOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/assets/src/lib/asset-server.ts#L56" target="_blank">View Source</a>
 
 ## Signature
 
 ```ts
 interface AssetServerOptions {
   allow: readonly string[];
+  basePath: string;
   deny?: readonly string[];
   fileMap: Readonly<Record<string, string>>;
   fingerprint?: FingerprintOptions;
@@ -32,13 +32,17 @@ interface AssetServerOptions {
 
 Glob patterns or file paths that are allowed to be served. Relative values are resolved from `rootDir`.
 
+### basePath
+
+Public mount path for this asset server, e.g. `'/assets'`.
+
 ### deny
 
 Glob patterns or file paths that are denied from being served. Relative values are resolved from `rootDir`.
 
 ### fileMap
 
-File patterns keyed by public URL patterns.
+File patterns keyed by public URL patterns relative to `basePath`.
 
 ### fingerprint
 

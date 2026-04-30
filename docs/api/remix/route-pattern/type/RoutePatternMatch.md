@@ -1,10 +1,9 @@
 ---
 title: RoutePatternMatch
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern.ts#L43
 ---
 
 # RoutePatternMatch
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/route-pattern/src/lib/route-pattern.ts#L43" target="_blank">View Source</a>
 
 ## Summary
 

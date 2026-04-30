@@ -1,10 +1,9 @@
 ---
 title: object
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L678
 ---
 
 # object
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/schema.ts#L678" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,9 +26,9 @@ function object<shape extends ObjectShape>(
 
 ## Params
 
-### shape
+### `shape`
 
-### options
+### `options`
 
 Controls unknown key behavior
 

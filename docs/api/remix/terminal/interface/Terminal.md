@@ -1,10 +1,9 @@
 ---
 title: Terminal
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/terminal.ts#L53
 ---
 
 # Terminal
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/terminal.ts#L53" target="_blank">View Source</a>
 
 ## Summary
 
@@ -75,11 +74,11 @@ Clears the current output line.
 
 Moves the output cursor to a zero-based column and optional row.
 
-#### column
+#### `column`
 
 Zero-based output column.
 
-#### row
+#### `row`
 
 Optional zero-based output row.
 
@@ -91,7 +90,7 @@ Erases output from the cursor through the end of the terminal.
 
 Writes a value to the error output stream.
 
-#### value
+#### `value`
 
 Text to write.
 
@@ -99,7 +98,7 @@ Text to write.
 
 Writes a value and trailing newline to the error output stream.
 
-#### value
+#### `value`
 
 Text to write (defaults to an empty string).
 
@@ -111,11 +110,11 @@ Hides the terminal cursor.
 
 Moves the output cursor by relative column and row offsets.
 
-#### columns
+#### `columns`
 
 Relative column offset.
 
-#### rows
+#### `rows`
 
 Relative row offset.
 
@@ -127,7 +126,7 @@ Shows the terminal cursor.
 
 Writes a value to the normal output stream.
 
-#### value
+#### `value`
 
 Text to write.
 
@@ -135,6 +134,6 @@ Text to write.
 
 Writes a value and trailing newline to the normal output stream.
 
-#### value
+#### `value`
 
 Text to write (defaults to an empty string).

@@ -1,10 +1,9 @@
 ---
 title: WriteRowsResult
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/database.ts#L170
 ---
 
 # WriteRowsResult
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-table/src/lib/database.ts#L170" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: fields
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/form-data.ts#L160
 ---
 
 # fields
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/data-schema/src/lib/form-data.ts#L160" target="_blank">View Source</a>
 
 ## Summary
 
@@ -22,9 +21,9 @@ function fields<schema extends Schema<any, any>>(
 
 ## Params
 
-### schema
+### `schema`
 
-### options
+### `options`
 
 Parsing options for the field.
 

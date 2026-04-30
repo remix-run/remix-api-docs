@@ -1,10 +1,9 @@
 ---
 title: AuthScheme
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L105
 ---
 
 # AuthScheme
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth-middleware/src/lib/auth.ts#L105" target="_blank">View Source</a>
 
 ## Summary
 
@@ -36,4 +35,4 @@ Stable method name exposed on the resolved auth state.
 
 Authenticates the current request or returns `null`/`undefined` to skip the scheme.
 
-#### context
+#### `context`

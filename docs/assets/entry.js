@@ -11,17 +11,19 @@ function normalizeElementProps(props) {
 }
 function normalizeMixValue(mix) {
   if (!mix) return void 0;
-  let normalizedMix = flattenMixValue(mix);
+  let normalizedMix = [];
+  flattenMixValue(mix, normalizedMix);
   return normalizedMix.length === 0 ? void 0 : normalizedMix;
 }
-function flattenMixValue(mix) {
-  if (!mix) return [];
-  if (!Array.isArray(mix)) return [mix];
-  let flattened = [];
-  for (let item of mix) {
-    flattened.push(...flattenMixValue(item));
+function flattenMixValue(mix, out) {
+  if (!mix) return;
+  if (!Array.isArray(mix)) {
+    out.push(mix);
+    return;
   }
-  return flattened;
+  for (let item of mix) {
+    flattenMixValue(item, out);
+  }
 }
 
 // ../packages/ui/src/runtime/typed-event-target.ts
@@ -743,17 +745,21 @@ function skipComments(cursor) {
 
 // ../packages/ui/src/runtime/to-vnode.ts
 function flatMapChildrenToVNodes(node) {
-  return "children" in node.props ? Array.isArray(node.props.children) ? node.props.children.flat(Infinity).map(toVNode) : [toVNode(node.props.children)] : [];
+  if (!("children" in node.props)) return [];
+  let children = node.props.children;
+  if (!Array.isArray(children)) return [toVNode(children)];
+  let vnodes = [];
+  flattenChildrenToVNodes(children, vnodes);
+  return vnodes;
 }
-function flattenRemixNodeArray(nodes, out = []) {
+function flattenChildrenToVNodes(nodes, out) {
   for (let child of nodes) {
     if (Array.isArray(child)) {
-      flattenRemixNodeArray(child, out);
+      flattenChildrenToVNodes(child, out);
     } else {
-      out.push(child);
+      out.push(toVNode(child));
     }
   }
-  return out;
 }
 function toVNode(node) {
   if (node === null || node === void 0 || typeof node === "boolean") {
@@ -763,8 +769,9 @@ function toVNode(node) {
     return { type: TEXT_NODE, _text: String(node) };
   }
   if (Array.isArray(node)) {
-    let flatChildren = flattenRemixNodeArray(node);
-    return { type: Fragment, _children: flatChildren.map(toVNode) };
+    let children = [];
+    flattenChildrenToVNodes(node, children);
+    return { type: Fragment, _children: children };
   }
   if (node.type === Fragment) {
     return { type: Fragment, key: node.key, _children: flatMapChildrenToVNodes(node) };
@@ -1502,6 +1509,8 @@ function bindNodeMixRuntime(node, frame, scheduler, styles, reclaimed = false, p
   );
 }
 function isHeadHostNode(node) {
+  if (node.type === "head") return true;
+  if (node.type.length !== 4) return false;
   return node.type.toLowerCase() === "head";
 }
 function getDocumentHead(domParent) {
@@ -1587,8 +1596,10 @@ function diffHost(curr, next, frame, scheduler, styles, vParent, rootTarget) {
   let mixState = curr._mixState;
   let currProps = getHostProps(curr);
   let nextProps = resolveNodeMixProps(next, frame, scheduler, mixState);
-  if (shouldDispatchInlineMixinLifecycle(curr._dom)) {
-    dispatchMixinBeforeUpdate(next._mixState);
+  let nextMixState = next._mixState;
+  let shouldDispatchMixinLifecycle = (nextMixState?.runners.length ?? 0) > 0 && shouldDispatchInlineMixinLifecycle(curr._dom);
+  if (shouldDispatchMixinLifecycle) {
+    dispatchMixinBeforeUpdate(nextMixState);
   }
   if (nextProps.innerHTML != null) {
     if (currProps.innerHTML !== nextProps.innerHTML) {
@@ -1617,10 +1628,8 @@ function diffHost(curr, next, frame, scheduler, styles, vParent, rootTarget) {
     syncControlledReflection(next, nextProps);
   }
   bindNodeMixRuntime(next, frame, scheduler, styles);
-  if (shouldDispatchInlineMixinLifecycle(curr._dom)) {
-    scheduler.enqueueCommitPhase([
-      () => dispatchMixinCommit(next._mixState)
-    ]);
+  if (shouldDispatchMixinLifecycle) {
+    scheduler.enqueueCommitPhase([() => dispatchMixinCommit(nextMixState)]);
   }
   return;
 }
@@ -2321,6 +2330,35 @@ function diffChildren(curr, next, domParent, frame, scheduler, styles, vParent, 
     vParent._children = next;
     return;
   }
+  if (currLength === nextLength) {
+    let canDiffByPosition = true;
+    for (let i = 0; i < nextLength; i++) {
+      let currentNode = curr[i];
+      let nextNode = next[i];
+      if (!currentNode || currentNode.key !== nextNode.key || currentNode.type !== nextNode.type) {
+        canDiffByPosition = false;
+        break;
+      }
+    }
+    if (canDiffByPosition) {
+      for (let i = 0; i < nextLength; i++) {
+        diffVNodes(
+          curr[i],
+          next[i],
+          domParent,
+          frame,
+          scheduler,
+          styles,
+          vParent,
+          rootTarget,
+          anchor,
+          cursor
+        );
+      }
+      vParent._children = next;
+      return;
+    }
+  }
   let oldChildren = curr;
   let oldChildrenLength = currLength;
   let remainingOldChildren = oldChildrenLength;
@@ -2572,6 +2610,10 @@ function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
   let cascadingUpdateCount = 0;
   let resetScheduled = false;
   let phaseEvents = new EventTarget();
+  let phaseListenerCounts = {
+    beforeUpdate: 0,
+    commit: 0
+  };
   let scheduler;
   function dispatchError(error) {
     console.error(error);
@@ -2651,6 +2693,7 @@ function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
     }
   }
   function dispatchPhaseEvent(type, parents) {
+    if (phaseListenerCounts[type] === 0) return;
     let event = new Event(type);
     event.parents = parents;
     phaseEvents.dispatchEvent(event);
@@ -2706,9 +2749,11 @@ function createScheduler(doc, rootTarget, styles = defaultStyleManager) {
       scheduleFlush();
     },
     addEventListener(type, listener, options) {
+      if (listener) phaseListenerCounts[type]++;
       phaseEvents.addEventListener(type, listener, options);
     },
     removeEventListener(type, listener, options) {
+      if (listener) phaseListenerCounts[type] = Math.max(0, phaseListenerCounts[type] - 1);
       phaseEvents.removeEventListener(type, listener, options);
     },
     dequeue() {
@@ -3199,6 +3244,10 @@ function isVirtualRootEndMarker(node) {
 // ../packages/ui/src/runtime/frame.ts
 var bufferedFrameTemplates = /* @__PURE__ */ new Map();
 var frameTemplateListeners = /* @__PURE__ */ new Map();
+var DOCTYPE_PATTERN = /<!doctype(?:\s[^>]*)?>/gi;
+function stripDoctypeMarkup(html) {
+  return html.replace(DOCTYPE_PATTERN, "");
+}
 function syncElementAttributes(target, source) {
   for (let attribute of Array.from(target.attributes)) {
     if (!source.hasAttribute(attribute.name)) {
@@ -3294,12 +3343,13 @@ function createFrame(root, init) {
       contentRoot.dispose();
       contentRoot = void 0;
     }
-    let isFullDocumentReload = container.root instanceof Document && typeof content === "string" && isFullDocumentHtml(content);
-    if (isFullDocumentReload && typeof content === "string") {
+    let htmlContent = typeof content === "string" ? stripDoctypeMarkup(content) : void 0;
+    let isFullDocumentReload = container.root instanceof Document && htmlContent !== void 0 && isFullDocumentHtml(htmlContent);
+    if (isFullDocumentReload && htmlContent !== void 0) {
       let previousBodyNodes = Array.from(container.doc.body.childNodes);
       removeVirtualRoots(previousBodyNodes);
       disposeSubFrames(previousBodyNodes, context);
-      let parsed = new DOMParser().parseFromString(content, "text/html");
+      let parsed = new DOMParser().parseFromString(htmlContent, "text/html");
       mergeRmxDataFromDocument(context.data, parsed);
       context.styleManager.reset();
       context.styleManager.adoptServerStyles(
@@ -3324,7 +3374,7 @@ function createFrame(root, init) {
       createSubFrames(bodyContainer.childNodes, context);
       return;
     }
-    let fragment = typeof content === "string" ? createFragmentFromString(container.doc, content) : content;
+    let fragment = htmlContent !== void 0 ? createFragmentFromString(container.doc, htmlContent) : content;
     context.styleManager.reset();
     context.styleManager.adoptServerStyles(
       collectFrameServerStyleTags(createElementContainer(fragment))
@@ -3948,7 +3998,7 @@ function createCommentContainer([start, end]) {
 }
 function createFragmentFromString(doc, content) {
   let template = doc.createElement("template");
-  template.innerHTML = content.trim();
+  template.innerHTML = stripDoctypeMarkup(content).trim();
   return template.content;
 }
 function isRemixNodeFrameContent(content) {
@@ -4036,6 +4086,9 @@ function hasBalancedMarkerSummary(summary) {
 
 // ../packages/ui/src/runtime/navigation.ts
 function startNavigationListener(signal) {
+  return startNavigationListenerImpl(signal, { getTopFrame, getNamedFrame });
+}
+function startNavigationListenerImpl(signal, options) {
   let navigation = window.navigation;
   navigation.updateCurrentEntry({
     state: { target: void 0, src: window.location.href, resetScroll: true, $rmx: true }
@@ -4046,8 +4099,8 @@ function startNavigationListener(signal) {
       if (!event.canIntercept) return;
       let state = getRuntimeNavigationState(event);
       if (!state) return;
-      let topFrame2 = getTopFrame();
-      let namedFrame = state.target ? getNamedFrame(state.target) : void 0;
+      let topFrame2 = options.getTopFrame();
+      let namedFrame = state.target ? options.getNamedFrame(state.target) : void 0;
       let frame = namedFrame ?? topFrame2;
       event.intercept({
         async handler() {

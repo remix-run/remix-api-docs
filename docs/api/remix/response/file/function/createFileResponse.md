@@ -1,10 +1,9 @@
 ---
 title: createFileResponse
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/file.ts#L129
 ---
 
 # createFileResponse
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/response/src/lib/file.ts#L129" target="_blank">View Source</a>
 
 ## Summary
 
@@ -39,13 +38,13 @@ return createFileResponse(lazyFile, request, {
 
 ## Params
 
-### file
+### `file`
 
-### request
+### `request`
 
 The request object
 
-### options
+### `options`
 
 Configuration options
 

@@ -1,10 +1,9 @@
 ---
 title: MultipartHeaders
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L507
 ---
 
 # MultipartHeaders
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/multipart-parser/src/lib/multipart.ts#L507" target="_blank">View Source</a>
 
 ## Summary
 

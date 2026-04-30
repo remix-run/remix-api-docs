@@ -1,10 +1,9 @@
 ---
 title: mimeTypeToContentType
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/mime-type-to-content-type.ts#L31
 ---
 
 # mimeTypeToContentType
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/mime/src/lib/mime-type-to-content-type.ts#L31" target="_blank">View Source</a>
 
 ## Summary
 
@@ -42,7 +41,7 @@ mimeTypeToContentType('text/xml')            // 'text/xml'
 
 ## Params
 
-### mimeType
+### `mimeType`
 
 The MIME type (e.g. "text/css", "image/png")
 

@@ -1,10 +1,9 @@
 ---
 title: MimeTypeDefinition
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/define-mime-type.ts#L4
 ---
 
 # MimeTypeDefinition
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/mime/src/lib/define-mime-type.ts#L4" target="_blank">View Source</a>
 
 ## Summary
 

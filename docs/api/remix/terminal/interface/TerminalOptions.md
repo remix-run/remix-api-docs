@@ -1,10 +1,9 @@
 ---
 title: TerminalOptions
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/terminal.ts#L35
 ---
 
 # TerminalOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/terminal/src/lib/terminal.ts#L35" target="_blank">View Source</a>
 
 ## Summary
 

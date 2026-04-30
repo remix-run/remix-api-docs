@@ -1,10 +1,9 @@
 ---
 title: Cookie
+source: https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L53
 ---
 
 # Cookie
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/cookie/src/lib/cookie.ts#L53" target="_blank">View Source</a>
 
 ## Summary
 
@@ -42,92 +41,92 @@ class Cookie {
 
 ## Constructor Params
 
-### name
+### `name`
 
 The name of the cookie
 
-### options
+### `options`
 
 Options for the cookie
 
 ## Accessors
 
-### domain
+### `domain`
 
 The domain of the cookie.
 
 [MDN Reference](https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#domaindomain-value)
 
-### expires
+### `expires`
 
 The expiration date of the cookie.
 
 [MDN Reference](https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#expiresdate)
 
-### httpOnly
+### `httpOnly`
 
 True if the cookie is HTTP-only.
 
 [MDN Reference](https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#httponly)
 
-### maxAge
+### `maxAge`
 
 The maximum age of the cookie in seconds.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#max-agenumber)
 
-### name
+### `name`
 
 The name of the cookie.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#cookie-namecookie-value)
 
-### partitioned
+### `partitioned`
 
 True if the cookie is partitioned.
 
 [MDN Reference](https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#partitioned)
 
-### path
+### `path`
 
 The path of the cookie.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#pathpath-value)
 
-### sameSite
+### `sameSite`
 
 The `SameSite` attribute of the cookie.
 
 [MDN Reference](https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value)
 
-### secure
+### `secure`
 
 True if the cookie is secure (only sent over HTTPS).
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure)
 
-### signed
+### `signed`
 
 True if this cookie uses one or more secrets for verification.
 
 ## Methods
 
-### parse(headerValue: string | null): Promise<string | null>
+### `parse(headerValue: string | null): Promise<string | null>`
 
 Extracts the value of this cookie from a `Cookie` header value.
 
-#### headerValue
+#### `headerValue`
 
 The `Cookie` header to parse
 
-### serialize(value: string, props: CookieProperties): Promise<string>
+### `serialize(value: string, props: CookieProperties): Promise<string>`
 
 Returns the value to use in a `Set-Cookie` header for this cookie.
 
-#### value
+#### `value`
 
 The value to serialize
 
-#### props
+#### `props`
 
 Additional properties to use when serializing the cookie

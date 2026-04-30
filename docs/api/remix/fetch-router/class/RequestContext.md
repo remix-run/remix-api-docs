@@ -1,10 +1,9 @@
 ---
 title: RequestContext
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L125
 ---
 
 # RequestContext
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/fetch-router/src/lib/request-context.ts#L125" target="_blank">View Source</a>
 
 ## Summary
 
@@ -37,27 +36,27 @@ class RequestContext<params, entries> {
 
 ## Constructor Params
 
-### request
+### `request`
 
 The incoming request
 
 ## Properties
 
-### headers
+### `headers`
 
 The headers of the request.
 
-### method
+### `method`
 
 The request method. This may differ from `request.method` when using the `methodOverride`
 middleware, which allows HTML forms to simulate RESTful API request methods like `PUT` and
 `DELETE` using a hidden input field.
 
-### params
+### `params`
 
 Params that were parsed from the URL.
 
-### request
+### `request`
 
 The original request that was dispatched to the router.
 
@@ -68,36 +67,36 @@ overridden by the `methodOverride` middleware (available as `context.method`). Y
 default to using properties of the `context` object instead of the original request.
 However, the original request is made available in case you need it for some edge case.
 
-### url
+### `url`
 
 The URL of the current request.
 
 ## Accessors
 
-### router
+### `router`
 
 The router handling this request.
 
 ## Methods
 
-### get<key extends object>(key: key): ResolveContextEntryValue<entries, key>
+### `get<key extends object>(key: key): ResolveContextEntryValue<entries, key>`
 
 Get a value from request context.
 
-#### key
+#### `key`
 
-### has<key extends object>(key: key): boolean
+### `has<key extends object>(key: key): boolean`
 
 Check whether a value exists in request context.
 
-#### key
+#### `key`
 
-### set<key extends object>(key: key, value: ContextValue<key>): void
+### `set<key extends object>(key: key, value: ContextValue<key>): void`
 
 Set a value in request context.
 
-#### key
+#### `key`
 
-#### value
+#### `value`
 
 The value to write

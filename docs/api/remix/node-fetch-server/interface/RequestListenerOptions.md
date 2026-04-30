@@ -1,10 +1,9 @@
 ---
 title: RequestListenerOptions
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L15
 ---
 
 # RequestListenerOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/node-fetch-server/src/lib/request-listener.ts#L10" target="_blank">View Source</a>
 
 ## Summary
 

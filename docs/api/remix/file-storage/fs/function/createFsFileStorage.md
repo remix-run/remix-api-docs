@@ -1,10 +1,9 @@
 ---
 title: createFsFileStorage
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/backends/fs.ts#L24
 ---
 
 # createFsFileStorage
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/file-storage/src/lib/backends/fs.ts#L24" target="_blank">View Source</a>
 
 ## Summary
 
@@ -27,7 +26,7 @@ function createFsFileStorage(directory: string): FileStorage;
 
 ## Params
 
-### directory
+### `directory`
 
 The directory where files are stored
 

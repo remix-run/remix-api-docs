@@ -1,10 +1,9 @@
 ---
 title: CsrfOriginResolver
+source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L21
 ---
 
 # CsrfOriginResolver
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/csrf-middleware/src/lib/csrf.ts#L21" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: IfNoneMatchInit
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-none-match.ts#L7
 ---
 
 # IfNoneMatchInit
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/headers/src/lib/if-none-match.ts#L7" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: MethodOverrideOptions
+source: https://github.com/remix-run/remix/blob/main/packages/method-override-middleware/src/lib/method-override.ts#L7
 ---
 
 # MethodOverrideOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/method-override-middleware/src/lib/method-override.ts#L7" target="_blank">View Source</a>
 
 ## Summary
 

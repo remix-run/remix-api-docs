@@ -1,10 +1,9 @@
 ---
 title: CopDenyHandler
+source: https://github.com/remix-run/remix/blob/main/packages/cop-middleware/src/lib/cop.ts#L27
 ---
 
 # CopDenyHandler
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/cop-middleware/src/lib/cop.ts#L27" target="_blank">View Source</a>
 
 ## Summary
 

@@ -1,10 +1,9 @@
 ---
 title: BearerTokenAuthSchemeOptions
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/bearer.ts#L10
 ---
 
 # BearerTokenAuthSchemeOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/auth-middleware/src/lib/schemes/bearer.ts#L10" target="_blank">View Source</a>
 
 ## Summary
 
@@ -50,6 +49,6 @@ Authorization scheme prefix expected in the header value.
 
 Verifies a parsed bearer token and returns the resolved identity on success.
 
-#### token
+#### `token`
 
-#### context
+#### `context`

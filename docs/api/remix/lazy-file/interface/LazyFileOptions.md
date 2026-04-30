@@ -1,10 +1,9 @@
 ---
 title: LazyFileOptions
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L174
 ---
 
 # LazyFileOptions
-
-<a href="https://github.com/remix-run/remix/blob/remix@3.0.0-alpha.6/packages/lazy-file/src/lib/lazy-file.ts#L174" target="_blank">View Source</a>
 
 ## Summary
 
