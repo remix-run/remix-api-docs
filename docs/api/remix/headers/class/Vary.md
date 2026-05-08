@@ -1,6 +1,6 @@
 ---
 title: Vary
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/vary.ts#L25
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/vary.ts#L25
 ---
 
 # Vary
@@ -44,10 +44,6 @@ class Vary {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Accessors
 
 ### `headerNames`
@@ -64,12 +60,16 @@ The number of header names in the Vary header.
 
 Iterates over normalized header names in the `Vary` set.
 
+
+
 ### `add(headerName: string): void`
 
 Adds a header name to the Vary header (case-insensitive).
 If the header name already exists, this is a no-op.
 
-#### `headerName`
+#### Parameters
+
+##### `headerName`
 
 The header name to add.
 
@@ -77,11 +77,15 @@ The header name to add.
 
 Removes all header names from the Vary header.
 
+
+
 ### `delete(headerName: string): void`
 
 Removes a header name from the Vary header (case-insensitive).
 
-#### `headerName`
+#### Parameters
+
+##### `headerName`
 
 The header name to remove.
 
@@ -89,11 +93,13 @@ The header name to remove.
 
 Calls a callback function for each header name in the Vary header.
 
-#### `callback`
+#### Parameters
+
+##### `callback`
 
 The callback function to call for each header name.
 
-#### `thisArg`
+##### `thisArg`
 
 Optional value to use as `this` when executing the callback.
 
@@ -101,7 +107,9 @@ Optional value to use as `this` when executing the callback.
 
 Checks if the Vary header includes the given header name (case-insensitive).
 
-#### `headerName`
+#### Parameters
+
+##### `headerName`
 
 The header name to check for.
 
@@ -109,10 +117,14 @@ The header name to check for.
 
 Returns the serialized `Vary` header value.
 
+
+
 ### `from(value: string | string[] | VaryInit | null): Vary`
 
 Parse a Vary header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, string[], init object, or null)

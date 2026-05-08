@@ -1,6 +1,6 @@
 ---
 title: min
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-schema/src/lib/checks.ts#L78
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L78
 ---
 
 # min
@@ -16,7 +16,7 @@ function min(limit: number): Check<number>;
 
 ```
 
-## Params
+## Parameters
 
 ### `limit`
 

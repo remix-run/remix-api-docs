@@ -1,6 +1,6 @@
 ---
 title: createXAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/x.ts#L63
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/x.ts#L63
 ---
 
 # createXAuthProvider
@@ -18,7 +18,7 @@ function createXAuthProvider(
 
 ```
 
-## Params
+## Parameters
 
 ### `options`
 

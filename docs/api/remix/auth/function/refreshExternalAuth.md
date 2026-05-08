@@ -1,6 +1,6 @@
 ---
 title: refreshExternalAuth
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/refresh-external-auth.ts#L26
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/refresh-external-auth.ts#L26
 ---
 
 # refreshExternalAuth
@@ -22,12 +22,6 @@ function refreshExternalAuth<
 ): Promise<RefreshedExternalAuthResult<provider, tokens>>;
 
 ```
-
-## Params
-
-### `provider`
-
-### `tokens`
 
 ## Returns
 

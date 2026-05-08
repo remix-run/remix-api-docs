@@ -1,6 +1,6 @@
 ---
 title: CopFailureReason
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/cop-middleware/src/lib/cop.ts#L18
+source: https://github.com/remix-run/remix/blob/main/packages/cop-middleware/src/lib/cop.ts#L18
 ---
 
 # CopFailureReason

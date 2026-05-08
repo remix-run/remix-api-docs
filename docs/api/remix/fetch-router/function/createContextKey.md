@@ -1,6 +1,6 @@
 ---
 title: createContextKey
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/request-context.ts#L12
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L12
 ---
 
 # createContextKey
@@ -12,11 +12,15 @@ Create a request context key with an optional default value.
 ## Signature
 
 ```ts
-function createContextKey<value>(defaultValue: value): ContextKey<value>;
+function createContextKey<value>(): ContextKey<value>;
+
+function createContextKey<value>(
+  defaultValue: value,
+): ContextKey<value> & { defaultValue: value };
 
 ```
 
-## Params
+## Parameters
 
 ### `defaultValue`
 

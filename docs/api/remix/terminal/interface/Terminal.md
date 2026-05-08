@@ -1,6 +1,6 @@
 ---
 title: Terminal
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/terminal/src/lib/terminal.ts#L53
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/terminal.ts#L53
 ---
 
 # Terminal
@@ -36,104 +36,124 @@ interface Terminal {
 
 ## Properties
 
-### env
+### `env`
 
 Environment variables used by this terminal.
 
-### isInteractive
+### `isInteractive`
 
 Whether both input and output streams are attached to TTYs.
 
-### isTTY
+### `isTTY`
 
 Whether the output stream is attached to a TTY.
 
-### stderr
+### `stderr`
 
 Output stream used for error output.
 
-### stdin
+### `stdin`
 
 Input stream used for interactivity detection.
 
-### stdout
+### `stdout`
 
 Output stream used for normal output.
 
-### styles
+### `styles`
 
 Style helpers configured for this terminal's output stream.
 
 ## Methods
 
-### clearLine(): void
+### `clearLine(): void`
 
 Clears the current output line.
 
-### cursorTo(column: number, row: number): void
+
+
+### `cursorTo(column: number, row: number): void`
 
 Moves the output cursor to a zero-based column and optional row.
 
-#### `column`
+#### Parameters
+
+##### `column`
 
 Zero-based output column.
 
-#### `row`
+##### `row`
 
 Optional zero-based output row.
 
-### eraseDown(): void
+### `eraseDown(): void`
 
 Erases output from the cursor through the end of the terminal.
 
-### error(value: string): void
+
+
+### `error(value: string): void`
 
 Writes a value to the error output stream.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Text to write.
 
-### errorLine(value: string): void
+### `errorLine(value: string): void`
 
 Writes a value and trailing newline to the error output stream.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Text to write (defaults to an empty string).
 
-### hideCursor(): void
+### `hideCursor(): void`
 
 Hides the terminal cursor.
 
-### moveCursor(columns: number, rows: number): void
+
+
+### `moveCursor(columns: number, rows: number): void`
 
 Moves the output cursor by relative column and row offsets.
 
-#### `columns`
+#### Parameters
+
+##### `columns`
 
 Relative column offset.
 
-#### `rows`
+##### `rows`
 
 Relative row offset.
 
-### showCursor(): void
+### `showCursor(): void`
 
 Shows the terminal cursor.
 
-### write(value: string): void
+
+
+### `write(value: string): void`
 
 Writes a value to the normal output stream.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Text to write.
 
-### writeLine(value: string): void
+### `writeLine(value: string): void`
 
 Writes a value and trailing newline to the normal output stream.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Text to write (defaults to an empty string).

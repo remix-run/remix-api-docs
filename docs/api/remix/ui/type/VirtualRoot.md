@@ -1,13 +1,13 @@
 ---
 title: VirtualRoot
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/vdom.ts#L28
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L28
 ---
 
 # VirtualRoot
 
 ## Summary
 
-Root controller returned by createRoot and createRangeRoot.
+Root controller returned by [`createRoot`](/api/remix/ui/function/createRoot/) and [`createRangeRoot`](/api/remix/ui/function/createRangeRoot/).
 
 ## Signature
 

@@ -1,6 +1,6 @@
 ---
 title: SpringOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/animation/spring.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/spring.ts#L20
 ---
 
 # SpringOptions
@@ -22,14 +22,14 @@ interface SpringOptions {
 
 ## Properties
 
-### bounce
+### `bounce`
 
 Spring bounce amount from overdamped (`< 0`) to bouncy (`> 0`).
 
-### duration
+### `duration`
 
 Perceptual duration in milliseconds used to derive spring stiffness.
 
-### velocity
+### `velocity`
 
 Initial velocity in units per second.

@@ -1,13 +1,13 @@
 ---
 title: LazyFileOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/lazy-file/src/lib/lazy-file.ts#L174
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L174
 ---
 
 # LazyFileOptions
 
 ## Summary
 
-Options for creating a LazyFile.
+Options for creating a [`LazyFile`](/api/remix/lazy-file/class/LazyFile/).
 
 ## Signature
 
@@ -22,17 +22,17 @@ interface LazyFileOptions {
 
 ## Properties
 
-### lastModified
+### `lastModified`
 
 The last modified timestamp of the file in milliseconds.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/File/File#lastmodified)
 
-### range
+### `range`
 
 The range of bytes to include from the content. If not specified, all content is included.
 
-### type
+### `type`
 
 The MIME type of the content.
 

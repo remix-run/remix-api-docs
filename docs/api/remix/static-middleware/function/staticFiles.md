@@ -1,6 +1,6 @@
 ---
 title: staticFiles
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/static-middleware/src/lib/static.ts#L83
+source: https://github.com/remix-run/remix/blob/main/packages/static-middleware/src/lib/static.ts#L83
 ---
 
 # staticFiles
@@ -19,7 +19,7 @@ function staticFiles(root: string, options: StaticFilesOptions): Middleware;
 
 ```
 
-## Params
+## Parameters
 
 ### `root`
 

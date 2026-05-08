@@ -1,6 +1,6 @@
 ---
 title: AtmosphereAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/atmosphere.ts#L128
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L128
 ---
 
 # AtmosphereAuthProvider
@@ -26,18 +26,17 @@ interface AtmosphereAuthProvider<profile> {
 
 ## Properties
 
-### [oauthProviderTokens]
+### `[oauthProviderTokens]`
 
 Phantom token marker used to preserve provider-specific token types.
 
-### name
+### `name`
 
 Provider name used for routing, callbacks, and persisted transactions.
 
 ## Methods
 
-### prepare(handleOrDid: string): Promise<OAuthProvider<profile, "atmosphere", AtmosphereOAuthTokens>>
+### `prepare(handleOrDid: string): Promise<OAuthProvider<profile, "atmosphere", AtmosphereOAuthTokens>>`
 
 Resolves a request-time handle or DID into a prepared provider for `startExternalAuth()`.
 
-#### `handleOrDid`

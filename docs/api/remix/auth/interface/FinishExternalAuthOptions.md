@@ -1,6 +1,6 @@
 ---
 title: FinishExternalAuthOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/finish-external-auth.ts#L11
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/finish-external-auth.ts#L11
 ---
 
 # FinishExternalAuthOptions
@@ -20,6 +20,6 @@ interface FinishExternalAuthOptions {
 
 ## Properties
 
-### transactionKey
+### `transactionKey`
 
 Session key used to read and clear the in-progress OAuth transaction.

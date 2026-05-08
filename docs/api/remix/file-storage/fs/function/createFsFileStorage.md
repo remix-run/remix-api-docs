@@ -1,13 +1,13 @@
 ---
 title: createFsFileStorage
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/file-storage/src/lib/backends/fs.ts#L24
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/backends/fs.ts#L24
 ---
 
 # createFsFileStorage
 
 ## Summary
 
-Creates a FileStorage that is backed by a filesystem directory using `node:fs`.
+Creates a [`FileStorage`](/api/remix/file-storage/interface/FileStorage/) that is backed by a filesystem directory using `node:fs`.
 
 Important: No attempt is made to avoid overwriting existing files, so the directory used should
 be a new directory solely dedicated to this storage object.
@@ -24,7 +24,7 @@ function createFsFileStorage(directory: string): FileStorage;
 
 ```
 
-## Params
+## Parameters
 
 ### `directory`
 

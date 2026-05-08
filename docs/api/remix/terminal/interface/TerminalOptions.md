@@ -1,6 +1,6 @@
 ---
 title: TerminalOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/terminal/src/lib/terminal.ts#L35
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/terminal.ts#L35
 ---
 
 # TerminalOptions
@@ -25,26 +25,26 @@ interface TerminalOptions {
 
 ## Properties
 
-### colors
+### `colors`
 
 Explicitly enables or disables ANSI styles instead of using automatic color detection.
 
-### env
+### `env`
 
 Environment variables used for color detection (defaults to `process.env`).
 
-### stderr
+### `stderr`
 
 Output stream used for error output (defaults to `process.stderr`).
 
-### stdin
+### `stdin`
 
 Input stream used to detect whether the terminal is interactive (defaults to `process.stdin`).
 
-### stdout
+### `stdout`
 
 Output stream used for normal output (defaults to `process.stdout`).
 
-### stream
+### `stream`
 
 Output stream whose TTY support should be used for color detection (defaults to `process.stdout`).

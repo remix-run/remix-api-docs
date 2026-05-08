@@ -1,6 +1,6 @@
 ---
 title: defineMimeType
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/mime/src/lib/define-mime-type.ts#L51
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/define-mime-type.ts#L51
 ---
 
 # defineMimeType
@@ -23,12 +23,13 @@ function defineMimeType(definition: MimeTypeDefinition): void;
 
 ```ts
 defineMimeType({
-  extensions: ['x-myformat'],
-  mimeType: 'application/x-myformat',
-})
+  extensions: ["x-myformat"],
+  mimeType: "application/x-myformat",
+});
+
 ```
 
-## Params
+## Parameters
 
 ### `definition`
 

@@ -1,6 +1,6 @@
 ---
 title: OktaAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/okta.ts#L17
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/okta.ts#L17
 ---
 
 # OktaAuthProviderOptions
@@ -33,36 +33,36 @@ interface OktaAuthProviderOptions {
 
 ## Properties
 
-### authorizationParams
+### `authorizationParams`
 
 Additional authorization parameters appended to the login redirect.
 
-### clientId
+### `clientId`
 
 OAuth client identifier for your application.
 
-### clientSecret
+### `clientSecret`
 
 OAuth client secret for your application.
 
-### discoveryUrl
+### `discoveryUrl`
 
 Optional override for the discovery document URL.
 
-### issuer
+### `issuer`
 
 Issuer base URL used for discovery and validation.
 
-### mapProfile
+### `mapProfile`
 
-### metadata
+### `metadata`
 
 Optional inline discovery metadata used instead of fetching it.
 
-### redirectUri
+### `redirectUri`
 
 Callback URL registered with the provider.
 
-### scopes
+### `scopes`
 
 Requested scopes for the login flow.

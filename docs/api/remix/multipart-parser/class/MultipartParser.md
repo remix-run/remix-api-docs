@@ -1,6 +1,6 @@
 ---
 title: MultipartParser
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/multipart-parser/src/lib/multipart.ts#L209
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L209
 ---
 
 # MultipartParser
@@ -32,13 +32,15 @@ class MultipartParser {
 
 ```
 
-## Constructor Params
+## Constructor
 
-### `boundary`
+### Parameters
+
+#### `boundary`
 
 The boundary string used to separate parts
 
-### `options`
+#### `options`
 
 Options for the parser
 
@@ -73,10 +75,14 @@ Should be called after all data has been written to the parser.
 Note: This will throw if the multipart message is incomplete or
 wasn't properly terminated.
 
+
+
 ### `write(chunk: Uint8Array): Generator<MultipartPart, void, unknown>`
 
 Write a chunk of data to the parser.
 
-#### `chunk`
+#### Parameters
+
+##### `chunk`
 
 A chunk of data to write to the parser

@@ -1,6 +1,6 @@
 ---
 title: RequestContext
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/request-context.ts#L125
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L140
 ---
 
 # RequestContext
@@ -17,13 +17,13 @@ class RequestContext<params, entries> {
   constructor(request: Request): RequestContext<params, entries>;
 
   // Properties
-  headers: Headers;
-  method: RequestMethod;
+  method: string;
   params: params;
   request: Request;
   url: URL;
 
   // Accessors
+  get headers(): Headers;
   get router(): Router<RequestContext<any, entries>>;
 
   // Methods
@@ -34,17 +34,15 @@ class RequestContext<params, entries> {
 
 ```
 
-## Constructor Params
+## Constructor
 
-### `request`
+### Parameters
+
+#### `request`
 
 The incoming request
 
 ## Properties
-
-### `headers`
-
-The headers of the request.
 
 ### `method`
 
@@ -73,6 +71,10 @@ The URL of the current request.
 
 ## Accessors
 
+### `headers`
+
+A mutable copy of the request headers.
+
 ### `router`
 
 The router handling this request.
@@ -83,20 +85,22 @@ The router handling this request.
 
 Get a value from request context.
 
-#### `key`
+
 
 ### `has<key extends object>(key: key): boolean`
 
 Check whether a value exists in request context.
 
-#### `key`
+
 
 ### `set<key extends object>(key: key, value: ContextValue<key>): void`
 
 Set a value in request context.
 
-#### `key`
+#### Parameters
 
-#### `value`
+##### `key`
+
+##### `value`
 
 The value to write

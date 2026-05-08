@@ -1,13 +1,13 @@
 ---
 title: FrameProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/component.ts#L158
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/component.ts#L158
 ---
 
 # FrameProps
 
 ## Summary
 
-Props accepted by the built-in Frame component.
+Props accepted by the built-in [`Frame`](/api/remix/ui/function/Frame/) component.
 
 ## Signature
 
@@ -26,18 +26,18 @@ interface FrameProps {
 
 ## Properties
 
-### fallback
+### `fallback`
 
 Fallback content to render while the frame is pending.
 
-### name
+### `name`
 
 Optional frame name used for targeted navigation and lookups.
 
-### on
+### `on`
 
 Event handlers invoked for events dispatched from the frame element.
 
-### src
+### `src`
 
 Source URL used when the frame loads or reloads its content.

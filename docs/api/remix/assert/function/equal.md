@@ -1,6 +1,6 @@
 ---
 title: equal
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/assert.ts#L81
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L81
 ---
 
 # equal
@@ -23,10 +23,11 @@ function equal<T>(
 ## Example
 
 ```ts
-assert.equal(response.status, 200)
+assert.equal(response.status, 200);
+
 ```
 
-## Params
+## Parameters
 
 ### `actual`
 

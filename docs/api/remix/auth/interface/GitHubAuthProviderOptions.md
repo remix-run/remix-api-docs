@@ -1,6 +1,6 @@
 ---
 title: GitHubAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/github.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/github.ts#L20
 ---
 
 # GitHubAuthProviderOptions
@@ -23,18 +23,18 @@ interface GitHubAuthProviderOptions {
 
 ## Properties
 
-### clientId
+### `clientId`
 
 OAuth client identifier for your GitHub OAuth App.
 
-### clientSecret
+### `clientSecret`
 
 OAuth client secret for your GitHub OAuth App.
 
-### redirectUri
+### `redirectUri`
 
 Callback URL registered with GitHub.
 
-### scopes
+### `scopes`
 
 Requested scopes for the GitHub login flow.

@@ -1,6 +1,6 @@
 ---
 title: RenderToStreamOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/server/stream.ts#L22
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/server/stream.ts#L28
 ---
 
 # RenderToStreamOptions
@@ -34,22 +34,22 @@ interface RenderToStreamOptions {
 
 ## Properties
 
-### frameSrc
+### `frameSrc`
 
 Source URL to associate with the current frame render.
 
-### onError
+### `onError`
 
 Error hook invoked when rendering work throws.
 
-### resolveClientEntry
+### `resolveClientEntry`
 
 Callback used to resolve runtime module metadata for client entry modules during SSR.
 
-### resolveFrame
+### `resolveFrame`
 
 Callback used to resolve nested frame content during streaming SSR.
 
-### topFrameSrc
+### `topFrameSrc`
 
 Source URL for the top-level frame in nested frame renders.

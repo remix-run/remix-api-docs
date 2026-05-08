@@ -1,6 +1,6 @@
 ---
 title: CorsOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/cors-middleware/src/lib/cors.ts#L52
+source: https://github.com/remix-run/remix/blob/main/packages/cors-middleware/src/lib/cors.ts#L52
 ---
 
 # CorsOptions
@@ -13,7 +13,7 @@ Options for CORS middleware.
 
 ```ts
 interface CorsOptions {
-  allowedHeaders?: readonly string[] | CorsAllowedHeadersResolver;
+  allowedHeaders?: CorsAllowedHeadersResolver | readonly string[];
   allowPrivateNetwork?: boolean;
   credentials?: boolean;
   exposedHeaders?: readonly string[];
@@ -28,33 +28,33 @@ interface CorsOptions {
 
 ## Properties
 
-### allowedHeaders
+### `allowedHeaders`
 
 Allowed request headers for preflight responses.
 
 Defaults to reflecting Access-Control-Request-Headers.
 
-### allowPrivateNetwork
+### `allowPrivateNetwork`
 
 Include Access-Control-Allow-Private-Network: true when requested.
 
-### credentials
+### `credentials`
 
 Include Access-Control-Allow-Credentials: true.
 
-### exposedHeaders
+### `exposedHeaders`
 
 Exposed response headers for non-preflight requests.
 
-### maxAge
+### `maxAge`
 
 Access-Control-Max-Age value for preflight responses (seconds).
 
-### methods
+### `methods`
 
 Allowed methods for preflight responses.
 
-### origin
+### `origin`
 
 Allowed origins. Defaults to '*'.
 
@@ -64,10 +64,10 @@ Allowed origins. Defaults to '*'.
 - `string`/`RegExp`/array allow matching origins
 - `function` allows dynamic origin checks
 
-### preflightContinue
+### `preflightContinue`
 
 Continue to downstream handlers for preflight requests.
 
-### preflightStatusCode
+### `preflightStatusCode`
 
 Status code to use when short-circuiting preflight responses.

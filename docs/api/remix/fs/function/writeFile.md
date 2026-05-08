@@ -1,6 +1,6 @@
 ---
 title: writeFile
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fs/src/lib/fs.ts#L93
+source: https://github.com/remix-run/remix/blob/main/packages/fs/src/lib/fs.ts#L93
 ---
 
 # writeFile
@@ -23,7 +23,7 @@ function writeFile(
 
 ```
 
-## Params
+## Parameters
 
 ### `to`
 

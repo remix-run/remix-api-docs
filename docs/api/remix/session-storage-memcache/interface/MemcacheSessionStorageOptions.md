@@ -1,6 +1,6 @@
 ---
 title: MemcacheSessionStorageOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/session-storage-memcache/src/lib/memcache-storage.ts#L13
+source: https://github.com/remix-run/remix/blob/main/packages/session-storage-memcache/src/lib/memcache-storage.ts#L13
 ---
 
 # MemcacheSessionStorageOptions
@@ -22,17 +22,17 @@ interface MemcacheSessionStorageOptions {
 
 ## Properties
 
-### keyPrefix
+### `keyPrefix`
 
 Prefix prepended to all session keys in Memcache.
 Default is `'remix:session:'`.
 
-### ttlSeconds
+### `ttlSeconds`
 
 Session TTL in seconds.
 Default is `0` (never expire).
 
-### useUnknownIds
+### `useUnknownIds`
 
 Whether to reuse session IDs sent from the client that are not found in storage.
 Default is `false`.

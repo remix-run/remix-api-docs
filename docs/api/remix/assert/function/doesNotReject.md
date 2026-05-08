@@ -1,6 +1,6 @@
 ---
 title: doesNotReject
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/assert.ts#L323
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L323
 ---
 
 # doesNotReject
@@ -19,10 +19,11 @@ function doesNotReject(fn: () => Promise<any>, message: string): Promise<void>;
 ## Example
 
 ```ts
-await assert.doesNotReject(() => fetch('/healthy'))
+await assert.doesNotReject(() => fetch("/healthy"));
+
 ```
 
-## Params
+## Parameters
 
 ### `fn`
 

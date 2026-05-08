@@ -1,9 +1,16 @@
 ---
 title: RemixTestConfig
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/test/src/lib/config.ts#L177
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/config.ts#L188
 ---
 
 # RemixTestConfig
+
+## Summary
+
+User-facing configuration for the `remix-test` CLI. Every field is
+optional — unset fields fall back to runner defaults. The same shape can
+be exported from a config file (see `--config`) or passed inline to
+runRemixTest via the corresponding flags.
 
 ## Signature
 
@@ -41,22 +48,22 @@ interface RemixTestConfig {
 
 ## Properties
 
-### browser
+### `browser`
 
 Options for controlling the playwright browser
  - `browser.echo`: Echo browser console output to stdout (--browser.echo)
  - `browser.open`: Open browser window and keep open after test finish (--browser.open)
 
-### concurrency
+### `concurrency`
 
 Max number of concurrent test workers (--concurrency)
 
-### coverage
+### `coverage`
 
 Coverage configuration. `true` enables with defaults; an object enables with settings;
 `false` disables. CLI `--coverage` flag overrides the boolean aspect.
 
-### glob
+### `glob`
 
 Glob patterns to identify test files. Each field accepts a single pattern
 or an array of patterns; arrays are unioned during discovery.
@@ -65,35 +72,35 @@ or an array of patterns; arrays are unioned during discovery.
  - `glob.e2e`: Glob pattern(s) for the subset of e2e test files (--glob.e2e)
  - `glob.exclude`: Glob pattern(s) for paths to exclude from discovery (--glob.exclude)
 
-### playwrightConfig
+### `playwrightConfig`
 
 Playwright configuration — either a path to a playwright config file or an inline
 PlaywrightTestConfig object. CLI `--playwrightConfig` only accepts a file path.
 
-### pool
+### `pool`
 
 Pool used to run server and E2E test files. Forked child processes are the default,
 but worker threads are available for projects that prefer the previous behavior.
 
-### project
+### `project`
 
 Filter tests to specific playwright project(s) (--project). Accepts a single
 project name or an array of names; `--project` may be repeated on the CLI.
 
-### reporter
+### `reporter`
 
 Test reporter (--reporter)
 
-### setup
+### `setup`
 
 Path to a module that exports `globalSetup` and/or `globalTeardown` functions,
 called once before and after the test run respectively. (--setup)
 
-### type
+### `type`
 
 Test type(s) to run (--type). Accepts a single type or an array of types;
 `--type` may be repeated on the CLI. Valid values: "server", "browser", "e2e".
 
-### watch
+### `watch`
 
 Watch mode — re-run tests on file changes (--watch)

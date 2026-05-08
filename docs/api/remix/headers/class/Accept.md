@@ -1,6 +1,6 @@
 ---
 title: Accept
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/accept.ts#L17
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept.ts#L17
 ---
 
 # Accept
@@ -47,10 +47,6 @@ class Accept {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Accessors
 
 ### `mediaTypes`
@@ -71,11 +67,15 @@ An array of all weights (q values) in the header.
 
 Iterates over media type and weight pairs in preference order.
 
+
+
 ### `accepts(mediaType: string): boolean`
 
 Returns `true` if the header matches the given media type (i.e. it is "acceptable").
 
-#### `mediaType`
+#### Parameters
+
+##### `mediaType`
 
 The media type to check
 
@@ -83,11 +83,15 @@ The media type to check
 
 Removes all media types from the header.
 
+
+
 ### `delete(mediaType: string): void`
 
 Removes the given media type from the header.
 
-#### `mediaType`
+#### Parameters
+
+##### `mediaType`
 
 The media type to remove
 
@@ -95,15 +99,19 @@ The media type to remove
 
 Returns an iterator of all media type and weight pairs.
 
+
+
 ### `forEach(callback: (mediaType: string, weight: number, header: Accept) => void, thisArg: any): void`
 
 Invokes the callback for each media type and weight pair.
 
-#### `callback`
+#### Parameters
+
+##### `callback`
 
 The function to call for each pair
 
-#### `thisArg`
+##### `thisArg`
 
 The value to use as `this` when calling the callback
 
@@ -111,7 +119,9 @@ The value to use as `this` when calling the callback
 
 Returns the weight of a media type. If it is not in the header verbatim, this returns `null`.
 
-#### `mediaType`
+#### Parameters
+
+##### `mediaType`
 
 The media type to get the weight of
 
@@ -119,7 +129,9 @@ The media type to get the weight of
 
 Returns the most preferred media type from the given list of media types.
 
-#### `mediaTypes`
+#### Parameters
+
+##### `mediaTypes`
 
 The list of media types to choose from
 
@@ -127,7 +139,9 @@ The list of media types to choose from
 
 Gets the weight of a given media type. Also supports wildcards, so e.g. `text/*` will match `text/html`.
 
-#### `mediaType`
+#### Parameters
+
+##### `mediaType`
 
 The media type to get the weight of
 
@@ -135,7 +149,9 @@ The media type to get the weight of
 
 Checks if a media type is in the header.
 
-#### `mediaType`
+#### Parameters
+
+##### `mediaType`
 
 The media type to check
 
@@ -143,11 +159,13 @@ The media type to check
 
 Sets a media type with the given weight.
 
-#### `mediaType`
+#### Parameters
+
+##### `mediaType`
 
 The media type to set
 
-#### `weight`
+##### `weight`
 
 The weight of the media type (default: `1`)
 
@@ -155,10 +173,14 @@ The weight of the media type (default: `1`)
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | AcceptInit | null): Accept`
 
 Parse an Accept header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

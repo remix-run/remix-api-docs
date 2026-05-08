@@ -1,13 +1,13 @@
 ---
 title: isSafeHtml
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/html-template/src/lib/safe-html.ts#L21
+source: https://github.com/remix-run/remix/blob/main/packages/html-template/src/lib/safe-html.ts#L21
 ---
 
 # isSafeHtml
 
 ## Summary
 
-Checks if a value is a SafeHtml string.
+Checks if a value is a [`SafeHtml`](/api/remix/html-template/type/SafeHtml/) string.
 
 ## Signature
 
@@ -16,7 +16,7 @@ function isSafeHtml(value: unknown): value is SafeHtml;
 
 ```
 
-## Params
+## Parameters
 
 ### `value`
 

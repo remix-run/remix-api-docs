@@ -1,6 +1,6 @@
 ---
 title: LazyFile
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/lazy-file/src/lib/lazy-file.ts#L198
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L198
 ---
 
 # LazyFile
@@ -52,17 +52,19 @@ class LazyFile {
 
 ```
 
-## Constructor Params
+## Constructor
 
-### `parts`
+### Parameters
+
+#### `parts`
 
 The file parts or lazy content
 
-### `name`
+#### `name`
 
 The name of the file
 
-### `options`
+#### `options`
 
 Options for the file
 
@@ -114,11 +116,15 @@ Returns the file's content as an [`ArrayBuffer`](https://developer.mozilla.org/e
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)
 
+
+
 ### `bytes(): Promise<Uint8Array<ArrayBuffer>>`
 
 Returns the file's contents as a byte array.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/bytes)
+
+
 
 ### `slice(start: number, end: number, contentType: string): LazyBlob`
 
@@ -128,15 +134,17 @@ Note: Like the native `File.slice()`, this returns a `Blob` (not a `File`).
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice)
 
-#### `start`
+#### Parameters
+
+##### `start`
 
 The start index (inclusive)
 
-#### `end`
+##### `end`
 
 The end index (exclusive)
 
-#### `contentType`
+##### `contentType`
 
 The content type of the new blob
 
@@ -146,11 +154,15 @@ Returns a stream that can be used to read the file's contents.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream)
 
+
+
 ### `text(): Promise<string>`
 
 Returns the file's contents as a string.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text)
+
+
 
 ### `toBlob(): Promise<Blob>`
 
@@ -160,6 +172,8 @@ Converts this `LazyFile` to a native `Blob`.
 a lazy file for large files. Only use this for non-streaming APIs that require a complete `Blob`.
 Use `.stream()` to get a `ReadableStream` for `Response` and other streaming APIs.
 
+
+
 ### `toFile(): Promise<File>`
 
 Converts this `LazyFile` to a native `File`.
@@ -168,4 +182,7 @@ Converts this `LazyFile` to a native `File`.
 a lazy file for large files. Only use this for non-streaming APIs that require a complete `File`
 (e.g. `FormData`). For streaming, use `.stream()` instead.
 
+
+
 ### `toString(): never`
+

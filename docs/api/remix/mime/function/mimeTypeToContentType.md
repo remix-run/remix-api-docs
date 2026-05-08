@@ -1,6 +1,6 @@
 ---
 title: mimeTypeToContentType
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/mime/src/lib/mime-type-to-content-type.ts#L31
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/mime-type-to-content-type.ts#L31
 ---
 
 # mimeTypeToContentType
@@ -32,14 +32,15 @@ function mimeTypeToContentType(mimeType: string): string;
 ## Example
 
 ```ts
-mimeTypeToContentType('text/html')           // 'text/html; charset=utf-8'
-mimeTypeToContentType('application/json')    // 'application/json; charset=utf-8'
-mimeTypeToContentType('application/ld+json') // 'application/ld+json; charset=utf-8'
-mimeTypeToContentType('image/png')           // 'image/png'
-mimeTypeToContentType('text/xml')            // 'text/xml'
+mimeTypeToContentType("text/html"); // 'text/html; charset=utf-8'
+mimeTypeToContentType("application/json"); // 'application/json; charset=utf-8'
+mimeTypeToContentType("application/ld+json"); // 'application/ld+json; charset=utf-8'
+mimeTypeToContentType("image/png"); // 'image/png'
+mimeTypeToContentType("text/xml"); // 'text/xml'
+
 ```
 
-## Params
+## Parameters
 
 ### `mimeType`
 

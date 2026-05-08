@@ -1,6 +1,6 @@
 ---
 title: getTableName
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/table.ts#L377
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L377
 ---
 
 # getTableName
@@ -15,10 +15,6 @@ Returns a table's SQL name.
 function getTableName<table extends AnyTable>(table: table): TableName<table>;
 
 ```
-
-## Params
-
-### `table`
 
 ## Returns
 

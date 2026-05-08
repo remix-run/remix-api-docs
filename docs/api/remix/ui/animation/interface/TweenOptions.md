@@ -1,6 +1,6 @@
 ---
 title: TweenOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/animation/tween.ts#L86
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/tween.ts#L86
 ---
 
 # TweenOptions
@@ -23,18 +23,18 @@ interface TweenOptions {
 
 ## Properties
 
-### curve
+### `curve`
 
 Cubic-bezier curve used to shape the interpolation.
 
-### duration
+### `duration`
 
 Total tween duration in milliseconds.
 
-### from
+### `from`
 
 Starting value for the tween.
 
-### to
+### `to`
 
 Ending value for the tween.

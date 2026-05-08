@@ -1,6 +1,6 @@
 ---
 title: MimeTypeDefinition
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/mime/src/lib/define-mime-type.ts#L4
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/define-mime-type.ts#L4
 ---
 
 # MimeTypeDefinition
@@ -23,21 +23,21 @@ interface MimeTypeDefinition {
 
 ## Properties
 
-### charset
+### `charset`
 
 Charset to include in Content-Type header.
 - `'utf-8'` or other string → '; charset={value}'
 - `undefined` → falls back to default heuristics (`'utf-8'` for `text/*`, `application/json`, `+json`)
 
-### compressible
+### `compressible`
 
 Whether this MIME type is compressible.
 If omitted, falls back to default heuristics (text/*, +json, +text, +xml).
 
-### extensions
+### `extensions`
 
 The file extension(s) to register (e.g., ['x-myformat'])
 
-### mimeType
+### `mimeType`
 
 The MIME type for these extensions (e.g., 'application/x-myformat')

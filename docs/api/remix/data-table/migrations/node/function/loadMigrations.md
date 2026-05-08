@@ -1,6 +1,6 @@
 ---
 title: loadMigrations
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/migrations-node.ts#L22
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations-node.ts#L22
 ---
 
 # loadMigrations
@@ -22,12 +22,13 @@ function loadMigrations(directory: string): Promise<MigrationDescriptor[]>;
 ## Example
 
 ```ts
-import { loadMigrations } from 'remix/data-table/migrations/node'
+import { loadMigrations } from "remix/data-table/migrations/node";
 
-let migrations = await loadMigrations('./app/db/migrations')
+let migrations = await loadMigrations("./app/db/migrations");
+
 ```
 
-## Params
+## Parameters
 
 ### `directory`
 

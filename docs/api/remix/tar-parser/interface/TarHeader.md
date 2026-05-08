@@ -1,6 +1,6 @@
 ---
 title: TarHeader
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/tar-parser/src/lib/tar.ts#L31
+source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L31
 ---
 
 # TarHeader
@@ -32,54 +32,54 @@ interface TarHeader {
 
 ## Properties
 
-### devmajor
+### `devmajor`
 
 Major device number for device entries, or `null` when unavailable.
 
-### devminor
+### `devminor`
 
 Minor device number for device entries, or `null` when unavailable.
 
-### gid
+### `gid`
 
 Numeric group ID parsed from the header, or `null` when unavailable.
 
-### gname
+### `gname`
 
 Group name parsed from the header.
 
-### linkname
+### `linkname`
 
 Linked path target for link entries, or `null` when not present.
 
-### mode
+### `mode`
 
 File mode parsed from the header, or `null` when unavailable.
 
-### mtime
+### `mtime`
 
 Last modification time parsed from the header, or `null` when unavailable.
 
-### name
+### `name`
 
 Entry path stored in the archive.
 
-### pax
+### `pax`
 
 Decoded PAX metadata attached to the entry, or `null` when none is present.
 
-### size
+### `size`
 
 Entry size in bytes.
 
-### type
+### `type`
 
 Normalized entry type such as `file` or `directory`.
 
-### uid
+### `uid`
 
 Numeric user ID parsed from the header, or `null` when unavailable.
 
-### uname
+### `uname`
 
 User name parsed from the header.

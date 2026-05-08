@@ -1,6 +1,6 @@
 ---
 title: createRouter
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/router.ts#L327
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L194
 ---
 
 # createRouter
@@ -19,11 +19,11 @@ function createRouter<
   middleware extends readonly AnyMiddleware[],
 >(
   options: RouterOptions<context, middleware>,
-): Router<ApplyMiddlewareTuple<context, middleware>>;
+): Router<MiddlewareContext<middleware, context>>;
 
 ```
 
-## Params
+## Parameters
 
 ### `options`
 

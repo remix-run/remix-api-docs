@@ -1,6 +1,6 @@
 ---
 title: RemixElement
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/jsx.ts#L22
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/jsx.ts#L23
 ---
 
 # RemixElement
@@ -24,18 +24,18 @@ interface RemixElement {
 
 ## Properties
 
-### $rmx
+### `$rmx`
 
 Internal brand used to distinguish Remix elements at runtime.
 
-### key
+### `key`
 
 Optional reconciliation key.
 
-### props
+### `props`
 
 Normalized props for the element.
 
-### type
+### `type`
 
 Host tag or component function for the element.

@@ -1,6 +1,6 @@
 ---
 title: cop
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/cop-middleware/src/lib/cop.ts#L139
+source: https://github.com/remix-run/remix/blob/main/packages/cop-middleware/src/lib/cop.ts#L143
 ---
 
 # cop
@@ -16,7 +16,7 @@ function cop(options: CopOptions): Middleware;
 
 ```
 
-## Params
+## Parameters
 
 ### `options`
 

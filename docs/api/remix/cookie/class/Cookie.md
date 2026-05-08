@@ -1,6 +1,6 @@
 ---
 title: Cookie
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/cookie/src/lib/cookie.ts#L53
+source: https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L53
 ---
 
 # Cookie
@@ -39,13 +39,15 @@ class Cookie {
 
 ```
 
-## Constructor Params
+## Constructor
 
-### `name`
+### Parameters
+
+#### `name`
 
 The name of the cookie
 
-### `options`
+#### `options`
 
 Options for the cookie
 
@@ -115,7 +117,9 @@ True if this cookie uses one or more secrets for verification.
 
 Extracts the value of this cookie from a `Cookie` header value.
 
-#### `headerValue`
+#### Parameters
+
+##### `headerValue`
 
 The `Cookie` header to parse
 
@@ -123,10 +127,12 @@ The `Cookie` header to parse
 
 Returns the value to use in a `Set-Cookie` header for this cookie.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The value to serialize
 
-#### `props`
+##### `props`
 
 Additional properties to use when serializing the cookie

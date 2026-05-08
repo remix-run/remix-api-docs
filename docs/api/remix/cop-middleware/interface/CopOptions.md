@@ -1,6 +1,6 @@
 ---
 title: CopOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/cop-middleware/src/lib/cop.ts#L33
+source: https://github.com/remix-run/remix/blob/main/packages/cop-middleware/src/lib/cop.ts#L33
 ---
 
 # CopOptions
@@ -22,14 +22,14 @@ interface CopOptions {
 
 ## Properties
 
-### insecureBypassPatterns
+### `insecureBypassPatterns`
 
 Path patterns that should bypass protection for matching requests.
 
-### onDeny
+### `onDeny`
 
 Optional custom response handler for rejected requests.
 
-### trustedOrigins
+### `trustedOrigins`
 
 Exact origins that should bypass cross-origin rejection.

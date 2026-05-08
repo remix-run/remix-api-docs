@@ -1,6 +1,6 @@
 ---
 title: ColumnBuilder
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/column.ts#L7
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/column.ts#L7
 ---
 
 # ColumnBuilder
@@ -51,25 +51,27 @@ class ColumnBuilder<output> {
 
 ```
 
-## Constructor Params
-
-### `definition`
-
 ## Methods
 
 ### `autoIncrement(): ColumnBuilder<output>`
 
 Marks the column as auto-incrementing when the dialect supports it.
 
+
+
 ### `build(): ColumnDefinition`
 
 Builds the immutable column definition.
+
+
 
 ### `charset(name: string): ColumnBuilder<output>`
 
 Sets the character set for the column.
 
-#### `name`
+#### Parameters
+
+##### `name`
 
 Character set name.
 
@@ -77,11 +79,13 @@ Character set name.
 
 Adds a check constraint for the column.
 
-#### `expression`
+#### Parameters
+
+##### `expression`
 
 SQL check expression.
 
-#### `name`
+##### `name`
 
 Constraint name.
 
@@ -89,7 +93,9 @@ Constraint name.
 
 Sets the collation for the column.
 
-#### `name`
+#### Parameters
+
+##### `name`
 
 Collation name.
 
@@ -97,7 +103,9 @@ Collation name.
 
 Adds a database comment for the column.
 
-#### `text`
+#### Parameters
+
+##### `text`
 
 Comment text.
 
@@ -105,11 +113,13 @@ Comment text.
 
 Marks the column as computed from a SQL expression.
 
-#### `expression`
+#### Parameters
+
+##### `expression`
 
 SQL expression for the computed value.
 
-#### `options`
+##### `options`
 
 Computed-column options.
 
@@ -117,7 +127,9 @@ Computed-column options.
 
 Sets a literal default value for the column.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Default value to apply when the column is omitted.
 
@@ -125,11 +137,15 @@ Default value to apply when the column is omitted.
 
 Sets the column default to the current timestamp at write time.
 
+
+
 ### `defaultSql(expression: string): ColumnBuilder<output>`
 
 Sets a raw SQL expression as the column default.
 
-#### `expression`
+#### Parameters
+
+##### `expression`
 
 SQL expression used as the default value.
 
@@ -137,7 +153,9 @@ SQL expression used as the default value.
 
 Configures an identity column strategy when the dialect supports it.
 
-#### `options`
+#### Parameters
+
+##### `options`
 
 Identity sequence options.
 
@@ -145,7 +163,9 @@ Identity sequence options.
 
 Sets the column length.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Maximum length value.
 
@@ -153,15 +173,21 @@ Maximum length value.
 
 Marks the column as non-nullable.
 
+
+
 ### `nullable(): ColumnBuilder<output | null>`
 
 Marks the column as nullable.
+
+
 
 ### `onDelete(action: ForeignKeyAction): ColumnBuilder<output>`
 
 Sets the foreign-key action used when the referenced row is deleted.
 
-#### `action`
+#### Parameters
+
+##### `action`
 
 Delete action to apply.
 
@@ -169,7 +195,9 @@ Delete action to apply.
 
 Sets the foreign-key action used when the referenced row is updated.
 
-#### `action`
+#### Parameters
+
+##### `action`
 
 Update action to apply.
 
@@ -177,11 +205,13 @@ Update action to apply.
 
 Sets numeric precision and optional scale for the column.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Precision value.
 
-#### `scale`
+##### `scale`
 
 Optional scale value.
 
@@ -189,15 +219,19 @@ Optional scale value.
 
 Marks the column as part of the primary key.
 
+
+
 ### `references(table: string, name: string): ColumnBuilder<output>`
 
 Adds a foreign-key reference for the column.
 
-#### `table`
+#### Parameters
+
+##### `table`
 
 Referenced table name.
 
-#### `name`
+##### `name`
 
 Constraint name.
 
@@ -205,15 +239,17 @@ Constraint name.
 
 Adds a foreign-key reference for the column.
 
-#### `table`
+#### Parameters
+
+##### `table`
 
 Referenced table name.
 
-#### `columns`
+##### `columns`
 
 Referenced column list.
 
-#### `name`
+##### `name`
 
 Constraint name.
 
@@ -221,7 +257,9 @@ Constraint name.
 
 Sets numeric scale for the column.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Scale value.
 
@@ -229,7 +267,9 @@ Scale value.
 
 Enables or disables timezone support for time-based columns.
 
-#### `enabled`
+#### Parameters
+
+##### `enabled`
 
 Whether timezone support should be enabled.
 
@@ -237,10 +277,13 @@ Whether timezone support should be enabled.
 
 Marks the column as unique.
 
-#### `name`
+#### Parameters
+
+##### `name`
 
 Optional constraint name.
 
 ### `unsigned(): ColumnBuilder<output>`
 
 Marks the column as unsigned when the dialect supports it.
+

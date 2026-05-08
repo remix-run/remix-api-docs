@@ -1,6 +1,6 @@
 ---
 title: AcceptEncoding
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/accept-encoding.ts#L17
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-encoding.ts#L17
 ---
 
 # AcceptEncoding
@@ -51,10 +51,6 @@ class AcceptEncoding {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Accessors
 
 ### `encodings`
@@ -75,11 +71,15 @@ An array of all weights (q values) in the header.
 
 Iterates over encoding and weight pairs in preference order.
 
+
+
 ### `accepts(encoding: string): boolean`
 
 Returns `true` if the header matches the given encoding (i.e. it is "acceptable").
 
-#### `encoding`
+#### Parameters
+
+##### `encoding`
 
 The encoding to check
 
@@ -87,11 +87,15 @@ The encoding to check
 
 Removes all encodings from the header.
 
+
+
 ### `delete(encoding: string): void`
 
 Removes the given encoding from the header.
 
-#### `encoding`
+#### Parameters
+
+##### `encoding`
 
 The encoding to remove
 
@@ -99,15 +103,19 @@ The encoding to remove
 
 Returns an iterator of all encoding and weight pairs.
 
+
+
 ### `forEach(callback: (encoding: string, weight: number, header: AcceptEncoding) => void, thisArg: any): void`
 
 Invokes the callback for each encoding and weight pair.
 
-#### `callback`
+#### Parameters
+
+##### `callback`
 
 The function to call for each pair
 
-#### `thisArg`
+##### `thisArg`
 
 The value to use as `this` when calling the callback
 
@@ -115,7 +123,9 @@ The value to use as `this` when calling the callback
 
 Gets the weight of an encoding. If it is not in the header verbatim, this returns `null`.
 
-#### `encoding`
+#### Parameters
+
+##### `encoding`
 
 The encoding to get
 
@@ -123,7 +133,9 @@ The encoding to get
 
 Returns the most preferred encoding from the given list of encodings.
 
-#### `encodings`
+#### Parameters
+
+##### `encodings`
 
 The encodings to choose from
 
@@ -131,7 +143,9 @@ The encodings to choose from
 
 Gets the weight an encoding. Performs wildcard matching so `*` matches all encodings.
 
-#### `encoding`
+#### Parameters
+
+##### `encoding`
 
 The encoding to get
 
@@ -139,7 +153,9 @@ The encoding to get
 
 Checks if the header contains a given encoding.
 
-#### `encoding`
+#### Parameters
+
+##### `encoding`
 
 The encoding to check
 
@@ -147,11 +163,13 @@ The encoding to check
 
 Sets an encoding with the given weight.
 
-#### `encoding`
+#### Parameters
+
+##### `encoding`
 
 The encoding to set
 
-#### `weight`
+##### `weight`
 
 The weight of the encoding (default: `1`)
 
@@ -159,10 +177,14 @@ The weight of the encoding (default: `1`)
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | AcceptEncodingInit | null): AcceptEncoding`
 
 Parse an Accept-Encoding header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

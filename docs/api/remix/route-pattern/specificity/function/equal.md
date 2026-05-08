@@ -1,6 +1,6 @@
 ---
 title: equal
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/route-pattern/src/lib/specificity.ts#L33
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L33
 ---
 
 # equal
@@ -16,7 +16,7 @@ function equal(a: RoutePatternMatch, b: RoutePatternMatch): boolean;
 
 ```
 
-## Params
+## Parameters
 
 ### `a`
 

@@ -1,6 +1,6 @@
 ---
 title: TerminalStyles
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/terminal/src/lib/styles.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/styles.ts#L20
 ---
 
 # TerminalStyles
@@ -65,196 +65,198 @@ interface TerminalStyles {
 
 ## Properties
 
-### bgBlack
+### `bgBlack`
 
 Formats text with a black background.
 
-### bgBlackBright
+### `bgBlackBright`
 
 Formats text with a bright black background.
 
-### bgBlue
+### `bgBlue`
 
 Formats text with a blue background.
 
-### bgBlueBright
+### `bgBlueBright`
 
 Formats text with a bright blue background.
 
-### bgCyan
+### `bgCyan`
 
 Formats text with a cyan background.
 
-### bgCyanBright
+### `bgCyanBright`
 
 Formats text with a bright cyan background.
 
-### bgGray
+### `bgGray`
 
 Formats text with a gray background.
 
-### bgGreen
+### `bgGreen`
 
 Formats text with a green background.
 
-### bgGreenBright
+### `bgGreenBright`
 
 Formats text with a bright green background.
 
-### bgGrey
+### `bgGrey`
 
 Formats text with a grey background.
 
-### bgMagenta
+### `bgMagenta`
 
 Formats text with a magenta background.
 
-### bgMagentaBright
+### `bgMagentaBright`
 
 Formats text with a bright magenta background.
 
-### bgRed
+### `bgRed`
 
 Formats text with a red background.
 
-### bgRedBright
+### `bgRedBright`
 
 Formats text with a bright red background.
 
-### bgWhite
+### `bgWhite`
 
 Formats text with a white background.
 
-### bgWhiteBright
+### `bgWhiteBright`
 
 Formats text with a bright white background.
 
-### bgYellow
+### `bgYellow`
 
 Formats text with a yellow background.
 
-### bgYellowBright
+### `bgYellowBright`
 
 Formats text with a bright yellow background.
 
-### black
+### `black`
 
 Formats text with black foreground color.
 
-### blackBright
+### `blackBright`
 
 Formats text with bright black foreground color.
 
-### blue
+### `blue`
 
 Formats text with blue foreground color.
 
-### blueBright
+### `blueBright`
 
 Formats text with bright blue foreground color.
 
-### bold
+### `bold`
 
 Formats text with bold intensity.
 
-### cyan
+### `cyan`
 
 Formats text with cyan foreground color.
 
-### cyanBright
+### `cyanBright`
 
 Formats text with bright cyan foreground color.
 
-### dim
+### `dim`
 
 Formats text with dim intensity.
 
-### enabled
+### `enabled`
 
 Whether style helpers emit ANSI escape sequences.
 
-### gray
+### `gray`
 
 Formats text with gray foreground color.
 
-### green
+### `green`
 
 Formats text with green foreground color.
 
-### greenBright
+### `greenBright`
 
 Formats text with bright green foreground color.
 
-### grey
+### `grey`
 
 Formats text with grey foreground color.
 
-### inverse
+### `inverse`
 
 Formats text with inverted foreground and background colors.
 
-### italic
+### `italic`
 
 Formats text with italic styling.
 
-### magenta
+### `magenta`
 
 Formats text with magenta foreground color.
 
-### magentaBright
+### `magentaBright`
 
 Formats text with bright magenta foreground color.
 
-### overline
+### `overline`
 
 Formats text with an overline.
 
-### red
+### `red`
 
 Formats text with red foreground color.
 
-### redBright
+### `redBright`
 
 Formats text with bright red foreground color.
 
-### reset
+### `reset`
 
 ANSI reset sequence when styles are enabled, otherwise an empty string.
 
-### strikethrough
+### `strikethrough`
 
 Formats text with a strikethrough.
 
-### underline
+### `underline`
 
 Formats text with an underline.
 
-### white
+### `white`
 
 Formats text with white foreground color.
 
-### whiteBright
+### `whiteBright`
 
 Formats text with bright white foreground color.
 
-### yellow
+### `yellow`
 
 Formats text with yellow foreground color.
 
-### yellowBright
+### `yellowBright`
 
 Formats text with bright yellow foreground color.
 
 ## Methods
 
-### format(value: string, styles: TerminalStyleName[]): string
+### `format(value: string, styles: TerminalStyleName[]): string`
 
 Formats text with one or more named terminal styles.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 Text to format.
 
-#### `styles`
+##### `styles`
 
 Style names to apply, from outermost to innermost.

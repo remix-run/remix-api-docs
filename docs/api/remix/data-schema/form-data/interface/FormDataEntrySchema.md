@@ -1,6 +1,6 @@
 ---
 title: FormDataEntrySchema
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-schema/src/lib/form-data.ts#L22
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/form-data.ts#L22
 ---
 
 # FormDataEntrySchema
@@ -23,14 +23,14 @@ interface FormDataEntrySchema<output> {
 
 ## Properties
 
-### kind
+### `kind`
 
 The parsing mode used to read values from the input object.
 
-### name
+### `name`
 
 The form field name to read. Defaults to the object key passed to `object()`.
 
-### schema
+### `schema`
 
 The schema used to validate the parsed value or values.

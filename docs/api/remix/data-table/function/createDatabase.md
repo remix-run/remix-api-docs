@@ -1,6 +1,6 @@
 ---
 title: createDatabase
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/database.ts#L827
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/database.ts#L827
 ---
 
 # createDatabase
@@ -23,21 +23,22 @@ function createDatabase(
 ## Example
 
 ```ts
-import { column as c, createDatabase, table } from 'remix/data-table'
+import { column as c, createDatabase, table } from "remix/data-table";
 
 let users = table({
-  name: 'users',
+  name: "users",
   columns: {
     id: c.integer(),
     email: c.varchar(255),
   },
-})
+});
 
-let db = createDatabase(adapter)
-let rows = await db.query(users).where({ id: 1 }).all()
+let db = createDatabase(adapter);
+let rows = await db.query(users).where({ id: 1 }).all();
+
 ```
 
-## Params
+## Parameters
 
 ### `adapter`
 

@@ -1,6 +1,6 @@
 ---
 title: lazy
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-schema/src/lib/lazy.ts#L12
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/lazy.ts#L12
 ---
 
 # lazy
@@ -20,7 +20,7 @@ function lazy<schema extends Schema<any, any>>(
 
 ```
 
-## Params
+## Parameters
 
 ### `getSchema`
 

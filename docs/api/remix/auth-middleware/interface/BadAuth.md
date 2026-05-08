@@ -1,6 +1,6 @@
 ---
 title: BadAuth
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/auth.ts#L37
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L38
 ---
 
 # BadAuth
@@ -21,10 +21,10 @@ interface BadAuth {
 
 ## Properties
 
-### error
+### `error`
 
 Failure details when authentication was attempted and rejected.
 
-### ok
+### `ok`
 
 Indicates that the current request is not authenticated.

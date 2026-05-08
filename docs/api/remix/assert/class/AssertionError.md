@@ -1,6 +1,6 @@
 ---
 title: AssertionError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/assert.ts#L5
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L5
 ---
 
 # AssertionError
@@ -38,11 +38,9 @@ class AssertionError {
 
 ```
 
-## Constructor Params
+## Constructor
 
 Creates a new AssertionError with the given message, actual/expected values, and operator.
-
-### `options`
 
 ## Properties
 
@@ -120,12 +118,7 @@ function c() {
 a();
 ```
 
-#### `targetObject`
 
-#### `constructorOpt`
 
 ### `prepareStackTrace(err: Error, stackTraces: CallSite[]): any`
 
-#### `err`
-
-#### `stackTraces`

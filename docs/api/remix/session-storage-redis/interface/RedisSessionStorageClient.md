@@ -1,13 +1,13 @@
 ---
 title: RedisSessionStorageClient
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/session-storage-redis/src/lib/redis-storage.ts#L9
+source: https://github.com/remix-run/remix/blob/main/packages/session-storage-redis/src/lib/redis-storage.ts#L9
 ---
 
 # RedisSessionStorageClient
 
 ## Summary
 
-Minimal Redis client contract required by createRedisSessionStorage.
+Minimal Redis client contract required by [`createRedisSessionStorage`](/api/remix/session-storage-redis/function/createRedisSessionStorage/).
 
 ## Signature
 
@@ -24,40 +24,31 @@ interface RedisSessionStorageClient {
 
 ## Methods
 
-### del(key: string): unknown
+### `del(key: string): unknown`
 
 Deletes a stored session value.
 
-#### `key`
 
-### expire(key: string, ttlSeconds: number): unknown
+
+### `expire(key: string, ttlSeconds: number): unknown`
 
 Updates the TTL for an existing session value in seconds.
 
-#### `key`
 
-#### `ttlSeconds`
 
-### get(key: string): string | Promise<string | null> | null
+### `get(key: string): string | Promise<string | null> | null`
 
 Reads a serialized session value.
 
-#### `key`
 
-### set(key: string, value: string): unknown
+
+### `set(key: string, value: string): unknown`
 
 Stores a serialized session value.
 
-#### `key`
 
-#### `value`
 
-### setEx(key: string, ttlSeconds: number, value: string): unknown
+### `setEx(key: string, ttlSeconds: number, value: string): unknown`
 
 Stores a serialized session value with a TTL in seconds.
 
-#### `key`
-
-#### `ttlSeconds`
-
-#### `value`

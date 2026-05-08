@@ -1,6 +1,6 @@
 ---
 title: AcceptLanguage
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/accept-language.ts#L17
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-language.ts#L17
 ---
 
 # AcceptLanguage
@@ -51,10 +51,6 @@ class AcceptLanguage {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Accessors
 
 ### `languages`
@@ -75,11 +71,15 @@ An array of all weights (q values) in the header.
 
 Iterates over language and weight pairs in preference order.
 
+
+
 ### `accepts(language: string): boolean`
 
 Returns `true` if the header matches the given language (i.e. it is "acceptable").
 
-#### `language`
+#### Parameters
+
+##### `language`
 
 The locale identifier of the language to check
 
@@ -87,11 +87,15 @@ The locale identifier of the language to check
 
 Removes all languages from the header.
 
+
+
 ### `delete(language: string): void`
 
 Removes a language with the given locale identifier.
 
-#### `language`
+#### Parameters
+
+##### `language`
 
 The locale identifier of the language to remove
 
@@ -99,15 +103,19 @@ The locale identifier of the language to remove
 
 Returns an iterator of all language and weight pairs.
 
+
+
 ### `forEach(callback: (language: string, weight: number, header: AcceptLanguage) => void, thisArg: any): void`
 
 Invokes the callback for each language and weight pair.
 
-#### `callback`
+#### Parameters
+
+##### `callback`
 
 The function to call for each pair
 
-#### `thisArg`
+##### `thisArg`
 
 The value to use as `this` when calling the callback
 
@@ -116,7 +124,9 @@ The value to use as `this` when calling the callback
 Gets the weight of a language with the given locale identifier. If it is not in the header
 verbatim, this returns `null`.
 
-#### `language`
+#### Parameters
+
+##### `language`
 
 The locale identifier of the language to get
 
@@ -124,7 +134,9 @@ The locale identifier of the language to get
 
 Returns the most preferred language from the given list of languages.
 
-#### `languages`
+#### Parameters
+
+##### `languages`
 
 The locale identifiers of the languages to choose from
 
@@ -133,7 +145,9 @@ The locale identifiers of the languages to choose from
 Gets the weight of a language with the given locale identifier. Performs wildcard and subtype
 matching, so `en` matches `en-US` and `en-GB`, and `*` matches all languages.
 
-#### `language`
+#### Parameters
+
+##### `language`
 
 The locale identifier of the language to get
 
@@ -141,7 +155,9 @@ The locale identifier of the language to get
 
 Checks if the header contains a language with the given locale identifier.
 
-#### `language`
+#### Parameters
+
+##### `language`
 
 The locale identifier of the language to check
 
@@ -149,11 +165,13 @@ The locale identifier of the language to check
 
 Sets a language with the given weight.
 
-#### `language`
+#### Parameters
+
+##### `language`
 
 The locale identifier of the language to set
 
-#### `weight`
+##### `weight`
 
 The weight of the language (default: `1`)
 
@@ -161,10 +179,14 @@ The weight of the language (default: `1`)
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | AcceptLanguageInit | null): AcceptLanguage`
 
 Parse an Accept-Language header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

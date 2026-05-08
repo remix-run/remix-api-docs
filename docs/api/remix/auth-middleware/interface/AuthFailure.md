@@ -1,6 +1,6 @@
 ---
 title: AuthFailure
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/auth.ts#L11
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L12
 ---
 
 # AuthFailure
@@ -23,18 +23,18 @@ interface AuthFailure {
 
 ## Properties
 
-### challenge
+### `challenge`
 
 Optional challenge value for `WWW-Authenticate`.
 
-### code
+### `code`
 
 Failure category used by built-in auth middleware and schemes.
 
-### message
+### `message`
 
 Human-readable explanation of the auth failure.
 
-### method
+### `method`
 
 Auth method that reported the failure.

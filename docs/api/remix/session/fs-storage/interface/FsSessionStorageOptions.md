@@ -1,6 +1,6 @@
 ---
 title: FsSessionStorageOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/session/src/lib/session-storage/fs.ts#L11
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session-storage/fs.ts#L11
 ---
 
 # FsSessionStorageOptions
@@ -20,7 +20,7 @@ interface FsSessionStorageOptions {
 
 ## Properties
 
-### useUnknownIds
+### `useUnknownIds`
 
 Whether to reuse session IDs sent from the client that are not found in storage.
 Default is `false`.

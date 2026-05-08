@@ -1,6 +1,6 @@
 ---
 title: GoogleAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/google.ts#L25
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/google.ts#L25
 ---
 
 # GoogleAuthProviderOptions
@@ -24,22 +24,22 @@ interface GoogleAuthProviderOptions {
 
 ## Properties
 
-### authorizationParams
+### `authorizationParams`
 
 Additional authorization parameters appended to the login redirect, such as `access_type=offline`.
 
-### clientId
+### `clientId`
 
 OAuth client identifier for your Google application.
 
-### clientSecret
+### `clientSecret`
 
 OAuth client secret for your Google application.
 
-### redirectUri
+### `redirectUri`
 
 Callback URL registered with Google.
 
-### scopes
+### `scopes`
 
 Requested scopes for the Google login flow.

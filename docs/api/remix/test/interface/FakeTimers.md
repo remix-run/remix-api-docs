@@ -1,9 +1,16 @@
 ---
 title: FakeTimers
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/test/src/lib/fake-timers.ts#L3
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/fake-timers.ts#L21
 ---
 
 # FakeTimers
+
+## Summary
+
+Handle returned by `mock.timers.enable()` for driving fake timers during a
+test. While enabled, `setTimeout`, `setInterval`, `clearTimeout`,
+`clearInterval`, and `Date.now` use the fake clock instead of the real one;
+timers fire only when the test calls `advance` (or `advanceAsync`).
 
 ## Signature
 
@@ -18,17 +25,33 @@ interface FakeTimers {
 
 ## Methods
 
-### advance(ms: number): void
+### `advance(ms: number): void`
 
-#### `ms`
+Advance the fake clock by `ms` milliseconds, synchronously firing every
+timer whose deadline is reached during the advance.
 
-### advanceAsync(ms: number): Promise<void>
+#### Parameters
+
+##### `ms`
+
+Number of milliseconds to advance.
+
+### `advanceAsync(ms: number): Promise<void>`
 
 Like `advance`, but yields to microtasks between each timer firing so
 Promise continuations (and any timers they schedule) can settle before
 the next firing is processed. Use this when a callback awaits work that
 itself depends on the fake clock.
 
-#### `ms`
+#### Parameters
 
-### restore(): void
+##### `ms`
+
+Number of milliseconds to advance.
+
+### `restore(): void`
+
+Restore the original timer functions and the real clock. Called
+automatically after the test finishes; may also be called early to
+disable fake timers mid-test.
+

@@ -1,6 +1,6 @@
 ---
 title: RoutePattern
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/route-pattern/src/lib/route-pattern.ts#L61
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern.ts#L61
 ---
 
 # RoutePattern
@@ -41,10 +41,6 @@ class RoutePattern<source> {
 
 ```
 
-## Constructor Params
-
-### `source`
-
 ## Properties
 
 ### `ast`
@@ -83,7 +79,9 @@ The serialized route-pattern source string.
 
 Builds an href from this pattern and the supplied params.
 
-#### `args`
+#### Parameters
+
+##### `args`
 
 Path params and optional search params.
 
@@ -91,17 +89,19 @@ Path params and optional search params.
 
 Joins this pattern with another pathname or route pattern.
 
-#### `other`
+
 
 ### `match(url: string | URL, options: { ignoreCase?: boolean }): RoutePatternMatch<source> | null`
 
 Match a URL against this pattern.
 
-#### `url`
+#### Parameters
+
+##### `url`
 
 The URL to match
 
-#### `options`
+##### `options`
 
 Match options
 
@@ -109,10 +109,13 @@ Match options
 
 Tests whether a URL matches this route pattern.
 
-#### `url`
+#### Parameters
+
+##### `url`
 
 URL to test.
 
 ### `toString(): string`
 
 Returns the serialized route-pattern source string.
+

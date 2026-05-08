@@ -1,6 +1,6 @@
 ---
 title: Action
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/controller.ts#L89
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/controller.ts#L55
 ---
 
 # Action
@@ -9,15 +9,15 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetc
 
 An individual route action.
 
-Actions can be plain handler functions or action objects with optional inline middleware.
+Actions may be plain request handler functions or objects with optional inline middleware.
+Most app code should use [`createAction`](/api/remix/fetch-router/function/createAction/); use this type directly when you need
+to describe an action for an explicit RequestContext type.
 
 ## Signature
 
 ```ts
-type Action<_method, pattern, context> = ActionInput<
-  Params<pattern>,
-  WithParams<context, Params<pattern>>,
-  readonly AnyMiddleware[]
->;
+type Action<route, context> =
+  | RequestHandler<ContextWithParams<context, Params<ActionPattern<route>>>>
+  | ActionObject<route, context>;
 
 ```

@@ -1,6 +1,6 @@
 ---
 title: on
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/mixins/on-mixin.ts#L74
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/on-mixin.ts#L86
 ---
 
 # on
@@ -24,7 +24,7 @@ function on<target extends Element, type extends keyof ElementEventMap>(
 
 ```
 
-## Params
+## Parameters
 
 ### `type`
 

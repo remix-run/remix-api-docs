@@ -1,6 +1,6 @@
 ---
 title: ServeTlsOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/node-serve/src/lib/server.ts#L42
+source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/server.ts#L42
 ---
 
 # ServeTlsOptions
@@ -23,18 +23,18 @@ interface ServeTlsOptions {
 
 ## Properties
 
-### caFile
+### `caFile`
 
 The path to a CA certificate file to use for TLS.
 
-### certFile
+### `certFile`
 
 The path to the certificate file to use for TLS.
 
-### keyFile
+### `keyFile`
 
 The path to the private key file to use for TLS.
 
-### passphrase
+### `passphrase`
 
 The passphrase to use when the private key is encrypted.

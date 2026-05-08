@@ -1,6 +1,6 @@
 ---
 title: Scheduler
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/scheduler.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/scheduler.ts#L20
 ---
 
 # Scheduler

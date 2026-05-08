@@ -1,6 +1,14 @@
-// ../packages/ui/src/runtime/jsx.ts
-function jsx(type, props, key) {
-  return { type, props: normalizeElementProps(props), key, $rmx: true };
+// ../packages/ui/src/runtime/core/vnode.ts
+function createRemixElement(type, props, key) {
+  return {
+    $rmx: true,
+    key,
+    props: normalizeElementProps(props),
+    type
+  };
+}
+function isRemixElement(node) {
+  return typeof node === "object" && node !== null && "$rmx" in node;
 }
 function normalizeElementProps(props) {
   if (!props) return {};
@@ -26,103 +34,116 @@ function flattenMixValue(mix, out) {
   }
 }
 
+// ../packages/ui/src/runtime/jsx.ts
+function jsx(type, props, key) {
+  return createRemixElement(type, props, key);
+}
+
 // ../packages/ui/src/runtime/typed-event-target.ts
 var TypedEventTarget = class extends EventTarget {
 };
 
 // ../packages/ui/src/runtime/component.ts
 function createComponent(config) {
-  let taskQueue = [];
-  let renderCtrl = null;
-  let connectedCtrl = null;
-  let contextValue = void 0;
-  function getConnectedSignal() {
-    if (!connectedCtrl) connectedCtrl = new AbortController();
-    return connectedCtrl.signal;
-  }
-  let getContent = null;
-  let scheduleUpdate = () => {
+  return new ComponentRuntime(config);
+}
+var ComponentRuntime = class {
+  frame;
+  #config;
+  #connectedController;
+  #contextValue;
+  #handle;
+  #props = {};
+  #renderController;
+  #renderFn;
+  #scheduleUpdate = () => {
     throw new Error("scheduleUpdate not implemented");
   };
-  let props = {};
-  let context = {
-    set: (value) => {
-      contextValue = value;
-    },
-    get: (type) => config.getContext(type)
-  };
-  let handle = {
-    id: config.id,
-    props,
-    update: () => new Promise((resolve) => {
-      taskQueue.push((signal) => resolve(signal));
-      scheduleUpdate();
-    }),
-    queueTask: (task) => {
-      taskQueue.push(task);
-    },
-    frame: config.frame,
-    frames: {
-      get top() {
-        return config.getTopFrame?.() ?? config.frame;
-      },
-      get(name) {
-        return config.getFrameByName(name);
-      }
-    },
-    context,
-    get signal() {
-      return config.signal ?? getConnectedSignal();
-    }
-  };
-  function dequeueTasks() {
-    let needsSignal = taskQueue.some((task) => task.length >= 1);
-    if (needsSignal && !renderCtrl) {
-      renderCtrl = new AbortController();
-    }
-    let signal = renderCtrl?.signal;
-    return taskQueue.splice(0, taskQueue.length).map((task) => () => task(signal));
+  #tasks = [];
+  constructor(config) {
+    this.#config = config;
+    this.frame = config.frame;
+    this.#handle = this.#createHandle();
   }
-  function render(props2) {
-    if (connectedCtrl?.signal.aborted) {
+  render = (nextProps) => {
+    if (this.#connectedController?.signal.aborted) {
       console.warn("render called after component was removed, potential application memory leak");
       return [null, []];
     }
-    if (renderCtrl) {
-      renderCtrl.abort();
-      renderCtrl = null;
-    }
-    syncProps(handle.props, props2);
-    let renderContent = getContent;
-    if (!renderContent) {
-      let result = config.type(handle);
+    this.#abortRenderSignal();
+    syncProps(this.#props, nextProps);
+    let renderFn = this.#renderFn;
+    if (renderFn === void 0) {
+      let result = this.#config.type(this.#handle);
       if (typeof result !== "function") {
-        let name = config.type.name || "Anonymous";
+        let name = this.#config.type.name || "Anonymous";
         throw new Error(`${name} must return a render function, received ${typeof result}`);
-      } else {
-        getContent = result;
-        renderContent = result;
       }
+      renderFn = result;
+      this.#renderFn = renderFn;
     }
-    if (!renderContent) {
-      throw new Error("component render function was not initialized");
+    return [renderFn(this.#props), this.#dequeueTasks()];
+  };
+  remove = () => {
+    this.#connectedController?.abort();
+    this.#abortRenderSignal();
+    return this.#dequeueTasks();
+  };
+  setScheduleUpdate = (nextScheduleUpdate) => {
+    this.#scheduleUpdate = nextScheduleUpdate;
+  };
+  getContextValue = () => this.#contextValue;
+  #createHandle() {
+    let component = this;
+    let context = {
+      set: (value) => {
+        this.#contextValue = value;
+      },
+      get: (type) => this.#config.getContext(type)
+    };
+    return {
+      id: this.#config.id,
+      props: this.#props,
+      update: () => new Promise((resolve) => {
+        this.#tasks.push((signal) => resolve(signal));
+        this.#scheduleUpdate();
+      }),
+      queueTask: (task) => {
+        this.#tasks.push(task);
+      },
+      frame: this.#config.frame,
+      frames: {
+        get top() {
+          return component.#config.getTopFrame?.() ?? component.#config.frame;
+        },
+        get(name) {
+          return component.#config.getFrameByName(name);
+        }
+      },
+      context,
+      get signal() {
+        return component.#config.signal ?? component.#connectedSignal();
+      }
+    };
+  }
+  #connectedSignal() {
+    this.#connectedController ??= new AbortController();
+    return this.#connectedController.signal;
+  }
+  #abortRenderSignal() {
+    this.#renderController?.abort();
+    this.#renderController = void 0;
+  }
+  #dequeueTasks() {
+    let needsSignal = this.#tasks.some((task) => task.length >= 1);
+    if (needsSignal) {
+      this.#renderController ??= new AbortController();
     }
-    let node = renderContent(handle.props);
-    return [node, dequeueTasks()];
+    let signal = this.#renderController?.signal;
+    let tasks = this.#tasks.splice(0, this.#tasks.length);
+    return tasks.map((task) => () => task(signal));
   }
-  function remove2() {
-    connectedCtrl?.abort();
-    renderCtrl?.abort();
-    return dequeueTasks();
-  }
-  function setScheduleUpdate(nextScheduleUpdate) {
-    scheduleUpdate = nextScheduleUpdate;
-  }
-  function getContextValue() {
-    return contextValue;
-  }
-  return { render, remove: remove2, setScheduleUpdate, frame: config.frame, getContextValue };
-}
+};
 function syncProps(target, next) {
   for (let key in target) {
     if (!(key in next)) {
@@ -280,9 +301,6 @@ function isComponentNode(node) {
 function isCommittedComponentNode(node) {
   return isComponentNode(node) && node._content !== void 0;
 }
-function isRemixElement(node) {
-  return typeof node === "object" && node !== null && "$rmx" in node;
-}
 function findContextFromAncestry(node, type) {
   let current = node;
   while (current) {
@@ -292,156 +310,6 @@ function findContextFromAncestry(node, type) {
     current = current._parent;
   }
   return void 0;
-}
-
-// ../packages/ui/src/style/stylesheet.ts
-var SERVER_STYLE_SELECTOR = "style[data-rmx]";
-var DEFAULT_STYLE_LAYER = "rmx";
-function getStyleLayerName(className, layer = DEFAULT_STYLE_LAYER) {
-  return `${layer}.${className}`;
-}
-function compareNodesInDocumentOrder(a, b) {
-  if (a === b) return 0;
-  let position = a.compareDocumentPosition(b);
-  if (position & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
-  if (position & Node.DOCUMENT_POSITION_PRECEDING) return 1;
-  return 0;
-}
-function isParentNode(value) {
-  return "querySelectorAll" in value;
-}
-function collectServerStyleTagsFromNode(node, into) {
-  if (isHtmlStyleElement(node) && node.matches(SERVER_STYLE_SELECTOR)) {
-    into.add(node);
-    return;
-  }
-  if (!(node instanceof Element) && !(node instanceof Document) && !(node instanceof DocumentFragment)) {
-    return;
-  }
-  let nested = node.querySelectorAll?.(SERVER_STYLE_SELECTOR) ?? [];
-  for (let i = 0; i < nested.length; i++) {
-    let el = nested[i];
-    if (isHtmlStyleElement(el)) {
-      into.add(el);
-    }
-  }
-}
-function collectServerStyleTags(source) {
-  let styles = /* @__PURE__ */ new Set();
-  if (isParentNode(source)) {
-    collectServerStyleTagsFromNode(source, styles);
-  } else {
-    for (let node of source) {
-      collectServerStyleTagsFromNode(node, styles);
-    }
-  }
-  return Array.from(styles).sort(compareNodesInDocumentOrder);
-}
-function isHtmlStyleElement(node) {
-  return typeof node === "object" && node !== null && node instanceof HTMLStyleElement;
-}
-function getStyleSelector(styleEl) {
-  let selector = styleEl.getAttribute("data-rmx")?.trim();
-  return selector ? selector : null;
-}
-function createStyleManager(layer = "rmx") {
-  let stylesheet = null;
-  let generation = 0;
-  let ruleMap = /* @__PURE__ */ new Map();
-  function getStylesheet() {
-    if (!stylesheet) {
-      stylesheet = new CSSStyleSheet();
-      document.adoptedStyleSheets.push(stylesheet);
-    }
-    return stylesheet;
-  }
-  function removeStylesheet() {
-    if (!stylesheet) return;
-    document.adoptedStyleSheets = Array.from(document.adoptedStyleSheets).filter(
-      (s) => s !== stylesheet
-    );
-    stylesheet = null;
-  }
-  function clearStylesheet() {
-    if (!stylesheet) return;
-    for (let i = stylesheet.cssRules.length - 1; i >= 0; i--) {
-      stylesheet.deleteRule(i);
-    }
-  }
-  function adoptServerStyleTag(styleEl) {
-    let selector = getStyleSelector(styleEl);
-    if (!selector) return;
-    if (ruleMap.has(selector)) {
-      styleEl.remove();
-      return;
-    }
-    let cssText = styleEl.textContent?.trim() ?? "";
-    if (cssText.length === 0) {
-      styleEl.remove();
-      return;
-    }
-    try {
-      let sheet = getStylesheet();
-      let index = sheet.cssRules.length;
-      sheet.insertRule(cssText, index);
-      ruleMap.set(selector, { count: 1, index });
-      styleEl.remove();
-    } catch {
-    }
-  }
-  function has(className) {
-    let entry = ruleMap.get(className);
-    return entry !== void 0 && entry.count > 0;
-  }
-  function getGeneration() {
-    return generation;
-  }
-  function insert2(className, rule) {
-    let entry = ruleMap.get(className);
-    if (entry) {
-      entry.count++;
-      return;
-    }
-    let sheet = getStylesheet();
-    let index = sheet.cssRules.length;
-    sheet.insertRule(`@layer ${getStyleLayerName(className, layer)} { ${rule} }`, index);
-    ruleMap.set(className, { count: 1, index });
-  }
-  function remove2(className) {
-    let entry = ruleMap.get(className);
-    if (!entry) return;
-    entry.count--;
-    if (entry.count > 0) {
-      return;
-    }
-    let indexToDelete = entry.index;
-    ruleMap.delete(className);
-    if (!stylesheet) return;
-    stylesheet.deleteRule(indexToDelete);
-    for (let [, data] of ruleMap.entries()) {
-      if (data.index > indexToDelete) {
-        data.index--;
-      }
-    }
-  }
-  function reset() {
-    clearStylesheet();
-    ruleMap.clear();
-    removeStylesheet();
-    generation++;
-  }
-  function adoptServerStyles(source) {
-    let styles = collectServerStyleTags(source);
-    for (let styleEl of styles) {
-      adoptServerStyleTag(styleEl);
-    }
-  }
-  function dispose() {
-    removeStylesheet();
-    ruleMap.clear();
-    generation++;
-  }
-  return { insert: insert2, remove: remove2, has, getGeneration, reset, adoptServerStyles, dispose };
 }
 
 // ../packages/ui/src/style/style.ts
@@ -598,10 +466,7 @@ function camelToKebab2(input) {
   return input.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/_/g, "-").toLowerCase();
 }
 
-// ../packages/ui/src/runtime/diff-props.ts
-var SVG_NS = "http://www.w3.org/2000/svg";
-var globalStyleManager = typeof window !== "undefined" ? createStyleManager() : null;
-var defaultStyleManager = globalStyleManager;
+// ../packages/ui/src/runtime/core/attributes.ts
 var ATTRIBUTE_FALLBACK_NAMES = /* @__PURE__ */ new Set([
   "width",
   "height",
@@ -615,27 +480,12 @@ var ATTRIBUTE_FALLBACK_NAMES = /* @__PURE__ */ new Set([
   "role",
   "popover"
 ]);
-function canUseProperty(dom, name, isSvg) {
+function canUseProperty(element, name, isSvg) {
   if (isSvg) return false;
   if (ATTRIBUTE_FALLBACK_NAMES.has(name)) return false;
-  return name in dom;
+  return name in element;
 }
-function isFrameworkProp(name) {
-  return name === "children" || name === "mix" || name === "key" || name === "animate" || name === "innerHTML";
-}
-function serializeStyleObject(style) {
-  let parts = [];
-  for (let [key, value] of Object.entries(style)) {
-    if (value == null) continue;
-    if (typeof value === "boolean") continue;
-    if (typeof value === "number" && !Number.isFinite(value)) continue;
-    let cssKey = key.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
-    let cssValue = Array.isArray(value) ? value.join(", ") : normalizeCssValue(key, value);
-    parts.push(`${cssKey}: ${cssValue};`);
-  }
-  return parts.join(" ");
-}
-function normalizePropName(name, isSvg) {
+function normalizeAttributeName(name, isSvg) {
   if (name.startsWith("aria-") || name.startsWith("data-")) return { attr: name };
   if (name === "className") return { attr: "class" };
   if (!isSvg) {
@@ -646,6 +496,33 @@ function normalizePropName(name, isSvg) {
     return { attr: name.toLowerCase() };
   }
   return normalizeSvgAttribute(name);
+}
+function serializeStyleObject(style) {
+  let parts = [];
+  for (let [key, value] of Object.entries(style)) {
+    if (value == null) continue;
+    if (typeof value === "boolean") continue;
+    if (typeof value === "number" && !Number.isFinite(value)) continue;
+    let cssKey = toKebabCase(key);
+    let cssValue = Array.isArray(value) ? value.join(", ") : normalizeCssValue(key, value);
+    parts.push(`${cssKey}: ${cssValue};`);
+  }
+  return parts.join(" ");
+}
+function getMergedClassName(props) {
+  let classAttr = typeof props.class === "string" ? props.class : "";
+  let className = typeof props.className === "string" ? props.className : "";
+  let merged = classAttr && className ? `${classAttr} ${className}` : classAttr || className;
+  return merged || void 0;
+}
+function toKebabCase(value) {
+  return value.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
+}
+
+// ../packages/ui/src/runtime/core/props.ts
+var SVG_NS = "http://www.w3.org/2000/svg";
+function isFrameworkProp(name) {
+  return name === "children" || name === "mix" || name === "key" || name === "animate" || name === "innerHTML" || name === "on";
 }
 function toLocalName(attrName) {
   let separatorIndex = attrName.indexOf(":");
@@ -668,13 +545,7 @@ function clearRuntimePropertyOnRemoval(dom, name) {
   } catch {
   }
 }
-function getMergedClassName(props) {
-  let classAttr = typeof props.class === "string" ? props.class : "";
-  let className = typeof props.className === "string" ? props.className : "";
-  let mergedClassName = classAttr && className ? `${classAttr} ${className}` : classAttr || className;
-  return mergedClassName || void 0;
-}
-function diffHostProps(curr, next, dom) {
+function patchHostProps(curr, next, dom) {
   let isSvg = dom.namespaceURI === SVG_NS;
   let currClassName = getMergedClassName(curr);
   let nextClassName = getMergedClassName(next);
@@ -688,14 +559,13 @@ function diffHostProps(curr, next, dom) {
   for (let name in curr) {
     if (isFrameworkProp(name)) continue;
     if (name === "class" || name === "className") continue;
-    if (!(name in next) || next[name] == null) {
-      if (canUseProperty(dom, name, isSvg)) {
-        clearRuntimePropertyOnRemoval(dom, name);
-      }
-      let { ns, attr } = normalizePropName(name, isSvg);
-      if (ns) dom.removeAttributeNS(ns, toLocalName(attr));
-      else dom.removeAttribute(attr);
+    if (name in next && next[name] != null) continue;
+    if (canUseProperty(dom, name, isSvg)) {
+      clearRuntimePropertyOnRemoval(dom, name);
     }
+    let { ns, attr } = normalizeAttributeName(name, isSvg);
+    if (ns) dom.removeAttributeNS(ns, toLocalName(attr));
+    else dom.removeAttribute(attr);
   }
   for (let name in next) {
     if (isFrameworkProp(name)) continue;
@@ -703,33 +573,81 @@ function diffHostProps(curr, next, dom) {
     let nextValue = next[name];
     if (nextValue == null) continue;
     let prevValue = curr[name];
-    if (prevValue !== nextValue) {
-      let { ns, attr } = normalizePropName(name, isSvg);
-      if (attr === "style" && typeof nextValue === "object" && nextValue && !Array.isArray(nextValue)) {
-        dom.setAttribute("style", serializeStyleObject(nextValue));
-        continue;
-      }
-      if (canUseProperty(dom, name, isSvg)) {
-        try {
-          dom[name] = nextValue == null ? "" : nextValue;
-          continue;
-        } catch {
-        }
-      }
-      if (typeof nextValue === "function") {
-        continue;
-      }
-      let isAriaOrData = name.startsWith("aria-") || name.startsWith("data-");
-      if (nextValue != null && (nextValue !== false || isAriaOrData)) {
-        let attrValue = name === "popover" && nextValue === true ? "" : String(nextValue);
-        if (ns) dom.setAttributeNS(ns, attr, attrValue);
-        else dom.setAttribute(attr, attrValue);
+    if (prevValue === nextValue) continue;
+    if (name === "style" && isStyleObject(nextValue)) {
+      if (isStyleObject(prevValue)) {
+        patchStyleObject(dom, prevValue, nextValue);
       } else {
-        if (ns) dom.removeAttributeNS(ns, toLocalName(attr));
-        else dom.removeAttribute(attr);
+        dom.removeAttribute("style");
+        patchStyleObject(dom, void 0, nextValue);
       }
+      continue;
+    }
+    patchHostProp(dom, name, nextValue, isSvg);
+  }
+}
+function patchHostProp(dom, name, value, isSvg) {
+  let { ns, attr } = normalizeAttributeName(name, isSvg);
+  if (attr === "style" && isStyleObject(value)) {
+    patchStyleObject(dom, void 0, value);
+    return;
+  }
+  if (attr === "style" && typeof value === "string") {
+    dom.setAttribute("style", value);
+    return;
+  }
+  if (canUseProperty(dom, name, isSvg)) {
+    try {
+      dom[name] = value == null ? "" : value;
+      return;
+    } catch {
     }
   }
+  if (typeof value === "function") return;
+  let isAriaOrData = name.startsWith("aria-") || name.startsWith("data-");
+  if (value != null && (value !== false || isAriaOrData)) {
+    let attrValue = name === "popover" && value === true ? "" : String(value);
+    if (ns) dom.setAttributeNS(ns, attr, attrValue);
+    else dom.setAttribute(attr, attrValue);
+  } else {
+    if (ns) dom.removeAttributeNS(ns, toLocalName(attr));
+    else dom.removeAttribute(attr);
+  }
+}
+function isStyleObject(value) {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+function patchStyleObject(dom, curr, next) {
+  if (!(dom instanceof HTMLElement || dom instanceof SVGElement)) {
+    dom.setAttribute("style", serializeStyleObject(next));
+    return;
+  }
+  let style = dom.style;
+  if (curr) {
+    for (let name in curr) {
+      let nextCssValue = styleValueToCss(name, next[name]);
+      if (nextCssValue !== void 0) continue;
+      let prevCssValue = styleValueToCss(name, curr[name]);
+      if (prevCssValue === void 0) continue;
+      style.removeProperty(toKebabCase(name));
+    }
+  }
+  for (let name in next) {
+    let nextCssValue = styleValueToCss(name, next[name]);
+    if (nextCssValue === void 0) continue;
+    let prevCssValue = curr ? styleValueToCss(name, curr[name]) : void 0;
+    if (prevCssValue === nextCssValue) continue;
+    style.setProperty(toKebabCase(name), nextCssValue);
+  }
+}
+function styleValueToCss(name, value) {
+  if (value == null) return void 0;
+  if (typeof value === "boolean") return void 0;
+  if (typeof value === "number" && !Number.isFinite(value)) return void 0;
+  if (Array.isArray(value)) {
+    return value.join(", ");
+  }
+  return normalizeCssValue(name, value);
 }
 
 // ../packages/ui/src/runtime/client-entries.ts
@@ -743,6 +661,23 @@ function skipComments(cursor) {
   return cursor;
 }
 
+// ../packages/ui/src/runtime/core/children.ts
+function isEmptyChild(value) {
+  return value == null || typeof value === "boolean";
+}
+function isPrimitiveChild(value) {
+  let type = typeof value;
+  return type === "string" || type === "number" || type === "bigint";
+}
+function normalizeChildren(children) {
+  for (let child of children) {
+    if (Array.isArray(child)) {
+      return children.flat(Infinity);
+    }
+  }
+  return children;
+}
+
 // ../packages/ui/src/runtime/to-vnode.ts
 function flatMapChildrenToVNodes(node) {
   if (!("children" in node.props)) return [];
@@ -753,19 +688,15 @@ function flatMapChildrenToVNodes(node) {
   return vnodes;
 }
 function flattenChildrenToVNodes(nodes, out) {
-  for (let child of nodes) {
-    if (Array.isArray(child)) {
-      flattenChildrenToVNodes(child, out);
-    } else {
-      out.push(toVNode(child));
-    }
+  for (let child of normalizeChildren(nodes)) {
+    out.push(toVNode(child));
   }
 }
 function toVNode(node) {
-  if (node === null || node === void 0 || typeof node === "boolean") {
+  if (isEmptyChild(node)) {
     return { type: TEXT_NODE, _text: "" };
   }
-  if (typeof node === "string" || typeof node === "number" || typeof node === "bigint") {
+  if (isPrimitiveChild(node)) {
     return { type: TEXT_NODE, _text: String(node) };
   }
   if (Array.isArray(node)) {
@@ -785,6 +716,12 @@ function toVNode(node) {
 
 // ../packages/ui/src/runtime/mixins/mixin.ts
 var mixinHandleId = 0;
+function createMixin(type) {
+  return (...args) => ({
+    type,
+    args
+  });
+}
 function resolveMixedProps(input) {
   let state = input.state ?? createMixinRuntimeState();
   let handle = state.handle;
@@ -1069,7 +1006,6 @@ var MixinHandleImpl = class extends TypedEventTarget {
     this.#activeScope = scope;
     if (!scope) return;
     if (this.#scopeTargets.has(scope)) return;
-    this.#scopeSignals.set(scope, new AbortController());
     this.#scopeTargets.set(scope, new TypedEventTarget());
     this.#scopePhaseCounts.set(scope, { beforeUpdate: 0, commit: 0 });
   }
@@ -1085,8 +1021,11 @@ var MixinHandleImpl = class extends TypedEventTarget {
       this.#decrementGlobalPhaseCount("beforeUpdate", scopePhaseCounts.beforeUpdate);
       this.#decrementGlobalPhaseCount("commit", scopePhaseCounts.commit);
     }
-    this.#scopeSignals.get(scope)?.abort();
-    this.#scopeSignals.delete(scope);
+    let controller = this.#scopeSignals.get(scope);
+    if (controller) {
+      controller.abort();
+      this.#scopeSignals.delete(scope);
+    }
     this.#scopePhaseCounts.delete(scope);
     this.#scopeTargets.delete(scope);
     if (this.#activeScope === scope) {
@@ -1112,7 +1051,10 @@ var MixinHandleImpl = class extends TypedEventTarget {
   }
   #getScopeSignal(scope) {
     let controller = this.#scopeSignals.get(scope);
-    invariant(controller);
+    if (!controller) {
+      controller = new AbortController();
+      this.#scopeSignals.set(scope, controller);
+    }
     return controller.signal;
   }
   #decrementGlobalPhaseCount(type, amount) {
@@ -1308,10 +1250,51 @@ function normalizeMixinRunner(result, handle) {
   return () => result;
 }
 
+// ../packages/ui/src/runtime/mixins/on-mixin.ts
+var onMixinType = (handle) => {
+  let currentHandler = () => {
+  };
+  let currentType = "";
+  let currentCapture = false;
+  let currentNode = null;
+  let reentry = null;
+  let stableHandler = (event) => {
+    reentry?.abort(new DOMException("", "EventReentry"));
+    reentry = new AbortController();
+    void currentHandler(event, reentry.signal);
+  };
+  handle.addEventListener("insert", (event) => {
+    currentNode = event.node;
+    currentNode.addEventListener(currentType, stableHandler, currentCapture);
+  });
+  handle.addEventListener("remove", () => {
+    currentNode?.removeEventListener(currentType, stableHandler, currentCapture);
+    currentNode = null;
+    reentry?.abort(new DOMException("", "AbortError"));
+  });
+  return (type, handler, captureBoolean = false) => {
+    let previousType = currentType;
+    let previousCapture = currentCapture;
+    let needsRebind = currentType !== type || currentCapture !== captureBoolean;
+    currentType = type;
+    currentHandler = handler;
+    currentCapture = captureBoolean;
+    if (needsRebind && currentNode) {
+      currentNode.removeEventListener(previousType, stableHandler, previousCapture);
+      currentNode.addEventListener(type, stableHandler, captureBoolean);
+    }
+    return handle.element;
+  };
+};
+var onMixin = createMixin(onMixinType);
+function isOnMixinDescriptor(descriptor) {
+  if (!descriptor || typeof descriptor !== "object") return false;
+  let candidate = descriptor;
+  return candidate.type === onMixinType && Array.isArray(candidate.args);
+}
+
 // ../packages/ui/src/runtime/reconcile.ts
 var SVG_NS2 = "http://www.w3.org/2000/svg";
-var INSERT_VNODE = 1 << 0;
-var MATCHED = 1 << 1;
 var idCounter = 0;
 var persistedRemovalToken = 0;
 var persistedMixinNodes = /* @__PURE__ */ new Set();
@@ -1349,6 +1332,7 @@ function findMatchingPersistedMixinNode(type, key, domParent) {
   }
   return null;
 }
+var EMPTY_DIRECT_EVENT_DESCRIPTORS = [];
 function shouldRestoreControlledReflectionOnInput(node, state) {
   if (state.hasControlledChecked) return false;
   if (node.type === "select") return false;
@@ -1452,6 +1436,17 @@ function setPropertyReflection(element, key, value) {
 }
 function resolveNodeMixProps(node, frame, scheduler, state) {
   let mix = node.props.mix;
+  let directEventDescriptors = resolveDirectEventDescriptors(mix);
+  if (directEventDescriptors) {
+    if (state) {
+      teardownMixins(state);
+    }
+    node._mixState = void 0;
+    node._mixedProps = node.props;
+    node._directEventDescriptors = directEventDescriptors;
+    return node.props;
+  }
+  node._directEventDescriptors = void 0;
   if (state == null && (mix == null || Array.isArray(mix) && mix.length === 0)) {
     node._mixState = void 0;
     node._mixedProps = node.props;
@@ -1474,6 +1469,19 @@ function resolveNodeMixProps(node, frame, scheduler, state) {
   node._mixedProps = resolved.props;
   return resolved.props;
 }
+function resolveDirectEventDescriptors(mix) {
+  if (!mix) return EMPTY_DIRECT_EVENT_DESCRIPTORS;
+  if (!Array.isArray(mix)) {
+    return isOnMixinDescriptor(mix) ? [mix] : null;
+  }
+  return areOnMixinDescriptors(mix) ? mix : null;
+}
+function areOnMixinDescriptors(descriptors) {
+  for (let item of descriptors) {
+    if (!isOnMixinDescriptor(item)) return false;
+  }
+  return true;
+}
 function enqueueMixinBindingUpdate(done) {
   let node = this.target;
   let state = node._mixState;
@@ -1486,7 +1494,7 @@ function enqueueMixinBindingUpdate(done) {
       dispatchMixinBeforeUpdate(state);
       let prevProps = getHostProps(node);
       let nextProps = resolveNodeMixProps(node, this.frame, this.scheduler, state);
-      diffHostProps(prevProps, nextProps, this.node);
+      patchHostProps(prevProps, nextProps, this.node);
       dispatchMixinCommit(state);
       done(state ? getMixinRuntimeSignal(state) : AbortSignal.abort());
     }
@@ -1618,16 +1626,20 @@ function diffHost(curr, next, frame, scheduler, styles, vParent, rootTarget) {
     next,
     rootTarget
   );
-  diffHostProps(currProps, nextProps, curr._dom);
+  patchHostProps(currProps, nextProps, curr._dom);
   next._dom = curr._dom;
   next._parent = vParent;
   next._controller = curr._controller;
+  next._directEventState = curr._directEventState;
   next._controlledState = curr._controlledState;
+  syncDirectEventListeners(next);
   if (next._controlledState || shouldTrackControlledReflection(nextProps)) {
     ensureControlledReflection(next, scheduler);
     syncControlledReflection(next, nextProps);
   }
-  bindNodeMixRuntime(next, frame, scheduler, styles);
+  if (next._mixState) {
+    bindNodeMixRuntime(next, frame, scheduler, styles);
+  }
   if (shouldDispatchMixinLifecycle) {
     scheduler.enqueueCommitPhase([() => dispatchMixinCommit(nextMixState)]);
   }
@@ -1637,10 +1649,91 @@ function setupHostNode(node, dom, scheduler) {
   node._dom = dom;
   let props = getHostProps(node);
   let committedNode = node;
+  syncDirectEventListeners(committedNode);
   if (shouldTrackControlledReflection(props)) {
     ensureControlledReflection(committedNode, scheduler);
     syncControlledReflection(committedNode, props);
   }
+}
+function syncDirectEventListeners(node) {
+  let descriptors = node._directEventDescriptors;
+  if (!descriptors) {
+    teardownDirectEventListeners(node);
+    return;
+  }
+  if (descriptors.length === 0) {
+    teardownDirectEventListeners(node);
+    return;
+  }
+  let state = node._directEventState;
+  if (!state) {
+    state = { bindings: [] };
+    node._directEventState = state;
+  }
+  let bindings = state.bindings;
+  for (let index = 0; index < descriptors.length; index++) {
+    let descriptor = descriptors[index];
+    let [type, handler, captureBoolean = false] = descriptor.args;
+    let binding = bindings[index];
+    if (!binding) {
+      binding = createDirectEventBinding(type, handler, captureBoolean);
+      bindings[index] = binding;
+      attachDirectEventBinding(node._dom, binding);
+      continue;
+    }
+    if (binding.type !== type || binding.capture !== captureBoolean) {
+      removeDirectEventBinding(node._dom, binding);
+      binding.type = type;
+      binding.capture = captureBoolean;
+      attachDirectEventBinding(node._dom, binding);
+    }
+    binding.handler = handler;
+  }
+  for (let index = descriptors.length; index < bindings.length; index++) {
+    removeDirectEventBinding(node._dom, bindings[index]);
+  }
+  bindings.length = descriptors.length;
+}
+function createDirectEventBinding(type, handler, capture) {
+  let binding = {
+    type,
+    handler,
+    capture,
+    reentry: null,
+    stableHandler: null
+  };
+  return binding;
+}
+function getStableDirectEventHandler(binding) {
+  if (binding.stableHandler) return binding.stableHandler;
+  binding.stableHandler = (event) => {
+    invokeDirectEventBinding(binding, event);
+  };
+  return binding.stableHandler;
+}
+function attachDirectEventBinding(dom, binding) {
+  dom.addEventListener(binding.type, getStableDirectEventHandler(binding), binding.capture);
+}
+function removeDirectEventBinding(dom, binding) {
+  if (binding.stableHandler) {
+    dom.removeEventListener(binding.type, binding.stableHandler, binding.capture);
+  }
+  binding.reentry?.abort(new DOMException("", "AbortError"));
+  binding.reentry = null;
+}
+function teardownDirectEventListeners(node) {
+  let state = node._directEventState;
+  if (!state) return;
+  for (let binding of state.bindings) {
+    removeDirectEventBinding(node._dom, binding);
+  }
+  state.bindings.length = 0;
+  node._directEventState = void 0;
+}
+function invokeDirectEventBinding(binding, event) {
+  binding.reentry?.abort(new DOMException("", "EventReentry"));
+  binding.reentry = new AbortController();
+  void binding.handler(event, binding.reentry.signal);
 }
 function diffText(curr, next, vParent) {
   if (curr._text !== next._text) {
@@ -1709,9 +1802,11 @@ function insert(node, domParent, frame, scheduler, styles, vParent, rootTarget, 
           rootTarget,
           childCursor
         );
-        diffHostProps({}, hostProps, targetHead);
+        patchHostProps({}, hostProps, targetHead);
         setupHostNode(node, targetHead, scheduler);
-        bindNodeMixRuntime(node, frame, scheduler, styles);
+        if (node._mixState) {
+          bindNodeMixRuntime(node, frame, scheduler, styles);
+        }
         return cursor;
       }
     }
@@ -1724,7 +1819,7 @@ function insert(node, domParent, frame, scheduler, styles, vParent, rootTarget, 
       let cursorTag = node._svg ? cursor.tagName : cursor.tagName.toLowerCase();
       if (cursorTag === node.type) {
         let nextCursor = cursor.nextSibling;
-        diffHostProps({}, hostProps, cursor);
+        patchHostProps({}, hostProps, cursor);
         if (hostProps.innerHTML != null) {
           cursor.innerHTML = hostProps.innerHTML;
         } else {
@@ -1742,7 +1837,9 @@ function insert(node, domParent, frame, scheduler, styles, vParent, rootTarget, 
           );
         }
         setupHostNode(node, cursor, scheduler);
-        bindNodeMixRuntime(node, frame, scheduler, styles);
+        if (node._mixState) {
+          bindNodeMixRuntime(node, frame, scheduler, styles);
+        }
         return nextCursor;
       } else {
         let nextSibling = skipComments(cursor.nextSibling);
@@ -1750,7 +1847,7 @@ function insert(node, domParent, frame, scheduler, styles, vParent, rootTarget, 
           let nextTag = node._svg ? nextSibling.tagName : nextSibling.tagName.toLowerCase();
           if (nextTag === node.type) {
             let nextCursor = nextSibling.nextSibling;
-            diffHostProps({}, hostProps, nextSibling);
+            patchHostProps({}, hostProps, nextSibling);
             if (hostProps.innerHTML != null) {
               nextSibling.innerHTML = hostProps.innerHTML;
             } else {
@@ -1768,7 +1865,9 @@ function insert(node, domParent, frame, scheduler, styles, vParent, rootTarget, 
               );
             }
             setupHostNode(node, nextSibling, scheduler);
-            bindNodeMixRuntime(node, frame, scheduler, styles);
+            if (node._mixState) {
+              bindNodeMixRuntime(node, frame, scheduler, styles);
+            }
             return nextCursor;
           }
         }
@@ -1777,14 +1876,16 @@ function insert(node, domParent, frame, scheduler, styles, vParent, rootTarget, 
       }
     }
     let dom = node._svg ? document.createElementNS(SVG_NS2, node.type) : document.createElement(node.type);
-    diffHostProps({}, hostProps, dom);
+    patchHostProps({}, hostProps, dom);
     if (hostProps.innerHTML != null) {
       dom.innerHTML = hostProps.innerHTML;
     } else {
       diffChildren(null, node._children, dom, frame, scheduler, styles, node, rootTarget);
     }
     setupHostNode(node, dom, scheduler);
-    bindNodeMixRuntime(node, frame, scheduler, styles, false, domParent);
+    if (node._mixState) {
+      bindNodeMixRuntime(node, frame, scheduler, styles, false, domParent);
+    }
     doInsert(dom);
     return cursor;
   }
@@ -2179,6 +2280,7 @@ function cleanupDescendants(node, scheduler, styles) {
       cleanupDescendants(child, scheduler, styles);
     }
     teardownMixins(node._mixState);
+    teardownDirectEventListeners(node);
     teardownControlledReflection(node);
     if (node._controller) node._controller.abort();
     return;
@@ -2252,6 +2354,7 @@ function performHostNodeRemoval(node, domParent, scheduler, styles) {
     }
   }
   teardownMixins(node._mixState);
+  teardownDirectEventListeners(node);
   teardownControlledReflection(node);
   if (!isHeadHostNode(node)) {
     node._dom.parentNode?.removeChild(node._dom);
@@ -2259,35 +2362,11 @@ function performHostNodeRemoval(node, domParent, scheduler, styles) {
   if (node._controller) node._controller.abort();
 }
 function diffChildren(curr, next, domParent, frame, scheduler, styles, vParent, rootTarget, cursor, anchor) {
-  let nextLength = next.length;
-  let hasKeys = false;
-  let seenKeys;
-  let duplicateKeys;
-  for (let i = 0; i < nextLength; i++) {
-    let node = next[i];
-    if (node && node.key != null) {
-      hasKeys = true;
-      if (!seenKeys) {
-        seenKeys = /* @__PURE__ */ new Set([node.key]);
-        continue;
-      }
-      if (seenKeys.has(node.key)) {
-        if (!duplicateKeys) {
-          duplicateKeys = /* @__PURE__ */ new Set();
-        }
-        duplicateKeys.add(node.key);
-      } else {
-        seenKeys.add(node.key);
-      }
-    }
-  }
-  if (duplicateKeys?.size) {
-    let quotedKeys = Array.from(duplicateKeys, (key) => `"${key}"`);
-    console.warn(
-      `Duplicate keys detected in siblings: ${quotedKeys.join(", ")}. Keys should be unique.`
-    );
-  }
+  let hasKeys = hasKeyedChildren(next);
   if (curr === null) {
+    if (hasKeys) {
+      warnDuplicateKeys(next);
+    }
     for (let node of next) {
       cursor = insert(
         node,
@@ -2304,10 +2383,17 @@ function diffChildren(curr, next, domParent, frame, scheduler, styles, vParent, 
     vParent._children = next;
     return cursor;
   }
-  let currLength = curr.length;
+  if (next.length === 0 && anchor === void 0 && !parentUsesInnerHTML(vParent) && canBulkClearChildren(curr)) {
+    for (let node of curr) {
+      cleanupDescendants(node, scheduler, styles);
+    }
+    domParent.textContent = "";
+    vParent._children = next;
+    return;
+  }
   if (!hasKeys) {
-    for (let i = 0; i < nextLength; i++) {
-      let currentNode = i < currLength ? curr[i] : null;
+    for (let i = 0; i < next.length; i++) {
+      let currentNode = i < curr.length ? curr[i] : null;
       diffVNodes(
         currentNode,
         next[i],
@@ -2321,8 +2407,8 @@ function diffChildren(curr, next, domParent, frame, scheduler, styles, vParent, 
         cursor
       );
     }
-    if (currLength > nextLength) {
-      for (let i = nextLength; i < currLength; i++) {
+    if (curr.length > next.length) {
+      for (let i = next.length; i < curr.length; i++) {
         let node = curr[i];
         if (node) remove(node, domParent, scheduler, styles);
       }
@@ -2330,129 +2416,102 @@ function diffChildren(curr, next, domParent, frame, scheduler, styles, vParent, 
     vParent._children = next;
     return;
   }
-  if (currLength === nextLength) {
-    let canDiffByPosition = true;
-    for (let i = 0; i < nextLength; i++) {
-      let currentNode = curr[i];
-      let nextNode = next[i];
-      if (!currentNode || currentNode.key !== nextNode.key || currentNode.type !== nextNode.type) {
-        canDiffByPosition = false;
-        break;
-      }
-    }
-    if (canDiffByPosition) {
-      for (let i = 0; i < nextLength; i++) {
-        diffVNodes(
-          curr[i],
-          next[i],
-          domParent,
-          frame,
-          scheduler,
-          styles,
-          vParent,
-          rootTarget,
-          anchor,
-          cursor
-        );
-      }
-      vParent._children = next;
-      return;
-    }
+  patchKeyedChildren(
+    curr,
+    next,
+    domParent,
+    frame,
+    scheduler,
+    styles,
+    vParent,
+    rootTarget,
+    cursor,
+    anchor
+  );
+  return;
+}
+function parentUsesInnerHTML(parent) {
+  return isHostNode(parent) && getHostProps(parent).innerHTML != null;
+}
+function canBulkClearChildren(children) {
+  for (let child of children) {
+    if (!canBulkClearNode(child)) return false;
   }
-  let oldChildren = curr;
-  let oldChildrenLength = currLength;
-  let remainingOldChildren = oldChildrenLength;
-  let oldKeyMap = /* @__PURE__ */ new Map();
-  for (let i = 0; i < oldChildrenLength; i++) {
-    let c = oldChildren[i];
-    if (c) {
-      c._flags = 0;
-      if (c.key != null) {
-        oldKeyMap.set(c.key, i);
-      }
+  return true;
+}
+function canBulkClearNode(node) {
+  if (isCommittedTextNode(node)) return true;
+  if (isCommittedHostNode(node)) {
+    if (node._mixState) return false;
+    for (let child of node._children) {
+      if (!canBulkClearNode(child)) return false;
     }
+    return true;
   }
-  let skew = 0;
-  let newChildren = new Array(nextLength);
-  for (let i = 0; i < nextLength; i++) {
-    let childVNode = next[i];
-    if (!childVNode) {
-      newChildren[i] = childVNode;
+  if (isFragmentNode(node)) {
+    return canBulkClearChildren(node._children);
+  }
+  if (isCommittedComponentNode(node)) {
+    return canBulkClearNode(node._content);
+  }
+  return false;
+}
+function hasKeyedChildren(children) {
+  for (let node of children) {
+    if (node.key != null) return true;
+  }
+  return false;
+}
+function warnDuplicateKeys(children) {
+  let seenKeys;
+  let duplicateKeys;
+  for (let node of children) {
+    if (node.key == null) continue;
+    if (!seenKeys) {
+      seenKeys = /* @__PURE__ */ new Set([node.key]);
       continue;
     }
-    newChildren[i] = childVNode;
-    childVNode._parent = vParent;
-    let skewedIndex = i + skew;
-    let matchingIndex = -1;
-    let key = childVNode.key;
-    let type = childVNode.type;
-    if (key != null) {
-      let mapIndex = oldKeyMap.get(key);
-      if (mapIndex !== void 0) {
-        let candidate = oldChildren[mapIndex];
-        let candidateFlags = candidate?._flags ?? 0;
-        if (candidate && (candidateFlags & MATCHED) === 0 && candidate.type === type) {
-          matchingIndex = mapIndex;
-        }
-      }
+    if (seenKeys.has(node.key)) {
+      duplicateKeys ??= /* @__PURE__ */ new Set();
+      duplicateKeys.add(node.key);
     } else {
-      let searchVNode = oldChildren[skewedIndex];
-      let searchFlags = searchVNode?._flags ?? 0;
-      let available = searchVNode != null && (searchFlags & MATCHED) === 0;
-      if (available && searchVNode.key == null && type === searchVNode.type) {
-        matchingIndex = skewedIndex;
+      seenKeys.add(node.key);
+    }
+  }
+  if (duplicateKeys?.size) {
+    let quotedKeys = Array.from(duplicateKeys, (key) => `"${key}"`);
+    console.warn(
+      `Duplicate keys detected in siblings: ${quotedKeys.join(", ")}. Keys should be unique.`
+    );
+  }
+}
+function patchKeyedChildren(curr, next, domParent, frame, scheduler, styles, vParent, rootTarget, cursor, anchor) {
+  let matches = matchKeyedChildrenInOrder(curr, next) ?? matchKeyedChildrenAfterSingleRemoval(curr, next) ?? matchKeyedChildrenAfterPairSwap(curr, next);
+  if (!matches) {
+    warnDuplicateKeys(next);
+    matches = matchKeyedChildren(curr, next);
+  }
+  let matchAnalysis = analyzeKeyedChildMatches(curr.length, matches);
+  if (matchAnalysis.hasRemovals) {
+    let usedOldIndexes = new Uint8Array(curr.length);
+    for (let match of matches) {
+      if (match.oldIndex >= 0) {
+        usedOldIndexes[match.oldIndex] = 1;
       }
     }
-    childVNode._index = matchingIndex;
-    let matchedOldVNode = null;
-    if (matchingIndex !== -1) {
-      matchedOldVNode = oldChildren[matchingIndex];
-      remainingOldChildren--;
-      if (matchedOldVNode) {
-        matchedOldVNode._flags = (matchedOldVNode._flags ?? 0) | MATCHED;
-      }
-    }
-    let oldDom = matchedOldVNode && findFirstDomAnchor(matchedOldVNode);
-    let isMounting = !matchedOldVNode || !oldDom;
-    if (isMounting) {
-      if (matchingIndex === -1) {
-        if (nextLength > oldChildrenLength) {
-          skew--;
-        } else if (nextLength < oldChildrenLength) {
-          skew++;
-        }
-      }
-      childVNode._flags = (childVNode._flags ?? 0) | INSERT_VNODE;
-    } else if (matchingIndex !== i + skew) {
-      if (matchingIndex === i + skew - 1) {
-        skew--;
-      } else if (matchingIndex === i + skew + 1) {
-        skew++;
-      } else {
-        if (matchingIndex > i + skew) skew--;
-        else skew++;
-        childVNode._flags = (childVNode._flags ?? 0) | INSERT_VNODE;
+    for (let oldIndex = 0; oldIndex < curr.length; oldIndex++) {
+      if (usedOldIndexes[oldIndex] === 0) {
+        remove(curr[oldIndex], domParent, scheduler, styles);
       }
     }
   }
-  if (remainingOldChildren) {
-    for (let i = 0; i < oldChildrenLength; i++) {
-      let oldVNode = oldChildren[i];
-      if (oldVNode && ((oldVNode._flags ?? 0) & MATCHED) === 0) {
-        remove(oldVNode, domParent, scheduler, styles);
-      }
-    }
-  }
-  vParent._children = newChildren;
-  let lastPlaced = null;
-  for (let i = 0; i < nextLength; i++) {
-    let childVNode = newChildren[i];
-    if (!childVNode) continue;
-    let idx = childVNode._index ?? -1;
-    let oldVNode = idx >= 0 ? oldChildren[idx] : null;
+  vParent._children = next;
+  for (let index = 0; index < next.length; index++) {
+    let match = matches[index];
+    let oldNode = match.oldIndex >= 0 ? curr[match.oldIndex] : null;
     diffVNodes(
-      oldVNode,
-      childVNode,
+      oldNode,
+      next[index],
       domParent,
       frame,
       scheduler,
@@ -2462,31 +2521,188 @@ function diffChildren(curr, next, domParent, frame, scheduler, styles, vParent, 
       anchor,
       cursor
     );
-    let shouldPlace = (childVNode._flags ?? 0) & INSERT_VNODE;
-    let firstDom = findFirstDomAnchor(childVNode);
-    let lastDom = firstDom ? findLastDomAnchor(childVNode) : null;
-    if (shouldPlace && firstDom && lastDom && firstDom.parentNode === domParent) {
-      let target;
-      if (lastPlaced === null) {
-        if (vParent._rangeStart && vParent._rangeStart.parentNode === domParent) {
-          target = vParent._rangeStart.nextSibling;
-        } else {
-          target = domParent.firstChild;
+  }
+  if (matchAnalysis.canSkipPlacement) {
+    return;
+  }
+  let stableIndexes = lisMatches(matches);
+  let stableCursor = stableIndexes.length - 1;
+  let placementAnchor = anchor ?? null;
+  for (let index = next.length - 1; index >= 0; index--) {
+    let nextNode = next[index];
+    let isStable = stableIndexes[stableCursor] === index;
+    if (isStable) {
+      stableCursor--;
+    } else {
+      placeVNode(nextNode, domParent, placementAnchor);
+    }
+    placementAnchor = findFirstDomAnchor(nextNode) ?? placementAnchor;
+  }
+}
+function matchKeyedChildren(curr, next) {
+  let oldKeyMap = /* @__PURE__ */ new Map();
+  let usedOldIndexes = /* @__PURE__ */ new Set();
+  let unkeyedSearchStart = 0;
+  for (let index = 0; index < curr.length; index++) {
+    let key = curr[index].key;
+    if (key != null) oldKeyMap.set(key, index);
+  }
+  return next.map((nextNode) => {
+    let oldIndex = -1;
+    if (nextNode.key != null) {
+      let keyedOldIndex = oldKeyMap.get(nextNode.key);
+      if (keyedOldIndex !== void 0) {
+        let oldNode = curr[keyedOldIndex];
+        if (!usedOldIndexes.has(keyedOldIndex) && oldNode.type === nextNode.type) {
+          oldIndex = keyedOldIndex;
         }
-      } else {
-        target = lastPlaced.nextSibling;
       }
-      if (target === null && anchor) target = anchor;
-      if (target && domRangeContainsNode(firstDom, lastDom, target)) {
-      } else if (firstDom !== target) {
-        moveDomRange(domParent, firstDom, lastDom, target);
+    } else {
+      for (let index = unkeyedSearchStart; index < curr.length; index++) {
+        let oldNode = curr[index];
+        if (usedOldIndexes.has(index) || oldNode.key != null || oldNode.type !== nextNode.type) {
+          continue;
+        }
+        oldIndex = index;
+        unkeyedSearchStart = index + 1;
+        break;
       }
     }
-    if (lastDom) lastPlaced = lastDom;
-    childVNode._flags = 0;
-    childVNode._index = void 0;
+    if (oldIndex >= 0) usedOldIndexes.add(oldIndex);
+    return { oldIndex };
+  });
+}
+function matchKeyedChildrenInOrder(curr, next) {
+  let length = Math.min(curr.length, next.length);
+  let matches = [];
+  for (let index = 0; index < length; index++) {
+    let nextNode = next[index];
+    if (nextNode.key == null) return null;
+    let oldNode = curr[index];
+    if (oldNode.key !== nextNode.key || oldNode.type !== nextNode.type) {
+      return null;
+    }
+    matches.push({ oldIndex: index });
   }
-  return;
+  for (let index = length; index < next.length; index++) {
+    if (next[index].key == null) return null;
+    matches.push({ oldIndex: -1 });
+  }
+  return matches;
+}
+function matchKeyedChildrenAfterSingleRemoval(curr, next) {
+  if (curr.length !== next.length + 1) return null;
+  let matches = [];
+  let oldIndex = 0;
+  let skippedOldNode = false;
+  for (let nextIndex = 0; nextIndex < next.length; nextIndex++) {
+    let nextNode = next[nextIndex];
+    if (nextNode.key == null) return null;
+    let oldNode = curr[oldIndex];
+    if (oldNode.key === nextNode.key && oldNode.type === nextNode.type) {
+      matches.push({ oldIndex });
+      oldIndex++;
+      continue;
+    }
+    if (skippedOldNode) return null;
+    skippedOldNode = true;
+    oldIndex++;
+    oldNode = curr[oldIndex];
+    if (oldNode.key !== nextNode.key || oldNode.type !== nextNode.type) {
+      return null;
+    }
+    matches.push({ oldIndex });
+    oldIndex++;
+  }
+  return matches;
+}
+function matchKeyedChildrenAfterPairSwap(curr, next) {
+  if (curr.length !== next.length) return null;
+  let matches = [];
+  let firstMismatch = -1;
+  let secondMismatch = -1;
+  for (let index = 0; index < next.length; index++) {
+    let nextNode = next[index];
+    if (nextNode.key == null) return null;
+    let oldNode = curr[index];
+    if (oldNode.key === nextNode.key && oldNode.type === nextNode.type) {
+      matches.push({ oldIndex: index });
+      continue;
+    }
+    if (firstMismatch === -1) {
+      firstMismatch = index;
+    } else if (secondMismatch === -1) {
+      secondMismatch = index;
+    } else {
+      return null;
+    }
+    matches.push({ oldIndex: -1 });
+  }
+  if (firstMismatch === -1) return matches;
+  if (secondMismatch === -1) return null;
+  let firstOldNode = curr[firstMismatch];
+  let secondOldNode = curr[secondMismatch];
+  let firstNextNode = next[firstMismatch];
+  let secondNextNode = next[secondMismatch];
+  if (firstOldNode.key !== secondNextNode.key || firstOldNode.type !== secondNextNode.type || secondOldNode.key !== firstNextNode.key || secondOldNode.type !== firstNextNode.type) {
+    return null;
+  }
+  matches[firstMismatch] = { oldIndex: secondMismatch };
+  matches[secondMismatch] = { oldIndex: firstMismatch };
+  return matches;
+}
+function analyzeKeyedChildMatches(currentLength, matches) {
+  let hasRemovals = matches.length !== currentLength;
+  let canSkipPlacement = true;
+  let lastOldIndex = -1;
+  let sawNewNode = false;
+  for (let match of matches) {
+    if (match.oldIndex < 0) {
+      hasRemovals = true;
+      sawNewNode = true;
+      continue;
+    }
+    if (sawNewNode || match.oldIndex < lastOldIndex) {
+      canSkipPlacement = false;
+    }
+    lastOldIndex = match.oldIndex;
+  }
+  return { hasRemovals, canSkipPlacement };
+}
+function lisMatches(matches) {
+  let predecessors = Array.from({ length: matches.length });
+  let tails = [];
+  for (let index = 0; index < matches.length; index++) {
+    let value = matches[index].oldIndex + 1;
+    if (value === 0) continue;
+    let low = 0;
+    let high = tails.length;
+    while (low < high) {
+      let middle = low + high >> 1;
+      if (matches[tails[middle]].oldIndex + 1 < value) {
+        low = middle + 1;
+      } else {
+        high = middle;
+      }
+    }
+    predecessors[index] = low > 0 ? tails[low - 1] : -1;
+    tails[low] = index;
+  }
+  let cursor = tails.at(-1) ?? -1;
+  for (let index = tails.length - 1; index >= 0; index--) {
+    tails[index] = cursor;
+    cursor = predecessors[cursor] ?? -1;
+  }
+  return tails;
+}
+function placeVNode(node, domParent, anchor) {
+  let firstDom = findFirstDomAnchor(node);
+  if (!firstDom || firstDom.parentNode !== domParent) return;
+  let lastDom = findLastDomAnchor(node);
+  if (!lastDom) return;
+  if (anchor && domRangeContainsNode(firstDom, lastDom, anchor)) return;
+  if (firstDom === anchor) return;
+  moveDomRange(domParent, firstDom, lastDom, anchor);
 }
 function findFirstDomAnchor(node) {
   if (!node) return null;
@@ -2565,6 +2781,7 @@ function reclaimPersistedMixinNode(persistedNode, newNode, frame, scheduler, sty
   newNode._parent = vParent;
   newNode._controller = persistedNode._controller;
   newNode._mixState = persistedNode._mixState;
+  newNode._directEventState = persistedNode._directEventState;
   newNode._controlledState = persistedNode._controlledState;
   let prevProps = getHostProps(persistedNode);
   let nextProps = resolveNodeMixProps(
@@ -2576,7 +2793,8 @@ function reclaimPersistedMixinNode(persistedNode, newNode, frame, scheduler, sty
   if (shouldDispatchInlineMixinLifecycle(persistedNode._dom)) {
     dispatchMixinBeforeUpdate(newNode._mixState);
   }
-  diffHostProps(prevProps, nextProps, persistedNode._dom);
+  patchHostProps(prevProps, nextProps, persistedNode._dom);
+  syncDirectEventListeners(newNode);
   ensureControlledReflection(newNode, scheduler);
   syncControlledReflection(newNode, nextProps);
   diffChildren(
@@ -2589,13 +2807,169 @@ function reclaimPersistedMixinNode(persistedNode, newNode, frame, scheduler, sty
     newNode,
     rootTarget
   );
-  bindNodeMixRuntime(newNode, frame, scheduler, styles, true);
+  if (newNode._mixState) {
+    bindNodeMixRuntime(newNode, frame, scheduler, styles, true);
+  }
   if (shouldDispatchInlineMixinLifecycle(persistedNode._dom)) {
     scheduler.enqueueCommitPhase([
       () => dispatchMixinCommit(newNode._mixState)
     ]);
   }
 }
+
+// ../packages/ui/src/style/stylesheet.ts
+var SERVER_STYLE_SELECTOR = "style[data-rmx]";
+var DEFAULT_STYLE_LAYER = "rmx";
+function getStyleLayerName(className, layer = DEFAULT_STYLE_LAYER) {
+  return `${layer}.${className}`;
+}
+function compareNodesInDocumentOrder(a, b) {
+  if (a === b) return 0;
+  let position = a.compareDocumentPosition(b);
+  if (position & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+  if (position & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+  return 0;
+}
+function isParentNode(value) {
+  return "querySelectorAll" in value;
+}
+function collectServerStyleTagsFromNode(node, into) {
+  if (isHtmlStyleElement(node) && node.matches(SERVER_STYLE_SELECTOR)) {
+    into.add(node);
+    return;
+  }
+  if (!(node instanceof Element) && !(node instanceof Document) && !(node instanceof DocumentFragment)) {
+    return;
+  }
+  let nested = node.querySelectorAll?.(SERVER_STYLE_SELECTOR) ?? [];
+  for (let i = 0; i < nested.length; i++) {
+    let el = nested[i];
+    if (isHtmlStyleElement(el)) {
+      into.add(el);
+    }
+  }
+}
+function collectServerStyleTags(source) {
+  let styles = /* @__PURE__ */ new Set();
+  if (isParentNode(source)) {
+    collectServerStyleTagsFromNode(source, styles);
+  } else {
+    for (let node of source) {
+      collectServerStyleTagsFromNode(node, styles);
+    }
+  }
+  return Array.from(styles).sort(compareNodesInDocumentOrder);
+}
+function isHtmlStyleElement(node) {
+  return typeof node === "object" && node !== null && node instanceof HTMLStyleElement;
+}
+function getStyleSelector(styleEl) {
+  let selector = styleEl.getAttribute("data-rmx")?.trim();
+  return selector ? selector : null;
+}
+function createStyleManager(layer = "rmx") {
+  let stylesheet = null;
+  let generation = 0;
+  let ruleMap = /* @__PURE__ */ new Map();
+  function getStylesheet() {
+    if (!stylesheet) {
+      stylesheet = new CSSStyleSheet();
+      document.adoptedStyleSheets.push(stylesheet);
+    }
+    return stylesheet;
+  }
+  function removeStylesheet() {
+    if (!stylesheet) return;
+    document.adoptedStyleSheets = Array.from(document.adoptedStyleSheets).filter(
+      (s) => s !== stylesheet
+    );
+    stylesheet = null;
+  }
+  function clearStylesheet() {
+    if (!stylesheet) return;
+    for (let i = stylesheet.cssRules.length - 1; i >= 0; i--) {
+      stylesheet.deleteRule(i);
+    }
+  }
+  function adoptServerStyleTag(styleEl) {
+    let selector = getStyleSelector(styleEl);
+    if (!selector) return;
+    if (ruleMap.has(selector)) {
+      styleEl.remove();
+      return;
+    }
+    let cssText = styleEl.textContent?.trim() ?? "";
+    if (cssText.length === 0) {
+      styleEl.remove();
+      return;
+    }
+    try {
+      let sheet = getStylesheet();
+      let index = sheet.cssRules.length;
+      sheet.insertRule(cssText, index);
+      ruleMap.set(selector, { count: 1, index });
+      styleEl.remove();
+    } catch {
+    }
+  }
+  function has(className) {
+    let entry = ruleMap.get(className);
+    return entry !== void 0 && entry.count > 0;
+  }
+  function getGeneration() {
+    return generation;
+  }
+  function insert2(className, rule) {
+    let entry = ruleMap.get(className);
+    if (entry) {
+      entry.count++;
+      return;
+    }
+    let sheet = getStylesheet();
+    let index = sheet.cssRules.length;
+    sheet.insertRule(`@layer ${getStyleLayerName(className, layer)} { ${rule} }`, index);
+    ruleMap.set(className, { count: 1, index });
+  }
+  function remove2(className) {
+    let entry = ruleMap.get(className);
+    if (!entry) return;
+    entry.count--;
+    if (entry.count > 0) {
+      return;
+    }
+    let indexToDelete = entry.index;
+    ruleMap.delete(className);
+    if (!stylesheet) return;
+    stylesheet.deleteRule(indexToDelete);
+    for (let [, data] of ruleMap.entries()) {
+      if (data.index > indexToDelete) {
+        data.index--;
+      }
+    }
+  }
+  function reset() {
+    clearStylesheet();
+    ruleMap.clear();
+    removeStylesheet();
+    generation++;
+  }
+  function adoptServerStyles(source) {
+    let styles = collectServerStyleTags(source);
+    for (let styleEl of styles) {
+      adoptServerStyleTag(styleEl);
+    }
+  }
+  function dispose() {
+    removeStylesheet();
+    ruleMap.clear();
+    generation++;
+  }
+  return { insert: insert2, remove: remove2, has, getGeneration, reset, adoptServerStyles, dispose };
+}
+
+// ../packages/ui/src/runtime/diff-props.ts
+var globalStyleManager = typeof window !== "undefined" ? createStyleManager() : null;
+var defaultStyleManager = globalStyleManager;
 
 // ../packages/ui/src/runtime/scheduler.ts
 var MAX_CASCADING_UPDATES = 50;
@@ -2963,8 +3337,7 @@ function diffNodes(curr, next, context) {
         parent.appendChild(n);
       }
     } else if (c && !n) {
-      disposeRemovedSubFrames(c, context);
-      parent.removeChild(c);
+      removeNode(c, parent, context);
     } else if (c && n) {
       if (isVirtualRootStartMarker(c) && isVirtualRootStartMarker(n)) {
         let currentEnd = findHydrationEndMarker(c);
@@ -2999,13 +3372,19 @@ function diffNode(current, next, context) {
   }
   if (isCommentNode(current) && isCommentNode(next)) {
     let newData = next.data;
-    if (current.data !== newData) current.data = newData;
+    if (current.data !== newData) {
+      if (isFrameStartMarker(current)) disposeFrameStartMarker(current, context);
+      current.data = newData;
+    }
     return;
   }
   if (isElement(current) && isElement(next)) {
     if (current.tagName !== next.tagName) {
       let parent2 = current.parentNode;
-      if (parent2) parent2.replaceChild(next, current);
+      if (parent2) {
+        parent2.insertBefore(next, current);
+        removeNode(current, parent2, context);
+      }
       return;
     }
     diffElementAttributes(current, next);
@@ -3014,7 +3393,10 @@ function diffNode(current, next, context) {
     return;
   }
   let parent = current.parentNode;
-  if (parent) parent.replaceChild(next, current);
+  if (parent) {
+    parent.insertBefore(next, current);
+    removeNode(current, parent, context);
+  }
 }
 function diffElementAttributes(current, next) {
   let prevAttrNames = current.getAttributeNames();
@@ -3168,8 +3550,7 @@ function diffElementChildren(current, next, context) {
   for (let i = 0; i < currentChildren.length; i++) {
     if (!used[i]) {
       let nodeToRemove = currentChildren[i];
-      disposeRemovedSubFrames(nodeToRemove, context);
-      current.removeChild(currentChildren[i]);
+      removeNode(nodeToRemove, current, context);
     }
   }
 }
@@ -3217,28 +3598,68 @@ function isCommentNode(node) {
 function isFrameStartMarker(node) {
   return node instanceof Comment && node.data.trim().startsWith("rmx:f:");
 }
-function disposeRemovedSubFrames(node, context) {
+function removeNode(node, parent, context) {
+  disposeRemovedVirtualRoots(node);
+  disposeRemovedSubFrames(node, context);
+  if (node.parentNode === parent) {
+    parent.removeChild(node);
+  }
+}
+function disposeRemovedVirtualRoots(node) {
   let stack = [node];
   while (stack.length > 0) {
     let next = stack.pop();
     if (!next) continue;
-    if (isFrameStartMarker(next)) {
-      let subFrame = context.frameInstances.get(next);
-      if (subFrame) {
-        subFrame.dispose();
-        context.frameInstances.delete(next);
-      }
+    if (isHydratedVirtualRootStartMarker(next)) {
+      next.$rmx.dispose();
+      continue;
     }
     for (let child of Array.from(next.childNodes)) {
       stack.push(child);
     }
   }
 }
+function disposeRemovedSubFrames(node, context) {
+  let stack = [node];
+  while (stack.length > 0) {
+    let next = stack.pop();
+    if (!next) continue;
+    if (isFrameStartMarker(next)) {
+      disposeFrameStartMarker(next, context);
+    }
+    for (let child of Array.from(next.childNodes)) {
+      stack.push(child);
+    }
+  }
+}
+function disposeFrameStartMarker(marker, context) {
+  let subFrame = context.frameInstances.get(marker);
+  if (subFrame) {
+    subFrame.dispose();
+    context.frameInstances.delete(marker);
+  }
+}
 function isVirtualRootStartMarker(node) {
   return isCommentNode(node) && node.data.trim().startsWith("rmx:h:");
 }
+function isHydratedVirtualRootStartMarker(node) {
+  return isVirtualRootStartMarker(node) && "$rmx" in node;
+}
 function isVirtualRootEndMarker(node) {
   return isCommentNode(node) && node.data.trim() === "/rmx:h";
+}
+
+// ../packages/ui/src/runtime/stream-protocol.ts
+var FLUSH_MARKER_PATTERN = /<!--\s*rmx:flush\s+(document|fragment)\s*-->/g;
+function findFlushMarker(html, startIndex) {
+  FLUSH_MARKER_PATTERN.lastIndex = startIndex;
+  let match = FLUSH_MARKER_PATTERN.exec(html);
+  if (!match) return void 0;
+  return {
+    index: match.index,
+    endIndex: FLUSH_MARKER_PATTERN.lastIndex,
+    kind: match[1]
+  };
 }
 
 // ../packages/ui/src/runtime/frame.ts
@@ -3321,9 +3742,9 @@ function createFrame(root, init) {
   async function render(content, options) {
     if (options?.signal?.aborted) return;
     if (content instanceof ReadableStream) {
-      await renderFrameStream(content, container.doc, async (html) => {
+      await renderFrameStream(content, container.doc, async (html, flushKind) => {
         if (options?.signal?.aborted) return;
-        await render(html, options);
+        await render(html, { ...options, flushKind });
       });
       return;
     }
@@ -3343,12 +3764,20 @@ function createFrame(root, init) {
       contentRoot.dispose();
       contentRoot = void 0;
     }
+    if (typeof content === "string") {
+      let flushed = await consumeFlushBatches(content, async (html, flushKind) => {
+        await render(html, { ...options, flushKind });
+      });
+      if (flushed.applied) {
+        if (flushed.remainder !== "") {
+          await render(flushed.remainder, { ...options, flushKind: "fragment" });
+        }
+        return;
+      }
+    }
     let htmlContent = typeof content === "string" ? stripDoctypeMarkup(content) : void 0;
-    let isFullDocumentReload = container.root instanceof Document && htmlContent !== void 0 && isFullDocumentHtml(htmlContent);
+    let isFullDocumentReload = container.root instanceof Document && htmlContent !== void 0 && options?.flushKind === "document";
     if (isFullDocumentReload && htmlContent !== void 0) {
-      let previousBodyNodes = Array.from(container.doc.body.childNodes);
-      removeVirtualRoots(previousBodyNodes);
-      disposeSubFrames(previousBodyNodes, context);
       let parsed = new DOMParser().parseFromString(htmlContent, "text/html");
       mergeRmxDataFromDocument(context.data, parsed);
       context.styleManager.reset();
@@ -3356,16 +3785,14 @@ function createFrame(root, init) {
         collectFrameServerStyleTags(createElementContainer(parsed))
       );
       syncElementAttributes(container.doc.documentElement, parsed.documentElement);
-      syncElementAttributes(container.doc.head, parsed.head);
-      syncElementAttributes(container.doc.body, parsed.body);
-      diffNodes(Array.from(container.doc.head.childNodes), Array.from(parsed.head.childNodes), {
+      diffNodes([container.doc.head], [parsed.head], {
         ...context,
-        regionParent: container.doc.head,
+        regionParent: container.doc.documentElement,
         regionTailRef: null
       });
-      diffNodes(Array.from(container.doc.body.childNodes), Array.from(parsed.body.childNodes), {
+      diffNodes([container.doc.body], [parsed.body], {
         ...context,
-        regionParent: container.doc.body,
+        regionParent: container.doc.documentElement,
         regionTailRef: null
       });
       let bodyContainer = createElementContainer(container.doc.body);
@@ -3920,7 +4347,6 @@ async function renderFrameStream(stream, doc, applyHtml) {
   let decoder = new TextDecoder();
   let buffer = "";
   let html = "";
-  let appliedLength = 0;
   let appliedOnce = false;
   try {
     while (true) {
@@ -3931,13 +4357,9 @@ async function renderFrameStream(stream, doc, applyHtml) {
       buffer = parsed2.remainder;
       if (parsed2.html !== "") {
         html += parsed2.html;
-        let htmlMarkers = collectHtmlMarkerSummary(html);
-        if (!hasBalancedMarkerSummary(htmlMarkers)) {
-          continue;
-        }
-        await applyHtml(html);
-        appliedLength = html.length;
-        appliedOnce = true;
+        let flushed = await consumeFlushBatches(html, applyHtml);
+        appliedOnce = flushed.applied || appliedOnce;
+        html = flushed.remainder;
       }
     }
     buffer += decoder.decode();
@@ -3948,16 +4370,29 @@ async function renderFrameStream(stream, doc, applyHtml) {
       html += buffer;
       buffer = "";
     }
-    if (html !== "" && html.length > appliedLength) {
-      await applyHtml(html);
+    if (html !== "") {
+      await applyHtml(html, "fragment");
       appliedOnce = true;
     }
     if (html === "" && !appliedOnce) {
-      await applyHtml("");
+      await applyHtml("", "fragment");
     }
   } finally {
     reader.releaseLock();
   }
+}
+async function consumeFlushBatches(html, applyHtml) {
+  let applied = false;
+  let cursor = 0;
+  let marker = findFlushMarker(html, cursor);
+  while (marker) {
+    let batch = html.slice(cursor, marker.index);
+    await applyHtml(batch, marker.kind);
+    applied = true;
+    cursor = marker.endIndex;
+    marker = findFlushMarker(html, cursor);
+  }
+  return { applied, remainder: html.slice(cursor) };
 }
 function createContainer(root) {
   return Array.isArray(root) ? createCommentContainer(root) : createElementContainer(root);
@@ -4003,10 +4438,6 @@ function createFragmentFromString(doc, content) {
 }
 function isRemixNodeFrameContent(content) {
   return !(content instanceof ReadableStream || content instanceof DocumentFragment || typeof content === "string");
-}
-function isFullDocumentHtml(content) {
-  let trimmed = content.trimStart();
-  return /^<!doctype html\b/i.test(trimmed) || /^<html[\s>]/i.test(trimmed);
 }
 function findHydrationMarkers(container) {
   let results = [];
@@ -4072,17 +4503,6 @@ function findEndMarker(start, isStart, isEnd) {
   }
   throw new Error("End marker not found");
 }
-function collectHtmlMarkerSummary(html) {
-  return {
-    frameStarts: html.match(/<!--\s*rmx:f:/g)?.length ?? 0,
-    frameEnds: html.match(/<!--\s*\/rmx:f\s*-->/g)?.length ?? 0,
-    hydrationStarts: html.match(/<!--\s*rmx:h:/g)?.length ?? 0,
-    hydrationEnds: html.match(/<!--\s*\/rmx:h\s*-->/g)?.length ?? 0
-  };
-}
-function hasBalancedMarkerSummary(summary) {
-  return summary.frameStarts === summary.frameEnds && summary.hydrationStarts === summary.hydrationEnds;
-}
 
 // ../packages/ui/src/runtime/navigation.ts
 function startNavigationListener(signal) {
@@ -4096,7 +4516,7 @@ function startNavigationListenerImpl(signal, options) {
   navigation.addEventListener(
     "navigate",
     (event) => {
-      if (!event.canIntercept) return;
+      if (!event.canIntercept || isCrossOriginDestination(event)) return;
       let state = getRuntimeNavigationState(event);
       if (!state) return;
       let topFrame2 = options.getTopFrame();
@@ -4121,6 +4541,10 @@ function startNavigationListenerImpl(signal, options) {
 }
 function isRuntimeNavigation(info) {
   return typeof info === "object" && info != null && "$rmx" in info;
+}
+function isCrossOriginDestination(event) {
+  let destination = new URL(event.destination.url);
+  return destination.origin !== window.location.origin;
 }
 function getRuntimeNavigationState(event) {
   if (event.navigationType === "traverse") {
@@ -4207,6 +4631,16 @@ function run(init) {
   });
 }
 
+// src/shared/breakpoints.ts
+var MOBILE_NAV_BREAKPOINT = 980;
+var MOBILE_TOP_BAR_HEIGHT = 48;
+var MOBILE_NAV_MAX_VIEWPORT_HEIGHT = 0.85;
+var MOBILE_NAV_MAX_HEIGHT_OFFSET = MOBILE_TOP_BAR_HEIGHT + 8;
+var MOBILE_TOP_BAR_HEIGHT_PX = `${MOBILE_TOP_BAR_HEIGHT}px`;
+var MOBILE_NAV_MEDIA_QUERY = `(max-width: ${MOBILE_NAV_BREAKPOINT}px)`;
+var MOBILE_NAV_MEDIA_RULE = `@media ${MOBILE_NAV_MEDIA_QUERY}`;
+var MOBILE_NAV_MAX_HEIGHT = `calc(${MOBILE_NAV_MAX_VIEWPORT_HEIGHT * 100}vh - ${MOBILE_NAV_MAX_HEIGHT_OFFSET}px)`;
+
 // src/client/entry.tsx
 var app = run({
   async loadModule(moduleUrl, exportName) {
@@ -4229,15 +4663,28 @@ var app = run({
 app.ready().catch((error) => {
   console.error("Frame adoption failed:", error);
 });
+var navToggle = document.getElementById("nav-toggle");
+if (navToggle instanceof HTMLInputElement) {
+  navToggle.addEventListener("change", () => {
+    if (!navToggle.checked || !isMobileNav()) return;
+    let sidebar = document.getElementById("docs-sidebar");
+    let activeLink = sidebar?.querySelector('[data-active-doc="true"]');
+    if (!(sidebar instanceof HTMLElement) || !(activeLink instanceof HTMLElement)) return;
+    let sidebarRect = sidebar.getBoundingClientRect();
+    let activeRect = activeLink.getBoundingClientRect();
+    let activeOffset = activeRect.top - sidebarRect.top + sidebar.scrollTop;
+    let expandedHeight = Math.min(
+      sidebar.scrollHeight,
+      window.innerHeight * MOBILE_NAV_MAX_VIEWPORT_HEIGHT - MOBILE_NAV_MAX_HEIGHT_OFFSET
+    );
+    sidebar.scrollTop = activeOffset - expandedHeight / 2 + activeLink.clientHeight / 2;
+  });
+}
 window.navigation.addEventListener("navigate", () => {
-  let toggle = document.getElementById("nav-toggle");
-  if (toggle) {
-    toggle.checked = false;
-  }
-  let transition = window.navigation.transition;
-  if (transition) {
-    let overlay = document.getElementById("nav-overlay");
-    overlay?.classList.add("active");
-    transition.finished.finally(() => overlay?.classList.remove("active"));
+  if (navToggle instanceof HTMLInputElement) {
+    navToggle.checked = false;
   }
 });
+function isMobileNav() {
+  return window.matchMedia(MOBILE_NAV_MEDIA_QUERY).matches;
+}

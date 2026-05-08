@@ -1,13 +1,13 @@
 ---
 title: SpringIterator
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/animation/spring.ts#L32
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/spring.ts#L32
 ---
 
 # SpringIterator
 
 ## Summary
 
-Iterator returned by spring, decorated for CSS and WAAPI use.
+Iterator returned by [`spring`](/api/remix/ui/animation/function/spring/), decorated for CSS and WAAPI use.
 
 ## Signature
 
@@ -26,30 +26,33 @@ interface SpringIterator {
 
 ## Properties
 
-### duration
+### `duration`
 
 Time when spring settles to rest (milliseconds)
 
-### easing
+### `easing`
 
 CSS linear() easing function
 
 ## Methods
 
-### [iterator](): IterableIterator<number, any, any>
+### `[iterator](): IterableIterator<number, any, any>`
 
-### next(__namedParameters: [] | [any]): IteratorResult<number, any>
 
-#### `__namedParameters`
 
-### return(value: any): IteratorResult<number, any>
+### `next(__namedParameters: [] | [any]): IteratorResult<number, any>`
 
-#### `value`
 
-### throw(e: any): IteratorResult<number, any>
 
-#### `e`
+### `return(value: any): IteratorResult<number, any>`
 
-### toString(): string
+
+
+### `throw(e: any): IteratorResult<number, any>`
+
+
+
+### `toString(): string`
 
 Returns "duration ms linear(...)" for CSS transitions
+

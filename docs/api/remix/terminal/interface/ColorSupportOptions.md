@@ -1,6 +1,6 @@
 ---
 title: ColorSupportOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/terminal/src/lib/env.ts#L9
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/env.ts#L9
 ---
 
 # ColorSupportOptions
@@ -21,10 +21,10 @@ interface ColorSupportOptions {
 
 ## Properties
 
-### env
+### `env`
 
 Environment variables used for color detection (defaults to `process.env`).
 
-### stream
+### `stream`
 
 Output stream whose TTY support should be used for color detection (defaults to `process.stdout`).

@@ -1,6 +1,6 @@
 ---
 title: CreateStylesOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/terminal/src/lib/styles.ts#L214
+source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/styles.ts#L214
 ---
 
 # CreateStylesOptions
@@ -22,14 +22,14 @@ interface CreateStylesOptions {
 
 ## Properties
 
-### colors
+### `colors`
 
 Explicitly enables or disables ANSI styles instead of using automatic color detection.
 
-### env
+### `env`
 
 Environment variables used for color detection (defaults to `process.env`).
 
-### stream
+### `stream`
 
 Output stream whose TTY support should be used for color detection (defaults to `process.stdout`).

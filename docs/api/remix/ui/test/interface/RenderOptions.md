@@ -1,13 +1,13 @@
 ---
 title: RenderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/render.ts#L7
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/render.ts#L7
 ---
 
 # RenderOptions
 
 ## Summary
 
-Options for render.
+Options for [`render`](/api/remix/ui/test/function/render/).
 
 ## Signature
 
@@ -51,15 +51,15 @@ interface RenderOptions {
 
 ## Properties
 
-### container
+### `container`
 
 The element to mount the component into. Defaults to a fresh `div` appended to
 `document.body`.
 
-### frame
+### `frame`
 
-### frameInit
+### `frameInit`
 
-### scheduler
+### `scheduler`
 
-### styleManager
+### `styleManager`

@@ -1,6 +1,6 @@
 ---
 title: getTableColumnDefinitions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/table.ts#L395
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L395
 ---
 
 # getTableColumnDefinitions
@@ -17,10 +17,6 @@ function getTableColumnDefinitions<table extends AnyTable>(
 ): { [column in string]: ColumnDefinition };
 
 ```
-
-## Params
-
-### `table`
 
 ## Returns
 

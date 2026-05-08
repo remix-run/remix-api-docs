@@ -1,6 +1,6 @@
 ---
 title: GitHubAuthProfile
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/github.ts#L34
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/github.ts#L34
 ---
 
 # GitHubAuthProfile
@@ -25,26 +25,26 @@ interface GitHubAuthProfile {
 
 ## Properties
 
-### avatar_url
+### `avatar_url`
 
 Avatar image URL returned by GitHub, when available.
 
-### email
+### `email`
 
 Primary email returned by GitHub, when available.
 
-### html_url
+### `html_url`
 
 Public GitHub profile URL, when available.
 
-### id
+### `id`
 
 Stable GitHub user identifier.
 
-### login
+### `login`
 
 GitHub login handle.
 
-### name
+### `name`
 
 Display name returned by GitHub, when available.

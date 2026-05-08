@@ -1,6 +1,6 @@
 ---
 title: CacheControl
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/cache-control.ts#L164
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/cache-control.ts#L164
 ---
 
 # CacheControl
@@ -43,10 +43,6 @@ class CacheControl {
 }
 
 ```
-
-## Constructor Params
-
-### `init`
 
 ## Properties
 
@@ -120,10 +116,14 @@ The configured `stale-while-revalidate` directive value in seconds.
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | CacheControlInit | null): CacheControl`
 
 Parse a Cache-Control header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

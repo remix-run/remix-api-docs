@@ -1,6 +1,6 @@
 ---
 title: ParseFormDataOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/form-data-parser/src/lib/form-data.ts#L101
+source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L101
 ---
 
 # ParseFormDataOptions
@@ -24,27 +24,27 @@ interface ParseFormDataOptions {
 
 ## Properties
 
-### maxFiles
+### `maxFiles`
 
 The maximum number of files that can be uploaded in a single request. If this limit is
 exceeded, a `MaxFilesExceededError` will be thrown.
 
-### maxFileSize
+### `maxFileSize`
 
 The maximum allowed size of a file in bytes. If an individual part's content
 exceeds this size, a `MaxFileSizeExceededError` will be thrown.
 
-### maxHeaderSize
+### `maxHeaderSize`
 
 The maximum allowed size of a header in bytes. If an individual part's header
 exceeds this size, a `MaxHeaderSizeExceededError` will be thrown.
 
-### maxParts
+### `maxParts`
 
 The maximum allowed number of parts in the multipart message. If this limit
 is exceeded, a `MaxPartsExceededError` will be thrown.
 
-### maxTotalSize
+### `maxTotalSize`
 
 The maximum allowed aggregate size of all part content in bytes. If this
 limit is exceeded, a `MaxTotalSizeExceededError` will be thrown.

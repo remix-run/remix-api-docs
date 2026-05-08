@@ -1,13 +1,13 @@
 ---
 title: CompressResponseOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/response/src/lib/compress.ts#L23
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/compress.ts#L23
 ---
 
 # CompressResponseOptions
 
 ## Summary
 
-Configuration for negotiated response compression in compressResponse.
+Configuration for negotiated response compression in [`compressResponse`](/api/remix/response/compress/function/compressResponse/).
 
 ## Signature
 
@@ -23,7 +23,7 @@ interface CompressResponseOptions {
 
 ## Properties
 
-### brotli
+### `brotli`
 
 node:zlib options for Brotli compression.
 
@@ -32,20 +32,20 @@ automatically applied unless you explicitly set a flush value.
 
 See: https://nodejs.org/api/zlib.html#class-brotlioptions
 
-### encodings
+### `encodings`
 
 Which encodings the server supports for negotiation in order of preference.
 Supported encodings: 'br', 'gzip', 'deflate'.
 Default: ['br', 'gzip', 'deflate']
 
-### threshold
+### `threshold`
 
 Minimum size in bytes to compress (only enforced if Content-Length is present).
 If Content-Length is absent, compression is applied regardless of this threshold.
 
 Default: 1024
 
-### zlib
+### `zlib`
 
 node:zlib options for gzip/deflate compression.
 

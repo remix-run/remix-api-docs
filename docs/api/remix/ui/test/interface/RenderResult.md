@@ -1,13 +1,13 @@
 ---
 title: RenderResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/render.ts#L18
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/render.ts#L18
 ---
 
 # RenderResult
 
 ## Summary
 
-Result returned by render.
+Result returned by [`render`](/api/remix/ui/test/function/render/).
 
 ## Signature
 
@@ -25,29 +25,29 @@ interface RenderResult {
 
 ## Properties
 
-### $
+### `$`
 
 Shorthand for `container.querySelector<HTMLElement>(selector)`.
 
-### $$
+### `$$`
 
 Shorthand for `container.querySelectorAll<HTMLElement>(selector)`.
 
-### act
+### `act`
 
 Runs `fn` and then flushes any pending component updates so the DOM reflects them
 before the next assertion.
 
-### cleanup
+### `cleanup`
 
 Disposes the root and removes the container from the DOM. Pass to `t.after()` for
 automatic cleanup at the end of a test.
 
-### container
+### `container`
 
 The element the component is mounted into.
 
-### root
+### `root`
 
 The [`VirtualRoot`](/api/remix/ui/type/VirtualRoot/) the component is rendered in. Use it to access the
 underlying scheduler or dispatch lifecycle events.

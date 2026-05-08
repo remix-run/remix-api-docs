@@ -1,6 +1,6 @@
 ---
 title: OAuthStandardTokens
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/provider.ts#L34
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/provider.ts#L34
 ---
 
 # OAuthStandardTokens
@@ -26,30 +26,30 @@ interface OAuthStandardTokens {
 
 ## Properties
 
-### accessToken
+### `accessToken`
 
 Access token returned by the provider.
 
-### dpop
+### `dpop`
 
 DPoP binding data is not present for non-DPoP tokens.
 
-### expiresAt
+### `expiresAt`
 
 Expiration time derived from the provider token response, when available.
 
-### idToken
+### `idToken`
 
 OpenID Connect ID token returned by the provider, when available.
 
-### refreshToken
+### `refreshToken`
 
 Refresh token returned by the provider, when available.
 
-### scope
+### `scope`
 
 Scopes granted to the current access token, when provided by the provider.
 
-### tokenType
+### `tokenType`
 
 Token type returned by the provider, such as `Bearer`.

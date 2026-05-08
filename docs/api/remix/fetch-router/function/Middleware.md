@@ -1,6 +1,6 @@
 ---
 title: Middleware
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/middleware.ts#L90
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L83
 ---
 
 # Middleware
@@ -14,7 +14,7 @@ Handles a request and optionally delegates to the next middleware or handler.
 ```ts
 interface Middleware {
   (
-    context: RequestContext<params>,
+    context: RequestContext<any>,
     next: NextFunction,
   ): void | Response | Promise<void | Response | undefined> | undefined;
 }

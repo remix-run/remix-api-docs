@@ -1,13 +1,13 @@
 ---
 title: LoggerOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/logger-middleware/src/lib/logger.ts#L8
+source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L8
 ---
 
 # LoggerOptions
 
 ## Summary
 
-Options for the logger middleware.
+Options for the [`logger`](/api/remix/logger-middleware/function/logger/) middleware.
 
 ## Signature
 
@@ -22,7 +22,7 @@ interface LoggerOptions {
 
 ## Properties
 
-### colors
+### `colors`
 
 Enables ANSI colors for high-signal log tokens.
 
@@ -37,7 +37,7 @@ The following tokens are colorized when colors are enabled:
 - `%duration`
 - `%contentLength`
 
-### format
+### `format`
 
 The format to use for log messages.
 
@@ -62,6 +62,6 @@ The following tokens are available:
 - `%url` - The full URL of the request
 - `%userAgent` - The `User-Agent` header of the request
 
-### log
+### `log`
 
 The function to use to log messages.

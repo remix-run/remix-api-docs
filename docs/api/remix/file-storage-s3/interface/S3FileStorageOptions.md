@@ -1,6 +1,6 @@
 ---
 title: S3FileStorageOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/file-storage-s3/src/lib/s3.ts#L16
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage-s3/src/lib/s3.ts#L16
 ---
 
 # S3FileStorageOptions
@@ -17,8 +17,8 @@ interface S3FileStorageOptions {
   bucket: string;
   endpoint?: string;
   fetch?: {
-    (input: URL | RequestInfo, init?: RequestInit): Promise<Response>;
-    (input: string | URL | Request, init?: RequestInit): Promise<Response>;
+    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
+    (input: string | Request | URL, init?: RequestInit): Promise<Response>;
   };
   forcePathStyle?: boolean;
   region: string;
@@ -30,35 +30,35 @@ interface S3FileStorageOptions {
 
 ## Properties
 
-### accessKeyId
+### `accessKeyId`
 
 AWS access key ID used to sign S3 requests.
 
-### bucket
+### `bucket`
 
 Bucket name used for all file storage operations.
 
-### endpoint
+### `endpoint`
 
 Custom S3-compatible endpoint URL. Defaults to AWS S3 for the given region.
 
-### fetch
+### `fetch`
 
 Optional fetch implementation.
 
-### forcePathStyle
+### `forcePathStyle`
 
 Whether to use path-style bucket URLs (`/bucket/key`). Defaults to `true` when `endpoint` is
 provided and `false` otherwise.
 
-### region
+### `region`
 
 AWS region for request signing.
 
-### secretAccessKey
+### `secretAccessKey`
 
 AWS secret access key used to sign S3 requests.
 
-### sessionToken
+### `sessionToken`
 
 Optional session token for temporary credentials.

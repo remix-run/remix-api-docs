@@ -1,13 +1,13 @@
 ---
 title: RangeInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/range.ts#L6
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/range.ts#L6
 ---
 
 # RangeInit
 
 ## Summary
 
-Initializer for a Range header value.
+Initializer for a [`Range`](/api/remix/headers/class/Range/) header value.
 
 ## Signature
 
@@ -21,13 +21,13 @@ interface RangeInit {
 
 ## Properties
 
-### ranges
+### `ranges`
 
 The ranges requested. Each range has optional start and end values.
 - {start: 0, end: 99} = bytes 0-99
 - {start: 100} = bytes 100- (from 100 to end)
 - {end: 500} = bytes -500 (last 500 bytes)
 
-### unit
+### `unit`
 
 The unit of the range, typically "bytes"

@@ -1,6 +1,6 @@
 ---
 title: TypedEventTarget
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/typed-event-target.ts#L4
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/typed-event-target.ts#L4
 ---
 
 # TypedEventTarget
@@ -44,8 +44,6 @@ class TypedEventTarget<eventMap> {
 
 ```
 
-## Constructor Params
-
 ## Properties
 
 ### `__eventMap`
@@ -58,13 +56,15 @@ Phantom property that carries the event map type on instances.
 
 Adds a listener for a typed event name from the event map.
 
-#### `type`
+#### Parameters
 
-#### `listener`
+##### `type`
+
+##### `listener`
 
 Listener to invoke when the event fires.
 
-#### `options`
+##### `options`
 
 Listener registration options.
 
@@ -72,15 +72,17 @@ Listener registration options.
 
 Adds a listener using the standard untyped `EventTarget` signature.
 
-#### `type`
+#### Parameters
+
+##### `type`
 
 Event name to listen for.
 
-#### `listener`
+##### `listener`
 
 Listener to invoke when the event fires.
 
-#### `options`
+##### `options`
 
 Listener registration options.
 
@@ -90,19 +92,21 @@ The **`dispatchEvent()`** method of the EventTarget sends an Event to the object
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
 
-#### `event`
+
 
 ### `removeEventListener<type extends string>(type: type, listener: TypedEventListener<eventMap>[type], options: EventListenerOptions): void`
 
 Removes a listener for a typed event name from the event map.
 
-#### `type`
+#### Parameters
 
-#### `listener`
+##### `type`
+
+##### `listener`
 
 Previously registered listener.
 
-#### `options`
+##### `options`
 
 Listener removal options.
 
@@ -110,14 +114,16 @@ Listener removal options.
 
 Removes a listener using the standard untyped `EventTarget` signature.
 
-#### `type`
+#### Parameters
+
+##### `type`
 
 Event name to stop listening for.
 
-#### `listener`
+##### `listener`
 
 Previously registered listener.
 
-#### `options`
+##### `options`
 
 Listener removal options.

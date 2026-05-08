@@ -1,6 +1,6 @@
 ---
 title: AtmosphereAuthorizationServerMetadata
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/atmosphere.ts#L44
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L44
 ---
 
 # AtmosphereAuthorizationServerMetadata
@@ -33,58 +33,58 @@ interface AtmosphereAuthorizationServerMetadata {
 
 ## Properties
 
-### authorization_endpoint
+### `authorization_endpoint`
 
 Browser authorization endpoint used after PAR completes.
 
-### authorization_response_iss_parameter_supported
+### `authorization_response_iss_parameter_supported`
 
 Indicates whether the `iss` query parameter is returned in callbacks.
 
-### client_id_metadata_document_supported
+### `client_id_metadata_document_supported`
 
 Indicates whether the server supports client metadata document lookup.
 
-### code_challenge_methods_supported
+### `code_challenge_methods_supported`
 
 PKCE challenge methods accepted by the authorization server.
 
-### dpop_signing_alg_values_supported
+### `dpop_signing_alg_values_supported`
 
 DPoP signing algorithms accepted by the authorization server.
 
-### grant_types_supported
+### `grant_types_supported`
 
 OAuth grant types accepted by the authorization server.
 
-### issuer
+### `issuer`
 
 Issuer origin for the authorization server.
 
-### pushed_authorization_request_endpoint
+### `pushed_authorization_request_endpoint`
 
 Pushed authorization request endpoint required by atproto OAuth.
 
-### require_pushed_authorization_requests
+### `require_pushed_authorization_requests`
 
 Indicates whether the authorization server requires PAR.
 
-### response_types_supported
+### `response_types_supported`
 
 OAuth response types accepted by the authorization server.
 
-### scopes_supported
+### `scopes_supported`
 
 Scopes advertised by the authorization server.
 
-### token_endpoint
+### `token_endpoint`
 
 Token endpoint used for authorization-code exchanges.
 
-### token_endpoint_auth_methods_supported
+### `token_endpoint_auth_methods_supported`
 
 Token endpoint auth methods accepted by the authorization server.
 
-### token_endpoint_auth_signing_alg_values_supported
+### `token_endpoint_auth_signing_alg_values_supported`
 
 Signing algorithms accepted for private-key JWT client authentication.

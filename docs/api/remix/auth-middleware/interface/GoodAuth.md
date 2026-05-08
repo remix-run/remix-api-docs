@@ -1,6 +1,6 @@
 ---
 title: GoodAuth
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/auth.ts#L25
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L26
 ---
 
 # GoodAuth
@@ -22,14 +22,14 @@ interface GoodAuth<identity> {
 
 ## Properties
 
-### identity
+### `identity`
 
 Application-defined identity resolved for the current request.
 
-### method
+### `method`
 
 Auth method that successfully authenticated the request.
 
-### ok
+### `ok`
 
 Indicates that the current request is authenticated.

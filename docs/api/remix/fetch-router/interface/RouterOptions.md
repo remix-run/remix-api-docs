@@ -1,6 +1,6 @@
 ---
 title: RouterOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/router.ts#L171
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L63
 ---
 
 # RouterOptions
@@ -13,11 +13,8 @@ Options for creating a router.
 
 ```ts
 interface RouterOptions<context, middleware> {
-  defaultHandler?: RequestHandler<
-    ContextParams<ApplyMiddlewareTuple<context, middleware>>,
-    ApplyMiddlewareTuple<context, middleware>
-  >;
-  matcher?: Matcher<RouteMatchData>;
+  defaultHandler?: RequestHandler<MiddlewareContext<middleware, context>>;
+  matcher?: Matcher<RouteEntry>;
   middleware?: readonly [middleware];
 }
 
@@ -25,15 +22,17 @@ interface RouterOptions<context, middleware> {
 
 ## Properties
 
-### defaultHandler
+### `defaultHandler`
 
 The default request handler that runs when no route matches.
+Defaults to a 404 `Not Found` response.
 
-### matcher
+### `matcher`
 
 The matcher to use for matching routes.
+Defaults to `createMatcher()`.
 
-### middleware
+### `middleware`
 
 Middleware to run for every request handled by this router.
 

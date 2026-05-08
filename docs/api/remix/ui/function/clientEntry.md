@@ -1,6 +1,6 @@
 ---
 title: clientEntry
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/client-entries.ts#L89
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/client-entries.ts#L89
 ---
 
 # clientEntry
@@ -28,30 +28,31 @@ function clientEntry<props extends SerializableProps, context>(
 
 ## Example
 
-```tsx
+```ts
 export const Counter = clientEntry(
-  '/js/counter.js#Counter',
+  "/js/counter.js#Counter",
   function Counter(handle: Handle<{ initialCount?: number; label: string }>) {
-    let count = handle.props.initialCount ?? 0
+    let count = handle.props.initialCount ?? 0;
 
     return () => (
       <button
         type="button"
         mix={[
-          on('click', () => {
-            count++
-            handle.update()
+          on("click", () => {
+            count++;
+            handle.update();
           }),
         ]}
       >
         {handle.props.label} {count}
       </button>
-    )
-  }
-)
+    );
+  },
+);
+
 ```
 
-## Params
+## Parameters
 
 ### `entryId`
 

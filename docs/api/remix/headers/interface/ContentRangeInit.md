@@ -1,6 +1,6 @@
 ---
 title: ContentRangeInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/content-range.ts#L6
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-range.ts#L6
 ---
 
 # ContentRangeInit
@@ -23,21 +23,21 @@ interface ContentRangeInit {
 
 ## Properties
 
-### end
+### `end`
 
 The end position of the range (inclusive)
 Set to null for unsatisfied ranges
 
-### size
+### `size`
 
 The total size of the resource
 Set to '*' for unknown size
 
-### start
+### `start`
 
 The start position of the range (inclusive)
 Set to null for unsatisfied ranges
 
-### unit
+### `unit`
 
 The unit of the range, typically "bytes"

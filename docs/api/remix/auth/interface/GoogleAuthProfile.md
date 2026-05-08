@@ -1,6 +1,6 @@
 ---
 title: GoogleAuthProfile
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/google.ts#L41
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/google.ts#L41
 ---
 
 # GoogleAuthProfile
@@ -38,78 +38,78 @@ interface GoogleAuthProfile {
 
 ## Properties
 
-### birthdate
+### `birthdate`
 
 Birthdate claim for the authenticated user.
 
-### email
+### `email`
 
 Email address claim for the authenticated user.
 
-### email_verified
+### `email_verified`
 
 Indicates whether the provider has verified `email`.
 
-### family_name
+### `family_name`
 
 Family name claim for the authenticated user.
 
-### gender
+### `gender`
 
 Gender claim for the authenticated user.
 
-### given_name
+### `given_name`
 
 Given name claim for the authenticated user.
 
-### locale
+### `locale`
 
 Locale claim for the authenticated user.
 
-### middle_name
+### `middle_name`
 
 Middle name claim for the authenticated user.
 
-### name
+### `name`
 
 Full display name for the authenticated user.
 
-### nickname
+### `nickname`
 
 Nickname claim for the authenticated user.
 
-### phone_number
+### `phone_number`
 
 Phone number claim for the authenticated user.
 
-### phone_number_verified
+### `phone_number_verified`
 
 Indicates whether the provider has verified `phone_number`.
 
-### picture
+### `picture`
 
 Profile picture URL claim for the authenticated user.
 
-### preferred_username
+### `preferred_username`
 
 Preferred username claim for the authenticated user.
 
-### profile
+### `profile`
 
 Profile URL claim for the authenticated user.
 
-### sub
+### `sub`
 
 Stable subject identifier for the authenticated user.
 
-### updated_at
+### `updated_at`
 
 Timestamp claim describing when the profile was last updated.
 
-### website
+### `website`
 
 Personal website URL claim for the authenticated user.
 
-### zoneinfo
+### `zoneinfo`
 
 Time zone claim for the authenticated user.

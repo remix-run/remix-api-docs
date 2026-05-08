@@ -1,6 +1,6 @@
 ---
 title: ContentRange
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/content-range.ts#L35
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-range.ts#L35
 ---
 
 # ContentRange
@@ -32,10 +32,6 @@ class ContentRange {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Properties
 
 ### `end`
@@ -60,10 +56,14 @@ The range unit, typically `bytes`.
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | ContentRangeInit | null): ContentRange`
 
 Parse a Content-Range header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

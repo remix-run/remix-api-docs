@@ -1,13 +1,13 @@
 ---
 title: FileResponseOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/response/src/lib/file.ts#L52
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/file.ts#L52
 ---
 
 # FileResponseOptions
 
 ## Summary
 
-Options for creating a file response with createFileResponse.
+Options for creating a file response with [`createFileResponse`](/api/remix/response/file/function/createFileResponse/).
 
 ## Signature
 
@@ -16,7 +16,7 @@ interface FileResponseOptions<file> {
   acceptRanges?: boolean;
   cacheControl?: string;
   digest?: AlgorithmIdentifier | FileDigestFunction<file>;
-  etag?: false | "strong" | "weak";
+  etag?: false | "weak" | "strong";
   lastModified?: boolean;
 }
 
@@ -24,7 +24,7 @@ interface FileResponseOptions<file> {
 
 ## Properties
 
-### acceptRanges
+### `acceptRanges`
 
 Whether to support HTTP `Range` requests for partial content.
 
@@ -39,11 +39,11 @@ Note: Range requests and compression are mutually exclusive. When
 middleware will not compress the response. This is why the default behavior
 enables ranges only for non-compressible types.
 
-### cacheControl
+### `cacheControl`
 
 Cache-Control header value. If not provided, no Cache-Control header will be set.
 
-### digest
+### `digest`
 
 Hash algorithm or custom digest function for strong ETags.
 
@@ -54,7 +54,7 @@ Hash algorithm or custom digest function for strong ETags.
 
 Only used when `etag: 'strong'`. Ignored for weak ETags.
 
-### etag
+### `etag`
 
 ETag generation strategy.
 
@@ -62,6 +62,6 @@ ETag generation strategy.
 - `'strong'`: Generates strong ETags by hashing file content (requires digest computation)
 - `false`: Disables ETag generation
 
-### lastModified
+### `lastModified`
 
 Whether to include `Last-Modified` headers.

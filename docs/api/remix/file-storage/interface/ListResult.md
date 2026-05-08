@@ -1,6 +1,6 @@
 ---
 title: ListResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/file-storage/src/lib/file-storage.ts#L161
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L161
 ---
 
 # ListResult
@@ -21,11 +21,11 @@ interface ListResult<T> {
 
 ## Properties
 
-### cursor
+### `cursor`
 
 An opaque string that allows you to paginate over the keys in storage. Pass this back in the
 `options` object on the next `list()` call to get the next page of results.
 
-### files
+### `files`
 
 A list of the files in storage.

@@ -1,6 +1,6 @@
 ---
 title: HrefError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/route-pattern/src/lib/route-pattern/href.ts#L107
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern/href.ts#L115
 ---
 
 # HrefError
@@ -30,10 +30,6 @@ class HrefError {
 }
 
 ```
-
-## Constructor Params
-
-### `details`
 
 ## Properties
 
@@ -109,20 +105,17 @@ function c() {
 a();
 ```
 
-#### `targetObject`
 
-#### `constructorOpt`
 
 ### `message(details: HrefErrorDetails): string`
 
 Formats an error message for the given href failure details.
 
-#### `details`
+#### Parameters
+
+##### `details`
 
 Structured href failure details.
 
 ### `prepareStackTrace(err: Error, stackTraces: CallSite[]): any`
 
-#### `err`
-
-#### `stackTraces`

@@ -1,6 +1,6 @@
 ---
 title: Range
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/range.ts#L27
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/range.ts#L27
 ---
 
 # Range
@@ -32,10 +32,6 @@ class Range {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Properties
 
 ### `ranges`
@@ -52,7 +48,9 @@ The range unit, typically `bytes`.
 
 Checks if this range can be satisfied for a resource of the given size.
 
-#### `resourceSize`
+#### Parameters
+
+##### `resourceSize`
 
 The size of the resource in bytes
 
@@ -62,7 +60,9 @@ Normalizes the ranges for a resource of the given size.
 Returns an array of ranges with resolved start and end values.
 Returns an empty array if the range cannot be satisfied.
 
-#### `resourceSize`
+#### Parameters
+
+##### `resourceSize`
 
 The size of the resource in bytes
 
@@ -70,10 +70,14 @@ The size of the resource in bytes
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | RangeInit | null): Range`
 
 Parse a Range header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

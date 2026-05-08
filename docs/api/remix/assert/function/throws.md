@@ -1,6 +1,6 @@
 ---
 title: throws
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/assert.ts#L230
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L230
 ---
 
 # throws
@@ -24,12 +24,13 @@ function throws(fn: () => any, expectedError: any, message: string): void;
 ## Example
 
 ```ts
-assert.throws(() => JSON.parse('invalid'))
-assert.throws(() => riskyOp(), SyntaxError)
-assert.throws(() => riskyOp(), { code: 'ERR_INVALID_ARG_VALUE' })
+assert.throws(() => JSON.parse("invalid"));
+assert.throws(() => riskyOp(), SyntaxError);
+assert.throws(() => riskyOp(), { code: "ERR_INVALID_ARG_VALUE" });
+
 ```
 
-## Params
+## Parameters
 
 ### `fn`
 

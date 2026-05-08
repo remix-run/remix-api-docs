@@ -1,6 +1,6 @@
 ---
 title: APIAuthSchemeOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/schemes/api-key.ts#L8
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/api-key.ts#L8
 ---
 
 # APIAuthSchemeOptions
@@ -25,20 +25,17 @@ interface APIAuthSchemeOptions<identity> {
 
 ## Properties
 
-### headerName
+### `headerName`
 
 Request header that carries the API key.
 
-### name
+### `name`
 
 Method name exposed on the resolved auth state.
 
 ## Methods
 
-### verify(key: string, context: RequestContext): identity | Promise<identity | null> | null
+### `verify(key: string, context: RequestContext): identity | Promise<identity | null> | null`
 
 Verifies a parsed API key and returns the resolved identity on success.
 
-#### `key`
-
-#### `context`

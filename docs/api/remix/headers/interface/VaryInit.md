@@ -1,13 +1,13 @@
 ---
 title: VaryInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/vary.ts#L6
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/vary.ts#L6
 ---
 
 # VaryInit
 
 ## Summary
 
-Object form for constructing a Vary header value.
+Object form for constructing a [`Vary`](/api/remix/headers/class/Vary/) header value.
 
 ## Signature
 
@@ -20,6 +20,6 @@ interface VaryInit {
 
 ## Properties
 
-### headerNames
+### `headerNames`
 
 The request header names that determine cache eligibility.

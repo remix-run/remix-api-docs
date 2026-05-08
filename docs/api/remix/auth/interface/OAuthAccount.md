@@ -1,6 +1,6 @@
 ---
 title: OAuthAccount
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/provider.ts#L59
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/provider.ts#L59
 ---
 
 # OAuthAccount
@@ -21,10 +21,10 @@ interface OAuthAccount<provider> {
 
 ## Properties
 
-### provider
+### `provider`
 
 Provider name that issued the account identifier.
 
-### providerAccountId
+### `providerAccountId`
 
 Stable provider-specific account identifier for the authenticated user.

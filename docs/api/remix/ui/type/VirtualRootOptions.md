@@ -1,13 +1,13 @@
 ---
 title: VirtualRootOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/vdom.ts#L37
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L37
 ---
 
 # VirtualRootOptions
 
 ## Summary
 
-Options for creating a virtual DOM root with createRoot or createRangeRoot.
+Options for creating a virtual DOM root with [`createRoot`](/api/remix/ui/function/createRoot/) or [`createRangeRoot`](/api/remix/ui/function/createRangeRoot/).
 
 ## Signature
 

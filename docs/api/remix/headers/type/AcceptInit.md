@@ -1,13 +1,13 @@
 ---
 title: AcceptInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/accept.ts#L8
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept.ts#L8
 ---
 
 # AcceptInit
 
 ## Summary
 
-Initializer for an Accept header value.
+Initializer for an [`Accept`](/api/remix/headers/class/Accept/) header value.
 
 ## Signature
 

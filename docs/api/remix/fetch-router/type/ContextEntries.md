@@ -1,6 +1,6 @@
 ---
 title: ContextEntries
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/fetch-router/src/lib/request-context.ts#L39
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L42
 ---
 
 # ContextEntries

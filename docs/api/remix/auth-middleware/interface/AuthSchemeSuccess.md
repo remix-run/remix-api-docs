@@ -1,6 +1,6 @@
 ---
 title: AuthSchemeSuccess
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/auth.ts#L67
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L82
 ---
 
 # AuthSchemeSuccess
@@ -21,10 +21,10 @@ interface AuthSchemeSuccess<identity> {
 
 ## Properties
 
-### identity
+### `identity`
 
 Application-defined identity resolved by the scheme.
 
-### status
+### `status`
 
 Marks the scheme result as a successful authentication.

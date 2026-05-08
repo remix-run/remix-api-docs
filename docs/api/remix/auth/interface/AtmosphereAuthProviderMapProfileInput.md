@@ -1,6 +1,6 @@
 ---
 title: AtmosphereAuthProviderMapProfileInput
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/atmosphere.ts#L88
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L88
 ---
 
 # AtmosphereAuthProviderMapProfileInput
@@ -26,30 +26,30 @@ interface AtmosphereAuthProviderMapProfileInput {
 
 ## Properties
 
-### authorizationServer
+### `authorizationServer`
 
 Authorization server details retained for the authenticated account.
 
-### context
+### `context`
 
 Request context for the callback currently being processed.
 
-### did
+### `did`
 
 Stable DID returned by the authorization server token response.
 
-### handle
+### `handle`
 
 Verified handle claimed by the DID document, when one is available.
 
-### identifier
+### `identifier`
 
 Original handle or DID used to start the authorization flow.
 
-### pdsUrl
+### `pdsUrl`
 
 Personal Data Server URL declared in the DID document.
 
-### tokens
+### `tokens`
 
 OAuth tokens returned by the atproto authorization server.

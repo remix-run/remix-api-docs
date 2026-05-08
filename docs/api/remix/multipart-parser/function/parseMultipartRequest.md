@@ -1,6 +1,6 @@
 ---
 title: parseMultipartRequest
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/multipart-parser/src/lib/multipart-request.ts#L37
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart-request.ts#L37
 ---
 
 # parseMultipartRequest
@@ -8,7 +8,7 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/mult
 ## Summary
 
 Parse a multipart [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request)
-and yield each part as a MultipartPart object. Useful in HTTP server contexts
+and yield each part as a [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) object. Useful in HTTP server contexts
 for handling incoming `multipart/*` requests.
 
 ## Signature
@@ -21,7 +21,7 @@ function parseMultipartRequest(
 
 ```
 
-## Params
+## Parameters
 
 ### `request`
 

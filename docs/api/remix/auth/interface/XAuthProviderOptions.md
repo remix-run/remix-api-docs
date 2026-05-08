@@ -1,6 +1,6 @@
 ---
 title: XAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/x.ts#L22
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/x.ts#L22
 ---
 
 # XAuthProviderOptions
@@ -23,18 +23,18 @@ interface XAuthProviderOptions {
 
 ## Properties
 
-### clientId
+### `clientId`
 
 OAuth client identifier for your X application.
 
-### clientSecret
+### `clientSecret`
 
 OAuth client secret for your X application.
 
-### redirectUri
+### `redirectUri`
 
 Callback URL registered with X.
 
-### scopes
+### `scopes`
 
 Requested scopes for the X login flow.

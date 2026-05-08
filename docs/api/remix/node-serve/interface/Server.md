@@ -1,6 +1,6 @@
 ---
 title: Server
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/node-serve/src/lib/server.ts#L98
+source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/server.ts#L104
 ---
 
 # Server
@@ -23,20 +23,21 @@ interface Server {
 
 ## Properties
 
-### app
+### `app`
 
 The underlying native server application for advanced transport-specific customization.
 
-### port
+### `port`
 
 The active TCP port after `ready` resolves. This is useful when listening on port 0.
 
-### ready
+### `ready`
 
 A promise that resolves when the server has started listening.
 
 ## Methods
 
-### close(): void
+### `close(): void`
 
 Closes the listening socket and active connections.
+

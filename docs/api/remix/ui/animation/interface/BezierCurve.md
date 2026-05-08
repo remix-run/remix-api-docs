@@ -1,13 +1,13 @@
 ---
 title: BezierCurve
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/animation/tween.ts#L60
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/tween.ts#L60
 ---
 
 # BezierCurve
 
 ## Summary
 
-Cubic-bezier control points used by tween.
+Cubic-bezier control points used by [`tween`](/api/remix/ui/animation/function/tween/).
 
 ## Signature
 
@@ -23,18 +23,18 @@ interface BezierCurve {
 
 ## Properties
 
-### x1
+### `x1`
 
 First control point x coordinate.
 
-### x2
+### `x2`
 
 Second control point x coordinate.
 
-### y1
+### `y1`
 
 First control point y coordinate.
 
-### y2
+### `y2`
 
 Second control point y coordinate.

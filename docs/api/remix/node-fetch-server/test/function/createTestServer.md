@@ -1,6 +1,6 @@
 ---
 title: createTestServer
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/node-fetch-server/src/lib/test-server.ts#L30
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/test-server.ts#L30
 ---
 
 # createTestServer
@@ -9,7 +9,7 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/node
 
 Starts an `http.Server` on a random localhost port that delegates to the
 given fetch-style handler. Intended for integration tests — pair the
-returned TestServer with `t.serve()` from `@remix-run/test` to
+returned [`TestServer`](/api/remix/node-fetch-server/test/interface/TestServer/) with `t.serve()` from `@remix-run/test` to
 drive it from a Playwright `Page`.
 
 ## Signature
@@ -21,7 +21,7 @@ function createTestServer(
 
 ```
 
-## Params
+## Parameters
 
 ### `handler`
 

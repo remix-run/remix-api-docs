@@ -1,6 +1,6 @@
 ---
 title: SessionStorage
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/session/src/lib/session-storage.ts#L6
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session-storage.ts#L6
 ---
 
 # SessionStorage
@@ -21,20 +21,24 @@ interface SessionStorage {
 
 ## Methods
 
-### read(cookie: string | null): Promise<Session<Data, Data>>
+### `read(cookie: string | null): Promise<Session<Data, Data>>`
 
 Retrieve a new session from storage based on the session cookie.
 
-#### `cookie`
+#### Parameters
+
+##### `cookie`
 
 The session cookie value, or `null` if no session cookie is available
 
-### save(session: Session): Promise<string | null>
+### `save(session: Session): Promise<string | null>`
 
 Save session data in storage and return the session cookie.
 
 Note: If no session cookie should be set, this method returns `null`.
 
-#### `session`
+#### Parameters
+
+##### `session`
 
 The session to save

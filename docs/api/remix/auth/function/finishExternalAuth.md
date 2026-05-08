@@ -1,6 +1,6 @@
 ---
 title: finishExternalAuth
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/finish-external-auth.ts#L38
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/finish-external-auth.ts#L38
 ---
 
 # finishExternalAuth
@@ -25,7 +25,7 @@ function finishExternalAuth<
 
 ```
 
-## Params
+## Parameters
 
 ### `provider`
 

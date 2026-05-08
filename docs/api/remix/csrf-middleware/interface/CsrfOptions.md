@@ -1,6 +1,6 @@
 ---
 title: CsrfOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/csrf-middleware/src/lib/csrf.ts#L55
+source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L63
 ---
 
 # CsrfOptions
@@ -18,7 +18,7 @@ interface CsrfOptions {
   headerNames?: readonly string[];
   onError?: (
     reason: CsrfFailureReason,
-    context: RequestContext,
+    context: AnyRequestContext,
   ) => Response | Promise<Response>;
   origin?: CsrfOrigin;
   safeMethods?: readonly RequestMethod[];
@@ -30,36 +30,36 @@ interface CsrfOptions {
 
 ## Properties
 
-### allowMissingOrigin
+### `allowMissingOrigin`
 
 Allow requests without Origin/Referer headers.
 
-### fieldName
+### `fieldName`
 
 Form field name to read CSRF tokens from.
 
-### headerNames
+### `headerNames`
 
 Header names checked (in order) for CSRF tokens.
 
-### onError
+### `onError`
 
 Optional custom error response for rejected requests.
 
-### origin
+### `origin`
 
 Allowed cross-origin origins for unsafe requests.
 
 When omitted, requests are validated as same-origin.
 
-### safeMethods
+### `safeMethods`
 
 Methods that do not require CSRF validation.
 
-### tokenKey
+### `tokenKey`
 
 Session key used to store the server-generated CSRF token.
 
-### value
+### `value`
 
 Custom function for extracting the submitted token.

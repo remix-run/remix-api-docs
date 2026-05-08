@@ -1,13 +1,13 @@
 ---
 title: MethodOverrideOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/method-override-middleware/src/lib/method-override.ts#L7
+source: https://github.com/remix-run/remix/blob/main/packages/method-override-middleware/src/lib/method-override.ts#L7
 ---
 
 # MethodOverrideOptions
 
 ## Summary
 
-Options for the methodOverride middleware.
+Options for the [`methodOverride`](/api/remix/method-override-middleware/function/methodOverride/) middleware.
 
 ## Signature
 
@@ -20,6 +20,6 @@ interface MethodOverrideOptions {
 
 ## Properties
 
-### fieldName
+### `fieldName`
 
 The name of the form field to check for request method override.

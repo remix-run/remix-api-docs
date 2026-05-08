@@ -1,6 +1,6 @@
 ---
 title: IfMatchInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/if-match.ts#L7
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-match.ts#L7
 ---
 
 # IfMatchInit
@@ -20,6 +20,6 @@ interface IfMatchInit {
 
 ## Properties
 
-### tags
+### `tags`
 
 The entity tags to compare against the current entity.

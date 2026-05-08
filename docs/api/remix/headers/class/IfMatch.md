@@ -1,6 +1,6 @@
 ---
 title: IfMatch
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/if-match.ts#L21
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-match.ts#L21
 ---
 
 # IfMatch
@@ -31,10 +31,6 @@ class IfMatch {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Properties
 
 ### `tags`
@@ -49,7 +45,9 @@ Checks if the header contains the given entity tag.
 
 Note: This method checks only for exact matches and does not consider wildcards.
 
-#### `tag`
+#### Parameters
+
+##### `tag`
 
 The entity tag to check for
 
@@ -63,7 +61,9 @@ since the precondition passes regardless of the entity tag being checked.
 Uses strong comparison as per RFC 9110, meaning weak entity tags (prefixed with `W/`)
 will never match.
 
-#### `tag`
+#### Parameters
+
+##### `tag`
 
 The entity tag to check against
 
@@ -71,10 +71,14 @@ The entity tag to check against
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | string[] | IfMatchInit | null): IfMatch`
 
 Parse an If-Match header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, string[], init object, or null)

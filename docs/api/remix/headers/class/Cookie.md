@@ -1,6 +1,6 @@
 ---
 title: Cookie
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/cookie.ts#L17
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/cookie.ts#L17
 ---
 
 # Cookie
@@ -42,10 +42,6 @@ class Cookie {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Accessors
 
 ### `names`
@@ -66,15 +62,21 @@ An array of the values of the cookies in the header.
 
 Iterates over cookie name and value pairs.
 
+
+
 ### `clear(): void`
 
 Removes all cookies from the header.
+
+
 
 ### `delete(name: string): void`
 
 Removes a cookie with the given name from the header.
 
-#### `name`
+#### Parameters
+
+##### `name`
 
 The name of the cookie
 
@@ -82,15 +84,19 @@ The name of the cookie
 
 Returns an iterator of all cookie name and value pairs.
 
+
+
 ### `forEach(callback: (name: string, value: string, header: Cookie) => void, thisArg: any): void`
 
 Invokes the callback for each cookie name and value pair.
 
-#### `callback`
+#### Parameters
+
+##### `callback`
 
 The function to call for each pair
 
-#### `thisArg`
+##### `thisArg`
 
 The value to use as `this` when calling the callback
 
@@ -98,7 +104,9 @@ The value to use as `this` when calling the callback
 
 Gets the value of a cookie with the given name from the header.
 
-#### `name`
+#### Parameters
+
+##### `name`
 
 The name of the cookie
 
@@ -106,7 +114,9 @@ The name of the cookie
 
 True if a cookie with the given name exists in the header.
 
-#### `name`
+#### Parameters
+
+##### `name`
 
 The name of the cookie
 
@@ -114,11 +124,13 @@ The name of the cookie
 
 Sets a cookie with the given name and value in the header.
 
-#### `name`
+#### Parameters
+
+##### `name`
 
 The name of the cookie
 
-#### `value`
+##### `value`
 
 The value of the cookie
 
@@ -126,10 +138,14 @@ The value of the cookie
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | CookieInit | null): Cookie`
 
 Parse a Cookie header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

@@ -1,6 +1,6 @@
 ---
 title: FileMetadata
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/file-storage/src/lib/file-storage.ts#L117
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L117
 ---
 
 # FileMetadata
@@ -24,22 +24,22 @@ interface FileMetadata {
 
 ## Properties
 
-### key
+### `key`
 
 The key of the file in storage.
 
-### lastModified
+### `lastModified`
 
 The last modified time of the file (in ms since the Unix epoch).
 
-### name
+### `name`
 
 The name of the file.
 
-### size
+### `size`
 
 The size of the file in bytes.
 
-### type
+### `type`
 
 The MIME type of the file.

@@ -1,6 +1,6 @@
 ---
 title: LayoutAnimationConfig
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/dom.ts#L17
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/dom.ts#L17
 ---
 
 # LayoutAnimationConfig
@@ -23,14 +23,14 @@ interface LayoutAnimationConfig {
 
 ## Properties
 
-### duration
+### `duration`
 
 Animation duration in milliseconds (default: 200)
 
-### easing
+### `easing`
 
 CSS easing function (default: spring 'snappy' easing)
 
-### size
+### `size`
 
 Include scale projection for size changes (default: true)

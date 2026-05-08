@@ -1,6 +1,6 @@
 ---
 title: XAuthProfile
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/x.ts#L36
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/x.ts#L36
 ---
 
 # XAuthProfile
@@ -26,30 +26,30 @@ interface XAuthProfile {
 
 ## Properties
 
-### description
+### `description`
 
 Bio text returned by X, when available.
 
-### id
+### `id`
 
 Stable X user identifier.
 
-### name
+### `name`
 
 Display name returned by X.
 
-### profile_image_url
+### `profile_image_url`
 
 Profile image URL returned by X, when available.
 
-### url
+### `url`
 
 Profile URL returned by X, when available.
 
-### username
+### `username`
 
 X username returned by the provider.
 
-### verified
+### `verified`
 
 Indicates whether the account is verified, when available.

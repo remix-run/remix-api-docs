@@ -1,6 +1,6 @@
 ---
 title: ContentDisposition
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/content-disposition.ts#L34
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-disposition.ts#L34
 ---
 
 # ContentDisposition
@@ -34,10 +34,6 @@ class ContentDisposition {
 }
 
 ```
-
-## Constructor Params
-
-### `init`
 
 ## Properties
 
@@ -76,10 +72,14 @@ sending both the more expressive "filename*" parameter, and the "filename" param
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | ContentDispositionInit | null): ContentDisposition`
 
 Parse a Content-Disposition header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

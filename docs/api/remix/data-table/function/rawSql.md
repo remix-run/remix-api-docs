@@ -1,6 +1,6 @@
 ---
 title: rawSql
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/sql.ts#L82
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql.ts#L82
 ---
 
 # rawSql
@@ -19,12 +19,13 @@ function rawSql(text: string, values: unknown[]): SqlStatement;
 ## Example
 
 ```ts
-import { rawSql } from 'remix/data-table'
+import { rawSql } from "remix/data-table";
 
-let statement = rawSql('select * from users where id = ?', [1])
+let statement = rawSql("select * from users where id = ?", [1]);
+
 ```
 
-## Params
+## Parameters
 
 ### `text`
 

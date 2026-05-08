@@ -1,6 +1,6 @@
 ---
 title: OAuthResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/provider.ts#L69
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/provider.ts#L69
 ---
 
 # OAuthResult
@@ -23,18 +23,18 @@ interface OAuthResult<profile, provider, tokens> {
 
 ## Properties
 
-### account
+### `account`
 
 Stable provider-backed account identity for the authenticated user.
 
-### profile
+### `profile`
 
 Normalized profile data returned by the provider.
 
-### provider
+### `provider`
 
 Provider name that completed the callback flow.
 
-### tokens
+### `tokens`
 
 Tokens returned by the provider for the completed authorization flow.

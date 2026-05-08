@@ -1,9 +1,15 @@
 ---
 title: Expectation
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/expect.ts#L172
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/expect.ts#L177
 ---
 
 # Expectation
+
+## Summary
+
+Object returned by [`expect`](/api/remix/assert/function/expect/). Exposes the synchronous matcher set
+directly on the object, plus the negation and async-resolution gateways
+needed for full jest/vitest-style assertions.
 
 ## Signature
 
@@ -37,3 +43,19 @@ interface Expectation {
 }
 
 ```
+
+## Properties
+
+### `not`
+
+Negates the next matcher — `expect(x).not.toBe(1)` passes when `x !== 1`.
+
+### `rejects`
+
+Awaits the received promise expecting it to reject, then runs the next
+matcher against the rejection value. Use with `await`.
+
+### `resolves`
+
+Awaits the received promise expecting it to resolve, then runs the next
+matcher against the resolved value. Use with `await`.

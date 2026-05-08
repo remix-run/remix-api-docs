@@ -1,6 +1,6 @@
 ---
 title: quoteLiteral
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/sql-helpers.ts#L119
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql-helpers.ts#L119
 ---
 
 # quoteLiteral
@@ -19,7 +19,7 @@ function quoteLiteral(
 
 ```
 
-## Params
+## Parameters
 
 ### `value`
 

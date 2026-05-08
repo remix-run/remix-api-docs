@@ -1,6 +1,6 @@
 ---
 title: AuthSchemeFailure
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/auth.ts#L77
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L92
 ---
 
 # AuthSchemeFailure
@@ -23,18 +23,18 @@ interface AuthSchemeFailure {
 
 ## Properties
 
-### challenge
+### `challenge`
 
 Optional challenge value for `WWW-Authenticate`.
 
-### code
+### `code`
 
 Failure category reported by the scheme.
 
-### message
+### `message`
 
 Human-readable explanation of the failure.
 
-### status
+### `status`
 
 Marks the scheme result as an authentication failure.

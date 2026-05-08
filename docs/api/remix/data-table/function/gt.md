@@ -1,6 +1,6 @@
 ---
 title: gt
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/operators.ts#L115
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L115
 ---
 
 # gt
@@ -26,9 +26,3 @@ function gt<column extends string | ColumnReferenceLike>(
 ): Predicate<PredicateColumn<column>>;
 
 ```
-
-## Params
-
-### `column`
-
-### `value`

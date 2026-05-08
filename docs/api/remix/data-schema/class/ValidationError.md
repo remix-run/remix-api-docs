@@ -1,13 +1,13 @@
 ---
 title: ValidationError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-schema/src/lib/schema.ts#L1119
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L1119
 ---
 
 # ValidationError
 
 ## Summary
 
-Error thrown by parse when validation fails.
+Error thrown by [`parse`](/api/remix/data-schema/function/parse/) when validation fails.
 
 ## Signature
 
@@ -30,13 +30,15 @@ class ValidationError {
 
 ```
 
-## Constructor Params
+## Constructor
 
-### `issues`
+### Parameters
+
+#### `issues`
 
 The issues produced by schema validation
 
-### `message`
+#### `message`
 
 Optional error message (defaults to "Validation failed")
 
@@ -114,12 +116,7 @@ function c() {
 a();
 ```
 
-#### `targetObject`
 
-#### `constructorOpt`
 
 ### `prepareStackTrace(err: Error, stackTraces: CallSite[]): any`
 
-#### `err`
-
-#### `stackTraces`

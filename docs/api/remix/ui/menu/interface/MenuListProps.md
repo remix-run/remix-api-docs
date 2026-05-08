@@ -1,6 +1,6 @@
 ---
 title: MenuListProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/components/menu/menu.tsx#L1386
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/menu/menu.tsx#L1386
 ---
 
 # MenuListProps
@@ -132,458 +132,458 @@ interface MenuListProps {
 
 ## Properties
 
-### about
+### `about`
 
 The `about` HTML attribute.
 
-### accesskey
+### `accesskey`
 
 The `accesskey` HTML attribute.
 
-### accessKey
+### `accessKey`
 
 The `accessKey` HTML attribute.
 
-### aria-activedescendant
+### `aria-activedescendant`
 
 Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application.
 
-### aria-atomic
+### `aria-atomic`
 
 Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute.
 
-### aria-autocomplete
+### `aria-autocomplete`
 
 Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be
 presented if they are made.
 
-### aria-braillelabel
+### `aria-braillelabel`
 
 Defines a string value that labels the current element, which is intended to be converted into Braille.
 
-### aria-brailleroledescription
+### `aria-brailleroledescription`
 
 Defines a human-readable, author-localized abbreviated description for the role of an element, which is intended to be converted into Braille.
 
-### aria-busy
+### `aria-busy`
 
 Indicates an element is being modified and that assistive technologies MAY want to wait until the modifications are complete before exposing them to the user.
 
-### aria-checked
+### `aria-checked`
 
 Indicates the current "checked" state of checkboxes, radio buttons, and other widgets.
 
-### aria-colcount
+### `aria-colcount`
 
 Defines the total number of columns in a table, grid, or treegrid.
 
-### aria-colindex
+### `aria-colindex`
 
 Defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid.
 
-### aria-colindextext
+### `aria-colindextext`
 
 Defines a human readable text alternative of aria-colindex.
 
-### aria-colspan
+### `aria-colspan`
 
 Defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
 
-### aria-controls
+### `aria-controls`
 
 Identifies the element (or elements) whose contents or presence are controlled by the current element.
 
-### aria-current
+### `aria-current`
 
 Indicates the element that represents the current item within a container or set of related elements.
 
-### aria-describedby
+### `aria-describedby`
 
 Identifies the element (or elements) that describes the object.
 
-### aria-description
+### `aria-description`
 
 Defines a string value that describes or annotates the current element.
 
-### aria-details
+### `aria-details`
 
 Identifies the element that provides a detailed, extended description for the object.
 
-### aria-disabled
+### `aria-disabled`
 
 Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
 
-### aria-dropeffect
+### `aria-dropeffect`
 
 Indicates what functions can be performed when a dragged object is released on the drop target.
 
-### aria-errormessage
+### `aria-errormessage`
 
 Identifies the element that provides an error message for the object.
 
-### aria-expanded
+### `aria-expanded`
 
 Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.
 
-### aria-flowto
+### `aria-flowto`
 
 Identifies the next element (or elements) in an alternate reading order of content which, at the user's discretion,
 allows assistive technology to override the general default of reading in document source order.
 
-### aria-grabbed
+### `aria-grabbed`
 
 Indicates an element's "grabbed" state in a drag-and-drop operation.
 
-### aria-haspopup
+### `aria-haspopup`
 
 Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.
 
-### aria-hidden
+### `aria-hidden`
 
 Indicates whether the element is exposed to an accessibility API.
 
-### aria-invalid
+### `aria-invalid`
 
 Indicates the entered value does not conform to the format expected by the application.
 
-### aria-keyshortcuts
+### `aria-keyshortcuts`
 
 Indicates keyboard shortcuts that an author has implemented to activate or give focus to an element.
 
-### aria-label
+### `aria-label`
 
 Defines a string value that labels the current element.
 
-### aria-labelledby
+### `aria-labelledby`
 
 Identifies the element (or elements) that labels the current element.
 
-### aria-level
+### `aria-level`
 
 Defines the hierarchical level of an element within a structure.
 
-### aria-live
+### `aria-live`
 
 Indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region.
 
-### aria-modal
+### `aria-modal`
 
 Indicates whether an element is modal when displayed.
 
-### aria-multiline
+### `aria-multiline`
 
 Indicates whether a text box accepts multiple lines of input or only a single line.
 
-### aria-multiselectable
+### `aria-multiselectable`
 
 Indicates that the user may select more than one item from the current selectable descendants.
 
-### aria-orientation
+### `aria-orientation`
 
 Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
 
-### aria-owns
+### `aria-owns`
 
 Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship
 between DOM elements where the DOM hierarchy cannot be used to represent the relationship.
 
-### aria-placeholder
+### `aria-placeholder`
 
 Defines a short hint (a word or short phrase) intended to aid the user with data entry when the control has no value.
 A hint could be a sample value or a brief description of the expected format.
 
-### aria-posinset
+### `aria-posinset`
 
 Defines an element's number or position in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM.
 
-### aria-pressed
+### `aria-pressed`
 
 Indicates the current "pressed" state of toggle buttons.
 
-### aria-readonly
+### `aria-readonly`
 
 Indicates that the element is not editable, but is otherwise operable.
 
-### aria-relevant
+### `aria-relevant`
 
 Indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified.
 
-### aria-required
+### `aria-required`
 
 Indicates that user input is required on the element before a form may be submitted.
 
-### aria-roledescription
+### `aria-roledescription`
 
 Defines a human-readable, author-localized description for the role of an element.
 
-### aria-rowcount
+### `aria-rowcount`
 
 Defines the total number of rows in a table, grid, or treegrid.
 
-### aria-rowindex
+### `aria-rowindex`
 
 Defines an element's row index or position with respect to the total number of rows within a table, grid, or treegrid.
 
-### aria-rowindextext
+### `aria-rowindextext`
 
 Defines a human readable text alternative of aria-rowindex.
 
-### aria-rowspan
+### `aria-rowspan`
 
 Defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
 
-### aria-selected
+### `aria-selected`
 
 Indicates the current "selected" state of various widgets.
 
-### aria-setsize
+### `aria-setsize`
 
 Defines the number of items in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM.
 
-### aria-sort
+### `aria-sort`
 
 Indicates if items in a table or grid are sorted in ascending or descending order.
 
-### aria-valuemax
+### `aria-valuemax`
 
 Defines the maximum allowed value for a range widget.
 
-### aria-valuemin
+### `aria-valuemin`
 
 Defines the minimum allowed value for a range widget.
 
-### aria-valuenow
+### `aria-valuenow`
 
 Defines the current value for a range widget.
 
-### aria-valuetext
+### `aria-valuetext`
 
 Defines the human readable text alternative of aria-valuenow for a range widget.
 
-### autocapitalize
+### `autocapitalize`
 
 The `autocapitalize` HTML attribute.
 
-### autoCapitalize
+### `autoCapitalize`
 
 The `autoCapitalize` HTML attribute.
 
-### autocorrect
+### `autocorrect`
 
 The `autocorrect` HTML attribute.
 
-### autoCorrect
+### `autoCorrect`
 
 The `autoCorrect` HTML attribute.
 
-### autofocus
+### `autofocus`
 
 The `autofocus` HTML attribute.
 
-### autoFocus
+### `autoFocus`
 
 The `autoFocus` HTML attribute.
 
-### children
+### `children`
 
 Child nodes to render inside the element.
 
-### class
+### `class`
 
 The `class` HTML attribute.
 
-### className
+### `className`
 
 The `className` HTML attribute.
 
-### contenteditable
+### `contenteditable`
 
 The `contenteditable` HTML attribute.
 
-### contentEditable
+### `contentEditable`
 
 The `contentEditable` HTML attribute.
 
-### datatype
+### `datatype`
 
 The `datatype` HTML attribute.
 
-### dir
+### `dir`
 
 The `dir` HTML attribute.
 
-### disablePictureInPicture
+### `disablePictureInPicture`
 
 The `disablePictureInPicture` HTML attribute.
 
-### draggable
+### `draggable`
 
 The `draggable` HTML attribute.
 
-### elementtiming
+### `elementtiming`
 
 The `elementtiming` HTML attribute.
 
-### elementTiming
+### `elementTiming`
 
 The `elementTiming` HTML attribute.
 
-### enterkeyhint
+### `enterkeyhint`
 
 The `enterkeyhint` HTML attribute.
 
-### exportparts
+### `exportparts`
 
 The `exportparts` HTML attribute.
 
-### hidden
+### `hidden`
 
 The `hidden` HTML attribute.
 
-### id
+### `id`
 
 The `id` HTML attribute.
 
-### inert
+### `inert`
 
 The `inert` HTML attribute.
 
-### inlist
+### `inlist`
 
 The `inlist` HTML attribute.
 
-### innerHTML
+### `innerHTML`
 
 Set the innerHTML of the element directly.
 When provided, children are ignored.
 Use with caution as this can expose XSS vulnerabilities if the content is not sanitized.
 
-### inputmode
+### `inputmode`
 
 The `inputmode` HTML attribute.
 
-### inputMode
+### `inputMode`
 
 The `inputMode` HTML attribute.
 
-### is
+### `is`
 
 The `is` HTML attribute.
 
-### itemid
+### `itemid`
 
 The `itemid` HTML attribute.
 
-### itemID
+### `itemID`
 
 The `itemID` HTML attribute.
 
-### itemprop
+### `itemprop`
 
 The `itemprop` HTML attribute.
 
-### itemProp
+### `itemProp`
 
 The `itemProp` HTML attribute.
 
-### itemref
+### `itemref`
 
 The `itemref` HTML attribute.
 
-### itemRef
+### `itemRef`
 
 The `itemRef` HTML attribute.
 
-### itemscope
+### `itemscope`
 
 The `itemscope` HTML attribute.
 
-### itemScope
+### `itemScope`
 
 The `itemScope` HTML attribute.
 
-### itemtype
+### `itemtype`
 
 The `itemtype` HTML attribute.
 
-### itemType
+### `itemType`
 
 The `itemType` HTML attribute.
 
-### key
+### `key`
 
 The reconciliation key for the element.
 
-### lang
+### `lang`
 
 The `lang` HTML attribute.
 
-### mix
+### `mix`
 
-### nonce
+### `nonce`
 
 The `nonce` HTML attribute.
 
-### part
+### `part`
 
 The `part` HTML attribute.
 
-### popover
+### `popover`
 
 The `popover` HTML attribute.
 
-### prefix
+### `prefix`
 
 The `prefix` HTML attribute.
 
-### property
+### `property`
 
 The `property` HTML attribute.
 
-### resource
+### `resource`
 
 The `resource` HTML attribute.
 
-### results
+### `results`
 
 The `results` HTML attribute.
 
-### role
+### `role`
 
 The `role` HTML attribute.
 
-### slot
+### `slot`
 
 The `slot` HTML attribute.
 
-### spellcheck
+### `spellcheck`
 
 The `spellcheck` HTML attribute.
 
-### style
+### `style`
 
 The `style` HTML attribute.
 
-### tabindex
+### `tabindex`
 
 The `tabindex` HTML attribute.
 
-### tabIndex
+### `tabIndex`
 
 The `tabIndex` HTML attribute.
 
-### title
+### `title`
 
 The `title` HTML attribute.
 
-### translate
+### `translate`
 
 The `translate` HTML attribute.
 
-### typeof
+### `typeof`
 
 The `typeof` HTML attribute.
 
-### vocab
+### `vocab`
 
 The `vocab` HTML attribute.

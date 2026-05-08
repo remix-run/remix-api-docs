@@ -1,6 +1,6 @@
 ---
 title: parseMigrationFilename
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/migrations/filename.ts#L10
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations/filename.ts#L10
 ---
 
 # parseMigrationFilename
@@ -18,7 +18,7 @@ function parseMigrationFilename(filename: string): { id: string; name: string };
 
 ```
 
-## Params
+## Parameters
 
 ### `filename`
 

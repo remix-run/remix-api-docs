@@ -1,6 +1,6 @@
 ---
 title: isDataManipulationOperation
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/sql-helpers.ts#L13
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql-helpers.ts#L13
 ---
 
 # isDataManipulationOperation
@@ -38,7 +38,7 @@ function isDataManipulationOperation(
 
 ```
 
-## Params
+## Parameters
 
 ### `operation`
 

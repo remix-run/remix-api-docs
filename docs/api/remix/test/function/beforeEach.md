@@ -1,6 +1,6 @@
 ---
 title: beforeEach
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/test/src/lib/framework.ts#L206
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L216
 ---
 
 # beforeEach
@@ -18,7 +18,7 @@ function beforeEach(fn: () => void | Promise<void>): void;
 
 ```
 
-## Params
+## Parameters
 
 ### `fn`
 

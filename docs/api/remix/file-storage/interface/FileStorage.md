@@ -1,6 +1,6 @@
 ---
 title: FileStorage
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/file-storage/src/lib/file-storage.ts#L4
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L4
 ---
 
 # FileStorage
@@ -27,23 +27,27 @@ interface FileStorage {
 
 ## Methods
 
-### get(key: string): File | Promise<File | null> | null
+### `get(key: string): File | Promise<File | null> | null`
 
 Get a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) at the given key.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key to look up
 
-### has(key: string): boolean | Promise<boolean>
+### `has(key: string): boolean | Promise<boolean>`
 
 Check if a file with the given key exists.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key to look up
 
-### list<T extends ListOptions>(options: T): ListResult<T> | Promise<ListResult<T>>
+### `list<T extends ListOptions>(options: T): ListResult<T> | Promise<ListResult<T>>`
 
 List the files in storage.
 
@@ -100,40 +104,48 @@ if (result.cursor !== undefined) {
 
 Use the `limit` option to limit how many results you get back in the `files` array.
 
-#### `options`
+#### Parameters
+
+##### `options`
 
 Options for the list operation
 
-### put(key: string, file: File): File | Promise<File>
+### `put(key: string, file: File): File | Promise<File>`
 
 Put a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) in storage and return a
 new file backed by this storage.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key to store the file under
 
-#### `file`
+##### `file`
 
 The file to store
 
-### remove(key: string): void | Promise<void>
+### `remove(key: string): void | Promise<void>`
 
 Remove the file with the given key from storage.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key to remove
 
-### set(key: string, file: File): void | Promise<void>
+### `set(key: string, file: File): void | Promise<void>`
 
 Put a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) in storage at the given
 key.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key to store the file under
 
-#### `file`
+##### `file`
 
 The file to store

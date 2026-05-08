@@ -1,6 +1,6 @@
 ---
 title: ok
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/assert.ts#L60
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L60
 ---
 
 # ok
@@ -19,11 +19,12 @@ function ok(value: unknown, message: string): asserts value;
 ## Example
 
 ```ts
-const cookie = getSessionCookie(response)
-assert.ok(cookie) // cookie is now `string` (not `string | null`)
+const cookie = getSessionCookie(response);
+assert.ok(cookie); // cookie is now `string` (not `string | null`)
+
 ```
 
-## Params
+## Parameters
 
 ### `value`
 

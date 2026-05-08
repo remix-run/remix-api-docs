@@ -1,6 +1,6 @@
 ---
 title: AtmosphereOAuthTokens
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/atmosphere.ts#L118
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L118
 ---
 
 # AtmosphereOAuthTokens
@@ -28,38 +28,38 @@ interface AtmosphereOAuthTokens {
 
 ## Properties
 
-### accessToken
+### `accessToken`
 
 Access token returned by the provider.
 
-### authorizationServer
+### `authorizationServer`
 
 Authorization server metadata needed to refresh without account discovery.
 
-### did
+### `did`
 
 DID that the authorization server bound to this token bundle.
 
-### dpop
+### `dpop`
 
 DPoP binding material returned for DPoP-bound access tokens, when available.
 
-### expiresAt
+### `expiresAt`
 
 Expiration time derived from the provider token response, when available.
 
-### idToken
+### `idToken`
 
 OpenID Connect ID token returned by the provider, when available.
 
-### refreshToken
+### `refreshToken`
 
 Refresh token returned by the provider, when available.
 
-### scope
+### `scope`
 
 Scopes granted to the current access token, when provided by the provider.
 
-### tokenType
+### `tokenType`
 
 DPoP-bound access tokens always advertise the `DPoP` token type.

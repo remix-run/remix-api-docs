@@ -1,6 +1,6 @@
 ---
 title: AtmosphereAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/atmosphere.ts#L140
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L140
 ---
 
 # AtmosphereAuthProviderOptions
@@ -28,34 +28,33 @@ interface AtmosphereAuthProviderOptions<profile> {
 
 ## Properties
 
-### authorizationParams
+### `authorizationParams`
 
 Additional authorization parameters included in the pushed authorization request.
 
-### clientAuthentication
+### `clientAuthentication`
 
 Optional confidential-client settings for `private_key_jwt` authentication.
 
-### clientId
+### `clientId`
 
 Public client metadata URL, or `http://localhost` for loopback development clients.
 
-### redirectUri
+### `redirectUri`
 
 Redirect URI registered for the client metadata document.
 
-### scopes
+### `scopes`
 
 Requested atproto OAuth scopes. Must include `atproto`.
 
-### sessionSecret
+### `sessionSecret`
 
 Secret used to encrypt per-flow DPoP state stored in the OAuth transaction session value.
 
 ## Methods
 
-### mapProfile(input: AtmosphereAuthProviderMapProfileInput): profile | Promise<profile>
+### `mapProfile(input: AtmosphereAuthProviderMapProfileInput): profile | Promise<profile>`
 
 Maps the resolved atproto identity into an application-specific profile shape.
 
-#### `input`

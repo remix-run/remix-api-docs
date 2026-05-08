@@ -1,6 +1,6 @@
 ---
 title: OIDCAuthProviderMetadata
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/oidc.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/oidc.ts#L20
 ---
 
 # OIDCAuthProviderMetadata
@@ -28,38 +28,38 @@ interface OIDCAuthProviderMetadata {
 
 ## Properties
 
-### authorization_endpoint
+### `authorization_endpoint`
 
 Authorization endpoint used to start the browser login flow.
 
-### claims_supported
+### `claims_supported`
 
 Claims advertised by the provider, when available.
 
-### code_challenge_methods_supported
+### `code_challenge_methods_supported`
 
 PKCE challenge methods advertised by the provider, when available.
 
-### end_session_endpoint
+### `end_session_endpoint`
 
 RP-initiated logout endpoint published by the provider, when available.
 
-### issuer
+### `issuer`
 
 Issuer identifier for the OIDC provider.
 
-### jwks_uri
+### `jwks_uri`
 
 JWKS endpoint published by the provider, when available.
 
-### scopes_supported
+### `scopes_supported`
 
 Scopes advertised by the provider, when available.
 
-### token_endpoint
+### `token_endpoint`
 
 Token endpoint used to exchange the authorization code.
 
-### userinfo_endpoint
+### `userinfo_endpoint`
 
 UserInfo endpoint used to load profile claims, when available.

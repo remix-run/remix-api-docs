@@ -1,6 +1,6 @@
 ---
 title: ServeOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/node-serve/src/lib/server.ts#L64
+source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/server.ts#L64
 ---
 
 # ServeOptions
@@ -18,6 +18,7 @@ interface ServeOptions {
   onError?: ErrorHandler;
   port?: number;
   protocol?: string;
+  setup?: (app: TemplatedApp) => void;
   tls?: ServeTlsOptions;
 }
 
@@ -25,30 +26,36 @@ interface ServeOptions {
 
 ## Properties
 
-### host
+### `host`
 
 Overrides the host portion of the incoming request URL. By default the request URL host is
 derived from the HTTP `Host` header.
 
-### listenHost
+### `listenHost`
 
 The hostname or IP address to listen on. By default the server listens on all interfaces.
 
-### onError
+### `onError`
 
 An error handler that determines the response when the request handler throws an error. By
 default a 500 Internal Server Error response will be sent.
 
-### port
+### `port`
 
 The TCP port to listen on. Defaults to 3000.
 
-### protocol
+### `protocol`
 
 Overrides the protocol of the incoming request URL. Defaults to `http:` or `https:` when `tls`
 is provided.
 
-### tls
+### `setup`
+
+Configures the underlying uWebSockets.js app before the Fetch fallback route is registered and
+before the server starts listening. Use this for low-level transport features such as native
+WebSocket routes and connection filters.
+
+### `tls`
 
 TLS options. When provided, the server accepts HTTPS requests and incoming request URLs default
 to the `https:` protocol.

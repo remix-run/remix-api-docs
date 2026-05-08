@@ -1,6 +1,6 @@
 ---
 title: requireAuth
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/require-auth.ts#L47
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/require-auth.ts#L47
 ---
 
 # requireAuth
@@ -14,11 +14,11 @@ Enforces that `auth()` has already resolved a successful auth state for the curr
 ```ts
 function requireAuth<identity>(
   options: RequireAuthOptions,
-): Middleware<any, any, RequireAuthContextTransform<identity>>;
+): Middleware<RequireAuthContextTransform<identity>>;
 
 ```
 
-## Params
+## Parameters
 
 ### `options`
 

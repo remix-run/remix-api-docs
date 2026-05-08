@@ -1,6 +1,6 @@
 ---
 title: doesNotThrow
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/assert/src/lib/assert.ts#L262
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L262
 ---
 
 # doesNotThrow
@@ -19,10 +19,11 @@ function doesNotThrow(fn: () => any, message: string): void;
 ## Example
 
 ```ts
-assert.doesNotThrow(() => JSON.parse('{}'))
+assert.doesNotThrow(() => JSON.parse("{}"));
+
 ```
 
-## Params
+## Parameters
 
 ### `fn`
 

@@ -1,6 +1,6 @@
 ---
 title: PostgresDatabaseAdapter
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table-postgres/src/lib/adapter.ts#L39
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-postgres/src/lib/adapter.ts#L39
 ---
 
 # PostgresDatabaseAdapter
@@ -69,10 +69,6 @@ class PostgresDatabaseAdapter {
 
 ```
 
-## Constructor Params
-
-### `client`
-
 ## Properties
 
 ### `capabilities`
@@ -89,11 +85,15 @@ The SQL dialect identifier reported by this adapter.
 
 Acquires the postgres migration lock.
 
+
+
 ### `beginTransaction(options: TransactionOptions): Promise<TransactionToken>`
 
 Starts a postgres transaction.
 
-#### `options`
+#### Parameters
+
+##### `options`
 
 Transaction options.
 
@@ -101,7 +101,9 @@ Transaction options.
 
 Commits an open postgres transaction.
 
-#### `token`
+#### Parameters
+
+##### `token`
 
 Transaction token to commit.
 
@@ -109,7 +111,9 @@ Transaction token to commit.
 
 Compiles a data or migration operation to postgres SQL statements.
 
-#### `operation`
+#### Parameters
+
+##### `operation`
 
 Operation to compile.
 
@@ -117,11 +121,13 @@ Operation to compile.
 
 Creates a savepoint in an open postgres transaction.
 
-#### `token`
+#### Parameters
+
+##### `token`
 
 Transaction token to use.
 
-#### `name`
+##### `name`
 
 Savepoint name.
 
@@ -129,7 +135,9 @@ Savepoint name.
 
 Executes a postgres data-manipulation request.
 
-#### `request`
+#### Parameters
+
+##### `request`
 
 Request to execute.
 
@@ -137,15 +145,17 @@ Request to execute.
 
 Checks whether a column exists in postgres.
 
-#### `table`
+#### Parameters
+
+##### `table`
 
 Table reference to inspect.
 
-#### `column`
+##### `column`
 
 Column name to look up.
 
-#### `transaction`
+##### `transaction`
 
 Optional transaction token.
 
@@ -153,11 +163,13 @@ Optional transaction token.
 
 Checks whether a table exists in postgres.
 
-#### `table`
+#### Parameters
+
+##### `table`
 
 Table reference to inspect.
 
-#### `transaction`
+##### `transaction`
 
 Optional transaction token.
 
@@ -165,7 +177,9 @@ Optional transaction token.
 
 Executes postgres migration operations.
 
-#### `request`
+#### Parameters
+
+##### `request`
 
 Migration request to execute.
 
@@ -173,15 +187,19 @@ Migration request to execute.
 
 Releases the postgres migration lock.
 
+
+
 ### `releaseSavepoint(token: TransactionToken, name: string): Promise<void>`
 
 Releases a savepoint in an open postgres transaction.
 
-#### `token`
+#### Parameters
+
+##### `token`
 
 Transaction token to use.
 
-#### `name`
+##### `name`
 
 Savepoint name.
 
@@ -189,11 +207,13 @@ Savepoint name.
 
 Rolls back to a savepoint in an open postgres transaction.
 
-#### `token`
+#### Parameters
+
+##### `token`
 
 Transaction token to use.
 
-#### `name`
+##### `name`
 
 Savepoint name.
 
@@ -201,6 +221,8 @@ Savepoint name.
 
 Rolls back an open postgres transaction.
 
-#### `token`
+#### Parameters
+
+##### `token`
 
 Transaction token to roll back.

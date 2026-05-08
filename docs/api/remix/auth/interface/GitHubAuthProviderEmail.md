@@ -1,6 +1,6 @@
 ---
 title: GitHubAuthProviderEmail
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth/src/lib/providers/github.ts#L52
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/github.ts#L52
 ---
 
 # GitHubAuthProviderEmail
@@ -23,18 +23,18 @@ interface GitHubAuthProviderEmail {
 
 ## Properties
 
-### email
+### `email`
 
 Email address returned by the `/user/emails` endpoint.
 
-### primary
+### `primary`
 
 Indicates whether this email is the primary address.
 
-### verified
+### `verified`
 
 Indicates whether GitHub has verified this email address.
 
-### visibility
+### `visibility`
 
 GitHub visibility setting for the email address, when available.

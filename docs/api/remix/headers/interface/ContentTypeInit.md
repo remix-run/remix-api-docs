@@ -1,6 +1,6 @@
 ---
 title: ContentTypeInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/content-type.ts#L7
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-type.ts#L7
 ---
 
 # ContentTypeInit
@@ -22,17 +22,17 @@ interface ContentTypeInit {
 
 ## Properties
 
-### boundary
+### `boundary`
 
 For multipart entities, the boundary that separates the different parts of the message.
 
-### charset
+### `charset`
 
 Indicates the [character encoding](https://developer.mozilla.org/en-US/docs/Glossary/Character_encoding) of the content.
 
 For example, `utf-8`, `iso-8859-1`.
 
-### mediaType
+### `mediaType`
 
 The media type (or MIME type) of the content. This consists of a type and subtype, separated by a slash.
 

@@ -1,6 +1,6 @@
 ---
 title: IfNoneMatch
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/if-none-match.ts#L21
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-none-match.ts#L21
 ---
 
 # IfNoneMatch
@@ -31,10 +31,6 @@ class IfNoneMatch {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Properties
 
 ### `tags`
@@ -49,7 +45,9 @@ Checks if the header contains the given entity tag.
 
 Note: This method checks only for exact matches and does not consider wildcards.
 
-#### `tag`
+#### Parameters
+
+##### `tag`
 
 The entity tag to check for
 
@@ -57,7 +55,9 @@ The entity tag to check for
 
 Checks if this header matches the given entity tag.
 
-#### `tag`
+#### Parameters
+
+##### `tag`
 
 The entity tag to check for
 
@@ -65,10 +65,14 @@ The entity tag to check for
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | string[] | IfNoneMatchInit | null): IfNoneMatch`
 
 Parse an If-None-Match header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, string[], init object, or null)

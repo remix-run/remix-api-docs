@@ -1,6 +1,6 @@
 ---
 title: SetCookie
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/set-cookie.ts#L88
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/set-cookie.ts#L88
 ---
 
 # SetCookie
@@ -37,10 +37,6 @@ class SetCookie {
 }
 
 ```
-
-## Constructor Params
-
-### `init`
 
 ## Properties
 
@@ -90,10 +86,14 @@ The cookie value.
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | SetCookieInit | null): SetCookie`
 
 Parse a Set-Cookie header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)

@@ -1,6 +1,6 @@
 ---
 title: LazyBlob
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/lazy-file/src/lib/lazy-file.ts#L53
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L53
 ---
 
 # LazyBlob
@@ -44,13 +44,15 @@ class LazyBlob {
 
 ```
 
-## Constructor Params
+## Constructor
 
-### `parts`
+### Parameters
+
+#### `parts`
 
 The blob parts or lazy content
 
-### `options`
+#### `options`
 
 Options for the blob
 
@@ -80,11 +82,15 @@ Returns the blob's contents as an [`ArrayBuffer`](https://developer.mozilla.org/
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer)
 
+
+
 ### `bytes(): Promise<Uint8Array<ArrayBuffer>>`
 
 Returns the blob's contents as a byte array.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/bytes)
+
+
 
 ### `slice(start: number, end: number, contentType: string): LazyBlob`
 
@@ -92,15 +98,17 @@ Returns a new `LazyBlob` that contains the data in the specified range.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice)
 
-#### `start`
+#### Parameters
+
+##### `start`
 
 The start index (inclusive)
 
-#### `end`
+##### `end`
 
 The end index (exclusive)
 
-#### `contentType`
+##### `contentType`
 
 The content type of the new blob
 
@@ -110,11 +118,15 @@ Returns a stream that can be used to read the blob's contents.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream)
 
+
+
 ### `text(): Promise<string>`
 
 Returns the blob's contents as a string.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Blob/text)
+
+
 
 ### `toBlob(): Promise<Blob>`
 
@@ -124,4 +136,7 @@ Converts this `LazyBlob` to a native `Blob`.
 a lazy blob for large files. Only use this for non-streaming APIs that require a complete `Blob`.
 Use `.stream()` to get a `ReadableStream` for `Response` and other streaming APIs.
 
+
+
 ### `toString(): never`
+

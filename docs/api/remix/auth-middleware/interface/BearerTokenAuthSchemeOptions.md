@@ -1,6 +1,6 @@
 ---
 title: BearerTokenAuthSchemeOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/auth-middleware/src/lib/schemes/bearer.ts#L10
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/bearer.ts#L10
 ---
 
 # BearerTokenAuthSchemeOptions
@@ -27,28 +27,25 @@ interface BearerTokenAuthSchemeOptions<identity> {
 
 ## Properties
 
-### challenge
+### `challenge`
 
 Challenge value returned when the scheme rejects credentials.
 
-### headerName
+### `headerName`
 
 Request header that carries the bearer token.
 
-### name
+### `name`
 
 Method name exposed on the resolved auth state.
 
-### scheme
+### `scheme`
 
 Authorization scheme prefix expected in the header value.
 
 ## Methods
 
-### verify(token: string, context: RequestContext): identity | Promise<identity | null> | null
+### `verify(token: string, context: RequestContext): identity | Promise<identity | null> | null`
 
 Verifies a parsed bearer token and returns the resolved identity on success.
 
-#### `token`
-
-#### `context`

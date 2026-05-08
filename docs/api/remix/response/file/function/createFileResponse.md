@@ -1,6 +1,6 @@
 ---
 title: createFileResponse
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/response/src/lib/file.ts#L129
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/file.ts#L129
 ---
 
 # createFileResponse
@@ -27,16 +27,17 @@ function createFileResponse<file extends FileLike>(
 ## Example
 
 ```ts
-import { createFileResponse } from 'remix/response/file'
-import { openLazyFile } from 'remix/fs'
+import { createFileResponse } from "remix/response/file";
+import { openLazyFile } from "remix/fs";
 
-let lazyFile = openLazyFile('./public/image.jpg')
+let lazyFile = openLazyFile("./public/image.jpg");
 return createFileResponse(lazyFile, request, {
-  cacheControl: 'public, max-age=3600'
-})
+  cacheControl: "public, max-age=3600",
+});
+
 ```
 
-## Params
+## Parameters
 
 ### `file`
 

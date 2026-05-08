@@ -1,6 +1,6 @@
 ---
 title: Session
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/session/src/lib/session.ts#L11
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session.ts#L11
 ---
 
 # Session
@@ -50,13 +50,15 @@ class Session<valueData, flashData> {
 
 ```
 
-## Constructor Params
+## Constructor
 
-### `id`
+### Parameters
+
+#### `id`
 
 The session ID
 
-### `initialData`
+#### `initialData`
 
 The initial session data
 
@@ -97,13 +99,17 @@ Mark this session as destroyed.
 
 This prevents all further modifications to the session.
 
+
+
 ### `flash<key extends string | number | symbol>(key: key, value: flashData[key]): void`
 
 Set a value in the session that will be available only during the next request.
 
-#### `key`
+#### Parameters
 
-#### `value`
+##### `key`
+
+##### `value`
 
 The value to flash
 
@@ -111,19 +117,21 @@ The value to flash
 
 Get a value from the session.
 
-#### `key`
+
 
 ### `get<key extends string | number | symbol>(key: key): flashData[key] | undefined`
 
 Get a value from the session.
 
-#### `key`
+
 
 ### `get(key: string): undefined`
 
 Get a value from the session.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key of the value to get
 
@@ -131,7 +139,9 @@ The key of the value to get
 
 Check if a value is stored for the given key.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key to check
 
@@ -140,7 +150,9 @@ The key to check
 Regenerate the session ID while preserving the session data. This should be called after login
 or other privilege changes.
 
-#### `deleteOldSession`
+#### Parameters
+
+##### `deleteOldSession`
 
 Whether to delete the old session data when the session is saved (default: `false`)
 
@@ -148,9 +160,11 @@ Whether to delete the old session data when the session is saved (default: `fals
 
 Set a value in the session.
 
-#### `key`
+#### Parameters
 
-#### `value`
+##### `key`
+
+##### `value`
 
 The value to set
 
@@ -158,6 +172,8 @@ The value to set
 
 Remove a value from the session.
 
-#### `key`
+#### Parameters
+
+##### `key`
 
 The key of the value to remove

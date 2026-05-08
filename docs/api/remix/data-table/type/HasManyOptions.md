@@ -1,13 +1,13 @@
 ---
 title: HasManyOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/table.ts#L542
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L542
 ---
 
 # HasManyOptions
 
 ## Summary
 
-Options for defining a hasMany relation.
+Options for defining a [`hasMany`](/api/remix/data-table/function/hasMany/) relation.
 
 ## Signature
 

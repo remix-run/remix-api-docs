@@ -1,6 +1,6 @@
 ---
 title: union
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-schema/src/lib/schema.ts#L1081
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L1081
 ---
 
 # union
@@ -19,10 +19,6 @@ function union<schemas extends Schema<any, any>[]>(
 ): Schema<unknown, InferOutput<schemas[number]>>;
 
 ```
-
-## Params
-
-### `schemas`
 
 ## Returns
 

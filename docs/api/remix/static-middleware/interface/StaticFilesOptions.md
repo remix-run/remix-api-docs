@@ -1,13 +1,13 @@
 ---
 title: StaticFilesOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/static-middleware/src/lib/static.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/static-middleware/src/lib/static.ts#L20
 ---
 
 # StaticFilesOptions
 
 ## Summary
 
-Options for the staticFiles middleware in addition to FileResponseOptions.
+Options for the [`staticFiles`](/api/remix/static-middleware/function/staticFiles/) middleware in addition to [`FileResponseOptions`](/api/remix/response/file/interface/FileResponseOptions/).
 
 ## Signature
 
@@ -16,7 +16,7 @@ interface StaticFilesOptions {
   acceptRanges?: boolean | AcceptRangesFunction;
   cacheControl?: string;
   digest?: AlgorithmIdentifier | FileDigestFunction<File>;
-  etag?: false | "strong" | "weak";
+  etag?: false | "weak" | "strong";
   filter?: (path: string) => boolean;
   index?: boolean | string[];
   lastModified?: boolean;
@@ -27,7 +27,7 @@ interface StaticFilesOptions {
 
 ## Properties
 
-### acceptRanges
+### `acceptRanges`
 
 Whether to support HTTP Range requests for partial content.
 
@@ -43,11 +43,11 @@ Note: Range requests and compression are mutually exclusive. When
 middleware will not compress the response. This is why the default behavior
 enables ranges only for non-compressible types.
 
-### cacheControl
+### `cacheControl`
 
 Cache-Control header value. If not provided, no Cache-Control header will be set.
 
-### digest
+### `digest`
 
 Hash algorithm or custom digest function for strong ETags.
 
@@ -58,7 +58,7 @@ Hash algorithm or custom digest function for strong ETags.
 
 Only used when `etag: 'strong'`. Ignored for weak ETags.
 
-### etag
+### `etag`
 
 ETag generation strategy.
 
@@ -66,11 +66,11 @@ ETag generation strategy.
 - `'strong'`: Generates strong ETags by hashing file content (requires digest computation)
 - `false`: Disables ETag generation
 
-### filter
+### `filter`
 
 Filter function to determine which files should be served.
 
-### index
+### `index`
 
 Files to try and serve as the index file when the request path targets a directory.
 
@@ -78,11 +78,11 @@ Files to try and serve as the index file when the request path targets a directo
 - `false`: Disable index file serving
 - `string[]`: Custom list of index files to try in order
 
-### lastModified
+### `lastModified`
 
 Whether to include `Last-Modified` headers.
 
-### listFiles
+### `listFiles`
 
 Whether to return an HTML page listing the files in a directory when the request path
 targets a directory. If both this and `index` are set, `index` takes precedence.

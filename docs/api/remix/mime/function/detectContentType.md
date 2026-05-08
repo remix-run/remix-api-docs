@@ -1,6 +1,6 @@
 ---
 title: detectContentType
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/mime/src/lib/detect-content-type.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/detect-content-type.ts#L20
 ---
 
 # detectContentType
@@ -22,14 +22,15 @@ function detectContentType(extension: string): string | undefined;
 ## Example
 
 ```ts
-detectContentType('css')           // 'text/css;charset=utf-8'
-detectContentType('.css')          // 'text/css;charset=utf-8'
-detectContentType('style.css')     // 'text/css;charset=utf-8'
-detectContentType('image.png')     // 'image/png'
-detectContentType('unknown')       // undefined
+detectContentType("css"); // 'text/css;charset=utf-8'
+detectContentType(".css"); // 'text/css;charset=utf-8'
+detectContentType("style.css"); // 'text/css;charset=utf-8'
+detectContentType("image.png"); // 'image/png'
+detectContentType("unknown"); // undefined
+
 ```
 
-## Params
+## Parameters
 
 ### `extension`
 

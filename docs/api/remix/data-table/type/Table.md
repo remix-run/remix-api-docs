@@ -1,13 +1,13 @@
 ---
 title: Table
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/table.ts#L267
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/table.ts#L267
 ---
 
 # Table
 
 ## Summary
 
-Fully-typed table object returned by table.
+Fully-typed table object returned by [`table`](/api/remix/data-table/function/table/).
 
 ## Signature
 

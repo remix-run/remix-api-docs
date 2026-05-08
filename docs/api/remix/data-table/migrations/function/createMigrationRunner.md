@@ -1,6 +1,6 @@
 ---
 title: createMigrationRunner
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/data-table/src/lib/migrations/runner.ts#L314
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations/runner.ts#L314
 ---
 
 # createMigrationRunner
@@ -23,15 +23,16 @@ function createMigrationRunner(
 ## Example
 
 ```ts
-import { createMigrationRunner } from 'remix/data-table/migrations'
+import { createMigrationRunner } from "remix/data-table/migrations";
 
 let runner = createMigrationRunner(adapter, migrations, {
-  journalTable: 'app_migrations',
-})
-await runner.up()
+  journalTable: "app_migrations",
+});
+await runner.up();
+
 ```
 
-## Params
+## Parameters
 
 ### `adapter`
 

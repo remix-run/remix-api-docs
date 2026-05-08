@@ -1,6 +1,6 @@
 ---
 title: LazyContent
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/lazy-file/src/lib/lazy-file.ts#L6
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L6
 ---
 
 # LazyContent
@@ -21,22 +21,24 @@ interface LazyContent {
 
 ## Properties
 
-### byteLength
+### `byteLength`
 
 The total length of the content.
 
 ## Methods
 
-### stream(start: number, end: number): ReadableStream<Uint8Array<ArrayBuffer>>
+### `stream(start: number, end: number): ReadableStream<Uint8Array<ArrayBuffer>>`
 
 Returns a stream that can be used to read the content. When given, the `start` index is
 inclusive indicating the index of the first byte to read. The `end` index is exclusive
 indicating the index of the first byte not to read.
 
-#### `start`
+#### Parameters
+
+##### `start`
 
 The start index (inclusive)
 
-#### `end`
+##### `end`
 
 The end index (exclusive)

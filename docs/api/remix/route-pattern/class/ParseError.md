@@ -1,6 +1,6 @@
 ---
 title: ParseError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/route-pattern/src/lib/route-pattern/parse.ts#L57
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern/parse.ts#L57
 ---
 
 # ParseError
@@ -31,14 +31,6 @@ class ParseError {
 }
 
 ```
-
-## Constructor Params
-
-### `type`
-
-### `source`
-
-### `index`
 
 ## Properties
 
@@ -122,12 +114,7 @@ function c() {
 a();
 ```
 
-#### `targetObject`
 
-#### `constructorOpt`
 
 ### `prepareStackTrace(err: Error, stackTraces: CallSite[]): any`
 
-#### `err`
-
-#### `stackTraces`

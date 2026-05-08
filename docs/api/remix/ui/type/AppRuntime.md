@@ -1,13 +1,13 @@
 ---
 title: AppRuntime
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/ui/src/runtime/run.ts#L29
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/run.ts#L29
 ---
 
 # AppRuntime
 
 ## Summary
 
-Client runtime returned by run.
+Client runtime returned by [`run`](/api/remix/ui/function/run/).
 
 ## Signature
 

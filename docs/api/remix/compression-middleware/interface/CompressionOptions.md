@@ -1,6 +1,6 @@
 ---
 title: CompressionOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/compression-middleware/src/lib/compression.ts#L11
+source: https://github.com/remix-run/remix/blob/main/packages/compression-middleware/src/lib/compression.ts#L11
 ---
 
 # CompressionOptions
@@ -24,31 +24,31 @@ interface CompressionOptions {
 
 ## Properties
 
-### brotli
+### `brotli`
 
 node:zlib options for Brotli compression.
 Can be static or a function that returns options based on the response.
 
 See: https://nodejs.org/api/zlib.html#class-brotlioptions
 
-### encodings
+### `encodings`
 
 Which encodings the server supports for negotiation in order of preference.
 Can be static or a function that returns encodings based on the response.
 
 Default: ['br', 'gzip', 'deflate']
 
-### filterMediaType
+### `filterMediaType`
 
 Optional filter to control which responses get compressed based on media type.
 If not provided, uses compressible media types from mime-db.
 
-### threshold
+### `threshold`
 
 Minimum size in bytes to compress (only enforced if Content-Length present).
 Default: 1024
 
-### zlib
+### `zlib`
 
 node:zlib options for gzip/deflate compression.
 Can be static or a function that returns options based on the response.

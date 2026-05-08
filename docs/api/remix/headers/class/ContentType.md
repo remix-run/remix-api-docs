@@ -1,6 +1,6 @@
 ---
 title: ContentType
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.0/packages/headers/src/lib/content-type.ts#L35
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-type.ts#L35
 ---
 
 # ContentType
@@ -31,10 +31,6 @@ class ContentType {
 
 ```
 
-## Constructor Params
-
-### `init`
-
 ## Properties
 
 ### `boundary`
@@ -55,10 +51,14 @@ Media type such as `text/html` or `application/json`.
 
 Returns the string representation of the header value.
 
+
+
 ### `from(value: string | ContentTypeInit | null): ContentType`
 
 Parse a Content-Type header value.
 
-#### `value`
+#### Parameters
+
+##### `value`
 
 The header value (string, init object, or null)
