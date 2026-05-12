@@ -1,6 +1,6 @@
 ---
 title: RequestContext
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L140
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L174
 ---
 
 # RequestContext
@@ -27,9 +27,13 @@ class RequestContext<params, entries> {
   get router(): Router<RequestContext<any, entries>>;
 
   // Methods
-  get<key extends object>(key: key): ResolveContextEntryValue<entries, key>;
+  get<key extends object>(key: key): ResolveEntryValue<entries, key>;
   has<key extends object>(key: key): boolean;
-  set<key extends object>(key: key, value: ContextValue<key>): void;
+  set<key extends object>(
+    key: key,
+    value: ContextValue<key>,
+    options: { property: string },
+  ): void;
 }
 
 ```
@@ -81,7 +85,7 @@ The router handling this request.
 
 ## Methods
 
-### `get<key extends object>(key: key): ResolveContextEntryValue<entries, key>`
+### `get<key extends object>(key: key): ResolveEntryValue<entries, key>`
 
 Get a value from request context.
 
@@ -93,7 +97,7 @@ Check whether a value exists in request context.
 
 
 
-### `set<key extends object>(key: key, value: ContextValue<key>): void`
+### `set<key extends object>(key: key, value: ContextValue<key>, options: { property: string }): void`
 
 Set a value in request context.
 
@@ -104,3 +108,7 @@ Set a value in request context.
 ##### `value`
 
 The value to write
+
+##### `options`
+
+Options for installing the value as a direct context property

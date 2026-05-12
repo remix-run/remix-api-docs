@@ -1,6 +1,6 @@
 ---
 title: asyncContext
-source: https://github.com/remix-run/remix/blob/main/packages/async-context-middleware/src/lib/async-context.ts#L42
+source: https://github.com/remix-run/remix/blob/main/packages/async-context-middleware/src/lib/async-context.ts#L31
 ---
 
 # asyncContext

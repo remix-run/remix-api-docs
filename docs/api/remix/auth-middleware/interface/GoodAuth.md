@@ -1,6 +1,6 @@
 ---
 title: GoodAuth
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L26
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L20
 ---
 
 # GoodAuth

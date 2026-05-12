@@ -1,6 +1,6 @@
 ---
 title: AuthSchemeFailure
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L92
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L63
 ---
 
 # AuthSchemeFailure

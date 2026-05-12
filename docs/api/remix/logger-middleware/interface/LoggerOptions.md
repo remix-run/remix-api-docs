@@ -1,6 +1,6 @@
 ---
 title: LoggerOptions
-source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L8
+source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L24
 ---
 
 # LoggerOptions
@@ -15,7 +15,7 @@ Options for the [`logger`](/api/remix/logger-middleware/function/logger/) middle
 interface LoggerOptions {
   colors?: boolean;
   format?: string;
-  log?: (message: string) => void;
+  log?: LoggerFunction;
 }
 
 ```

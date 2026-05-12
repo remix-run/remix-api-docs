@@ -1,6 +1,6 @@
 ---
 title: logger
-source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L67
+source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L83
 ---
 
 # logger
@@ -12,7 +12,13 @@ Creates a middleware handler that logs various request/response info.
 ## Signature
 
 ```ts
-function logger(options: LoggerOptions): Middleware;
+function logger(
+  options: LoggerOptions,
+): Middleware<{
+  key: ContextKey<LoggerFunction>;
+  property: "logger";
+  value: LoggerFunction;
+}>;
 
 ```
 

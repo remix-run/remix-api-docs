@@ -1,6 +1,6 @@
 ---
 title: AuthSchemeResult
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L106
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L77
 ---
 
 # AuthSchemeResult

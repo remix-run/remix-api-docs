@@ -1,13 +1,13 @@
 ---
 title: MiddlewareContext
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L45
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L46
 ---
 
 # MiddlewareContext
 
 ## Summary
 
-Resolves the request-context type produced by a middleware array.
+Resolves the request-context type produced by a middleware tuple.
 
 ## Signature
 

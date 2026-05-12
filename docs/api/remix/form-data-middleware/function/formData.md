@@ -1,6 +1,6 @@
 ---
 title: formData
-source: https://github.com/remix-run/remix/blob/main/packages/form-data-middleware/src/lib/form-data.ts#L50
+source: https://github.com/remix-run/remix/blob/main/packages/form-data-middleware/src/lib/form-data.ts#L48
 ---
 
 # formData
@@ -12,7 +12,16 @@ Middleware that parses `FormData` from the request body and populates request co
 ## Signature
 
 ```ts
-function formData(options: FormDataOptions): Middleware<FormDataContextEntry>;
+function formData(
+  options: FormDataOptions,
+): Middleware<{
+  key: {
+    (form?: HTMLFormElement, submitter?: HTMLElement | null): FormData;
+    prototype: FormData;
+  };
+  property: "formData";
+  value: FormData;
+}>;
 
 ```
 

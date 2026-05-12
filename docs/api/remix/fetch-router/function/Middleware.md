@@ -1,6 +1,6 @@
 ---
 title: Middleware
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L83
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L74
 ---
 
 # Middleware

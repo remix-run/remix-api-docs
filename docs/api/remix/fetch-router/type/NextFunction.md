@@ -1,6 +1,6 @@
 ---
 title: NextFunction
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L99
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L90
 ---
 
 # NextFunction

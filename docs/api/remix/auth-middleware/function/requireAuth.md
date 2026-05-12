@@ -1,6 +1,6 @@
 ---
 title: requireAuth
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/require-auth.ts#L47
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/require-auth.ts#L20
 ---
 
 # requireAuth
@@ -14,7 +14,11 @@ Enforces that `auth()` has already resolved a successful auth state for the curr
 ```ts
 function requireAuth<identity>(
   options: RequireAuthOptions,
-): Middleware<RequireAuthContextTransform<identity>>;
+): Middleware<{
+  key: ContextKey<AuthState<unknown>>;
+  property: "auth";
+  value: GoodAuth<identity>;
+}>;
 
 ```
 
@@ -26,4 +30,5 @@ Failure handling options for unauthenticated requests.
 
 ## Returns
 
-Middleware that allows authenticated requests through and rejects anonymous ones.
+Middleware that allows authenticated requests through, rejects anonymous ones, and
+narrows auth state on request context.

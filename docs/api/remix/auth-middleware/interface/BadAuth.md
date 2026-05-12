@@ -1,6 +1,6 @@
 ---
 title: BadAuth
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L38
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L32
 ---
 
 # BadAuth

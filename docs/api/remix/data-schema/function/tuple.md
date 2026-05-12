@@ -16,7 +16,7 @@ function tuple<items extends Schema<any, any>[]>(
   items: items,
 ): Schema<
   unknown,
-  { [index in string | number | symbol]: InferOutput<items[index<index>]> }
+  { [index in string | number | symbol]: InferOutput<items[index]> }
 >;
 
 ```

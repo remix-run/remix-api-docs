@@ -1,6 +1,6 @@
 ---
 title: auth
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L149
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L120
 ---
 
 # auth
@@ -14,7 +14,11 @@ Loads auth state for the current request by running each configured auth scheme 
 ```ts
 function auth<schemes extends readonly AuthScheme<any>[]>(
   options: AuthOptions<schemes>,
-): Middleware<AuthContextEntry<AuthForSchemes<schemes>>>;
+): Middleware<{
+  key: ContextKey<AuthState<unknown>>;
+  property: "auth";
+  value: AuthForSchemes<schemes>;
+}>;
 
 ```
 
@@ -26,4 +30,4 @@ Auth scheme configuration for the middleware.
 
 ## Returns
 
-Middleware that resolves auth state into `context.get(Auth)`.
+Middleware that resolves auth state into `context.auth` and `context.get(Auth)`.

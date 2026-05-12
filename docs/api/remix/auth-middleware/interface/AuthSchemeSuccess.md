@@ -1,6 +1,6 @@
 ---
 title: AuthSchemeSuccess
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L82
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L53
 ---
 
 # AuthSchemeSuccess

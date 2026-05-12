@@ -556,6 +556,35 @@ function auth(options?: AuthOptions): Middleware {
 }
 ```
 
+Middleware can store values in request context with a key. To make that value available as `context.db`, add `property: 'db'` to the middleware type and pass `{ property: 'db' }` to `context.set()`:
+
+```ts
+import { createContextKey, type Middleware } from 'remix/fetch-router'
+
+interface Database {
+  findMany(): Promise<unknown[]>
+}
+
+const Database = createContextKey<Database>()
+
+function loadDatabase(): Middleware<{
+  key: typeof Database
+  value: Database
+  property: 'db'
+}> {
+  return async (context) => {
+    context.set(Database, await connectDatabase(), { property: 'db' })
+  }
+}
+
+router.get('/books', async (context) => {
+  let books = await context.db.findMany()
+  return Response.json(books)
+})
+```
+
+Use `context.db` (or `context.get(Database)`). If two values use the same property name, the router throws.
+
 Middleware may be used at three levels: globally on the router, on a controller, or inline on an individual action.
 
 Global middleware is added to the router when it is created using the `createRouter({ middleware })` option. This middleware runs before any routes are matched and is useful for doing things like logging, serving static files, profiling, and a variety of other things. Global middleware runs on every request, so it's important to keep them lightweight and fast.
@@ -638,22 +667,25 @@ import { Auth, requireAuth } from 'remix/auth-middleware'
 import {
   createAction,
   createController,
+  type AnyParams,
   type ContextWithParams,
-  type ContextWithMiddleware,
-  type RequestContext,
+  type MiddlewareContext,
 } from 'remix/fetch-router'
 import { route } from 'remix/routes'
+import { loadDatabase } from './middleware/database.ts'
+import { loadSession } from './middleware/session.ts'
 
 let routes = route({
   account: '/account',
 })
 
-type AppContext<params extends Record<string, string> = {}> = ContextWithParams<
-  RequestContext,
+type AuthIdentity = { id: string }
+type RootMiddleware = [ReturnType<typeof loadSession>, ReturnType<typeof loadDatabase>]
+
+type AppContext<params extends AnyParams = {}> = ContextWithParams<
+  MiddlewareContext<RootMiddleware>,
   params
 >
-
-type AuthIdentity = { id: string }
 
 declare module 'remix/fetch-router' {
   interface RouterTypes {
@@ -662,7 +694,7 @@ declare module 'remix/fetch-router' {
 }
 
 let accountMiddleware = [requireAuth<AuthIdentity>()] as const
-type AccountContext = ContextWithMiddleware<AppContext, typeof accountMiddleware>
+type AccountContext = MiddlewareContext<typeof accountMiddleware, AppContext>
 
 let accountAction = createAction<typeof routes.account, AccountContext>(routes.account, {
   middleware: accountMiddleware,
@@ -683,49 +715,49 @@ let accountController = createController<typeof routes, AccountContext>(routes, 
 })
 ```
 
-In this example, `AccountContext` describes the context the local middleware provides before the handler runs. In a larger app, you can derive a shared base context from router middleware with `MiddlewareContext<typeof middleware>`, or apply middleware to an existing context with `ContextWithMiddleware<AppContext, typeof middleware>`.
+In this example, `RootMiddleware` is the middleware tuple that defines the app context contract. It should include middleware instances. When a middleware is created by a factory function like `loadSession()`, use `ReturnType<typeof loadSession>` so the type describes the middleware value that actually runs. `AccountContext` applies local account middleware on top of that base context before the handler runs.
+
+For small apps with a stable tuple-typed runtime array, `MiddlewareContext<typeof middleware>` is a fine shortcut. For larger apps, prefer the named `RootMiddleware` and `AppContext` pattern so runtime middleware assembly and context typing can evolve independently.
 
 When manually annotating stored handlers, use `Action<typeof route, Context>` for values that may be either a plain handler function or an action object with optional middleware.
 
 #### Middleware Provider Guidance
 
-`context.get(key)` returns a defined value when the context type includes that key or the key was created with a default value. Constructor keys like `FormData` are useful context keys, but the constructor itself is not a guarantee that a value exists. Use context transforms for required middleware values, and handle `undefined` when reading values that may not be present.
+`context.get(key)` returns a defined value when the context type includes the key or the key has a default. Constructor keys like `FormData` are useful, but they do not imply presence; use context transforms for required values and handle `undefined` otherwise.
 
 If you're authoring a middleware package that stores values in request context, treat that context contract as part of the package API. A good provider should usually export:
 
 - the context key consumers read with `context.get(...)`
-- the middleware that populates that key at runtime
-- one or more `ContextWith...` helper types that let applications describe the resulting request context without touching raw context entries directly
+- the middleware that populates that key at runtime, with a `Middleware` context transform that describes the value it provides
+- an optional direct context property for values handlers read frequently
 
-Prefer `ContextWith...` names for third-party middleware packages that augment request context. This matches the built-in `ContextWithParams`, `ContextWithValues`, and `ContextWithValue` helpers and makes it clear that the type produces a new `RequestContext` type with additional context available.
+Apps can derive request context from the middleware tuple with `MiddlewareContext`. If they need to describe a context shape without a middleware tuple, they can use the core `ContextWithEntry` and `ContextWithEntries` helpers directly.
 
 ```ts
-import {
-  createContextKey,
-  type ContextEntry,
-  type ContextWithValues,
-  type Middleware,
-  type RequestContext,
-} from 'remix/fetch-router'
+import { createContextKey, type Middleware, type MiddlewareContext } from 'remix/fetch-router'
 
 // The context key that consumers will need to read from `context.get(...)`
 export const CurrentUser = createContextKey<User | null>()
+const currentUserContextProperty = { property: 'currentUser' } as const
 
 // The context effect carried by middleware that sets one context value
-type CurrentUserContextEntry = ContextEntry<typeof CurrentUser, User | null>
-
-export function loadCurrentUser(): Middleware<CurrentUserContextEntry> {
+export function loadCurrentUser(): Middleware<{
+  key: typeof CurrentUser
+  value: User | null
+  property: 'currentUser'
+}> {
   return async (context, next) => {
-    context.set(CurrentUser, await getCurrentUser(context.request))
+    context.set(CurrentUser, await getCurrentUser(context.request), currentUserContextProperty)
     return next()
   }
 }
 
-// One or more ContextWith* helper types that apps can use to describe the request context
-export type ContextWithCurrentUser<context extends RequestContext<any, any>> = ContextWithValues<
-  context,
-  [CurrentUserContextEntry]
->
+let middleware = [loadCurrentUser()] as const
+type AppContext = MiddlewareContext<typeof middleware>
+
+// Use context.currentUser (or context.get(CurrentUser)).
+// context.currentUser
+// context.get(CurrentUser)
 ```
 
 ### Additional Topics
@@ -754,8 +786,8 @@ export type ContextWithCurrentUser<context extends RequestContext<any, any>> = C
 #### Form Data and File Uploads
 
 - use the `formData()` middleware to parse the `FormData` object from the request body
-- use `context.get(FormData)` to access parsed form data
-- use `context.get(FormData).get(name)`/`getAll(name)` to access uploaded files
+- use `context.formData` or `context.get(FormData)` to access parsed form data
+- use `context.formData.get(name)`/`getAll(name)` to access uploaded files
 - use the `uploadHandler` option of the `formData()` middleware to handle file uploads
 
 #### Request Method Override
@@ -860,7 +892,7 @@ No special test harness or mocking required! Just use `fetch()` like you would i
 
 - [auth-middleware](https://github.com/remix-run/remix/tree/main/packages/auth-middleware) - Request authentication and route protection helpers
 - [session-middleware](https://github.com/remix-run/remix/tree/main/packages/session-middleware) - Load and persist sessions in request context
-- [form-data-middleware](https://github.com/remix-run/remix/tree/main/packages/form-data-middleware) - Parse request bodies into `context.get(FormData)`
+- [form-data-middleware](https://github.com/remix-run/remix/tree/main/packages/form-data-middleware) - Parse request bodies into `context.formData` (or `context.get(FormData)`)
 - [response](https://github.com/remix-run/remix/tree/main/packages/response) - Response helpers for HTML, JSON, files, and redirects
 
 ## Related Work
