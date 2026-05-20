@@ -1,6 +1,5 @@
 ---
 title: stripAnsi
-source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/ansi.ts#L202
 ---
 
 # stripAnsi

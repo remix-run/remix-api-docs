@@ -3,7 +3,7 @@ type: package
 title: remix/ui/server
 ---
 
-# Server
+# remix/ui/server
 
 Remix Component can render to HTML on the server using two APIs:
 

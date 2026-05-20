@@ -3,7 +3,7 @@ type: package
 title: remix/ui/select
 ---
 
-# select
+# remix/ui/select
 
 `Select` is a button-triggered popup value picker backed by `listbox` and `popover`. Use it when the user should choose one stable string value from a finite set.
 

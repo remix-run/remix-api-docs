@@ -1,6 +1,5 @@
 ---
 title: MixValue
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L153
 ---
 
 # MixValue

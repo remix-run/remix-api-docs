@@ -1,6 +1,5 @@
 ---
 title: spring
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/spring.ts#L87
 ---
 
 # spring

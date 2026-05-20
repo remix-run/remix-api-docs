@@ -1,6 +1,5 @@
 ---
 title: css
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/style/css-mixin.ts#L23
 ---
 
 # css

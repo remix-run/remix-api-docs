@@ -3,7 +3,7 @@ type: package
 title: remix/ui/listbox
 ---
 
-# listbox
+# remix/ui/listbox
 
 `listbox` is a headless option-list primitive for controlled selection and highlighting. Use it under components like `select` and `combobox`, or directly when you need custom listbox markup.
 

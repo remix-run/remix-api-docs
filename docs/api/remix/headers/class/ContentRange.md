@@ -1,6 +1,5 @@
 ---
 title: ContentRange
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-range.ts#L35
 ---
 
 # ContentRange

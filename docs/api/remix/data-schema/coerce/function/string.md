@@ -1,6 +1,5 @@
 ---
 title: string
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/coerce.ts#L170
 ---
 
 # string

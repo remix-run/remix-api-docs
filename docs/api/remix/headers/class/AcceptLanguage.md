@@ -1,6 +1,5 @@
 ---
 title: AcceptLanguage
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-language.ts#L17
 ---
 
 # AcceptLanguage

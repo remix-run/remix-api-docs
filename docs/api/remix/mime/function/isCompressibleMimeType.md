@@ -1,6 +1,5 @@
 ---
 title: isCompressibleMimeType
-source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/is-compressible-mime-type.ts#L19
 ---
 
 # isCompressibleMimeType

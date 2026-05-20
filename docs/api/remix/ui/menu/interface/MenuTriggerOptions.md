@@ -1,6 +1,5 @@
 ---
 title: MenuTriggerOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/menu/menu.tsx#L259
 ---
 
 # MenuTriggerOptions

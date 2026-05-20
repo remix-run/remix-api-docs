@@ -1,6 +1,5 @@
 ---
 title: ClientAddress
-source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/fetch-handler.ts#L4
 ---
 
 # ClientAddress

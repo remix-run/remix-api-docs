@@ -1,0 +1,32 @@
+---
+title: createOptionsRoute
+---
+
+# createOptionsRoute
+
+## Summary
+
+Shorthand for a OPTIONS route.
+
+## Aliases
+
+options
+
+## Signature
+
+```ts
+function createOptionsRoute<source extends string>(
+  pattern: source | RoutePattern<source>,
+): Route<"OPTIONS", source>;
+
+```
+
+## Parameters
+
+### `pattern`
+
+The route pattern string or pre-parsed AST
+
+## Returns
+
+A Route configured for OPTIONS requests

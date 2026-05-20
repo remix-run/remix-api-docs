@@ -1,121 +1,99 @@
 ---
 title: RoutePattern
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern.ts#L61
 ---
 
 # RoutePattern
 
 ## Summary
 
-A class for matching and generating URLs based on a defined pattern.
+A parsed route pattern
 
 ## Signature
 
 ```ts
 class RoutePattern<source> {
-  constructor(source: source): RoutePattern<source>;
+  constructor(parsed: ParsedRoutePattern): RoutePattern<source>;
 
   // Properties
-  ast: AST;
+  hostname: PartPattern | null;
+  pathname: PartPattern;
+  port: string | null;
+  protocol: "http" | "https" | "http(s)" | null;
+  search: ReadonlyMap<string, ReadonlySet<string>>;
 
   // Accessors
-  get hostname(): string;
-  get pathname(): string;
-  get port(): string;
-  get protocol(): string;
-  get search(): string;
   get source(): string;
 
   // Methods
-  href(args: HrefArgs<source>): string;
-  join<other extends string>(
-    other: other | RoutePattern<other>,
-  ): RoutePattern<Join<source, other>>;
-  match(
-    url: string | URL,
-    options: { ignoreCase?: boolean },
-  ): RoutePatternMatch<source> | null;
-  test(url: string | URL): boolean;
+  toJSON(): {
+    hostname: string;
+    pathname: string;
+    port: string;
+    protocol: string;
+    search: string;
+  };
   toString(): string;
+  parse<source extends string>(source: source): RoutePattern<source>;
 }
 
 ```
 
+## Constructor
+
+Create a new `RoutePattern` from parsed parts of a route pattern.
+
+Useful for efficiently deriving new patterns from already parsed patterns.
+Unless you know what you are doing, you probably want `RoutePattern.parse`.
+
+### Parameters
+
+#### `parsed`
+
+Parsed route pattern parts.
+
 ## Properties
-
-### `ast`
-
-Parsed route-pattern AST used for matching and href generation.
-
-## Accessors
 
 ### `hostname`
 
-The hostname portion of the pattern.
-
 ### `pathname`
-
-The pathname portion of the pattern without a leading slash.
 
 ### `port`
 
-The explicit port portion of the pattern.
-
 ### `protocol`
-
-The protocol portion of the pattern without the trailing colon.
 
 ### `search`
 
-The serialized search constraints without a leading `?`.
+Required values keyed by search param name.
+
+Follows
+[WHATWG's application/x-www-form-urlencoded parsing](https://url.spec.whatwg.org/#application/x-www-form-urlencoded) spec
+(same as [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams#percent_encoding)).
+For example, `+` is decoded as ` ` (literal space) instead of `%20`.
+
+- **Empty `Set`**: key must appear; value may be anything (including empty).
+- **Non-empty `Set`**: key must appear with all listed values; extra values are OK.
+
+## Accessors
 
 ### `source`
 
-The serialized route-pattern source string.
+Normalized string representation of this pattern
 
 ## Methods
 
-### `href(args: HrefArgs<source>): string`
+### `toJSON(): { hostname: string; pathname: string; port: string; protocol: string; search: string }`
 
-Builds an href from this pattern and the supplied params.
-
-#### Parameters
-
-##### `args`
-
-Path params and optional search params.
-
-### `join<other extends string>(other: other | RoutePattern<other>): RoutePattern<Join<source, other>>`
-
-Joins this pattern with another pathname or route pattern.
+Returns a JSON-serializable object containing each serialized part of this route pattern.
 
 
-
-### `match(url: string | URL, options: { ignoreCase?: boolean }): RoutePatternMatch<source> | null`
-
-Match a URL against this pattern.
-
-#### Parameters
-
-##### `url`
-
-The URL to match
-
-##### `options`
-
-Match options
-
-### `test(url: string | URL): boolean`
-
-Tests whether a URL matches this route pattern.
-
-#### Parameters
-
-##### `url`
-
-URL to test.
 
 ### `toString(): string`
 
-Returns the serialized route-pattern source string.
+Returns a string representing this route pattern.
+
+
+
+### `parse<source extends string>(source: source): RoutePattern<source>`
+
+Create a new `RoutePattern` by parsing a source string.
 

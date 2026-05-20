@@ -1,6 +1,5 @@
 ---
 title: LazyBlob
-source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L53
 ---
 
 # LazyBlob

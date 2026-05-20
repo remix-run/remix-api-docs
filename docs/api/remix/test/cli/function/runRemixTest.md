@@ -1,6 +1,5 @@
 ---
 title: runRemixTest
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/cli.ts#L70
 ---
 
 # runRemixTest

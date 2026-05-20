@@ -1,6 +1,5 @@
 ---
 title: ByteRange
-source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/byte-range.ts#L4
 ---
 
 # ByteRange

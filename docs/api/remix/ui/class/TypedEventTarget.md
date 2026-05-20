@@ -1,6 +1,5 @@
 ---
 title: TypedEventTarget
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/typed-event-target.ts#L4
 ---
 
 # TypedEventTarget

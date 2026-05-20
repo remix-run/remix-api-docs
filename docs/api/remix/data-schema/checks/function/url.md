@@ -1,6 +1,5 @@
 ---
 title: url
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L57
 ---
 
 # url

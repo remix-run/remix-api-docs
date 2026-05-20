@@ -3,7 +3,7 @@ type: package
 title: remix/html-template
 ---
 
-# html-template
+# remix/html-template
 
 Safe HTML template literals for Remix. `html-template` automatically escapes interpolated values to prevent XSS while still supporting explicit trusted HTML insertion.
 
@@ -99,7 +99,7 @@ let page = html`<div>${showError ? html`<div class="error">${errorMessage}</div>
 
 ## Related Packages
 
-- [`remix/fetch-router`](https://github.com/remix-run/remix/tree/main/packages/fetch-router) - HTTP router that works great with html-template
+- [`remix/router`](https://github.com/remix-run/remix/tree/main/packages/fetch-router) - HTTP router that works great with html-template
 
 ## License
 

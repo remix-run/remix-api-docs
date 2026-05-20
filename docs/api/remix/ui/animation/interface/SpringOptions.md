@@ -1,6 +1,5 @@
 ---
 title: SpringOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/spring.ts#L20
 ---
 
 # SpringOptions

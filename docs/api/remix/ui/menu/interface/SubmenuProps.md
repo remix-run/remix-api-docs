@@ -1,6 +1,5 @@
 ---
 title: SubmenuProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/menu/menu.tsx#L1425
 ---
 
 # SubmenuProps
@@ -29,7 +28,7 @@ interface SubmenuProps {
   aria-description?: string
   aria-details?: string
   aria-disabled?: Booleanish
-  aria-dropeffect?: "copy" | "link" | "none" | "execute" | "move" | "popup"
+  aria-dropeffect?: "link" | "copy" | "none" | "execute" | "move" | "popup"
   aria-errormessage?: string
   aria-expanded?: Booleanish
   aria-flowto?: string

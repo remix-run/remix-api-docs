@@ -1,0 +1,37 @@
+---
+title: createFsSessionStorage
+---
+
+# createFsSessionStorage
+
+## Summary
+
+Creates a session storage that stores all session data in a filesystem directory using
+Node's fs module.
+
+Note: No attempt is made to avoid overwriting existing files, so the directory used should
+be a new directory solely dedicated to this storage object.
+
+## Signature
+
+```ts
+function createFsSessionStorage(
+  directory: string,
+  options: FsSessionStorageOptions,
+): SessionStorage;
+
+```
+
+## Parameters
+
+### `directory`
+
+The directory to store the session files in
+
+### `options`
+
+(optional) The options for the session storage
+
+## Returns
+
+The session storage

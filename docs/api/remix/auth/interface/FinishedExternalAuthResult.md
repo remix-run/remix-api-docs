@@ -1,6 +1,5 @@
 ---
 title: FinishedExternalAuthResult
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/finish-external-auth.ts#L19
 ---
 
 # FinishedExternalAuthResult

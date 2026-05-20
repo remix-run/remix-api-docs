@@ -1,6 +1,5 @@
 ---
 title: createMemoryFileStorage
-source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/backends/memory.ts#L8
 ---
 
 # createMemoryFileStorage

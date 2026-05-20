@@ -1,6 +1,5 @@
 ---
 title: SelectProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/select/select.tsx#L68
 ---
 
 # SelectProps
@@ -29,7 +28,7 @@ interface SelectProps {
   aria-description?: string
   aria-details?: string
   aria-disabled?: Booleanish
-  aria-dropeffect?: "copy" | "link" | "none" | "execute" | "move" | "popup"
+  aria-dropeffect?: "link" | "copy" | "none" | "execute" | "move" | "popup"
   aria-errormessage?: string
   aria-expanded?: Booleanish
   aria-flowto?: string
@@ -134,7 +133,7 @@ interface SelectProps {
   property?: string
   resource?: string
   results?: number
-  role?: "button" | "switch" | "link" | "menuitem" | "option" | "checkbox" | "combobox" | "gridcell" | "menuitemcheckbox" | "menuitemradio" | "radio" | "separator" | "slider" | "tab" | "treeitem"
+  role?: "link" | "button" | "switch" | "menuitem" | "option" | "checkbox" | "combobox" | "gridcell" | "menuitemcheckbox" | "menuitemradio" | "radio" | "separator" | "slider" | "tab" | "treeitem"
   slot?: string
   spellcheck?: boolean
   style?: string | StyleProps

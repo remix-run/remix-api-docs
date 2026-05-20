@@ -1,6 +1,5 @@
 ---
 title: IfNoneMatch
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-none-match.ts#L21
 ---
 
 # IfNoneMatch

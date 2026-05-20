@@ -1,16 +1,18 @@
 ---
 title: loadMigrations
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations-node.ts#L22
 ---
 
 # loadMigrations
 
 ## Summary
 
-Loads migration modules from a directory on Node.js.
+Loads SQL-file migrations from a directory on Node.js.
 
-Filenames are used to infer migration `id` and `name`.
-Each file must default-export `createMigration(...)`.
+Each migration is a directory named `YYYYMMDDHHmmss_<slug>` containing:
+- `up.sql` (required)
+- `down.sql` (optional; omit for irreversible migrations)
+
+`id` and `name` are inferred from the directory name.
 
 ## Signature
 
@@ -32,7 +34,7 @@ let migrations = await loadMigrations("./app/db/migrations");
 
 ### `directory`
 
-Absolute or relative directory containing migration files.
+Absolute or relative directory containing migration directories.
 
 ## Returns
 

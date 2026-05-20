@@ -1,6 +1,5 @@
 ---
 title: ContentRangeInit
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-range.ts#L6
 ---
 
 # ContentRangeInit

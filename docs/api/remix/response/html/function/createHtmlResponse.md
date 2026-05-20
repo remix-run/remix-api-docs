@@ -1,6 +1,5 @@
 ---
 title: createHtmlResponse
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/html.ts#L15
 ---
 
 # createHtmlResponse

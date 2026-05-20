@@ -1,6 +1,5 @@
 ---
 title: ComboboxHandle
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/combobox/combobox.tsx#L107
 ---
 
 # ComboboxHandle

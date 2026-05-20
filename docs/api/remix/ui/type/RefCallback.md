@@ -1,6 +1,5 @@
 ---
 title: RefCallback
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/ref-mixin.ts#L7
 ---
 
 # RefCallback

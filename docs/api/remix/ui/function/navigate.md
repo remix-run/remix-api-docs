@@ -1,6 +1,5 @@
 ---
 title: navigate
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/navigation.ts#L30
 ---
 
 # navigate

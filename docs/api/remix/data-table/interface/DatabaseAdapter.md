@@ -1,6 +1,5 @@
 ---
 title: DatabaseAdapter
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/adapter.ts#L622
 ---
 
 # DatabaseAdapter
@@ -18,38 +17,16 @@ interface DatabaseAdapter {
   acquireMigrationLock(): Promise<void>;
   beginTransaction(options: TransactionOptions): Promise<TransactionToken>;
   commitTransaction(token: TransactionToken): Promise<void>;
-  compileSql(
-    operation:
-      | SelectOperation<AnyTable>
-      | CountOperation<AnyTable>
-      | ExistsOperation<AnyTable>
-      | InsertOperation<AnyTable>
-      | InsertManyOperation<AnyTable>
-      | UpdateOperation<AnyTable>
-      | DeleteOperation<AnyTable>
-      | UpsertOperation<AnyTable>
-      | RawOperation
-      | CreateTableOperation
-      | AlterTableOperation
-      | RenameTableOperation
-      | DropTableOperation
-      | CreateIndexOperation
-      | DropIndexOperation
-      | RenameIndexOperation
-      | AddForeignKeyOperation
-      | DropForeignKeyOperation
-      | AddCheckOperation
-      | DropCheckOperation,
-  ): SqlStatement[];
+  compileSql(operation: DataManipulationOperation): SqlStatement[];
   createSavepoint(token: TransactionToken, name: string): Promise<void>;
   execute(request: DataManipulationRequest): Promise<DataManipulationResult>;
+  executeScript(sql: string, transaction: TransactionToken): Promise<void>;
   hasColumn(
     table: TableRef,
     column: string,
     transaction: TransactionToken,
   ): Promise<boolean>;
   hasTable(table: TableRef, transaction: TransactionToken): Promise<boolean>;
-  migrate(request: DataMigrationRequest): Promise<DataMigrationResult>;
   releaseMigrationLock(): Promise<void>;
   releaseSavepoint(token: TransactionToken, name: string): Promise<void>;
   rollbackToSavepoint(token: TransactionToken, name: string): Promise<void>;
@@ -88,9 +65,9 @@ Commits an open transaction.
 
 
 
-### `compileSql(operation: SelectOperation<AnyTable> | CountOperation<AnyTable> | ExistsOperation<AnyTable> | InsertOperation<AnyTable> | InsertManyOperation<AnyTable> | UpdateOperation<AnyTable> | DeleteOperation<AnyTable> | UpsertOperation<AnyTable> | RawOperation | CreateTableOperation | AlterTableOperation | RenameTableOperation | DropTableOperation | CreateIndexOperation | DropIndexOperation | RenameIndexOperation | AddForeignKeyOperation | DropForeignKeyOperation | AddCheckOperation | DropCheckOperation): SqlStatement[]`
+### `compileSql(operation: DataManipulationOperation): SqlStatement[]`
 
-Compiles a data or migration operation into executable SQL statements.
+Compiles a data-manipulation operation into executable SQL statements.
 
 
 
@@ -106,6 +83,15 @@ Executes a data-manipulation request.
 
 
 
+### `executeScript(sql: string, transaction: TransactionToken): Promise<void>`
+
+Executes a raw SQL script that may contain multiple statements.
+
+Drivers must be configured to accept multi-statement scripts where required
+(for example, mysql2 needs `multipleStatements: true`).
+
+
+
 ### `hasColumn(table: TableRef, column: string, transaction: TransactionToken): Promise<boolean>`
 
 Checks whether a column exists on a table.
@@ -115,12 +101,6 @@ Checks whether a column exists on a table.
 ### `hasTable(table: TableRef, transaction: TransactionToken): Promise<boolean>`
 
 Checks whether a table exists.
-
-
-
-### `migrate(request: DataMigrationRequest): Promise<DataMigrationResult>`
-
-Executes a migration request.
 
 
 

@@ -1,6 +1,5 @@
 ---
 title: createUwsRequestHandler
-source: https://github.com/remix-run/remix/blob/main/packages/node-serve/src/lib/server.ts#L130
 ---
 
 # createUwsRequestHandler

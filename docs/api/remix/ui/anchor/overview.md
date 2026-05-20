@@ -3,7 +3,7 @@ type: package
 title: remix/ui/anchor
 ---
 
-# anchor
+# remix/ui/anchor
 
 `anchor` positions a floating element against an anchor element and keeps it constrained to the viewport. Use it for custom floating surfaces that need placement, flipping, offsets, and optional relative alignment.
 

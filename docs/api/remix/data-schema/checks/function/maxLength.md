@@ -1,6 +1,5 @@
 ---
 title: maxLength
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L26
 ---
 
 # maxLength

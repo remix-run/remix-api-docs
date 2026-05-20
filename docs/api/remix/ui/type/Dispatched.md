@@ -1,6 +1,5 @@
 ---
 title: Dispatched
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/event-listeners.ts#L4
 ---
 
 # Dispatched

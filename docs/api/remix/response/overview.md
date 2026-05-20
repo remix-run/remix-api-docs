@@ -3,7 +3,7 @@ type: package
 title: remix/response
 ---
 
-# response
+# remix/response
 
 Response helper utilities for the web Fetch API. `response` provides focused helpers for common HTTP responses with correct headers and caching semantics.
 
@@ -234,7 +234,7 @@ Range requests and compression are mutually exclusive. When `Accept-Ranges: byte
 - [`remix/headers`](https://github.com/remix-run/remix/tree/main/packages/headers) - Type-safe HTTP header manipulation
 - [`remix/html-template`](https://github.com/remix-run/remix/tree/main/packages/html-template) - Safe HTML templating with automatic escaping
 - [`remix/fs`](https://github.com/remix-run/remix/tree/main/packages/fs) - File system utilities including `openFile`
-- [`remix/fetch-router`](https://github.com/remix-run/remix/tree/main/packages/fetch-router) - Build HTTP routers using the web fetch API
+- [`remix/router`](https://github.com/remix-run/remix/tree/main/packages/fetch-router) - Build HTTP routers using the web fetch API
 - [`remix/mime`](https://github.com/remix-run/remix/tree/main/packages/mime) - MIME type utilities
 
 ## License

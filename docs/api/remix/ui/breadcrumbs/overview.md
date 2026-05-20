@@ -3,7 +3,7 @@ type: package
 title: remix/ui/breadcrumbs
 ---
 
-# breadcrumbs
+# remix/ui/breadcrumbs
 
 `Breadcrumbs` renders semantic breadcrumb navigation from a list of items. Use it when the page needs a compact path back through parent sections.
 

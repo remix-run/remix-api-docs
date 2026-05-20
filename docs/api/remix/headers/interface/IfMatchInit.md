@@ -1,6 +1,5 @@
 ---
 title: IfMatchInit
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-match.ts#L7
 ---
 
 # IfMatchInit

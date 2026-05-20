@@ -1,6 +1,5 @@
 ---
 title: OAuthAccount
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/provider.ts#L59
 ---
 
 # OAuthAccount

@@ -1,6 +1,5 @@
 ---
 title: AccordionContentProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/accordion/accordion.tsx#L90
 ---
 
 # AccordionContentProps

@@ -1,6 +1,5 @@
 ---
 title: number
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/coerce.ts#L13
 ---
 
 # number

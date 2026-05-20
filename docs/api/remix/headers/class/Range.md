@@ -1,6 +1,5 @@
 ---
 title: Range
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/range.ts#L27
 ---
 
 # Range

@@ -1,6 +1,5 @@
 ---
 title: getIndexes
-source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/byte-range.ts#L36
 ---
 
 # getIndexes

@@ -1,6 +1,5 @@
 ---
 title: CookieOptions
-source: https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L12
 ---
 
 # CookieOptions

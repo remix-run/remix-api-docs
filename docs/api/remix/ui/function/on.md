@@ -1,6 +1,5 @@
 ---
 title: on
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/on-mixin.ts#L86
 ---
 
 # on
@@ -12,7 +11,7 @@ Attaches a typed DOM event handler through the mixin system.
 ## Signature
 
 ```ts
-function on<target extends Element, type extends keyof ElementEventMap>(
+function on<target extends Element, type extends string>(
   type: type,
   handler: ListenerFor<target, type>,
   captureBoolean: boolean,

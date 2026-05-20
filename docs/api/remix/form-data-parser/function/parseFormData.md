@@ -1,6 +1,5 @@
 ---
 title: parseFormData
-source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L134
 ---
 
 # parseFormData

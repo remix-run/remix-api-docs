@@ -1,6 +1,5 @@
 ---
 title: ContentDisposition
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-disposition.ts#L34
 ---
 
 # ContentDisposition

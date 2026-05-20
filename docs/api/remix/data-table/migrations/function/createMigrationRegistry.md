@@ -1,6 +1,5 @@
 ---
 title: createMigrationRegistry
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations/registry.ts#L39
 ---
 
 # createMigrationRegistry
@@ -24,7 +23,7 @@ function createMigrationRegistry(
 import { createMigrationRegistry } from "remix/data-table/migrations";
 
 let registry = createMigrationRegistry();
-registry.register({ id, name, migration });
+registry.register({ id, name, up, down });
 
 ```
 

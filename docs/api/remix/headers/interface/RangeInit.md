@@ -1,6 +1,5 @@
 ---
 title: RangeInit
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/range.ts#L6
 ---
 
 # RangeInit

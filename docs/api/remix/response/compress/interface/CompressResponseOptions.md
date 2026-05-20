@@ -1,6 +1,5 @@
 ---
 title: CompressResponseOptions
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/compress.ts#L23
 ---
 
 # CompressResponseOptions

@@ -3,7 +3,7 @@ type: package
 title: remix/ui/button
 ---
 
-# button
+# remix/ui/button
 
 `button` is the shared button styling contract for `remix/ui`. Use `Button` for ordinary action buttons, or compose flat `button.*Style` exports directly when a higher-level control needs button structure without a wrapper.
 

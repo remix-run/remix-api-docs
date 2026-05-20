@@ -1,6 +1,5 @@
 ---
 title: LazyContent
-source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L6
 ---
 
 # LazyContent

@@ -1,6 +1,5 @@
 ---
 title: compare
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L63
 ---
 
 # compare
@@ -13,7 +12,7 @@ Passing to `.sort()` will sort matches from least specific to most specific.
 ## Signature
 
 ```ts
-function compare(a: RoutePatternMatch, b: RoutePatternMatch): -1 | 0 | 1;
+function compare(a: Match, b: Match): -1 | 0 | 1;
 
 ```
 

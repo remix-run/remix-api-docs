@@ -3,7 +3,7 @@ type: package
 title: remix/ui/animation
 ---
 
-# animation
+# remix/ui/animation
 
 `animation` provides small primitives for entrance, exit, layout, spring, and tween animation. Use these helpers with Remix UI mixins, CSS transitions, the Web Animations API, and imperative `requestAnimationFrame` loops.
 
@@ -134,7 +134,7 @@ Pass `size: false` when the element should animate position only and avoid scale
 <div mix={[animateLayout({ duration: 180, easing: 'ease-out', size: false })]} />
 ```
 
-Passing `true` or no argument enables the default layout animation. Passing `false`, `null`, or `undefined` disables it. Layout animation skips work when geometry does not change, cancels interrupted in-flight animations, and continues from the current visual transform when a new layout change interrupts an active animation.
+Passing `true` or no argument enables the default layout animation. Passing `false`, `null`, or `undefined` disables it. Layout animation skips work when geometry does not change, keeps in-flight animations running when their target geometry has not changed, and continues from the current visual transform when a new layout change interrupts an active animation.
 
 ## Spring
 

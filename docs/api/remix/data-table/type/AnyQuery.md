@@ -1,6 +1,5 @@
 ---
 title: AnyQuery
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/query.ts#L151
 ---
 
 # AnyQuery

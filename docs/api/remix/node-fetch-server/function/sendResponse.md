@@ -1,6 +1,5 @@
 ---
 title: sendResponse
-source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L264
 ---
 
 # sendResponse

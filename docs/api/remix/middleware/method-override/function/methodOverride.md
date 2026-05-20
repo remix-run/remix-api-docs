@@ -1,0 +1,30 @@
+---
+title: methodOverride
+---
+
+# methodOverride
+
+## Summary
+
+Middleware that overrides `context.method` with the value of the method override field.
+
+Note: This middleware must be placed after the
+import('@remix-run/form-data-middleware').formData middleware in the middleware
+chain, or some other middleware that provides `context.get(FormData)`.
+
+## Signature
+
+```ts
+function methodOverride(options: MethodOverrideOptions): Middleware;
+
+```
+
+## Parameters
+
+### `options`
+
+Options for the method override middleware
+
+## Returns
+
+A middleware that overrides `context.method` with the value of the method override field

@@ -1,6 +1,5 @@
 ---
 title: lt
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L151
 ---
 
 # lt

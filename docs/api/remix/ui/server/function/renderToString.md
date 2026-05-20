@@ -1,6 +1,5 @@
 ---
 title: renderToString
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/server/stream.ts#L1320
 ---
 
 # renderToString

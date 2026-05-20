@@ -1,6 +1,5 @@
 ---
 title: AssetServerOptions
-source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L60
 ---
 
 # AssetServerOptions
@@ -12,11 +11,12 @@ Options used to construct an [`AssetServer`](/api/remix/assets/interface/AssetSe
 ## Signature
 
 ```ts
-interface AssetServerOptions {
+interface AssetServerOptions<transforms> {
   allow: readonly string[];
   basePath: string;
   deny?: readonly string[];
   fileMap: Readonly<Record<string, string>>;
+  files?: AssetServerFilesOptions<transforms>;
   fingerprint?: FingerprintOptions;
   minify?: boolean;
   onError?: (error: unknown) => void | Response | Promise<void | Response>;
@@ -46,7 +46,13 @@ Glob patterns or file paths that are denied from being served. Relative values a
 
 ### `fileMap`
 
-File patterns keyed by public URL patterns relative to `basePath`.
+File patterns keyed by public URL patterns.
+
+### `files`
+
+Leaf file asset configuration. Files configured here are served directly and can be
+referenced from CSS `url(...)` rules. Compiled asset extensions like `.css` and script
+module extensions are not allowed here.
 
 ### `fingerprint`
 

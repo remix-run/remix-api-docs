@@ -1,6 +1,5 @@
 ---
 title: FrameHandle
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/component.ts#L147
 ---
 
 # FrameHandle

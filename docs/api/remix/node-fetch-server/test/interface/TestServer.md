@@ -1,6 +1,5 @@
 ---
 title: TestServer
-source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/test-server.ts#L8
 ---
 
 # TestServer

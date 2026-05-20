@@ -1,6 +1,5 @@
 ---
 title: like
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L221
 ---
 
 # like

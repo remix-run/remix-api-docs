@@ -1,6 +1,5 @@
 ---
 title: equal
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L33
 ---
 
 # equal
@@ -12,7 +11,7 @@ Returns true if matches `a` and `b` have equal specificity.
 ## Signature
 
 ```ts
-function equal(a: RoutePatternMatch, b: RoutePatternMatch): boolean;
+function equal(a: Match, b: Match): boolean;
 
 ```
 

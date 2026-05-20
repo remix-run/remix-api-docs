@@ -1,6 +1,5 @@
 ---
 title: ContentTypeInit
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-type.ts#L7
 ---
 
 # ContentTypeInit

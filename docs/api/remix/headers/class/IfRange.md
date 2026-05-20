@@ -1,6 +1,5 @@
 ---
 title: IfRange
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-range.ts#L14
 ---
 
 # IfRange

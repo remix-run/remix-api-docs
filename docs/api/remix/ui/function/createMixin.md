@@ -1,6 +1,5 @@
 ---
 title: createMixin
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L243
 ---
 
 # createMixin

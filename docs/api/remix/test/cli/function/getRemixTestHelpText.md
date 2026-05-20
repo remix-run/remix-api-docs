@@ -1,6 +1,5 @@
 ---
 title: getRemixTestHelpText
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/config.ts#L308
 ---
 
 # getRemixTestHelpText

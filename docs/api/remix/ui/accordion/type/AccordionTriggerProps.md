@@ -1,6 +1,5 @@
 ---
 title: AccordionTriggerProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/accordion/accordion.tsx#L84
 ---
 
 # AccordionTriggerProps

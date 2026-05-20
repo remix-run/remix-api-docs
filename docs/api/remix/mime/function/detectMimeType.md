@@ -1,6 +1,5 @@
 ---
 title: detectMimeType
-source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/detect-mime-type.ts#L19
 ---
 
 # detectMimeType

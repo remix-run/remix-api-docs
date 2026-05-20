@@ -1,6 +1,5 @@
 ---
 title: RenderOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/render.ts#L7
 ---
 
 # RenderOptions
@@ -37,13 +36,15 @@ interface RenderOptions {
     removeEventListener: any;
   };
   styleManager?: {
-    adoptServerStyles: (source: ServerStyleSource) => void;
+    adoptServerStyles: (source: ServerStyleSource) => Set<string>;
     dispose: () => void;
     getGeneration: () => number;
     has: (className: string) => boolean;
     insert: (className: string, rule: string) => void;
     remove: (className: string) => void;
+    replaceServerStyles: (source: ServerStyleSource) => void;
     reset: () => void;
+    selectors: () => IterableIterator<string>;
   };
 }
 

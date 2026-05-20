@@ -1,6 +1,5 @@
 ---
 title: beforeAll
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L241
 ---
 
 # beforeAll

@@ -1,6 +1,5 @@
 ---
 title: SetCookieInit
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/set-cookie.ts#L66
 ---
 
 # SetCookieInit

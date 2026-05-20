@@ -3,7 +3,7 @@ type: package
 title: remix/multipart-parser
 ---
 
-# multipart-parser
+# remix/multipart-parser
 
 Fast streaming multipart parsing for JavaScript. `multipart-parser` processes multipart bodies incrementally so large uploads can be handled without buffering the entire multipart payload in memory.
 

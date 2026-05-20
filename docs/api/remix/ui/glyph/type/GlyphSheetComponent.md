@@ -1,6 +1,5 @@
 ---
 title: GlyphSheetComponent
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/glyph/glyph.tsx#L17
 ---
 
 # GlyphSheetComponent

@@ -3,7 +3,7 @@ type: package
 title: remix/node-serve
 ---
 
-# node-serve
+# remix/node-serve
 
 Build high-performance Node.js servers with web-standard Fetch API primitives. Use this package when you want Remix-style `Request`/`Response` handlers with a managed server optimized for production throughput.
 

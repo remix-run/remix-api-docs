@@ -3,7 +3,7 @@ type: package
 title: remix/lazy-file
 ---
 
-# lazy-file
+# remix/lazy-file
 
 A lazy, streaming `Blob`/`File` implementation for JavaScript.
 

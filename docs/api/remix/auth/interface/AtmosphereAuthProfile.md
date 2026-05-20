@@ -1,6 +1,5 @@
 ---
 title: AtmosphereAuthProfile
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/atmosphere.ts#L30
 ---
 
 # AtmosphereAuthProfile

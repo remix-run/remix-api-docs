@@ -1,6 +1,5 @@
 ---
 title: CacheControlInit
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/cache-control.ts#L10
 ---
 
 # CacheControlInit

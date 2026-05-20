@@ -1,6 +1,5 @@
 ---
 title: createRangeRoot
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L71
 ---
 
 # createRangeRoot

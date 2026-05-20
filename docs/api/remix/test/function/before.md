@@ -1,6 +1,5 @@
 ---
 title: before
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L259
 ---
 
 # before

@@ -3,7 +3,7 @@ type: package
 title: remix/cli
 ---
 
-# cli
+# remix/cli
 
 Command-line interface for creating and managing Remix projects.
 

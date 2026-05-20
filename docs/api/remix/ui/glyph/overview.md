@@ -3,7 +3,7 @@ type: package
 title: remix/ui/glyph
 ---
 
-# glyph
+# remix/ui/glyph
 
 `Glyph` renders references into a shared SVG sprite sheet. Render a glyph sheet once, then render individual `Glyph` instances by name.
 

@@ -1,6 +1,5 @@
 ---
 title: mock
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/mock.ts#L76
 ---
 
 # mock

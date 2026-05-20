@@ -1,6 +1,5 @@
 ---
 title: AcceptEncoding
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-encoding.ts#L17
 ---
 
 # AcceptEncoding

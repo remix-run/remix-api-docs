@@ -3,7 +3,7 @@ type: package
 title: remix/ui/popover
 ---
 
-# Popover
+# remix/ui/popover
 
 `popover` is a low-level primitive for anchored, dismissible floating panels.
 

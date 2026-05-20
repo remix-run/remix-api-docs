@@ -1,6 +1,5 @@
 ---
 title: fields
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/form-data.ts#L160
 ---
 
 # fields

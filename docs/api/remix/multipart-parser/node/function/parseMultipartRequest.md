@@ -1,6 +1,5 @@
 ---
 title: parseMultipartRequest
-source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.node.ts#L69
 ---
 
 # parseMultipartRequest

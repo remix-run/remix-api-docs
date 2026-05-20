@@ -1,6 +1,5 @@
 ---
 title: SuperHeaders
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/super-headers.ts#L338
 ---
 
 # SuperHeaders

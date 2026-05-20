@@ -1,6 +1,5 @@
 ---
 title: RunRemixOptions
-source: https://github.com/remix-run/remix/blob/main/packages/cli/src/lib/cli.ts#L11
 ---
 
 # RunRemixOptions

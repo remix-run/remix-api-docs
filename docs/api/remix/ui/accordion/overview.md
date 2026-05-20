@@ -3,7 +3,7 @@ type: package
 title: remix/ui/accordion
 ---
 
-# accordion
+# remix/ui/accordion
 
 `Accordion` renders a disclosure set with one or more expandable items. Use it for grouped settings, FAQ sections, and dense panels where each item owns a trigger and content region.
 

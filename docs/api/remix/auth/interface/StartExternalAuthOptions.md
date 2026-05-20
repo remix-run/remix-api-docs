@@ -1,6 +1,5 @@
 ---
 title: StartExternalAuthOptions
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/start-external-auth.ts#L15
 ---
 
 # StartExternalAuthOptions

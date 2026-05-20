@@ -1,6 +1,5 @@
 ---
 title: TarParseError
-source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L18
 ---
 
 # TarParseError

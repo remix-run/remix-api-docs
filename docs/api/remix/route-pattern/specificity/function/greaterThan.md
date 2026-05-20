@@ -1,6 +1,5 @@
 ---
 title: greaterThan
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L22
 ---
 
 # greaterThan
@@ -12,7 +11,7 @@ Returns true if match `a` is more specific than match `b`.
 ## Signature
 
 ```ts
-function greaterThan(a: RoutePatternMatch, b: RoutePatternMatch): boolean;
+function greaterThan(a: Match, b: Match): boolean;
 
 ```
 

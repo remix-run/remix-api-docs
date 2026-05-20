@@ -1,6 +1,5 @@
 ---
 title: OktaAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/okta.ts#L17
 ---
 
 # OktaAuthProviderOptions

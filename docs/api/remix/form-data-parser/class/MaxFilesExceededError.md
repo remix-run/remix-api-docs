@@ -1,6 +1,5 @@
 ---
 title: MaxFilesExceededError
-source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L25
 ---
 
 # MaxFilesExceededError

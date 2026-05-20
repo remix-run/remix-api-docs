@@ -1,6 +1,5 @@
 ---
 title: jsx
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/jsx.ts#L104
 ---
 
 # jsx

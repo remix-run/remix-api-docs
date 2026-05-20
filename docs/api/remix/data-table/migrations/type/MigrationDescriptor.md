@@ -1,23 +1,23 @@
 ---
 title: MigrationDescriptor
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations.ts#L86
 ---
 
 # MigrationDescriptor
 
 ## Summary
 
-Migration metadata stored in registries and returned by loaders.
+Migration metadata + SQL consumed by the registry/runner.
 
 ## Signature
 
 ```ts
 type MigrationDescriptor = {
-  checksum?: string;
+  down?: string;
   id: string;
-  migration: Migration;
   name: string;
   path?: string;
+  transaction?: MigrationTransactionMode;
+  up: string;
 };
 
 ```

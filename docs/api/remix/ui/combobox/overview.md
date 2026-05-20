@@ -3,7 +3,7 @@ type: package
 title: remix/ui/combobox
 ---
 
-# Combobox
+# remix/ui/combobox
 
 `Combobox` is the input-first popup value picker for `remix/ui`.
 

@@ -1,6 +1,5 @@
 ---
 title: animateLayout
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-layout-mixin.ts#L258
 ---
 
 # animateLayout

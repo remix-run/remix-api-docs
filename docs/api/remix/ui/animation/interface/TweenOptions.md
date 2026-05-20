@@ -1,6 +1,5 @@
 ---
 title: TweenOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/tween.ts#L86
 ---
 
 # TweenOptions

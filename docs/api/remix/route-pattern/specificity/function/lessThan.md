@@ -1,6 +1,5 @@
 ---
 title: lessThan
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L11
 ---
 
 # lessThan
@@ -12,7 +11,7 @@ Returns true if match `a` is less specific than match `b`.
 ## Signature
 
 ```ts
-function lessThan(a: RoutePatternMatch, b: RoutePatternMatch): boolean;
+function lessThan(a: Match, b: Match): boolean;
 
 ```
 

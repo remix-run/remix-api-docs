@@ -1,6 +1,5 @@
 ---
 title: createScheduler
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/scheduler.ts#L37
 ---
 
 # createScheduler
@@ -16,13 +15,15 @@ function createScheduler(
   doc: Document,
   rootTarget: EventTarget,
   styles: {
-    adoptServerStyles: (source: ServerStyleSource) => void;
+    adoptServerStyles: (source: ServerStyleSource) => Set<string>;
     dispose: () => void;
     getGeneration: () => number;
     has: (className: string) => boolean;
     insert: (className: string, rule: string) => void;
     remove: (className: string) => void;
+    replaceServerStyles: (source: ServerStyleSource) => void;
     reset: () => void;
+    selectors: () => IterableIterator<string>;
   },
 ): {
   addEventListener: any;

@@ -1,6 +1,5 @@
 ---
 title: mimeTypeToContentType
-source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/mime-type-to-content-type.ts#L31
 ---
 
 # mimeTypeToContentType

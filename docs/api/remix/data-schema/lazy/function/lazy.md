@@ -1,6 +1,5 @@
 ---
 title: lazy
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/lazy.ts#L12
 ---
 
 # lazy

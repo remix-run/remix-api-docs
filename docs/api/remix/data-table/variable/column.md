@@ -1,6 +1,5 @@
 ---
 title: column
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/column.ts#L334
 ---
 
 # column

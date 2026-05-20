@@ -1,6 +1,5 @@
 ---
 title: SafeHtml
-source: https://github.com/remix-run/remix/blob/main/packages/html-template/src/lib/safe-html.ts#L7
 ---
 
 # SafeHtml

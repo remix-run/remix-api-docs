@@ -1,6 +1,5 @@
 ---
 title: object
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/form-data.ts#L93
 ---
 
 # object

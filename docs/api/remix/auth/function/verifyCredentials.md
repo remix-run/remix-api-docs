@@ -1,6 +1,5 @@
 ---
 title: verifyCredentials
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/verify-credentials.ts#L12
 ---
 
 # verifyCredentials

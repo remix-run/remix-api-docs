@@ -1,6 +1,5 @@
 ---
 title: ListOptions
-source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L139
 ---
 
 # ListOptions

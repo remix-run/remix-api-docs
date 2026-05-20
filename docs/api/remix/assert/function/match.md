@@ -1,6 +1,5 @@
 ---
 title: match
-source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L181
 ---
 
 # match

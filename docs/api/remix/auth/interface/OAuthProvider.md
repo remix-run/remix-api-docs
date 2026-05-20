@@ -1,6 +1,5 @@
 ---
 title: OAuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/provider.ts#L87
 ---
 
 # OAuthProvider

@@ -1,0 +1,37 @@
+---
+title: compression
+---
+
+# compression
+
+## Summary
+
+Creates a middleware handler that automatically compresses responses based on the
+client's Accept-Encoding header, along with an additional Content-Type filter
+by default to only apply compression to appropriate media types.
+
+## Signature
+
+```ts
+function compression(options: CompressionOptions): Middleware;
+
+```
+
+## Example
+
+```ts
+let router = createRouter({
+  middleware: [compression()],
+});
+
+```
+
+## Parameters
+
+### `options`
+
+Optional compression settings
+
+## Returns
+
+A middleware handler that automatically compresses responses based on the client's Accept-Encoding header

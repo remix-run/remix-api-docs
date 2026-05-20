@@ -1,6 +1,5 @@
 ---
 title: ResolveFrameContext
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/server/stream.ts#L53
 ---
 
 # ResolveFrameContext

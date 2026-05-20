@@ -1,6 +1,5 @@
 ---
 title: attrs
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/attrs-mixin.ts#L26
 ---
 
 # attrs

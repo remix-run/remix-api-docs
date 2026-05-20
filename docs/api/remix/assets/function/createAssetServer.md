@@ -1,6 +1,5 @@
 ---
 title: createAssetServer
-source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L198
 ---
 
 # createAssetServer
@@ -15,7 +14,14 @@ source-based URL fingerprinting, caching, and configurable file mapping.
 ## Signature
 
 ```ts
-function createAssetServer(options: AssetServerOptions): AssetServer;
+function createAssetServer<
+  transforms extends Readonly<
+    Record<
+      string,
+      AssetRequestTransform<string, AssetRequestTransformParamMode>
+    >
+  >,
+>(options: AssetServerCreateOptions<transforms>): AssetServer<transforms>;
 
 ```
 

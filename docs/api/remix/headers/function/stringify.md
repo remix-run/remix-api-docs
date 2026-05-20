@@ -1,6 +1,5 @@
 ---
 title: stringify
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/raw-headers.ts#L39
 ---
 
 # stringify

@@ -1,6 +1,5 @@
 ---
 title: render
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/render.ts#L62
 ---
 
 # render

@@ -1,6 +1,5 @@
 ---
 title: Auth0AuthProviderOptions
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/auth0.ts#L22
 ---
 
 # Auth0AuthProviderOptions

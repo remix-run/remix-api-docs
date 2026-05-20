@@ -1,6 +1,5 @@
 ---
 title: descending
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L53
 ---
 
 # descending
@@ -12,7 +11,7 @@ Comparator function for sorting matches from most specific to least specific.
 ## Signature
 
 ```ts
-function descending(a: RoutePatternMatch, b: RoutePatternMatch): number;
+function descending(a: Match, b: Match): number;
 
 ```
 

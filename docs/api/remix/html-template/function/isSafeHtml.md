@@ -1,6 +1,5 @@
 ---
 title: isSafeHtml
-source: https://github.com/remix-run/remix/blob/main/packages/html-template/src/lib/safe-html.ts#L21
 ---
 
 # isSafeHtml

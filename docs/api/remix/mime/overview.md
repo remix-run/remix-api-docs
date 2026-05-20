@@ -3,7 +3,7 @@ type: package
 title: remix/mime
 ---
 
-# mime
+# remix/mime
 
 MIME type detection and content-type helpers for Remix. This package maps extensions to MIME types and provides utilities for charset and compressibility checks.
 

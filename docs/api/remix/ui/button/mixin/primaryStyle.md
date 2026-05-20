@@ -1,6 +1,5 @@
 ---
 title: primaryStyle
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/components/button/button.tsx#L126
 ---
 
 # primaryStyle

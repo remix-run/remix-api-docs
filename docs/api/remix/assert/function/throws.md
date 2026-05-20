@@ -1,6 +1,5 @@
 ---
 title: throws
-source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L230
 ---
 
 # throws

@@ -1,6 +1,5 @@
 ---
 title: createRedirectResponse
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/redirect.ts#L9
 ---
 
 # createRedirectResponse

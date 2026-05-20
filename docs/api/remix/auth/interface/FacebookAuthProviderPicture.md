@@ -1,6 +1,5 @@
 ---
 title: FacebookAuthProviderPicture
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/facebook.ts#L33
 ---
 
 # FacebookAuthProviderPicture

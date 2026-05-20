@@ -1,6 +1,5 @@
 ---
 title: run
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/run.ts#L63
 ---
 
 # run

@@ -1,6 +1,5 @@
 ---
 title: ascending
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L44
 ---
 
 # ascending
@@ -12,7 +11,7 @@ Comparator function for sorting matches from least specific to most specific.
 ## Signature
 
 ```ts
-function ascending(a: RoutePatternMatch, b: RoutePatternMatch): number;
+function ascending(a: Match, b: Match): number;
 
 ```
 

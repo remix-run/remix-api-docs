@@ -3,7 +3,7 @@ type: package
 title: remix/ui/menu
 ---
 
-# menu
+# remix/ui/menu
 
 `Menu` renders a button-triggered menu with keyboard navigation, checked items, selection events, and nested submenus. Use it for action menus and command groups.
 

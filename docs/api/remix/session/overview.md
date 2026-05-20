@@ -3,7 +3,7 @@ type: package
 title: remix/session
 ---
 
-# session
+# remix/session
 
 A session management library for JavaScript. This package provides a flexible and secure way to manage user sessions in server-side applications with a flexible API for different session storage strategies.
 
@@ -26,7 +26,7 @@ The following example shows how to use a session to persist data across requests
 The standard pattern when working with sessions is to read the session from the request, modify it, and save it back to storage and write the session cookie to the response.
 
 ```ts
-import { createCookieSessionStorage } from 'remix/session/cookie-storage'
+import { createCookieSessionStorage } from 'remix/session-storage/cookie'
 
 // Create a session storage. This is used to store session data across requests.
 let storage = createCookieSessionStorage()
@@ -93,7 +93,7 @@ assert.equal(response4.session.get('message'), undefined)
 For security, regenerate the session ID after privilege changes like a login. This helps prevent session fixation attacks by issuing a new session ID in the response.
 
 ```ts
-import { createFsSessionStorage } from 'remix/session/fs-storage'
+import { createFsSessionStorage } from 'remix/session-storage/fs'
 
 let sessionStorage = createFsSessionStorage('/tmp/sessions')
 
@@ -138,7 +138,7 @@ A session storage object must always be initialized with a _signed_ session cook
 Filesystem storage is a good choice for production environments. It requires access to a persistent filesystem, which is readily available on most servers. And it can scale to handle sessions with a lot of data easily.
 
 ```ts
-import { createFsSessionStorage } from 'remix/session/fs-storage'
+import { createFsSessionStorage } from 'remix/session-storage/fs'
 
 let sessionStorage = createFsSessionStorage('/tmp/sessions')
 ```
@@ -150,7 +150,7 @@ Cookie storage is suitable for production environments. In this strategy, all se
 The main limitation of cookie storage is that the total size of the session cookie is limited to the browser's maximum cookie size, typically 4096 bytes.
 
 ```ts
-import { createCookieSessionStorage } from 'remix/session/cookie-storage'
+import { createCookieSessionStorage } from 'remix/session-storage/cookie'
 
 let sessionStorage = createCookieSessionStorage()
 ```
@@ -160,7 +160,7 @@ let sessionStorage = createCookieSessionStorage()
 Memory storage is useful in testing and development environments. In this strategy, all session data is stored in memory, which means no additional storage is required. However, all session data is lost when the server restarts.
 
 ```ts
-import { createMemorySessionStorage } from 'remix/session/memory-storage'
+import { createMemorySessionStorage } from 'remix/session-storage/memory'
 
 let sessionStorage = createMemorySessionStorage()
 ```
@@ -168,8 +168,8 @@ let sessionStorage = createMemorySessionStorage()
 ## Related Packages
 
 - [`remix/cookie`](https://github.com/remix-run/remix/tree/main/packages/cookie) - Cookie parsing and serialization
-- [`remix/fetch-router`](https://github.com/remix-run/remix/tree/main/packages/fetch-router) - Router with built-in session middleware
-- [`remix/session-storage-memcache`](https://github.com/remix-run/remix/tree/main/packages/session-storage-memcache) - Memcache-backed session storage
+- [`remix/router`](https://github.com/remix-run/remix/tree/main/packages/fetch-router) - Router with built-in session middleware
+- [`remix/session-storage/memcache`](https://github.com/remix-run/remix/tree/main/packages/session-storage-memcache) - Memcache-backed session storage
 
 ## License
 

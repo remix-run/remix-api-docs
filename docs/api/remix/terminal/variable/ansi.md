@@ -1,6 +1,5 @@
 ---
 title: ansi
-source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/ansi.ts#L121
 ---
 
 # ansi

@@ -1,6 +1,5 @@
 ---
 title: RenderToStreamOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/server/stream.ts#L28
 ---
 
 # RenderToStreamOptions

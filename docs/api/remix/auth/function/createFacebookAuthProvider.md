@@ -1,6 +1,5 @@
 ---
 title: createFacebookAuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/facebook.ts#L61
 ---
 
 # createFacebookAuthProvider

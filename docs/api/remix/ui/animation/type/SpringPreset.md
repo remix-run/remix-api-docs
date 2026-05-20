@@ -1,6 +1,5 @@
 ---
 title: SpringPreset
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/spring.ts#L15
 ---
 
 # SpringPreset

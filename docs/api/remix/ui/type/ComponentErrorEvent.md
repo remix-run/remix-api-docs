@@ -1,6 +1,5 @@
 ---
 title: ComponentErrorEvent
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/error-event.ts#L4
 ---
 
 # ComponentErrorEvent

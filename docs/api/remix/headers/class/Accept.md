@@ -1,6 +1,5 @@
 ---
 title: Accept
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept.ts#L17
 ---
 
 # Accept

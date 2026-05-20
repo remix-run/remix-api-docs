@@ -1,6 +1,5 @@
 ---
 title: finishExternalAuth
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/finish-external-auth.ts#L38
 ---
 
 # finishExternalAuth

@@ -1,6 +1,5 @@
 ---
 title: MicrosoftAuthProfile
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/microsoft.ts#L12
 ---
 
 # MicrosoftAuthProfile

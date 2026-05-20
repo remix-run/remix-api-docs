@@ -1,6 +1,5 @@
 ---
 title: Cookie
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/cookie.ts#L17
 ---
 
 # Cookie
