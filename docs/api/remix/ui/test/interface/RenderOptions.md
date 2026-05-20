@@ -1,5 +1,6 @@
 ---
 title: RenderOptions
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/runtime/render.ts#L7
 ---
 
 # RenderOptions
@@ -26,26 +27,8 @@ interface RenderOptions {
     ) => FrameContent | Promise<FrameContent>;
     src?: string;
   };
-  scheduler?: {
-    addEventListener: any;
-    dequeue: any;
-    enqueue: any;
-    enqueueCommitPhase: any;
-    enqueueTasks: any;
-    enqueueWork: any;
-    removeEventListener: any;
-  };
-  styleManager?: {
-    adoptServerStyles: (source: ServerStyleSource) => Set<string>;
-    dispose: () => void;
-    getGeneration: () => number;
-    has: (className: string) => boolean;
-    insert: (className: string, rule: string) => void;
-    remove: (className: string) => void;
-    replaceServerStyles: (source: ServerStyleSource) => void;
-    reset: () => void;
-    selectors: () => IterableIterator<string>;
-  };
+  scheduler?: Scheduler;
+  styleManager?: StyleManager;
 }
 
 ```

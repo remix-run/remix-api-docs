@@ -1,5 +1,6 @@
 ---
 title: RemixNode
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/runtime/jsx.ts#L50
 ---
 
 # RemixNode
@@ -13,7 +14,7 @@ and how our reconciler flattens children at runtime.
 Particularly useful for `props.children`.
 
 ```tsx
-function MyComponent({ children }: { children: RemixNode }) {}
+function MyComponent(handle: Handle<{ children: RemixNode }>) {}
 ```
 
 ## Signature

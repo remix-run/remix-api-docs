@@ -1,5 +1,6 @@
 ---
 title: ResourcesOptions
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/fetch-router/src/lib/route-helpers/resources.ts#L16
 ---
 
 # ResourcesOptions

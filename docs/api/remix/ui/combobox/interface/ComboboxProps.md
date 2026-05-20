@@ -1,5 +1,6 @@
 ---
 title: ComboboxProps
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/components/combobox/combobox.tsx#L126
 ---
 
 # ComboboxProps
@@ -13,7 +14,7 @@ interface ComboboxProps {
   accessKey?: string
   aria-activedescendant?: string
   aria-atomic?: Booleanish
-  aria-autocomplete?: "list" | "none" | "inline" | "both"
+  aria-autocomplete?: "none" | "list" | "inline" | "both"
   aria-braillelabel?: string
   aria-brailleroledescription?: string
   aria-busy?: Booleanish
@@ -23,7 +24,7 @@ interface ComboboxProps {
   aria-colindextext?: string
   aria-colspan?: number
   aria-controls?: string
-  aria-current?: "time" | "page" | Booleanish | "step" | "location" | "date"
+  aria-current?: Booleanish | "time" | "page" | "step" | "location" | "date"
   aria-describedby?: string
   aria-description?: string
   aria-details?: string
@@ -33,7 +34,7 @@ interface ComboboxProps {
   aria-expanded?: Booleanish
   aria-flowto?: string
   aria-grabbed?: Booleanish
-  aria-haspopup?: "dialog" | "menu" | "grid" | "listbox" | "tree" | Booleanish
+  aria-haspopup?: Booleanish | "dialog" | "grid" | "listbox" | "menu" | "tree"
   aria-hidden?: Booleanish
   aria-invalid?: Booleanish | "grammar" | "spelling"
   aria-keyshortcuts?: string
@@ -50,7 +51,7 @@ interface ComboboxProps {
   aria-posinset?: number
   aria-pressed?: Booleanish | "mixed"
   aria-readonly?: Booleanish
-  aria-relevant?: "text" | "all" | "additions" | "additions removals" | "additions text" | "removals" | "removals additions" | "removals text" | "text additions" | "text removals"
+  aria-relevant?: "all" | "additions" | "additions removals" | "additions text" | "removals" | "removals additions" | "removals text" | "text" | "text additions" | "text removals"
   aria-required?: Booleanish
   aria-roledescription?: string
   aria-rowcount?: number
@@ -64,8 +65,8 @@ interface ComboboxProps {
   aria-valuemin?: number
   aria-valuenow?: number
   aria-valuetext?: string
-  autocapitalize?: "none" | "off" | "on" | "sentences" | "words" | "characters"
-  autoCapitalize?: "none" | "off" | "on" | "sentences" | "words" | "characters"
+  autocapitalize?: "off" | "none" | "on" | "sentences" | "words" | "characters"
+  autoCapitalize?: "off" | "none" | "on" | "sentences" | "words" | "characters"
   autocorrect?: string
   autoCorrect?: string
   autofocus?: boolean
@@ -80,7 +81,7 @@ interface ComboboxProps {
   dir?: "auto" | "rtl" | "ltr"
   disabled?: boolean
   disablePictureInPicture?: boolean
-  draggable?: boolean
+  draggable?: Booleanish
   elementtiming?: string
   elementTiming?: string
   enterkeyhint?: "search" | "enter" | "done" | "go" | "next" | "previous" | "send"
@@ -118,12 +119,13 @@ interface ComboboxProps {
   results?: number
   role?: AriaRole
   slot?: string
-  spellcheck?: boolean
+  spellcheck?: Booleanish
+  spellCheck?: Booleanish
   style?: string | StyleProps
   tabindex?: number
   tabIndex?: number
   title?: string
-  translate?: boolean
+  translate?: TranslateValue
   typeof?: string
   vocab?: string
 
@@ -567,6 +569,10 @@ The `slot` HTML attribute.
 ### `spellcheck`
 
 The `spellcheck` HTML attribute.
+
+### `spellCheck`
+
+The `spellCheck` HTML attribute.
 
 ### `style`
 

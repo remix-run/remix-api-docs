@@ -1,5 +1,6 @@
 ---
 title: MigrationDirection
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/data-table/src/lib/migrations.ts#L34
 ---
 
 # MigrationDirection

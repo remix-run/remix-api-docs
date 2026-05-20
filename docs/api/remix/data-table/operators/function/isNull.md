@@ -1,5 +1,6 @@
 ---
 title: isNull
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/data-table/src/lib/operators.ts#L278
 ---
 
 # isNull

@@ -1,5 +1,6 @@
 ---
 title: RenderToStreamOptions
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/server/stream.ts#L30
 ---
 
 # RenderToStreamOptions
@@ -26,6 +27,7 @@ interface RenderToStreamOptions {
     | string
     | ReadableStream<Uint8Array<ArrayBufferLike>>
     | Promise<string | ReadableStream<Uint8Array<ArrayBufferLike>>>;
+  signal?: AbortSignal;
   topFrameSrc?: string | URL;
 }
 
@@ -48,6 +50,10 @@ Callback used to resolve runtime module metadata for client entry modules during
 ### `resolveFrame`
 
 Callback used to resolve nested frame content during streaming SSR.
+
+### `signal`
+
+Signal that cancels pending server rendering work.
 
 ### `topFrameSrc`
 

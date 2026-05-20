@@ -1,5 +1,6 @@
 ---
 title: Fragment
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/runtime/component.ts#L402
 ---
 
 # Fragment
@@ -11,7 +12,7 @@ Built-in component used to group children without adding a host element.
 ## Signature
 
 ```ts
-function Fragment(handle: Handle<FragmentProps>): () => null;
+function Fragment(handle: Handle<FragmentProps>): RenderFn;
 
 ```
 

@@ -1,5 +1,6 @@
 ---
 title: AssetServerOptions
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/assets/src/lib/asset-server.ts#L72
 ---
 
 # AssetServerOptions

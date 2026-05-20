@@ -1,5 +1,6 @@
 ---
 title: session
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/session-middleware/src/lib/session.ts#L12
 ---
 
 # session

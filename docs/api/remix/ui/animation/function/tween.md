@@ -1,5 +1,6 @@
 ---
 title: tween
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/animation/tween.ts#L105
 ---
 
 # tween

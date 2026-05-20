@@ -1,5 +1,6 @@
 ---
 title: RequestBodyMethods
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/fetch-router/src/lib/request-methods.ts#L6
 ---
 
 # RequestBodyMethods

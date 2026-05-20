@@ -1,5 +1,6 @@
 ---
 title: createScheduler
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/runtime/scheduler.ts#L53
 ---
 
 # createScheduler
@@ -14,26 +15,8 @@ Creates the DOM update scheduler used by the component runtime.
 function createScheduler(
   doc: Document,
   rootTarget: EventTarget,
-  styles: {
-    adoptServerStyles: (source: ServerStyleSource) => Set<string>;
-    dispose: () => void;
-    getGeneration: () => number;
-    has: (className: string) => boolean;
-    insert: (className: string, rule: string) => void;
-    remove: (className: string) => void;
-    replaceServerStyles: (source: ServerStyleSource) => void;
-    reset: () => void;
-    selectors: () => IterableIterator<string>;
-  },
-): {
-  addEventListener: any;
-  dequeue: any;
-  enqueue: any;
-  enqueueCommitPhase: any;
-  enqueueTasks: any;
-  enqueueWork: any;
-  removeEventListener: any;
-};
+  styles: StyleManager,
+): Scheduler;
 
 ```
 

@@ -1,5 +1,6 @@
 ---
 title: createMemoryFileStorage
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/file-storage/src/lib/backends/memory.ts#L8
 ---
 
 # createMemoryFileStorage
@@ -11,7 +12,7 @@ Creates a simple, in-memory implementation of the [`FileStorage`](/api/remix/fil
 ## Signature
 
 ```ts
-function createMemoryFileStorage(): FileStorage;
+function createMemoryFileStorage(): FileStorage<File>;
 
 ```
 

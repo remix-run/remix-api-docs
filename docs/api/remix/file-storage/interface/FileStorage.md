@@ -1,5 +1,6 @@
 ---
 title: FileStorage
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/file-storage/src/lib/file-storage.ts#L10
 ---
 
 # FileStorage
@@ -11,13 +12,13 @@ A key/value interface for storing `File` objects.
 ## Signature
 
 ```ts
-interface FileStorage {
-  get(key: string): File | Promise<File | null> | null;
+interface FileStorage<file> {
+  get(key: string): file | Promise<file | null> | null;
   has(key: string): boolean | Promise<boolean>;
   list<T extends ListOptions>(
     options: T,
   ): ListResult<T> | Promise<ListResult<T>>;
-  put(key: string, file: File): File | Promise<File>;
+  put(key: string, file: File): file | Promise<file>;
   remove(key: string): void | Promise<void>;
   set(key: string, file: File): void | Promise<void>;
 }
@@ -26,9 +27,9 @@ interface FileStorage {
 
 ## Methods
 
-### `get(key: string): File | Promise<File | null> | null`
+### `get(key: string): file | Promise<file | null> | null`
 
-Get a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) at the given key.
+Get the file at the given key.
 
 #### Parameters
 
@@ -109,10 +110,9 @@ Use the `limit` option to limit how many results you get back in the `files` arr
 
 Options for the list operation
 
-### `put(key: string, file: File): File | Promise<File>`
+### `put(key: string, file: File): file | Promise<file>`
 
-Put a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) in storage and return a
-new file backed by this storage.
+Put a `File` in storage and return a new file backed by this storage.
 
 #### Parameters
 
@@ -136,8 +136,7 @@ The key to remove
 
 ### `set(key: string, file: File): void | Promise<void>`
 
-Put a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) in storage at the given
-key.
+Put a `File` in storage at the given key.
 
 #### Parameters
 

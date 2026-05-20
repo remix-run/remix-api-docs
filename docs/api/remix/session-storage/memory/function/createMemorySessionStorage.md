@@ -1,5 +1,6 @@
 ---
 title: createMemorySessionStorage
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/session/src/lib/session-storage/memory.ts#L21
 ---
 
 # createMemorySessionStorage

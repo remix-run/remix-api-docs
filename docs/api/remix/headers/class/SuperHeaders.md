@@ -1,5 +1,6 @@
 ---
 title: SuperHeaders
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/headers/src/lib/super-headers.ts#L357
 ---
 
 # SuperHeaders
@@ -99,6 +100,7 @@ class SuperHeaders {
   // Methods
   [iterator](): HeadersIterator<[string, string]>;
   append(name: string, value: string): void;
+  apply(init: SuperHeadersInit): this;
   delete(name: string): void;
   entries(): HeadersIterator<[string, string]>;
   forEach(
@@ -290,6 +292,16 @@ The **`append()`** method of the Headers interface appends a new value onto an e
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append)
 
 
+
+### `apply(init: SuperHeadersInit): this`
+
+Applies header values to this instance using header-aware merge semantics.
+
+#### Parameters
+
+##### `init`
+
+Header values to apply.
 
 ### `delete(name: string): void`
 

@@ -1,5 +1,6 @@
 ---
 title: createFsFileStorage
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/file-storage/src/lib/backends/fs.ts#L29
 ---
 
 # createFsFileStorage
@@ -19,7 +20,7 @@ same storage object.
 ## Signature
 
 ```ts
-function createFsFileStorage(directory: string): FileStorage;
+function createFsFileStorage(directory: string): FileStorage<LazyFile>;
 
 ```
 

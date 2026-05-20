@@ -1,12 +1,13 @@
 ---
 title: Expectation
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/assert/src/lib/expect.ts#L177
 ---
 
 # Expectation
 
 ## Summary
 
-Object returned by [`expect`](/api/remix/assert/function/expect/). Exposes the synchronous matcher set
+Object returned by [`expect`](/api/remix/assert/variable/expect/). Exposes the synchronous matcher set
 directly on the object, plus the negation and async-resolution gateways
 needed for full jest/vitest-style assertions.
 

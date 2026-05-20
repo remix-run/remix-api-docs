@@ -1,5 +1,6 @@
 ---
 title: createCredentialsAuthProvider
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/auth/src/lib/providers/credentials.ts#L37
 ---
 
 # createCredentialsAuthProvider

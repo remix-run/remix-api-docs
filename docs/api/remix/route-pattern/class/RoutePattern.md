@@ -1,5 +1,6 @@
 ---
 title: RoutePattern
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/route-pattern/src/lib/route-pattern.ts#L47
 ---
 
 # RoutePattern
@@ -25,13 +26,7 @@ class RoutePattern<source> {
   get source(): string;
 
   // Methods
-  toJSON(): {
-    hostname: string;
-    pathname: string;
-    port: string;
-    protocol: string;
-    search: string;
-  };
+  toJSON(): RoutePatternJSON;
   toString(): string;
   parse<source extends string>(source: source): RoutePattern<source>;
 }
@@ -81,7 +76,7 @@ Normalized string representation of this pattern
 
 ## Methods
 
-### `toJSON(): { hostname: string; pathname: string; port: string; protocol: string; search: string }`
+### `toJSON(): RoutePatternJSON`
 
 Returns a JSON-serializable object containing each serialized part of this route pattern.
 

@@ -1,5 +1,6 @@
 ---
 title: Cookie
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/headers/src/lib/cookie.ts#L19
 ---
 
 # Cookie
@@ -25,6 +26,7 @@ class Cookie {
 
   // Methods
   [iterator](): IterableIterator<[string, string]>;
+  append(name: string, value: string): void;
   clear(): void;
   delete(name: string): void;
   entries(): IterableIterator<[string, string]>;
@@ -33,6 +35,7 @@ class Cookie {
     thisArg: any,
   ): void;
   get(name: string): string | null;
+  getAll(name: string): string[];
   has(name: string): boolean;
   set(name: string, value: string): void;
   toString(): string;
@@ -63,6 +66,20 @@ Iterates over cookie name and value pairs.
 
 
 
+### `append(name: string, value: string): void`
+
+Appends a cookie with the given name and value to the header.
+
+#### Parameters
+
+##### `name`
+
+The name of the cookie
+
+##### `value`
+
+The value of the cookie
+
 ### `clear(): void`
 
 Removes all cookies from the header.
@@ -71,7 +88,7 @@ Removes all cookies from the header.
 
 ### `delete(name: string): void`
 
-Removes a cookie with the given name from the header.
+Removes all cookies with the given name from the header.
 
 #### Parameters
 
@@ -101,7 +118,17 @@ The value to use as `this` when calling the callback
 
 ### `get(name: string): string | null`
 
-Gets the value of a cookie with the given name from the header.
+Gets the first value of a cookie with the given name from the header.
+
+#### Parameters
+
+##### `name`
+
+The name of the cookie
+
+### `getAll(name: string): string[]`
+
+Gets all values of cookies with the given name from the header.
 
 #### Parameters
 
@@ -121,7 +148,7 @@ The name of the cookie
 
 ### `set(name: string, value: string): void`
 
-Sets a cookie with the given name and value in the header.
+Sets a cookie with the given name and value in the header, replacing any existing values.
 
 #### Parameters
 

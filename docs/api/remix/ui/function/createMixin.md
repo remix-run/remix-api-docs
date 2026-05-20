@@ -1,5 +1,6 @@
 ---
 title: createMixin
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/runtime/mixins/mixin.ts#L251
 ---
 
 # createMixin
@@ -15,11 +16,7 @@ function createMixin<
   node extends EventTarget,
   args extends unknown[],
   props extends ElementProps,
->(
-  type: MixinType<node, args, props>,
-): (
-  args: RebindTuple<args, node, boundNode>,
-) => MixinDescriptor<boundNode, RebindTuple<args, node, boundNode>, props>;
+>(type: MixinType<node, args, props>): MixinFactory<node, args, props>;
 
 ```
 

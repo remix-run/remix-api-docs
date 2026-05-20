@@ -1,12 +1,13 @@
 ---
 title: SpringIterator
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/animation/spring.ts#L32
 ---
 
 # SpringIterator
 
 ## Summary
 
-Iterator returned by [`spring`](/api/remix/ui/animation/function/spring/), decorated for CSS and WAAPI use.
+Iterator returned by [`spring`](/api/remix/ui/animation/variable/spring/), decorated for CSS and WAAPI use.
 
 ## Signature
 

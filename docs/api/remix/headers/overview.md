@@ -58,6 +58,26 @@ headers.get('Content-Type') // no typed parse needed
 headers.contentType.mediaType // parses Content-Type lazily
 ```
 
+Use `apply()` to apply a `SuperHeadersInit` value to an existing instance with header-aware semantics:
+
+```ts
+let headers = new Headers({
+  contentType: 'text/html',
+  setCookie: { name: 'session', value: 'abc' },
+  vary: 'Accept-Encoding',
+})
+
+headers.apply({
+  contentType: 'application/json',
+  setCookie: { name: 'theme', value: 'dark' },
+  vary: ['Accept-Encoding', 'Accept-Language'],
+})
+
+headers.get('Content-Type') // 'application/json'
+headers.get('Vary') // 'accept-encoding, accept-language'
+headers.getSetCookie() // ['session=abc', 'theme=dark']
+```
+
 ## Individual Header Utilities
 
 Each supported header has a class that represents the header value. Use the static `from()` method to parse header values. Each class has a `toString()` method that returns the header value as a string, which you can either call manually, or will be called automatically when the header class is used in a context that expects a string.
@@ -330,7 +350,7 @@ headers.set('Content-Type', new ContentType({ mediaType: 'text/html', charset: '
 
 Parse, manipulate and stringify [`Cookie` headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie).
 
-Implements `Map<name, value>`.
+Implements an ordered list of name/value pairs. Duplicate cookie names are preserved, such as when cookies with the same name were set for different paths.
 
 ```ts
 import { Cookie } from 'remix/headers'
@@ -339,6 +359,7 @@ import { Cookie } from 'remix/headers'
 let cookie = Cookie.from(request.headers.get('Cookie'))
 
 cookie.get('session_id') // 'abc123'
+cookie.getAll('session_id') // ['abc123']
 cookie.get('theme') // 'dark'
 cookie.has('session_id') // true
 cookie.size // 2
@@ -350,6 +371,7 @@ for (let [name, value] of cookie) {
 
 // Modify and set header
 cookie.set('theme', 'light')
+cookie.append('session_id', 'def456')
 cookie.delete('session_id')
 headers.set('Cookie', cookie)
 
