@@ -52,7 +52,26 @@ function transition(property, presetOrOptions, overrides) {
 	return properties.map((p) => `${p} ${s}`).join(", ");
 }
 /**
-* Create a spring iterator for animations.
+* Create a spring-physics animation iterator for CSS transitions and WAAPI.
+*
+* The returned iterator can be:
+* - Iterated to get position values (0→1)
+* - Spread into WAAPI options: `element.animate(keyframes, { ...spring() })`
+* - Stringified for CSS: `` `transform ${spring()}` ``
+*
+* @example
+* // Named preset
+* let s = spring('bouncy')
+* element.style.transition = `transform ${s}`
+*
+* @example
+* // Custom parameters
+* let s = spring({ duration: 500, bounce: 0.2 })
+* element.animate(keyframes, { ...s })
+*
+* @example
+* // Transition helper for multiple properties
+* element.style.transition = spring.transition(['transform', 'opacity'], 'snappy')
 */
 export const spring = Object.assign(createSpring, {
 	transition,

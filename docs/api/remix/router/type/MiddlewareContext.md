@@ -1,6 +1,6 @@
 ---
 title: MiddlewareContext
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/fetch-router/src/lib/middleware.ts#L46
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/middleware.ts#L46
 ---
 
 # MiddlewareContext

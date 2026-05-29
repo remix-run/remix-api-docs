@@ -5,6 +5,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime
 /**
 * @name Accordion Overview
 * @description A single-open disclosure list that keeps settings, billing, or notification rules in one calm section.
+* @layout center
 * @order 1
 */
 export default function Example() {

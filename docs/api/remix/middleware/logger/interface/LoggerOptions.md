@@ -1,6 +1,6 @@
 ---
 title: LoggerOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/logger-middleware/src/lib/logger.ts#L24
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/logger-middleware/src/lib/logger.ts#L24
 ---
 
 # LoggerOptions

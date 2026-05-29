@@ -1,6 +1,6 @@
 ---
 title: MultipartParserOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/multipart-parser/src/lib/multipart.ts#L192
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/multipart-parser/src/lib/multipart.ts#L193
 ---
 
 # MultipartParserOptions

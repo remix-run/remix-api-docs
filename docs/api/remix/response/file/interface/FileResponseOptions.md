@@ -1,6 +1,6 @@
 ---
 title: FileResponseOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/response/src/lib/file.ts#L52
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/response/src/lib/file.ts#L49
 ---
 
 # FileResponseOptions

@@ -129,8 +129,7 @@ async function handler(request: Request) {
 
 ### Custom Hostname Configuration
 
-Configure custom hostnames for deployment on VPS or custom environments. `node-fetch-server` uses
-the `host` option when constructing `request.url`.
+Configure custom hostnames for deployment on VPS or custom environments. `node-fetch-server` uses the `host` option when constructing `request.url`.
 
 ```ts
 import * as http from 'node:http'

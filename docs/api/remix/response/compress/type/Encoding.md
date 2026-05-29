@@ -1,6 +1,6 @@
 ---
 title: Encoding
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/response/src/lib/compress.ts#L17
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/response/src/lib/compress.ts#L19
 ---
 
 # Encoding

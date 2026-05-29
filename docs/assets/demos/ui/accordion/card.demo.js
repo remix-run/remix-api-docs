@@ -5,6 +5,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime
 /**
 * @name Accordion in a Card
 * @description The Accordion can sit inside a card when the surrounding surface needs stronger grouping.
+* @layout center
 * @order 3
 */
 export default function Example() {

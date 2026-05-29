@@ -1,6 +1,6 @@
 ---
 title: RequestListenerOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/node-fetch-server/src/lib/request-listener.ts#L15
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/node-fetch-server/src/lib/request-listener.ts#L15
 ---
 
 # RequestListenerOptions

@@ -1,6 +1,6 @@
 ---
 title: EntryComponent
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/runtime/client-entries.ts#L48
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/ui/src/runtime/client-entries.ts#L48
 ---
 
 # EntryComponent
@@ -14,6 +14,6 @@ An entry component preserves the exact function type with added metadata
 ```ts
 type EntryComponent<props, context> = (
   handle: Handle<props, context>,
-) => RenderFn<props> & EntryMetadata;
+) => RenderFn & EntryMetadata;
 
 ```

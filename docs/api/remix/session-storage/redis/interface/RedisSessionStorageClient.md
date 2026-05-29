@@ -1,6 +1,6 @@
 ---
 title: RedisSessionStorageClient
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/session-storage-redis/src/lib/redis-storage.ts#L9
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/session-storage-redis/src/lib/redis-storage.ts#L9
 ---
 
 # RedisSessionStorageClient

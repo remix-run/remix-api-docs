@@ -5,8 +5,7 @@ title: remix/data-table/sqlite
 
 # remix/data-table/sqlite
 
-SQLite adapter for [`remix/data-table`](https://github.com/remix-run/remix/tree/main/packages/data-table).
-Use this package when you want `data-table` APIs backed by a synchronous SQLite client.
+SQLite adapter for [`remix/data-table`](https://github.com/remix-run/remix/tree/main/packages/data-table). Use this package when you want `data-table` APIs backed by a synchronous SQLite client.
 
 ## Features
 
@@ -51,8 +50,7 @@ let sqlite = new Database('app.db')
 let db = createDatabase(createSqliteDatabaseAdapter(sqlite))
 ```
 
-This is a good fit for local development, embedded deployments, and single-node services.
-Import any driver-specific types you need directly from your runtime's SQLite module.
+This is a good fit for local development, embedded deployments, and single-node services. Import any driver-specific types you need directly from your runtime's SQLite module.
 
 ## Adapter Capabilities
 

@@ -44,7 +44,7 @@ class ComponentRuntime {
 			renderFn = result;
 			this.#renderFn = renderFn;
 		}
-		return [renderFn(this.#props), this.#dequeueTasks()];
+		return [renderFn(), this.#dequeueTasks()];
 	};
 	remove = () => {
 		if (this.#removed) return [];

@@ -4,6 +4,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime
 /**
 * @name Menu Overview
 * @description A hierarchical menu with checkboxes, radio groups, submenus, and separators.
+* @layout center
 */
 export default function Example(handle) {
 	let wordWrap = true;

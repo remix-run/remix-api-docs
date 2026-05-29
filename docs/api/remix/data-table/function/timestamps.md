@@ -1,6 +1,6 @@
 ---
 title: timestamps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/data-table/src/lib/table.ts#L982
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/data-table/src/lib/table.ts#L982
 ---
 
 # timestamps

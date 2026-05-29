@@ -1,6 +1,6 @@
 ---
 title: clientEntry
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/runtime/client-entries.ts#L89
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/ui/src/runtime/client-entries.ts#L85
 ---
 
 # clientEntry
@@ -15,13 +15,6 @@ Marks a component as a client entry for client-side hydration.
 function clientEntry<props extends SerializableProps, context>(
   entryId: string,
   component: (handle: Handle<props, context>) => RenderFn,
-): EntryComponent<props, context>;
-
-function clientEntry<props extends SerializableProps, context>(
-  entryId: string,
-  component: (
-    handle: Handle<Record<string, never>, context>,
-  ) => RenderFn<props>,
 ): EntryComponent<props, context>;
 
 ```

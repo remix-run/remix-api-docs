@@ -26,11 +26,16 @@ function syncElementAttributes(target, source) {
 }
 export function createFrame(root, init) {
 	let container = createContainer(root);
-	let observers = [];
-	let subscriptions = [];
 	let contentRoot;
 	let reloadController;
 	let styleManager = init.styleManager ?? createStyleManager();
+	let currentMarker = init.marker;
+	let displayedContentStatus = init.marker?.status ?? "resolved";
+	let pendingTemplateMarkerId;
+	let pendingTemplateObserver;
+	let pendingTemplateUnsubscribe;
+	let inheritedReloadPending = false;
+	let inheritedReloadAbortUnsubscribe;
 	// Merge any rmx-data found in the current document once at startup.
 	mergeRmxDataFromDocument(init.data, container.doc);
 	let runtime = createFrameRuntime({
@@ -45,6 +50,7 @@ export function createFrame(root, init) {
 			let controller = new AbortController();
 			reloadController = controller;
 			frame.dispatchEvent(new Event("reloadStart"));
+			startSubFrameInheritedReloads(getContentNodes(), controller.signal);
 			try {
 				let content = await init.resolveFrame(frame.src, controller.signal, frameName);
 				if (reloadController !== controller || controller.signal.aborted) return controller.signal;
@@ -108,6 +114,7 @@ export function createFrame(root, init) {
 			}
 			if (options?.signal?.aborted) return;
 			contentRoot.render(content);
+			displayedContentStatus = options?.contentStatus ?? "resolved";
 			return;
 		}
 		if (contentRoot) {
@@ -141,17 +148,20 @@ export function createFrame(root, init) {
 			diffNodes([container.doc.head], [parsed.head], {
 				...context,
 				regionParent: container.doc.documentElement,
-				regionTailRef: null
+				regionTailRef: null,
+				signal: options?.signal
 			});
 			diffNodes([container.doc.body], [parsed.body], {
 				...context,
 				regionParent: container.doc.documentElement,
-				regionTailRef: null
+				regionTailRef: null,
+				signal: options?.signal
 			});
 			let bodyContainer = createElementContainer(container.doc.body);
 			if (options?.signal?.aborted) return;
 			scheduleHydrationInContainer(bodyContainer, context, options?.initialHydrationTracker);
-			createSubFrames(bodyContainer.childNodes, context);
+			await createSubFrames(bodyContainer.childNodes, context, options);
+			displayedContentStatus = options?.contentStatus ?? "resolved";
 			return;
 		}
 		let fragment = htmlContent !== undefined ? createFragmentFromString(container.doc, htmlContent) : content;
@@ -163,11 +173,13 @@ export function createFrame(root, init) {
 		diffNodes(container.childNodes, Array.from(nextContainer.childNodes), {
 			...context,
 			regionTailRef: container.regionTailRef,
-			regionParent: container.regionParent
+			regionParent: container.regionParent,
+			signal: options?.signal
 		});
 		if (options?.signal?.aborted) return;
 		scheduleHydrationInContainer(container, context, options?.initialHydrationTracker);
-		createSubFrames(container.childNodes, context);
+		await createSubFrames(container.childNodes, context, options);
+		displayedContentStatus = options?.contentStatus ?? "resolved";
 	}
 	function createFrameContentRoot() {
 		let virtualRoot;
@@ -202,29 +214,10 @@ export function createFrame(root, init) {
 	async function hydrateInitial() {
 		let initialHydrationTracker = createInitialHydrationTracker();
 		context.styleManager.replaceServerStyles(collectFrameServerStyleTags(container));
-		createSubFrames(container.childNodes, context);
+		await createSubFrames(container.childNodes, context);
 		scheduleHydrationInContainer(container, context, initialHydrationTracker);
-		if (init.marker?.status === "pending") {
-			let markerId = init.marker.id;
-			let early = consumeFrameTemplate(markerId) ?? getEarlyFrameContent(markerId);
-			if (early) {
-				await render(early, { initialHydrationTracker });
-			} else {
-				let observer = setupTemplateObserver();
-				let unsubscribe = subscribeFrameTemplate(markerId, async (fragment) => {
-					unsubscribe();
-					await render(fragment);
-					observer.disconnect();
-				});
-				subscriptions.push(unsubscribe);
-				let buffered = consumeFrameTemplate(markerId);
-				if (buffered) {
-					unsubscribe();
-					await render(buffered);
-					observer.disconnect();
-				}
-				observers.push(observer);
-			}
+		if (currentMarker?.status === "pending") {
+			await watchPendingFrameTemplate(currentMarker, initialHydrationTracker);
 		}
 		initialHydrationTracker.finalize();
 		await initialHydrationTracker.ready();
@@ -234,15 +227,7 @@ export function createFrame(root, init) {
 		reloadController = undefined;
 		contentRoot?.dispose();
 		contentRoot = undefined;
-		// Disconnect any MutationObservers waiting for templates.
-		for (let observer of observers) {
-			observer.disconnect();
-		}
-		observers.length = 0;
-		for (let unsubscribe of subscriptions) {
-			unsubscribe();
-		}
-		subscriptions.length = 0;
+		clearPendingFrameTemplateWatch();
 		// Remove hydrated virtual roots in this frame's region.
 		removeVirtualRoots(container.childNodes);
 		// Dispose sub-frames recursively.
@@ -259,9 +244,145 @@ export function createFrame(root, init) {
 		render,
 		ready: () => readyPromise,
 		flush: () => context.scheduler.dequeue(),
+		clearPendingTemplateWatch: clearPendingFrameTemplateWatch,
+		isDisplayingResolvedContent: () => displayedContentStatus === "resolved",
+		startInheritedReload,
+		updateMarker,
+		renderMarkerContent,
 		dispose,
 		handle: frame
 	};
+	async function updateMarker(marker, options) {
+		if (options?.signal?.aborted) return;
+		let previousMarker = currentMarker;
+		let isInheritedReload = previousMarker !== undefined && previousMarker.id !== marker.id;
+		currentMarker = marker;
+		if (isInheritedReload) {
+			startInheritedReload(options?.signal);
+		}
+		if (marker.status === "pending") {
+			await watchPendingFrameTemplate(marker, options?.initialHydrationTracker, options?.signal, isInheritedReload ? () => {
+				completeInheritedReload();
+			} : undefined);
+		} else {
+			clearPendingFrameTemplateWatch();
+			if (isInheritedReload && !options?.signal?.aborted) {
+				completeInheritedReload();
+			}
+		}
+	}
+	async function renderMarkerContent(marker, content, options) {
+		if (options?.signal?.aborted) return;
+		let previousMarker = currentMarker;
+		let isInheritedReload = previousMarker !== undefined && previousMarker.id !== marker.id;
+		currentMarker = marker;
+		if (isInheritedReload) {
+			startInheritedReload(options?.signal);
+		}
+		clearPendingFrameTemplateWatch();
+		await render(content, {
+			...options,
+			contentStatus: "resolved"
+		});
+		if (isInheritedReload && !options?.signal?.aborted) {
+			completeInheritedReload();
+		}
+	}
+	function startInheritedReload(signal) {
+		if (signal?.aborted) return;
+		if (!inheritedReloadPending) {
+			inheritedReloadPending = true;
+			frame.dispatchEvent(new Event("reloadStart"));
+			startSubFrameInheritedReloads(getContentNodes(), signal);
+		}
+		inheritedReloadAbortUnsubscribe?.();
+		inheritedReloadAbortUnsubscribe = undefined;
+		if (signal) {
+			let abort = () => completeInheritedReload();
+			signal.addEventListener("abort", abort, { once: true });
+			inheritedReloadAbortUnsubscribe = () => {
+				signal.removeEventListener("abort", abort);
+			};
+		}
+	}
+	function completeInheritedReload() {
+		if (!inheritedReloadPending) return;
+		inheritedReloadPending = false;
+		inheritedReloadAbortUnsubscribe?.();
+		inheritedReloadAbortUnsubscribe = undefined;
+		frame.dispatchEvent(new Event("reloadComplete"));
+	}
+	function startSubFrameInheritedReloads(nodes, signal) {
+		for (let i = 0; i < nodes.length; i++) {
+			if (signal?.aborted) break;
+			let node = nodes[i];
+			if (isFrameStart(node)) {
+				let end = findEndMarker(node, isFrameStart, isFrameEnd);
+				context.frameInstances.get(node)?.startInheritedReload(signal);
+				i = nodes.indexOf(end);
+				continue;
+			}
+			if (node.childNodes && node.childNodes.length > 0) {
+				startSubFrameInheritedReloads(Array.from(node.childNodes), signal);
+			}
+		}
+	}
+	function clearPendingFrameTemplateWatch() {
+		pendingTemplateUnsubscribe?.();
+		pendingTemplateUnsubscribe = undefined;
+		pendingTemplateObserver?.disconnect();
+		pendingTemplateObserver = undefined;
+		pendingTemplateMarkerId = undefined;
+	}
+	async function watchPendingFrameTemplate(marker, initialHydrationTracker, signal, onResolved) {
+		if (signal?.aborted) return;
+		if (pendingTemplateMarkerId === marker.id) return;
+		clearPendingFrameTemplateWatch();
+		pendingTemplateMarkerId = marker.id;
+		let early = consumeFrameTemplate(marker.id) ?? getEarlyFrameContent(marker.id);
+		if (early) {
+			clearPendingFrameTemplateWatch();
+			await render(early, {
+				initialHydrationTracker,
+				signal,
+				contentStatus: "resolved"
+			});
+			if (!signal?.aborted) onResolved?.();
+			return;
+		}
+		if (signal?.aborted) {
+			clearPendingFrameTemplateWatch();
+			return;
+		}
+		let observer = setupTemplateObserver();
+		pendingTemplateObserver = observer;
+		let unsubscribe = subscribeFrameTemplate(marker.id, async (fragment) => {
+			if (signal?.aborted) return;
+			if (pendingTemplateMarkerId !== marker.id) return;
+			clearPendingFrameTemplateWatch();
+			await render(fragment, {
+				signal,
+				contentStatus: "resolved"
+			});
+			if (!signal?.aborted) onResolved?.();
+		});
+		pendingTemplateUnsubscribe = unsubscribe;
+		signal?.addEventListener("abort", () => {
+			if (pendingTemplateMarkerId === marker.id) {
+				clearPendingFrameTemplateWatch();
+			}
+		}, { once: true });
+		let buffered = consumeFrameTemplate(marker.id);
+		if (buffered) {
+			clearPendingFrameTemplateWatch();
+			await render(buffered, {
+				initialHydrationTracker,
+				signal,
+				contentStatus: "resolved"
+			});
+			if (!signal?.aborted) onResolved?.();
+		}
+	}
 }
 export function createFrameRuntime(init) {
 	return {
@@ -496,14 +617,27 @@ function hydrateRegion(vElement, start, end, context) {
 	});
 	root.render(vElement);
 }
-function createSubFrames(nodes, context) {
+async function createSubFrames(nodes, context, options) {
+	let tasks = [];
 	for (let i = 0; i < nodes.length; i++) {
+		if (options?.signal?.aborted) break;
 		let node = nodes[i];
 		if (isFrameStart(node)) {
 			let end = findEndMarker(node, isFrameStart, isFrameEnd);
-			if (!context.frameInstances.has(node)) {
-				let id = getFrameId(node);
-				let marker = context.data.f?.[id];
+			let existingFrame = context.frameInstances.get(node);
+			let id = getFrameId(node);
+			let marker = context.data.f?.[id];
+			if (existingFrame) {
+				if (marker) {
+					let frameMarker = {
+						...marker,
+						id
+					};
+					tasks.push(existingFrame.updateMarker(frameMarker, options));
+				} else {
+					existingFrame.clearPendingTemplateWatch();
+				}
+			} else {
 				if (marker) {
 					let frameMarker = {
 						...marker,
@@ -531,9 +665,10 @@ function createSubFrames(nodes, context) {
 			continue;
 		}
 		if (node.childNodes && node.childNodes.length > 0) {
-			createSubFrames(Array.from(node.childNodes), context);
+			tasks.push(createSubFrames(Array.from(node.childNodes), context, options));
 		}
 	}
+	await Promise.all(tasks);
 }
 function isHydrationMarkerLive(marker, context) {
 	if (!marker.start.isConnected || !marker.end.isConnected) return false;

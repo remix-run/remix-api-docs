@@ -6,6 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime
 * @order 2
 * @name Accordion Multiple Open
 * @description Multiple mode allows several sections to stay open simultaneously, useful for operational checklists and dashboards.
+* @layout center
 */
 export default function Example() {
 	return () => /* @__PURE__ */ _jsxs(Accordion, {

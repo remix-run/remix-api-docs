@@ -6,6 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime
 /**
 * @name Basic Button
 * @description The default button contract supports both ordinary actions and link-shaped navigation.
+* @layout center
 * @order 1
 */
 export default function Example() {

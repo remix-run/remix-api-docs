@@ -1,6 +1,6 @@
 ---
 title: SelectProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/ui/src/components/select/select.tsx#L71
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/ui/src/components/select/select.tsx#L71
 ---
 
 # SelectProps

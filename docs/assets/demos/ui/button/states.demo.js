@@ -6,6 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime
 /**
 * @name Button States
 * @description Buttons support normal, disabled, and busy (loading) states using aria attributes.
+* @layout center
 * @order 3
 */
 export default function Example() {

@@ -3,6 +3,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime
 /**
 * @name Menu Event Bubbling
 * @description Item-level handlers fire before the root handler, letting individual items intercept events while others bubble up.
+* @layout center
 */
 export default function Example() {
 	return () => /* @__PURE__ */ _jsxs(Menu, {

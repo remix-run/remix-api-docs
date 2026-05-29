@@ -1,0 +1,190 @@
+---
+title: AcceptEncoding
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/headers/src/lib/accept-encoding.ts#L17
+---
+
+# AcceptEncoding
+
+## Summary
+
+The value of a `Accept-Encoding` HTTP header.
+
+[MDN `Accept-Encoding` Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)
+
+[HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7231#section-5.3.4)
+
+## Signature
+
+```ts
+class AcceptEncoding {
+  constructor(init: string | AcceptEncodingInit): AcceptEncoding;
+
+  // Accessors
+  get encodings(): string[];
+  get size(): number;
+  get weights(): number[];
+
+  // Methods
+  [iterator](): IterableIterator<[string, number]>;
+  accepts(encoding: string): boolean;
+  clear(): void;
+  delete(encoding: string): void;
+  entries(): IterableIterator<[string, number]>;
+  forEach(
+    callback: (
+      encoding: string,
+      weight: number,
+      header: AcceptEncoding,
+    ) => void,
+    thisArg: any,
+  ): void;
+  get(encoding: string): number | null;
+  getPreferred<encoding extends string>(
+    encodings: readonly encoding[],
+  ): encoding | null;
+  getWeight(encoding: string): number;
+  has(encoding: string): boolean;
+  set(encoding: string, weight: number): void;
+  toString(): string;
+  from(value: string | AcceptEncodingInit | null): AcceptEncoding;
+}
+
+```
+
+## Accessors
+
+### `encodings`
+
+An array of all encodings in the header.
+
+### `size`
+
+The number of encodings in the header.
+
+### `weights`
+
+An array of all weights (q values) in the header.
+
+## Methods
+
+### `[iterator](): IterableIterator<[string, number]>`
+
+Iterates over encoding and weight pairs in preference order.
+
+
+
+### `accepts(encoding: string): boolean`
+
+Returns `true` if the header matches the given encoding (i.e. it is "acceptable").
+
+#### Parameters
+
+##### `encoding`
+
+The encoding to check
+
+### `clear(): void`
+
+Removes all encodings from the header.
+
+
+
+### `delete(encoding: string): void`
+
+Removes the given encoding from the header.
+
+#### Parameters
+
+##### `encoding`
+
+The encoding to remove
+
+### `entries(): IterableIterator<[string, number]>`
+
+Returns an iterator of all encoding and weight pairs.
+
+
+
+### `forEach(callback: (encoding: string, weight: number, header: AcceptEncoding) => void, thisArg: any): void`
+
+Invokes the callback for each encoding and weight pair.
+
+#### Parameters
+
+##### `callback`
+
+The function to call for each pair
+
+##### `thisArg`
+
+The value to use as `this` when calling the callback
+
+### `get(encoding: string): number | null`
+
+Gets the weight of an encoding. If it is not in the header verbatim, this returns `null`.
+
+#### Parameters
+
+##### `encoding`
+
+The encoding to get
+
+### `getPreferred<encoding extends string>(encodings: readonly encoding[]): encoding | null`
+
+Returns the most preferred encoding from the given list of encodings.
+
+#### Parameters
+
+##### `encodings`
+
+The encodings to choose from
+
+### `getWeight(encoding: string): number`
+
+Gets the weight an encoding. Performs wildcard matching so `*` matches all encodings.
+
+#### Parameters
+
+##### `encoding`
+
+The encoding to get
+
+### `has(encoding: string): boolean`
+
+Checks if the header contains a given encoding.
+
+#### Parameters
+
+##### `encoding`
+
+The encoding to check
+
+### `set(encoding: string, weight: number): void`
+
+Sets an encoding with the given weight.
+
+#### Parameters
+
+##### `encoding`
+
+The encoding to set
+
+##### `weight`
+
+The weight of the encoding (default: `1`)
+
+### `toString(): string`
+
+Returns the string representation of the header value.
+
+
+
+### `from(value: string | AcceptEncodingInit | null): AcceptEncoding`
+
+Parse an Accept-Encoding header value.
+
+#### Parameters
+
+##### `value`
+
+The header value (string, init object, or null)

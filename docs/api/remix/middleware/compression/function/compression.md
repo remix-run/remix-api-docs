@@ -1,6 +1,6 @@
 ---
 title: compression
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/compression-middleware/src/lib/compression.ts#L63
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/compression-middleware/src/lib/compression.ts#L63
 ---
 
 # compression

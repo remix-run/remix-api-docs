@@ -1,6 +1,6 @@
 ---
 title: descending
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/route-pattern/src/lib/specificity.ts#L54
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/route-pattern/src/lib/specificity.ts#L54
 ---
 
 # descending

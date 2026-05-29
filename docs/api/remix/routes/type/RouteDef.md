@@ -1,6 +1,6 @@
 ---
 title: RouteDef
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/fetch-router/src/lib/route-map.ts#L157
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/route-map.ts#L157
 ---
 
 # RouteDef

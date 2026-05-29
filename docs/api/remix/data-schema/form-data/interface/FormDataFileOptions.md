@@ -1,6 +1,6 @@
 ---
 title: FormDataFileOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.2/packages/data-schema/src/lib/form-data.ts#L50
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/data-schema/src/lib/form-data.ts#L50
 ---
 
 # FormDataFileOptions
