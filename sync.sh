@@ -25,5 +25,5 @@ pushd ../remix/docs
 pnpm run docs --tag "${TAG_NAME}"
 pnpm run build
 pnpm run prerender --dir "${DOCS_DIR}"
-pnpm run prerender --dir "${DOCS_DIR}/${VERSION}" --version "${VERSION}"
+pnpm run prerender --dir "${DOCS_DIR}" --version "${VERSION}"
 popd
