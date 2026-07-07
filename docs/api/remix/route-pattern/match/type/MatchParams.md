@@ -1,6 +1,6 @@
 ---
 title: MatchParams
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/route-pattern/src/lib/match/types.ts#L7
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/match/types.ts#L6
 ---
 
 # MatchParams
@@ -12,6 +12,11 @@ Params extracted from a route pattern match.
 ## Signature
 
 ```ts
-type MatchParams<source> = Simplify<Omit<ParseParams<Split<source>>, "*">>;
+type MatchParams<source> =
+  ParseParams<source> extends infer params
+    ? [params] extends [never]
+      ? never
+      : Simplify<Omit<params, "*">>
+    : never;
 
 ```

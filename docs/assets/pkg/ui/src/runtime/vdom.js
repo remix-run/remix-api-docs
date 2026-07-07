@@ -99,6 +99,9 @@ export function createRangeRoot(boundaries, options = {}) {
 export function createRoot(container, options = {}) {
 	let vroot = null;
 	let styles = options.styleManager ?? defaultStyleManager;
+	if (container.innerHTML.trim() !== "") {
+		styles.replaceServerStyles(container);
+	}
 	let hydrationCursor = container.innerHTML.trim() !== "" ? container.firstChild : undefined;
 	let eventTarget = new TypedEventTarget();
 	let scheduler = options.scheduler ?? createScheduler(container.ownerDocument ?? document, eventTarget, styles);

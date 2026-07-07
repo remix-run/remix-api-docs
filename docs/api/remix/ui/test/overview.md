@@ -5,221 +5,109 @@ title: remix/ui/test
 
 # remix/ui/test
 
-Runtime UI primitives for Remix apps, including the component runtime, server rendering, frame hydration, reusable mixins, first-party components, and theme tokens.
+When writing tests, use `root.flush()` to synchronously execute all pending updates and tasks. This ensures the DOM and component state are fully synchronized before making assertions.
 
-## Features
+## Basic Testing Pattern
 
-- Component runtime APIs for rendering, hydration, frame navigation, and JSX
-- Server rendering APIs for streaming Remix UI trees and frames
-- `mix` composition with event, ref, CSS, and animation helpers
-- First-party components such as buttons, menus, listboxes, popovers, and selects
-- Fixed typed `theme` contract whose leaves resolve to `var(--rmx-...)`
-- `createTheme()` and `createGlyphSheet()` utilities for shared app styling and glyphs
-
-## Installation
-
-```sh
-npm i remix
-```
-
-## Usage
-
-Define your app theme once:
+The main use case is flushing after events that call `handle.update()`. Since updates are asynchronous, you need to flush to ensure the DOM reflects the changes:
 
 ```tsx
-import { createTheme } from 'remix/ui'
+function Counter(handle: Handle) {
+  let count = 0
 
-let Theme = createTheme({
-  space: {
-    none: '0px',
-    px: '1px',
-    xs: '2px',
-    sm: '4px',
-    md: '8px',
-    lg: '12px',
-    xl: '16px',
-    xxl: '24px',
-  },
-  radius: {
-    none: '0px',
-    sm: '4px',
-    md: '8px',
-    lg: '12px',
-    xl: '16px',
-    full: '9999px',
-  },
-  fontSize: {
-    xxxs: '10px',
-    xxs: '11px',
-    xs: '12px',
-    sm: '14px',
-    md: '16px',
-    lg: '18px',
-    xl: '20px',
-    xxl: '28px',
-  },
-  lineHeight: {
-    tight: '1.2',
-    normal: '1.5',
-    relaxed: '1.7',
-  },
-  fontWeight: {
-    normal: '400',
-    medium: '500',
-    semibold: '600',
-    bold: '700',
-  },
-  shadow: {
-    xs: '0 1px 2px rgb(0 0 0 / 0.05)',
-    sm: '0 1px 3px rgb(0 0 0 / 0.10)',
-    md: '0 4px 10px rgb(0 0 0 / 0.12)',
-    lg: '0 10px 30px rgb(0 0 0 / 0.16)',
-    xl: '0 20px 50px rgb(0 0 0 / 0.20)',
-  },
-  zIndex: {
-    dropdown: '1000',
-    popover: '1100',
-    sticky: '1200',
-    overlay: '1300',
-    modal: '1400',
-    toast: '1500',
-    tooltip: '1600',
-  },
-  surface: {
-    lvl0: '#ffffff',
-    lvl1: '#f8fafc',
-    lvl2: '#f1f5f9',
-    lvl3: '#e5edf7',
-    lvl4: '#dbe6f4',
-  },
-  colors: {
-    text: {
-      primary: '#111827',
-      secondary: '#374151',
-      muted: '#6b7280',
-      link: '#2563eb',
-    },
-    border: {
-      subtle: '#e5e7eb',
-      default: '#d1d5db',
-      strong: '#9ca3af',
-    },
-    focus: {
-      ring: '#3b82f6',
-    },
-    overlay: {
-      scrim: 'rgb(0 0 0 / 0.45)',
-    },
-    action: {
-      primary: {
-        background: '#2563eb',
-        backgroundHover: '#1d4ed8',
-        backgroundActive: '#1e40af',
-        foreground: '#ffffff',
-        border: '#2563eb',
-      },
-      secondary: {
-        background: '#ffffff',
-        backgroundHover: '#f8fafc',
-        backgroundActive: '#f1f5f9',
-        foreground: '#111827',
-        border: '#d1d5db',
-      },
-      danger: {
-        background: '#dc2626',
-        backgroundHover: '#b91c1c',
-        backgroundActive: '#991b1b',
-        foreground: '#ffffff',
-        border: '#dc2626',
-      },
-    },
-  },
-})
-```
-
-Render the theme once near the top of your document:
-
-```tsx
-import type { Handle, RemixNode } from 'remix/ui'
-
-function Layout(handle: Handle<{ children: RemixNode }>) {
   return () => (
-    <html>
-      <head>
-        <Theme />
-      </head>
-      <body>{handle.props.children}</body>
-    </html>
+    <button
+      mix={[
+        on('click', () => {
+          count++
+          handle.update()
+        }),
+      ]}
+    >
+      Count: {count}
+    </button>
   )
 }
+
+// In your test
+let container = document.createElement('div')
+let root = createRoot(container)
+
+root.render(<Counter />)
+root.flush() // Ensure initial render completes
+
+let button = container.querySelector('button')
+button.click() // Triggers handle.update()
+root.flush() // Flush to apply the update
+
+expect(container.textContent).toBe('Count: 1')
 ```
 
-Consume the shared token contract from app code and first-party components:
+## Why Flush After Initial Render?
+
+You should also flush after the initial `root.render()` to ensure event listeners are attached and the DOM is ready for interaction:
 
 ```tsx
-import { css } from 'remix/ui'
-import { theme } from 'remix/ui'
+let root = createRoot(container)
+root.render(<MyComponent />)
+root.flush() // Event listeners now attached
 
-let card = css({
-  backgroundColor: theme.surface.lvl0,
-  color: theme.colors.text.primary,
-  border: `1px solid ${theme.colors.border.subtle}`,
-  borderRadius: theme.radius.md,
-  paddingInline: theme.space.md,
-  paddingBlock: theme.space.sm,
-})
-
-<div mix={card} />
+// Safe to interact
+container.querySelector('button').click()
 ```
 
-Render shared glyphs separately from the theme styles:
+## Testing Async Operations
+
+For components with async operations in `queueTask`, flush after each step:
 
 ```tsx
-import type { Handle, RemixNode } from 'remix/ui'
-import { Button } from 'remix/ui/button'
-import { Glyph } from 'remix/ui/glyph'
-import { RMX_01, RMX_01_GLYPHS } from 'remix/ui/theme'
+function AsyncLoader(handle: Handle) {
+  let data: string | null = null
 
-function Layout(handle: Handle<{ children: RemixNode }>) {
-  return () => (
-    <html>
-      <head>
-        <RMX_01 />
-      </head>
-      <body>
-        <RMX_01_GLYPHS />
-        <Button startIcon={<Glyph name="add" />} tone="primary">
-          New project
-        </Button>
-        {handle.props.children}
-      </body>
-    </html>
-  )
+  handle.queueTask(async (signal) => {
+    let response = await fetch('/api/data', { signal })
+    let json = await response.json()
+    if (signal.aborted) return
+    data = json.value
+    handle.update()
+  })
+
+  return () => <div>{data ?? 'Loading...'}</div>
 }
+
+// In your test (with mocked fetch)
+let root = createRoot(container)
+root.render(<AsyncLoader />)
+root.flush()
+
+expect(container.textContent).toBe('Loading...')
+
+// After fetch resolves
+await waitForFetch()
+root.flush()
+
+expect(container.textContent).toBe('Expected data')
 ```
 
-## Cascade Layers
+## Testing Component Removal
 
-Remix UI emits its built-in theme reset in `rmx-reset` and generated `css(...)` rules under `rmx`. Unlayered CSS outranks layered component CSS, so use explicit layer order when mixing Remix UI with global styles.
+Use `root.dispose()` to clean up and verify cleanup behavior:
 
-Put layers that should lose to Remix UI before `rmx-reset` and `rmx`:
+```tsx
+let root = createRoot(container)
+root.render(<MyComponent />)
+root.flush()
 
-```css
-@layer base, rmx-reset, rmx;
+// Verify setup behavior
+expect(container.querySelector('.content')).toBeTruthy()
 
-@layer base {
-  button,
-  input,
-  textarea,
-  select {
-    font: inherit;
-    margin: 0;
-    padding: 0;
-  }
-}
+// Remove and verify cleanup
+root.dispose()
+expect(container.innerHTML).toBe('')
 ```
 
-## License
+## See Also
 
-See [LICENSE](https://github.com/remix-run/remix/blob/main/LICENSE)
+- [Getting Started](https://github.com/remix-run/remix/blob/main/packages/ui/docs/getting-started.md) - Root methods reference
+- [Handle API](https://github.com/remix-run/remix/blob/main/packages/ui/docs/handle.md) - `handle.queueTask()` behavior
 

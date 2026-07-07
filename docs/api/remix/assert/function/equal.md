@@ -1,13 +1,13 @@
 ---
 title: equal
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L81
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L290
 ---
 
 # equal
 
 ## Summary
 
-Asserts strict equality (`===`) between `actual` and `expected`.
+Asserts strict equality (`Object.is`) between `actual` and `expected`.
 
 ## Signature
 
@@ -15,7 +15,7 @@ Asserts strict equality (`===`) between `actual` and `expected`.
 function equal<T>(
   actual: unknown,
   expected: T,
-  message: string,
+  message: AssertionMessage,
 ): asserts actual is T;
 
 ```

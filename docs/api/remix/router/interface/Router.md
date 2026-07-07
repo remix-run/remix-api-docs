@@ -1,6 +1,6 @@
 ---
 title: Router
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/router.ts#L119
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L232
 ---
 
 # Router
@@ -13,6 +13,7 @@ A router maps incoming requests to request handlers.
 
 ```ts
 interface Router<context> {
+  [routeBuilderContext]?: context;
   delete: VerbMethod<"DELETE", context>;
   get: VerbMethod<"GET", context>;
   head: VerbMethod<"HEAD", context>;
@@ -21,28 +22,37 @@ interface Router<context> {
   post: VerbMethod<"POST", context>;
   put: VerbMethod<"PUT", context>;
   fetch(input: string | Request | URL, init: RequestInit): Promise<Response>;
-  map<pattern extends string, actionContext extends AnyContext>(
-    target: RouteTarget<pattern>,
-    action: Action<RouteTarget<pattern, RequestMethod | "ANY">, actionContext>,
-  ): void;
-  map<target extends RouteMap<string>, controllerContext extends AnyContext>(
+  map<
+    target extends MapTarget,
+    handlerContext extends AnyContext,
+    middleware extends readonly AnyMiddleware[],
+  >(
     target: target,
-    controller: Controller<target, controllerContext>,
+    handler: MapHandler<target, handlerContext, middleware> &
+      ContextCompatibility<context, handlerContext, middleware>,
+  ): void;
+  mount<pattern extends string>(
+    prefix: pattern | RoutePattern<pattern>,
+    installer: RouteInstaller<ContextWithParams<context, MatchParams<pattern>>>,
   ): void;
   route<
     method extends RequestMethod | "ANY",
     pattern extends string,
     actionContext extends AnyContext,
+    middleware extends readonly AnyMiddleware[],
   >(
     method: method,
     pattern: RouteTarget<pattern, method>,
-    action: Action<RouteTarget<pattern, method>, actionContext>,
+    action: Action<RouteTarget<pattern, method>, actionContext, middleware> &
+      ContextCompatibility<context, actionContext, middleware>,
   ): void;
 }
 
 ```
 
 ## Properties
+
+### `[routeBuilderContext]`
 
 ### `delete`
 
@@ -88,19 +98,21 @@ The request input to fetch
 
 The request init options
 
-### `map<pattern extends string, actionContext extends AnyContext>(target: RouteTarget<pattern>, action: Action<RouteTarget<pattern, RequestMethod | "ANY">, actionContext>): void`
+### `map<target extends MapTarget, handlerContext extends AnyContext, middleware extends readonly AnyMiddleware[]>(target: target, handler: MapHandler<target, handlerContext, middleware> & ContextCompatibility<context, handlerContext, middleware>): void`
 
 Maps either a single route target to an action or a route map to a controller.
 
 
 
-### `map<target extends RouteMap<string>, controllerContext extends AnyContext>(target: target, controller: Controller<target, controllerContext>): void`
+### `mount<pattern extends string>(prefix: pattern | RoutePattern<pattern>, installer: RouteInstaller<ContextWithParams<context, MatchParams<pattern>>>): void`
+
+Mounts a route installer at a route pattern prefix.
 
 
 
-### `route<method extends RequestMethod | "ANY", pattern extends string, actionContext extends AnyContext>(method: method, pattern: RouteTarget<pattern, method>, action: Action<RouteTarget<pattern, method>, actionContext>): void`
+### `route<method extends RequestMethod | "ANY", pattern extends string, actionContext extends AnyContext, middleware extends readonly AnyMiddleware[]>(method: method, pattern: RouteTarget<pattern, method>, action: Action<RouteTarget<pattern, method>, actionContext, middleware> & ContextCompatibility<context, actionContext, middleware>): void`
 
 Registers a handler for a specific request method and route target.
 
-Accepts either a plain request handler or an action object with optional inline middleware.
+Accepts either a plain request handler or an action object with optional action middleware.
 

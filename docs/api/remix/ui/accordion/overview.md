@@ -7,7 +7,7 @@ title: remix/ui/accordion
 
 `Accordion` renders a disclosure set with one or more expandable items. Use it for grouped settings, FAQ sections, and dense panels where each item owns a trigger and content region.
 
-## Usage
+## Component Usage
 
 ```tsx
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from 'remix/ui/accordion'
@@ -87,16 +87,11 @@ export function ControlledAccordion(handle: Handle) {
 }
 ```
 
-Listen for bubbling `AccordionChangeEvent` events with `onAccordionChange`.
+Listen for bubbling `AccordionChangeEvent` events with `onAccordionChange` from `remix/ui/accordion/primitives`.
 
 ```tsx
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  onAccordionChange,
-} from 'remix/ui/accordion'
+import { onAccordionChange } from 'remix/ui/accordion/primitives'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from 'remix/ui/accordion'
 
 export function TrackedAccordion() {
   return (
@@ -129,7 +124,7 @@ Set `collapsible={false}` in single mode when the open item must stay open. The 
 </Accordion>
 ```
 
-Use `headingLevel` to choose the heading wrapper rendered around each trigger. The default level is `3`.
+Use `headingLevel` to choose the heading element rendered around each trigger. The default level is `3`.
 
 ```tsx
 <Accordion defaultValue="shipping" headingLevel={2}>
@@ -147,16 +142,57 @@ Pass `indicator={null}` to remove the default chevron, or pass a custom node to 
 <AccordionTrigger indicator={<span aria-hidden>+</span>}>Custom indicator</AccordionTrigger>
 ```
 
-## `accordion.*`
+## Primitive Usage
+
+Use the lower-level primitives when app code owns the accordion markup and styles:
+
+```tsx
+import * as accordion from 'remix/ui/accordion/primitives'
+import { contentStyle, headingStyle, itemStyle, rootStyle, triggerStyle } from './accordion.styles'
+
+export function PrimitiveAccordion() {
+  return (
+    <accordion.Context defaultValue="shipping">
+      <div mix={[rootStyle, accordion.root()]}>
+        <accordion.ItemContext value="shipping">
+          <div mix={[itemStyle, accordion.item()]}>
+            <h3 mix={headingStyle}>
+              <button mix={[triggerStyle, accordion.trigger()]} type="button">
+                Shipping
+              </button>
+            </h3>
+            <div mix={[contentStyle, accordion.content()]}>
+              Delivery windows and carrier defaults.
+            </div>
+          </div>
+        </accordion.ItemContext>
+      </div>
+    </accordion.Context>
+  )
+}
+```
+
+## `remix/ui/accordion`
 
 - `Accordion`: root component. Defaults to single-item mode and supports controlled `value`, uncontrolled `defaultValue`, `onValueChange`, `disabled`, `headingLevel`, `collapsible`, and `type="multiple"`.
 - `AccordionItem`: registers one accordion item by `value`. Pass `disabled` to prevent that item from opening or receiving keyboard focus.
 - `AccordionTrigger`: heading-wrapped button for an item. It wires `aria-expanded`, `aria-controls`, keyboard navigation, and the default chevron indicator.
 - `AccordionContent`: panel for an item. It wires the panel id, `aria-labelledby`, `aria-hidden`, inert state, and open/closed state attributes.
+- `rootStyle`, `itemStyle`, `headingStyle`, `triggerStyle`, `indicatorStyle`, `panelStyle`, and `bodyStyle`: flat style mixins used by the component markup.
+- `AccordionProps`, `AccordionSingleProps`, `AccordionMultipleProps`, `AccordionItemProps`, `AccordionTriggerProps`, and `AccordionContentProps`: public TypeScript props for the composed APIs.
+
+## `remix/ui/accordion/primitives`
+
+- `Context`: lower-level provider for custom accordion composition.
+- `ItemContext`: lower-level provider for one item value.
+- `root()`: wires the root element and bubbling change events.
+- `item()`: wires one item wrapper.
+- `trigger()`: wires the item trigger, keyboard navigation, and trigger ARIA attributes.
+- `content()`: wires the item panel id, hidden state, inert state, and open/closed state attributes.
 - `onAccordionChange(...)`: event mixin for the bubbling `AccordionChangeEvent`.
-- `AccordionChangeEvent`: bubbling event class with `value`, `itemValue`, and `accordionType`.
-- `AccordionProps`, `AccordionSingleProps`, `AccordionMultipleProps`, `AccordionItemProps`, `AccordionTriggerProps`, and `AccordionContentProps`: public TypeScript props.
-- `rootStyle`, `itemStyle`, `triggerStyle`, `indicatorStyle`, `panelStyle`, and `bodyStyle`: flat style mixins used by the component wrappers.
+- `AccordionChangeEvent`: bubbling event with `value`, `itemValue`, and `accordionType`.
+- `AccordionType`, `AccordionValue`, `AccordionSingleValue`, `AccordionMultipleValue`, and `AccordionHeadingLevel`: public TypeScript state and configuration types.
+- `AccordionBaseContextProps`, `AccordionSingleContextProps`, `AccordionMultipleContextProps`, `AccordionContextProps`, `AccordionRootOptions`, `AccordionItemOptions`, `AccordionTriggerOptions`, and `AccordionContentOptions`: primitive prop and option types for custom composition.
 
 ## Behavior Notes
 

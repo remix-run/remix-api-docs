@@ -1,6 +1,6 @@
 ---
 title: createHref
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/route-pattern/src/lib/href.ts#L47
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/href.ts#L56
 ---
 
 # createHref
@@ -14,7 +14,7 @@ Generate an href from a route pattern and the supplied params.
 ```ts
 function createHref<source extends string>(
   pattern: source | RoutePattern<source>,
-  args: _CreateHrefArgs<ParseHrefParams<source>>,
+  args: CreateHrefArgs<source>,
 ): string;
 
 ```

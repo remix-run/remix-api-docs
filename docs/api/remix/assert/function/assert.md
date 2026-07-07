@@ -1,6 +1,6 @@
 ---
 title: assert
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L403
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L876
 ---
 
 # assert
@@ -12,7 +12,7 @@ Alias for [`ok`](/api/remix/assert/function/ok/).
 ## Signature
 
 ```ts
-const assert: (value: unknown, message: string) => asserts value;
+const assert: (value: unknown, message: AssertionMessage) => asserts value;
 
 ```
 

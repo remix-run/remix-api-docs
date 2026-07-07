@@ -1,9 +1,13 @@
 ---
 title: Match
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/route-pattern/src/lib/match/types.ts#L19
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/match/types.ts#L32
 ---
 
 # Match
+
+## Summary
+
+Result returned by route pattern matchers.
 
 ## Signature
 

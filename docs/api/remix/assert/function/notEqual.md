@@ -1,13 +1,13 @@
 ---
 title: notEqual
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L102
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L319
 ---
 
 # notEqual
 
 ## Summary
 
-Asserts strict inequality (`!==`) between `actual` and `expected`.
+Asserts strict inequality (`!Object.is`) between `actual` and `expected`.
 
 ## Signature
 
@@ -15,7 +15,7 @@ Asserts strict inequality (`!==`) between `actual` and `expected`.
 function notEqual<_value>(
   actual: unknown,
   expected: unknown,
-  message: string,
+  message: AssertionMessage,
 ): void;
 
 ```

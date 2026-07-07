@@ -7,15 +7,14 @@ title: remix/ui/popover
 
 `popover` is a low-level primitive for anchored, dismissible floating panels.
 
-Use it for custom surfaces like filters, inspectors, and view options. Higher-level widgets like `menu`, `select`, and `combobox` should build on top of it instead of exposing raw `popover.*` mixins directly.
+Use it for custom surfaces like filters, inspectors, and view options. Higher-level widgets like menu, select, and combobox should build on top of it instead of exposing raw `popover.*` mixins directly.
 
-## Usage
+## Primitive Usage
 
 ```tsx
-import { css, on, type Handle } from 'remix/ui'
-import { Button } from 'remix/ui/button'
-import { Glyph } from 'remix/ui/glyph'
-import { popover } from 'remix/ui/popover'
+import { on, type Handle } from 'remix/ui'
+import * as popover from 'remix/ui/popover'
+import { panelStyle } from './popover.styles'
 
 export function ViewOptions(handle: Handle) {
   let open = false
@@ -32,21 +31,20 @@ export function ViewOptions(handle: Handle) {
 
   return () => (
     <popover.Context>
-      <Button
-        endIcon={<Glyph name="chevronDown" />}
+      <button
         mix={[
           popover.anchor({ placement: 'bottom-end' }),
           popover.focusOnHide(),
           on('click', openPopover),
         ]}
-        tone="secondary"
+        type="button"
       >
         View options
-      </Button>
+      </button>
 
       <div
         mix={[
-          popover.surfaceStyle,
+          panelStyle,
           popover.surface({
             open,
             onHide() {
@@ -55,23 +53,17 @@ export function ViewOptions(handle: Handle) {
           }),
         ]}
       >
-        <div mix={popover.contentStyle}>
-          <Button mix={[popover.focusOnShow(), on('click', closePopover)]} tone="ghost">
-            Close
-          </Button>
-          <div mix={panelBody}>Panel content</div>
-        </div>
+        <button mix={[popover.focusOnShow(), on('click', closePopover)]} type="button">
+          Close
+        </button>
+        <div>Panel content</div>
       </div>
     </popover.Context>
   )
 }
-
-let panelBody = css({
-  padding: '12px',
-})
 ```
 
-## `popover.*`
+## `remix/ui/popover`
 
 ### `popover.Context`
 
@@ -80,10 +72,6 @@ Provides shared coordination for one popover instance. Render the anchor, any fo
 ### `popover.anchor(options)`
 
 Registers the host element as the anchor for the current popover surface.
-
-- Accepts standard `AnchorOptions`.
-- The stored anchor controls where the surface is positioned when it opens.
-- Apply it to the button or other element the surface should attach to.
 
 ### `popover.surface({ open, onHide, ... })`
 
@@ -104,13 +92,12 @@ Registers the element that should receive focus when the popover opens.
 
 Registers the element that should receive focus again when the popover closes.
 
-### `popover.surfaceStyle`
+### Primitive Types
 
-Default floating-surface presentation for popovers.
-
-### `popover.contentStyle`
-
-Default inner scroll container for popover content.
+- `PopoverContext`: context object exposed by `popover.Context`.
+- `PopoverProps`: provider props for one popover instance.
+- `PopoverSurfaceOptions`: options accepted by `popover.surface(...)`.
+- `PopoverHideRequest`: hide request passed to `onHide`.
 
 ## Behavior Notes
 
@@ -119,10 +106,4 @@ Default inner scroll container for popover content.
 - `popover.focusOnShow()` wins on open when present.
 - `popover.focusOnHide()` is used on close by default when focus restoration is enabled.
 - `closeOnAnchorClick: false` keeps anchor clicks inside the current session, which is useful for input-driven popovers like comboboxes.
-
-## When To Use Something Else
-
-- Use `menu` for command surfaces.
-- Use `listbox` or `select` for committed value picking.
-- Use `combobox` for input-first popup selection.
 

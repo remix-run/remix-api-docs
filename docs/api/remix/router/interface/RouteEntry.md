@@ -1,6 +1,6 @@
 ---
 title: RouteEntry
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/router.ts#L44
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L71
 ---
 
 # RouteEntry
@@ -33,7 +33,7 @@ The request method this route handles, or `ANY` for method-agnostic routes.
 
 ### `middleware`
 
-Route-specific middleware that runs before the handler.
+Action middleware that runs before the handler.
 
 ### `pattern`
 

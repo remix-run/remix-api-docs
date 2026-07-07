@@ -1,6 +1,6 @@
 ---
 title: RouterOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/router.ts#L92
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L205
 ---
 
 # RouterOptions
@@ -35,5 +35,5 @@ The matcher to use for matching routes.
 
 Middleware to run for every request handled by this router.
 
-Keep this array tuple-typed when you want `MiddlewareContext<typeof middleware>` to preserve
-the exact context contributions of each middleware.
+Inline arrays are preferred. Use `createMiddleware()` only when a middleware chain is stored
+before it is passed here and its exact tuple type must survive that boundary.

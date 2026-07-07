@@ -1,6 +1,6 @@
 ---
 title: FileDigestFunction
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/response/src/lib/file.ts#L44
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/file.ts#L44
 ---
 
 # FileDigestFunction

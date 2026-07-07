@@ -1,6 +1,6 @@
 ---
 title: createController
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/controller.ts#L168
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/controller.ts#L137
 ---
 
 # createController
@@ -10,8 +10,8 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetc
 Defines a controller whose action keys and params are checked against a route map.
 
 This helper returns the controller unchanged while giving TypeScript the route map it needs to
-type each action's `context.params`. If local middleware adds context values, compose those
-values into the controller context type and pass it as the second generic.
+type each action's `context.params`. If controller middleware adds context values, those values are
+available to the controller actions.
 
 ## Signature
 
@@ -19,10 +19,21 @@ values into the controller context type and pass it as the second generic.
 function createController<
   routes extends RouteMap<string>,
   context extends RequestContext<any, any>,
-  controller extends Controller<routes, context>,
->(routes: routes, controller: controller): controller;
+  middleware extends readonly AnyMiddleware[],
+>(
+  routes: routes,
+  controller: Controller<routes, context, middleware>,
+): Controller<routes, context, middleware>;
 
 ```
+
+## Parameters
+
+### `routes`
+
+### `controller`
+
+The controller object to type-check.
 
 ## Returns
 

@@ -1,6 +1,6 @@
 ---
 title: GetContextValue
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/request-context.ts#L120
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L138
 ---
 
 # GetContextValue
@@ -13,8 +13,12 @@ Resolves the value type returned by `context.get(key)` for the given context and
 
 ```ts
 type GetContextValue<context, key> =
-  context extends RequestContext<any, infer entries extends ContextEntries>
-    ? ResolveEntryValue<entries, key, ContextFallbackValue<key>>
+  context extends RequestContextTypes<any, any>
+    ? ResolveEntryValue<
+        RequestContextEntries<context>,
+        key,
+        ContextFallbackValue<key>
+      >
     : ContextFallbackValue<key>;
 
 ```

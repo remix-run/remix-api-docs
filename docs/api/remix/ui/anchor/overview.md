@@ -7,7 +7,7 @@ title: remix/ui/anchor
 
 `anchor` positions a floating element against an anchor element or viewport coordinates and keeps it constrained to the viewport. Use it for custom floating surfaces that need placement, flipping, offsets, and optional relative alignment.
 
-## Usage
+## Primitive Usage
 
 ```tsx
 import { anchor } from 'remix/ui/anchor'
@@ -60,7 +60,42 @@ Anchor to coordinates when the surface should open at a pointer location.
 let cleanup = anchor(popover, { x: event.clientX, y: event.clientY }, { placement: 'bottom-start' })
 ```
 
-## `anchor.*`
+Keep presentation app-owned when the anchored element is rendered by your component:
+
+```tsx
+import { anchor } from 'remix/ui/anchor'
+import { on, ref, type Handle } from 'remix/ui'
+import { panelStyle } from './floating.styles'
+
+export function AnchoredPanel(handle: Handle) {
+  let cleanup = () => {}
+  let trigger: HTMLElement | null = null
+  let panel: HTMLElement | null = null
+
+  function position() {
+    cleanup()
+    if (trigger && panel) {
+      cleanup = anchor(panel, trigger, { placement: 'bottom-start', offset: 8 })
+    }
+  }
+
+  return () => (
+    <>
+      <button
+        mix={[ref((node) => (trigger = node as HTMLElement)), on('click', position)]}
+        type="button"
+      >
+        Open
+      </button>
+      <div data-panel mix={[panelStyle, ref((node) => (panel = node as HTMLElement))]}>
+        Panel
+      </div>
+    </>
+  )
+}
+```
+
+## `remix/ui/anchor`
 
 - `anchor(floatingElement, anchorTarget, options)`: positions `floatingElement` against an element or coordinate target, starts animation-frame polling for geometry changes, and returns a cleanup function.
 - `AnchorOptions`: placement, inset, relative alignment, and offset options.

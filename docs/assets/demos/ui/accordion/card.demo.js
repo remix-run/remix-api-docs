@@ -1,6 +1,5 @@
 import { css } from "/assets/pkg/remix/src/ui.js";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "/assets/pkg/remix/src/ui/accordion.js";
-import { theme } from "/assets/pkg/remix/src/ui/theme.js";
 import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime.js";
 /**
 * @name Accordion in a Card
@@ -61,43 +60,43 @@ export default function Example() {
 const cardCss = css({
 	display: "flex",
 	flexDirection: "column",
-	gap: theme.space.md,
-	padding: theme.space.lg,
-	border: `1px solid ${theme.colors.border.subtle}`,
-	borderRadius: theme.radius.lg,
-	backgroundColor: theme.surface.lvl0,
-	boxShadow: theme.shadow.xs
+	gap: "12px",
+	padding: "16px",
+	border: "1px solid #e7e7e7",
+	borderRadius: "12px",
+	backgroundColor: "#ffffff",
+	boxShadow: "0 1px 1px rgb(0 0 0 / 0.05)"
 });
 const cardHeaderCss = css({
 	display: "flex",
 	flexDirection: "column",
-	gap: theme.space.sm
+	gap: "8px"
 });
-const accordionInsetCss = css({ paddingInline: theme.space.lg });
+const accordionInsetCss = css({ paddingInline: "16px" });
 const eyebrowCss = css({
 	margin: 0,
-	fontSize: theme.fontSize.xxxs,
-	fontWeight: theme.fontWeight.semibold,
-	letterSpacing: theme.letterSpacing.meta,
+	fontSize: "10px",
+	fontWeight: "600",
+	letterSpacing: "0.06em",
 	textTransform: "uppercase",
-	color: theme.colors.text.muted
+	color: "#6d6d6d"
 });
 const titleCss = css({
 	margin: 0,
-	fontSize: theme.fontSize.lg,
-	lineHeight: theme.lineHeight.tight,
-	fontWeight: theme.fontWeight.semibold,
-	color: theme.colors.text.primary
+	fontSize: "16px",
+	lineHeight: "1.25",
+	fontWeight: "600",
+	color: "#151515"
 });
 const descriptionCss = css({
 	margin: 0,
-	fontSize: theme.fontSize.sm,
-	lineHeight: theme.lineHeight.relaxed,
-	color: theme.colors.text.secondary
+	fontSize: "13px",
+	lineHeight: "1.65",
+	color: "#4f4f4f"
 });
 const bodyTextCss = css({
 	margin: 0,
-	fontSize: theme.fontSize.sm,
-	lineHeight: theme.lineHeight.relaxed,
-	color: theme.colors.text.secondary
+	fontSize: "13px",
+	lineHeight: "1.65",
+	color: "#4f4f4f"
 });

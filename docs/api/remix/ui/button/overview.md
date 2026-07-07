@@ -5,46 +5,46 @@ title: remix/ui/button
 
 # remix/ui/button
 
-`button` is the shared button styling contract for `remix/ui`. Use `Button` for ordinary action buttons, or compose flat `button.*Style` exports directly when a higher-level control needs button structure without a wrapper.
+`button` is a style mixin for pill-shaped action controls. It owns only button-like visual styling and the default `type="button"` behavior for native `<button>` hosts.
 
-## Usage
+## Primitive Usage
 
 ```tsx
-import { Button } from 'remix/ui/button'
-import * as button from 'remix/ui/button'
-import { Glyph } from 'remix/ui/glyph'
+import button from 'remix/ui/button'
 
 function Actions() {
-  return (
+  return () => (
     <div>
-      <Button startIcon={<Glyph name="add" />} tone="primary">
-        Create project
-      </Button>
-
-      <a href="/projects" mix={[button.baseStyle, button.secondaryStyle]}>
-        <span mix={button.labelStyle}>View projects</span>
-        <Glyph mix={button.iconStyle} name="chevronRight" />
-      </a>
+      <button mix={button()}>Edit order</button>
+      <button mix={button({ size: 'lg', tone: 'primary' })}>Add product</button>
+      <button mix={button({ tone: 'ghost' })}>Cancel</button>
     </div>
   )
 }
 ```
 
-## `button.*`
+Compose app-owned styles around the primitive when a control needs local layout or state styling:
 
-- `Button`: thin button wrapper for the common `base + tone + label/icon slots` case. Pass `tone`, `startIcon`, and `endIcon` when the default authored structure is enough.
-- `button.baseStyle`: base host styling plus the default `type="button"` behavior for button elements.
-- `button.primaryStyle`, `button.secondaryStyle`, `button.ghostStyle`, and `button.dangerStyle`: visual button treatments.
-- `button.labelStyle`: inline label slot with the standard button spacing.
-- `button.iconStyle`: icon slot sizing and `aria-hidden` defaults for decorative icons.
+```tsx
+import button from 'remix/ui/button'
+import { toolbarButtonStyle } from './toolbar.styles'
+
+function ToolbarAction() {
+  return () => <button mix={[toolbarButtonStyle, button({ tone: 'ghost' })]}>Archive</button>
+}
+```
+
+## `remix/ui/button`
+
+- `button(options)`: style mixin for native buttons or button-like hosts.
+- `ButtonOptions`: accepts `size` and `tone`.
+- `ButtonSize`: `'md'` or `'lg'`. Defaults to `'md'`.
+- `ButtonTone`: `'neutral'`, `'primary'`, or `'ghost'`. Defaults to `'neutral'`.
 
 ## Behavior Notes
 
-- `button.baseStyle` only adds `type="button"` when the host element is a `<button>` and no explicit `type` was provided.
-- `Button` renders `children` inside `button.labelStyle` and renders `startIcon` and `endIcon` inside `button.iconStyle`.
-- Use an explicit accessible name when you render an icon-only button.
-
-## When To Use Something Else
-
-Use `button.*Style` exports directly when a control needs button structure plus extra behavior or layout, like `select`, `menu`, or `tabs`. Those controls own their own interaction mixins and should not hide that behavior behind `Button`.
+- `button()` returns a mixin descriptor, so it composes with other mixins in the host element's `mix` prop.
+- Native `<button>` hosts receive `type="button"` unless an explicit `type` is provided.
+- Non-button hosts receive styling only.
+- Disabled hosts use the shared disabled treatment through `disabled` or `aria-disabled="true"`.
 

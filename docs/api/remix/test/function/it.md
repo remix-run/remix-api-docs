@@ -1,6 +1,6 @@
 ---
 title: it
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/test/src/lib/framework.ts#L174
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L192
 ---
 
 # it
@@ -29,8 +29,13 @@ it('returns 200 for the home route', async () => {
 
 // Modifiers
 it.skip('not ready yet', () => { ... })
+it.skip('not ready yet', 'blocked by missing fixture')
 it.only('focused test', () => { ... })
 it.todo('coming soon')
+it.todo('coming soon', 'needs retry coverage')
+it('fails if it takes too long', { timeout: 5_000 }, async (t) => {
+  await fetch('/api/data', { signal: t.signal })
+})
 ```
 
 ## Parameters
@@ -45,4 +50,4 @@ The test body, receiving a [`TestContext`](/api/remix/test/interface/TestContext
 
 ### `meta`
 
-Test metadata such as `skip` or `only`.
+Test metadata such as `skip`, `only`, `todo`, `timeout`, or `signal`.

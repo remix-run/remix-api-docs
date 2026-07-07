@@ -1,6 +1,6 @@
 ---
 title: ComboboxProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/ui/src/components/combobox/combobox.tsx#L126
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox/index.tsx#L16
 ---
 
 # ComboboxProps
@@ -18,13 +18,13 @@ interface ComboboxProps {
   aria-braillelabel?: string
   aria-brailleroledescription?: string
   aria-busy?: Booleanish
-  aria-checked?: Booleanish | "mixed"
+  aria-checked?: "mixed" | Booleanish
   aria-colcount?: number
   aria-colindex?: number
   aria-colindextext?: string
   aria-colspan?: number
   aria-controls?: string
-  aria-current?: Booleanish | "time" | "page" | "step" | "location" | "date"
+  aria-current?: "location" | Booleanish | "page" | "time" | "step" | "date"
   aria-describedby?: string
   aria-description?: string
   aria-details?: string
@@ -34,7 +34,7 @@ interface ComboboxProps {
   aria-expanded?: Booleanish
   aria-flowto?: string
   aria-grabbed?: Booleanish
-  aria-haspopup?: Booleanish | "dialog" | "grid" | "listbox" | "menu" | "tree"
+  aria-haspopup?: Booleanish | "grid" | "dialog" | "listbox" | "menu" | "tree"
   aria-hidden?: Booleanish
   aria-invalid?: Booleanish | "grammar" | "spelling"
   aria-keyshortcuts?: string
@@ -49,7 +49,7 @@ interface ComboboxProps {
   aria-owns?: string
   aria-placeholder?: string
   aria-posinset?: number
-  aria-pressed?: Booleanish | "mixed"
+  aria-pressed?: "mixed" | Booleanish
   aria-readonly?: Booleanish
   aria-relevant?: "all" | "additions" | "additions removals" | "additions text" | "removals" | "removals additions" | "removals text" | "text" | "text additions" | "text removals"
   aria-required?: Booleanish

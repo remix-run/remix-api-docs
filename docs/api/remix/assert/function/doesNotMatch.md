@@ -1,6 +1,6 @@
 ---
 title: doesNotMatch
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L202
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L470
 ---
 
 # doesNotMatch
@@ -12,7 +12,11 @@ Asserts that `string` does **not** match the given `regexp`.
 ## Signature
 
 ```ts
-function doesNotMatch(string: string, regexp: RegExp, message: string): void;
+function doesNotMatch(
+  string: string,
+  regexp: RegExp,
+  message: AssertionMessage,
+): void;
 
 ```
 

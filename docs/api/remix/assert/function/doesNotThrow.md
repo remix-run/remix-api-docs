@@ -1,6 +1,6 @@
 ---
 title: doesNotThrow
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L262
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L575
 ---
 
 # doesNotThrow
@@ -12,7 +12,11 @@ Asserts that `fn` does **not** throw.
 ## Signature
 
 ```ts
-function doesNotThrow(fn: () => any, message: string): void;
+function doesNotThrow(
+  fn: () => unknown,
+  expectedErrorOrMessage: unknown,
+  message: AssertionMessage,
+): void;
 
 ```
 
@@ -29,6 +33,10 @@ assert.doesNotThrow(() => JSON.parse("{}"));
 
 The function expected not to throw.
 
+### `expectedErrorOrMessage`
+
+Optional error constructor, instance, RegExp, object, validator, or failure message.
+
 ### `message`
 
-Optional failure message.
+Optional failure message when `expectedErrorOrMessage` is an error matcher.

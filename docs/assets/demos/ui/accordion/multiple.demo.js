@@ -1,6 +1,5 @@
 import { css } from "/assets/pkg/remix/src/ui.js";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "/assets/pkg/remix/src/ui/accordion.js";
-import { theme } from "/assets/pkg/remix/src/ui/theme.js";
 import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime.js";
 /**
 * @order 2
@@ -40,7 +39,7 @@ export default function Example() {
 }
 const bodyTextCss = css({
 	margin: 0,
-	fontSize: theme.fontSize.sm,
-	lineHeight: theme.lineHeight.relaxed,
-	color: theme.colors.text.secondary
+	fontSize: "13px",
+	lineHeight: "1.65",
+	color: "#4f4f4f"
 });

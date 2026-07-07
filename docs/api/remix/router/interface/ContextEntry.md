@@ -1,6 +1,6 @@
 ---
 title: ContextEntry
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/request-context.ts#L38
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L38
 ---
 
 # ContextEntry

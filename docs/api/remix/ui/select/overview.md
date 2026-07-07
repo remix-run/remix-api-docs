@@ -7,10 +7,11 @@ title: remix/ui/select
 
 `Select` is a button-triggered popup value picker backed by `listbox` and `popover`. Use it when the user should choose one stable string value from a finite set.
 
-## Usage
+## Component Usage
 
 ```tsx
-import { Option, Select, onSelectChange } from 'remix/ui/select'
+import { Option, Select } from 'remix/ui/select'
+import { onSelectChange } from 'remix/ui/select/primitives'
 
 export function FrameworkSelect() {
   return (
@@ -49,34 +50,34 @@ Use `textValue` when closed-trigger typeahead should match a different string fr
 </Select>
 ```
 
+## Primitive Usage
+
 Use the lower-level primitives when the trigger or popup structure needs to be owned by another component. Keep the same provider, trigger, popover, list, option, and hidden-input relationship.
 
 ```tsx
 import type { Handle } from 'remix/ui'
-import * as button from 'remix/ui/button'
-import * as listbox from 'remix/ui/listbox'
 import * as popover from 'remix/ui/popover'
-import * as select from 'remix/ui/select'
+import { triggerStyle } from 'remix/ui/select'
+import * as select from 'remix/ui/select/primitives'
+import { listStyle, optionStyle, surfaceStyle } from './select.styles'
 
 function SelectValue(handle: Handle) {
   let context = handle.context.get(select.Context)
 
-  return () => <span mix={button.labelStyle}>{context.displayedLabel}</span>
+  return () => <span>{context.displayedLabel}</span>
 }
 
 function IssueTypeSelect() {
   return () => (
-    <select.Context defaultLabel="Select a type" name="issueType">
-      <button type="button" mix={[button.baseStyle, select.triggerStyle, select.trigger()]}>
+    <select.Context defaultLabel="Select a type" labelSwapDelayMs={100} name="issueType">
+      <button type="button" mix={[triggerStyle, select.trigger()]}>
         <SelectValue />
       </button>
       <popover.Context>
-        <div mix={[popover.surfaceStyle, select.popover()]}>
-          <div mix={[popover.contentStyle, listbox.listStyle, select.list()]}>
-            <div mix={[listbox.optionStyle, select.option({ label: 'Bug', value: 'bug' })]}>
-              Bug
-            </div>
-            <div mix={[listbox.optionStyle, select.option({ label: 'Feature', value: 'feature' })]}>
+        <div mix={[surfaceStyle, select.popover()]}>
+          <div mix={[listStyle, select.list()]}>
+            <div mix={[optionStyle, select.option({ label: 'Bug', value: 'bug' })]}>Bug</div>
+            <div mix={[optionStyle, select.option({ label: 'Feature', value: 'feature' })]}>
               Feature
             </div>
           </div>
@@ -88,15 +89,24 @@ function IssueTypeSelect() {
 }
 ```
 
-## `select.*`
+## `remix/ui/select`
 
 - `Select`: composed trigger, popover, listbox, option list, and optional hidden input for form participation. Accepts `defaultLabel`, `defaultValue`, `disabled`, `name`, and button props.
-- `Option`: option wrapper that renders the standard check glyph and label slot. Accepts `label`, `value`, optional `disabled`, and optional `textValue`.
+- `Option`: option component that renders the standard check indicator and label slot. Accepts `label`, `value`, optional `disabled`, and optional `textValue`.
+- `triggerStyle`: standard select trigger style for custom trigger composition.
+- `SelectProps` and `SelectOptionProps`: public TypeScript props for the composed APIs.
+
+## `remix/ui/select/primitives`
+
+- `Context`: lower-level provider for custom composition. Accepts `defaultLabel`, `defaultValue`, `disabled`, `name`, and primitive-only `labelSwapDelayMs`; the label-swap delay defaults to `75` milliseconds.
+- `trigger()`: wires the trigger button, open behavior, closed-trigger typeahead, and trigger ARIA attributes.
+- `popover()`: wires the popover surface and keeps its min-width synced to the trigger before open.
+- `list()`: wires the listbox root used inside the popover.
+- `option(...)`: registers one selectable option. Accepts `label`, `value`, optional `disabled`, and optional `textValue`.
+- `hiddenInput()`: mirrors the selected value into a hidden input for form participation.
 - `onSelectChange(...)`: event mixin for the bubbling `SelectChangeEvent`.
-- `Context`, `trigger()`, `popover()`, `list()`, `option(...)`, and `hiddenInput()`: lower-level composition primitives.
-- `triggerStyle`: standard select trigger style.
 - `SelectChangeEvent`: event with `value`, `label`, and `optionId`.
-- `SelectProps`, `SelectContextProps`, and `SelectOptionProps`: public TypeScript props for the composed and lower-level APIs.
+- `SelectContextProps`, `SelectProps`, and `SelectOptionProps`: primitive prop types for custom composition.
 
 ## Behavior Notes
 

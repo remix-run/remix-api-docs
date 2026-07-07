@@ -1,6 +1,6 @@
 ---
 title: doesNotReject
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L323
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L696
 ---
 
 # doesNotReject
@@ -12,7 +12,11 @@ Asserts that the promise returned by `fn` does **not** reject.
 ## Signature
 
 ```ts
-function doesNotReject(fn: () => Promise<any>, message: string): Promise<void>;
+function doesNotReject(
+  fn: Promise<unknown> | (() => Promise<unknown>),
+  expectedErrorOrMessage: unknown,
+  message: AssertionMessage,
+): Promise<void>;
 
 ```
 
@@ -29,6 +33,10 @@ await assert.doesNotReject(() => fetch("/healthy"));
 
 A function returning a promise.
 
+### `expectedErrorOrMessage`
+
+Optional error constructor, instance, RegExp, object, validator, or failure message.
+
 ### `message`
 
-Optional failure message.
+Optional failure message when `expectedErrorOrMessage` is an error matcher.

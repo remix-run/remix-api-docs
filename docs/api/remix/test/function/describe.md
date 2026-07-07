@@ -1,6 +1,6 @@
 ---
 title: describe
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/test/src/lib/framework.ts#L120
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L134
 ---
 
 # describe
@@ -26,11 +26,14 @@ const describe: (name: string, meta: SuiteMeta, fn: () => void) => void;
 describe('auth', () => {
   it('logs in', async () => { ... })
 })
+describe('external service', { skip: 'requires API credentials' }, () => { ... })
 
 // Modifiers
 describe.skip('skipped suite', () => { ... })
+describe.skip('skipped suite', 'blocked by missing fixture', () => { ... })
 describe.only('focused suite', () => { ... })
 describe.todo('planned suite')
+describe.todo('planned suite', 'needs design input')
 ```
 
 ## Parameters
@@ -45,4 +48,4 @@ A function that registers the tests and lifecycle hooks in this suite.
 
 ### `meta`
 
-Suite metadata such as `skip` or `only`.
+Suite metadata such as `skip`, `only`, or `todo`.

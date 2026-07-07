@@ -1,6 +1,6 @@
 ---
 title: AssertionError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L5
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L7
 ---
 
 # AssertionError
@@ -15,16 +15,19 @@ Thrown when an assertion fails. Mirrors the shape of Node.js's built-in
 ```ts
 class AssertionError {
   constructor(options: {
-    actual?: any;
-    expected?: any;
-    message?: string;
+    actual?: unknown;
+    expected?: unknown;
+    generatedMessage?: boolean;
+    message?: unknown;
     operator: string;
   }): AssertionError;
 
   // Properties
-  actual: any;
+  actual: unknown;
   cause?: unknown;
-  expected: any;
+  code: string;
+  expected: unknown;
+  generatedMessage: boolean;
   message: string;
   name: string;
   operator: string;
@@ -48,7 +51,11 @@ Creates a new AssertionError with the given message, actual/expected values, and
 
 ### `cause`
 
+### `code`
+
 ### `expected`
+
+### `generatedMessage`
 
 ### `message`
 

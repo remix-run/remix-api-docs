@@ -1,4 +1,5 @@
-import { Menu, MenuItem, onMenuSelect } from "/assets/pkg/remix/src/ui/menu.js";
+import { Menu, MenuItem } from "/assets/pkg/remix/src/ui/menu.js";
+import { onMenuSelect } from "/assets/pkg/remix/src/ui/menu/primitives.js";
 import { jsx as _jsx, jsxs as _jsxs } from "/assets/pkg/remix/src/ui/jsx-runtime.js";
 /**
 * @name Menu Event Bubbling

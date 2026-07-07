@@ -1,6 +1,6 @@
 ---
 title: SelectOptionProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/ui/src/components/select/select.tsx#L78
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/select/index.tsx#L24
 ---
 
 # SelectOptionProps
@@ -8,6 +8,12 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/ui/s
 ## Signature
 
 ```ts
-type SelectOptionProps = Props<"div"> & Omit<ListboxOption, "id">;
+type SelectOptionProps = Props<"div"> & {
+  children?: RemixNode;
+  disabled?: boolean;
+  label: string;
+  textValue?: SearchValue;
+  value: string;
+};
 
 ```

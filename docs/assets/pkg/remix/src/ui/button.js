@@ -1,2 +1,3 @@
 // IMPORTANT: This file is auto-generated, please do not edit manually.
-export * from "/assets/pkg/ui/src/components/button/button.js";
+export * from "/assets/pkg/ui/src/button/index.js";
+export { default } from "/assets/pkg/ui/src/button/index.js";

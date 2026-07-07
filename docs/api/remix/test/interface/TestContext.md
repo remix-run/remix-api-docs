@@ -1,6 +1,6 @@
 ---
 title: TestContext
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/test/src/lib/context.ts#L29
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/context.ts#L29
 ---
 
 # TestContext
@@ -15,6 +15,7 @@ passed as the first argument to the [`test`](/api/remix/test/function/test/)/[`i
 ```ts
 interface TestContext {
   mock: { fn: any; method: any };
+  signal: AbortSignal;
   after(fn: () => void): void;
   serve(server: TestServer): Promise<Page>;
   useFakeTimers(): FakeTimers;
@@ -28,6 +29,11 @@ interface TestContext {
 
 Mock tracker for the current test using [`mock`](/api/remix/test/variable/mock/). Mirrors the shape of Node's
 `t.mock`. Method mocks created via `t.mock` are auto-restored on test completion.
+
+### `signal`
+
+An abort signal for the current test. The signal is aborted when the test
+times out or when a user-provided test signal aborts.
 
 ## Methods
 

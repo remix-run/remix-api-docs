@@ -1,6 +1,6 @@
 ---
 title: throws
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L230
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L526
 ---
 
 # throws
@@ -17,7 +17,11 @@ for a valid error.
 ## Signature
 
 ```ts
-function throws(fn: () => any, expectedError: any, message: string): void;
+function throws(
+  fn: () => unknown,
+  expectedErrorOrMessage: unknown,
+  message: AssertionMessage,
+): void;
 
 ```
 
@@ -36,10 +40,10 @@ assert.throws(() => riskyOp(), { code: "ERR_INVALID_ARG_VALUE" });
 
 The function expected to throw.
 
-### `expectedError`
+### `expectedErrorOrMessage`
 
-Optional error constructor, instance, RegExp, object, or validator.
+Optional error constructor, instance, RegExp, object, validator, or failure message.
 
 ### `message`
 
-Optional failure message.
+Optional failure message when `expectedErrorOrMessage` is an error matcher.

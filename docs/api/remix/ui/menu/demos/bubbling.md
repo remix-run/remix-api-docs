@@ -3,8 +3,8 @@
 Item-level handlers fire before the root handler, letting individual items intercept events while others bubble up.
 
 ```tsx
-import { on } from 'remix/ui'
-import { Menu, MenuItem, onMenuSelect } from 'remix/ui/menu'
+import { Menu, MenuItem } from 'remix/ui/menu'
+import { onMenuSelect } from 'remix/ui/menu/primitives'
 
 export default function Example() {
   return () => (

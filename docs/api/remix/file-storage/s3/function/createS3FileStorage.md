@@ -1,6 +1,6 @@
 ---
 title: createS3FileStorage
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/file-storage-s3/src/lib/s3.ts#L67
+source: https://github.com/remix-run/remix/blob/main/packages/file-storage-s3/src/lib/s3.ts#L67
 ---
 
 # createS3FileStorage

@@ -1,6 +1,6 @@
 ---
 title: beforeAll
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/test/src/lib/framework.ts#L248
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L301
 ---
 
 # beforeAll
@@ -9,12 +9,13 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/test
 
 Registers a hook that runs once before **all** tests in the current suite
 (or globally if called outside a `describe`). Multiple calls are chained in
-registration order.
+registration order. Pass `{ timeout, signal }` after the function to limit
+how long the hook may run.
 
 ## Signature
 
 ```ts
-function beforeAll(fn: () => void | Promise<void>): void;
+function beforeAll(fn: LifecycleHookFn, options: HookOptions): void;
 
 ```
 
@@ -23,3 +24,7 @@ function beforeAll(fn: () => void | Promise<void>): void;
 ### `fn`
 
 The setup function to run once before all tests in the suite.
+
+### `options`
+
+Optional timeout and abort signal configuration.

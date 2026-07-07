@@ -1,6 +1,6 @@
 ---
 title: createRequest
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/node-fetch-server/src/lib/request-listener.ts#L238
+source: https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L366
 ---
 
 # createRequest

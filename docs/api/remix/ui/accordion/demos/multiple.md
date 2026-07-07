@@ -10,7 +10,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from 'remix/ui/accordion'
-import { theme } from 'remix/ui/theme'
 
 export default function Example() {
   return () => (
@@ -50,9 +49,9 @@ export default function Example() {
 
 const bodyTextCss = css({
   margin: 0,
-  fontSize: theme.fontSize.sm,
-  lineHeight: theme.lineHeight.relaxed,
-  color: theme.colors.text.secondary,
+  fontSize: '13px',
+  lineHeight: '1.65',
+  color: '#4f4f4f',
 })
 
 ```

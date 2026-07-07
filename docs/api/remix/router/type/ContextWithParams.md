@@ -1,6 +1,6 @@
 ---
 title: ContextWithParams
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/request-context.ts#L96
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L115
 ---
 
 # ContextWithParams
@@ -13,15 +13,11 @@ Adds route params to a [`RequestContext`](/api/remix/router/class/RequestContext
 
 ```ts
 type ContextWithParams<context, params> =
-  context extends RequestContext<any, infer entries extends ContextEntries>
-    ? MergeContextParams<ContextParams<context>, params> extends infer merged
-      ? [merged] extends [never]
-        ? never
-        : RequestContextWithEntries<
-            Extract<merged, Record<string, any>>,
-            entries
-          >
-      : never
+  context extends RequestContextTypes<any, any>
+    ? RequestContextWithEntries<
+        MergeContextParams<ContextParams<context>, params>,
+        RequestContextEntries<context>
+      >
     : RequestContextWithEntries<params, []>;
 
 ```

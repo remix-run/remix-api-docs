@@ -1,6 +1,6 @@
 ---
 title: RequestContext
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/fetch-router/src/lib/request-context.ts#L174
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-context.ts#L192
 ---
 
 # RequestContext
@@ -17,6 +17,7 @@ class RequestContext<params, entries> {
   constructor(request: Request): RequestContext<params, entries>;
 
   // Properties
+  [requestContextTypes]?: { entries: entries; params: params };
   method: string;
   params: params;
   request: Request;
@@ -47,6 +48,8 @@ class RequestContext<params, entries> {
 The incoming request
 
 ## Properties
+
+### `[requestContextTypes]`
 
 ### `method`
 

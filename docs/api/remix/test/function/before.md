@@ -1,6 +1,6 @@
 ---
 title: before
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/test/src/lib/framework.ts#L266
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/framework.ts#L319
 ---
 
 # before
@@ -12,7 +12,7 @@ Alias for [`beforeAll`](/api/remix/test/function/beforeAll/) — matches the `no
 ## Signature
 
 ```ts
-const before: (fn: () => void | Promise<void>) => void;
+const before: (fn: LifecycleHookFn, options: HookOptions) => void;
 
 ```
 
@@ -21,3 +21,7 @@ const before: (fn: () => void | Promise<void>) => void;
 ### `fn`
 
 The setup function to run once before all tests in the suite.
+
+### `options`
+
+Optional timeout and abort signal configuration.

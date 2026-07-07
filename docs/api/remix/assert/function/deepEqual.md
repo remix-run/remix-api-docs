@@ -1,6 +1,6 @@
 ---
 title: deepEqual
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/assert/src/lib/assert.ts#L124
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L349
 ---
 
 # deepEqual
@@ -16,7 +16,7 @@ compares object properties using `===` at primitive leaves (no type coercion).
 function deepEqual<T>(
   actual: unknown,
   expected: T,
-  message: string,
+  message: AssertionMessage,
 ): asserts actual is T;
 
 ```

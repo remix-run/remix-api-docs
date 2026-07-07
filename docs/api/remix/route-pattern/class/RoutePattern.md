@@ -1,26 +1,27 @@
 ---
 title: RoutePattern
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.3/packages/route-pattern/src/lib/route-pattern.ts#L47
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern.ts#L80
 ---
 
 # RoutePattern
 
 ## Summary
 
-A parsed route pattern
+A parsed route pattern.
+
+Create one with the [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/) `parse` method. The constructor is public but takes a parsed
+representation that is not part of the public API; prefer `RoutePattern.parse` instead. Use
+`source`, `toString()`, `toJSON()`, and [`getRoutePatternCaptures`](/api/remix/route-pattern/function/getRoutePatternCaptures/) for inspection.
 
 ## Signature
 
 ```ts
 class RoutePattern<source> {
-  constructor(parsed: ParsedRoutePattern): RoutePattern<source>;
+  constructor(parts: RoutePatternParts): RoutePattern<source>;
 
   // Properties
-  hostname: PartPattern | null;
-  pathname: PartPattern;
-  port: string | null;
-  protocol: "http" | "https" | "http(s)" | null;
-  search: ReadonlyMap<string, ReadonlySet<string>>;
+  _parts: RoutePatternParts;
+  [brand]: source;
 
   // Accessors
   get source(): string;
@@ -35,44 +36,30 @@ class RoutePattern<source> {
 
 ## Constructor
 
-Create a new `RoutePattern` from parsed parts of a route pattern.
+Create a new `RoutePattern` from its parsed parts.
 
-Useful for efficiently deriving new patterns from already parsed patterns.
-Unless you know what you are doing, you probably want `RoutePattern.parse`.
+The parts are not part of the public API. Use the [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/) `parse` method to create a pattern
+from a source string.
 
 ### Parameters
 
-#### `parsed`
+#### `parts`
 
-Parsed route pattern parts.
+The parsed parts of the pattern.
 
 ## Properties
 
-### `hostname`
+### `_parts`
 
-### `pathname`
+Parsed parts of this pattern. Internal; not part of the public API.
 
-### `port`
-
-### `protocol`
-
-### `search`
-
-Required values keyed by search param name.
-
-Follows
-[WHATWG's application/x-www-form-urlencoded parsing](https://url.spec.whatwg.org/#application/x-www-form-urlencoded) spec
-(same as [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams#percent_encoding)).
-For example, `+` is decoded as ` ` (literal space) instead of `%20`.
-
-- **Empty `Set`**: key must appear; value may be anything (including empty).
-- **Non-empty `Set`**: key must appear with all listed values; extra values are OK.
+### `[brand]`
 
 ## Accessors
 
 ### `source`
 
-Normalized string representation of this pattern
+Normalized string representation of this pattern.
 
 ## Methods
 
