@@ -33,7 +33,6 @@ remix doctor --fix
 remix routes
 remix routes --table
 remix routes --table --no-headers
-remix skills install
 remix test
 remix version
 remix --no-color doctor
@@ -51,7 +50,6 @@ await runRemix(['doctor', '--fix'])
 await runRemix(['routes'])
 await runRemix(['routes', '--table'])
 await runRemix(['routes', '--table', '--no-headers'])
-await runRemix(['skills', 'list'])
 await runRemix(['test'])
 await runRemix(['version'])
 ```

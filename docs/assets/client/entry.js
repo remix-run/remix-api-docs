@@ -42,6 +42,15 @@ window.navigation.addEventListener("navigate", () => {
 	if (navToggle instanceof HTMLInputElement) {
 		navToggle.checked = false;
 	}
+	let pagefindModal = document.querySelector("pagefind-modal");
+	if (pagefindModal && pagefindModal instanceof HTMLElement) {
+		let modal = pagefindModal;
+		modal.close();
+	}
+	let pagefindButton = document.querySelector("pagefind-modal-trigger button");
+	if (pagefindButton && pagefindButton instanceof HTMLElement) {
+		pagefindButton.blur();
+	}
 });
 function isMobileNav() {
 	return window.matchMedia(MOBILE_NAV_MEDIA_QUERY).matches;

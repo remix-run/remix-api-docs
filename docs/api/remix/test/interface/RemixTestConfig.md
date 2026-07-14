@@ -1,6 +1,6 @@
 ---
 title: RemixTestConfig
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/config.ts#L188
+source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/config.ts#L207
 ---
 
 # RemixTestConfig
@@ -35,9 +35,11 @@ interface RemixTestConfig {
     exclude?: string | string[];
     test?: string | string[];
   };
+  only?: RemixTestOnlyPattern | RemixTestOnlyPattern[];
   playwrightConfig?: string | PlaywrightTestConfig;
   pool?: RemixTestPool;
   project?: string | string[];
+  quiet?: boolean;
   reporter?: string;
   setup?: string;
   type?: string | string[];
@@ -72,6 +74,14 @@ or an array of patterns; arrays are unioned during discovery.
  - `glob.e2e`: Glob pattern(s) for the subset of e2e test files (--glob.e2e)
  - `glob.exclude`: Glob pattern(s) for paths to exclude from discovery (--glob.exclude)
 
+### `only`
+
+Regular expression pattern(s) to focus tests by their full name (--only).
+Matching suite names focus the whole suite, while matching test names focus
+the individual test. Plain string patterns are case-insensitive. Use a
+slash-delimited pattern or a `RegExp` in the config file to control flags
+explicitly. `--only` may be repeated on the CLI.
+
 ### `playwrightConfig`
 
 Playwright configuration — either a path to a playwright config file or an inline
@@ -86,6 +96,10 @@ but worker threads are available for projects that prefer the previous behavior.
 
 Filter tests to specific playwright project(s) (--project). Accepts a single
 project name or an array of names; `--project` may be repeated on the CLI.
+
+### `quiet`
+
+Quiet mode — do not print skipped tests (--quiet, -q)
 
 ### `reporter`
 

@@ -32,8 +32,7 @@ interface CookieOptions {
 
 ### `decode`
 
-A function that decodes the cookie value. Decodes any URL-encoded sequences into their
-original characters.
+A function that decodes the cookie value.
 
 See [RFC 6265](https://tools.ietf.org/html/rfc6265#section-4.1.1) for more details.
 
@@ -45,8 +44,9 @@ The domain of the cookie. For example, `example.com`.
 
 ### `encode`
 
-A function that encodes the cookie value. Percent-encodes all characters that are not allowed
-in a cookie value.
+A function that encodes the cookie value.
+
+Custom encoders must return values that are safe to serialize in a `Set-Cookie` header.
 
 See [RFC 6265](https://tools.ietf.org/html/rfc6265#section-4.1.1) for more details.
 

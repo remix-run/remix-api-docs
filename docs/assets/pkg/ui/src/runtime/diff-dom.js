@@ -1,4 +1,5 @@
 import { invariant } from "/assets/pkg/ui/src/runtime/invariant.js";
+const REMIX_PRESERVE_DOM_ATTRIBUTE = "rmx-preserve-dom";
 export function diffNodes(curr, next, context) {
 	let parent = curr[0]?.parentNode ?? context.regionParent ?? null;
 	invariant(parent, "Parent node not found");
@@ -120,6 +121,7 @@ function diffNode(current, next, context) {
 			return;
 		}
 		// Same tag: update attributes then children
+		if (shouldPreserveDomElement(current, next)) return;
 		diffElementAttributes(current, next);
 		if (shouldPreserveElementChildren(current, next)) return;
 		diffElementChildren(current, next, context);
@@ -152,6 +154,13 @@ function diffElementAttributes(current, next) {
 			current.setAttribute(name, nextVal == null ? "" : String(nextVal));
 		}
 	}
+}
+function shouldPreserveDomElement(current, next) {
+	if (!next.hasAttribute(REMIX_PRESERVE_DOM_ATTRIBUTE)) return false;
+	if (!current.hasAttribute(REMIX_PRESERVE_DOM_ATTRIBUTE)) {
+		current.setAttribute(REMIX_PRESERVE_DOM_ATTRIBUTE, "");
+	}
+	return true;
 }
 function shouldPreserveLiveAttribute(current, next, name) {
 	if (name === "open") {
@@ -302,6 +311,10 @@ function diffElementChildren(current, next, context) {
 			anchor = node;
 			continue;
 		}
+		if (isPreservedDomElement(node) && node.parentNode === current) {
+			anchor = node;
+			continue;
+		}
 		if (node.parentNode === current) {
 			// Node already in parent: move only if its nextSibling is not the desired ref.
 			let targetNext = ref;
@@ -325,6 +338,9 @@ function diffElementChildren(current, next, context) {
 			removeNode(nodeToRemove, current, context);
 		}
 	}
+}
+function isPreservedDomElement(node) {
+	return isElement(node) && node.hasAttribute(REMIX_PRESERVE_DOM_ATTRIBUTE);
 }
 function nodeTypesComparable(a, b) {
 	if (isTextNode(a) && isTextNode(b)) return true;
