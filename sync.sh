@@ -17,7 +17,7 @@ rm -rf docs/assets
 rm -rf docs/fragment
 rm -f docs/index.html
 
-pushd ../remix/docs
+pushd ../remix/api
 pnpm run docs --tag "${TAG_NAME}"
 pnpm run build
 pnpm run prerender --dir "${DOCS_DIR}"
