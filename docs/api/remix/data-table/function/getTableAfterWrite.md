@@ -16,11 +16,9 @@ function getTableAfterWrite<table extends AnyTable>(
   table: table,
 ):
   | TableAfterWrite<{
-      [key in string]: {
-        [column in string]: ColumnOutput<TableColumns<table>[column]>;
-      }[key];
+      [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key]
     }>
-  | undefined;
+  | undefined
 
 ```
 

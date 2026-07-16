@@ -13,8 +13,8 @@ Selected output column with optional alias.
 
 ```ts
 type SelectColumn = {
-  alias: string;
-  column: string;
-};
+  alias: string
+  column: string
+}
 
 ```

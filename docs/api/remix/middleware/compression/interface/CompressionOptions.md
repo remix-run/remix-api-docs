@@ -13,11 +13,11 @@ Configuration for automatic response compression.
 
 ```ts
 interface CompressionOptions {
-  brotli?: BrotliOptions | ((response: Response) => BrotliOptions);
-  encodings?: Encoding[] | ((response: Response) => Encoding[]);
-  filterMediaType?: (mediaType: string) => boolean;
-  threshold?: number;
-  zlib?: ZlibOptions | ((response: Response) => ZlibOptions);
+  brotli?: BrotliOptions | ((response: Response) => BrotliOptions)
+  encodings?: Encoding[] | ((response: Response) => Encoding[])
+  filterMediaType?: (mediaType: string) => boolean
+  threshold?: number
+  zlib?: ZlibOptions | ((response: Response) => ZlibOptions)
 }
 
 ```

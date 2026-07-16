@@ -14,6 +14,6 @@ Any valid element type accepted by JSX or import('./create-element.ts').createEl
 ## Signature
 
 ```ts
-type ElementType = string | Function;
+type ElementType = string | Function
 
 ```

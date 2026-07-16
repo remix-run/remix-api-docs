@@ -15,8 +15,6 @@ Public mixin setup function signature.
 type MixinType<node, args, props> = (
   handle: MixinHandle<node, props>,
   type: string,
-) =>
-  | ((args: [...args, currentProps: props]) => MixinReturn<node, props>)
-  | void;
+) => ((args: [...args, currentProps: props]) => MixinReturn<node, props>) | void
 
 ```

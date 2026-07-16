@@ -12,7 +12,7 @@ Require a string to be a valid URL.
 ## Signature
 
 ```ts
-function url(): Check<string>;
+function url(): Check<string>
 
 ```
 

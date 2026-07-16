@@ -13,8 +13,8 @@ Auth state for a request that did not authenticate successfully.
 
 ```ts
 interface BadAuth {
-  error?: AuthFailure;
-  ok: false;
+  error?: AuthFailure
+  ok: false
 }
 
 ```

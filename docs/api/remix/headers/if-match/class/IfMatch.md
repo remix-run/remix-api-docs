@@ -17,16 +17,16 @@ The value of an `If-Match` HTTP header.
 
 ```ts
 class IfMatch {
-  constructor(init: string | string[] | IfMatchInit): IfMatch;
+  constructor(init: string | string[] | IfMatchInit): IfMatch
 
   // Properties
-  tags: string[];
+  tags: string[]
 
   // Methods
-  has(tag: string): boolean;
-  matches(tag: string): boolean;
-  toString(): string;
-  from(value: string | string[] | IfMatchInit | null): IfMatch;
+  has(tag: string): boolean
+  matches(tag: string): boolean
+  toString(): string
+  from(value: string | string[] | IfMatchInit | null): IfMatch
 }
 
 ```

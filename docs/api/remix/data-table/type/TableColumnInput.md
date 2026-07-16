@@ -12,8 +12,6 @@ Column input accepted for a concrete table.
 ## Signature
 
 ```ts
-type TableColumnInput<table> = ColumnInput<
-  TableColumnName<table> | QualifiedTableColumnName<table>
->;
+type TableColumnInput<table> = ColumnInput<TableColumnName<table> | QualifiedTableColumnName<table>>
 
 ```

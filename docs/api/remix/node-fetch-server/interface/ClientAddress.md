@@ -13,9 +13,9 @@ Information about the client that sent a request.
 
 ```ts
 interface ClientAddress {
-  address: string;
-  family: "IPv4" | "IPv6";
-  port: number;
+  address: string
+  family: 'IPv4' | 'IPv6'
+  port: number
 }
 
 ```

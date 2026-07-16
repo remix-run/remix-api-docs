@@ -13,12 +13,12 @@ Names of ANSI text modifier styles supported by terminal style helpers.
 
 ```ts
 type TerminalModifierName =
-  | "bold"
-  | "dim"
-  | "inverse"
-  | "italic"
-  | "overline"
-  | "strikethrough"
-  | "underline";
+  | 'bold'
+  | 'dim'
+  | 'inverse'
+  | 'italic'
+  | 'overline'
+  | 'strikethrough'
+  | 'underline'
 
 ```

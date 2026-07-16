@@ -19,7 +19,7 @@ Search constraints from both patterns are merged.
 function joinPatterns<base extends string, next extends string>(
   base: base | RoutePattern<base>,
   next: next | RoutePattern<next>,
-): RoutePattern<JoinPatterns<base, next>>;
+): RoutePattern<JoinPatterns<base, next>>
 
 ```
 

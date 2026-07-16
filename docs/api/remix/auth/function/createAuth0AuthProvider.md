@@ -1,6 +1,6 @@
 ---
 title: createAuth0AuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/auth0.ts#L34
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/auth0.ts#L36
 ---
 
 # createAuth0AuthProvider
@@ -14,7 +14,7 @@ Creates an Auth0 provider backed by the shared OIDC runtime.
 ```ts
 function createAuth0AuthProvider(
   options: Auth0AuthProviderOptions,
-): OAuthProvider<Auth0AuthProfile, "auth0", OAuthStandardTokens>;
+): OAuthProvider<Auth0AuthProfile, 'auth0', OAuthStandardTokens>
 
 ```
 

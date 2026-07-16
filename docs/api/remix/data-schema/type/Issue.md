@@ -15,6 +15,6 @@ failing location in the input (e.g. `['user', 'email']` or `[0, 'id']`).
 ## Signature
 
 ```ts
-type Issue = StandardSchemaV1.Issue;
+type Issue = StandardSchemaV1.Issue
 
 ```

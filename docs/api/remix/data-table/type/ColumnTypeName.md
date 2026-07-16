@@ -13,18 +13,18 @@ Logical column type names used by schema definitions.
 
 ```ts
 type ColumnTypeName =
-  | "varchar"
-  | "text"
-  | "integer"
-  | "bigint"
-  | "decimal"
-  | "boolean"
-  | "uuid"
-  | "date"
-  | "time"
-  | "timestamp"
-  | "json"
-  | "binary"
-  | "enum";
+  | 'varchar'
+  | 'text'
+  | 'integer'
+  | 'bigint'
+  | 'decimal'
+  | 'boolean'
+  | 'uuid'
+  | 'date'
+  | 'time'
+  | 'timestamp'
+  | 'json'
+  | 'binary'
+  | 'enum'
 
 ```

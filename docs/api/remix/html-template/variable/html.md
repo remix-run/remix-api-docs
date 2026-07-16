@@ -28,6 +28,5 @@ assert.equal(String(safe), '<div><b>OK</b></div>')
 ## Signature
 
 ```ts
-const html: HtmlTemplateTag;
-
+const html: HtmlTemplateTag
 ```

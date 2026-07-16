@@ -12,7 +12,7 @@ Returns `true` when ANSI colors should be emitted for the given stream/environme
 ## Signature
 
 ```ts
-function shouldUseColors(options: ColorSupportOptions): boolean;
+function shouldUseColors(options: ColorSupportOptions): boolean
 
 ```
 

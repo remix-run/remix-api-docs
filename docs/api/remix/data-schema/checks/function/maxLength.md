@@ -12,7 +12,7 @@ Require a string to be at most `length` characters long.
 ## Signature
 
 ```ts
-function maxLength(length: number): Check<string>;
+function maxLength(length: number): Check<string>
 
 ```
 

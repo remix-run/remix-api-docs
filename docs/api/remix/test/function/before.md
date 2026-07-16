@@ -12,8 +12,7 @@ Alias for [`beforeAll`](/api/remix/test/function/beforeAll/) — matches the `no
 ## Signature
 
 ```ts
-const before: (fn: LifecycleHookFn, options: HookOptions) => void;
-
+const before: (fn: LifecycleHookFn, options: HookOptions) => void
 ```
 
 ## Parameters

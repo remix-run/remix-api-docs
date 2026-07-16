@@ -17,17 +17,16 @@ which is the shape produced by `mock.fn()` from `@remix-run/test`.
 ## Signature
 
 ```ts
-const expect: Expect;
-
+const expect: Expect
 ```
 
 ## Example
 
 ```ts
-expect(value).toBe(42);
-expect(value).not.toBeNull();
-expect(value).toEqual(expect.objectContaining({ success: true }));
-await expect(fetch("/missing")).rejects.toThrow("Not found");
-await expect(loadModule()).resolves.toBeUndefined();
+expect(value).toBe(42)
+expect(value).not.toBeNull()
+expect(value).toEqual(expect.objectContaining({ success: true }))
+await expect(fetch('/missing')).rejects.toThrow('Not found')
+await expect(loadModule()).resolves.toBeUndefined()
 
 ```

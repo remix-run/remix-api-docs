@@ -16,7 +16,7 @@ function belongsTo<source extends AnyTable, target extends AnyTable>(
   source: source,
   target: target,
   relationOptions: BelongsToOptions<source, target>,
-): Relation<source, target, "one">;
+): Relation<source, target, 'one'>
 
 ```
 

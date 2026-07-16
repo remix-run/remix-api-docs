@@ -16,19 +16,19 @@ function createMigrationRunner(
   adapter: DatabaseAdapter,
   migrations: MigrationRegistry | MigrationDescriptor[],
   options: MigrationRunnerOptions,
-): MigrationRunner;
+): MigrationRunner
 
 ```
 
 ## Example
 
 ```ts
-import { createMigrationRunner } from "remix/data-table/migrations";
+import { createMigrationRunner } from 'remix/data-table/migrations'
 
 let runner = createMigrationRunner(adapter, migrations, {
-  journalTable: "app_migrations",
-});
-await runner.up();
+  journalTable: 'app_migrations',
+})
+await runner.up()
 
 ```
 

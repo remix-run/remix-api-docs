@@ -12,7 +12,7 @@ Middleware that adds CORS headers and handles CORS preflight requests.
 ## Signature
 
 ```ts
-function cors(options: CorsOptions): Middleware;
+function cors(options: CorsOptions): Middleware
 
 ```
 

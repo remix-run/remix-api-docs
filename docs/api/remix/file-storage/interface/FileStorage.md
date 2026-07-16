@@ -13,14 +13,12 @@ A key/value interface for storing `File` objects.
 
 ```ts
 interface FileStorage<file> {
-  get(key: string): file | Promise<file | null> | null;
-  has(key: string): boolean | Promise<boolean>;
-  list<T extends ListOptions>(
-    options: T,
-  ): ListResult<T> | Promise<ListResult<T>>;
-  put(key: string, file: File): file | Promise<file>;
-  remove(key: string): void | Promise<void>;
-  set(key: string, file: File): void | Promise<void>;
+  get(key: string): file | Promise<file | null> | null
+  has(key: string): boolean | Promise<boolean>
+  list<T extends ListOptions>(options: T): ListResult<T> | Promise<ListResult<T>>
+  put(key: string, file: File): file | Promise<file>
+  remove(key: string): void | Promise<void>
+  set(key: string, file: File): void | Promise<void>
 }
 
 ```

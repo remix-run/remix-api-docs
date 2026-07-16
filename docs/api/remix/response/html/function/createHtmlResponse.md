@@ -13,7 +13,7 @@ that ensures the response has a valid DOCTYPE and appropriate `Content-Type` hea
 ## Signature
 
 ```ts
-function createHtmlResponse(body: HtmlBody, init: ResponseInit): Response;
+function createHtmlResponse(body: HtmlBody, init: ResponseInit): Response
 
 ```
 

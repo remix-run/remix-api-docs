@@ -15,7 +15,7 @@ Creates a schema entry for repeated file fields from `FormData`.
 function files<schema extends Schema<any, any>>(
   schema: schema,
   options: FormDataFilesOptions,
-): FormDataEntrySchema<InferOutput<schema>>;
+): FormDataEntrySchema<InferOutput<schema>>
 
 ```
 

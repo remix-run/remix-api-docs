@@ -20,6 +20,6 @@ function MyComponent(handle: Handle<{ children: RemixNode }>) {}
 ## Signature
 
 ```ts
-type RemixNode = Renderable | RemixNode[];
+type RemixNode = Renderable | RemixNode[]
 
 ```

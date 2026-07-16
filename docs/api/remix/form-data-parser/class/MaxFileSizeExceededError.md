@@ -13,18 +13,18 @@ An error thrown when the maximum allowed size of a file is exceeded.
 
 ```ts
 class MaxFileSizeExceededError {
-  constructor(maxFileSize: number): MaxFileSizeExceededError;
+  constructor(maxFileSize: number): MaxFileSizeExceededError
 
   // Properties
-  cause?: unknown;
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

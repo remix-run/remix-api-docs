@@ -14,6 +14,6 @@ Return `undefined` to use the default message.
 ## Signature
 
 ```ts
-type ErrorMap = (context: ErrorMapContext) => string | undefined;
+type ErrorMap = (context: ErrorMapContext) => string | undefined
 
 ```

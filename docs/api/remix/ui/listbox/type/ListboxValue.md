@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/listbox/ind
 ## Signature
 
 ```ts
-type ListboxValue = string | null;
+type ListboxValue = string | null
 
 ```

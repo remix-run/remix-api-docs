@@ -18,16 +18,16 @@ Each migration is a directory named `YYYYMMDDHHmmss_<slug>` containing:
 ## Signature
 
 ```ts
-function loadMigrations(directory: string): Promise<MigrationDescriptor[]>;
+function loadMigrations(directory: string): Promise<MigrationDescriptor[]>
 
 ```
 
 ## Example
 
 ```ts
-import { loadMigrations } from "remix/data-table/migrations/node";
+import { loadMigrations } from 'remix/data-table/migrations/node'
 
-let migrations = await loadMigrations("./app/db/migrations");
+let migrations = await loadMigrations('./app/db/migrations')
 
 ```
 

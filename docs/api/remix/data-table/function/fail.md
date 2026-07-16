@@ -12,19 +12,19 @@ Creates a lifecycle/validation failure result with one or more issues.
 ## Signature
 
 ```ts
-function fail(message: string, path: (string | number)[]): ValidationFailure;
+function fail(message: string, path: (string | number)[]): ValidationFailure
 
-function fail(issues: readonly ValidationIssue[]): ValidationFailure;
+function fail(issues: readonly ValidationIssue[]): ValidationFailure
 
 ```
 
 ## Example
 
 ```ts
-import { column as c, fail, table } from "remix/data-table";
+import { column as c, fail, table } from 'remix/data-table'
 
 let users = table({
-  name: "users",
+  name: 'users',
   columns: {
     id: c.integer(),
     email: c.varchar(255),
@@ -32,18 +32,18 @@ let users = table({
   validate({ value }) {
     if (!value.email) {
       // Fail with a single issue message and optional path
-      return fail("Email is required", ["email"]);
+      return fail('Email is required', ['email'])
 
       // Or fail with multiple issues at once
       return fail([
-        { message: "Id is required", path: ["id"] },
-        { message: "Email is required", path: ["email"] },
-      ]);
+        { message: 'Id is required', path: ['id'] },
+        { message: 'Email is required', path: ['email'] },
+      ])
     }
 
-    return { value };
+    return { value }
   },
-});
+})
 
 ```
 

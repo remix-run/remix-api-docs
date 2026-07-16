@@ -13,12 +13,9 @@ Public shape for a credentials-based provider used by `verifyCredentials()`.
 
 ```ts
 interface CredentialsAuthProvider<input, result, provider> {
-  name: provider;
-  parse(context: RequestContext): input | Promise<input>;
-  verify(
-    input: input,
-    context: RequestContext,
-  ): result | Promise<result | null> | null;
+  name: provider
+  parse(context: RequestContext): input | Promise<input>
+  verify(input: input, context: RequestContext): result | Promise<result | null> | null
 }
 
 ```

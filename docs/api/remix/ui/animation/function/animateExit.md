@@ -14,7 +14,7 @@ Animates an element when it is removed from the DOM.
 ```ts
 function animateExit<target extends EventTarget>(
   config: AnimationConfig,
-): MixinDescriptor<target, [AnimationConfig], ElementProps>;
+): MixinDescriptor<target, [AnimationConfig], ElementProps>
 
 ```
 

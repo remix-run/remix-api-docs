@@ -13,8 +13,8 @@ Options for create operations that return only write metadata.
 
 ```ts
 type CreateResultOptions = {
-  returnRow?: false;
-  touch?: boolean;
-};
+  returnRow?: false
+  touch?: boolean
+}
 
 ```

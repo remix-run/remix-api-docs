@@ -9,10 +9,10 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox/pr
 
 ```ts
 interface ComboboxOptionOptions {
-  disabled?: boolean;
-  label: string;
-  searchValue?: SearchValue;
-  value: string;
+  disabled?: boolean
+  label: string
+  searchValue?: SearchValue
+  value: string
 }
 
 ```

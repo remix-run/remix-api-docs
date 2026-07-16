@@ -13,11 +13,11 @@ Metadata about a file in storage.
 
 ```ts
 interface FileMetadata {
-  key: string;
-  lastModified: number;
-  name: string;
-  size: number;
-  type: string;
+  key: string
+  lastModified: number
+  name: string
+  size: number
+  type: string
 }
 
 ```

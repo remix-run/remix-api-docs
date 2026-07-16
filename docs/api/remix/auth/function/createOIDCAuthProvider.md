@@ -12,12 +12,9 @@ Creates an OpenID Connect provider backed by discovery metadata or explicit endp
 ## Signature
 
 ```ts
-function createOIDCAuthProvider<
-  profile extends OIDCAuthProfile,
-  provider extends string,
->(
+function createOIDCAuthProvider<profile extends OIDCAuthProfile, provider extends string>(
   options: OIDCAuthProviderOptions<profile, provider>,
-): OAuthProvider<profile, provider, OAuthStandardTokens>;
+): OAuthProvider<profile, provider, OAuthStandardTokens>
 
 ```
 

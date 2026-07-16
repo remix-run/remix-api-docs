@@ -14,6 +14,6 @@ that accept a query but don't care about the specific generic parameters.
 ## Signature
 
 ```ts
-type AnyQuery = Query<any, any, any, any, any>;
+type AnyQuery = Query<any, any, any, any, any>
 
 ```

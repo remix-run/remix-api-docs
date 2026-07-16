@@ -12,6 +12,6 @@ Error event shape emitted by the component runtime.
 ## Signature
 
 ```ts
-type ComponentErrorEvent = ErrorEvent & { error: unknown };
+type ComponentErrorEvent = ErrorEvent & { error: unknown }
 
 ```

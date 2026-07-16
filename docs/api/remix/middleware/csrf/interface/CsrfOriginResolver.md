@@ -16,7 +16,7 @@ interface CsrfOriginResolver {
   (
     origin: string,
     context: AnyRequestContext,
-  ): CsrfOriginResolverResult | Promise<CsrfOriginResolverResult>;
+  ): CsrfOriginResolverResult | Promise<CsrfOriginResolverResult>
 }
 
 ```

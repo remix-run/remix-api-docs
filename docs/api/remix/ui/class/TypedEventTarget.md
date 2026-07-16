@@ -13,33 +13,33 @@ An `EventTarget` subclass with typed event maps.
 
 ```ts
 class TypedEventTarget<eventMap> {
-  constructor(): TypedEventTarget;
+  constructor(): TypedEventTarget
 
   // Properties
-  __eventMap?: eventMap;
+  __eventMap?: eventMap
 
   // Methods
   addEventListener<type extends string>(
     type: type,
     listener: TypedEventListener<eventMap>[type],
     options: AddEventListenerOptions,
-  ): void;
+  ): void
   addEventListener(
     type: string,
     listener: EventListenerOrEventListenerObject | null,
     options: boolean | AddEventListenerOptions,
-  ): void;
-  dispatchEvent(event: Event): boolean;
+  ): void
+  dispatchEvent(event: Event): boolean
   removeEventListener<type extends string>(
     type: type,
     listener: TypedEventListener<eventMap>[type],
     options: EventListenerOptions,
-  ): void;
+  ): void
   removeEventListener(
     type: string,
     listener: EventListenerOrEventListenerObject | null,
     options: EventListenerOptions,
-  ): void;
+  ): void
 }
 
 ```

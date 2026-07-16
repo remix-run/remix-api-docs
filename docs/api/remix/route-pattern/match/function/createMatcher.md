@@ -15,7 +15,7 @@ Create a matcher for a single route pattern.
 function createMatcher<source extends string>(
   pattern: source | RoutePattern<source>,
   options: MatcherOptions,
-): Matcher<source>;
+): Matcher<source>
 
 ```
 

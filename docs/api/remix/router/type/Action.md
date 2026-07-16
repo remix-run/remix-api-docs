@@ -18,6 +18,6 @@ to describe an action for an explicit RequestContext type.
 ```ts
 type Action<route, context, middleware> =
   | RequestHandler<ActionContext<route, context>>
-  | ActionObject<route, context, middleware>;
+  | ActionObject<route, context, middleware>
 
 ```

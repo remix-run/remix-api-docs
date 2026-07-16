@@ -17,7 +17,7 @@ Note: This storage requires a Node.js runtime with TCP socket support.
 function createMemcacheSessionStorage(
   server: string,
   options: MemcacheSessionStorageOptions,
-): SessionStorage;
+): SessionStorage
 
 ```
 

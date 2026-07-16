@@ -13,10 +13,10 @@ Matcher for a collection of route patterns with optional attached data.
 
 ```ts
 type MultiMatcher<data> = {
-  ignoreCase: boolean;
-  add(pattern: string | RoutePattern<string>, data: data): void;
-  match(url: string | URL): Match<string, data> | null;
-  matchAll(url: string | URL): Match<string, data>[];
-};
+  ignoreCase: boolean
+  add(pattern: string | RoutePattern<string>, data: data): void
+  match(url: string | URL): Match<string, data> | null
+  matchAll(url: string | URL): Match<string, data>[]
+}
 
 ```

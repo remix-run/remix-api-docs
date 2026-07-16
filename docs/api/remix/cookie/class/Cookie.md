@@ -18,23 +18,23 @@ secret rotation to easily rotate secrets without breaking existing cookies.
 
 ```ts
 class Cookie {
-  constructor(name: string, options: CookieOptions): Cookie;
+  constructor(name: string, options: CookieOptions): Cookie
 
   // Accessors
-  get domain(): string | undefined;
-  get expires(): Date | undefined;
-  get httpOnly(): boolean;
-  get maxAge(): number | undefined;
-  get name(): string;
-  get partitioned(): boolean;
-  get path(): string;
-  get sameSite(): SameSiteValue;
-  get secure(): boolean;
-  get signed(): boolean;
+  get domain(): string | undefined
+  get expires(): Date | undefined
+  get httpOnly(): boolean
+  get maxAge(): number | undefined
+  get name(): string
+  get partitioned(): boolean
+  get path(): string
+  get sameSite(): SameSiteValue
+  get secure(): boolean
+  get signed(): boolean
 
   // Methods
-  parse(headerValue: string | null): Promise<string | null>;
-  serialize(value: string, props: CookieProperties): Promise<string>;
+  parse(headerValue: string | null): Promise<string | null>
+  serialize(value: string, props: CookieProperties): Promise<string>
 }
 
 ```

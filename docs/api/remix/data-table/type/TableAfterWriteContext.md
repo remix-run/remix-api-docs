@@ -13,11 +13,11 @@ Context passed to the `afterWrite` hook.
 
 ```ts
 type TableAfterWriteContext<row> = {
-  affectedRows: number;
-  insertId?: unknown;
-  operation: TableWriteOperation;
-  tableName: string;
-  values: ReadonlyArray<Partial<row>>;
-};
+  affectedRows: number
+  insertId?: unknown
+  operation: TableWriteOperation
+  tableName: string
+  values: ReadonlyArray<Partial<row>>
+}
 
 ```

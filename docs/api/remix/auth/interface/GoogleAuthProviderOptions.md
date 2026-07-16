@@ -13,11 +13,11 @@ Options for creating the built-in Google auth provider.
 
 ```ts
 interface GoogleAuthProviderOptions {
-  authorizationParams?: Record<string, string | undefined>;
-  clientId: string;
-  clientSecret: string;
-  redirectUri: string | URL;
-  scopes?: string[];
+  authorizationParams?: Record<string, string | undefined>
+  clientId: string
+  clientSecret: string
+  redirectUri: string | URL
+  scopes?: string[]
 }
 
 ```

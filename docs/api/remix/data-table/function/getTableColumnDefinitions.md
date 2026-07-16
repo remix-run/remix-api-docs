@@ -14,7 +14,7 @@ Returns a table's resolved physical column definitions.
 ```ts
 function getTableColumnDefinitions<table extends AnyTable>(
   table: table,
-): { [column in string]: ColumnDefinition };
+): { [column in string]: ColumnDefinition }
 
 ```
 

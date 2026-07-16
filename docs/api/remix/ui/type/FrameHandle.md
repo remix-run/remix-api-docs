@@ -13,10 +13,10 @@ Public API for interacting with a frame instance.
 
 ```ts
 type FrameHandle = TypedEventTarget<FrameHandleEventMap> & {
-  $runtime?: unknown;
-  src: string;
-  reload: any;
-  replace: any;
-};
+  $runtime?: unknown
+  src: string
+  reload: any
+  replace: any
+}
 
 ```

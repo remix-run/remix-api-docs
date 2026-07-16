@@ -13,9 +13,9 @@ Adapter data-manipulation result payload.
 
 ```ts
 type DataManipulationResult = {
-  affectedRows?: number;
-  insertId?: unknown;
-  rows?: Record<string, unknown>[];
-};
+  affectedRows?: number
+  insertId?: unknown
+  rows?: Record<string, unknown>[]
+}
 
 ```

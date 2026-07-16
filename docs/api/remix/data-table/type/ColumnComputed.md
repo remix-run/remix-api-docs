@@ -13,8 +13,8 @@ Definition for a computed or generated column.
 
 ```ts
 type ColumnComputed = {
-  expression: string;
-  stored: boolean;
-};
+  expression: string
+  stored: boolean
+}
 
 ```

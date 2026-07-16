@@ -12,16 +12,16 @@ Parses a raw HTTP header string into a `Headers` object.
 ## Signature
 
 ```ts
-function parse(raw: string): Headers;
+function parse(raw: string): Headers
 
 ```
 
 ## Example
 
 ```ts
-let headers = parse("Content-Type: text/html\r\nCache-Control: no-cache");
-headers.get("Content-Type"); // 'text/html'
-headers.get("Cache-Control"); // 'no-cache'
+let headers = parse('Content-Type: text/html\r\nCache-Control: no-cache')
+headers.get('Content-Type') // 'text/html'
+headers.get('Cache-Control') // 'no-cache'
 
 ```
 

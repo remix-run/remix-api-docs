@@ -13,8 +13,8 @@ Opaque transaction handle supplied by adapters.
 
 ```ts
 type TransactionToken = {
-  id: string;
-  metadata?: Record<string, unknown>;
-};
+  id: string
+  metadata?: Record<string, unknown>
+}
 
 ```

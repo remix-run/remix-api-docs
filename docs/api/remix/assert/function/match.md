@@ -12,14 +12,14 @@ Asserts that `string` matches the given `regexp`.
 ## Signature
 
 ```ts
-function match(string: string, regexp: RegExp, message: AssertionMessage): void;
+function match(string: string, regexp: RegExp, message: AssertionMessage): void
 
 ```
 
 ## Example
 
 ```ts
-assert.match(html, /Welcome Back/);
+assert.match(html, /Welcome Back/)
 
 ```
 

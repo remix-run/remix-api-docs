@@ -13,7 +13,7 @@ Forwards a request to the configured proxy target.
 
 ```ts
 interface FetchProxy {
-  (input: RequestInfo | URL, init: RequestInit): Promise<Response>;
+  (input: RequestInfo | URL, init: RequestInit): Promise<Response>
 }
 
 ```

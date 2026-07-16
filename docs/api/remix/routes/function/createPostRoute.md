@@ -18,7 +18,7 @@ post
 ```ts
 function createPostRoute<source extends string>(
   pattern: source | RoutePattern<source>,
-): Route<"POST", source>;
+): Route<'POST', source>
 
 ```
 

@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/p
 ## Signature
 
 ```ts
-type AccordionHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+type AccordionHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
 ```

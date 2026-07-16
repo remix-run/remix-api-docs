@@ -9,12 +9,12 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/anchor/inde
 
 ```ts
 type AnchorOptions = {
-  inset?: boolean;
-  offset?: AnchorOffsetValue;
-  offsetX?: AnchorOffsetValue;
-  offsetY?: AnchorOffsetValue;
-  placement?: ExtendedAnchorPlacement;
-  relativeTo?: string;
-};
+  inset?: boolean
+  offset?: AnchorOffsetValue
+  offsetX?: AnchorOffsetValue
+  offsetY?: AnchorOffsetValue
+  placement?: ExtendedAnchorPlacement
+  relativeTo?: string
+}
 
 ```

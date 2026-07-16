@@ -13,7 +13,7 @@ Options for parsing repeated text fields from `FormData` or `URLSearchParams`.
 
 ```ts
 interface FormDataFieldsOptions {
-  name?: string;
+  name?: string
 }
 
 ```

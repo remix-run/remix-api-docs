@@ -13,10 +13,7 @@ Options for enforcing authentication on a route.
 
 ```ts
 interface RequireAuthOptions {
-  onFailure?: (
-    context: RequestContext,
-    auth: BadAuth,
-  ) => Response | Promise<Response>;
+  onFailure?: (context: RequestContext, auth: BadAuth) => Response | Promise<Response>
 }
 
 ```

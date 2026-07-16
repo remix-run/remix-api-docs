@@ -12,6 +12,5 @@ Raw ANSI escape sequences and helpers for terminal controls.
 ## Signature
 
 ```ts
-const ansi: Ansi;
-
+const ansi: Ansi
 ```

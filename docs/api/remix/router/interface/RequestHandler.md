@@ -13,7 +13,7 @@ Handles a matched request and returns the response.
 
 ```ts
 interface RequestHandler {
-  (context: context): Response | Promise<Response>;
+  (context: context): Response | Promise<Response>
 }
 
 ```

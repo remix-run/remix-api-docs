@@ -17,21 +17,21 @@ class DataTableValidationError {
     message: string,
     issues: readonly unknown[],
     options: { cause?: unknown; metadata?: Record<string, unknown> },
-  ): DataTableValidationError;
+  ): DataTableValidationError
 
   // Properties
-  cause?: unknown;
-  code: string;
-  issues: readonly unknown[];
-  message: string;
-  metadata?: Record<string, unknown>;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  code: string
+  issues: readonly unknown[]
+  message: string
+  metadata?: Record<string, unknown>
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/l
 ## Signature
 
 ```ts
-type MatchData = RouteEntry;
+type MatchData = RouteEntry
 
 ```

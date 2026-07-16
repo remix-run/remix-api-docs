@@ -20,10 +20,7 @@ function createAction<
   route extends ActionRoute,
   context extends RequestContext<any, any>,
   middleware extends readonly AnyMiddleware[],
->(
-  route: route,
-  action: Action<route, context, middleware>,
-): Action<route, context, middleware>;
+>(route: route, action: Action<route, context, middleware>): Action<route, context, middleware>
 
 ```
 

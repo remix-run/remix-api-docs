@@ -15,25 +15,21 @@ Base error for all `data-table` failures.
 class DataTableError {
   constructor(
     message: string,
-    options: {
-      cause?: unknown;
-      code?: string;
-      metadata?: Record<string, unknown>;
-    },
-  ): DataTableError;
+    options: { cause?: unknown; code?: string; metadata?: Record<string, unknown> },
+  ): DataTableError
 
   // Properties
-  cause?: unknown;
-  code: string;
-  message: string;
-  metadata?: Record<string, unknown>;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  code: string
+  message: string
+  metadata?: Record<string, unknown>
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

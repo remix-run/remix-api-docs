@@ -16,7 +16,7 @@ interface CorsOriginResolver {
   (
     origin: string,
     context: RequestContext,
-  ): CorsOriginResolverResult | Promise<CorsOriginResolverResult>;
+  ): CorsOriginResolverResult | Promise<CorsOriginResolverResult>
 }
 
 ```

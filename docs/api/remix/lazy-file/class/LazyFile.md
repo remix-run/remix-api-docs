@@ -23,31 +23,27 @@ Instead, use one of:
 
 ```ts
 class LazyFile {
-  constructor(
-    parts: LazyContent | BlobPartLike[],
-    name: string,
-    options: LazyFileOptions,
-  ): LazyFile;
+  constructor(parts: LazyContent | BlobPartLike[], name: string, options: LazyFileOptions): LazyFile
 
   // Properties
-  lastModified: number;
-  name: string;
-  webkitRelativePath: "";
+  lastModified: number
+  name: string
+  webkitRelativePath: ''
 
   // Accessors
-  get [toStringTag](): string;
-  get size(): number;
-  get type(): string;
+  get [toStringTag](): string
+  get size(): number
+  get type(): string
 
   // Methods
-  arrayBuffer(): Promise<ArrayBuffer>;
-  bytes(): Promise<Uint8Array<ArrayBuffer>>;
-  slice(start: number, end: number, contentType: string): LazyBlob;
-  stream(): ReadableStream<Uint8Array<ArrayBuffer>>;
-  text(): Promise<string>;
-  toBlob(): Promise<Blob>;
-  toFile(): Promise<File>;
-  toString(): never;
+  arrayBuffer(): Promise<ArrayBuffer>
+  bytes(): Promise<Uint8Array<ArrayBuffer>>
+  slice(start: number, end: number, contentType: string): LazyBlob
+  stream(): ReadableStream<Uint8Array<ArrayBuffer>>
+  text(): Promise<string>
+  toBlob(): Promise<Blob>
+  toFile(): Promise<File>
+  toString(): never
 }
 
 ```

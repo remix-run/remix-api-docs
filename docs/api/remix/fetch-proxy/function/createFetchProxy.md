@@ -12,10 +12,7 @@ Creates a `fetch` function that forwards requests to another server.
 ## Signature
 
 ```ts
-function createFetchProxy(
-  target: string | URL,
-  options: FetchProxyOptions,
-): FetchProxy;
+function createFetchProxy(target: string | URL, options: FetchProxyOptions): FetchProxy
 
 ```
 

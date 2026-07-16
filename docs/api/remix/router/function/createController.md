@@ -23,7 +23,7 @@ function createController<
 >(
   routes: routes,
   controller: Controller<routes, context, middleware>,
-): Controller<routes, context, middleware>;
+): Controller<routes, context, middleware>
 
 ```
 

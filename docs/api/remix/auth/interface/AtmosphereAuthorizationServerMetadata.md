@@ -13,20 +13,20 @@ Authorization server metadata used by the Atmosphere provider.
 
 ```ts
 interface AtmosphereAuthorizationServerMetadata {
-  authorization_endpoint: string;
-  authorization_response_iss_parameter_supported?: boolean;
-  client_id_metadata_document_supported?: boolean;
-  code_challenge_methods_supported?: string[];
-  dpop_signing_alg_values_supported?: string[];
-  grant_types_supported?: string[];
-  issuer: string;
-  pushed_authorization_request_endpoint: string;
-  require_pushed_authorization_requests?: boolean;
-  response_types_supported?: string[];
-  scopes_supported?: string | string[];
-  token_endpoint: string;
-  token_endpoint_auth_methods_supported?: string[];
-  token_endpoint_auth_signing_alg_values_supported?: string[];
+  authorization_endpoint: string
+  authorization_response_iss_parameter_supported?: boolean
+  client_id_metadata_document_supported?: boolean
+  code_challenge_methods_supported?: string[]
+  dpop_signing_alg_values_supported?: string[]
+  grant_types_supported?: string[]
+  issuer: string
+  pushed_authorization_request_endpoint: string
+  require_pushed_authorization_requests?: boolean
+  response_types_supported?: string[]
+  scopes_supported?: string | string[]
+  token_endpoint: string
+  token_endpoint_auth_methods_supported?: string[]
+  token_endpoint_auth_signing_alg_values_supported?: string[]
 }
 
 ```

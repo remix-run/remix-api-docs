@@ -14,11 +14,7 @@ Resolves the value type returned by `context.get(key)` for the given context and
 ```ts
 type GetContextValue<context, key> =
   context extends RequestContextTypes<any, any>
-    ? ResolveEntryValue<
-        RequestContextEntries<context>,
-        key,
-        ContextFallbackValue<key>
-      >
-    : ContextFallbackValue<key>;
+    ? ResolveEntryValue<RequestContextEntries<context>, key, ContextFallbackValue<key>>
+    : ContextFallbackValue<key>
 
 ```

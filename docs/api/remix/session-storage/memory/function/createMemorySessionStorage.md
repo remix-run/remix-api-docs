@@ -15,9 +15,7 @@ server restarts.
 ## Signature
 
 ```ts
-function createMemorySessionStorage(
-  options: MemorySessionStorageOptions,
-): SessionStorage;
+function createMemorySessionStorage(options: MemorySessionStorageOptions): SessionStorage
 
 ```
 

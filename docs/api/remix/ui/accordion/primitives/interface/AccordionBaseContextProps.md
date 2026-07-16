@@ -9,9 +9,9 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/p
 
 ```ts
 interface AccordionBaseContextProps {
-  children?: RemixNode;
-  disabled?: boolean;
-  headingLevel?: AccordionHeadingLevel;
+  children?: RemixNode
+  disabled?: boolean
+  headingLevel?: AccordionHeadingLevel
 }
 
 ```

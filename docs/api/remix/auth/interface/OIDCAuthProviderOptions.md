@@ -13,21 +13,21 @@ Options for creating a generic OpenID Connect provider.
 
 ```ts
 interface OIDCAuthProviderOptions<profile, provider> {
-  authorizationParams?: Record<string, string | undefined>;
-  clientId: string;
-  clientSecret: string;
-  discoveryUrl?: string | URL;
-  issuer: string | URL;
-  metadata?: OIDCAuthProviderMetadata;
-  name?: provider;
-  redirectUri: string | URL;
-  scopes?: string[];
+  authorizationParams?: Record<string, string | undefined>
+  clientId: string
+  clientSecret: string
+  discoveryUrl?: string | URL
+  issuer: string | URL
+  metadata?: OIDCAuthProviderMetadata
+  name?: provider
+  redirectUri: string | URL
+  scopes?: string[]
   mapProfile(input: {
-    claims: OIDCAuthProfile;
-    context: RequestContext;
-    metadata: OIDCAuthProviderMetadata;
-    tokens: OAuthTokens;
-  }): profile | Promise<profile>;
+    claims: OIDCAuthProfile
+    context: RequestContext
+    metadata: OIDCAuthProviderMetadata
+    tokens: OAuthTokens
+  }): profile | Promise<profile>
 }
 
 ```

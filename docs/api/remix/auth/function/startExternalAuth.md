@@ -21,7 +21,7 @@ function startExternalAuth<
   provider: OAuthProvider<profile, provider, tokens>,
   context: context,
   options: StartExternalAuthOptions,
-): Promise<Response>;
+): Promise<Response>
 
 ```
 

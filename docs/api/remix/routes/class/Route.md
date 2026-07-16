@@ -14,16 +14,16 @@ A route definition that includes a request method and pattern.
 ```ts
 class Route<method, pattern> {
   constructor(
-    method: method | "ANY",
+    method: method | 'ANY',
     pattern: pattern | RoutePattern<pattern>,
-  ): Route<method, pattern>;
+  ): Route<method, pattern>
 
   // Properties
-  method: method | "ANY";
-  pattern: RoutePattern<pattern>;
+  method: method | 'ANY'
+  pattern: RoutePattern<pattern>
 
   // Methods
-  href(args: CreateHrefArgs<pattern>): string;
+  href(args: CreateHrefArgs<pattern>): string
 }
 
 ```

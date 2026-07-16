@@ -20,7 +20,7 @@ type PrimaryKeyInput<table> =
     : Pretty<{
         [column in TablePrimaryKey<table>[number] &
           keyof TableColumns<table> &
-          string]: ColumnBuilderInput<TableColumns<table>[column]>;
-      }>;
+          string]: ColumnBuilderInput<TableColumns<table>[column]>
+      }>
 
 ```

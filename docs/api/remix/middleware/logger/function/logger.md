@@ -14,11 +14,7 @@ Creates a middleware handler that logs various request/response info.
 ```ts
 function logger(
   options: LoggerOptions,
-): Middleware<{
-  key: ContextKey<LoggerFunction>;
-  property: "logger";
-  value: LoggerFunction;
-}>;
+): Middleware<{ key: ContextKey<LoggerFunction>; property: 'logger'; value: LoggerFunction }>
 
 ```
 

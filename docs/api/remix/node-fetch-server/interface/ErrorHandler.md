@@ -13,7 +13,7 @@ Handles a thrown request-processing error and may return a custom response.
 
 ```ts
 interface ErrorHandler {
-  (error: unknown): void | Response | Promise<void | Response>;
+  (error: unknown): void | Response | Promise<void | Response>
 }
 
 ```

@@ -18,8 +18,8 @@ controller for an explicit RequestContext type.
 
 ```ts
 type Controller<routes, context, middleware> = {
-  actions: ControllerActions<routes, MiddlewareContext<middleware, context>>;
-  middleware?: readonly [...middleware];
-};
+  actions: ControllerActions<routes, MiddlewareContext<middleware, context>>
+  middleware?: readonly [...middleware]
+}
 
 ```

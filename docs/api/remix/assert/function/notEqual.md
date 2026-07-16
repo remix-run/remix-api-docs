@@ -12,18 +12,14 @@ Asserts strict inequality (`!Object.is`) between `actual` and `expected`.
 ## Signature
 
 ```ts
-function notEqual<_value>(
-  actual: unknown,
-  expected: unknown,
-  message: AssertionMessage,
-): void;
+function notEqual<_value>(actual: unknown, expected: unknown, message: AssertionMessage): void
 
 ```
 
 ## Example
 
 ```ts
-assert.notEqual(response.status, 404);
+assert.notEqual(response.status, 404)
 
 ```
 

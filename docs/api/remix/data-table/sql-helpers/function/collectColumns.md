@@ -12,7 +12,7 @@ Returns stable column order from the union of keys in the provided rows.
 ## Signature
 
 ```ts
-function collectColumns(rows: Record<string, unknown>[]): string[];
+function collectColumns(rows: Record<string, unknown>[]): string[]
 
 ```
 

@@ -13,21 +13,21 @@ Error thrown when a route pattern cannot be parsed.
 
 ```ts
 class ParseError {
-  constructor(type: ParseErrorType, source: string, index: number): ParseError;
+  constructor(type: ParseErrorType, source: string, index: number): ParseError
 
   // Properties
-  cause?: unknown;
-  index: number;
-  message: string;
-  name: string;
-  source: string;
-  stack?: string;
-  type: ParseErrorType;
-  stackTraceLimit: number;
+  cause?: unknown
+  index: number
+  message: string
+  name: string
+  source: string
+  stack?: string
+  type: ParseErrorType
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

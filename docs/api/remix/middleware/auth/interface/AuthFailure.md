@@ -13,10 +13,10 @@ Failure details for an unauthenticated request.
 
 ```ts
 interface AuthFailure {
-  challenge?: string;
-  code: "missing_credentials" | "invalid_credentials";
-  message: string;
-  method?: string;
+  challenge?: string
+  code: 'missing_credentials' | 'invalid_credentials'
+  message: string
+  method?: string
 }
 
 ```

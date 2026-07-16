@@ -13,7 +13,7 @@ Options for loading auth state for each request.
 
 ```ts
 interface AuthOptions<schemes> {
-  schemes: readonly [schemes];
+  schemes: readonly [schemes]
 }
 
 ```

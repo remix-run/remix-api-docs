@@ -17,7 +17,7 @@ for handling incoming `multipart/*` requests.
 function parseMultipartRequest(
   request: Request,
   options: MultipartParserOptions,
-): AsyncGenerator<MultipartPart, void, unknown>;
+): AsyncGenerator<MultipartPart, void, unknown>
 
 ```
 

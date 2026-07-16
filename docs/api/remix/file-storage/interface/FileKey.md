@@ -13,7 +13,7 @@ A reference to a file in storage by its key.
 
 ```ts
 interface FileKey {
-  key: string;
+  key: string
 }
 
 ```

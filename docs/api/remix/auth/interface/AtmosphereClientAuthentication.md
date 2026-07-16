@@ -13,8 +13,8 @@ Client-authentication settings for confidential Atmosphere clients.
 
 ```ts
 interface AtmosphereClientAuthentication {
-  key: CryptoKey;
-  keyId: string;
+  key: CryptoKey
+  keyId: string
 }
 
 ```

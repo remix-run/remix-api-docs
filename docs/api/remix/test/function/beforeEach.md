@@ -15,7 +15,7 @@ how long the hook may run.
 ## Signature
 
 ```ts
-function beforeEach(fn: LifecycleHookFn, options: HookOptions): void;
+function beforeEach(fn: LifecycleHookFn, options: HookOptions): void
 
 ```
 

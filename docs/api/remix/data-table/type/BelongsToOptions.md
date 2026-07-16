@@ -13,8 +13,8 @@ Options for defining a [`belongsTo`](/api/remix/data-table/function/belongsTo/) 
 
 ```ts
 type BelongsToOptions<source, target> = {
-  foreignKey?: KeySelector<source>;
-  targetKey?: KeySelector<target>;
-};
+  foreignKey?: KeySelector<source>
+  targetKey?: KeySelector<target>
+}
 
 ```

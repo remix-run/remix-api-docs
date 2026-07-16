@@ -14,9 +14,9 @@ as a direct request-context property when the middleware sets the value.
 
 ```ts
 interface ContextEntry<key, value> {
-  key: key;
-  property?: string;
-  value: value;
+  key: key
+  property?: string
+  value: value
 }
 
 ```

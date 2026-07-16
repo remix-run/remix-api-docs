@@ -16,7 +16,7 @@ function addEventListeners<target extends EventTarget>(
   target: target,
   signal: AbortSignal,
   listeners: EventListeners<target>,
-): void;
+): void
 
 ```
 

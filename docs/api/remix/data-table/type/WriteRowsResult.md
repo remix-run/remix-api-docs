@@ -13,9 +13,9 @@ Result metadata for write operations that return multiple rows.
 
 ```ts
 type WriteRowsResult<row> = {
-  affectedRows: number;
-  insertId?: unknown;
-  rows: row[];
-};
+  affectedRows: number
+  insertId?: unknown
+  rows: row[]
+}
 
 ```

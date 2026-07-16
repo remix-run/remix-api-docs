@@ -15,7 +15,7 @@ Generate an href from a route pattern and the supplied params.
 function createHref<source extends string>(
   pattern: source | RoutePattern<source>,
   args: CreateHrefArgs<source>,
-): string;
+): string
 
 ```
 

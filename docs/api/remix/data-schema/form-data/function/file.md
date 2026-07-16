@@ -15,7 +15,7 @@ Creates a schema entry for a single file field from `FormData`.
 function file<schema extends Schema<any, any>>(
   schema: schema,
   options: FormDataFileOptions,
-): FormDataEntrySchema<InferOutput<schema>>;
+): FormDataEntrySchema<InferOutput<schema>>
 
 ```
 

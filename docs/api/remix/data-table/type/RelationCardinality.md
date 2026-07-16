@@ -12,6 +12,6 @@ Cardinality of a relation.
 ## Signature
 
 ```ts
-type RelationCardinality = "one" | "many";
+type RelationCardinality = 'one' | 'many'
 
 ```

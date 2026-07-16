@@ -13,8 +13,8 @@ Options for generating a paired `index`/`action` form route map.
 
 ```ts
 interface FormOptions {
-  formMethod?: RequestMethod;
-  names?: { action?: string; index?: string };
+  formMethod?: RequestMethod
+  names?: { action?: string; index?: string }
 }
 
 ```

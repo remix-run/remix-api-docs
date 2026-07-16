@@ -19,7 +19,7 @@ If you're building a web server, consider using [`parseMultipartRequest`](/api/r
 function parseMultipartStream(
   stream: Readable,
   options: ParseMultipartOptions,
-): AsyncGenerator<MultipartPart, void, unknown>;
+): AsyncGenerator<MultipartPart, void, unknown>
 
 ```
 

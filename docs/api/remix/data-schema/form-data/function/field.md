@@ -15,7 +15,7 @@ Creates a schema entry for a single text field from `FormData` or `URLSearchPara
 function field<schema extends Schema<any, any>>(
   schema: schema,
   options: FormDataFieldOptions,
-): FormDataEntrySchema<InferOutput<schema>>;
+): FormDataEntrySchema<InferOutput<schema>>
 
 ```
 

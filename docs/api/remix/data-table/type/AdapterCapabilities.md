@@ -13,11 +13,11 @@ Declares adapter feature support.
 
 ```ts
 type AdapterCapabilities = {
-  migrationLock: boolean;
-  returning: boolean;
-  savepoints: boolean;
-  transactionalDdl: boolean;
-  upsert: boolean;
-};
+  migrationLock: boolean
+  returning: boolean
+  savepoints: boolean
+  transactionalDdl: boolean
+  upsert: boolean
+}
 
 ```

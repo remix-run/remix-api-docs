@@ -13,12 +13,9 @@ Options for building a credentials-based auth provider.
 
 ```ts
 interface CredentialsAuthProviderOptions<input, result, provider> {
-  name?: provider;
-  parse(context: RequestContext): input | Promise<input>;
-  verify(
-    input: input,
-    context: RequestContext,
-  ): result | Promise<result | null> | null;
+  name?: provider
+  parse(context: RequestContext): input | Promise<input>
+  verify(input: input, context: RequestContext): result | Promise<result | null> | null
 }
 
 ```

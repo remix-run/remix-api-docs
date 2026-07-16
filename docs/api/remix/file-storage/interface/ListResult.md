@@ -13,8 +13,8 @@ The result of listing files in storage.
 
 ```ts
 interface ListResult<T> {
-  cursor?: string;
-  files: (T extends { includeMetadata: true } ? FileMetadata : FileKey)[];
+  cursor?: string
+  files: (T extends { includeMetadata: true } ? FileMetadata : FileKey)[]
 }
 
 ```

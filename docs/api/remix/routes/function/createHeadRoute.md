@@ -18,7 +18,7 @@ head
 ```ts
 function createHeadRoute<source extends string>(
   pattern: source | RoutePattern<source>,
-): Route<"HEAD", source>;
+): Route<'HEAD', source>
 
 ```
 

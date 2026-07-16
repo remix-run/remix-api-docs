@@ -21,7 +21,7 @@ function finishExternalAuth<
   provider: OAuthProvider<profile, provider, tokens>,
   context: context,
   options: FinishExternalAuthOptions,
-): Promise<FinishedExternalAuthResult<profile, provider, tokens>>;
+): Promise<FinishedExternalAuthResult<profile, provider, tokens>>
 
 ```
 

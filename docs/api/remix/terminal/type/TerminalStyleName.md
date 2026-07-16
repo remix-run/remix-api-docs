@@ -15,6 +15,6 @@ Any named terminal style supported by `createStyles()`.
 type TerminalStyleName =
   | TerminalModifierName
   | TerminalForegroundColorName
-  | TerminalBackgroundColorName;
+  | TerminalBackgroundColorName
 
 ```

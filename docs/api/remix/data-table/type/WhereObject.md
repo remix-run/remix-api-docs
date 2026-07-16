@@ -12,6 +12,6 @@ Object shorthand accepted in `where` clauses.
 ## Signature
 
 ```ts
-type WhereObject<column> = Partial<Record<column, unknown>>;
+type WhereObject<column> = Partial<Record<column, unknown>>
 
 ```

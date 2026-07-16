@@ -13,8 +13,8 @@ Options for defining a [`hasMany`](/api/remix/data-table/function/hasMany/) rela
 
 ```ts
 type HasManyOptions<source, target> = {
-  foreignKey?: KeySelector<target>;
-  targetKey?: KeySelector<source>;
-};
+  foreignKey?: KeySelector<target>
+  targetKey?: KeySelector<source>
+}
 
 ```

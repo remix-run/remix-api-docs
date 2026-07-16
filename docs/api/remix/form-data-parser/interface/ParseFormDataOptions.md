@@ -13,11 +13,11 @@ Options for parsing form data.
 
 ```ts
 interface ParseFormDataOptions {
-  maxFiles?: number;
-  maxFileSize?: number;
-  maxHeaderSize?: number;
-  maxParts?: number;
-  maxTotalSize?: number;
+  maxFiles?: number
+  maxFileSize?: number
+  maxHeaderSize?: number
+  maxParts?: number
+  maxTotalSize?: number
 }
 
 ```

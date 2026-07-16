@@ -14,6 +14,6 @@ Accepted value shape for the `mix` prop.
 ```ts
 type MixValue<node, props> =
   | MixinDescriptor<node, any, props>
-  | ReadonlyArray<MixinDescriptor<node, any, props>>;
+  | ReadonlyArray<MixinDescriptor<node, any, props>>
 
 ```

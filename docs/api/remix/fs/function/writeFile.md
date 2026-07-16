@@ -16,10 +16,7 @@ Accepts any object with a `stream()` method, including native `File`, `Blob`, an
 ## Signature
 
 ```ts
-function writeFile(
-  to: string | number | FileHandle,
-  file: { stream: any },
-): Promise<void>;
+function writeFile(to: string | number | FileHandle, file: { stream: any }): Promise<void>
 
 ```
 

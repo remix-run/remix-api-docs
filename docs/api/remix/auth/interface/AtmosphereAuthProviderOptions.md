@@ -13,15 +13,13 @@ Options for creating an Atmosphere auth provider.
 
 ```ts
 interface AtmosphereAuthProviderOptions<profile> {
-  authorizationParams?: Record<string, string | undefined>;
-  clientAuthentication?: AtmosphereClientAuthentication;
-  clientId: string | URL;
-  redirectUri: string | URL;
-  scopes?: string[];
-  sessionSecret: string;
-  mapProfile(
-    input: AtmosphereAuthProviderMapProfileInput,
-  ): profile | Promise<profile>;
+  authorizationParams?: Record<string, string | undefined>
+  clientAuthentication?: AtmosphereClientAuthentication
+  clientId: string | URL
+  redirectUri: string | URL
+  scopes?: string[]
+  sessionSecret: string
+  mapProfile(input: AtmosphereAuthProviderMapProfileInput): profile | Promise<profile>
 }
 
 ```

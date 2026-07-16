@@ -18,11 +18,9 @@ import('./multipart-request.ts').parseMultipartRequest instead.
 
 ```ts
 function parseMultipart(
-  message:
-    | Uint8Array<ArrayBufferLike>
-    | Iterable<Uint8Array<ArrayBufferLike>, any, any>,
+  message: Uint8Array<ArrayBufferLike> | Iterable<Uint8Array<ArrayBufferLike>, any, any>,
   options: ParseMultipartOptions,
-): Generator<MultipartPart, void, unknown>;
+): Generator<MultipartPart, void, unknown>
 
 ```
 

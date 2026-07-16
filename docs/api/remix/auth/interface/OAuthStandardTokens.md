@@ -13,13 +13,13 @@ OAuth tokens that are not bound to DPoP key material.
 
 ```ts
 interface OAuthStandardTokens {
-  accessToken: string;
-  dpop?: undefined;
-  expiresAt?: Date;
-  idToken?: string;
-  refreshToken?: string;
-  scope?: string[];
-  tokenType?: string;
+  accessToken: string
+  dpop?: undefined
+  expiresAt?: Date
+  idToken?: string
+  refreshToken?: string
+  scope?: string[]
+  tokenType?: string
 }
 
 ```

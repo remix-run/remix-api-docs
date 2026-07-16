@@ -13,11 +13,11 @@ Context passed to the `beforeDelete` hook.
 
 ```ts
 type TableBeforeDeleteContext = {
-  limit?: number;
-  offset?: number;
-  orderBy: ReadonlyArray<OrderByClause>;
-  tableName: string;
-  where: ReadonlyArray<Predicate<string>>;
-};
+  limit?: number
+  offset?: number
+  orderBy: ReadonlyArray<OrderByClause>
+  tableName: string
+  where: ReadonlyArray<Predicate<string>>
+}
 
 ```

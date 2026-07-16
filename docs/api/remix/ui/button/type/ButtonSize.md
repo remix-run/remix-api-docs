@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/button/inde
 ## Signature
 
 ```ts
-type ButtonSize = "md" | "lg";
+type ButtonSize = 'md' | 'lg'
 
 ```

@@ -13,10 +13,10 @@ Options for deleting many rows.
 
 ```ts
 type DeleteManyOptions<table> = {
-  limit?: number;
-  offset?: number;
-  orderBy?: OrderByInput<table>;
-  where: SingleTableWhere<table>;
-};
+  limit?: number
+  offset?: number
+  orderBy?: OrderByInput<table>
+  where: SingleTableWhere<table>
+}
 
 ```

@@ -13,7 +13,7 @@ Options for counting rows.
 
 ```ts
 type CountOptions<table> = {
-  where?: SingleTableWhere<table>;
-};
+  where?: SingleTableWhere<table>
+}
 
 ```

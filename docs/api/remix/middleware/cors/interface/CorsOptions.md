@@ -13,15 +13,15 @@ Options for CORS middleware.
 
 ```ts
 interface CorsOptions {
-  allowedHeaders?: CorsAllowedHeadersResolver | readonly string[];
-  allowPrivateNetwork?: boolean;
-  credentials?: boolean;
-  exposedHeaders?: readonly string[];
-  maxAge?: number;
-  methods?: readonly string[];
-  origin?: CorsOrigin;
-  preflightContinue?: boolean;
-  preflightStatusCode?: number;
+  allowedHeaders?: CorsAllowedHeadersResolver | readonly string[]
+  allowPrivateNetwork?: boolean
+  credentials?: boolean
+  exposedHeaders?: readonly string[]
+  maxAge?: number
+  methods?: readonly string[]
+  origin?: CorsOrigin
+  preflightContinue?: boolean
+  preflightStatusCode?: number
 }
 
 ```

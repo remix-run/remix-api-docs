@@ -13,14 +13,14 @@ Properties for a `Set-Cookie` header value.
 
 ```ts
 interface CookieProperties {
-  domain?: string;
-  expires?: Date;
-  httpOnly?: boolean;
-  maxAge?: number;
-  partitioned?: boolean;
-  path?: string;
-  sameSite?: SameSiteValue;
-  secure?: boolean;
+  domain?: string
+  expires?: Date
+  httpOnly?: boolean
+  maxAge?: number
+  partitioned?: boolean
+  path?: string
+  sameSite?: SameSiteValue
+  secure?: boolean
 }
 
 ```

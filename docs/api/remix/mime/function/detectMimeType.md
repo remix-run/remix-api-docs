@@ -15,17 +15,17 @@ take precedence over built-in types.
 ## Signature
 
 ```ts
-function detectMimeType(extension: string): string | undefined;
+function detectMimeType(extension: string): string | undefined
 
 ```
 
 ## Example
 
 ```ts
-detectMimeType("txt"); // 'text/plain'
-detectMimeType(".txt"); // 'text/plain'
-detectMimeType("file.txt"); // 'text/plain'
-detectMimeType("unknown"); // undefined
+detectMimeType('txt') // 'text/plain'
+detectMimeType('.txt') // 'text/plain'
+detectMimeType('file.txt') // 'text/plain'
+detectMimeType('unknown') // undefined
 
 ```
 

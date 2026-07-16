@@ -13,6 +13,6 @@ The `renderWith()` middleware also installs the renderer as `context.render`.
 ## Signature
 
 ```ts
-let Renderer: ContextKey<AnyRenderer>;
+let Renderer: ContextKey<AnyRenderer>
 
 ```

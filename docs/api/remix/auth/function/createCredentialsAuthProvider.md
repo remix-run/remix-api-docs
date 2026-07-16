@@ -14,7 +14,7 @@ Creates a credentials provider for direct form-based authentication.
 ```ts
 function createCredentialsAuthProvider<input, result, provider extends string>(
   options: CredentialsAuthProviderOptions<input, result, provider>,
-): CredentialsAuthProvider<input, result, provider>;
+): CredentialsAuthProvider<input, result, provider>
 
 ```
 

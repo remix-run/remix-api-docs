@@ -13,9 +13,9 @@ Auth state for a successfully authenticated request.
 
 ```ts
 interface GoodAuth<identity> {
-  identity: identity;
-  method: string;
-  ok: true;
+  identity: identity
+  method: string
+  ok: true
 }
 
 ```

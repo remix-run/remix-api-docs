@@ -15,7 +15,7 @@ Middleware that manages request session state on request context.
 function session(
   sessionCookie: Cookie,
   sessionStorage: SessionStorage,
-): Middleware<{ key: typeof Session; property: "session"; value: Session }>;
+): Middleware<{ key: typeof Session; property: 'session'; value: Session }>
 
 ```
 

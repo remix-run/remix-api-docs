@@ -16,7 +16,7 @@ type MatchParams<source> =
   ParseParams<source> extends infer params
     ? [params] extends [never]
       ? never
-      : Simplify<Omit<params, "*">>
-    : never;
+      : Simplify<Omit<params, '*'>>
+    : never
 
 ```

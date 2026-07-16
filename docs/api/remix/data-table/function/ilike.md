@@ -15,7 +15,7 @@ Builds a case-insensitive SQL `LIKE` predicate.
 function ilike<column extends string | ColumnReferenceLike>(
   column: column,
   value: string,
-): Predicate<PredicateColumn<column>>;
+): Predicate<PredicateColumn<column>>
 
 ```
 

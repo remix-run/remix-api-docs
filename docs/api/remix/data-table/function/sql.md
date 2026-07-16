@@ -12,17 +12,17 @@ Tagged-template helper for building parameterized SQL statements.
 ## Signature
 
 ```ts
-function sql(strings: TemplateStringsArray, values: unknown[]): SqlStatement;
+function sql(strings: TemplateStringsArray, values: unknown[]): SqlStatement
 
 ```
 
 ## Example
 
 ```ts
-import { sql } from "remix/data-table";
+import { sql } from 'remix/data-table'
 
-let email = "user@example.com";
-let statement = sql`select * from users where email = ${email}`;
+let email = 'user@example.com'
+let statement = sql`select * from users where email = ${email}`
 // => { text: 'select * from users where email = ?', values: ['user@example.com'] }
 
 ```

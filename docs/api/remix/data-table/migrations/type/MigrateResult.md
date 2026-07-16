@@ -13,9 +13,9 @@ Result shape returned by migration runner commands.
 
 ```ts
 type MigrateResult = {
-  applied: MigrationStatusEntry[];
-  reverted: MigrationStatusEntry[];
-  sql: string[];
-};
+  applied: MigrationStatusEntry[]
+  reverted: MigrationStatusEntry[]
+  sql: string[]
+}
 
 ```

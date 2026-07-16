@@ -9,9 +9,9 @@ source: https://github.com/remix-run/remix/blob/main/packages/async-context-midd
 
 ```ts
 type AsyncRequestContext = RouterTypes extends {
-  context: infer context extends RequestContext<any, any>;
+  context: infer context extends RequestContext<any, any>
 }
   ? RequestContextWithAnyParams<context>
-  : RequestContext<AnyParams>;
+  : RequestContext<AnyParams>
 
 ```

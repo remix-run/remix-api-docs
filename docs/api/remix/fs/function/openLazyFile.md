@@ -15,7 +15,7 @@ unless overridden via `options.name`.
 ## Signature
 
 ```ts
-function openLazyFile(filename: string, options: OpenLazyFileOptions): LazyFile;
+function openLazyFile(filename: string, options: OpenLazyFileOptions): LazyFile
 
 ```
 

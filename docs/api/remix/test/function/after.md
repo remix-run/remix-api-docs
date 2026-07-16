@@ -12,8 +12,7 @@ Alias for [`afterAll`](/api/remix/test/function/afterAll/) — matches the `node
 ## Signature
 
 ```ts
-const after: (fn: LifecycleHookFn, options: HookOptions) => void;
-
+const after: (fn: LifecycleHookFn, options: HookOptions) => void
 ```
 
 ## Parameters

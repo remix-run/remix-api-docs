@@ -17,23 +17,23 @@ The value of a `Set-Cookie` HTTP header.
 
 ```ts
 class SetCookie {
-  constructor(init: string | SetCookieInit): SetCookie;
+  constructor(init: string | SetCookieInit): SetCookie
 
   // Properties
-  domain?: string;
-  expires?: Date;
-  httpOnly?: boolean;
-  maxAge?: number;
-  name?: string;
-  partitioned?: boolean;
-  path?: string;
-  sameSite?: SameSiteValue;
-  secure?: boolean;
-  value?: string;
+  domain?: string
+  expires?: Date
+  httpOnly?: boolean
+  maxAge?: number
+  name?: string
+  partitioned?: boolean
+  path?: string
+  sameSite?: SameSiteValue
+  secure?: boolean
+  value?: string
 
   // Methods
-  toString(): string;
-  from(value: string | SetCookieInit | null): SetCookie;
+  toString(): string
+  from(value: string | SetCookieInit | null): SetCookie
 }
 
 ```

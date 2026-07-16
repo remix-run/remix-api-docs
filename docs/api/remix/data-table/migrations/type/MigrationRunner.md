@@ -13,9 +13,9 @@ Migration runner API for applying, reverting, and inspecting migration state.
 
 ```ts
 type MigrationRunner = {
-  down(options: MigrateOptions): Promise<MigrateResult>;
-  status(): Promise<MigrationStatusEntry[]>;
-  up(options: MigrateOptions): Promise<MigrateResult>;
-};
+  down(options: MigrateOptions): Promise<MigrateResult>
+  status(): Promise<MigrationStatusEntry[]>
+  up(options: MigrateOptions): Promise<MigrateResult>
+}
 
 ```

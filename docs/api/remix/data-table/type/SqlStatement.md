@@ -16,8 +16,8 @@ placeholders (for example `$1`, `$2`) depending on compiler stage.
 
 ```ts
 type SqlStatement = {
-  text: string;
-  values: unknown[];
-};
+  text: string
+  values: unknown[]
+}
 
 ```

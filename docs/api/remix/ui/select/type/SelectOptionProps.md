@@ -8,12 +8,12 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/select/inde
 ## Signature
 
 ```ts
-type SelectOptionProps = Props<"div"> & {
-  children?: RemixNode;
-  disabled?: boolean;
-  label: string;
-  textValue?: SearchValue;
-  value: string;
-};
+type SelectOptionProps = Props<'div'> & {
+  children?: RemixNode
+  disabled?: boolean
+  label: string
+  textValue?: SearchValue
+  value: string
+}
 
 ```

@@ -20,20 +20,20 @@ function createFileResponse<file extends FileLike>(
   file: file,
   request: Request,
   options: FileResponseOptions<file>,
-): Promise<Response>;
+): Promise<Response>
 
 ```
 
 ## Example
 
 ```ts
-import { createFileResponse } from "remix/response/file";
-import { openLazyFile } from "remix/fs";
+import { createFileResponse } from 'remix/response/file'
+import { openLazyFile } from 'remix/fs'
 
-let lazyFile = openLazyFile("./public/image.jpg");
+let lazyFile = openLazyFile('./public/image.jpg')
 return createFileResponse(lazyFile, request, {
-  cacheControl: "public, max-age=3600",
-});
+  cacheControl: 'public, max-age=3600',
+})
 
 ```
 

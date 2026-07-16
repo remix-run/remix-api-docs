@@ -9,7 +9,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/radio/index
 
 ```ts
 interface RadioOptions {
-  size?: RadioSize;
+  size?: RadioSize
 }
 
 ```

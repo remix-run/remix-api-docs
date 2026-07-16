@@ -13,10 +13,10 @@ Canonical delete statement shape consumed by adapters.
 
 ```ts
 type DeleteOperation<table> = {
-  kind: "delete";
-  returning?: ReturningSelection;
-  table: table;
-  where: Predicate[];
-};
+  kind: 'delete'
+  returning?: ReturningSelection
+  table: table
+  where: Predicate[]
+}
 
 ```

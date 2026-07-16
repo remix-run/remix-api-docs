@@ -13,22 +13,19 @@ Options for [`render`](/api/remix/ui/test/function/render/).
 
 ```ts
 interface RenderOptions {
-  container?: HTMLElement;
-  frame?: FrameHandle;
+  container?: HTMLElement
+  frame?: FrameHandle
   frameInit?: {
-    loadModule?: (
-      moduleUrl: string,
-      exportName: string,
-    ) => Function | Promise<Function>;
+    loadModule?: (moduleUrl: string, exportName: string) => Function | Promise<Function>
     resolveFrame: (
       src: string,
       signal?: AbortSignal,
       target?: string,
-    ) => FrameContent | Promise<FrameContent>;
-    src?: string;
-  };
-  scheduler?: Scheduler;
-  styleManager?: StyleManager;
+    ) => FrameContent | Promise<FrameContent>
+    src?: string
+  }
+  scheduler?: Scheduler
+  styleManager?: StyleManager
 }
 
 ```

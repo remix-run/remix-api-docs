@@ -15,28 +15,28 @@ Thrown when an assertion fails. Mirrors the shape of Node.js's built-in
 ```ts
 class AssertionError {
   constructor(options: {
-    actual?: unknown;
-    expected?: unknown;
-    generatedMessage?: boolean;
-    message?: unknown;
-    operator: string;
-  }): AssertionError;
+    actual?: unknown
+    expected?: unknown
+    generatedMessage?: boolean
+    message?: unknown
+    operator: string
+  }): AssertionError
 
   // Properties
-  actual: unknown;
-  cause?: unknown;
-  code: string;
-  expected: unknown;
-  generatedMessage: boolean;
-  message: string;
-  name: string;
-  operator: string;
-  stack?: string;
-  stackTraceLimit: number;
+  actual: unknown
+  cause?: unknown
+  code: string
+  expected: unknown
+  generatedMessage: boolean
+  message: string
+  name: string
+  operator: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

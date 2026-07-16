@@ -13,10 +13,10 @@ A reusable check for use with `schema.pipe(...)`.
 
 ```ts
 type Check<output> = {
-  check: (value: output) => boolean;
-  code?: string;
-  message?: string;
-  values?: Record<string, unknown>;
-};
+  check: (value: output) => boolean
+  code?: string
+  message?: string
+  values?: Record<string, unknown>
+}
 
 ```

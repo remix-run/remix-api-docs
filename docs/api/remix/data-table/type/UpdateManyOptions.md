@@ -13,11 +13,11 @@ Options for updating many rows.
 
 ```ts
 type UpdateManyOptions<table> = {
-  limit?: number;
-  offset?: number;
-  orderBy?: OrderByInput<table>;
-  touch?: boolean;
-  where: SingleTableWhere<table>;
-};
+  limit?: number
+  offset?: number
+  orderBy?: OrderByInput<table>
+  touch?: boolean
+  where: SingleTableWhere<table>
+}
 
 ```

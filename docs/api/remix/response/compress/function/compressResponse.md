@@ -32,7 +32,7 @@ function compressResponse(
   response: Response,
   request: Request,
   options: CompressResponseOptions,
-): Promise<Response>;
+): Promise<Response>
 
 ```
 

@@ -13,18 +13,18 @@ An error thrown when the maximum allowed aggregate multipart content size is exc
 
 ```ts
 class MaxTotalSizeExceededError {
-  constructor(maxTotalSize: number): MaxTotalSizeExceededError;
+  constructor(maxTotalSize: number): MaxTotalSizeExceededError
 
   // Properties
-  cause?: unknown;
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

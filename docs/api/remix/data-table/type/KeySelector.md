@@ -14,6 +14,6 @@ Column or column list used to join relations.
 ```ts
 type KeySelector<table> =
   | (keyof TableRow<table> & string)
-  | readonly (keyof TableRow<table> & string)[];
+  | readonly (keyof TableRow<table> & string)[]
 
 ```

@@ -13,6 +13,5 @@ The `logger()` middleware also installs the logger as `context.logger`.
 ## Signature
 
 ```ts
-const Logger: ContextKey<LoggerFunction>;
-
+const Logger: ContextKey<LoggerFunction>
 ```

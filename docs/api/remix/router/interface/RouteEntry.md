@@ -13,10 +13,10 @@ The normalized route entry stored in the router matcher.
 
 ```ts
 interface RouteEntry {
-  handler: RequestHandler<any>;
-  method: RequestMethod | "ANY";
-  middleware: AnyMiddleware[] | undefined;
-  pattern: RoutePattern<string>;
+  handler: RequestHandler<any>
+  method: RequestMethod | 'ANY'
+  middleware: AnyMiddleware[] | undefined
+  pattern: RoutePattern<string>
 }
 
 ```

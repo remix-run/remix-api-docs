@@ -15,12 +15,9 @@ Creates a sync Standard Schema-compatible schema from a validation function.
 function createSchema<input, output>(
   validator: (
     value: unknown,
-    context: {
-      options?: ParseOptions;
-      path: readonly (PropertyKey | PathSegment)[];
-    },
+    context: { options?: ParseOptions; path: readonly (PropertyKey | PathSegment)[] },
   ) => ValidationResult<output>,
-): Schema<input, output>;
+): Schema<input, output>
 
 ```
 

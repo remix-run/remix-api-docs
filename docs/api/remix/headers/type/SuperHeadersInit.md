@@ -15,6 +15,6 @@ Initializer for [`SuperHeaders`](/api/remix/headers/class/SuperHeaders/).
 type SuperHeadersInit =
   | Headers
   | Iterable<[string, string]>
-  | (SuperHeadersPropertyInit & Record<string, unknown>);
+  | (SuperHeadersPropertyInit & Record<string, unknown>)
 
 ```

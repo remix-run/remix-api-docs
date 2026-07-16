@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs/index.
 ## Signature
 
 ```ts
-type TabsSize = "md" | "lg";
+type TabsSize = 'md' | 'lg'
 
 ```

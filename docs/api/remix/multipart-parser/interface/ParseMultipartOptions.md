@@ -13,11 +13,11 @@ Options for parsing a multipart message.
 
 ```ts
 interface ParseMultipartOptions {
-  boundary: string;
-  maxFileSize?: number;
-  maxHeaderSize?: number;
-  maxParts?: number;
-  maxTotalSize?: number;
+  boundary: string
+  maxFileSize?: number
+  maxHeaderSize?: number
+  maxParts?: number
+  maxTotalSize?: number
 }
 
 ```

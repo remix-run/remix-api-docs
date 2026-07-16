@@ -15,13 +15,10 @@ based on that value.
 ## Signature
 
 ```ts
-function variant<
-  key extends PropertyKey,
-  variants extends Record<PropertyKey, Schema<any, any>>,
->(
+function variant<key extends PropertyKey, variants extends Record<PropertyKey, Schema<any, any>>>(
   discriminator: key,
   variants: variants,
-): Schema<unknown, InferOutput<variants[keyof variants]>>;
+): Schema<unknown, InferOutput<variants[keyof variants]>>
 
 ```
 

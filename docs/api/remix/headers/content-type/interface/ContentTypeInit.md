@@ -13,9 +13,9 @@ Initializer for a `Content-Type` header value.
 
 ```ts
 interface ContentTypeInit {
-  boundary?: string;
-  charset?: string;
-  mediaType?: string;
+  boundary?: string
+  charset?: string
+  mediaType?: string
 }
 
 ```

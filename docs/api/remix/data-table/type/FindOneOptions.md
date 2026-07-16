@@ -14,7 +14,7 @@ Options for loading a single row from a table.
 ```ts
 type FindOneOptions<table, relations> = Omit<
   FindManyOptions<table, relations>,
-  "limit" | "offset"
-> & { where: SingleTableWhere<table> };
+  'limit' | 'offset'
+> & { where: SingleTableWhere<table> }
 
 ```

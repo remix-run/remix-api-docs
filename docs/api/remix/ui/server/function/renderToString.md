@@ -12,7 +12,7 @@ Renders a node tree to a complete HTML string.
 ## Signature
 
 ```ts
-function renderToString(node: RemixNode): Promise<string>;
+function renderToString(node: RemixNode): Promise<string>
 
 ```
 

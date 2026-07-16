@@ -15,7 +15,7 @@ Creates a Standard Schema issue object.
 function createIssue(
   message: string,
   path: readonly (PropertyKey | PathSegment)[] | undefined,
-): Issue;
+): Issue
 
 ```
 

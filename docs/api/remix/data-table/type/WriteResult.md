@@ -13,8 +13,8 @@ Result metadata for write operations that do not return rows.
 
 ```ts
 type WriteResult = {
-  affectedRows: number;
-  insertId?: unknown;
-};
+  affectedRows: number
+  insertId?: unknown
+}
 
 ```

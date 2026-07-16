@@ -12,6 +12,6 @@ Return shape for a dynamic CORS origin resolver.
 ## Signature
 
 ```ts
-type CorsOriginResolverResult = "*" | string | boolean | null | undefined;
+type CorsOriginResolverResult = '*' | string | boolean | null | undefined
 
 ```

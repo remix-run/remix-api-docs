@@ -16,34 +16,34 @@ runRemixTest via the corresponding flags.
 
 ```ts
 interface RemixTestConfig {
-  browser?: { echo?: boolean; open?: boolean };
-  concurrency?: string | number;
+  browser?: { echo?: boolean; open?: boolean }
+  concurrency?: string | number
   coverage?:
     | boolean
     | {
-        branches?: string | number;
-        dir?: string;
-        exclude?: string | string[];
-        functions?: string | number;
-        include?: string | string[];
-        lines?: string | number;
-        statements?: string | number;
-      };
+        branches?: string | number
+        dir?: string
+        exclude?: string | string[]
+        functions?: string | number
+        include?: string | string[]
+        lines?: string | number
+        statements?: string | number
+      }
   glob?: {
-    browser?: string | string[];
-    e2e?: string | string[];
-    exclude?: string | string[];
-    test?: string | string[];
-  };
-  only?: RemixTestOnlyPattern | RemixTestOnlyPattern[];
-  playwrightConfig?: string | PlaywrightTestConfig;
-  pool?: RemixTestPool;
-  project?: string | string[];
-  quiet?: boolean;
-  reporter?: string;
-  setup?: string;
-  type?: string | string[];
-  watch?: boolean;
+    browser?: string | string[]
+    e2e?: string | string[]
+    exclude?: string | string[]
+    test?: string | string[]
+  }
+  only?: RemixTestOnlyPattern | RemixTestOnlyPattern[]
+  playwrightConfig?: string | PlaywrightTestConfig
+  pool?: RemixTestPool
+  project?: string | string[]
+  quiet?: boolean
+  reporter?: string
+  setup?: string
+  type?: string | string[]
+  watch?: boolean
 }
 
 ```

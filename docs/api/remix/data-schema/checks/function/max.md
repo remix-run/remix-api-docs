@@ -12,7 +12,7 @@ Require a number to be less than or equal to `limit`.
 ## Signature
 
 ```ts
-function max(limit: number): Check<number>;
+function max(limit: number): Check<number>
 
 ```
 

@@ -15,7 +15,7 @@ Create a schema that validates a Map with typed keys and values.
 function map<keyInput, keyOutput, valueInput, valueOutput>(
   keySchema: Schema<keyInput, keyOutput>,
   valueSchema: Schema<valueInput, valueOutput>,
-): Schema<unknown, Map<keyOutput, valueOutput>>;
+): Schema<unknown, Map<keyOutput, valueOutput>>
 
 ```
 

@@ -15,18 +15,18 @@ the charset defined in mime-db for the detected MIME type.
 ## Signature
 
 ```ts
-function detectContentType(extension: string): string | undefined;
+function detectContentType(extension: string): string | undefined
 
 ```
 
 ## Example
 
 ```ts
-detectContentType("css"); // 'text/css;charset=utf-8'
-detectContentType(".css"); // 'text/css;charset=utf-8'
-detectContentType("style.css"); // 'text/css;charset=utf-8'
-detectContentType("image.png"); // 'image/png'
-detectContentType("unknown"); // undefined
+detectContentType('css') // 'text/css;charset=utf-8'
+detectContentType('.css') // 'text/css;charset=utf-8'
+detectContentType('style.css') // 'text/css;charset=utf-8'
+detectContentType('image.png') // 'image/png'
+detectContentType('unknown') // undefined
 
 ```
 

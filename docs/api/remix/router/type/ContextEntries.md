@@ -12,6 +12,6 @@ An ordered list of request-context entries. Later entries override earlier ones 
 ## Signature
 
 ```ts
-type ContextEntries = readonly ContextEntry[];
+type ContextEntries = readonly ContextEntry[]
 
 ```

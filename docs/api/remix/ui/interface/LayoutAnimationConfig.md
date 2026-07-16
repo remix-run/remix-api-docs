@@ -14,9 +14,9 @@ All properties are optional - defaults are applied when `true` or `{}` is used.
 
 ```ts
 interface LayoutAnimationConfig {
-  duration?: number;
-  easing?: string;
-  size?: boolean;
+  duration?: number
+  easing?: string
+  size?: boolean
 }
 
 ```

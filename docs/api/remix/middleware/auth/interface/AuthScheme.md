@@ -13,12 +13,10 @@ Authentication scheme contract consumed by `auth()`.
 
 ```ts
 interface AuthScheme<identity> {
-  name: string;
+  name: string
   authenticate(
     context: RequestContext,
-  ):
-    | AuthSchemeAuthenticateResult<identity>
-    | Promise<AuthSchemeAuthenticateResult<identity>>;
+  ): AuthSchemeAuthenticateResult<identity> | Promise<AuthSchemeAuthenticateResult<identity>>
 }
 
 ```

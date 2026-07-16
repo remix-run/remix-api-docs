@@ -14,7 +14,7 @@ Creates an X auth provider using OAuth 2.0 Authorization Code with PKCE.
 ```ts
 function createXAuthProvider(
   options: XAuthProviderOptions,
-): OAuthProvider<XAuthProfile, "x", OAuthStandardTokens>;
+): OAuthProvider<XAuthProfile, 'x', OAuthStandardTokens>
 
 ```
 

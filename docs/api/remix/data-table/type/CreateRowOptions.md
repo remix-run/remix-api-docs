@@ -13,9 +13,9 @@ Options for create operations that return the inserted row.
 
 ```ts
 type CreateRowOptions<table, relations> = {
-  returnRow: true;
-  touch?: boolean;
-  with?: relations;
-};
+  returnRow: true
+  touch?: boolean
+  with?: relations
+}
 
 ```

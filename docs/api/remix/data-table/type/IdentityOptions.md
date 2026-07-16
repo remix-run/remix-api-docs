@@ -13,9 +13,9 @@ Options for configuring identity column generation.
 
 ```ts
 type IdentityOptions = {
-  always?: boolean;
-  increment?: number;
-  start?: number;
-};
+  always?: boolean
+  increment?: number
+  start?: number
+}
 
 ```

@@ -14,10 +14,7 @@ Create a schema that validates a fixed-length tuple.
 ```ts
 function tuple<items extends Schema<any, any>[]>(
   items: items,
-): Schema<
-  unknown,
-  { [index in string | number | symbol]: InferOutput<items[index]> }
->;
+): Schema<unknown, { [index in string | number | symbol]: InferOutput<items[index]> }>
 
 ```
 

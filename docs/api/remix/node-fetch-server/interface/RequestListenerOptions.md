@@ -13,10 +13,10 @@ Options for creating a Node.js request listener.
 
 ```ts
 interface RequestListenerOptions {
-  host?: string;
-  onError?: ErrorHandler;
-  protocol?: string;
-  trustProxy?: boolean;
+  host?: string
+  onError?: ErrorHandler
+  protocol?: string
+  trustProxy?: boolean
 }
 
 ```

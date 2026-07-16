@@ -19,16 +19,13 @@ cloud storage service.
 ## Signature
 
 ```ts
-function parseFormData(
-  request: Request,
-  uploadHandler: FileUploadHandler,
-): Promise<FormData>;
+function parseFormData(request: Request, uploadHandler: FileUploadHandler): Promise<FormData>
 
 function parseFormData(
   request: Request,
   options: ParseFormDataOptions,
   uploadHandler: FileUploadHandler,
-): Promise<FormData>;
+): Promise<FormData>
 
 ```
 

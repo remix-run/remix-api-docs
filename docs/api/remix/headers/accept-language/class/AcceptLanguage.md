@@ -17,36 +17,30 @@ The value of a `Accept-Language` HTTP header.
 
 ```ts
 class AcceptLanguage {
-  constructor(init: string | AcceptLanguageInit): AcceptLanguage;
+  constructor(init: string | AcceptLanguageInit): AcceptLanguage
 
   // Accessors
-  get languages(): string[];
-  get size(): number;
-  get weights(): number[];
+  get languages(): string[]
+  get size(): number
+  get weights(): number[]
 
   // Methods
-  [iterator](): IterableIterator<[string, number]>;
-  accepts(language: string): boolean;
-  clear(): void;
-  delete(language: string): void;
-  entries(): IterableIterator<[string, number]>;
+  [iterator](): IterableIterator<[string, number]>
+  accepts(language: string): boolean
+  clear(): void
+  delete(language: string): void
+  entries(): IterableIterator<[string, number]>
   forEach(
-    callback: (
-      language: string,
-      weight: number,
-      header: AcceptLanguage,
-    ) => void,
+    callback: (language: string, weight: number, header: AcceptLanguage) => void,
     thisArg: any,
-  ): void;
-  get(language: string): number | null;
-  getPreferred<language extends string>(
-    languages: readonly language[],
-  ): language | null;
-  getWeight(language: string): number;
-  has(language: string): boolean;
-  set(language: string, weight: number): void;
-  toString(): string;
-  from(value: string | AcceptLanguageInit | null): AcceptLanguage;
+  ): void
+  get(language: string): number | null
+  getPreferred<language extends string>(languages: readonly language[]): language | null
+  getWeight(language: string): number
+  has(language: string): boolean
+  set(language: string, weight: number): void
+  toString(): string
+  from(value: string | AcceptLanguageInit | null): AcceptLanguage
 }
 
 ```

@@ -13,9 +13,9 @@ Root controller returned by [`createRoot`](/api/remix/ui/function/createRoot/) a
 
 ```ts
 type VirtualRoot = TypedEventTarget<VirtualRootEventMap> & {
-  dispose: () => void;
-  flush: () => void;
-  render: (element: RemixNode) => void;
-};
+  dispose: () => void
+  flush: () => void
+  render: (element: RemixNode) => void
+}
 
 ```

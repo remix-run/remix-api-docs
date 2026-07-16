@@ -12,8 +12,6 @@ Initializer for an `Accept-Language` header value.
 ## Signature
 
 ```ts
-type AcceptLanguageInit =
-  | Iterable<string | [string, number]>
-  | Record<string, number>;
+type AcceptLanguageInit = Iterable<string | [string, number]> | Record<string, number>
 
 ```

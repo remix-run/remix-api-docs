@@ -12,11 +12,9 @@ Create a request context key with an optional default value.
 ## Signature
 
 ```ts
-function createContextKey<value>(): ContextKey<value>;
+function createContextKey<value>(): ContextKey<value>
 
-function createContextKey<value>(
-  defaultValue: value,
-): ContextKey<value> & { defaultValue: value };
+function createContextKey<value>(defaultValue: value): ContextKey<value> & { defaultValue: value }
 
 ```
 

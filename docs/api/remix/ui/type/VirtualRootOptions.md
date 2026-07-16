@@ -13,21 +13,18 @@ Options for creating a virtual DOM root with [`createRoot`](/api/remix/ui/functi
 
 ```ts
 type VirtualRootOptions = {
-  frame?: FrameHandle;
+  frame?: FrameHandle
   frameInit?: {
-    loadModule?: (
-      moduleUrl: string,
-      exportName: string,
-    ) => Promise<Function> | Function;
+    loadModule?: (moduleUrl: string, exportName: string) => Promise<Function> | Function
     resolveFrame: (
       src: string,
       signal?: AbortSignal,
       target?: string,
-    ) => Promise<FrameContent> | FrameContent;
-    src?: string;
-  };
-  scheduler?: Scheduler;
-  styleManager?: StyleManager;
-};
+    ) => Promise<FrameContent> | FrameContent
+    src?: string
+  }
+  scheduler?: Scheduler
+  styleManager?: StyleManager
+}
 
 ```

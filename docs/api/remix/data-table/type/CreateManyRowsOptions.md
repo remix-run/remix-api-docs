@@ -13,8 +13,8 @@ Options for bulk-create operations that return inserted rows.
 
 ```ts
 type CreateManyRowsOptions = {
-  returnRows: true;
-  touch?: boolean;
-};
+  returnRows: true
+  touch?: boolean
+}
 
 ```

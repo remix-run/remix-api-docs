@@ -12,7 +12,7 @@ Returns true if match `a` is more specific than match `b`.
 ## Signature
 
 ```ts
-function greaterThan(a: Match, b: Match): boolean;
+function greaterThan(a: Match, b: Match): boolean
 
 ```
 

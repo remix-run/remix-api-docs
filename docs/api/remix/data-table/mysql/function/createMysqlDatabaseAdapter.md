@@ -12,22 +12,20 @@ Creates a mysql `DatabaseAdapter`.
 ## Signature
 
 ```ts
-function createMysqlDatabaseAdapter(
-  client: MysqlQueryable,
-): MysqlDatabaseAdapter;
+function createMysqlDatabaseAdapter(client: MysqlQueryable): MysqlDatabaseAdapter
 
 ```
 
 ## Example
 
 ```ts
-import { createPool } from "mysql2/promise";
-import { createDatabase } from "remix/data-table";
-import { createMysqlDatabaseAdapter } from "remix/data-table/mysql";
+import { createPool } from 'mysql2/promise'
+import { createDatabase } from 'remix/data-table'
+import { createMysqlDatabaseAdapter } from 'remix/data-table/mysql'
 
-let pool = createPool({ uri: process.env.DATABASE_URL });
-let adapter = createMysqlDatabaseAdapter(pool);
-let db = createDatabase(adapter);
+let pool = createPool({ uri: process.env.DATABASE_URL })
+let adapter = createMysqlDatabaseAdapter(pool)
+let db = createDatabase(adapter)
 
 ```
 

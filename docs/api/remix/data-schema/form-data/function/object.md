@@ -15,9 +15,7 @@ Use the returned schema with `parse()` or `parseSafe()` from `@remix-run/data-sc
 ## Signature
 
 ```ts
-function object<schema extends FormDataSchema>(
-  schema: schema,
-): FormDataObjectSchema<schema>;
+function object<schema extends FormDataSchema>(schema: schema): FormDataObjectSchema<schema>
 
 ```
 

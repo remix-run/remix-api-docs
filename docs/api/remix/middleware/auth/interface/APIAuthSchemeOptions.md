@@ -13,12 +13,9 @@ Options for creating an API-key auth scheme.
 
 ```ts
 interface APIAuthSchemeOptions<identity> {
-  headerName?: string;
-  name?: string;
-  verify(
-    key: string,
-    context: RequestContext,
-  ): identity | Promise<identity | null> | null;
+  headerName?: string
+  name?: string
+  verify(key: string, context: RequestContext): identity | Promise<identity | null> | null
 }
 
 ```

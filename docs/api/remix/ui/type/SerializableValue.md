@@ -13,10 +13,6 @@ This includes primitives, objects, arrays, and Remix Elements.
 ## Signature
 
 ```ts
-type SerializableValue =
-  | SerializablePrimitive
-  | SerializableObject
-  | SerializableArray
-  | RemixNode;
+type SerializableValue = SerializablePrimitive | SerializableObject | SerializableArray | RemixNode
 
 ```

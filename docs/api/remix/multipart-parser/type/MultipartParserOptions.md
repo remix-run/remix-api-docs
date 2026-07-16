@@ -12,6 +12,6 @@ Options for configuring a [`MultipartParser`](/api/remix/multipart-parser/class/
 ## Signature
 
 ```ts
-type MultipartParserOptions = Omit<ParseMultipartOptions, "boundary">;
+type MultipartParserOptions = Omit<ParseMultipartOptions, 'boundary'>
 
 ```

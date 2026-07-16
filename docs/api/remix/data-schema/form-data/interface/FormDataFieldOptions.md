@@ -13,7 +13,7 @@ Options for parsing a single text field from `FormData` or `URLSearchParams`.
 
 ```ts
 interface FormDataFieldOptions {
-  name?: string;
+  name?: string
 }
 
 ```

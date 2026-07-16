@@ -12,9 +12,7 @@ Returns a table's resolved timestamp configuration.
 ## Signature
 
 ```ts
-function getTableTimestamps<table extends AnyTable>(
-  table: table,
-): TableTimestamps<table>;
+function getTableTimestamps<table extends AnyTable>(table: table): TableTimestamps<table>
 
 ```
 

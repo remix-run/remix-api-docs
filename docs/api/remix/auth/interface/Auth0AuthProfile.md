@@ -13,25 +13,25 @@ Profile claims returned by the built-in Auth0 auth provider.
 
 ```ts
 interface Auth0AuthProfile {
-  birthdate?: string;
-  email?: string;
-  email_verified?: boolean;
-  family_name?: string;
-  gender?: string;
-  given_name?: string;
-  locale?: string;
-  middle_name?: string;
-  name?: string;
-  nickname?: string;
-  phone_number?: string;
-  phone_number_verified?: boolean;
-  picture?: string;
-  preferred_username?: string;
-  profile?: string;
-  sub: string;
-  updated_at?: string;
-  website?: string;
-  zoneinfo?: string;
+  birthdate?: string
+  email?: string
+  email_verified?: boolean
+  family_name?: string
+  gender?: string
+  given_name?: string
+  locale?: string
+  middle_name?: string
+  name?: string
+  nickname?: string
+  phone_number?: string
+  phone_number_verified?: boolean
+  picture?: string
+  preferred_username?: string
+  profile?: string
+  sub: string
+  updated_at?: string
+  website?: string
+  zoneinfo?: string
 }
 
 ```

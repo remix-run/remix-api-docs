@@ -13,20 +13,20 @@ Options for creating the built-in Okta auth provider.
 
 ```ts
 interface OktaAuthProviderOptions {
-  authorizationParams?: Record<string, string | undefined>;
-  clientId: string;
-  clientSecret: string;
-  discoveryUrl?: string | URL;
-  issuer: string | URL;
+  authorizationParams?: Record<string, string | undefined>
+  clientId: string
+  clientSecret: string
+  discoveryUrl?: string | URL
+  issuer: string | URL
   mapProfile?: (input: {
-    claims: OIDCAuthProfile;
-    context: RequestContext;
-    metadata: OIDCAuthProviderMetadata;
-    tokens: OAuthTokens;
-  }) => OktaAuthProfile | Promise<OktaAuthProfile>;
-  metadata?: OIDCAuthProviderMetadata;
-  redirectUri: string | URL;
-  scopes?: string[];
+    claims: OIDCAuthProfile
+    context: RequestContext
+    metadata: OIDCAuthProviderMetadata
+    tokens: OAuthTokens
+  }) => OktaAuthProfile | Promise<OktaAuthProfile>
+  metadata?: OIDCAuthProviderMetadata
+  redirectUri: string | URL
+  scopes?: string[]
 }
 
 ```

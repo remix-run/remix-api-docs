@@ -10,6 +10,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mix
 ```ts
 type MixinFactory<node, args, props> = (
   args: RebindTuple<args, node, boundNode>,
-) => MixinDescriptor<boundNode, RebindTuple<args, node, boundNode>, props>;
+) => MixinDescriptor<boundNode, RebindTuple<args, node, boundNode>, props>
 
 ```

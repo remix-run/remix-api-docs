@@ -9,13 +9,13 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/anchor/inde
 
 ```ts
 type AnchorPlacement =
-  | "top"
-  | "bottom"
-  | "left"
-  | "right"
-  | "top-start"
-  | "top-end"
-  | "bottom-start"
-  | "bottom-end";
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom-start'
+  | 'bottom-end'
 
 ```

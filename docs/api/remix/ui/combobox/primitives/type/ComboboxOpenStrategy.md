@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox/pr
 ## Signature
 
 ```ts
-type ComboboxOpenStrategy = "selected" | "selected-or-none" | "first" | "last";
+type ComboboxOpenStrategy = 'selected' | 'selected-or-none' | 'first' | 'last'
 
 ```

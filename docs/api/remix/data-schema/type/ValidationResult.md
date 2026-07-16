@@ -14,6 +14,6 @@ On success, `value` is present and `issues` is absent. On failure, `issues` is p
 ## Signature
 
 ```ts
-type ValidationResult<output> = StandardSchemaV1.Result<output>;
+type ValidationResult<output> = StandardSchemaV1.Result<output>
 
 ```

@@ -12,6 +12,6 @@ Hook invoked after a row write completes.
 ## Signature
 
 ```ts
-type TableAfterWrite<row> = (context: TableAfterWriteContext<row>) => void;
+type TableAfterWrite<row> = (context: TableAfterWriteContext<row>) => void
 
 ```

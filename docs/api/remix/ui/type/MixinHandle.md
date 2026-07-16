@@ -17,13 +17,13 @@ the host subtree.
 
 ```ts
 type MixinHandle<node, props> = TypedEventTarget<MixinHandleEventMap<node>> & {
-  context: MixinContext;
-  element: MixinElement<node, props>;
-  frame: FrameHandle;
-  id: string;
-  signal: AbortSignal;
-  queueTask: any;
-  update: any;
-};
+  context: MixinContext
+  element: MixinElement<node, props>
+  frame: FrameHandle
+  id: string
+  signal: AbortSignal
+  queueTask: any
+  update: any
+}
 
 ```

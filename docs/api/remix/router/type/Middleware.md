@@ -16,6 +16,6 @@ to the next middleware or request handler in the chain.
 type Middleware<transform> = (
   context: RequestContext<any>,
   next: NextFunction,
-) => Response | (Promise<Response> & { [contextTransform]?: transform });
+) => Response | (Promise<Response> & { [contextTransform]?: transform })
 
 ```

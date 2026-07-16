@@ -13,22 +13,22 @@ Initializer for a `Cache-Control` header value.
 
 ```ts
 interface CacheControlInit {
-  immutable?: true;
-  maxAge?: number;
-  maxStale?: number;
-  minFresh?: number;
-  mustRevalidate?: true;
-  mustUnderstand?: true;
-  noCache?: true;
-  noStore?: true;
-  noTransform?: true;
-  onlyIfCached?: true;
-  private?: true;
-  proxyRevalidate?: true;
-  public?: true;
-  sMaxage?: number;
-  staleIfError?: number;
-  staleWhileRevalidate?: number;
+  immutable?: true
+  maxAge?: number
+  maxStale?: number
+  minFresh?: number
+  mustRevalidate?: true
+  mustUnderstand?: true
+  noCache?: true
+  noStore?: true
+  noTransform?: true
+  onlyIfCached?: true
+  private?: true
+  proxyRevalidate?: true
+  public?: true
+  sMaxage?: number
+  staleIfError?: number
+  staleWhileRevalidate?: number
 }
 
 ```

@@ -1,6 +1,6 @@
 ---
 title: RouteBuilder
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L119
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L122
 ---
 
 # RouteBuilder
@@ -16,14 +16,14 @@ Route builders are useful for composing route groups with [`RouteInstaller`](/ap
 
 ```ts
 interface RouteBuilder<context> {
-  [routeBuilderContext]?: context;
-  delete: VerbMethod<"DELETE", context>;
-  get: VerbMethod<"GET", context>;
-  head: VerbMethod<"HEAD", context>;
-  options: VerbMethod<"OPTIONS", context>;
-  patch: VerbMethod<"PATCH", context>;
-  post: VerbMethod<"POST", context>;
-  put: VerbMethod<"PUT", context>;
+  [routeBuilderContext]?: context
+  delete: VerbMethod<'DELETE', context>
+  get: VerbMethod<'GET', context>
+  head: VerbMethod<'HEAD', context>
+  options: VerbMethod<'OPTIONS', context>
+  patch: VerbMethod<'PATCH', context>
+  post: VerbMethod<'POST', context>
+  put: VerbMethod<'PUT', context>
   map<
     target extends MapTarget,
     handlerContext extends AnyContext,
@@ -32,13 +32,13 @@ interface RouteBuilder<context> {
     target: target,
     handler: MapHandler<target, handlerContext, middleware> &
       ContextCompatibility<context, handlerContext, middleware>,
-  ): void;
+  ): void
   mount<pattern extends string>(
     prefix: pattern | RoutePattern<pattern>,
     installer: RouteInstaller<ContextWithParams<context, MatchParams<pattern>>>,
-  ): void;
+  ): void
   route<
-    method extends RequestMethod | "ANY",
+    method extends RequestMethod | 'ANY',
     pattern extends string,
     actionContext extends AnyContext,
     middleware extends readonly AnyMiddleware[],
@@ -47,7 +47,7 @@ interface RouteBuilder<context> {
     pattern: RouteTarget<pattern, method>,
     action: Action<RouteTarget<pattern, method>, actionContext, middleware> &
       ContextCompatibility<context, actionContext, middleware>,
-  ): void;
+  ): void
 }
 
 ```

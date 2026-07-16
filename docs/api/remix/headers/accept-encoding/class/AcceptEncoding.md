@@ -17,36 +17,30 @@ The value of a `Accept-Encoding` HTTP header.
 
 ```ts
 class AcceptEncoding {
-  constructor(init: string | AcceptEncodingInit): AcceptEncoding;
+  constructor(init: string | AcceptEncodingInit): AcceptEncoding
 
   // Accessors
-  get encodings(): string[];
-  get size(): number;
-  get weights(): number[];
+  get encodings(): string[]
+  get size(): number
+  get weights(): number[]
 
   // Methods
-  [iterator](): IterableIterator<[string, number]>;
-  accepts(encoding: string): boolean;
-  clear(): void;
-  delete(encoding: string): void;
-  entries(): IterableIterator<[string, number]>;
+  [iterator](): IterableIterator<[string, number]>
+  accepts(encoding: string): boolean
+  clear(): void
+  delete(encoding: string): void
+  entries(): IterableIterator<[string, number]>
   forEach(
-    callback: (
-      encoding: string,
-      weight: number,
-      header: AcceptEncoding,
-    ) => void,
+    callback: (encoding: string, weight: number, header: AcceptEncoding) => void,
     thisArg: any,
-  ): void;
-  get(encoding: string): number | null;
-  getPreferred<encoding extends string>(
-    encodings: readonly encoding[],
-  ): encoding | null;
-  getWeight(encoding: string): number;
-  has(encoding: string): boolean;
-  set(encoding: string, weight: number): void;
-  toString(): string;
-  from(value: string | AcceptEncodingInit | null): AcceptEncoding;
+  ): void
+  get(encoding: string): number | null
+  getPreferred<encoding extends string>(encodings: readonly encoding[]): encoding | null
+  getWeight(encoding: string): number
+  has(encoding: string): boolean
+  set(encoding: string, weight: number): void
+  toString(): string
+  from(value: string | AcceptEncodingInit | null): AcceptEncoding
 }
 
 ```

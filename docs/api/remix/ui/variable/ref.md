@@ -12,10 +12,5 @@ Calls a callback when an element is inserted and aborts it when removed.
 ## Signature
 
 ```ts
-const ref: MixinFactory<
-  Element,
-  [callback: RefCallback<Element>],
-  ElementProps
->;
-
+const ref: MixinFactory<Element, [callback: RefCallback<Element>], ElementProps>
 ```

@@ -16,36 +16,26 @@ class Session<valueData, flashData> {
   constructor(
     id: string,
     initialData: SessionData<valueData, flashData>,
-  ): Session<valueData, flashData>;
+  ): Session<valueData, flashData>
 
   // Accessors
-  get data(): SessionData<valueData, flashData>;
-  get deleteId(): string | undefined;
-  get destroyed(): boolean;
-  get dirty(): boolean;
-  get id(): string;
-  get size(): number;
+  get data(): SessionData<valueData, flashData>
+  get deleteId(): string | undefined
+  get destroyed(): boolean
+  get dirty(): boolean
+  get id(): string
+  get size(): number
 
   // Methods
-  destroy(): void;
-  flash<key extends string | number | symbol>(
-    key: key,
-    value: flashData[key],
-  ): void;
-  get<key extends string | number | symbol>(
-    key: key,
-  ): valueData[key] | undefined;
-  get<key extends string | number | symbol>(
-    key: key,
-  ): flashData[key] | undefined;
-  get(key: string): undefined;
-  has(key: keyof valueData | keyof flashData): boolean;
-  regenerateId(deleteOldSession: boolean): void;
-  set<key extends string | number | symbol>(
-    key: key,
-    value: valueData[key],
-  ): void;
-  unset(key: keyof valueData): void;
+  destroy(): void
+  flash<key extends string | number | symbol>(key: key, value: flashData[key]): void
+  get<key extends string | number | symbol>(key: key): valueData[key] | undefined
+  get<key extends string | number | symbol>(key: key): flashData[key] | undefined
+  get(key: string): undefined
+  has(key: keyof valueData | keyof flashData): boolean
+  regenerateId(deleteOldSession: boolean): void
+  set<key extends string | number | symbol>(key: key, value: valueData[key]): void
+  unset(key: keyof valueData): void
 }
 
 ```

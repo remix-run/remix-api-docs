@@ -15,7 +15,7 @@ Builds an `IN` predicate.
 function inList<column extends string | ColumnReferenceLike>(
   column: column,
   values: readonly unknown[],
-): Predicate<PredicateColumn<column>>;
+): Predicate<PredicateColumn<column>>
 
 ```
 

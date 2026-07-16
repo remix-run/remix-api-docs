@@ -13,18 +13,14 @@ compares object properties using `===` at primitive leaves (no type coercion).
 ## Signature
 
 ```ts
-function deepEqual<T>(
-  actual: unknown,
-  expected: T,
-  message: AssertionMessage,
-): asserts actual is T;
+function deepEqual<T>(actual: unknown, expected: T, message: AssertionMessage): asserts actual is T
 
 ```
 
 ## Example
 
 ```ts
-assert.deepEqual(result, { id: 1, name: "Alice" });
+assert.deepEqual(result, { id: 1, name: 'Alice' })
 
 ```
 

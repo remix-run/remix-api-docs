@@ -13,9 +13,9 @@ Options for generating a spring easing iterator.
 
 ```ts
 interface SpringOptions {
-  bounce?: number;
-  duration?: number;
-  velocity?: number;
+  bounce?: number
+  duration?: number
+  velocity?: number
 }
 
 ```

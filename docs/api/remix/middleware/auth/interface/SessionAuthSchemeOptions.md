@@ -13,18 +13,12 @@ Options for creating a session-backed auth scheme.
 
 ```ts
 interface SessionAuthSchemeOptions<identity, session_value> {
-  code?: "missing_credentials" | "invalid_credentials";
-  message?: string;
-  name?: string;
-  invalidate(session: Session, context: RequestContext): void | Promise<void>;
-  read(
-    session: Session,
-    context: RequestContext,
-  ): session_value | null | undefined;
-  verify(
-    value: session_value,
-    context: RequestContext,
-  ): identity | Promise<identity | null> | null;
+  code?: 'missing_credentials' | 'invalid_credentials'
+  message?: string
+  name?: string
+  invalidate(session: Session, context: RequestContext): void | Promise<void>
+  read(session: Session, context: RequestContext): session_value | null | undefined
+  verify(value: session_value, context: RequestContext): identity | Promise<identity | null> | null
 }
 
 ```

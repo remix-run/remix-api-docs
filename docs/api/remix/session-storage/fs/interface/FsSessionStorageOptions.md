@@ -13,7 +13,7 @@ Options for filesystem-backed session storage.
 
 ```ts
 interface FsSessionStorageOptions {
-  useUnknownIds?: boolean;
+  useUnknownIds?: boolean
 }
 
 ```

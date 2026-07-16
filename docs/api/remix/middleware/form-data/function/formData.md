@@ -15,13 +15,10 @@ Middleware that parses `FormData` from the request body and populates request co
 function formData(
   options: FormDataOptions,
 ): Middleware<{
-  key: {
-    (form?: HTMLFormElement, submitter?: HTMLElement | null): FormData;
-    prototype: FormData;
-  };
-  property: "formData";
-  value: FormData;
-}>;
+  key: { (form?: HTMLFormElement, submitter?: HTMLElement | null): FormData; prototype: FormData }
+  property: 'formData'
+  value: FormData
+}>
 
 ```
 

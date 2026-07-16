@@ -9,11 +9,11 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs/primit
 
 ```ts
 interface TabsContextProps {
-  activeTab?: string;
-  children?: RemixNode;
-  defaultActiveTab?: string;
-  disabled?: boolean;
-  onActiveTabChange?: (activeTab: string) => void;
+  activeTab?: string
+  children?: RemixNode
+  defaultActiveTab?: string
+  disabled?: boolean
+  onActiveTabChange?: (activeTab: string) => void
 }
 
 ```

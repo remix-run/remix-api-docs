@@ -14,6 +14,6 @@ renderer's normalized shape used throughout reconciler/SSR code.
 ## Signature
 
 ```ts
-type ElementProps = Record<string, any>;
+type ElementProps = Record<string, any>
 
 ```

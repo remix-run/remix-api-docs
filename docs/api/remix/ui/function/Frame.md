@@ -12,7 +12,7 @@ Built-in component used to render nested frame content.
 ## Signature
 
 ```ts
-function Frame(handle: Handle<FrameProps, FrameHandle>): RenderFn;
+function Frame(handle: Handle<FrameProps, FrameHandle>): RenderFn
 
 ```
 

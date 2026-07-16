@@ -12,7 +12,7 @@ Create a schema that accepts `null`.
 ## Signature
 
 ```ts
-function null_(): Schema<unknown, null>;
+function null_(): Schema<unknown, null>
 
 ```
 

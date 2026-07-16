@@ -17,7 +17,7 @@ Accepts:
 ## Signature
 
 ```ts
-function bigint(): Schema<unknown, bigint>;
+function bigint(): Schema<unknown, bigint>
 
 ```
 

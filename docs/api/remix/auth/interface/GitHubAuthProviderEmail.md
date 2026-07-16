@@ -13,10 +13,10 @@ Email records returned by GitHub's `/user/emails` endpoint.
 
 ```ts
 interface GitHubAuthProviderEmail {
-  email: string;
-  primary: boolean;
-  verified: boolean;
-  visibility?: string | null;
+  email: string
+  primary: boolean
+  verified: boolean
+  visibility?: string | null
 }
 
 ```

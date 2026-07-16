@@ -9,11 +9,11 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/i
 
 ```ts
 type AccordionSingleProps = AccordionBaseProps & {
-  collapsible?: boolean;
-  defaultValue?: string | null;
-  onValueChange?: (value: string | null) => void;
-  type?: "single";
-  value?: string | null;
-};
+  collapsible?: boolean
+  defaultValue?: string | null
+  onValueChange?: (value: string | null) => void
+  type?: 'single'
+  value?: string | null
+}
 
 ```

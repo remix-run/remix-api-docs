@@ -20,7 +20,7 @@ same storage object.
 ## Signature
 
 ```ts
-function createFsFileStorage(directory: string): FileStorage<LazyFile>;
+function createFsFileStorage(directory: string): FileStorage<LazyFile>
 
 ```
 

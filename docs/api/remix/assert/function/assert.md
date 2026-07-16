@@ -12,8 +12,7 @@ Alias for [`ok`](/api/remix/assert/function/ok/).
 ## Signature
 
 ```ts
-const assert: (value: unknown, message: AssertionMessage) => asserts value;
-
+const assert: (value: unknown, message: AssertionMessage) => asserts value
 ```
 
 ## Parameters

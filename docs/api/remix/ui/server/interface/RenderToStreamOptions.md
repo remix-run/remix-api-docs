@@ -13,12 +13,12 @@ Options for server-side rendering to a byte stream.
 
 ```ts
 interface RenderToStreamOptions {
-  frameSrc?: string | URL;
-  onError?: (error: unknown) => void;
+  frameSrc?: string | URL
+  onError?: (error: unknown) => void
   resolveClientEntry?: (
     entryId: string,
     component: EntryComponent,
-  ) => ResolvedClientEntry | Promise<ResolvedClientEntry>;
+  ) => ResolvedClientEntry | Promise<ResolvedClientEntry>
   resolveFrame?: (
     src: string,
     target?: string,
@@ -26,9 +26,9 @@ interface RenderToStreamOptions {
   ) =>
     | string
     | ReadableStream<Uint8Array<ArrayBufferLike>>
-    | Promise<string | ReadableStream<Uint8Array<ArrayBufferLike>>>;
-  signal?: AbortSignal;
-  topFrameSrc?: string | URL;
+    | Promise<string | ReadableStream<Uint8Array<ArrayBufferLike>>>
+  signal?: AbortSignal
+  topFrameSrc?: string | URL
 }
 
 ```

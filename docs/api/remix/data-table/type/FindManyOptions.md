@@ -13,11 +13,11 @@ Options for loading many rows from a table.
 
 ```ts
 type FindManyOptions<table, relations> = {
-  limit?: number;
-  offset?: number;
-  orderBy?: OrderByInput<table>;
-  where?: SingleTableWhere<table>;
-  with?: relations;
-};
+  limit?: number
+  offset?: number
+  orderBy?: OrderByInput<table>
+  where?: SingleTableWhere<table>
+  with?: relations
+}
 
 ```

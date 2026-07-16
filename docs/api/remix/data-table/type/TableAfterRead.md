@@ -12,8 +12,6 @@ Hook invoked after a row is read.
 ## Signature
 
 ```ts
-type TableAfterRead<row> = (
-  context: TableAfterReadContext<row>,
-) => TableAfterReadResult<row>;
+type TableAfterRead<row> = (context: TableAfterReadContext<row>) => TableAfterReadResult<row>
 
 ```

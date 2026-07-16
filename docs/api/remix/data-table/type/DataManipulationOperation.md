@@ -21,6 +21,6 @@ type DataManipulationOperation =
   | UpdateOperation
   | DeleteOperation
   | UpsertOperation
-  | RawOperation;
+  | RawOperation
 
 ```

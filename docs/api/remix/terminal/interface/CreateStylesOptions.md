@@ -13,9 +13,9 @@ Options used to create terminal style helpers.
 
 ```ts
 interface CreateStylesOptions {
-  colors?: boolean;
-  env?: TerminalEnvironment;
-  stream?: { isTTY?: boolean };
+  colors?: boolean
+  env?: TerminalEnvironment
+  stream?: { isTTY?: boolean }
 }
 
 ```

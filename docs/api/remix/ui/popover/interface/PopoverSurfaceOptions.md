@@ -9,11 +9,11 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/popover/ind
 
 ```ts
 interface PopoverSurfaceOptions {
-  closeOnAnchorClick?: boolean;
-  onHide: (request?: PopoverHideRequest) => void;
-  open: boolean;
-  restoreFocusOnHide?: boolean;
-  stopOutsideClickPropagation?: boolean;
+  closeOnAnchorClick?: boolean
+  onHide: (request?: PopoverHideRequest) => void
+  open: boolean
+  restoreFocusOnHide?: boolean
+  stopOutsideClickPropagation?: boolean
 }
 
 ```

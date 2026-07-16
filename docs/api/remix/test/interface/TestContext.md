@@ -14,11 +14,11 @@ passed as the first argument to the [`test`](/api/remix/test/function/test/)/[`i
 
 ```ts
 interface TestContext {
-  mock: { fn: any; method: any };
-  signal: AbortSignal;
-  after(fn: () => void): void;
-  serve(server: TestServer): Promise<Page>;
-  useFakeTimers(): FakeTimers;
+  mock: { fn: any; method: any }
+  signal: AbortSignal
+  after(fn: () => void): void
+  serve(server: TestServer): Promise<Page>
+  useFakeTimers(): FakeTimers
 }
 
 ```

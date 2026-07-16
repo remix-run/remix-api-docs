@@ -15,7 +15,7 @@ Renders a node tree to a streaming HTML response body.
 function renderToStream(
   node: RemixNode,
   options: RenderToStreamOptions,
-): ReadableStream<Uint8Array<ArrayBufferLike>>;
+): ReadableStream<Uint8Array<ArrayBufferLike>>
 
 ```
 

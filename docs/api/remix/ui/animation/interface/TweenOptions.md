@@ -13,10 +13,10 @@ Options for generating tweened values over time.
 
 ```ts
 interface TweenOptions {
-  curve: BezierCurve;
-  duration: number;
-  from: number;
-  to: number;
+  curve: BezierCurve
+  duration: number
+  from: number
+  to: number
 }
 
 ```

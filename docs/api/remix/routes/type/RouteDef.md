@@ -16,6 +16,6 @@ method and pattern.
 type RouteDef<source> =
   | source
   | RoutePattern<source>
-  | { method?: RequestMethod; pattern: source | RoutePattern<source> };
+  | { method?: RequestMethod; pattern: source | RoutePattern<source> }
 
 ```

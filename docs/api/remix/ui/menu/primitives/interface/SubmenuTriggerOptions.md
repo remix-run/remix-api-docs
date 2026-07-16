@@ -9,10 +9,10 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/primit
 
 ```ts
 interface SubmenuTriggerOptions {
-  disabled?: boolean;
-  label?: string;
-  searchValue?: SearchValue;
-  value?: string;
+  disabled?: boolean
+  label?: string
+  searchValue?: SearchValue
+  value?: string
 }
 
 ```

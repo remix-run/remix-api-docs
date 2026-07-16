@@ -12,6 +12,6 @@ Content that can be rendered into a frame.
 ## Signature
 
 ```ts
-type FrameContent = ReadableStream<Uint8Array> | string | RemixNode;
+type FrameContent = ReadableStream<Uint8Array> | string | RemixNode
 
 ```

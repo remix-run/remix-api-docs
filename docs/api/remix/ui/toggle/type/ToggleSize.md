@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/toggle/inde
 ## Signature
 
 ```ts
-type ToggleSize = "md" | "lg";
+type ToggleSize = 'md' | 'lg'
 
 ```

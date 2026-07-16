@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/select/prim
 ## Signature
 
 ```ts
-type SelectOptionProps = Props<"div"> & Omit<ListboxOption, "id">;
+type SelectOptionProps = Props<'div'> & Omit<ListboxOption, 'id'>
 
 ```

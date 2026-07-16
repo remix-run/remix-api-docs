@@ -14,7 +14,7 @@ by default to only apply compression to appropriate media types.
 ## Signature
 
 ```ts
-function compression(options: CompressionOptions): Middleware;
+function compression(options: CompressionOptions): Middleware
 
 ```
 
@@ -23,7 +23,7 @@ function compression(options: CompressionOptions): Middleware;
 ```ts
 let router = createRouter({
   middleware: [compression()],
-});
+})
 
 ```
 

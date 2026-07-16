@@ -13,7 +13,7 @@ Input stream shape used for terminal interactivity detection.
 
 ```ts
 interface TerminalInputStream {
-  isTTY?: boolean;
+  isTTY?: boolean
 }
 
 ```

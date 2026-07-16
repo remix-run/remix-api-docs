@@ -13,17 +13,17 @@ Configuration for an S3-backed `FileStorage` implementation.
 
 ```ts
 interface S3FileStorageOptions {
-  accessKeyId: string;
-  bucket: string;
-  endpoint?: string;
+  accessKeyId: string
+  bucket: string
+  endpoint?: string
   fetch?: {
-    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
-    (input: string | Request | URL, init?: RequestInit): Promise<Response>;
-  };
-  forcePathStyle?: boolean;
-  region: string;
-  secretAccessKey: string;
-  sessionToken?: string;
+    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>
+    (input: string | Request | URL, init?: RequestInit): Promise<Response>
+  }
+  forcePathStyle?: boolean
+  region: string
+  secretAccessKey: string
+  sessionToken?: string
 }
 
 ```

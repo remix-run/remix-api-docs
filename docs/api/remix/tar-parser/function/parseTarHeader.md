@@ -12,10 +12,7 @@ Parses a tar header block.
 ## Signature
 
 ```ts
-function parseTarHeader(
-  block: Uint8Array,
-  options: ParseTarHeaderOptions,
-): TarHeader;
+function parseTarHeader(block: Uint8Array, options: ParseTarHeaderOptions): TarHeader
 
 ```
 

@@ -12,7 +12,7 @@ Comparator function for sorting matches from least specific to most specific.
 ## Signature
 
 ```ts
-function ascending(a: Match, b: Match): number;
+function ascending(a: Match, b: Match): number
 
 ```
 

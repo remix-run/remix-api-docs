@@ -12,9 +12,7 @@ Create a schema that validates an array by validating each element with `element
 ## Signature
 
 ```ts
-function array<input, output>(
-  elementSchema: Schema<input, output>,
-): Schema<unknown, output[]>;
+function array<input, output>(elementSchema: Schema<input, output>): Schema<unknown, output[]>
 
 ```
 

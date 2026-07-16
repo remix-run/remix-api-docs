@@ -16,7 +16,7 @@ This is useful for recursive schemas without circular module references.
 ```ts
 function lazy<schema extends Schema<any, any>>(
   getSchema: () => schema,
-): Schema<InferInput<schema>, InferOutput<schema>>;
+): Schema<InferInput<schema>, InferOutput<schema>>
 
 ```
 

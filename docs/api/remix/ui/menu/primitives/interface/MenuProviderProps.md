@@ -9,8 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/primit
 
 ```ts
 interface MenuProviderProps {
-  children?: RemixNode;
-  label?: string;
+  children?: RemixNode
+  label?: string
 }
 
 ```

@@ -12,10 +12,7 @@ Creates a virtual root for a host container element.
 ## Signature
 
 ```ts
-function createRoot(
-  container: HTMLElement,
-  options: VirtualRootOptions,
-): VirtualRoot;
+function createRoot(container: HTMLElement, options: VirtualRootOptions): VirtualRoot
 
 ```
 

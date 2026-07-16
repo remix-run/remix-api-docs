@@ -13,7 +13,7 @@ Writes a log message.
 
 ```ts
 interface LoggerFunction {
-  (message: string): void;
+  (message: string): void
 }
 
 ```

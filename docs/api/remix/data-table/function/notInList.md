@@ -15,7 +15,7 @@ Builds a `NOT IN` predicate.
 function notInList<column extends string | ColumnReferenceLike>(
   column: column,
   values: readonly unknown[],
-): Predicate<PredicateColumn<column>>;
+): Predicate<PredicateColumn<column>>
 
 ```
 

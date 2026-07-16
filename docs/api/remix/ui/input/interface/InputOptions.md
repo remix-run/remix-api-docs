@@ -9,7 +9,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/input/index
 
 ```ts
 interface InputOptions {
-  size?: InputSize;
+  size?: InputSize
 }
 
 ```

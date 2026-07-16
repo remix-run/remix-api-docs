@@ -13,12 +13,12 @@ Options used to create a terminal abstraction.
 
 ```ts
 interface TerminalOptions {
-  colors?: boolean;
-  env?: TerminalEnvironment;
-  stderr?: TerminalOutputStream;
-  stdin?: TerminalInputStream;
-  stdout?: TerminalOutputStream;
-  stream?: { isTTY?: boolean };
+  colors?: boolean
+  env?: TerminalEnvironment
+  stderr?: TerminalOutputStream
+  stdin?: TerminalInputStream
+  stdout?: TerminalOutputStream
+  stream?: { isTTY?: boolean }
 }
 
 ```

@@ -12,6 +12,6 @@ Sort direction accepted by `orderBy`.
 ## Signature
 
 ```ts
-type OrderDirection = "asc" | "desc";
+type OrderDirection = 'asc' | 'desc'
 
 ```

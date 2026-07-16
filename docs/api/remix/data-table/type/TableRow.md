@@ -12,6 +12,6 @@ Row shape produced by a concrete table.
 ## Signature
 
 ```ts
-type TableRow<table> = TableRowFromColumns<TableColumns<table>>;
+type TableRow<table> = TableRowFromColumns<TableColumns<table>>
 
 ```

@@ -12,7 +12,7 @@ Creates a Remix virtual element.
 ## Signature
 
 ```ts
-function jsx(type: ElementType, props: ElementProps, key: string): RemixElement;
+function jsx(type: ElementType, props: ElementProps, key: string): RemixElement
 
 ```
 

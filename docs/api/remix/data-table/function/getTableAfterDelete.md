@@ -12,9 +12,7 @@ Returns a table's optional after-delete lifecycle callback.
 ## Signature
 
 ```ts
-function getTableAfterDelete<table extends AnyTable>(
-  table: table,
-): TableAfterDelete | undefined;
+function getTableAfterDelete<table extends AnyTable>(table: table): TableAfterDelete | undefined
 
 ```
 

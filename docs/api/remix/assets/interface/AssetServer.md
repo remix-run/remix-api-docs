@@ -14,13 +14,10 @@ Construct with [`createAssetServer`](/api/remix/assets/function/createAssetServe
 
 ```ts
 interface AssetServer<transforms> {
-  close(): Promise<void>;
-  fetch(request: Request): Promise<Response | null>;
-  getHref(
-    filePath: string,
-    options: AssetServerGetHrefOptions<transforms>,
-  ): Promise<string>;
-  getPreloads(filePath: string | readonly string[]): Promise<string[]>;
+  close(): Promise<void>
+  fetch(request: Request): Promise<Response | null>
+  getHref(filePath: string, options: AssetServerGetHrefOptions<transforms>): Promise<string>
+  getPreloads(filePath: string | readonly string[]): Promise<string[]>
 }
 
 ```

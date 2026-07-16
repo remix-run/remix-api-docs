@@ -13,9 +13,9 @@ Options for opening a lazy file from the local filesystem.
 
 ```ts
 interface OpenLazyFileOptions {
-  lastModified?: number;
-  name?: string;
-  type?: string;
+  lastModified?: number
+  name?: string
+  type?: string
 }
 
 ```

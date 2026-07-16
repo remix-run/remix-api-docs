@@ -13,10 +13,10 @@ Profile fields returned by the built-in Facebook auth provider.
 
 ```ts
 interface FacebookAuthProfile {
-  email?: string;
-  id: string;
-  name?: string;
-  picture?: FacebookAuthProviderPicture;
+  email?: string
+  id: string
+  name?: string
+  picture?: FacebookAuthProviderPicture
 }
 
 ```

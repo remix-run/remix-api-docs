@@ -12,6 +12,5 @@ Applies generated class names for CSS object styles.
 ## Signature
 
 ```ts
-const css: MixinFactory<Element, [styles: CSSProps], ElementProps>;
-
+const css: MixinFactory<Element, [styles: CSSProps], ElementProps>
 ```

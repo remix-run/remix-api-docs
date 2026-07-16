@@ -1,6 +1,6 @@
 ---
 title: RouteInstaller
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L190
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L193
 ---
 
 # RouteInstaller
@@ -9,7 +9,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/l
 
 ```ts
 interface RouteInstaller {
-  (router: RouteBuilder<context>): void;
+  (router: RouteBuilder<context>): void
 }
 
 ```

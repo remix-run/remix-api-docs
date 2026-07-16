@@ -13,20 +13,20 @@ Options used to construct an [`AssetServer`](/api/remix/assets/interface/AssetSe
 
 ```ts
 interface AssetServerOptions<transforms> {
-  allow: readonly string[];
-  basePath: string;
-  deny?: readonly string[];
-  fileMap: Readonly<Record<string, string>>;
-  files?: AssetServerFilesOptions<transforms>;
-  fingerprint?: FingerprintOptions;
-  minify?: boolean;
-  onError?: (error: unknown) => void | Response | Promise<void | Response>;
-  rootDir?: string;
-  scripts?: AssetServerScriptOptions;
-  sourceMaps?: AssetSourceMaps;
-  sourceMapSourcePaths?: AssetSourceMapSourcePaths;
-  target?: AssetTarget;
-  watch?: boolean | AssetServerWatchOptions;
+  allow: readonly string[]
+  basePath: string
+  deny?: readonly string[]
+  fileMap: Readonly<Record<string, string>>
+  files?: AssetServerFilesOptions<transforms>
+  fingerprint?: FingerprintOptions
+  minify?: boolean
+  onError?: (error: unknown) => void | Response | Promise<void | Response>
+  rootDir?: string
+  scripts?: AssetServerScriptOptions
+  sourceMaps?: AssetSourceMaps
+  sourceMapSourcePaths?: AssetSourceMapSourcePaths
+  target?: AssetTarget
+  watch?: boolean | AssetServerWatchOptions
 }
 
 ```

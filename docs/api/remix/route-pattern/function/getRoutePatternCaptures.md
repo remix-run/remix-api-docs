@@ -13,9 +13,7 @@ pattern internals.
 ## Signature
 
 ```ts
-function getRoutePatternCaptures(
-  pattern: RoutePattern,
-): readonly RoutePatternCapture[];
+function getRoutePatternCaptures(pattern: RoutePattern): readonly RoutePatternCapture[]
 
 ```
 

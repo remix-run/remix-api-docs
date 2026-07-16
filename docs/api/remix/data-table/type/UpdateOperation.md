@@ -13,11 +13,11 @@ Canonical update statement shape consumed by adapters.
 
 ```ts
 type UpdateOperation<table> = {
-  changes: Record<string, unknown>;
-  kind: "update";
-  returning?: ReturningSelection;
-  table: table;
-  where: Predicate[];
-};
+  changes: Record<string, unknown>
+  kind: 'update'
+  returning?: ReturningSelection
+  table: table
+  where: Predicate[]
+}
 
 ```

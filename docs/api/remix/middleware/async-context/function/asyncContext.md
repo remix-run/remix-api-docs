@@ -13,7 +13,7 @@ to all functions in the same async execution context.
 ## Signature
 
 ```ts
-function asyncContext(): Middleware;
+function asyncContext(): Middleware
 
 ```
 

@@ -13,14 +13,14 @@ Runtime handle passed to component setup functions.
 
 ```ts
 interface Handle<Props, ContextValue> {
-  context: Context<ContextValue>;
-  frame: FrameHandle;
-  frames: { top: FrameHandle; get: any };
-  id: string;
-  props: Props;
-  signal: AbortSignal;
-  queueTask(task: Task): void;
-  update(): Promise<AbortSignal>;
+  context: Context<ContextValue>
+  frame: FrameHandle
+  frames: { top: FrameHandle; get: any }
+  id: string
+  props: Props
+  signal: AbortSignal
+  queueTask(task: Task): void
+  update(): Promise<AbortSignal>
 }
 
 ```

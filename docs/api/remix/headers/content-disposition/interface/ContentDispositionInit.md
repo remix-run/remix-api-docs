@@ -13,10 +13,10 @@ Initializer for a `Content-Disposition` header value.
 
 ```ts
 interface ContentDispositionInit {
-  filename?: string;
-  filenameSplat?: string;
-  name?: string;
-  type?: string;
+  filename?: string
+  filenameSplat?: string
+  name?: string
+  type?: string
 }
 
 ```

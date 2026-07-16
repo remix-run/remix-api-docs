@@ -13,7 +13,7 @@ Nested picture payload returned by Facebook profile responses.
 
 ```ts
 interface FacebookAuthProviderPicture {
-  data: { url: string };
+  data: { url: string }
 }
 
 ```

@@ -16,17 +16,17 @@ once the run finishes.
 ## Signature
 
 ```ts
-function runRemixTest(options: RunRemixTestOptions): Promise<number>;
+function runRemixTest(options: RunRemixTestOptions): Promise<number>
 
 ```
 
 ## Example
 
 ```ts
-import { runRemixTest } from "@remix-run/test/cli";
+import { runRemixTest } from '@remix-run/test/cli'
 
-let exitCode = await runRemixTest();
-process.exit(exitCode);
+let exitCode = await runRemixTest()
+process.exit(exitCode)
 
 ```
 

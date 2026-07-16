@@ -8,7 +8,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/p
 ## Signature
 
 ```ts
-type AccordionItemProps = Omit<Props<"div">, "children"> &
-  AccordionItemOptions & { children?: RemixNode };
+type AccordionItemProps = Omit<Props<'div'>, 'children'> &
+  AccordionItemOptions & { children?: RemixNode }
 
 ```

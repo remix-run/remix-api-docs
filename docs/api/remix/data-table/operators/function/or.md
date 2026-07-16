@@ -12,9 +12,7 @@ Combines predicates with logical `OR`.
 ## Signature
 
 ```ts
-function or<column extends string>(
-  predicates: Predicate<column>[],
-): Predicate<column>;
+function or<column extends string>(predicates: Predicate<column>[]): Predicate<column>
 
 ```
 

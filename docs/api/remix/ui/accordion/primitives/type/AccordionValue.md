@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/p
 ## Signature
 
 ```ts
-type AccordionValue = string | null | string[];
+type AccordionValue = string | null | string[]
 
 ```

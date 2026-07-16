@@ -12,7 +12,7 @@ Returns the length of the byte range in a buffer of the given `size`.
 ## Signature
 
 ```ts
-function getByteLength(range: ByteRange, size: number): number;
+function getByteLength(range: ByteRange, size: number): number
 
 ```
 

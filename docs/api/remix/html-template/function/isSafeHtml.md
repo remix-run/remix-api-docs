@@ -12,7 +12,7 @@ Checks if a value is a [`SafeHtml`](/api/remix/html-template/type/SafeHtml/) str
 ## Signature
 
 ```ts
-function isSafeHtml(value: unknown): value is SafeHtml;
+function isSafeHtml(value: unknown): value is SafeHtml
 
 ```
 

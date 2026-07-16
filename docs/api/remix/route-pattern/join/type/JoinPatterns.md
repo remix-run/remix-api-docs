@@ -12,8 +12,6 @@ Join two pattern source strings together at the type level.
 ## Signature
 
 ```ts
-type JoinPatterns<A, B> = string extends A | B
-  ? string
-  : _JoinPatterns<Parse<A>, Parse<B>>;
+type JoinPatterns<A, B> = string extends A | B ? string : _JoinPatterns<Parse<A>, Parse<B>>
 
 ```

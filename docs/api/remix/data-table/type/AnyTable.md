@@ -19,18 +19,18 @@ type AnyTable = TableMetadataLike<
   TimestampConfig | null
 > & {
   [tableMetadataKey]: {
-    afterDelete?: unknown;
-    afterRead?: unknown;
-    afterWrite?: unknown;
-    beforeDelete?: unknown;
-    beforeWrite?: unknown;
-    columnDefinitions: Record<string, ColumnDefinition>;
-    columns: TableColumnsDefinition;
-    name: string;
-    primaryKey: readonly string[];
-    timestamps: TimestampConfig | null;
-    validate?: TableValidate<Record<string, unknown>>;
-  };
-} & Record<string, unknown>;
+    afterDelete?: unknown
+    afterRead?: unknown
+    afterWrite?: unknown
+    beforeDelete?: unknown
+    beforeWrite?: unknown
+    columnDefinitions: Record<string, ColumnDefinition>
+    columns: TableColumnsDefinition
+    name: string
+    primaryKey: readonly string[]
+    timestamps: TimestampConfig | null
+    validate?: TableValidate<Record<string, unknown>>
+  }
+} & Record<string, unknown>
 
 ```

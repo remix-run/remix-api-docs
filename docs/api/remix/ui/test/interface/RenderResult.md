@@ -13,12 +13,12 @@ Result returned by [`render`](/api/remix/ui/test/function/render/).
 
 ```ts
 interface RenderResult {
-  $: (selector: string) => HTMLElement | null;
-  $$: (selector: string) => NodeListOf<HTMLElement>;
-  act: (fn: () => unknown) => Promise<void>;
-  cleanup: () => void;
-  container: HTMLElement;
-  root: VirtualRoot;
+  $: (selector: string) => HTMLElement | null
+  $$: (selector: string) => NodeListOf<HTMLElement>
+  act: (fn: () => unknown) => Promise<void>
+  cleanup: () => void
+  container: HTMLElement
+  root: VirtualRoot
 }
 
 ```

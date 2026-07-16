@@ -13,8 +13,8 @@ Stable account identifier for a provider-backed identity.
 
 ```ts
 interface OAuthAccount<provider> {
-  provider: provider;
-  providerAccountId: string;
+  provider: provider
+  providerAccountId: string
 }
 
 ```

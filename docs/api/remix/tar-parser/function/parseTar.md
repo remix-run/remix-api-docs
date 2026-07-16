@@ -20,16 +20,13 @@ await parseTar(archive, (entry) => {
 ## Signature
 
 ```ts
-function parseTar(
-  archive: TarArchiveSource,
-  handler: TarEntryHandler,
-): Promise<void>;
+function parseTar(archive: TarArchiveSource, handler: TarEntryHandler): Promise<void>
 
 function parseTar(
   archive: TarArchiveSource,
   options: ParseTarHeaderOptions,
   handler: TarEntryHandler,
-): Promise<void>;
+): Promise<void>
 
 ```
 

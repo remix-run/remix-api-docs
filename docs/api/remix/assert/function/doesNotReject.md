@@ -16,14 +16,14 @@ function doesNotReject(
   fn: Promise<unknown> | (() => Promise<unknown>),
   expectedErrorOrMessage: unknown,
   message: AssertionMessage,
-): Promise<void>;
+): Promise<void>
 
 ```
 
 ## Example
 
 ```ts
-await assert.doesNotReject(() => fetch("/healthy"));
+await assert.doesNotReject(() => fetch('/healthy'))
 
 ```
 

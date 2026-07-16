@@ -13,8 +13,8 @@ Completed result returned from a successful refresh-token exchange.
 
 ```ts
 interface RefreshedExternalAuthResult<provider, tokens> {
-  provider: provider;
-  tokens: tokens;
+  provider: provider
+  tokens: tokens
 }
 
 ```

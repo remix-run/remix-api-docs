@@ -13,7 +13,7 @@ Passing to `.sort()` will sort matches from least specific to most specific.
 ## Signature
 
 ```ts
-function compare(a: Match, b: Match): -1 | 0 | 1;
+function compare(a: Match, b: Match): -1 | 0 | 1
 
 ```
 

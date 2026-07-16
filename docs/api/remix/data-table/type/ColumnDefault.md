@@ -13,8 +13,8 @@ Default value definition for a column.
 
 ```ts
 type ColumnDefault =
-  | { kind: "literal"; value: unknown }
-  | { kind: "now" }
-  | { expression: string; kind: "sql" };
+  | { kind: 'literal'; value: unknown }
+  | { kind: 'now' }
+  | { expression: string; kind: 'sql' }
 
 ```

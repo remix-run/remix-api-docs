@@ -16,7 +16,7 @@ When `abortEarly` is disabled (default), issues are collected from all failing v
 ```ts
 function union<schemas extends Schema<any, any>[]>(
   schemas: schemas,
-): Schema<unknown, InferOutput<schemas[number]>>;
+): Schema<unknown, InferOutput<schemas[number]>>
 
 ```
 

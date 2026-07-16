@@ -12,7 +12,7 @@ Built-in component used to group children without adding a host element.
 ## Signature
 
 ```ts
-function Fragment(handle: Handle<FragmentProps>): RenderFn;
+function Fragment(handle: Handle<FragmentProps>): RenderFn
 
 ```
 

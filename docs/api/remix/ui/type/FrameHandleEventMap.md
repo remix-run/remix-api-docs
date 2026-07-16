@@ -13,8 +13,8 @@ Events emitted by frame handles during reloads.
 
 ```ts
 type FrameHandleEventMap = {
-  reloadComplete: Event;
-  reloadStart: Event;
-};
+  reloadComplete: Event
+  reloadStart: Event
+}
 
 ```

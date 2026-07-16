@@ -12,7 +12,7 @@ Require a string to be at least `length` characters long.
 ## Signature
 
 ```ts
-function minLength(length: number): Check<string>;
+function minLength(length: number): Check<string>
 
 ```
 

@@ -14,10 +14,10 @@ describing UI. Carries a `$rmx` brand used to distinguish it from plain objects 
 
 ```ts
 interface RemixElement {
-  $rmx: true;
-  key?: any;
-  props: ElementProps;
-  type: ElementType;
+  $rmx: true
+  key?: any
+  props: ElementProps
+  type: ElementType
 }
 
 ```

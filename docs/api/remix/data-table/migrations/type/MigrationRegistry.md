@@ -13,8 +13,8 @@ Runtime-agnostic migration registry abstraction.
 
 ```ts
 type MigrationRegistry = {
-  list(): MigrationDescriptor[];
-  register(migration: MigrationDescriptor): void;
-};
+  list(): MigrationDescriptor[]
+  register(migration: MigrationDescriptor): void
+}
 
 ```

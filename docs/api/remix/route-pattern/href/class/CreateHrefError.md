@@ -13,20 +13,20 @@ Error thrown when a route pattern cannot generate an href from the supplied args
 
 ```ts
 class CreateHrefError {
-  constructor(details: CreateHrefErrorDetails): CreateHrefError;
+  constructor(details: CreateHrefErrorDetails): CreateHrefError
 
   // Properties
-  cause?: unknown;
-  details: CreateHrefErrorDetails;
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  details: CreateHrefErrorDetails
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  message(details: CreateHrefErrorDetails): string;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  message(details: CreateHrefErrorDetails): string
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

@@ -12,18 +12,15 @@ Converts a `Headers` object to a raw HTTP header string.
 ## Signature
 
 ```ts
-function stringify(headers: Headers): string;
+function stringify(headers: Headers): string
 
 ```
 
 ## Example
 
 ```ts
-let headers = new Headers({
-  "Content-Type": "text/html",
-  "Cache-Control": "no-cache",
-});
-stringify(headers); // 'Content-Type: text/html\r\nCache-Control: no-cache'
+let headers = new Headers({ 'Content-Type': 'text/html', 'Cache-Control': 'no-cache' })
+stringify(headers) // 'Content-Type: text/html\r\nCache-Control: no-cache'
 
 ```
 

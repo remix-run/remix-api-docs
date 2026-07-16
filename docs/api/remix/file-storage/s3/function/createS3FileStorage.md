@@ -15,7 +15,7 @@ overriding the `endpoint` option.
 ## Signature
 
 ```ts
-function createS3FileStorage(options: S3FileStorageOptions): FileStorage<File>;
+function createS3FileStorage(options: S3FileStorageOptions): FileStorage<File>
 
 ```
 

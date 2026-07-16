@@ -1,6 +1,6 @@
 ---
 title: Router
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L232
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L235
 ---
 
 # Router
@@ -13,15 +13,15 @@ A router maps incoming requests to request handlers.
 
 ```ts
 interface Router<context> {
-  [routeBuilderContext]?: context;
-  delete: VerbMethod<"DELETE", context>;
-  get: VerbMethod<"GET", context>;
-  head: VerbMethod<"HEAD", context>;
-  options: VerbMethod<"OPTIONS", context>;
-  patch: VerbMethod<"PATCH", context>;
-  post: VerbMethod<"POST", context>;
-  put: VerbMethod<"PUT", context>;
-  fetch(input: string | Request | URL, init: RequestInit): Promise<Response>;
+  [routeBuilderContext]?: context
+  delete: VerbMethod<'DELETE', context>
+  get: VerbMethod<'GET', context>
+  head: VerbMethod<'HEAD', context>
+  options: VerbMethod<'OPTIONS', context>
+  patch: VerbMethod<'PATCH', context>
+  post: VerbMethod<'POST', context>
+  put: VerbMethod<'PUT', context>
+  fetch(input: string | Request | URL, init: RequestInit): Promise<Response>
   map<
     target extends MapTarget,
     handlerContext extends AnyContext,
@@ -30,13 +30,13 @@ interface Router<context> {
     target: target,
     handler: MapHandler<target, handlerContext, middleware> &
       ContextCompatibility<context, handlerContext, middleware>,
-  ): void;
+  ): void
   mount<pattern extends string>(
     prefix: pattern | RoutePattern<pattern>,
     installer: RouteInstaller<ContextWithParams<context, MatchParams<pattern>>>,
-  ): void;
+  ): void
   route<
-    method extends RequestMethod | "ANY",
+    method extends RequestMethod | 'ANY',
     pattern extends string,
     actionContext extends AnyContext,
     middleware extends readonly AnyMiddleware[],
@@ -45,7 +45,7 @@ interface Router<context> {
     pattern: RouteTarget<pattern, method>,
     action: Action<RouteTarget<pattern, method>, actionContext, middleware> &
       ContextCompatibility<context, actionContext, middleware>,
-  ): void;
+  ): void
 }
 
 ```

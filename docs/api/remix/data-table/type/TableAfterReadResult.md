@@ -12,6 +12,6 @@ Result returned from the `afterRead` hook.
 ## Signature
 
 ```ts
-type TableAfterReadResult<row> = { value: Partial<row> } | ValidationFailure;
+type TableAfterReadResult<row> = { value: Partial<row> } | ValidationFailure
 
 ```

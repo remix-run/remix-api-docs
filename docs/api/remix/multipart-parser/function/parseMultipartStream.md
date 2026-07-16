@@ -19,7 +19,7 @@ import('./multipart-request.ts').parseMultipartRequest instead.
 function parseMultipartStream(
   stream: ReadableStream<Uint8Array<ArrayBufferLike>>,
   options: ParseMultipartOptions,
-): AsyncGenerator<MultipartPart, void, unknown>;
+): AsyncGenerator<MultipartPart, void, unknown>
 
 ```
 

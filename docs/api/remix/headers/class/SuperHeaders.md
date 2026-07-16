@@ -13,106 +13,103 @@ An enhanced JavaScript `Headers` interface with lazy, type-safe property accesso
 
 ```ts
 class SuperHeaders {
-  constructor(init: SuperHeadersInit): SuperHeaders;
+  constructor(init: SuperHeadersInit): SuperHeaders
 
   // Accessors
-  get accept(): Accept;
-  get acceptCharset(): string | null;
-  get acceptEncoding(): AcceptEncoding;
-  get acceptLanguage(): AcceptLanguage;
-  get acceptPatch(): string | null;
-  get acceptPost(): string | null;
-  get acceptRanges(): string | null;
-  get accessControlAllowCredentials(): string | null;
-  get accessControlAllowHeaders(): string | null;
-  get accessControlAllowMethods(): string | null;
-  get accessControlAllowOrigin(): string | null;
-  get accessControlExposeHeaders(): string | null;
-  get accessControlMaxAge(): number | null;
-  get accessControlRequestHeaders(): string | null;
-  get accessControlRequestMethod(): string | null;
-  get age(): number | null;
-  get allow(): string | null;
-  get authorization(): string | null;
-  get cacheControl(): CacheControl;
-  get connection(): string | null;
-  get contentDisposition(): ContentDisposition;
-  get contentEncoding(): string | null;
-  get contentLanguage(): string | null;
-  get contentLength(): number | null;
-  get contentLocation(): string | null;
-  get contentRange(): ContentRange;
-  get contentSecurityPolicy(): string | null;
-  get contentSecurityPolicyReportOnly(): string | null;
-  get contentType(): ContentType;
-  get cookie(): Cookie;
-  get crossOriginEmbedderPolicy(): string | null;
-  get crossOriginEmbedderPolicyReportOnly(): string | null;
-  get crossOriginOpenerPolicy(): string | null;
-  get crossOriginOpenerPolicyReportOnly(): string | null;
-  get crossOriginResourcePolicy(): string | null;
-  get date(): Date | null;
-  get etag(): string | null;
-  get expect(): string | null;
-  get expires(): Date | null;
-  get forwarded(): string | null;
-  get from(): string | null;
-  get host(): string | null;
-  get idempotencyKey(): string | null;
-  get ifMatch(): IfMatch;
-  get ifModifiedSince(): Date | null;
-  get ifNoneMatch(): IfNoneMatch;
-  get ifRange(): IfRange;
-  get ifUnmodifiedSince(): Date | null;
-  get keepAlive(): string | null;
-  get lastModified(): Date | null;
-  get link(): string | null;
-  get location(): string | null;
-  get maxForwards(): number | null;
-  get origin(): string | null;
-  get permissionsPolicy(): string | null;
-  get pragma(): string | null;
-  get prefer(): string | null;
-  get preferenceApplied(): string | null;
-  get range(): Range;
-  get referer(): string | null;
-  get referrerPolicy(): string | null;
-  get refresh(): string | null;
-  get retryAfter(): string | null;
-  get server(): string | null;
-  get setCookie(): SetCookieList;
-  get strictTransportSecurity(): string | null;
-  get traceparent(): string | null;
-  get tracestate(): string | null;
-  get upgradeInsecureRequests(): number | null;
-  get userAgent(): string | null;
-  get vary(): Vary;
-  get via(): string | null;
-  get wwwAuthenticate(): string | null;
-  get xContentTypeOptions(): string | null;
-  get xForwardedFor(): string | null;
-  get xForwardedHost(): string | null;
-  get xForwardedProto(): string | null;
-  get xFrameOptions(): string | null;
-  get xPoweredBy(): string | null;
-  get xRobotsTag(): string | null;
+  get accept(): Accept
+  get acceptCharset(): string | null
+  get acceptEncoding(): AcceptEncoding
+  get acceptLanguage(): AcceptLanguage
+  get acceptPatch(): string | null
+  get acceptPost(): string | null
+  get acceptRanges(): string | null
+  get accessControlAllowCredentials(): string | null
+  get accessControlAllowHeaders(): string | null
+  get accessControlAllowMethods(): string | null
+  get accessControlAllowOrigin(): string | null
+  get accessControlExposeHeaders(): string | null
+  get accessControlMaxAge(): number | null
+  get accessControlRequestHeaders(): string | null
+  get accessControlRequestMethod(): string | null
+  get age(): number | null
+  get allow(): string | null
+  get authorization(): string | null
+  get cacheControl(): CacheControl
+  get connection(): string | null
+  get contentDisposition(): ContentDisposition
+  get contentEncoding(): string | null
+  get contentLanguage(): string | null
+  get contentLength(): number | null
+  get contentLocation(): string | null
+  get contentRange(): ContentRange
+  get contentSecurityPolicy(): string | null
+  get contentSecurityPolicyReportOnly(): string | null
+  get contentType(): ContentType
+  get cookie(): Cookie
+  get crossOriginEmbedderPolicy(): string | null
+  get crossOriginEmbedderPolicyReportOnly(): string | null
+  get crossOriginOpenerPolicy(): string | null
+  get crossOriginOpenerPolicyReportOnly(): string | null
+  get crossOriginResourcePolicy(): string | null
+  get date(): Date | null
+  get etag(): string | null
+  get expect(): string | null
+  get expires(): Date | null
+  get forwarded(): string | null
+  get from(): string | null
+  get host(): string | null
+  get idempotencyKey(): string | null
+  get ifMatch(): IfMatch
+  get ifModifiedSince(): Date | null
+  get ifNoneMatch(): IfNoneMatch
+  get ifRange(): IfRange
+  get ifUnmodifiedSince(): Date | null
+  get keepAlive(): string | null
+  get lastModified(): Date | null
+  get link(): string | null
+  get location(): string | null
+  get maxForwards(): number | null
+  get origin(): string | null
+  get permissionsPolicy(): string | null
+  get pragma(): string | null
+  get prefer(): string | null
+  get preferenceApplied(): string | null
+  get range(): Range
+  get referer(): string | null
+  get referrerPolicy(): string | null
+  get refresh(): string | null
+  get retryAfter(): string | null
+  get server(): string | null
+  get setCookie(): SetCookieList
+  get strictTransportSecurity(): string | null
+  get traceparent(): string | null
+  get tracestate(): string | null
+  get upgradeInsecureRequests(): number | null
+  get userAgent(): string | null
+  get vary(): Vary
+  get via(): string | null
+  get wwwAuthenticate(): string | null
+  get xContentTypeOptions(): string | null
+  get xForwardedFor(): string | null
+  get xForwardedHost(): string | null
+  get xForwardedProto(): string | null
+  get xFrameOptions(): string | null
+  get xPoweredBy(): string | null
+  get xRobotsTag(): string | null
 
   // Methods
-  [iterator](): HeadersIterator<[string, string]>;
-  append(name: string, value: string): void;
-  apply(init: SuperHeadersInit): this;
-  delete(name: string): void;
-  entries(): HeadersIterator<[string, string]>;
-  forEach(
-    callbackfn: (value: string, key: string, parent: Headers) => void,
-    thisArg: any,
-  ): void;
-  get(name: string): string | null;
-  getSetCookie(): string[];
-  has(name: string): boolean;
-  keys(): HeadersIterator<string>;
-  set(name: string, value: string): void;
-  values(): HeadersIterator<string>;
+  [iterator](): HeadersIterator<[string, string]>
+  append(name: string, value: string): void
+  apply(init: SuperHeadersInit): this
+  delete(name: string): void
+  entries(): HeadersIterator<[string, string]>
+  forEach(callbackfn: (value: string, key: string, parent: Headers) => void, thisArg: any): void
+  get(name: string): string | null
+  getSetCookie(): string[]
+  has(name: string): boolean
+  keys(): HeadersIterator<string>
+  set(name: string, value: string): void
+  values(): HeadersIterator<string>
 }
 
 ```

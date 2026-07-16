@@ -13,8 +13,8 @@ Single validation issue reported by table hooks.
 
 ```ts
 type ValidationIssue = {
-  message: string;
-  path?: (string | number)[];
-};
+  message: string
+  path?: (string | number)[]
+}
 
 ```

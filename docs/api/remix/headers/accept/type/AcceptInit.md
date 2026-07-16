@@ -12,6 +12,6 @@ Initializer for an [`Accept`](/api/remix/headers/accept/class/Accept/) header va
 ## Signature
 
 ```ts
-type AcceptInit = Iterable<string | [string, number]> | Record<string, number>;
+type AcceptInit = Iterable<string | [string, number]> | Record<string, number>
 
 ```

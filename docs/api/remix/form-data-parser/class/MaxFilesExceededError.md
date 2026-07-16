@@ -13,18 +13,18 @@ An error thrown when the maximum number of files allowed in a request is exceede
 
 ```ts
 class MaxFilesExceededError {
-  constructor(maxFiles: number): MaxFilesExceededError;
+  constructor(maxFiles: number): MaxFilesExceededError
 
   // Properties
-  cause?: unknown;
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

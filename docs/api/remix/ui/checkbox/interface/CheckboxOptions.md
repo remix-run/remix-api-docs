@@ -9,8 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/checkbox/in
 
 ```ts
 interface CheckboxOptions {
-  size?: CheckboxSize;
-  state?: CheckboxState;
+  size?: CheckboxSize
+  state?: CheckboxState
 }
 
 ```

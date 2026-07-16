@@ -13,9 +13,9 @@ Context passed to the `validate` hook.
 
 ```ts
 type TableValidationContext<row> = {
-  operation: TableValidationOperation;
-  tableName: string;
-  value: Partial<row>;
-};
+  operation: TableValidationOperation
+  tableName: string
+  value: Partial<row>
+}
 
 ```

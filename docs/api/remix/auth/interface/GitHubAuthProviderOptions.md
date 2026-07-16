@@ -13,10 +13,10 @@ Options for creating the built-in GitHub auth provider.
 
 ```ts
 interface GitHubAuthProviderOptions {
-  clientId: string;
-  clientSecret: string;
-  redirectUri: string | URL;
-  scopes?: string[];
+  clientId: string
+  clientSecret: string
+  redirectUri: string | URL
+  scopes?: string[]
 }
 
 ```

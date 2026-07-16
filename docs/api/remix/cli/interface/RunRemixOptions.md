@@ -13,8 +13,8 @@ Options accepted by [`runRemix`](/api/remix/cli/function/runRemix/).
 
 ```ts
 interface RunRemixOptions {
-  cwd?: string;
-  remixVersion?: string;
+  cwd?: string
+  remixVersion?: string
 }
 
 ```

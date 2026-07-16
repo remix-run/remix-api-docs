@@ -18,6 +18,6 @@ type ContextWithParams<context, params> =
         MergeContextParams<ContextParams<context>, params>,
         RequestContextEntries<context>
       >
-    : RequestContextWithEntries<params, []>;
+    : RequestContextWithEntries<params, []>
 
 ```

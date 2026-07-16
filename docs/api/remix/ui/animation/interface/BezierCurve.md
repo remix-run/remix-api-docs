@@ -13,10 +13,10 @@ Cubic-bezier control points used by [`tween`](/api/remix/ui/animation/function/t
 
 ```ts
 interface BezierCurve {
-  x1: number;
-  x2: number;
-  y1: number;
-  y2: number;
+  x1: number
+  x2: number
+  y1: number
+  y2: number
 }
 
 ```

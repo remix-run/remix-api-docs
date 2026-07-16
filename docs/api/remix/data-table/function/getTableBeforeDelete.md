@@ -12,9 +12,7 @@ Returns a table's optional before-delete lifecycle callback.
 ## Signature
 
 ```ts
-function getTableBeforeDelete<table extends AnyTable>(
-  table: table,
-): TableBeforeDelete | undefined;
+function getTableBeforeDelete<table extends AnyTable>(table: table): TableBeforeDelete | undefined
 
 ```
 

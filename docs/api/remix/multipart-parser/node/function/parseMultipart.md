@@ -16,11 +16,9 @@ If you're building a web server, consider using [`parseMultipartRequest`](/api/r
 
 ```ts
 function parseMultipart(
-  message:
-    | Buffer<ArrayBufferLike>
-    | Iterable<Buffer<ArrayBufferLike>, any, any>,
+  message: Buffer<ArrayBufferLike> | Iterable<Buffer<ArrayBufferLike>, any, any>,
   options: ParseMultipartOptions,
-): Generator<MultipartPart, void, unknown>;
+): Generator<MultipartPart, void, unknown>
 
 ```
 

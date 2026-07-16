@@ -12,7 +12,7 @@ Create a schema that accepts booleans.
 ## Signature
 
 ```ts
-function boolean(): Schema<unknown, boolean>;
+function boolean(): Schema<unknown, boolean>
 
 ```
 

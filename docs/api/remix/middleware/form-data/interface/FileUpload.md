@@ -13,17 +13,17 @@ A file that was uploaded as part of a `multipart/form-data` request.
 
 ```ts
 interface FileUpload {
-  fieldName: string;
-  lastModified: number;
-  name: string;
-  size: number;
-  type: string;
-  webkitRelativePath: string;
-  arrayBuffer(): Promise<ArrayBuffer>;
-  bytes(): Promise<Uint8Array<ArrayBuffer>>;
-  slice(start: number, end: number, contentType: string): Blob;
-  stream(): ReadableStream<Uint8Array<ArrayBuffer>>;
-  text(): Promise<string>;
+  fieldName: string
+  lastModified: number
+  name: string
+  size: number
+  type: string
+  webkitRelativePath: string
+  arrayBuffer(): Promise<ArrayBuffer>
+  bytes(): Promise<Uint8Array<ArrayBuffer>>
+  slice(start: number, end: number, contentType: string): Blob
+  stream(): ReadableStream<Uint8Array<ArrayBuffer>>
+  text(): Promise<string>
 }
 
 ```

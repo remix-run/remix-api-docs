@@ -18,7 +18,7 @@ options
 ```ts
 function createOptionsRoute<source extends string>(
   pattern: source | RoutePattern<source>,
-): Route<"OPTIONS", source>;
+): Route<'OPTIONS', source>
 
 ```
 

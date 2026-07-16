@@ -17,8 +17,9 @@ type Table<name, columns, primaryKey> = TableMetadataLike<
   columns,
   primaryKey,
   TimestampConfig | null
-> & {
-  [tableMetadataKey]: TableMetadata<name, columns, primaryKey>;
-} & TableColumnReferences<name, columns>;
+> & { [tableMetadataKey]: TableMetadata<name, columns, primaryKey> } & TableColumnReferences<
+    name,
+    columns
+  >
 
 ```

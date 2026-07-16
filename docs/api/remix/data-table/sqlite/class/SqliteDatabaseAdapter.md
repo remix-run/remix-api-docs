@@ -13,34 +13,30 @@ source: https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite/
 
 ```ts
 class SqliteDatabaseAdapter {
-  constructor(database: SqliteDatabase): SqliteDatabaseAdapter;
+  constructor(database: SqliteDatabase): SqliteDatabaseAdapter
 
   // Properties
   capabilities: {
-    migrationLock: boolean;
-    returning: boolean;
-    savepoints: boolean;
-    transactionalDdl: boolean;
-    upsert: boolean;
-  };
-  dialect: string;
+    migrationLock: boolean
+    returning: boolean
+    savepoints: boolean
+    transactionalDdl: boolean
+    upsert: boolean
+  }
+  dialect: string
 
   // Methods
-  beginTransaction(options: TransactionOptions): Promise<TransactionToken>;
-  commitTransaction(token: TransactionToken): Promise<void>;
-  compileSql(operation: DataManipulationOperation): SqlStatement[];
-  createSavepoint(token: TransactionToken, name: string): Promise<void>;
-  execute(request: DataManipulationRequest): Promise<DataManipulationResult>;
-  executeScript(sql: string, transaction: TransactionToken): Promise<void>;
-  hasColumn(
-    table: TableRef,
-    column: string,
-    transaction: TransactionToken,
-  ): Promise<boolean>;
-  hasTable(table: TableRef, transaction: TransactionToken): Promise<boolean>;
-  releaseSavepoint(token: TransactionToken, name: string): Promise<void>;
-  rollbackToSavepoint(token: TransactionToken, name: string): Promise<void>;
-  rollbackTransaction(token: TransactionToken): Promise<void>;
+  beginTransaction(options: TransactionOptions): Promise<TransactionToken>
+  commitTransaction(token: TransactionToken): Promise<void>
+  compileSql(operation: DataManipulationOperation): SqlStatement[]
+  createSavepoint(token: TransactionToken, name: string): Promise<void>
+  execute(request: DataManipulationRequest): Promise<DataManipulationResult>
+  executeScript(sql: string, transaction: TransactionToken): Promise<void>
+  hasColumn(table: TableRef, column: string, transaction: TransactionToken): Promise<boolean>
+  hasTable(table: TableRef, transaction: TransactionToken): Promise<boolean>
+  releaseSavepoint(token: TransactionToken, name: string): Promise<void>
+  rollbackToSavepoint(token: TransactionToken, name: string): Promise<void>
+  rollbackTransaction(token: TransactionToken): Promise<void>
 }
 
 ```

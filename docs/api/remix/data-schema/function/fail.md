@@ -16,12 +16,12 @@ function fail(
   message: string,
   path: readonly (PropertyKey | PathSegment)[] | undefined,
   options: {
-    code?: string;
-    input?: unknown;
-    parseOptions?: ParseOptions;
-    values?: Record<string, unknown>;
+    code?: string
+    input?: unknown
+    parseOptions?: ParseOptions
+    values?: Record<string, unknown>
   },
-): FailureResult;
+): FailureResult
 
 ```
 

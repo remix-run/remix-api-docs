@@ -13,8 +13,8 @@ Options accepted by [`runRemixTest`](/api/remix/test/cli/function/runRemixTest/)
 
 ```ts
 interface RunRemixTestOptions {
-  argv?: string[];
-  cwd?: string;
+  argv?: string[]
+  cwd?: string
 }
 
 ```

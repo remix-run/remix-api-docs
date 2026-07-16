@@ -13,10 +13,10 @@ Canonical bulk-insert statement shape consumed by adapters.
 
 ```ts
 type InsertManyOperation<table> = {
-  kind: "insertMany";
-  returning?: ReturningSelection;
-  table: table;
-  values: Record<string, unknown>[];
-};
+  kind: 'insertMany'
+  returning?: ReturningSelection
+  table: table
+  values: Record<string, unknown>[]
+}
 
 ```

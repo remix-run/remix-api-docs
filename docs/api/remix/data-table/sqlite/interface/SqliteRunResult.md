@@ -13,8 +13,8 @@ SQLite write execution metadata.
 
 ```ts
 interface SqliteRunResult {
-  changes: number | bigint;
-  lastInsertRowid: unknown;
+  changes: number | bigint
+  lastInsertRowid: unknown
 }
 
 ```

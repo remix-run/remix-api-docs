@@ -12,6 +12,6 @@ Encodings supported by [`compressResponse`](/api/remix/response/compress/functio
 ## Signature
 
 ```ts
-type Encoding = "br" | "gzip" | "deflate";
+type Encoding = 'br' | 'gzip' | 'deflate'
 
 ```

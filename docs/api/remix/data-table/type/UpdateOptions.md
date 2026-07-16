@@ -13,8 +13,8 @@ Options for updating a single row.
 
 ```ts
 type UpdateOptions<table, relations> = {
-  touch?: boolean;
-  with?: relations;
-};
+  touch?: boolean
+  with?: relations
+}
 
 ```

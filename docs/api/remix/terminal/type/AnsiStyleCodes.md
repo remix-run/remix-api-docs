@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/terminal/src/lib/a
 ## Signature
 
 ```ts
-type AnsiStyleCodes = Record<TerminalStyleName, string>;
+type AnsiStyleCodes = Record<TerminalStyleName, string>
 
 ```

@@ -9,7 +9,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/html-template/src/
 
 ```ts
 interface HtmlTemplateTag {
-  (strings: TemplateStringsArray, values: Interpolation[]): SafeHtml;
+  (strings: TemplateStringsArray, values: Interpolation[]): SafeHtml
 }
 
 ```

@@ -13,8 +13,8 @@ Normalized `orderBy` clause.
 
 ```ts
 type OrderByClause = {
-  column: string;
-  direction: OrderDirection;
-};
+  column: string
+  direction: OrderDirection
+}
 
 ```

@@ -37,7 +37,7 @@ server.listen(3000);
 function createRequestListener(
   handler: FetchHandler,
   options: RequestListenerOptions,
-): RequestListener;
+): RequestListener
 
 ```
 

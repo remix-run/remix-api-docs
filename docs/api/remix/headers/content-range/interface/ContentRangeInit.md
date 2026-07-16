@@ -13,10 +13,10 @@ Initializer for a `Content-Range` header value.
 
 ```ts
 interface ContentRangeInit {
-  end?: number | null;
-  size?: number | "*";
-  start?: number | null;
-  unit?: string;
+  end?: number | null
+  size?: number | '*'
+  start?: number | null
+  unit?: string
 }
 
 ```

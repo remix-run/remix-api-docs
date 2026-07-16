@@ -13,9 +13,7 @@ Resolves the submitted CSRF token for the current request.
 
 ```ts
 interface CsrfTokenResolver {
-  (
-    context: AnyRequestContext,
-  ): CsrfTokenResolverResult | Promise<CsrfTokenResolverResult>;
+  (context: AnyRequestContext): CsrfTokenResolverResult | Promise<CsrfTokenResolverResult>
 }
 
 ```

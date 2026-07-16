@@ -15,7 +15,7 @@ Creates a session storage backed by Redis.
 function createRedisSessionStorage(
   client: RedisSessionStorageClient,
   options: RedisSessionStorageOptions,
-): SessionStorage;
+): SessionStorage
 
 ```
 

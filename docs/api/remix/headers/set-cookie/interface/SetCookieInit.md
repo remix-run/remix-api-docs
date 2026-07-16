@@ -13,16 +13,16 @@ Initializer for a `Set-Cookie` header value.
 
 ```ts
 interface SetCookieInit {
-  domain?: string;
-  expires?: Date;
-  httpOnly?: boolean;
-  maxAge?: number;
-  name?: string;
-  partitioned?: boolean;
-  path?: string;
-  sameSite?: SameSiteValue;
-  secure?: boolean;
-  value?: string;
+  domain?: string
+  expires?: Date
+  httpOnly?: boolean
+  maxAge?: number
+  name?: string
+  partitioned?: boolean
+  path?: string
+  sameSite?: SameSiteValue
+  secure?: boolean
+  value?: string
 }
 
 ```

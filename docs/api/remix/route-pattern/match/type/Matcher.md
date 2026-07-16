@@ -13,7 +13,7 @@ Matcher for a single route pattern.
 
 ```ts
 type Matcher<source> = {
-  match(url: string | URL): Match<source, undefined> | null;
-};
+  match(url: string | URL): Match<source, undefined> | null
+}
 
 ```

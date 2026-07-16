@@ -13,8 +13,8 @@ Check constraint declared on a column definition.
 
 ```ts
 type ColumnCheck = {
-  expression: string;
-  name: string;
-};
+  expression: string
+  name: string
+}
 
 ```

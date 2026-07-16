@@ -13,10 +13,10 @@ Shared host-element props accepted by all built-in DOM element types.
 
 ```ts
 interface HostProps<eventTarget> {
-  children?: RemixNode;
-  innerHTML?: string;
-  key?: any;
-  mix?: MixInput<eventTarget>;
+  children?: RemixNode
+  innerHTML?: string
+  key?: any
+  mix?: MixInput<eventTarget>
 }
 
 ```

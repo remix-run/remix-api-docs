@@ -13,9 +13,9 @@ Options for the [`logger`](/api/remix/middleware/logger/function/logger/) middle
 
 ```ts
 interface LoggerOptions {
-  colors?: boolean;
-  format?: string;
-  log?: LoggerFunction;
+  colors?: boolean
+  format?: string
+  log?: LoggerFunction
 }
 
 ```

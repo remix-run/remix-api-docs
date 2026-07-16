@@ -9,8 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/popover/ind
 
 ```ts
 interface PopoverHideRequest {
-  reason: "escape-key" | "outside-click";
-  target?: Node | null;
+  reason: 'escape-key' | 'outside-click'
+  target?: Node | null
 }
 
 ```

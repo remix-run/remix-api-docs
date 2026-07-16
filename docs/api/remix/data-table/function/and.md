@@ -12,9 +12,7 @@ Combines predicates with logical `AND`.
 ## Signature
 
 ```ts
-function and<column extends string>(
-  predicates: Predicate<column>[],
-): Predicate<column>;
+function and<column extends string>(predicates: Predicate<column>[]): Predicate<column>
 
 ```
 

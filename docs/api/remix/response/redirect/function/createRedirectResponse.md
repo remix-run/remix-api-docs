@@ -16,10 +16,7 @@ redirect
 ## Signature
 
 ```ts
-function createRedirectResponse(
-  location: string | URL,
-  init: number | ResponseInit,
-): Response;
+function createRedirectResponse(location: string | URL, init: number | ResponseInit): Response
 
 ```
 

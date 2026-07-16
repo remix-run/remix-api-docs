@@ -13,8 +13,8 @@ Options for starting the client runtime with [`run`](/api/remix/ui/function/run/
 
 ```ts
 interface RunInit {
-  loadModule: LoadModule;
-  resolveFrame?: ResolveFrame;
+  loadModule: LoadModule
+  resolveFrame?: ResolveFrame
 }
 
 ```

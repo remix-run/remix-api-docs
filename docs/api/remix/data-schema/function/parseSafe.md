@@ -16,9 +16,7 @@ function parseSafe<input, output>(
   schema: StandardSchemaV1<input, output>,
   value: unknown,
   options: ParseOptions,
-):
-  | { success: true; value: output }
-  | { issues: readonly Issue[]; success: false };
+): { success: true; value: output } | { issues: readonly Issue[]; success: false }
 
 ```
 

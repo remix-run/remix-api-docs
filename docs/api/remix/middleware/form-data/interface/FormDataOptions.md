@@ -13,13 +13,13 @@ Options for the [`formData`](/api/remix/middleware/form-data/function/formData/)
 
 ```ts
 interface FormDataOptions {
-  maxFiles?: number;
-  maxFileSize?: number;
-  maxHeaderSize?: number;
-  maxParts?: number;
-  maxTotalSize?: number;
-  suppressErrors?: boolean;
-  uploadHandler?: FileUploadHandler;
+  maxFiles?: number
+  maxFileSize?: number
+  maxHeaderSize?: number
+  maxParts?: number
+  maxTotalSize?: number
+  suppressErrors?: boolean
+  uploadHandler?: FileUploadHandler
 }
 
 ```

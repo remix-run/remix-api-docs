@@ -14,11 +14,7 @@ Adds a renderer to request context.
 ```ts
 function renderWith<renderer extends AnyRenderer>(
   createRenderer: RendererFactory<renderer>,
-): Middleware<{
-  key: ContextKey<AnyRenderer>;
-  property: "render";
-  value: renderer;
-}>;
+): Middleware<{ key: ContextKey<AnyRenderer>; property: 'render'; value: renderer }>
 
 ```
 

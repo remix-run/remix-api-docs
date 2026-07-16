@@ -17,10 +17,7 @@ By default, unknown keys are stripped. You can change this via `options.unknownK
 function object<shape extends ObjectShape>(
   shape: shape,
   options: ObjectOptions,
-): Schema<
-  unknown,
-  { [key in string | number | symbol]: InferOutput<shape[key]> }
->;
+): Schema<unknown, { [key in string | number | symbol]: InferOutput<shape[key]> }>
 
 ```
 

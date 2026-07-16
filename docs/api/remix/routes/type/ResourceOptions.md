@@ -14,16 +14,13 @@ Options for generating singleton resource routes.
 ```ts
 type ResourceOptions = {
   names?: {
-    create?: string;
-    destroy?: string;
-    edit?: string;
-    new?: string;
-    show?: string;
-    update?: string;
-  };
-} & (
-  | { exclude?: never; only?: ResourceMethod[] }
-  | { exclude?: ResourceMethod[]; only?: never }
-);
+    create?: string
+    destroy?: string
+    edit?: string
+    new?: string
+    show?: string
+    update?: string
+  }
+} & ({ exclude?: never; only?: ResourceMethod[] } | { exclude?: ResourceMethod[]; only?: never })
 
 ```

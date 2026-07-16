@@ -13,11 +13,11 @@ Row shape persisted in the migration journal table.
 
 ```ts
 type MigrationJournalRow = {
-  appliedAt: Date;
-  batch: number;
-  checksum: string;
-  id: string;
-  name: string;
-};
+  appliedAt: Date
+  batch: number
+  checksum: string
+  id: string
+  name: string
+}
 
 ```

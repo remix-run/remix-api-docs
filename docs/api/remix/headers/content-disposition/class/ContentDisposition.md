@@ -17,20 +17,20 @@ The value of a `Content-Disposition` HTTP header.
 
 ```ts
 class ContentDisposition {
-  constructor(init: string | ContentDispositionInit): ContentDisposition;
+  constructor(init: string | ContentDispositionInit): ContentDisposition
 
   // Properties
-  filename?: string;
-  filenameSplat?: string;
-  name?: string;
-  type?: string;
+  filename?: string
+  filenameSplat?: string
+  name?: string
+  type?: string
 
   // Accessors
-  get preferredFilename(): string | undefined;
+  get preferredFilename(): string | undefined
 
   // Methods
-  toString(): string;
-  from(value: string | ContentDispositionInit | null): ContentDisposition;
+  toString(): string
+  from(value: string | ContentDispositionInit | null): ContentDisposition
 }
 
 ```

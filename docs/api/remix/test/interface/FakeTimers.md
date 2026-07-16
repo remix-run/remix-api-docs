@@ -16,9 +16,9 @@ timers fire only when the test calls `advance` (or `advanceAsync`).
 
 ```ts
 interface FakeTimers {
-  advance(ms: number): void;
-  advanceAsync(ms: number): Promise<void>;
-  restore(): void;
+  advance(ms: number): void
+  advanceAsync(ms: number): Promise<void>
+  restore(): void
 }
 
 ```

@@ -22,24 +22,21 @@ Instead, use one of:
 
 ```ts
 class LazyBlob {
-  constructor(
-    parts: LazyContent | BlobPartLike[],
-    options: LazyBlobOptions,
-  ): LazyBlob;
+  constructor(parts: LazyContent | BlobPartLike[], options: LazyBlobOptions): LazyBlob
 
   // Accessors
-  get [toStringTag](): string;
-  get size(): number;
-  get type(): string;
+  get [toStringTag](): string
+  get size(): number
+  get type(): string
 
   // Methods
-  arrayBuffer(): Promise<ArrayBuffer>;
-  bytes(): Promise<Uint8Array<ArrayBuffer>>;
-  slice(start: number, end: number, contentType: string): LazyBlob;
-  stream(): ReadableStream<Uint8Array<ArrayBuffer>>;
-  text(): Promise<string>;
-  toBlob(): Promise<Blob>;
-  toString(): never;
+  arrayBuffer(): Promise<ArrayBuffer>
+  bytes(): Promise<Uint8Array<ArrayBuffer>>
+  slice(start: number, end: number, contentType: string): LazyBlob
+  stream(): ReadableStream<Uint8Array<ArrayBuffer>>
+  text(): Promise<string>
+  toBlob(): Promise<Blob>
+  toString(): never
 }
 
 ```

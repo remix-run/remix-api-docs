@@ -13,10 +13,7 @@ Builds the response returned when a request is denied.
 
 ```ts
 interface CopDenyHandler {
-  (
-    reason: CopFailureReason,
-    context: RequestContext,
-  ): Response | Promise<Response>;
+  (reason: CopFailureReason, context: RequestContext): Response | Promise<Response>
 }
 
 ```

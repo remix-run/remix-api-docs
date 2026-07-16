@@ -12,18 +12,14 @@ Asserts that `actual` contains the partial deep structure in `expected`.
 ## Signature
 
 ```ts
-function partialDeepEqual(
-  actual: unknown,
-  expected: unknown,
-  message: AssertionMessage,
-): void;
+function partialDeepEqual(actual: unknown, expected: unknown, message: AssertionMessage): void
 
 ```
 
 ## Example
 
 ```ts
-assert.partialDeepEqual(result, { id: 1 });
+assert.partialDeepEqual(result, { id: 1 })
 
 ```
 

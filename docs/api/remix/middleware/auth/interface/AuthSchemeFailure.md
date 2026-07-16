@@ -13,10 +13,10 @@ Failure result returned by an auth scheme.
 
 ```ts
 interface AuthSchemeFailure {
-  challenge?: string;
-  code?: "missing_credentials" | "invalid_credentials";
-  message?: string;
-  status: "failure";
+  challenge?: string
+  code?: 'missing_credentials' | 'invalid_credentials'
+  message?: string
+  status: 'failure'
 }
 
 ```

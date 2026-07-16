@@ -17,12 +17,9 @@ source-based URL fingerprinting, caching, and configurable file mapping.
 ```ts
 function createAssetServer<
   transforms extends Readonly<
-    Record<
-      string,
-      AssetRequestTransform<string, AssetRequestTransformParamMode>
-    >
+    Record<string, AssetRequestTransform<string, AssetRequestTransformParamMode>>
   >,
->(options: AssetServerCreateOptions<transforms>): AssetServer<transforms>;
+>(options: AssetServerCreateOptions<transforms>): AssetServer<transforms>
 
 ```
 
@@ -30,14 +27,14 @@ function createAssetServer<
 
 ```ts
 let assetServer = createAssetServer({
-  basePath: "/assets",
+  basePath: '/assets',
   fileMap: {
-    "/app/*path": "app/*path",
+    '/app/*path': 'app/*path',
   },
-  allow: ["app/**"],
-});
+  allow: ['app/**'],
+})
 
-route("/assets/*path", ({ request }) => assetServer.fetch(request));
+route('/assets/*path', ({ request }) => assetServer.fetch(request))
 
 ```
 

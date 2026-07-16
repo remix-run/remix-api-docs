@@ -17,7 +17,7 @@ type QueryForTable<table, loaded> = Query<
   QueryColumnTypesForTable<table>,
   TableRow<table>,
   loaded,
-  BoundQueryPhase<"all">
->;
+  BoundQueryPhase<'all'>
+>
 
 ```

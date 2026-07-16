@@ -17,15 +17,15 @@ function rejects(
   fn: (() => Promise<unknown>) | Promise<unknown>,
   expectedErrorOrMessage: unknown,
   message: AssertionMessage,
-): Promise<void>;
+): Promise<void>
 
 ```
 
 ## Example
 
 ```ts
-await assert.rejects(fetch("/missing"), (err) => err.status === 404);
-await assert.rejects(fetch("/missing"), { code: "ERR_INVALID_ARG_VALUE" });
+await assert.rejects(fetch('/missing'), (err) => err.status === 404)
+await assert.rejects(fetch('/missing'), { code: 'ERR_INVALID_ARG_VALUE' })
 
 ```
 

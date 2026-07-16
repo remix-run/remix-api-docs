@@ -14,10 +14,7 @@ Expected format: `YYYYMMDDHHmmss_name`.
 ## Signature
 
 ```ts
-function parseMigrationDirectoryName(name: string): {
-  id: string;
-  name: string;
-};
+function parseMigrationDirectoryName(name: string): { id: string; name: string }
 
 ```
 

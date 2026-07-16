@@ -8,10 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/style/css-m
 ## Signature
 
 ```ts
-type CSSMixinDescriptor = MixinDescriptor<
-  Element,
-  [styles: CSSProps],
-  ElementProps
->;
+type CSSMixinDescriptor = MixinDescriptor<Element, [styles: CSSProps], ElementProps>
 
 ```

@@ -13,9 +13,9 @@ DPoP binding material required to sign follow-up requests for DPoP-bound access 
 
 ```ts
 interface OAuthDpopBinding {
-  nonce?: string;
-  privateJwk: JsonWebKey;
-  publicJwk: JsonWebKey;
+  nonce?: string
+  privateJwk: JsonWebKey
+  publicJwk: JsonWebKey
 }
 
 ```

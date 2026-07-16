@@ -19,6 +19,6 @@ type ContextWithEntries<context, additions> =
         ContextParams<context>,
         [...RequestContextEntries<context>, ...additions]
       >
-    : never;
+    : never
 
 ```

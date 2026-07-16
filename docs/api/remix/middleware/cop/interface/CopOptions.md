@@ -13,9 +13,9 @@ Configuration for the cross-origin protection middleware.
 
 ```ts
 interface CopOptions {
-  insecureBypassPatterns?: readonly string[];
-  onDeny?: CopDenyHandler;
-  trustedOrigins?: readonly string[];
+  insecureBypassPatterns?: readonly string[]
+  onDeny?: CopDenyHandler
+  trustedOrigins?: readonly string[]
 }
 
 ```

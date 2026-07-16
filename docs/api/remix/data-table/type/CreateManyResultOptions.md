@@ -13,8 +13,8 @@ Options for bulk-create operations that return only write metadata.
 
 ```ts
 type CreateManyResultOptions = {
-  returnRows?: false;
-  touch?: boolean;
-};
+  returnRows?: false
+  touch?: boolean
+}
 
 ```

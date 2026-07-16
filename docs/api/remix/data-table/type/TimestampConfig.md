@@ -13,8 +13,8 @@ Resolved timestamp column names for a table.
 
 ```ts
 type TimestampConfig = {
-  createdAt: string;
-  updatedAt: string;
-};
+  createdAt: string
+  updatedAt: string
+}
 
 ```

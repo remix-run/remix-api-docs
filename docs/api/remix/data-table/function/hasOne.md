@@ -16,7 +16,7 @@ function hasOne<source extends AnyTable, target extends AnyTable>(
   source: source,
   target: target,
   relationOptions: HasOneOptions<source, target>,
-): Relation<source, target, "one">;
+): Relation<source, target, 'one'>
 
 ```
 

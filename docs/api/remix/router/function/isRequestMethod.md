@@ -12,7 +12,7 @@ Check if a string is one of the request methods supported by the router.
 ## Signature
 
 ```ts
-function isRequestMethod(method: string): method is RequestMethod;
+function isRequestMethod(method: string): method is RequestMethod
 
 ```
 

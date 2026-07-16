@@ -12,7 +12,7 @@ Require a string to be a valid email address.
 ## Signature
 
 ```ts
-function email(): Check<string>;
+function email(): Check<string>
 
 ```
 

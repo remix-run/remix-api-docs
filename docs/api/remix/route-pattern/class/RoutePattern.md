@@ -17,19 +17,19 @@ representation that is not part of the public API; prefer `RoutePattern.parse` i
 
 ```ts
 class RoutePattern<source> {
-  constructor(parts: RoutePatternParts): RoutePattern<source>;
+  constructor(parts: RoutePatternParts): RoutePattern<source>
 
   // Properties
   _parts: RoutePatternParts;
-  [brand]: source;
+  [brand]: source
 
   // Accessors
-  get source(): string;
+  get source(): string
 
   // Methods
-  toJSON(): RoutePatternJSON;
-  toString(): string;
-  parse<source extends string>(source: source): RoutePattern<source>;
+  toJSON(): RoutePatternJSON
+  toString(): string
+  parse<source extends string>(source: source): RoutePattern<source>
 }
 
 ```

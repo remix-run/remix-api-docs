@@ -13,7 +13,7 @@ Options for parsing a single file field from `FormData`.
 
 ```ts
 interface FormDataFileOptions {
-  name?: string;
+  name?: string
 }
 
 ```

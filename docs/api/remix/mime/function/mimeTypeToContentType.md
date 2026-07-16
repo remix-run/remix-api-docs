@@ -25,18 +25,18 @@ is redundant and can conflict with the document's internal declaration.
 ## Signature
 
 ```ts
-function mimeTypeToContentType(mimeType: string): string;
+function mimeTypeToContentType(mimeType: string): string
 
 ```
 
 ## Example
 
 ```ts
-mimeTypeToContentType("text/html"); // 'text/html; charset=utf-8'
-mimeTypeToContentType("application/json"); // 'application/json; charset=utf-8'
-mimeTypeToContentType("application/ld+json"); // 'application/ld+json; charset=utf-8'
-mimeTypeToContentType("image/png"); // 'image/png'
-mimeTypeToContentType("text/xml"); // 'text/xml'
+mimeTypeToContentType('text/html') // 'text/html; charset=utf-8'
+mimeTypeToContentType('application/json') // 'application/json; charset=utf-8'
+mimeTypeToContentType('application/ld+json') // 'application/ld+json; charset=utf-8'
+mimeTypeToContentType('image/png') // 'image/png'
+mimeTypeToContentType('text/xml') // 'text/xml'
 
 ```
 

@@ -13,6 +13,6 @@ interface. This may be a native `File` or a structurally compatible implementati
 ## Signature
 
 ```ts
-type FileLike = File;
+type FileLike = File
 
 ```

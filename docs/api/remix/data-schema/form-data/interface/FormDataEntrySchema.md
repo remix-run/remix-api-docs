@@ -14,9 +14,9 @@ them.
 
 ```ts
 interface FormDataEntrySchema<output> {
-  kind: FormDataEntryKind;
-  name?: string;
-  schema: Schema<any, output>;
+  kind: FormDataEntryKind
+  name?: string
+  schema: Schema<any, output>
 }
 
 ```

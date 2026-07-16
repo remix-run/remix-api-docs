@@ -12,6 +12,6 @@ Write lifecycle operations.
 ## Signature
 
 ```ts
-type TableWriteOperation = TableValidationOperation;
+type TableWriteOperation = TableValidationOperation
 
 ```

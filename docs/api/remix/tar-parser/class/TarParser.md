@@ -13,10 +13,10 @@ A parser for tar archives.
 
 ```ts
 class TarParser {
-  constructor(options: ParseTarHeaderOptions): TarParser;
+  constructor(options: ParseTarHeaderOptions): TarParser
 
   // Methods
-  parse(archive: TarArchiveSource, handler: TarEntryHandler): Promise<void>;
+  parse(archive: TarArchiveSource, handler: TarEntryHandler): Promise<void>
 }
 
 ```

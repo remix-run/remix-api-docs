@@ -13,8 +13,8 @@ A range of bytes in a buffer.
 
 ```ts
 interface ByteRange {
-  end: number;
-  start: number;
+  end: number
+  start: number
 }
 
 ```

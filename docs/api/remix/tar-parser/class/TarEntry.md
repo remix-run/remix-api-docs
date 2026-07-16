@@ -13,22 +13,19 @@ An entry in a tar archive.
 
 ```ts
 class TarEntry {
-  constructor(
-    header: TarHeader,
-    body: ReadableStream<Uint8Array<ArrayBufferLike>>,
-  ): TarEntry;
+  constructor(header: TarHeader, body: ReadableStream<Uint8Array<ArrayBufferLike>>): TarEntry
 
   // Accessors
-  get body(): ReadableStream<Uint8Array<ArrayBufferLike>>;
-  get bodyUsed(): boolean;
-  get header(): TarHeader;
-  get name(): string;
-  get size(): number;
+  get body(): ReadableStream<Uint8Array<ArrayBufferLike>>
+  get bodyUsed(): boolean
+  get header(): TarHeader
+  get name(): string
+  get size(): number
 
   // Methods
-  arrayBuffer(): Promise<ArrayBuffer>;
-  bytes(): Promise<Uint8Array<ArrayBufferLike>>;
-  text(): Promise<string>;
+  arrayBuffer(): Promise<ArrayBuffer>
+  bytes(): Promise<Uint8Array<ArrayBufferLike>>
+  text(): Promise<string>
 }
 
 ```

@@ -9,7 +9,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs/primit
 
 ```ts
 interface TabPanelOptions {
-  name: string;
+  name: string
 }
 
 ```

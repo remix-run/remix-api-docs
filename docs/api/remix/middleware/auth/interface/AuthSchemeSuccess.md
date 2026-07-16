@@ -13,8 +13,8 @@ Successful result returned by an auth scheme.
 
 ```ts
 interface AuthSchemeSuccess<identity> {
-  identity: identity;
-  status: "success";
+  identity: identity
+  status: 'success'
 }
 
 ```

@@ -13,7 +13,7 @@ Initializer for an `If-Match` header value.
 
 ```ts
 interface IfMatchInit {
-  tags: string[];
+  tags: string[]
 }
 
 ```

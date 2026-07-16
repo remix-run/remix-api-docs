@@ -13,7 +13,7 @@ Options for the [`methodOverride`](/api/remix/middleware/method-override/functio
 
 ```ts
 interface MethodOverrideOptions {
-  fieldName?: string;
+  fieldName?: string
 }
 
 ```

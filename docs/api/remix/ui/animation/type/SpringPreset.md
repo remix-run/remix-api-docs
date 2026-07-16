@@ -22,6 +22,6 @@ Spring Parameter Conversion (SwiftUI formulas, mass = 1):
 ## Signature
 
 ```ts
-type SpringPreset = "smooth" | "snappy" | "bouncy";
+type SpringPreset = 'smooth' | 'snappy' | 'bouncy'
 
 ```

@@ -22,24 +22,21 @@ Header names are normalized to lowercase for case-insensitive comparison.
 
 ```ts
 class Vary {
-  constructor(init: string | string[] | VaryInit): Vary;
+  constructor(init: string | string[] | VaryInit): Vary
 
   // Accessors
-  get headerNames(): string[];
-  get size(): number;
+  get headerNames(): string[]
+  get size(): number
 
   // Methods
-  [iterator](): IterableIterator<string>;
-  add(headerName: string): void;
-  clear(): void;
-  delete(headerName: string): void;
-  forEach(
-    callback: (headerName: string, vary: Vary) => void,
-    thisArg: any,
-  ): void;
-  has(headerName: string): boolean;
-  toString(): string;
-  from(value: string | string[] | VaryInit | null): Vary;
+  [iterator](): IterableIterator<string>
+  add(headerName: string): void
+  clear(): void
+  delete(headerName: string): void
+  forEach(callback: (headerName: string, vary: Vary) => void, thisArg: any): void
+  has(headerName: string): boolean
+  toString(): string
+  from(value: string | string[] | VaryInit | null): Vary
 }
 
 ```

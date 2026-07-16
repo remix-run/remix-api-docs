@@ -16,9 +16,9 @@ option at the top level.
 
 ```ts
 type ParseOptions = StandardSchemaV1.Options & {
-  abortEarly?: boolean;
-  errorMap?: ErrorMap;
-  locale?: string;
-};
+  abortEarly?: boolean
+  errorMap?: ErrorMap
+  locale?: string
+}
 
 ```

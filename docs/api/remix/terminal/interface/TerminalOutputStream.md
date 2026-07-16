@@ -13,8 +13,8 @@ Output stream shape used for terminal writes and TTY detection.
 
 ```ts
 interface TerminalOutputStream {
-  isTTY?: boolean;
-  write(chunk: string): unknown;
+  isTTY?: boolean
+  write(chunk: string): unknown
 }
 
 ```

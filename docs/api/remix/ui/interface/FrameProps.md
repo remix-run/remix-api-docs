@@ -13,13 +13,10 @@ Props accepted by the built-in [`Frame`](/api/remix/ui/function/Frame/) componen
 
 ```ts
 interface FrameProps {
-  fallback?: Renderable;
-  name?: string;
-  on?: Record<
-    string,
-    (event: Event, signal: AbortSignal) => void | Promise<void>
-  >;
-  src: string;
+  fallback?: Renderable
+  name?: string
+  on?: Record<string, (event: Event, signal: AbortSignal) => void | Promise<void>>
+  src: string
 }
 
 ```

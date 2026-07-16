@@ -15,7 +15,7 @@ Marks a component as a client entry for client-side hydration.
 function clientEntry<props extends SerializableProps, context>(
   entryId: string,
   component: (handle: Handle<props, context>) => RenderFn,
-): EntryComponent<props, context>;
+): EntryComponent<props, context>
 
 ```
 
@@ -23,26 +23,25 @@ function clientEntry<props extends SerializableProps, context>(
 
 ```ts
 export const Counter = clientEntry(
-  "/js/counter.js#Counter",
+  '/js/counter.js#Counter',
   function Counter(handle: Handle<{ initialCount?: number; label: string }>) {
-    let count = handle.props.initialCount ?? 0;
+    let count = handle.props.initialCount ?? 0
 
     return () => (
       <button
         type="button"
         mix={[
-          on("click", () => {
-            count++;
-            handle.update();
+          on('click', () => {
+            count++
+            handle.update()
           }),
         ]}
       >
         {handle.props.label} {count}
       </button>
-    );
-  },
-);
-
+    )
+  }
+)
 ```
 
 ## Parameters

@@ -12,6 +12,6 @@ Validation lifecycle operations.
 ## Signature
 
 ```ts
-type TableValidationOperation = "create" | "update";
+type TableValidationOperation = 'create' | 'update'
 
 ```

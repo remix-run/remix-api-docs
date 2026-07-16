@@ -17,29 +17,29 @@ The value of a `Cache-Control` HTTP header.
 
 ```ts
 class CacheControl {
-  constructor(init: string | CacheControlInit): CacheControl;
+  constructor(init: string | CacheControlInit): CacheControl
 
   // Properties
-  immutable?: true;
-  maxAge?: number;
-  maxStale?: number;
-  minFresh?: number;
-  mustRevalidate?: true;
-  mustUnderstand?: true;
-  noCache?: true;
-  noStore?: true;
-  noTransform?: true;
-  onlyIfCached?: true;
-  private?: true;
-  proxyRevalidate?: true;
-  public?: true;
-  sMaxage?: number;
-  staleIfError?: number;
-  staleWhileRevalidate?: number;
+  immutable?: true
+  maxAge?: number
+  maxStale?: number
+  minFresh?: number
+  mustRevalidate?: true
+  mustUnderstand?: true
+  noCache?: true
+  noStore?: true
+  noTransform?: true
+  onlyIfCached?: true
+  private?: true
+  proxyRevalidate?: true
+  public?: true
+  sMaxage?: number
+  staleIfError?: number
+  staleWhileRevalidate?: number
 
   // Methods
-  toString(): string;
-  from(value: string | CacheControlInit | null): CacheControl;
+  toString(): string
+  from(value: string | CacheControlInit | null): CacheControl
 }
 
 ```

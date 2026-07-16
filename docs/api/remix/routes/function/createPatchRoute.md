@@ -18,7 +18,7 @@ patch
 ```ts
 function createPatchRoute<source extends string>(
   pattern: source | RoutePattern<source>,
-): Route<"PATCH", source>;
+): Route<'PATCH', source>
 
 ```
 

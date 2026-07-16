@@ -14,7 +14,7 @@ Creates an auth scheme that reads API keys from a request header.
 ```ts
 function createAPIAuthScheme<identity>(
   options: APIAuthSchemeOptions<identity>,
-): AuthScheme<identity>;
+): AuthScheme<identity>
 
 ```
 

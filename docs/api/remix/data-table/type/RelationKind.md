@@ -12,6 +12,6 @@ Supported relation kinds.
 ## Signature
 
 ```ts
-type RelationKind = "hasMany" | "hasOne" | "belongsTo" | "hasManyThrough";
+type RelationKind = 'hasMany' | 'hasOne' | 'belongsTo' | 'hasManyThrough'
 
 ```

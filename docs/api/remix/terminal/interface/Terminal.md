@@ -13,23 +13,23 @@ Testable abstraction around terminal input, output, styles, and controls.
 
 ```ts
 interface Terminal {
-  env: TerminalEnvironment;
-  isInteractive: boolean;
-  isTTY: boolean;
-  stderr: TerminalOutputStream;
-  stdin: TerminalInputStream;
-  stdout: TerminalOutputStream;
-  styles: TerminalStyles;
-  clearLine(): void;
-  cursorTo(column: number, row: number): void;
-  eraseDown(): void;
-  error(value: string): void;
-  errorLine(value: string): void;
-  hideCursor(): void;
-  moveCursor(columns: number, rows: number): void;
-  showCursor(): void;
-  write(value: string): void;
-  writeLine(value: string): void;
+  env: TerminalEnvironment
+  isInteractive: boolean
+  isTTY: boolean
+  stderr: TerminalOutputStream
+  stdin: TerminalInputStream
+  stdout: TerminalOutputStream
+  styles: TerminalStyles
+  clearLine(): void
+  cursorTo(column: number, row: number): void
+  eraseDown(): void
+  error(value: string): void
+  errorLine(value: string): void
+  hideCursor(): void
+  moveCursor(columns: number, rows: number): void
+  showCursor(): void
+  write(value: string): void
+  writeLine(value: string): void
 }
 
 ```

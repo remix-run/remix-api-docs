@@ -12,19 +12,17 @@ Creates an in-memory migration registry.
 ## Signature
 
 ```ts
-function createMigrationRegistry(
-  initial: MigrationDescriptor[],
-): MigrationRegistry;
+function createMigrationRegistry(initial: MigrationDescriptor[]): MigrationRegistry
 
 ```
 
 ## Example
 
 ```ts
-import { createMigrationRegistry } from "remix/data-table/migrations";
+import { createMigrationRegistry } from 'remix/data-table/migrations'
 
-let registry = createMigrationRegistry();
-registry.register({ id, name, up, down });
+let registry = createMigrationRegistry()
+registry.register({ id, name, up, down })
 
 ```
 

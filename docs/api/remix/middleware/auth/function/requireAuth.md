@@ -14,11 +14,7 @@ Enforces that `auth()` has already resolved a successful auth state for the curr
 ```ts
 function requireAuth<identity>(
   options: RequireAuthOptions,
-): Middleware<{
-  key: ContextKey<AuthState<unknown>>;
-  property: "auth";
-  value: GoodAuth<identity>;
-}>;
+): Middleware<{ key: ContextKey<AuthState<unknown>>; property: 'auth'; value: GoodAuth<identity> }>
 
 ```
 

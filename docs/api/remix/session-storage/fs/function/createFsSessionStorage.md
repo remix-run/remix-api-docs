@@ -16,10 +16,7 @@ be a new directory solely dedicated to this storage object.
 ## Signature
 
 ```ts
-function createFsSessionStorage(
-  directory: string,
-  options: FsSessionStorageOptions,
-): SessionStorage;
+function createFsSessionStorage(directory: string, options: FsSessionStorageOptions): SessionStorage
 
 ```
 

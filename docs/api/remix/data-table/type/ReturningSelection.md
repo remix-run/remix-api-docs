@@ -12,6 +12,6 @@ Returning selection for write statements.
 ## Signature
 
 ```ts
-type ReturningSelection = "*" | string[];
+type ReturningSelection = '*' | string[]
 
 ```

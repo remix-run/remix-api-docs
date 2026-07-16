@@ -16,7 +16,7 @@ function parse<input, output>(
   schema: StandardSchemaV1<input, output>,
   value: unknown,
   options: ParseOptions,
-): output;
+): output
 
 ```
 

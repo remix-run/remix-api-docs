@@ -12,11 +12,9 @@ Creates a typed mixin factory that can be passed through the `mix` prop.
 ## Signature
 
 ```ts
-function createMixin<
-  node extends EventTarget,
-  args extends unknown[],
-  props extends ElementProps,
->(type: MixinType<node, args, props>): MixinFactory<node, args, props>;
+function createMixin<node extends EventTarget, args extends unknown[], props extends ElementProps>(
+  type: MixinType<node, args, props>,
+): MixinFactory<node, args, props>
 
 ```
 

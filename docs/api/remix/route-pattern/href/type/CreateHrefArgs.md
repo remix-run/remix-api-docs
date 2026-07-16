@@ -17,6 +17,6 @@ type CreateHrefArgs<source> =
     ? [params] extends [never]
       ? never
       : _CreateHrefArgs<params>
-    : never;
+    : never
 
 ```

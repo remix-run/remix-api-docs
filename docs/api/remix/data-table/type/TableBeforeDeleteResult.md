@@ -12,6 +12,6 @@ Result returned from the `beforeDelete` hook.
 ## Signature
 
 ```ts
-type TableBeforeDeleteResult = void | ValidationFailure;
+type TableBeforeDeleteResult = void | ValidationFailure
 
 ```

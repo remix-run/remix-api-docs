@@ -12,6 +12,6 @@ Options for parsing a tar archive.
 ## Signature
 
 ```ts
-type ParseTarOptions = ParseTarHeaderOptions;
+type ParseTarOptions = ParseTarHeaderOptions
 
 ```

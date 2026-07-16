@@ -12,14 +12,10 @@ Verifies submitted credentials with a credentials auth provider.
 ## Signature
 
 ```ts
-function verifyCredentials<
-  context extends RequestContext<any, any>,
-  input,
-  result,
->(
+function verifyCredentials<context extends RequestContext<any, any>, input, result>(
   provider: CredentialsAuthProvider<input, result>,
   context: context,
-): Promise<result | null>;
+): Promise<result | null>
 
 ```
 

@@ -12,7 +12,7 @@ Create a matcher for multiple route patterns.
 ## Signature
 
 ```ts
-function createMultiMatcher<data>(options: MatcherOptions): MultiMatcher<data>;
+function createMultiMatcher<data>(options: MatcherOptions): MultiMatcher<data>
 
 ```
 

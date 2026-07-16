@@ -15,11 +15,9 @@ object.
 
 ```ts
 function sendResponse(
-  res:
-    | ServerResponse<IncomingMessage>
-    | Http2ServerResponse<Http2ServerRequest>,
+  res: ServerResponse<IncomingMessage> | Http2ServerResponse<Http2ServerRequest>,
   response: Response,
-): Promise<void>;
+): Promise<void>
 
 ```
 

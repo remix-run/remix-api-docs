@@ -14,7 +14,7 @@ Wildcard segments (`*`) are preserved.
 ## Signature
 
 ```ts
-function quotePath(path: string, quoteIdentifier: QuoteIdentifier): string;
+function quotePath(path: string, quoteIdentifier: QuoteIdentifier): string
 
 ```
 

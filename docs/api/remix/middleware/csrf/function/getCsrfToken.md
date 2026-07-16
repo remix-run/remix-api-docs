@@ -12,7 +12,7 @@ Gets the CSRF token from the session. Creates one if missing.
 ## Signature
 
 ```ts
-function getCsrfToken(context: AnyRequestContext, tokenKey: string): string;
+function getCsrfToken(context: AnyRequestContext, tokenKey: string): string
 
 ```
 

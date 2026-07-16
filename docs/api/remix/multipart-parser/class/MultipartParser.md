@@ -13,21 +13,18 @@ A streaming parser for `multipart/*` HTTP messages.
 
 ```ts
 class MultipartParser {
-  constructor(
-    boundary: string,
-    options: MultipartParserOptions,
-  ): MultipartParser;
+  constructor(boundary: string, options: MultipartParserOptions): MultipartParser
 
   // Properties
-  boundary: string;
-  maxFileSize: number;
-  maxHeaderSize: number;
-  maxParts: number;
-  maxTotalSize: number;
+  boundary: string
+  maxFileSize: number
+  maxHeaderSize: number
+  maxParts: number
+  maxTotalSize: number
 
   // Methods
-  finish(): void;
-  write(chunk: Uint8Array): Generator<MultipartPart, void, unknown>;
+  finish(): void
+  write(chunk: Uint8Array): Generator<MultipartPart, void, unknown>
 }
 
 ```

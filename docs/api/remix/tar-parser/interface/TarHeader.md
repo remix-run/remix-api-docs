@@ -13,19 +13,19 @@ The parsed header of a tar entry.
 
 ```ts
 interface TarHeader {
-  devmajor: number | null;
-  devminor: number | null;
-  gid: number | null;
-  gname: string;
-  linkname: string | null;
-  mode: number | null;
-  mtime: number | null;
-  name: string;
-  pax: Record<string, string> | null;
-  size: number;
-  type: string;
-  uid: number | null;
-  uname: string;
+  devmajor: number | null
+  devminor: number | null
+  gid: number | null
+  gname: string
+  linkname: string | null
+  mode: number | null
+  mtime: number | null
+  name: string
+  pax: Record<string, string> | null
+  size: number
+  type: string
+  uid: number | null
+  uname: string
 }
 
 ```

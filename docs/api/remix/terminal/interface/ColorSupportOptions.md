@@ -13,8 +13,8 @@ Options that control ANSI color detection.
 
 ```ts
 interface ColorSupportOptions {
-  env?: TerminalEnvironment;
-  stream?: { isTTY?: boolean };
+  env?: TerminalEnvironment
+  stream?: { isTTY?: boolean }
 }
 
 ```

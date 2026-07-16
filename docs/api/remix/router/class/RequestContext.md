@@ -14,27 +14,23 @@ handler or middleware in the lifecycle of a request receives the same context ob
 
 ```ts
 class RequestContext<params, entries> {
-  constructor(request: Request): RequestContext<params, entries>;
+  constructor(request: Request): RequestContext<params, entries>
 
   // Properties
-  [requestContextTypes]?: { entries: entries; params: params };
-  method: string;
-  params: params;
-  request: Request;
-  url: URL;
+  [requestContextTypes]?: { entries: entries; params: params }
+  method: string
+  params: params
+  request: Request
+  url: URL
 
   // Accessors
-  get headers(): Headers;
-  get router(): Router<RequestContext<any, entries>>;
+  get headers(): Headers
+  get router(): Router<RequestContext<any, entries>>
 
   // Methods
-  get<key extends object>(key: key): ResolveEntryValue<entries, key>;
-  has<key extends object>(key: key): boolean;
-  set<key extends object>(
-    key: key,
-    value: ContextValue<key>,
-    options: { property: string },
-  ): void;
+  get<key extends object>(key: key): ResolveEntryValue<entries, key>
+  has<key extends object>(key: key): boolean
+  set<key extends object>(key: key, value: ContextValue<key>, options: { property: string }): void
 }
 
 ```

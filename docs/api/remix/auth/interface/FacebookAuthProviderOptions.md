@@ -13,10 +13,10 @@ Options for creating the built-in Facebook auth provider.
 
 ```ts
 interface FacebookAuthProviderOptions {
-  clientId: string;
-  clientSecret: string;
-  redirectUri: string | URL;
-  scopes?: string[];
+  clientId: string
+  clientSecret: string
+  redirectUri: string | URL
+  scopes?: string[]
 }
 
 ```

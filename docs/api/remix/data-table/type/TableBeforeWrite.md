@@ -12,8 +12,6 @@ Hook invoked before a row write executes.
 ## Signature
 
 ```ts
-type TableBeforeWrite<row> = (
-  context: TableBeforeWriteContext<row>,
-) => TableBeforeWriteResult<row>;
+type TableBeforeWrite<row> = (context: TableBeforeWriteContext<row>) => TableBeforeWriteResult<row>
 
 ```

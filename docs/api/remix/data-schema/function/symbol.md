@@ -12,7 +12,7 @@ Create a schema that accepts symbols.
 ## Signature
 
 ```ts
-function symbol(): Schema<unknown, symbol>;
+function symbol(): Schema<unknown, symbol>
 
 ```
 

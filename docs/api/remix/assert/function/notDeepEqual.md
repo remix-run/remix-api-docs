@@ -12,18 +12,14 @@ Asserts that `actual` and `expected` are **not** deeply equal.
 ## Signature
 
 ```ts
-function notDeepEqual<_value>(
-  actual: unknown,
-  expected: unknown,
-  message: AssertionMessage,
-): void;
+function notDeepEqual<_value>(actual: unknown, expected: unknown, message: AssertionMessage): void
 
 ```
 
 ## Example
 
 ```ts
-assert.notDeepEqual(result, { id: 1, name: "Alice" });
+assert.notDeepEqual(result, { id: 1, name: 'Alice' })
 
 ```
 

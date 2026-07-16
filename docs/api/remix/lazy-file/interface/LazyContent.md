@@ -13,8 +13,8 @@ A streaming interface for blob/file content.
 
 ```ts
 interface LazyContent {
-  byteLength: number;
-  stream(start: number, end: number): ReadableStream<Uint8Array<ArrayBuffer>>;
+  byteLength: number
+  stream(start: number, end: number): ReadableStream<Uint8Array<ArrayBuffer>>
 }
 
 ```

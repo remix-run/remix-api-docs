@@ -12,9 +12,7 @@ Returns a table's column builder map.
 ## Signature
 
 ```ts
-function getTableColumns<table extends AnyTable>(
-  table: table,
-): TableColumns<table>;
+function getTableColumns<table extends AnyTable>(table: table): TableColumns<table>
 
 ```
 

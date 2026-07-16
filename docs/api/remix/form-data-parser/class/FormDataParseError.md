@@ -13,18 +13,18 @@ The base class for errors thrown by the form data parser.
 
 ```ts
 class FormDataParseError {
-  constructor(message: string, options: ErrorOptions): FormDataParseError;
+  constructor(message: string, options: ErrorOptions): FormDataParseError
 
   // Properties
-  cause?: unknown;
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

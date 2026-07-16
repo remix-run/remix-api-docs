@@ -13,14 +13,11 @@ Options for creating a bearer-token auth scheme.
 
 ```ts
 interface BearerTokenAuthSchemeOptions<identity> {
-  challenge?: string;
-  headerName?: string;
-  name?: string;
-  scheme?: string;
-  verify(
-    token: string,
-    context: RequestContext,
-  ): identity | Promise<identity | null> | null;
+  challenge?: string
+  headerName?: string
+  name?: string
+  scheme?: string
+  verify(token: string, context: RequestContext): identity | Promise<identity | null> | null
 }
 
 ```

@@ -13,23 +13,23 @@ Names of ANSI background color styles supported by terminal style helpers.
 
 ```ts
 type TerminalBackgroundColorName =
-  | "bgBlack"
-  | "bgBlackBright"
-  | "bgBlue"
-  | "bgBlueBright"
-  | "bgCyan"
-  | "bgCyanBright"
-  | "bgGray"
-  | "bgGreen"
-  | "bgGreenBright"
-  | "bgGrey"
-  | "bgMagenta"
-  | "bgMagentaBright"
-  | "bgRed"
-  | "bgRedBright"
-  | "bgWhite"
-  | "bgWhiteBright"
-  | "bgYellow"
-  | "bgYellowBright";
+  | 'bgBlack'
+  | 'bgBlackBright'
+  | 'bgBlue'
+  | 'bgBlueBright'
+  | 'bgCyan'
+  | 'bgCyanBright'
+  | 'bgGray'
+  | 'bgGreen'
+  | 'bgGreenBright'
+  | 'bgGrey'
+  | 'bgMagenta'
+  | 'bgMagentaBright'
+  | 'bgRed'
+  | 'bgRedBright'
+  | 'bgWhite'
+  | 'bgWhiteBright'
+  | 'bgYellow'
+  | 'bgYellowBright'
 
 ```

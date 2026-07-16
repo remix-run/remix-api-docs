@@ -13,13 +13,13 @@ OAuth tokens bound to a DPoP key pair.
 
 ```ts
 interface OAuthDpopTokens {
-  accessToken: string;
-  dpop: OAuthDpopBinding;
-  expiresAt?: Date;
-  idToken?: string;
-  refreshToken?: string;
-  scope?: string[];
-  tokenType: "DPoP";
+  accessToken: string
+  dpop: OAuthDpopBinding
+  expiresAt?: Date
+  idToken?: string
+  refreshToken?: string
+  scope?: string[]
+  tokenType: 'DPoP'
 }
 
 ```

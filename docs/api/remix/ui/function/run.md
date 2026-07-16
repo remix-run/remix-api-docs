@@ -12,7 +12,7 @@ Starts the client-side Remix component runtime for the current document.
 ## Signature
 
 ```ts
-function run(init: RunInit): AppRuntime;
+function run(init: RunInit): AppRuntime
 
 ```
 

@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/radio/index
 ## Signature
 
 ```ts
-type RadioSize = "md" | "lg";
+type RadioSize = 'md' | 'lg'
 
 ```

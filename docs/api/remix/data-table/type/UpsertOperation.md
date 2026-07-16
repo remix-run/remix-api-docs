@@ -13,12 +13,12 @@ Canonical upsert statement shape consumed by adapters.
 
 ```ts
 type UpsertOperation<table> = {
-  conflictTarget?: string[];
-  kind: "upsert";
-  returning?: ReturningSelection;
-  table: table;
-  update?: Record<string, unknown>;
-  values: Record<string, unknown>;
-};
+  conflictTarget?: string[]
+  kind: 'upsert'
+  returning?: ReturningSelection
+  table: table
+  update?: Record<string, unknown>
+  values: Record<string, unknown>
+}
 
 ```

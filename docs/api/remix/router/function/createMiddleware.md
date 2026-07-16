@@ -19,7 +19,7 @@ returning it from a factory.
 ```ts
 function createMiddleware<middleware extends readonly AnyMiddleware[]>(
   middleware: middleware,
-): middleware;
+): middleware
 
 ```
 

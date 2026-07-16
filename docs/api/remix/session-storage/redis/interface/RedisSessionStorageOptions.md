@@ -13,9 +13,9 @@ Options for Redis-backed session storage created by [`createRedisSessionStorage`
 
 ```ts
 interface RedisSessionStorageOptions {
-  keyPrefix?: string;
-  ttl?: number;
-  useUnknownIds?: boolean;
+  keyPrefix?: string
+  ttl?: number
+  useUnknownIds?: boolean
 }
 
 ```

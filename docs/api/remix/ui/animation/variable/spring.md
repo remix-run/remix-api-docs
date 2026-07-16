@@ -17,15 +17,14 @@ The returned iterator can be:
 ## Signature
 
 ```ts
-const spring: SpringFunction;
-
+const spring: SpringFunction
 ```
 
 ## Example
 
 ```ts
 // Named preset
-let s = spring("bouncy");
-element.style.transition = `transform ${s}`;
+let s = spring('bouncy')
+element.style.transition = `transform ${s}`
 
 ```

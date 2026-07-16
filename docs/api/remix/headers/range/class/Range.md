@@ -17,17 +17,17 @@ The value of a `Range` HTTP header.
 
 ```ts
 class Range {
-  constructor(init: string | RangeInit): Range;
+  constructor(init: string | RangeInit): Range
 
   // Properties
-  ranges: { end?: number; start?: number }[];
-  unit: string;
+  ranges: { end?: number; start?: number }[]
+  unit: string
 
   // Methods
-  canSatisfy(resourceSize: number): boolean;
-  normalize(resourceSize: number): { end: number; start: number }[];
-  toString(): string;
-  from(value: string | RangeInit | null): Range;
+  canSatisfy(resourceSize: number): boolean
+  normalize(resourceSize: number): { end: number; start: number }[]
+  toString(): string
+  from(value: string | RangeInit | null): Range
 }
 
 ```

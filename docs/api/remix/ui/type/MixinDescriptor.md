@@ -13,9 +13,9 @@ Serializable descriptor stored in the `mix` prop.
 
 ```ts
 type MixinDescriptor<node, args, props> = {
-  __node?: (node: node) => void;
-  args: args;
-  type: MixinRuntimeType<args, node, props>;
-};
+  __node?: (node: node) => void
+  args: args
+  type: MixinRuntimeType<args, node, props>
+}
 
 ```

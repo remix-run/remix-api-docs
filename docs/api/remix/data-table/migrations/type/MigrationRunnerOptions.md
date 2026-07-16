@@ -13,7 +13,7 @@ Options for creating a migration runner.
 
 ```ts
 type MigrationRunnerOptions = {
-  journalTable?: string;
-};
+  journalTable?: string
+}
 
 ```

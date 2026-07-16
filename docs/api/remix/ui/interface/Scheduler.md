@@ -17,17 +17,17 @@ interface Scheduler {
     type: SchedulerPhaseType,
     listener: SchedulerPhaseListener,
     options: boolean | AddEventListenerOptions,
-  ): void;
-  dequeue(): void;
-  enqueue(vnode: CommittedComponentNode, domParent: ParentNode): void;
-  enqueueCommitPhase(newTasks: EmptyFn[]): void;
-  enqueueTasks(newTasks: EmptyFn[]): void;
-  enqueueWork(newTasks: EmptyFn[]): void;
+  ): void
+  dequeue(): void
+  enqueue(vnode: CommittedComponentNode, domParent: ParentNode): void
+  enqueueCommitPhase(newTasks: EmptyFn[]): void
+  enqueueTasks(newTasks: EmptyFn[]): void
+  enqueueWork(newTasks: EmptyFn[]): void
   removeEventListener(
     type: SchedulerPhaseType,
     listener: SchedulerPhaseListener,
     options: boolean | EventListenerOptions,
-  ): void;
+  ): void
 }
 
 ```

@@ -14,7 +14,7 @@ Create a schema that accepts one of the given values using strict equality (`===
 ```ts
 function enum_<values extends readonly [unknown, unknown]>(
   values: values,
-): Schema<unknown, values[number]>;
+): Schema<unknown, values[number]>
 
 ```
 

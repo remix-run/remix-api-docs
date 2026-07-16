@@ -14,7 +14,7 @@ Creates an auth scheme that reads bearer tokens from a request header.
 ```ts
 function createBearerTokenAuthScheme<identity>(
   options: BearerTokenAuthSchemeOptions<identity>,
-): AuthScheme<identity>;
+): AuthScheme<identity>
 
 ```
 

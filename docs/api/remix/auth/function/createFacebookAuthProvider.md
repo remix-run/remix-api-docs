@@ -14,7 +14,7 @@ Creates a Facebook Login provider.
 ```ts
 function createFacebookAuthProvider(
   options: FacebookAuthProviderOptions,
-): OAuthProvider<FacebookAuthProfile, "facebook", OAuthStandardTokens>;
+): OAuthProvider<FacebookAuthProfile, 'facebook', OAuthStandardTokens>
 
 ```
 

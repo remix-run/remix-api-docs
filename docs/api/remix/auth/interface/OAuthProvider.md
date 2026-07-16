@@ -13,8 +13,8 @@ Public shape for an OAuth or OIDC provider used by external auth request handler
 
 ```ts
 interface OAuthProvider<_profile, provider, tokens> {
-  [oauthProviderTokens]?: (tokens: tokens) => tokens;
-  name: provider;
+  [oauthProviderTokens]?: (tokens: tokens) => tokens
+  name: provider
 }
 
 ```

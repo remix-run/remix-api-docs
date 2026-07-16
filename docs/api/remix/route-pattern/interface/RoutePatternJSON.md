@@ -13,11 +13,11 @@ Serialized URL pattern parts returned by the [`RoutePattern`](/api/remix/route-p
 
 ```ts
 interface RoutePatternJSON {
-  hostname: string;
-  pathname: string;
-  port: string;
-  protocol: string;
-  search: string;
+  hostname: string
+  pathname: string
+  port: string
+  protocol: string
+  search: string
 }
 
 ```

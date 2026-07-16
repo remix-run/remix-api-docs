@@ -16,9 +16,7 @@ interface CorsAllowedHeadersResolver {
   (
     request: Request,
     context: RequestContext,
-  ):
-    | CorsAllowedHeadersResolverResult
-    | Promise<CorsAllowedHeadersResolverResult>;
+  ): CorsAllowedHeadersResolverResult | Promise<CorsAllowedHeadersResolverResult>
 }
 
 ```

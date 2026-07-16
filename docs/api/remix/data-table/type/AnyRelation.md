@@ -12,6 +12,6 @@ Relation descriptor with erased table types.
 ## Signature
 
 ```ts
-type AnyRelation = Relation<AnyTable, AnyTable, RelationCardinality, any>;
+type AnyRelation = Relation<AnyTable, AnyTable, RelationCardinality, any>
 
 ```

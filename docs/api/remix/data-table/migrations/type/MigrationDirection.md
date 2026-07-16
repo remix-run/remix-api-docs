@@ -12,6 +12,6 @@ Direction used by migration runner operations.
 ## Signature
 
 ```ts
-type MigrationDirection = "up" | "down";
+type MigrationDirection = 'up' | 'down'
 
 ```

@@ -13,7 +13,7 @@ Options for parsing repeated file fields from `FormData`.
 
 ```ts
 interface FormDataFilesOptions {
-  name?: string;
+  name?: string
 }
 
 ```

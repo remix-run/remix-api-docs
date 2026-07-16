@@ -15,6 +15,6 @@ Named relation map for a source table.
 type RelationMapForTable<table> = Record<
   string,
   Relation<table, AnyTable, RelationCardinality, any>
->;
+>
 
 ```

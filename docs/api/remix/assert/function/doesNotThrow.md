@@ -16,14 +16,14 @@ function doesNotThrow(
   fn: () => unknown,
   expectedErrorOrMessage: unknown,
   message: AssertionMessage,
-): void;
+): void
 
 ```
 
 ## Example
 
 ```ts
-assert.doesNotThrow(() => JSON.parse("{}"));
+assert.doesNotThrow(() => JSON.parse('{}'))
 
 ```
 

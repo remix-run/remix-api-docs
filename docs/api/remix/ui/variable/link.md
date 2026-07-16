@@ -12,10 +12,5 @@ Adds client-side navigation behavior to anchor-like elements.
 ## Signature
 
 ```ts
-const link: MixinFactory<
-  HTMLElement,
-  [href: string, options?: NavigationOptions],
-  LinkCurrentProps
->;
-
+const link: MixinFactory<HTMLElement, [href: string, options?: NavigationOptions], LinkCurrentProps>
 ```

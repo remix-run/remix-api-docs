@@ -13,25 +13,22 @@ A part of a `multipart/*` HTTP message.
 
 ```ts
 class MultipartPart {
-  constructor(
-    header: Uint8Array,
-    content: Uint8Array<ArrayBufferLike>[],
-  ): MultipartPart;
+  constructor(header: Uint8Array, content: Uint8Array<ArrayBufferLike>[]): MultipartPart
 
   // Properties
-  content: Uint8Array<ArrayBufferLike>[];
+  content: Uint8Array<ArrayBufferLike>[]
 
   // Accessors
-  get arrayBuffer(): ArrayBuffer;
-  get bytes(): Uint8Array;
-  get filename(): string | undefined;
-  get headers(): MultipartHeaders;
-  get isFile(): boolean;
-  get isText(): boolean;
-  get mediaType(): string | undefined;
-  get name(): string | undefined;
-  get size(): number;
-  get text(): string;
+  get arrayBuffer(): ArrayBuffer
+  get bytes(): Uint8Array
+  get filename(): string | undefined
+  get headers(): MultipartHeaders
+  get isFile(): boolean
+  get isText(): boolean
+  get mediaType(): string | undefined
+  get name(): string | undefined
+  get size(): number
+  get text(): string
 }
 
 ```

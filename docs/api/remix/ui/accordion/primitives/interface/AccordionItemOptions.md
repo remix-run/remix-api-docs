@@ -9,8 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/p
 
 ```ts
 interface AccordionItemOptions {
-  disabled?: boolean;
-  value: string;
+  disabled?: boolean
+  value: string
 }
 
 ```

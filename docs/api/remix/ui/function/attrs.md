@@ -14,7 +14,7 @@ Applies default host props unless the element already provides them explicitly.
 ```ts
 function attrs<node extends EventTarget, defaults extends ElementProps>(
   defaults: Partial<defaults>,
-): MixinDescriptor<node, [Partial<ElementProps>], ElementProps>;
+): MixinDescriptor<node, [Partial<ElementProps>], ElementProps>
 
 ```
 

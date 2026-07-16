@@ -12,6 +12,6 @@ All lifecycle operations exposed by table hooks.
 ## Signature
 
 ```ts
-type TableLifecycleOperation = TableWriteOperation | "delete" | "read";
+type TableLifecycleOperation = TableWriteOperation | 'delete' | 'read'
 
 ```

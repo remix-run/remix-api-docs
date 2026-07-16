@@ -12,6 +12,6 @@ Column builder map used when declaring a table.
 ## Signature
 
 ```ts
-type TableColumnsDefinition = Record<string, ColumnBuilder<any>>;
+type TableColumnsDefinition = Record<string, ColumnBuilder<any>>
 
 ```

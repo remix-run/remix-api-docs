@@ -12,11 +12,7 @@ Creates the DOM update scheduler used by the component runtime.
 ## Signature
 
 ```ts
-function createScheduler(
-  doc: Document,
-  rootTarget: EventTarget,
-  styles: StyleManager,
-): Scheduler;
+function createScheduler(doc: Document, rootTarget: EventTarget, styles: StyleManager): Scheduler
 
 ```
 

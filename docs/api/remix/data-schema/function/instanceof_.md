@@ -14,7 +14,7 @@ Create a schema that validates a value is an instance of a class.
 ```ts
 function instanceof_<constructor extends (args: any[]) => any>(
   constructor: constructor,
-): Schema<unknown, InstanceType<constructor>>;
+): Schema<unknown, InstanceType<constructor>>
 
 ```
 

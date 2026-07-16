@@ -12,18 +12,14 @@ Asserts that `string` does **not** match the given `regexp`.
 ## Signature
 
 ```ts
-function doesNotMatch(
-  string: string,
-  regexp: RegExp,
-  message: AssertionMessage,
-): void;
+function doesNotMatch(string: string, regexp: RegExp, message: AssertionMessage): void
 
 ```
 
 ## Example
 
 ```ts
-assert.doesNotMatch(html, /Error/);
+assert.doesNotMatch(html, /Error/)
 
 ```
 

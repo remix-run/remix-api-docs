@@ -14,10 +14,9 @@ a `describe` block apply only to tests within that block.
 ## Signature
 
 ```ts
-const describe: (name: string, fn: () => void) => void;
+const describe: (name: string, fn: () => void) => void
 
-const describe: (name: string, meta: SuiteMeta, fn: () => void) => void;
-
+const describe: (name: string, meta: SuiteMeta, fn: () => void) => void
 ```
 
 ## Example

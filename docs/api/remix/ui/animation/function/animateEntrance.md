@@ -14,7 +14,7 @@ Animates an element when it is inserted into the DOM.
 ```ts
 function animateEntrance<target extends EventTarget>(
   config: AnimationConfig,
-): MixinDescriptor<target, [AnimationConfig], ElementProps>;
+): MixinDescriptor<target, [AnimationConfig], ElementProps>
 
 ```
 

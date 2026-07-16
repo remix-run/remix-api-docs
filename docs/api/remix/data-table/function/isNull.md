@@ -14,7 +14,7 @@ Builds an `IS NULL` predicate.
 ```ts
 function isNull<column extends string | ColumnReferenceLike>(
   column: column,
-): Predicate<PredicateColumn<column>>;
+): Predicate<PredicateColumn<column>>
 
 ```
 

@@ -9,11 +9,11 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox/pr
 
 ```ts
 interface ComboboxContextProps {
-  children?: RemixNode;
-  defaultValue?: string | null;
-  disabled?: boolean;
-  name?: string;
-  ref?: (handle: ComboboxHandle) => void;
+  children?: RemixNode
+  defaultValue?: string | null
+  disabled?: boolean
+  name?: string
+  ref?: (handle: ComboboxHandle) => void
 }
 
 ```

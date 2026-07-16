@@ -13,7 +13,7 @@ Events emitted by virtual roots.
 
 ```ts
 type VirtualRootEventMap = {
-  error: ComponentErrorEvent;
-};
+  error: ComponentErrorEvent
+}
 
 ```

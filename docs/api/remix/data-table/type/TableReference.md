@@ -13,11 +13,11 @@ Plain metadata snapshot of a table.
 
 ```ts
 type TableReference<table> = {
-  columns: TableColumns<table>;
-  kind: "table";
-  name: TableName<table>;
-  primaryKey: TablePrimaryKey<table>;
-  timestamps: TableTimestamps<table>;
-};
+  columns: TableColumns<table>
+  kind: 'table'
+  name: TableName<table>
+  primaryKey: TablePrimaryKey<table>
+  timestamps: TableTimestamps<table>
+}
 
 ```

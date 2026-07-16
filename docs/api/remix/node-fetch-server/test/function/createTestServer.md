@@ -17,7 +17,7 @@ drive it from a Playwright `Page`.
 ```ts
 function createTestServer(
   handler: (request: Request) => Response | Promise<Response>,
-): Promise<TestServer>;
+): Promise<TestServer>
 
 ```
 

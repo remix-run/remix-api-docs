@@ -13,25 +13,25 @@ Normalized column definition used in schema operations.
 
 ```ts
 type ColumnDefinition = {
-  autoIncrement?: boolean;
-  charset?: string;
-  checks?: ColumnCheck[];
-  collate?: string;
-  comment?: string;
-  computed?: ColumnComputed;
-  default?: ColumnDefault;
-  enumValues?: string[];
-  identity?: IdentityOptions;
-  length?: number;
-  nullable?: boolean;
-  precision?: number;
-  primaryKey?: boolean;
-  references?: ColumnReference;
-  scale?: number;
-  type: ColumnTypeName;
-  unique?: boolean | { name?: string };
-  unsigned?: boolean;
-  withTimezone?: boolean;
-};
+  autoIncrement?: boolean
+  charset?: string
+  checks?: ColumnCheck[]
+  collate?: string
+  comment?: string
+  computed?: ColumnComputed
+  default?: ColumnDefault
+  enumValues?: string[]
+  identity?: IdentityOptions
+  length?: number
+  nullable?: boolean
+  precision?: number
+  primaryKey?: boolean
+  references?: ColumnReference
+  scale?: number
+  type: ColumnTypeName
+  unique?: boolean | { name?: string }
+  unsigned?: boolean
+  withTimezone?: boolean
+}
 
 ```

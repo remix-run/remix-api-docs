@@ -12,10 +12,7 @@ Quotes a `{ schema?, name }` table reference using a dialect quote function.
 ## Signature
 
 ```ts
-function quoteTableRef(
-  table: TableRef,
-  quoteIdentifier: QuoteIdentifier,
-): string;
+function quoteTableRef(table: TableRef, quoteIdentifier: QuoteIdentifier): string
 
 ```
 

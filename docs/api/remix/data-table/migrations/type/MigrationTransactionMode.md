@@ -16,6 +16,6 @@ Controls how each migration is wrapped in transactions.
 ## Signature
 
 ```ts
-type MigrationTransactionMode = "auto" | "required" | "none";
+type MigrationTransactionMode = 'auto' | 'required' | 'none'
 
 ```

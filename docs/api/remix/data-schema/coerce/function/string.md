@@ -16,7 +16,7 @@ Accepts:
 ## Signature
 
 ```ts
-function string(): Schema<unknown, string>;
+function string(): Schema<unknown, string>
 
 ```
 

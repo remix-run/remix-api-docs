@@ -12,6 +12,6 @@ Function used to quote SQL identifiers for a dialect.
 ## Signature
 
 ```ts
-type QuoteIdentifier = (value: string) => string;
+type QuoteIdentifier = (value: string) => string
 
 ```

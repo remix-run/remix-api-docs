@@ -12,7 +12,7 @@ Create a schema that accepts bigints.
 ## Signature
 
 ```ts
-function bigint(): Schema<unknown, bigint>;
+function bigint(): Schema<unknown, bigint>
 
 ```
 

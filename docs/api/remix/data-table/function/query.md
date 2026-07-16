@@ -26,8 +26,8 @@ function query<
   QueryColumnTypeMapFromRow<tableName, row>,
   row,
   {},
-  UnboundQueryPhase<"all">
->;
+  UnboundQueryPhase<'all'>
+>
 
 ```
 
@@ -35,9 +35,9 @@ function query<
 
 ```ts
 let activeUsers = await query(users)
-  .where({ status: "active" })
-  .orderBy("createdAt", "desc")
-  .select(["id", "email"]);
+  .where({ status: 'active' })
+  .orderBy('createdAt', 'desc')
+  .select(['id', 'email'])
 
 ```
 

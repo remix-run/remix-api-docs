@@ -14,7 +14,7 @@ Creates a Google auth provider backed by the shared OIDC runtime.
 ```ts
 function createGoogleAuthProvider(
   options: GoogleAuthProviderOptions,
-): OAuthProvider<GoogleAuthProfile, "google", OAuthStandardTokens>;
+): OAuthProvider<GoogleAuthProfile, 'google', OAuthStandardTokens>
 
 ```
 

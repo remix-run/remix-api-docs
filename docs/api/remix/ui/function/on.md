@@ -16,11 +16,7 @@ function on<target extends Element, type extends string>(
   type: type,
   handler: ListenerFor<target, type>,
   captureBoolean: boolean,
-): MixinDescriptor<
-  target,
-  [type, ListenerFor<target, type>, boolean?],
-  ElementProps
->;
+): MixinDescriptor<target, [type, ListenerFor<target, type>, boolean?], ElementProps>
 
 ```
 

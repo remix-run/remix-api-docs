@@ -13,20 +13,20 @@ Options for creating the built-in Auth0 auth provider.
 
 ```ts
 interface Auth0AuthProviderOptions {
-  authorizationParams?: Record<string, string | undefined>;
-  clientId: string;
-  clientSecret: string;
-  discoveryUrl?: string | URL;
-  domain: string;
+  authorizationParams?: Record<string, string | undefined>
+  clientId: string
+  clientSecret: string
+  discoveryUrl?: string | URL
+  domain: string
   mapProfile?: (input: {
-    claims: OIDCAuthProfile;
-    context: RequestContext;
-    metadata: OIDCAuthProviderMetadata;
-    tokens: OAuthTokens;
-  }) => Auth0AuthProfile | Promise<Auth0AuthProfile>;
-  metadata?: OIDCAuthProviderMetadata;
-  redirectUri: string | URL;
-  scopes?: string[];
+    claims: OIDCAuthProfile
+    context: RequestContext
+    metadata: OIDCAuthProviderMetadata
+    tokens: OAuthTokens
+  }) => Auth0AuthProfile | Promise<Auth0AuthProfile>
+  metadata?: OIDCAuthProviderMetadata
+  redirectUri: string | URL
+  scopes?: string[]
 }
 
 ```

@@ -12,7 +12,7 @@ Creates a small terminal abstraction around stdout/stderr/stdin.
 ## Signature
 
 ```ts
-function createTerminal(options: TerminalOptions): Terminal;
+function createTerminal(options: TerminalOptions): Terminal
 
 ```
 

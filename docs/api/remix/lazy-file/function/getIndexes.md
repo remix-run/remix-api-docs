@@ -12,7 +12,7 @@ Resolves a byte range to absolute indexes in a buffer of the given `size`.
 ## Signature
 
 ```ts
-function getIndexes(range: ByteRange, size: number): [number, number];
+function getIndexes(range: ByteRange, size: number): [number, number]
 
 ```
 

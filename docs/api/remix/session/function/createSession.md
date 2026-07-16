@@ -15,7 +15,7 @@ Create a new session.
 function createSession<valueData extends Data, flashData extends Data>(
   id: string,
   initialData: SessionData<valueData, flashData>,
-): Session<valueData, flashData>;
+): Session<valueData, flashData>
 
 ```
 

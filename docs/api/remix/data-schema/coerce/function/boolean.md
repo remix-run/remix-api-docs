@@ -16,7 +16,7 @@ Accepts:
 ## Signature
 
 ```ts
-function boolean(): Schema<unknown, boolean>;
+function boolean(): Schema<unknown, boolean>
 
 ```
 

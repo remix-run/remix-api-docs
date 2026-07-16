@@ -13,8 +13,8 @@ Context passed to `resolveFrame` during server rendering.
 
 ```ts
 interface ResolveFrameContext {
-  currentFrameSrc: string;
-  topFrameSrc: string;
+  currentFrameSrc: string
+  topFrameSrc: string
 }
 
 ```

@@ -13,11 +13,11 @@ Metadata describing where a matched param appeared in a normalized URL part.
 
 ```ts
 type MatchParamMeta = {
-  begin: number;
-  end: number;
-  name: string;
-  type: ":" | "*";
-  value: string;
-};
+  begin: number
+  end: number
+  name: string
+  type: ':' | '*'
+  value: string
+}
 
 ```

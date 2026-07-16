@@ -13,7 +13,7 @@ Options for finishing an OAuth or OIDC callback flow.
 
 ```ts
 interface FinishExternalAuthOptions {
-  transactionKey?: string;
+  transactionKey?: string
 }
 
 ```

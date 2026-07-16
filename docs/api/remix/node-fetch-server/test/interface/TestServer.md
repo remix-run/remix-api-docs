@@ -13,8 +13,8 @@ Result returned by [`createTestServer`](/api/remix/node-fetch-server/test/functi
 
 ```ts
 interface TestServer {
-  baseUrl: string;
-  close(): Promise<void>;
+  baseUrl: string
+  close(): Promise<void>
 }
 
 ```

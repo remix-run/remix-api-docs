@@ -13,9 +13,7 @@ The typed result produced by `object()` for a given form-data shape.
 
 ```ts
 type ParsedFormData<schema> = {
-  [key in keyof schema]: schema[key] extends FormDataEntrySchema<infer output>
-    ? output
-    : never;
-};
+  [key in keyof schema]: schema[key] extends FormDataEntrySchema<infer output> ? output : never
+}
 
 ```

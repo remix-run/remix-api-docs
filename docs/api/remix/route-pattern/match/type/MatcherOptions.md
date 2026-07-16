@@ -13,7 +13,7 @@ Options that control route pattern matching.
 
 ```ts
 type MatcherOptions = {
-  ignoreCase?: boolean;
-};
+  ignoreCase?: boolean
+}
 
 ```

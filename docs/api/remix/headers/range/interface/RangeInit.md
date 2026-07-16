@@ -13,8 +13,8 @@ Initializer for a [`Range`](/api/remix/headers/range/class/Range/) header value.
 
 ```ts
 interface RangeInit {
-  ranges?: { end?: number; start?: number }[];
-  unit?: string;
+  ranges?: { end?: number; start?: number }[]
+  unit?: string
 }
 
 ```

@@ -13,17 +13,17 @@ Canonical select statement shape consumed by adapters.
 
 ```ts
 type SelectOperation<table> = {
-  distinct: boolean;
-  groupBy: string[];
-  having: Predicate[];
-  joins: JoinClause[];
-  kind: "select";
-  limit?: number;
-  offset?: number;
-  orderBy: OrderByClause[];
-  select: "*" | SelectColumn[];
-  table: table;
-  where: Predicate[];
-};
+  distinct: boolean
+  groupBy: string[]
+  having: Predicate[]
+  joins: JoinClause[]
+  kind: 'select'
+  limit?: number
+  offset?: number
+  orderBy: OrderByClause[]
+  select: '*' | SelectColumn[]
+  table: table
+  where: Predicate[]
+}
 
 ```

@@ -19,18 +19,15 @@ The `If-Range` header can contain either an entity tag (ETag) or an HTTP date.
 
 ```ts
 class IfRange {
-  constructor(init: string | Date): IfRange;
+  constructor(init: string | Date): IfRange
 
   // Properties
-  value: string;
+  value: string
 
   // Methods
-  matches(resource: {
-    etag?: string | null;
-    lastModified?: number | Date | null;
-  }): boolean;
-  toString(): string;
-  from(value: string | Date | null): IfRange;
+  matches(resource: { etag?: string | null; lastModified?: number | Date | null }): boolean
+  toString(): string
+  from(value: string | Date | null): IfRange
 }
 
 ```

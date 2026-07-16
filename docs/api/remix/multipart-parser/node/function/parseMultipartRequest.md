@@ -15,7 +15,7 @@ Parse a multipart Node.js request and yield each part as a [`MultipartPart`](/ap
 function parseMultipartRequest(
   req: IncomingMessage,
   options: MultipartParserOptions,
-): AsyncGenerator<MultipartPart, void, unknown>;
+): AsyncGenerator<MultipartPart, void, unknown>
 
 ```
 

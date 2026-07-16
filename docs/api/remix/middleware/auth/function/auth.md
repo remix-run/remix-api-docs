@@ -15,10 +15,10 @@ Loads auth state for the current request by running each configured auth scheme 
 function auth<schemes extends readonly AuthScheme<any>[]>(
   options: AuthOptions<schemes>,
 ): Middleware<{
-  key: ContextKey<AuthState<unknown>>;
-  property: "auth";
-  value: AuthForSchemes<schemes>;
-}>;
+  key: ContextKey<AuthState<unknown>>
+  property: 'auth'
+  value: AuthForSchemes<schemes>
+}>
 
 ```
 

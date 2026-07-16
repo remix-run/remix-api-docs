@@ -9,13 +9,13 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/primit
 
 ```ts
 interface MenuItemOptions {
-  checked?: boolean;
-  disabled?: boolean;
-  label?: string;
-  name: string;
-  searchValue?: SearchValue;
-  type?: "checkbox" | "radio";
-  value?: string;
+  checked?: boolean
+  disabled?: boolean
+  label?: string
+  name: string
+  searchValue?: SearchValue
+  type?: 'checkbox' | 'radio'
+  value?: string
 }
 
 ```

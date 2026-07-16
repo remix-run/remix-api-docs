@@ -1,6 +1,6 @@
 ---
 title: RouterOptions
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L205
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L208
 ---
 
 # RouterOptions
@@ -13,9 +13,9 @@ Options for creating a router.
 
 ```ts
 interface RouterOptions<context, middleware> {
-  defaultHandler?: RequestHandler<MiddlewareContext<middleware, context>>;
-  matcher?: MultiMatcher<RouteEntry>;
-  middleware?: readonly [middleware];
+  defaultHandler?: RequestHandler<MiddlewareContext<middleware, context>>
+  matcher?: MultiMatcher<RouteEntry>
+  middleware?: readonly [middleware]
 }
 
 ```

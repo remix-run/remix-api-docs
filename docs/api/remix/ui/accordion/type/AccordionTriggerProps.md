@@ -8,10 +8,10 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/i
 ## Signature
 
 ```ts
-type AccordionTriggerProps = Omit<Props<"button">, "children" | "type"> & {
-  children?: RemixNode;
-  indicator?: RemixNode | null;
-  type?: "button" | "submit" | "reset";
-};
+type AccordionTriggerProps = Omit<Props<'button'>, 'children' | 'type'> & {
+  children?: RemixNode
+  indicator?: RemixNode | null
+  type?: 'button' | 'submit' | 'reset'
+}
 
 ```

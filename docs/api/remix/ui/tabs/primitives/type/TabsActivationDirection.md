@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs/primit
 ## Signature
 
 ```ts
-type TabsActivationDirection = "first" | "last" | "next" | "previous";
+type TabsActivationDirection = 'first' | 'last' | 'next' | 'previous'
 
 ```

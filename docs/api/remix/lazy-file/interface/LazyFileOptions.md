@@ -13,9 +13,9 @@ Options for creating a [`LazyFile`](/api/remix/lazy-file/class/LazyFile/).
 
 ```ts
 interface LazyFileOptions {
-  lastModified?: number;
-  range?: ByteRange;
-  type?: string;
+  lastModified?: number
+  range?: ByteRange
+  type?: string
 }
 
 ```

@@ -13,8 +13,8 @@ Raw SQL statement execution descriptor.
 
 ```ts
 type RawOperation = {
-  kind: "raw";
-  sql: SqlStatement;
-};
+  kind: 'raw'
+  sql: SqlStatement
+}
 
 ```

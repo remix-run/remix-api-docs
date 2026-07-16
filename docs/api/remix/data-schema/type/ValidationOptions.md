@@ -12,6 +12,6 @@ Options passed to `~standard.validate`.
 ## Signature
 
 ```ts
-type ValidationOptions = StandardSchemaV1.Options;
+type ValidationOptions = StandardSchemaV1.Options
 
 ```

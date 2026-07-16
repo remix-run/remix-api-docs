@@ -14,17 +14,17 @@ subcommand (`new`, `doctor`, `routes`, `test`, `version`, `completion`,
 ## Signature
 
 ```ts
-function runRemix(argv: string[], options: RunRemixOptions): Promise<number>;
+function runRemix(argv: string[], options: RunRemixOptions): Promise<number>
 
 ```
 
 ## Example
 
 ```ts
-import { runRemix } from "@remix-run/cli";
+import { runRemix } from '@remix-run/cli'
 
-let exitCode = await runRemix(process.argv.slice(2));
-process.exit(exitCode);
+let exitCode = await runRemix(process.argv.slice(2))
+process.exit(exitCode)
 
 ```
 

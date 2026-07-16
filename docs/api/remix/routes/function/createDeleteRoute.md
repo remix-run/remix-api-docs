@@ -18,7 +18,7 @@ del
 ```ts
 function createDeleteRoute<source extends string>(
   pattern: source | RoutePattern<source>,
-): Route<"DELETE", source>;
+): Route<'DELETE', source>
 
 ```
 

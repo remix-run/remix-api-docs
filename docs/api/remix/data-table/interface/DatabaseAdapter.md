@@ -13,25 +13,21 @@ Runtime contract implemented by concrete database adapters.
 
 ```ts
 interface DatabaseAdapter {
-  capabilities: AdapterCapabilities;
-  dialect: string;
-  acquireMigrationLock(): Promise<void>;
-  beginTransaction(options: TransactionOptions): Promise<TransactionToken>;
-  commitTransaction(token: TransactionToken): Promise<void>;
-  compileSql(operation: DataManipulationOperation): SqlStatement[];
-  createSavepoint(token: TransactionToken, name: string): Promise<void>;
-  execute(request: DataManipulationRequest): Promise<DataManipulationResult>;
-  executeScript(sql: string, transaction: TransactionToken): Promise<void>;
-  hasColumn(
-    table: TableRef,
-    column: string,
-    transaction: TransactionToken,
-  ): Promise<boolean>;
-  hasTable(table: TableRef, transaction: TransactionToken): Promise<boolean>;
-  releaseMigrationLock(): Promise<void>;
-  releaseSavepoint(token: TransactionToken, name: string): Promise<void>;
-  rollbackToSavepoint(token: TransactionToken, name: string): Promise<void>;
-  rollbackTransaction(token: TransactionToken): Promise<void>;
+  capabilities: AdapterCapabilities
+  dialect: string
+  acquireMigrationLock(): Promise<void>
+  beginTransaction(options: TransactionOptions): Promise<TransactionToken>
+  commitTransaction(token: TransactionToken): Promise<void>
+  compileSql(operation: DataManipulationOperation): SqlStatement[]
+  createSavepoint(token: TransactionToken, name: string): Promise<void>
+  execute(request: DataManipulationRequest): Promise<DataManipulationResult>
+  executeScript(sql: string, transaction: TransactionToken): Promise<void>
+  hasColumn(table: TableRef, column: string, transaction: TransactionToken): Promise<boolean>
+  hasTable(table: TableRef, transaction: TransactionToken): Promise<boolean>
+  releaseMigrationLock(): Promise<void>
+  releaseSavepoint(token: TransactionToken, name: string): Promise<void>
+  rollbackToSavepoint(token: TransactionToken, name: string): Promise<void>
+  rollbackTransaction(token: TransactionToken): Promise<void>
 }
 
 ```

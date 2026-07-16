@@ -13,8 +13,8 @@ Options for defining a [`hasOne`](/api/remix/data-table/function/hasOne/) relati
 
 ```ts
 type HasOneOptions<source, target> = {
-  foreignKey?: KeySelector<target>;
-  targetKey?: KeySelector<source>;
-};
+  foreignKey?: KeySelector<target>
+  targetKey?: KeySelector<source>
+}
 
 ```

@@ -13,8 +13,8 @@ Authorization server details stored with Atmosphere DPoP-bound tokens for refres
 
 ```ts
 interface AtmosphereTokenAuthorizationServer {
-  issuer: string;
-  tokenEndpoint: string;
+  issuer: string
+  tokenEndpoint: string
 }
 
 ```

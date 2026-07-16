@@ -12,7 +12,7 @@ Creates a new cookie object.
 ## Signature
 
 ```ts
-function createCookie(name: string, options: CookieOptions): Cookie;
+function createCookie(name: string, options: CookieOptions): Cookie
 
 ```
 

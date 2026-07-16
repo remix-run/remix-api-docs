@@ -14,6 +14,6 @@ uses worker threads for projects that prefer lower-overhead startup.
 ## Signature
 
 ```ts
-type RemixTestPool = "forks" | "threads";
+type RemixTestPool = 'forks' | 'threads'
 
 ```

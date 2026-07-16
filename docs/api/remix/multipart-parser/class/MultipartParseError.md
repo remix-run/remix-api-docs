@@ -13,18 +13,18 @@ The base class for errors thrown by the multipart parser.
 
 ```ts
 class MultipartParseError {
-  constructor(message: string): MultipartParseError;
+  constructor(message: string): MultipartParseError
 
   // Properties
-  cause?: unknown;
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

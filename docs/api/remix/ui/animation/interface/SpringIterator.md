@@ -13,13 +13,13 @@ Iterator returned by [`spring`](/api/remix/ui/animation/variable/spring/), decor
 
 ```ts
 interface SpringIterator {
-  duration: number;
-  easing: string;
-  [iterator](): IterableIterator<number, any, any>;
-  next(__namedParameters: [] | [any]): IteratorResult<number, any>;
-  return(value: any): IteratorResult<number, any>;
-  throw(e: any): IteratorResult<number, any>;
-  toString(): string;
+  duration: number
+  easing: string
+  [iterator](): IterableIterator<number, any, any>
+  next(__namedParameters: [] | [any]): IteratorResult<number, any>
+  return(value: any): IteratorResult<number, any>
+  throw(e: any): IteratorResult<number, any>
+  toString(): string
 }
 
 ```

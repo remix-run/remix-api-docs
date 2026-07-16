@@ -13,9 +13,9 @@ Options for Memcache-backed session storage.
 
 ```ts
 interface MemcacheSessionStorageOptions {
-  keyPrefix?: string;
-  ttlSeconds?: number;
-  useUnknownIds?: boolean;
+  keyPrefix?: string
+  ttlSeconds?: number
+  useUnknownIds?: boolean
 }
 
 ```

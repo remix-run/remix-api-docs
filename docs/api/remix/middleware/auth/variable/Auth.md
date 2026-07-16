@@ -13,6 +13,5 @@ The `auth()` middleware also installs auth state as `context.auth`.
 ## Signature
 
 ```ts
-const Auth: ContextKey<AuthState<unknown>>;
-
+const Auth: ContextKey<AuthState<unknown>>
 ```

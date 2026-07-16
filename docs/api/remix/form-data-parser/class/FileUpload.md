@@ -13,22 +13,22 @@ A file that was uploaded as part of a `multipart/form-data` request.
 
 ```ts
 class FileUpload {
-  constructor(part: MultipartPart, fieldName: string): FileUpload;
+  constructor(part: MultipartPart, fieldName: string): FileUpload
 
   // Properties
-  fieldName: string;
-  lastModified: number;
-  name: string;
-  size: number;
-  type: string;
-  webkitRelativePath: string;
+  fieldName: string
+  lastModified: number
+  name: string
+  size: number
+  type: string
+  webkitRelativePath: string
 
   // Methods
-  arrayBuffer(): Promise<ArrayBuffer>;
-  bytes(): Promise<Uint8Array<ArrayBuffer>>;
-  slice(start: number, end: number, contentType: string): Blob;
-  stream(): ReadableStream<Uint8Array<ArrayBuffer>>;
-  text(): Promise<string>;
+  arrayBuffer(): Promise<ArrayBuffer>
+  bytes(): Promise<Uint8Array<ArrayBuffer>>
+  slice(start: number, end: number, contentType: string): Blob
+  stream(): ReadableStream<Uint8Array<ArrayBuffer>>
+  text(): Promise<string>
 }
 
 ```

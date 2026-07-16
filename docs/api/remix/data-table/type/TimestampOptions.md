@@ -12,6 +12,6 @@ Timestamp configuration accepted by [`table`](/api/remix/data-table/function/tab
 ## Signature
 
 ```ts
-type TimestampOptions = boolean | { createdAt?: string; updatedAt?: string };
+type TimestampOptions = boolean | { createdAt?: string; updatedAt?: string }
 
 ```

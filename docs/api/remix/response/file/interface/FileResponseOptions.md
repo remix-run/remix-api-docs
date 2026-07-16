@@ -13,11 +13,11 @@ Options for creating a file response with [`createFileResponse`](/api/remix/resp
 
 ```ts
 interface FileResponseOptions<file> {
-  acceptRanges?: boolean;
-  cacheControl?: string;
-  digest?: AlgorithmIdentifier | FileDigestFunction<file>;
-  etag?: false | "weak" | "strong";
-  lastModified?: boolean;
+  acceptRanges?: boolean
+  cacheControl?: string
+  digest?: AlgorithmIdentifier | FileDigestFunction<file>
+  etag?: false | 'weak' | 'strong'
+  lastModified?: boolean
 }
 
 ```

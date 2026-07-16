@@ -12,7 +12,7 @@ Returns true if matches `a` and `b` have equal specificity.
 ## Signature
 
 ```ts
-function equal(a: Match, b: Match): boolean;
+function equal(a: Match, b: Match): boolean
 
 ```
 

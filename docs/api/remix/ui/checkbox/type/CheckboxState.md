@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/checkbox/in
 ## Signature
 
 ```ts
-type CheckboxState = "checked" | "mixed" | "unchecked";
+type CheckboxState = 'checked' | 'mixed' | 'unchecked'
 
 ```

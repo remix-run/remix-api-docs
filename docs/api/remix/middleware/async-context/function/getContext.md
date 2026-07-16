@@ -12,7 +12,7 @@ Get the request context from `AsyncLocalStorage`.
 ## Signature
 
 ```ts
-function getContext(): RequestContext;
+function getContext(): RequestContext
 
 ```
 

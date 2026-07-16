@@ -13,10 +13,10 @@ Options for client-side frame-aware navigation.
 
 ```ts
 type NavigationOptions = {
-  history?: "push" | "replace";
-  resetScroll?: boolean;
-  src?: string;
-  target?: string;
-};
+  history?: 'push' | 'replace'
+  resetScroll?: boolean
+  src?: string
+  target?: string
+}
 
 ```

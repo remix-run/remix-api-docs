@@ -13,11 +13,11 @@ Minimal Redis client contract required by [`createRedisSessionStorage`](/api/rem
 
 ```ts
 interface RedisSessionStorageClient {
-  del(key: string): unknown;
-  expire(key: string, ttlSeconds: number): unknown;
-  get(key: string): string | Promise<string | null> | null;
-  set(key: string, value: string): unknown;
-  setEx(key: string, ttlSeconds: number, value: string): unknown;
+  del(key: string): unknown
+  expire(key: string, ttlSeconds: number): unknown
+  get(key: string): string | Promise<string | null> | null
+  set(key: string, value: string): unknown
+  setEx(key: string, ttlSeconds: number, value: string): unknown
 }
 
 ```

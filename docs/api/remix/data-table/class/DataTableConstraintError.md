@@ -16,20 +16,20 @@ class DataTableConstraintError {
   constructor(
     message: string,
     options: { cause?: unknown; metadata?: Record<string, unknown> },
-  ): DataTableConstraintError;
+  ): DataTableConstraintError
 
   // Properties
-  cause?: unknown;
-  code: string;
-  message: string;
-  metadata?: Record<string, unknown>;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  code: string
+  message: string
+  metadata?: Record<string, unknown>
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

@@ -9,13 +9,13 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/listbox/ind
 
 ```ts
 interface ListboxRegisteredOption {
-  disabled?: boolean;
-  hidden: boolean;
-  id: string;
-  label: string;
-  node: HTMLElement;
-  textValue?: SearchValue;
-  value: string;
+  disabled?: boolean
+  hidden: boolean
+  id: string
+  label: string
+  node: HTMLElement
+  textValue?: SearchValue
+  value: string
 }
 
 ```

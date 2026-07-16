@@ -18,9 +18,9 @@ while different component types remain independent.
 
 ```ts
 interface Context<C> {
-  get<ComponentType>(component: ComponentType): ContextFrom<ComponentType>;
-  get(component: symbol | ElementType): unknown;
-  set(values: C): void;
+  get<ComponentType>(component: ComponentType): ContextFrom<ComponentType>
+  get(component: symbol | ElementType): unknown
+  set(values: C): void
 }
 
 ```

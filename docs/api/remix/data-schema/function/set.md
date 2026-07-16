@@ -14,7 +14,7 @@ Create a schema that validates a Set with typed values.
 ```ts
 function set<valueInput, valueOutput>(
   valueSchema: Schema<valueInput, valueOutput>,
-): Schema<unknown, Set<valueOutput>>;
+): Schema<unknown, Set<valueOutput>>
 
 ```
 

@@ -12,7 +12,7 @@ Removes ANSI escape sequences from a string.
 ## Signature
 
 ```ts
-function stripAnsi(value: string): string;
+function stripAnsi(value: string): string
 
 ```
 

@@ -17,6 +17,6 @@ type ContextValue<key> =
     ? value
     : key extends { prototype: infer instance }
       ? instance
-      : never;
+      : never
 
 ```

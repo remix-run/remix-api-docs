@@ -13,10 +13,9 @@ mock helpers and per-test cleanup registration.
 ## Signature
 
 ```ts
-const it: (name: string, fn: TestFn) => void;
+const it: (name: string, fn: TestFn) => void
 
-const it: (name: string, meta: TestMeta, fn: TestFn) => void;
-
+const it: (name: string, meta: TestMeta, fn: TestFn) => void
 ```
 
 ## Example

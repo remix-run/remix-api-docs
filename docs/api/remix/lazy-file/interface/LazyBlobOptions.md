@@ -13,8 +13,8 @@ Options for creating a [`LazyBlob`](/api/remix/lazy-file/class/LazyBlob/).
 
 ```ts
 interface LazyBlobOptions {
-  range?: ByteRange;
-  type?: string;
+  range?: ByteRange
+  type?: string
 }
 
 ```

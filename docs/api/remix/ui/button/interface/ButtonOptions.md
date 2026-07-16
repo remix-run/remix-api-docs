@@ -9,8 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/button/inde
 
 ```ts
 interface ButtonOptions {
-  size?: ButtonSize;
-  tone?: ButtonTone;
+  size?: ButtonSize
+  tone?: ButtonTone
 }
 
 ```

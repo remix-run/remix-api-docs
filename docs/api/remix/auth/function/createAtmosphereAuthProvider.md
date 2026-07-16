@@ -17,7 +17,7 @@ before passing this provider to `startExternalAuth()`.
 ```ts
 function createAtmosphereAuthProvider<profile extends AtmosphereAuthProfile>(
   options: AtmosphereAuthProviderOptions<profile>,
-): AtmosphereAuthProvider<profile>;
+): AtmosphereAuthProvider<profile>
 
 ```
 

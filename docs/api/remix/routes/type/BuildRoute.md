@@ -16,6 +16,6 @@ type BuildRoute<method, pattern> = pattern extends string
   ? Route<method, pattern>
   : pattern extends RoutePattern<infer source extends string>
     ? Route<method, source>
-    : never;
+    : never
 
 ```

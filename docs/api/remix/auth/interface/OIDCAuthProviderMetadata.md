@@ -13,15 +13,15 @@ OpenID Connect discovery metadata.
 
 ```ts
 interface OIDCAuthProviderMetadata {
-  authorization_endpoint: string;
-  claims_supported?: string[];
-  code_challenge_methods_supported?: string[];
-  end_session_endpoint?: string;
-  issuer: string;
-  jwks_uri?: string;
-  scopes_supported?: string[];
-  token_endpoint: string;
-  userinfo_endpoint?: string;
+  authorization_endpoint: string
+  claims_supported?: string[]
+  code_challenge_methods_supported?: string[]
+  end_session_endpoint?: string
+  issuer: string
+  jwks_uri?: string
+  scopes_supported?: string[]
+  token_endpoint: string
+  userinfo_endpoint?: string
 }
 
 ```

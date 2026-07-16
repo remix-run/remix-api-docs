@@ -12,7 +12,7 @@ Create a schema that accepts a single literal value using strict equality (`===`
 ## Signature
 
 ```ts
-function literal<value>(literalValue: value): Schema<unknown, value>;
+function literal<value>(literalValue: value): Schema<unknown, value>
 
 ```
 

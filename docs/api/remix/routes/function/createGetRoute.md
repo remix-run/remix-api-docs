@@ -18,7 +18,7 @@ get
 ```ts
 function createGetRoute<source extends string>(
   pattern: source | RoutePattern<source>,
-): Route<"GET", source>;
+): Route<'GET', source>
 
 ```
 

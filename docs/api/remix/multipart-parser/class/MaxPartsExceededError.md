@@ -13,18 +13,18 @@ An error thrown when the maximum allowed number of multipart parts is exceeded.
 
 ```ts
 class MaxPartsExceededError {
-  constructor(maxParts: number): MaxPartsExceededError;
+  constructor(maxParts: number): MaxPartsExceededError
 
   // Properties
-  cause?: unknown;
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

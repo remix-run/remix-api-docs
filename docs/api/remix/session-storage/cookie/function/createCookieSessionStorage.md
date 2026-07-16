@@ -15,7 +15,7 @@ to the browser's maximum cookie size, typically 4096 bytes.
 ## Signature
 
 ```ts
-function createCookieSessionStorage(): SessionStorage;
+function createCookieSessionStorage(): SessionStorage
 
 ```
 

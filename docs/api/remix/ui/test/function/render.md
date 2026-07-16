@@ -12,7 +12,7 @@ Mounts a [`RemixNode`](/api/remix/ui/jsx-dev-runtime/type/RemixNode/) into a DOM
 ## Signature
 
 ```ts
-function render(node: RemixNode, opts: RenderOptions): RenderResult;
+function render(node: RemixNode, opts: RenderOptions): RenderResult
 
 ```
 

@@ -12,6 +12,6 @@ Any column reference.
 ## Signature
 
 ```ts
-type AnyColumn = ColumnReference<string, string>;
+type AnyColumn = ColumnReference<string, string>
 
 ```

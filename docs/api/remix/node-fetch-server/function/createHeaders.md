@@ -13,7 +13,7 @@ Creates a [`Headers`](https://developer.mozilla.org/en-US/docs/Web/API/Headers) 
 ## Signature
 
 ```ts
-function createHeaders(req: IncomingMessage | Http2ServerRequest): Headers;
+function createHeaders(req: IncomingMessage | Http2ServerRequest): Headers
 
 ```
 

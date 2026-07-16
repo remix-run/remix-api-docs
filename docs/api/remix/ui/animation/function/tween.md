@@ -14,7 +14,7 @@ to check if the animation is complete.
 ## Signature
 
 ```ts
-function tween(options: TweenOptions): Generator<number, number, number>;
+function tween(options: TweenOptions): Generator<number, number, number>
 
 ```
 

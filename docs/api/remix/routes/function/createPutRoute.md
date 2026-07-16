@@ -18,7 +18,7 @@ put
 ```ts
 function createPutRoute<source extends string>(
   pattern: source | RoutePattern<source>,
-): Route<"PUT", source>;
+): Route<'PUT', source>
 
 ```
 

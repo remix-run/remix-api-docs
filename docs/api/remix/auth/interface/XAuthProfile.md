@@ -13,13 +13,13 @@ Profile fields returned by the built-in X auth provider.
 
 ```ts
 interface XAuthProfile {
-  description?: string;
-  id: string;
-  name: string;
-  profile_image_url?: string;
-  url?: string;
-  username: string;
-  verified?: boolean;
+  description?: string
+  id: string
+  name: string
+  profile_image_url?: string
+  url?: string
+  username: string
+  verified?: boolean
 }
 
 ```

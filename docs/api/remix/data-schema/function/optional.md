@@ -14,7 +14,7 @@ Allow `undefined` as an input value, short-circuiting validation when `undefined
 ```ts
 function optional<input, output>(
   schema: Schema<input, output>,
-): Schema<input | undefined, output | undefined>;
+): Schema<input | undefined, output | undefined>
 
 ```
 

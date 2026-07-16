@@ -17,32 +17,27 @@ The value of a `Accept` HTTP header.
 
 ```ts
 class Accept {
-  constructor(init: string | AcceptInit): Accept;
+  constructor(init: string | AcceptInit): Accept
 
   // Accessors
-  get mediaTypes(): string[];
-  get size(): number;
-  get weights(): number[];
+  get mediaTypes(): string[]
+  get size(): number
+  get weights(): number[]
 
   // Methods
-  [iterator](): IterableIterator<[string, number]>;
-  accepts(mediaType: string): boolean;
-  clear(): void;
-  delete(mediaType: string): void;
-  entries(): IterableIterator<[string, number]>;
-  forEach(
-    callback: (mediaType: string, weight: number, header: Accept) => void,
-    thisArg: any,
-  ): void;
-  get(mediaType: string): number | null;
-  getPreferred<mediaType extends string>(
-    mediaTypes: readonly mediaType[],
-  ): mediaType | null;
-  getWeight(mediaType: string): number;
-  has(mediaType: string): boolean;
-  set(mediaType: string, weight: number): void;
-  toString(): string;
-  from(value: string | AcceptInit | null): Accept;
+  [iterator](): IterableIterator<[string, number]>
+  accepts(mediaType: string): boolean
+  clear(): void
+  delete(mediaType: string): void
+  entries(): IterableIterator<[string, number]>
+  forEach(callback: (mediaType: string, weight: number, header: Accept) => void, thisArg: any): void
+  get(mediaType: string): number | null
+  getPreferred<mediaType extends string>(mediaTypes: readonly mediaType[]): mediaType | null
+  getWeight(mediaType: string): number
+  has(mediaType: string): boolean
+  set(mediaType: string, weight: number): void
+  toString(): string
+  from(value: string | AcceptInit | null): Accept
 }
 
 ```

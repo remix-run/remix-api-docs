@@ -17,8 +17,8 @@ Session storage implementations operate on cookie values. Use `remix/cookie` or
 
 ```ts
 interface SessionStorage {
-  read(cookie: string | null): Promise<Session<Data, Data>>;
-  save(session: Session): Promise<string | null>;
+  read(cookie: string | null): Promise<Session<Data, Data>>
+  save(session: Session): Promise<string | null>
 }
 
 ```

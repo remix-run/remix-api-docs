@@ -13,8 +13,8 @@ Adapter execution request payload.
 
 ```ts
 type DataManipulationRequest = {
-  operation: DataManipulationOperation;
-  transaction?: TransactionToken;
-};
+  operation: DataManipulationOperation
+  transaction?: TransactionToken
+}
 
 ```

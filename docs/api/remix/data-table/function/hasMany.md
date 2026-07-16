@@ -16,7 +16,7 @@ function hasMany<source extends AnyTable, target extends AnyTable>(
   source: source,
   target: target,
   relationOptions: HasManyOptions<source, target>,
-): Relation<source, target, "many">;
+): Relation<source, target, 'many'>
 
 ```
 

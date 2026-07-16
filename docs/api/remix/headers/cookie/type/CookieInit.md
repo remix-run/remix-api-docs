@@ -12,6 +12,6 @@ Initializer for a [`Cookie`](/api/remix/headers/cookie/class/Cookie/) header val
 ## Signature
 
 ```ts
-type CookieInit = Iterable<[string, string]> | Record<string, string>;
+type CookieInit = Iterable<[string, string]> | Record<string, string>
 
 ```

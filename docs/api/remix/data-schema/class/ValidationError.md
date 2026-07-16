@@ -13,19 +13,19 @@ Error thrown by [`parse`](/api/remix/data-schema/function/parse/) when validatio
 
 ```ts
 class ValidationError {
-  constructor(issues: readonly Issue[], message: string): ValidationError;
+  constructor(issues: readonly Issue[], message: string): ValidationError
 
   // Properties
-  cause?: unknown;
-  issues: readonly Issue[];
-  message: string;
-  name: string;
-  stack?: string;
-  stackTraceLimit: number;
+  cause?: unknown
+  issues: readonly Issue[]
+  message: string
+  name: string
+  stack?: string
+  stackTraceLimit: number
 
   // Methods
-  captureStackTrace(targetObject: object, constructorOpt: Function): void;
-  prepareStackTrace(err: Error, stackTraces: CallSite[]): any;
+  captureStackTrace(targetObject: object, constructorOpt: Function): void
+  prepareStackTrace(err: Error, stackTraces: CallSite[]): any
 }
 
 ```

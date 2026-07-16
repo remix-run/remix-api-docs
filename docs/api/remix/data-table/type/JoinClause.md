@@ -13,9 +13,9 @@ Join configuration used in compiled select statements.
 
 ```ts
 type JoinClause = {
-  on: Predicate;
-  table: AnyTable;
-  type: JoinType;
-};
+  on: Predicate
+  table: AnyTable
+  type: JoinType
+}
 
 ```

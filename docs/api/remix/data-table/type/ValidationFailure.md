@@ -13,7 +13,7 @@ Validation failure returned from table hooks.
 
 ```ts
 type ValidationFailure = {
-  issues: ReadonlyArray<ValidationIssue>;
-};
+  issues: ReadonlyArray<ValidationIssue>
+}
 
 ```

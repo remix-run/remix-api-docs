@@ -12,6 +12,6 @@ Supported SQL join kinds.
 ## Signature
 
 ```ts
-type JoinType = "inner" | "left" | "right";
+type JoinType = 'inner' | 'left' | 'right'
 
 ```

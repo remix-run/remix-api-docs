@@ -13,12 +13,12 @@ Profile fields returned by the built-in GitHub auth provider.
 
 ```ts
 interface GitHubAuthProfile {
-  avatar_url?: string;
-  email?: string | null;
-  html_url?: string;
-  id: number;
-  login: string;
-  name?: string | null;
+  avatar_url?: string
+  email?: string | null
+  html_url?: string
+  id: number
+  login: string
+  name?: string | null
 }
 
 ```

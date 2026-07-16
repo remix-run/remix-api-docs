@@ -13,21 +13,16 @@ Structured details for a [`CreateHrefError`](/api/remix/route-pattern/href/class
 
 ```ts
 type CreateHrefErrorDetails =
-  | { pattern: RoutePattern; type: "missing-hostname" }
+  | { pattern: RoutePattern; type: 'missing-hostname' }
   | {
-      missingParams: string[];
-      params: Record<string, unknown>;
-      pattern: RoutePattern;
-      type: "missing-params";
+      missingParams: string[]
+      params: Record<string, unknown>
+      pattern: RoutePattern
+      type: 'missing-params'
     }
-  | { pattern: RoutePattern; type: "nameless-wildcard" }
-  | { char: string; type: "invalid-hostname-variable"; value: string }
-  | { char: string; type: "invalid-hostname-wildcard"; value: string }
-  | {
-      paramName: string;
-      pattern: RoutePattern;
-      type: "invalid-pathname-variable";
-      value: string;
-    };
+  | { pattern: RoutePattern; type: 'nameless-wildcard' }
+  | { char: string; type: 'invalid-hostname-variable'; value: string }
+  | { char: string; type: 'invalid-hostname-wildcard'; value: string }
+  | { paramName: string; pattern: RoutePattern; type: 'invalid-pathname-variable'; value: string }
 
 ```

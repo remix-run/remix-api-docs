@@ -13,9 +13,9 @@ Result metadata for write operations that return a single row.
 
 ```ts
 type WriteRowResult<row> = {
-  affectedRows: number;
-  insertId?: unknown;
-  row: row | null;
-};
+  affectedRows: number
+  insertId?: unknown
+  row: row | null
+}
 
 ```

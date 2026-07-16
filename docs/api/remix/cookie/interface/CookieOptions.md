@@ -13,17 +13,17 @@ Options for creating a cookie.
 
 ```ts
 interface CookieOptions {
-  decode?: (value: string) => string;
-  domain?: string;
-  encode?: (value: string) => string;
-  expires?: Date;
-  httpOnly?: boolean;
-  maxAge?: number;
-  partitioned?: boolean;
-  path?: string;
-  sameSite?: SameSiteValue;
-  secrets?: string[];
-  secure?: boolean;
+  decode?: (value: string) => string
+  domain?: string
+  encode?: (value: string) => string
+  expires?: Date
+  httpOnly?: boolean
+  maxAge?: number
+  partitioned?: boolean
+  path?: string
+  sameSite?: SameSiteValue
+  secrets?: string[]
+  secure?: boolean
 }
 
 ```

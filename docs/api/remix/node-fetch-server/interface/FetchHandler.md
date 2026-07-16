@@ -13,7 +13,7 @@ Handles an incoming request and returns the response sent to the client.
 
 ```ts
 interface FetchHandler {
-  (request: Request, client: ClientAddress): Response | Promise<Response>;
+  (request: Request, client: ClientAddress): Response | Promise<Response>
 }
 
 ```

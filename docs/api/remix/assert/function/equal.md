@@ -12,18 +12,14 @@ Asserts strict equality (`Object.is`) between `actual` and `expected`.
 ## Signature
 
 ```ts
-function equal<T>(
-  actual: unknown,
-  expected: T,
-  message: AssertionMessage,
-): asserts actual is T;
+function equal<T>(actual: unknown, expected: T, message: AssertionMessage): asserts actual is T
 
 ```
 
 ## Example
 
 ```ts
-assert.equal(response.status, 200);
+assert.equal(response.status, 200)
 
 ```
 

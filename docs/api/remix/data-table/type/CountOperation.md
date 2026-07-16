@@ -13,12 +13,12 @@ Canonical count statement shape consumed by adapters.
 
 ```ts
 type CountOperation<table> = {
-  groupBy: string[];
-  having: Predicate[];
-  joins: JoinClause[];
-  kind: "count";
-  table: table;
-  where: Predicate[];
-};
+  groupBy: string[]
+  having: Predicate[]
+  joins: JoinClause[]
+  kind: 'count'
+  table: table
+  where: Predicate[]
+}
 
 ```

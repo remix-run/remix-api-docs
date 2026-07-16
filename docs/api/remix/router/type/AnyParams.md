@@ -12,6 +12,6 @@ A broad params shape for APIs that cannot know an exact route pattern ahead of t
 ## Signature
 
 ```ts
-type AnyParams = Record<string, string>;
+type AnyParams = Record<string, string>
 
 ```

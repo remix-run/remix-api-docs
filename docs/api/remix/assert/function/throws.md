@@ -17,20 +17,16 @@ for a valid error.
 ## Signature
 
 ```ts
-function throws(
-  fn: () => unknown,
-  expectedErrorOrMessage: unknown,
-  message: AssertionMessage,
-): void;
+function throws(fn: () => unknown, expectedErrorOrMessage: unknown, message: AssertionMessage): void
 
 ```
 
 ## Example
 
 ```ts
-assert.throws(() => JSON.parse("invalid"));
-assert.throws(() => riskyOp(), SyntaxError);
-assert.throws(() => riskyOp(), { code: "ERR_INVALID_ARG_VALUE" });
+assert.throws(() => JSON.parse('invalid'))
+assert.throws(() => riskyOp(), SyntaxError)
+assert.throws(() => riskyOp(), { code: 'ERR_INVALID_ARG_VALUE' })
 
 ```
 

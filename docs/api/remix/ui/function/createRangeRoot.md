@@ -12,10 +12,7 @@ Creates a virtual root bounded by two DOM nodes.
 ## Signature
 
 ```ts
-function createRangeRoot(
-  boundaries: [Node, Node],
-  options: VirtualRootOptions,
-): VirtualRoot;
+function createRangeRoot(boundaries: [Node, Node], options: VirtualRootOptions): VirtualRoot
 
 ```
 

@@ -16,7 +16,7 @@ chain, or some other middleware that provides `context.get(FormData)`.
 ## Signature
 
 ```ts
-function methodOverride(options: MethodOverrideOptions): Middleware;
+function methodOverride(options: MethodOverrideOptions): Middleware
 
 ```
 

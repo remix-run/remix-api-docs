@@ -12,7 +12,7 @@ Creates a simple, in-memory implementation of the [`FileStorage`](/api/remix/fil
 ## Signature
 
 ```ts
-function createMemoryFileStorage(): FileStorage<File>;
+function createMemoryFileStorage(): FileStorage<File>
 
 ```
 

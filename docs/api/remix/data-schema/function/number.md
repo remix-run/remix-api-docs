@@ -12,7 +12,7 @@ Create a schema that accepts finite numbers (excluding `NaN` and `Infinity`).
 ## Signature
 
 ```ts
-function number(): Schema<unknown, number>;
+function number(): Schema<unknown, number>
 
 ```
 

@@ -13,7 +13,7 @@ Object form for constructing a [`Vary`](/api/remix/headers/vary/class/Vary/) hea
 
 ```ts
 interface VaryInit {
-  headerNames: string[];
+  headerNames: string[]
 }
 
 ```

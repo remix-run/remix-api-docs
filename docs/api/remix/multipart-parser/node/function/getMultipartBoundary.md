@@ -12,7 +12,7 @@ Extracts the boundary string from a `multipart/*` content type.
 ## Signature
 
 ```ts
-function getMultipartBoundary(contentType: string): string | null;
+function getMultipartBoundary(contentType: string): string | null
 
 ```
 

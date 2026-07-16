@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/anchor/inde
 ## Signature
 
 ```ts
-type AnchorTarget = HTMLElement | AnchorPoint;
+type AnchorTarget = HTMLElement | AnchorPoint
 
 ```

@@ -12,6 +12,6 @@ Primary-key column list for a concrete table.
 ## Signature
 
 ```ts
-type TablePrimaryKey<table> = table[typeof tableMetadataKey]["primaryKey"];
+type TablePrimaryKey<table> = table[typeof tableMetadataKey]['primaryKey']
 
 ```

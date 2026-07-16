@@ -12,16 +12,16 @@ Creates a SQL statement from raw text and values.
 ## Signature
 
 ```ts
-function rawSql(text: string, values: unknown[]): SqlStatement;
+function rawSql(text: string, values: unknown[]): SqlStatement
 
 ```
 
 ## Example
 
 ```ts
-import { rawSql } from "remix/data-table";
+import { rawSql } from 'remix/data-table'
 
-let statement = rawSql("select * from users where id = ?", [1]);
+let statement = rawSql('select * from users where id = ?', [1])
 
 ```
 

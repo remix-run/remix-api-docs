@@ -9,7 +9,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/popover/ind
 
 ```ts
 interface PopoverProps {
-  children?: RemixNode;
+  children?: RemixNode
 }
 
 ```

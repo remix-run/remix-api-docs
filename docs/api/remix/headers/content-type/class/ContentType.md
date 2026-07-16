@@ -17,16 +17,16 @@ The value of a `Content-Type` HTTP header.
 
 ```ts
 class ContentType {
-  constructor(init: string | ContentTypeInit): ContentType;
+  constructor(init: string | ContentTypeInit): ContentType
 
   // Properties
-  boundary?: string;
-  charset?: string;
-  mediaType?: string;
+  boundary?: string
+  charset?: string
+  mediaType?: string
 
   // Methods
-  toString(): string;
-  from(value: string | ContentTypeInit | null): ContentType;
+  toString(): string
+  from(value: string | ContentTypeInit | null): ContentType
 }
 
 ```

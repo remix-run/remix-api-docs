@@ -16,7 +16,7 @@ function between<column extends string | ColumnReferenceLike>(
   column: column,
   lower: unknown,
   upper: unknown,
-): Predicate<PredicateColumn<column>>;
+): Predicate<PredicateColumn<column>>
 
 ```
 

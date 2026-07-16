@@ -17,29 +17,26 @@ The value of a `Cookie` HTTP header.
 
 ```ts
 class Cookie {
-  constructor(init: string | CookieInit): Cookie;
+  constructor(init: string | CookieInit): Cookie
 
   // Accessors
-  get names(): string[];
-  get size(): number;
-  get values(): string[];
+  get names(): string[]
+  get size(): number
+  get values(): string[]
 
   // Methods
-  [iterator](): IterableIterator<[string, string]>;
-  append(name: string, value: string): void;
-  clear(): void;
-  delete(name: string): void;
-  entries(): IterableIterator<[string, string]>;
-  forEach(
-    callback: (name: string, value: string, header: Cookie) => void,
-    thisArg: any,
-  ): void;
-  get(name: string): string | null;
-  getAll(name: string): string[];
-  has(name: string): boolean;
-  set(name: string, value: string): void;
-  toString(): string;
-  from(value: string | CookieInit | null): Cookie;
+  [iterator](): IterableIterator<[string, string]>
+  append(name: string, value: string): void
+  clear(): void
+  delete(name: string): void
+  entries(): IterableIterator<[string, string]>
+  forEach(callback: (name: string, value: string, header: Cookie) => void, thisArg: any): void
+  get(name: string): string | null
+  getAll(name: string): string[]
+  has(name: string): boolean
+  set(name: string, value: string): void
+  toString(): string
+  from(value: string | CookieInit | null): Cookie
 }
 
 ```

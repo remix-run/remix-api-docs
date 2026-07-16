@@ -13,40 +13,33 @@ Chainable builder used to describe physical column definitions.
 
 ```ts
 class ColumnBuilder<output> {
-  constructor(definition: ColumnDefinition): ColumnBuilder<output>;
+  constructor(definition: ColumnDefinition): ColumnBuilder<output>
 
   // Methods
-  autoIncrement(): ColumnBuilder<output>;
-  build(): ColumnDefinition;
-  charset(name: string): ColumnBuilder<output>;
-  check(expression: string, name: string): ColumnBuilder<output>;
-  collate(name: string): ColumnBuilder<output>;
-  comment(text: string): ColumnBuilder<output>;
-  computed(
-    expression: string,
-    options: { stored?: boolean },
-  ): ColumnBuilder<output>;
-  default(value: unknown): ColumnBuilder<output>;
-  defaultNow(): ColumnBuilder<output>;
-  defaultSql(expression: string): ColumnBuilder<output>;
-  identity(options: IdentityOptions): ColumnBuilder<output>;
-  length(value: number): ColumnBuilder<output>;
-  notNull(): ColumnBuilder<Exclude<output, null>>;
-  nullable(): ColumnBuilder<output | null>;
-  onDelete(action: ForeignKeyAction): ColumnBuilder<output>;
-  onUpdate(action: ForeignKeyAction): ColumnBuilder<output>;
-  precision(value: number, scale: number): ColumnBuilder<output>;
-  primaryKey(): ColumnBuilder<output>;
-  references(table: string, name: string): ColumnBuilder<output>;
-  references(
-    table: string,
-    columns: string | string[],
-    name: string,
-  ): ColumnBuilder<output>;
-  scale(value: number): ColumnBuilder<output>;
-  timezone(enabled: boolean): ColumnBuilder<output>;
-  unique(name: string): ColumnBuilder<output>;
-  unsigned(): ColumnBuilder<output>;
+  autoIncrement(): ColumnBuilder<output>
+  build(): ColumnDefinition
+  charset(name: string): ColumnBuilder<output>
+  check(expression: string, name: string): ColumnBuilder<output>
+  collate(name: string): ColumnBuilder<output>
+  comment(text: string): ColumnBuilder<output>
+  computed(expression: string, options: { stored?: boolean }): ColumnBuilder<output>
+  default(value: unknown): ColumnBuilder<output>
+  defaultNow(): ColumnBuilder<output>
+  defaultSql(expression: string): ColumnBuilder<output>
+  identity(options: IdentityOptions): ColumnBuilder<output>
+  length(value: number): ColumnBuilder<output>
+  notNull(): ColumnBuilder<Exclude<output, null>>
+  nullable(): ColumnBuilder<output | null>
+  onDelete(action: ForeignKeyAction): ColumnBuilder<output>
+  onUpdate(action: ForeignKeyAction): ColumnBuilder<output>
+  precision(value: number, scale: number): ColumnBuilder<output>
+  primaryKey(): ColumnBuilder<output>
+  references(table: string, name: string): ColumnBuilder<output>
+  references(table: string, columns: string | string[], name: string): ColumnBuilder<output>
+  scale(value: number): ColumnBuilder<output>
+  timezone(enabled: boolean): ColumnBuilder<output>
+  unique(name: string): ColumnBuilder<output>
+  unsigned(): ColumnBuilder<output>
 }
 
 ```

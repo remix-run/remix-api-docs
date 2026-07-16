@@ -13,7 +13,7 @@ Events emitted by the application runtime.
 
 ```ts
 type AppRuntimeEventMap = {
-  error: ComponentErrorEvent;
-};
+  error: ComponentErrorEvent
+}
 
 ```

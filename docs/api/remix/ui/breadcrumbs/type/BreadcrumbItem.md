@@ -9,9 +9,9 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/breadcrumbs
 
 ```ts
 type BreadcrumbItem = {
-  current?: boolean;
-  href?: string;
-  label: RemixNode;
-};
+  current?: boolean
+  href?: string
+  label: RemixNode
+}
 
 ```

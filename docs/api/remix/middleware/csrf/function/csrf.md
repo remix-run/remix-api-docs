@@ -14,7 +14,7 @@ This middleware requires the session middleware to run before it.
 ## Signature
 
 ```ts
-function csrf(options: CsrfOptions): Middleware;
+function csrf(options: CsrfOptions): Middleware
 
 ```
 

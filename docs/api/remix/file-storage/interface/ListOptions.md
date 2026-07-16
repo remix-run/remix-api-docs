@@ -13,10 +13,10 @@ Options for listing files in storage.
 
 ```ts
 interface ListOptions {
-  cursor?: string;
-  includeMetadata?: boolean;
-  limit?: number;
-  prefix?: string;
+  cursor?: string
+  includeMetadata?: boolean
+  limit?: number
+  prefix?: string
 }
 
 ```

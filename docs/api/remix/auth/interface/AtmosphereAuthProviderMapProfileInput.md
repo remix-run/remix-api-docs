@@ -13,13 +13,13 @@ Input passed to `mapProfile()` for the Atmosphere provider.
 
 ```ts
 interface AtmosphereAuthProviderMapProfileInput {
-  authorizationServer: AtmosphereTokenAuthorizationServer;
-  context: RequestContext;
-  did: string;
-  handle?: string;
-  identifier: string;
-  pdsUrl: string;
-  tokens: AtmosphereOAuthTokens;
+  authorizationServer: AtmosphereTokenAuthorizationServer
+  context: RequestContext
+  did: string
+  handle?: string
+  identifier: string
+  pdsUrl: string
+  tokens: AtmosphereOAuthTokens
 }
 
 ```

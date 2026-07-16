@@ -12,10 +12,7 @@ Convenience helper for standard snake_case timestamp columns.
 ## Signature
 
 ```ts
-function timestamps(): Record<
-  "created_at" | "updated_at",
-  ColumnBuilder<Date | string | number>
->;
+function timestamps(): Record<'created_at' | 'updated_at', ColumnBuilder<Date | string | number>>
 
 ```
 

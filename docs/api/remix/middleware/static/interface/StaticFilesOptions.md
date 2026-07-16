@@ -13,14 +13,14 @@ Options for the [`staticFiles`](/api/remix/middleware/static/function/staticFile
 
 ```ts
 interface StaticFilesOptions {
-  acceptRanges?: boolean | AcceptRangesFunction;
-  cacheControl?: string;
-  digest?: AlgorithmIdentifier | FileDigestFunction<File>;
-  etag?: false | "weak" | "strong";
-  filter?: (path: string) => boolean;
-  index?: boolean | string[];
-  lastModified?: boolean;
-  listFiles?: boolean;
+  acceptRanges?: boolean | AcceptRangesFunction
+  cacheControl?: string
+  digest?: AlgorithmIdentifier | FileDigestFunction<File>
+  etag?: false | 'weak' | 'strong'
+  filter?: (path: string) => boolean
+  index?: boolean | string[]
+  lastModified?: boolean
+  listFiles?: boolean
 }
 
 ```

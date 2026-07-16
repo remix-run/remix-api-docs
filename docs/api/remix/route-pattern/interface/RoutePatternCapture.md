@@ -13,10 +13,10 @@ A variable (`:name`) or wildcard (`*name`) declared in a [`RoutePattern`](/api/r
 
 ```ts
 interface RoutePatternCapture {
-  name: string;
-  optional: boolean;
-  part: "hostname" | "pathname";
-  type: ":" | "*";
+  name: string
+  optional: boolean
+  part: 'hostname' | 'pathname'
+  type: ':' | '*'
 }
 
 ```

@@ -9,8 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs/primit
 
 ```ts
 interface TabOptions {
-  disabled?: boolean;
-  name: string;
+  disabled?: boolean
+  name: string
 }
 
 ```

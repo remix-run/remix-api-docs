@@ -13,10 +13,10 @@ Normalized result returned by OAuth and OIDC callback handlers.
 
 ```ts
 interface OAuthResult<profile, provider, tokens> {
-  account: OAuthAccount<provider>;
-  profile: profile;
-  provider: provider;
-  tokens: tokens;
+  account: OAuthAccount<provider>
+  profile: profile
+  provider: provider
+  tokens: tokens
 }
 
 ```

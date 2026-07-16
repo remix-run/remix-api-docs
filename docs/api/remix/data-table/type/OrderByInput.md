@@ -12,6 +12,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib
 ## Signature
 
 ```ts
-type OrderByInput<table> = OrderByTuple<table> | OrderByTuple<table>[];
+type OrderByInput<table> = OrderByTuple<table> | OrderByTuple<table>[]
 
 ```

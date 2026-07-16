@@ -1,6 +1,6 @@
 ---
 title: createRouter
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L333
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L336
 ---
 
 # createRouter
@@ -12,12 +12,9 @@ Create a new router.
 ## Signature
 
 ```ts
-function createRouter<
-  context extends AnyContext,
-  middleware extends readonly AnyMiddleware[],
->(
+function createRouter<context extends AnyContext, middleware extends readonly AnyMiddleware[]>(
   options: RouterOptions<context, middleware>,
-): Router<MiddlewareContext<middleware, context>>;
+): Router<MiddlewareContext<middleware, context>>
 
 ```
 

@@ -13,10 +13,10 @@ Options for creating the built-in X auth provider.
 
 ```ts
 interface XAuthProviderOptions {
-  clientId: string;
-  clientSecret: string;
-  redirectUri: string | URL;
-  scopes?: string[];
+  clientId: string
+  clientSecret: string
+  redirectUri: string | URL
+  scopes?: string[]
 }
 
 ```

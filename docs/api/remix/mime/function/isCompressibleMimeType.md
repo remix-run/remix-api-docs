@@ -21,7 +21,7 @@ Accepts either a bare MIME type or a full Content-Type header value with paramet
 ## Signature
 
 ```ts
-function isCompressibleMimeType(mimeType: string): boolean;
+function isCompressibleMimeType(mimeType: string): boolean
 
 ```
 

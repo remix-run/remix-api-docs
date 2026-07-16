@@ -12,7 +12,7 @@ Returns true if the given request contains multipart data.
 ## Signature
 
 ```ts
-function isMultipartRequest(request: Request): boolean;
+function isMultipartRequest(request: Request): boolean
 
 ```
 

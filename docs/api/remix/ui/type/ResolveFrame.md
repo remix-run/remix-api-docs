@@ -16,6 +16,6 @@ type ResolveFrame = (
   src: string,
   signal?: AbortSignal,
   target?: string,
-) => Promise<FrameContent> | FrameContent;
+) => Promise<FrameContent> | FrameContent
 
 ```

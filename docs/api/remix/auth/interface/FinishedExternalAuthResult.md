@@ -13,8 +13,8 @@ Completed result returned from a successful OAuth or OIDC callback flow.
 
 ```ts
 interface FinishedExternalAuthResult<profile, provider, tokens> {
-  result: OAuthResult<profile, provider, tokens>;
-  returnTo?: string;
+  result: OAuthResult<profile, provider, tokens>
+  returnTo?: string
 }
 
 ```

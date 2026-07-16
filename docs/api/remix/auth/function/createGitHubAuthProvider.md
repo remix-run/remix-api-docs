@@ -14,7 +14,7 @@ Creates a GitHub OAuth App provider.
 ```ts
 function createGitHubAuthProvider(
   options: GitHubAuthProviderOptions,
-): OAuthProvider<GitHubAuthProfile, "github", OAuthStandardTokens>;
+): OAuthProvider<GitHubAuthProfile, 'github', OAuthStandardTokens>
 
 ```
 

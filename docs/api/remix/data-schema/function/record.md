@@ -12,15 +12,10 @@ Create a schema that validates a record (object map) by validating each key and 
 ## Signature
 
 ```ts
-function record<
-  keyInput,
-  keyOutput extends PropertyKey,
-  valueInput,
-  valueOutput,
->(
+function record<keyInput, keyOutput extends PropertyKey, valueInput, valueOutput>(
   keySchema: Schema<keyInput, keyOutput>,
   valueSchema: Schema<valueInput, valueOutput>,
-): Schema<unknown, Record<keyOutput, valueOutput>>;
+): Schema<unknown, Record<keyOutput, valueOutput>>
 
 ```
 

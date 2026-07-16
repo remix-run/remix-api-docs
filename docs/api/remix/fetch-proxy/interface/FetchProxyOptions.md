@@ -14,12 +14,12 @@ Options for [`createFetchProxy`](/api/remix/fetch-proxy/function/createFetchProx
 ```ts
 interface FetchProxyOptions {
   fetch?: {
-    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
-    (input: string | Request | URL, init?: RequestInit): Promise<Response>;
-  };
-  rewriteCookieDomain?: boolean;
-  rewriteCookiePath?: boolean;
-  xForwardedHeaders?: boolean;
+    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>
+    (input: string | Request | URL, init?: RequestInit): Promise<Response>
+  }
+  rewriteCookieDomain?: boolean
+  rewriteCookiePath?: boolean
+  xForwardedHeaders?: boolean
 }
 
 ```

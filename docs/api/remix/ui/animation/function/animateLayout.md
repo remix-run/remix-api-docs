@@ -14,7 +14,7 @@ Animates layout changes for an element using FLIP-style transforms.
 ```ts
 function animateLayout<target extends EventTarget>(
   config: LayoutConfig,
-): MixinDescriptor<target, [LayoutConfig?], ElementProps>;
+): MixinDescriptor<target, [LayoutConfig?], ElementProps>
 
 ```
 

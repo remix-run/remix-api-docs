@@ -12,6 +12,6 @@ Row shape with loaded relations merged in.
 ## Signature
 
 ```ts
-type TableRowWith<table, loaded> = Pretty<TableRow<table> & loaded>;
+type TableRowWith<table, loaded> = Pretty<TableRow<table> & loaded>
 
 ```

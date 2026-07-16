@@ -12,6 +12,6 @@ Named CRUD routes available for singleton resources.
 ## Signature
 
 ```ts
-type ResourceMethod = "new" | "show" | "create" | "edit" | "update" | "destroy";
+type ResourceMethod = 'new' | 'show' | 'create' | 'edit' | 'update' | 'destroy'
 
 ```

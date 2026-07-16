@@ -12,9 +12,7 @@ Rotates the current session id and returns the fresh session for auth writes.
 ## Signature
 
 ```ts
-function completeAuth<context extends RequestContext<any, any>>(
-  context: context,
-): Session;
+function completeAuth<context extends RequestContext<any, any>>(context: context): Session
 
 ```
 

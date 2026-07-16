@@ -12,9 +12,7 @@ Allow `null` as an input value, short-circuiting validation when `null` is provi
 ## Signature
 
 ```ts
-function nullable<input, output>(
-  schema: Schema<input, output>,
-): Schema<input | null, output | null>;
+function nullable<input, output>(schema: Schema<input, output>): Schema<input | null, output | null>
 
 ```
 

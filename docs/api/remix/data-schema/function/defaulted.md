@@ -15,7 +15,7 @@ Provide a default when the input is `undefined`.
 function defaulted<input, output>(
   schema: Schema<input, output>,
   defaultValue: output | (() => output),
-): Schema<input | undefined, output>;
+): Schema<input | undefined, output>
 
 ```
 

@@ -13,10 +13,10 @@ Profile returned by the built-in Atmosphere auth provider.
 
 ```ts
 interface AtmosphereAuthProfile {
-  authorizationServer: string;
-  did: string;
-  handle?: string;
-  pdsUrl: string;
+  authorizationServer: string
+  did: string
+  handle?: string
+  pdsUrl: string
 }
 
 ```

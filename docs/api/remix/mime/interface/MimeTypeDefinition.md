@@ -13,10 +13,10 @@ Definition used to register a custom MIME type.
 
 ```ts
 interface MimeTypeDefinition {
-  charset?: string;
-  compressible?: boolean;
-  extensions: string | string[];
-  mimeType: string;
+  charset?: string
+  compressible?: boolean
+  extensions: string | string[]
+  mimeType: string
 }
 
 ```

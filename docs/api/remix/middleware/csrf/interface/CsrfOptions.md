@@ -13,17 +13,14 @@ Options for the CSRF middleware.
 
 ```ts
 interface CsrfOptions {
-  allowMissingOrigin?: boolean;
-  fieldName?: string;
-  headerNames?: readonly string[];
-  onError?: (
-    reason: CsrfFailureReason,
-    context: AnyRequestContext,
-  ) => Response | Promise<Response>;
-  origin?: CsrfOrigin;
-  safeMethods?: readonly RequestMethod[];
-  tokenKey?: string;
-  value?: CsrfTokenResolver;
+  allowMissingOrigin?: boolean
+  fieldName?: string
+  headerNames?: readonly string[]
+  onError?: (reason: CsrfFailureReason, context: AnyRequestContext) => Response | Promise<Response>
+  origin?: CsrfOrigin
+  safeMethods?: readonly RequestMethod[]
+  tokenKey?: string
+  value?: CsrfTokenResolver
 }
 
 ```

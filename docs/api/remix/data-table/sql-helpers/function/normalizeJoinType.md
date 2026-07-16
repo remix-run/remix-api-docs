@@ -12,7 +12,7 @@ Normalizes an arbitrary join type string into `inner`, `left`, or `right`.
 ## Signature
 
 ```ts
-function normalizeJoinType(type: string): string;
+function normalizeJoinType(type: string): string
 
 ```
 

@@ -13,9 +13,9 @@ Context passed to the `beforeWrite` hook.
 
 ```ts
 type TableBeforeWriteContext<row> = {
-  operation: TableWriteOperation;
-  tableName: string;
-  value: Partial<row>;
-};
+  operation: TableWriteOperation
+  tableName: string
+  value: Partial<row>
+}
 
 ```

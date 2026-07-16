@@ -12,9 +12,6 @@ A Standard Schema-compatible schema that validates a `FormData` or `URLSearchPar
 ## Signature
 
 ```ts
-type FormDataObjectSchema<schema> = Schema<
-  FormDataSource,
-  ParsedFormData<schema>
->;
+type FormDataObjectSchema<schema> = Schema<FormDataSource, ParsedFormData<schema>>
 
 ```

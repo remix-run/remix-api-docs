@@ -17,17 +17,17 @@ The value of a `Content-Range` HTTP header.
 
 ```ts
 class ContentRange {
-  constructor(init: string | ContentRangeInit): ContentRange;
+  constructor(init: string | ContentRangeInit): ContentRange
 
   // Properties
-  end: number | null;
-  size?: number | "*";
-  start: number | null;
-  unit: string;
+  end: number | null
+  size?: number | '*'
+  start: number | null
+  unit: string
 
   // Methods
-  toString(): string;
-  from(value: string | ContentRangeInit | null): ContentRange;
+  toString(): string
+  from(value: string | ContentRangeInit | null): ContentRange
 }
 
 ```

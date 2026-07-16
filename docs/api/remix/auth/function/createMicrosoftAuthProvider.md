@@ -1,6 +1,6 @@
 ---
 title: createMicrosoftAuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/microsoft.ts#L36
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/microsoft.ts#L38
 ---
 
 # createMicrosoftAuthProvider
@@ -14,7 +14,7 @@ Creates a Microsoft identity platform provider backed by the shared OIDC runtime
 ```ts
 function createMicrosoftAuthProvider(
   options: MicrosoftAuthProviderOptions,
-): OAuthProvider<MicrosoftAuthProfile, "microsoft", OAuthStandardTokens>;
+): OAuthProvider<MicrosoftAuthProfile, 'microsoft', OAuthStandardTokens>
 
 ```
 

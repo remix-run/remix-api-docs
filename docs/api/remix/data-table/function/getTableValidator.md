@@ -16,11 +16,9 @@ function getTableValidator<table extends AnyTable>(
   table: table,
 ):
   | TableValidate<{
-      [key in string]: {
-        [column in string]: ColumnOutput<TableColumns<table>[column]>;
-      }[key];
+      [key in string]: { [column in string]: ColumnOutput<TableColumns<table>[column]> }[key]
     }>
-  | undefined;
+  | undefined
 
 ```
 

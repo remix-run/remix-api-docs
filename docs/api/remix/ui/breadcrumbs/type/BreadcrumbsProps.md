@@ -8,9 +8,9 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/breadcrumbs
 ## Signature
 
 ```ts
-type BreadcrumbsProps = Omit<Props<"nav">, "children"> & {
-  items: BreadcrumbItem[];
-  separator?: RemixNode;
-};
+type BreadcrumbsProps = Omit<Props<'nav'>, 'children'> & {
+  items: BreadcrumbItem[]
+  separator?: RemixNode
+}
 
 ```

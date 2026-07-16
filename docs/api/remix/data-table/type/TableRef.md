@@ -13,8 +13,8 @@ Qualified table reference.
 
 ```ts
 type TableRef = {
-  name: string;
-  schema?: string;
-};
+  name: string
+  schema?: string
+}
 
 ```

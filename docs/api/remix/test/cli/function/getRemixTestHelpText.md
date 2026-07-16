@@ -13,7 +13,7 @@ runner's CLI options in higher-level tooling.
 ## Signature
 
 ```ts
-function getRemixTestHelpText(_target: WriteStream): string;
+function getRemixTestHelpText(_target: WriteStream): string
 
 ```
 

@@ -12,6 +12,6 @@ The reason a CSRF request was rejected.
 ## Signature
 
 ```ts
-type CsrfFailureReason = "invalid-origin" | "missing-token" | "invalid-token";
+type CsrfFailureReason = 'invalid-origin' | 'missing-token' | 'invalid-token'
 
 ```

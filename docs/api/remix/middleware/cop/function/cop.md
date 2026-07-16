@@ -12,7 +12,7 @@ Creates middleware that rejects unsafe cross-origin requests.
 ## Signature
 
 ```ts
-function cop(options: CopOptions): Middleware;
+function cop(options: CopOptions): Middleware
 
 ```
 

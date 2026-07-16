@@ -15,7 +15,7 @@ The middleware always falls through to the handler if the file is not found or a
 ## Signature
 
 ```ts
-function staticFiles(root: string, options: StaticFilesOptions): Middleware;
+function staticFiles(root: string, options: StaticFilesOptions): Middleware
 
 ```
 

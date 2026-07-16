@@ -13,8 +13,8 @@ Options for parsing tar headers.
 
 ```ts
 interface ParseTarHeaderOptions {
-  allowUnknownFormat?: boolean;
-  filenameEncoding?: string;
+  allowUnknownFormat?: boolean
+  filenameEncoding?: string
 }
 
 ```

@@ -17,11 +17,9 @@ Creates a [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) 
 ```ts
 function createRequest(
   req: IncomingMessage | Http2ServerRequest,
-  res:
-    | ServerResponse<IncomingMessage>
-    | Http2ServerResponse<Http2ServerRequest>,
+  res: ServerResponse<IncomingMessage> | Http2ServerResponse<Http2ServerRequest>,
   options: RequestOptions,
-): Request;
+): Request
 
 ```
 

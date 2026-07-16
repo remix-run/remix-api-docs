@@ -12,7 +12,7 @@ Creates style helpers that either emit ANSI escape sequences or pass text throug
 ## Signature
 
 ```ts
-function createStyles(options: CreateStylesOptions): TerminalStyles;
+function createStyles(options: CreateStylesOptions): TerminalStyles
 
 ```
 

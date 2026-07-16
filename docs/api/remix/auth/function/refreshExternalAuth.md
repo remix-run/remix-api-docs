@@ -12,14 +12,10 @@ Refreshes an OAuth or OIDC token bundle with the provider's refresh-token flow.
 ## Signature
 
 ```ts
-function refreshExternalAuth<
-  profile,
-  provider extends string,
-  tokens extends OAuthTokens,
->(
+function refreshExternalAuth<profile, provider extends string, tokens extends OAuthTokens>(
   provider: OAuthProvider<profile, provider, tokens>,
   tokens: NoInferValue<tokens>,
-): Promise<RefreshedExternalAuthResult<provider, tokens>>;
+): Promise<RefreshedExternalAuthResult<provider, tokens>>
 
 ```
 

@@ -15,7 +15,7 @@ or to override the behavior of existing extensions.
 ## Signature
 
 ```ts
-function defineMimeType(definition: MimeTypeDefinition): void;
+function defineMimeType(definition: MimeTypeDefinition): void
 
 ```
 
@@ -23,9 +23,9 @@ function defineMimeType(definition: MimeTypeDefinition): void;
 
 ```ts
 defineMimeType({
-  extensions: ["x-myformat"],
-  mimeType: "application/x-myformat",
-});
+  extensions: ['x-myformat'],
+  mimeType: 'application/x-myformat',
+})
 
 ```
 

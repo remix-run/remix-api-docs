@@ -13,8 +13,8 @@ Options for starting an OAuth or OIDC login redirect flow.
 
 ```ts
 interface StartExternalAuthOptions {
-  returnTo?: string | null;
-  transactionKey?: string;
+  returnTo?: string | null
+  transactionKey?: string
 }
 
 ```

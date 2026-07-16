@@ -13,8 +13,8 @@ Context passed to the `afterRead` hook.
 
 ```ts
 type TableAfterReadContext<row> = {
-  tableName: string;
-  value: Partial<row>;
-};
+  tableName: string
+  value: Partial<row>
+}
 
 ```

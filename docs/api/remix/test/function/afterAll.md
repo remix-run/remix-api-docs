@@ -15,7 +15,7 @@ to limit how long the hook may run.
 ## Signature
 
 ```ts
-function afterAll(fn: LifecycleHookFn, options: HookOptions): void;
+function afterAll(fn: LifecycleHookFn, options: HookOptions): void
 
 ```
 

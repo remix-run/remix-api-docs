@@ -13,12 +13,12 @@ Status row returned by `runner.status()` and `runner.up/down(...)`.
 
 ```ts
 type MigrationStatusEntry = {
-  appliedAt?: Date;
-  batch?: number;
-  checksum?: string;
-  id: string;
-  name: string;
-  status: MigrationStatus;
-};
+  appliedAt?: Date
+  batch?: number
+  checksum?: string
+  id: string
+  name: string
+  status: MigrationStatus
+}
 
 ```

@@ -13,27 +13,24 @@ Relation descriptor used by query loading.
 
 ```ts
 type Relation<source, target, cardinality, loaded> = {
-  cardinality: cardinality;
-  kind: "relation";
-  modifiers: RelationModifiers<target>;
-  relationKind: RelationKind;
-  sourceKey: string[];
-  sourceTable: source;
-  targetKey: string[];
-  targetTable: target;
-  through?: ThroughRelationMetadata;
-  limit(value: number): Relation<source, target, cardinality, loaded>;
-  offset(value: number): Relation<source, target, cardinality, loaded>;
+  cardinality: cardinality
+  kind: 'relation'
+  modifiers: RelationModifiers<target>
+  relationKind: RelationKind
+  sourceKey: string[]
+  sourceTable: source
+  targetKey: string[]
+  targetTable: target
+  through?: ThroughRelationMetadata
+  limit(value: number): Relation<source, target, cardinality, loaded>
+  offset(value: number): Relation<source, target, cardinality, loaded>
   orderBy(
     column: TableColumnInput<target>,
     direction: OrderDirection,
-  ): Relation<source, target, cardinality, loaded>;
+  ): Relation<source, target, cardinality, loaded>
   where(
-    input: WhereInput<
-      | TableColumnName<target>
-      | `${TableName<target>}.${TableColumnName<target>}`
-    >,
-  ): Relation<source, target, cardinality, loaded>;
+    input: WhereInput<TableColumnName<target> | `${TableName<target>}.${TableColumnName<target>}`>,
+  ): Relation<source, target, cardinality, loaded>
   with<relations extends RelationMapForTable<target>>(
     relations: relations,
   ): Relation<
@@ -42,10 +39,10 @@ type Relation<source, target, cardinality, loaded> = {
     cardinality,
     loaded & {
       [key in string | number | symbol]: {
-        [name in string | number | symbol]: RelationResult<relations[name]>;
-      }[key];
+        [name in string | number | symbol]: RelationResult<relations[name]>
+      }[key]
     }
-  >;
-};
+  >
+}
 
 ```

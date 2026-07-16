@@ -18,11 +18,11 @@ function gt<
 >(
   column: left,
   value: right & (right extends `${string}@${string}` ? never : right),
-): Predicate<PredicateColumn<left> | PredicateColumn<right>>;
+): Predicate<PredicateColumn<left> | PredicateColumn<right>>
 
 function gt<column extends string | ColumnReferenceLike>(
   column: column,
   value: unknown,
-): Predicate<PredicateColumn<column>>;
+): Predicate<PredicateColumn<column>>
 
 ```

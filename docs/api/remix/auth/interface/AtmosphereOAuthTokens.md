@@ -13,15 +13,15 @@ DPoP-bound token bundle returned by the built-in Atmosphere auth provider.
 
 ```ts
 interface AtmosphereOAuthTokens {
-  accessToken: string;
-  authorizationServer: AtmosphereTokenAuthorizationServer;
-  did: string;
-  dpop: OAuthDpopBinding;
-  expiresAt?: Date;
-  idToken?: string;
-  refreshToken?: string;
-  scope?: string[];
-  tokenType: "DPoP";
+  accessToken: string
+  authorizationServer: AtmosphereTokenAuthorizationServer
+  did: string
+  dpop: OAuthDpopBinding
+  expiresAt?: Date
+  idToken?: string
+  refreshToken?: string
+  scope?: string[]
+  tokenType: 'DPoP'
 }
 
 ```

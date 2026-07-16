@@ -19,13 +19,13 @@ type QueryTableInput<tableName, row, primaryKey> = TableMetadataLike<
   TimestampConfig | null
 > & {
   [tableMetadataKey]: {
-    columnDefinitions: Record<string, ColumnDefinition>;
-    columns: { [column in keyof row & string]: ColumnBuilder<row[column]> };
-    name: tableName;
-    primaryKey: primaryKey;
-    timestamps: TimestampConfig | null;
-    validate?: TableValidate<Record<string, unknown>>;
-  };
-} & Record<string, unknown>;
+    columnDefinitions: Record<string, ColumnDefinition>
+    columns: { [column in keyof row & string]: ColumnBuilder<row[column]> }
+    name: tableName
+    primaryKey: primaryKey
+    timestamps: TimestampConfig | null
+    validate?: TableValidate<Record<string, unknown>>
+  }
+} & Record<string, unknown>
 
 ```

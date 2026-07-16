@@ -8,6 +8,6 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/input/index
 ## Signature
 
 ```ts
-type InputSize = "md" | "lg";
+type InputSize = 'md' | 'lg'
 
 ```

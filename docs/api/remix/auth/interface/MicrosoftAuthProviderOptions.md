@@ -13,20 +13,20 @@ Options for creating the built-in Microsoft auth provider.
 
 ```ts
 interface MicrosoftAuthProviderOptions {
-  authorizationParams?: Record<string, string | undefined>;
-  clientId: string;
-  clientSecret: string;
-  discoveryUrl?: string | URL;
+  authorizationParams?: Record<string, string | undefined>
+  clientId: string
+  clientSecret: string
+  discoveryUrl?: string | URL
   mapProfile?: (input: {
-    claims: OIDCAuthProfile;
-    context: RequestContext;
-    metadata: OIDCAuthProviderMetadata;
-    tokens: OAuthTokens;
-  }) => MicrosoftAuthProfile | Promise<MicrosoftAuthProfile>;
-  metadata?: OIDCAuthProviderMetadata;
-  redirectUri: string | URL;
-  scopes?: string[];
-  tenant?: string;
+    claims: OIDCAuthProfile
+    context: RequestContext
+    metadata: OIDCAuthProviderMetadata
+    tokens: OAuthTokens
+  }) => MicrosoftAuthProfile | Promise<MicrosoftAuthProfile>
+  metadata?: OIDCAuthProviderMetadata
+  redirectUri: string | URL
+  scopes?: string[]
+  tenant?: string
 }
 
 ```

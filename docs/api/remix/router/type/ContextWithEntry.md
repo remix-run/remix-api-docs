@@ -13,6 +13,6 @@ This is useful when deriving a context shape without a middleware tuple.
 ## Signature
 
 ```ts
-type ContextWithEntry<context, entry> = ContextWithEntries<context, [entry]>;
+type ContextWithEntry<context, entry> = ContextWithEntries<context, [entry]>
 
 ```

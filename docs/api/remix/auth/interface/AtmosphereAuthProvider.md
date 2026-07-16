@@ -13,13 +13,9 @@ Built-in Atmosphere auth provider.
 
 ```ts
 interface AtmosphereAuthProvider<profile> {
-  [oauthProviderTokens]?: (
-    tokens: AtmosphereOAuthTokens,
-  ) => AtmosphereOAuthTokens;
-  name: "atmosphere";
-  prepare(
-    handleOrDid: string,
-  ): Promise<OAuthProvider<profile, "atmosphere", AtmosphereOAuthTokens>>;
+  [oauthProviderTokens]?: (tokens: AtmosphereOAuthTokens) => AtmosphereOAuthTokens
+  name: 'atmosphere'
+  prepare(handleOrDid: string): Promise<OAuthProvider<profile, 'atmosphere', AtmosphereOAuthTokens>>
 }
 
 ```

@@ -13,10 +13,10 @@ Configuration for negotiated response compression in [`compressResponse`](/api/r
 
 ```ts
 interface CompressResponseOptions {
-  brotli?: BrotliOptions;
-  encodings?: Encoding[];
-  threshold?: number;
-  zlib?: ZlibOptions;
+  brotli?: BrotliOptions
+  encodings?: Encoding[]
+  threshold?: number
+  zlib?: ZlibOptions
 }
 
 ```

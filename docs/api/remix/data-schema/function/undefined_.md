@@ -12,7 +12,7 @@ Create a schema that accepts `undefined`.
 ## Signature
 
 ```ts
-function undefined_(): Schema<unknown, undefined>;
+function undefined_(): Schema<unknown, undefined>
 
 ```
 
