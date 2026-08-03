@@ -9,15 +9,16 @@ if [ -z "$1" ]; then
 fi
 
 TAG_NAME="$1"
-DOCS_DIR="../../remix-api-docs/docs"
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOCS_DIR="${REPO_ROOT}/docs"
 
 # Clear prior "latest" build so we don't leave stranded files for removed APIs
-rm -rf docs/api
-rm -rf docs/assets
-rm -rf docs/fragment
-rm -f docs/index.html
+rm -rf "${DOCS_DIR}/api"
+rm -rf "${DOCS_DIR}/assets"
+rm -rf "${DOCS_DIR}/fragment"
+rm -f "${DOCS_DIR}/index.html"
 
-pushd ../remix/api
+pushd "${REPO_ROOT}/../remix/docs/api"
 pnpm run docs --tag "${TAG_NAME}"
 pnpm run build
 pnpm run prerender --dir "${DOCS_DIR}"
