@@ -1,6 +1,6 @@
 ---
 title: SuperHeaders
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/super-headers.ts#L357
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/headers/src/lib/super-headers.ts#L357
 ---
 
 # SuperHeaders
@@ -284,7 +284,7 @@ class SuperHeaders {
 
 ### `append(name: string, value: string): void`
 
-The **`append()`** method of the Headers interface appends a new value onto an existing header inside a `Headers` object, or adds the header if it does not already exist.
+The **`append()`** method of the Headers interface appends a new value onto an existing header inside a Headers object, or adds the header if it does not already exist.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/append)
 
@@ -302,7 +302,7 @@ Header values to apply.
 
 ### `delete(name: string): void`
 
-The **`delete()`** method of the Headers interface deletes a header from the current `Headers` object.
+The **`delete()`** method of the Headers interface deletes a header from the current Headers object.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/delete)
 
@@ -320,7 +320,7 @@ Returns an iterator allowing to go through all key/value pairs contained in this
 
 ### `get(name: string): string | null`
 
-The **`get()`** method of the Headers interface returns a byte string of all the values of a header within a `Headers` object with a given name.
+The **`get()`** method of the Headers interface returns a byte string of all the values of a header within a Headers object with a given name. If the requested header doesn't exist in the Headers object, it returns null.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/get)
 
@@ -328,7 +328,7 @@ The **`get()`** method of the Headers interface returns a byte string of all the
 
 ### `getSetCookie(): string[]`
 
-The **`getSetCookie()`** method of the Headers interface returns an array containing the values of all Set-Cookie headers associated with a response.
+The **`getSetCookie()`** method of the Headers interface returns an array containing the values of all Set-Cookie headers associated with a response. This allows Headers objects to handle having multiple Set-Cookie headers, which wasn't possible prior to its implementation.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie)
 
@@ -336,7 +336,7 @@ The **`getSetCookie()`** method of the Headers interface returns an array contai
 
 ### `has(name: string): boolean`
 
-The **`has()`** method of the Headers interface returns a boolean stating whether a `Headers` object contains a certain header.
+The **`has()`** method of the Headers interface returns a boolean stating whether a Headers object contains a certain header.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/has)
 
@@ -350,7 +350,7 @@ Returns an iterator allowing to go through all keys of the key/value pairs conta
 
 ### `set(name: string, value: string): void`
 
-The **`set()`** method of the Headers interface sets a new value for an existing header inside a `Headers` object, or adds the header if it does not already exist.
+The **`set()`** method of the Headers interface sets a new value for an existing header inside a Headers object, or adds the header if it does not already exist.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/set)
 

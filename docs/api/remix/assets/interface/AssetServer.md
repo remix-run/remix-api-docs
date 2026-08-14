@@ -1,6 +1,6 @@
 ---
 title: AssetServer
-source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L160
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/assets/src/lib/asset-server.ts#L278
 ---
 
 # AssetServer
@@ -26,7 +26,7 @@ interface AssetServer<transforms> {
 
 ### `close(): Promise<void>`
 
-Closes any watcher resources owned by this server instance.
+Closes this server's filesystem watcher and browser HMR channel.
 
 
 

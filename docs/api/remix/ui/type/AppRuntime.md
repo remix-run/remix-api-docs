@@ -1,6 +1,6 @@
 ---
 title: AppRuntime
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/run.ts#L42
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/run.ts#L42
 ---
 
 # AppRuntime
@@ -12,6 +12,11 @@ Client runtime returned by [`run`](/api/remix/ui/function/run/).
 ## Signature
 
 ```ts
-type AppRuntime = TypedEventTarget<AppRuntimeEventMap> & { dispose: any; flush: any; ready: any }
+type AppRuntime = TypedEventTarget<AppRuntimeEventMap> & {
+  frames: Handle['frames']
+  dispose: any
+  flush: any
+  ready: any
+}
 
 ```

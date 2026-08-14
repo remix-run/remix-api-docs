@@ -1,0 +1,1 @@
+export function invariant(e,t){let n=`Framework invariant`;if(!e)throw Error(t?`${n}: ${t}`:n)}export function ensure(e,t){if(!t)throw Error(`REMIX_${e}: https://rmx.as/w/${e}`)}

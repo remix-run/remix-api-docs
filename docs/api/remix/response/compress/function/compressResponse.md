@@ -1,6 +1,6 @@
 ---
 title: compressResponse
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/compress.ts#L86
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/response/src/lib/compress.ts#L89
 ---
 
 # compressResponse
@@ -10,7 +10,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/c
 Compresses a Response based on the client's Accept-Encoding header.
 
 Compression is skipped for:
-- Responses with no Accept-Encoding header (RFC 7231)
+- Requests with no Accept-Encoding header (RFC 7231)
 - Empty responses
 - Already compressed responses
 - Responses with Content-Length below threshold (default: 1024 bytes)
@@ -18,11 +18,14 @@ Compression is skipped for:
 - Responses advertising range support (Accept-Ranges: bytes)
 - Partial content responses (206 status)
 
+Responses eligible for content-coding negotiation include `Accept-Encoding` in
+the `Vary` header, even when identity is selected or the request does not include
+`Accept-Encoding`.
+
 When compressing, this function:
 - Sets Content-Encoding header
 - Removes Content-Length header
 - Sets Accept-Ranges to 'none'
-- Adds 'Accept-Encoding' to Vary header
 - Converts strong ETags to weak ETags (per RFC 7232)
 
 ## Signature
@@ -52,4 +55,4 @@ Optional compression settings
 
 ## Returns
 
-A compressed Response or the original if no compression is suitable
+A response with the negotiated content coding and cache metadata

@@ -1,13 +1,13 @@
 ---
 title: DataManipulationRequest
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/adapter.ts#L264
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/data-table/src/lib/driver.ts#L263
 ---
 
 # DataManipulationRequest
 
 ## Summary
 
-Adapter execution request payload.
+Database driver execution request payload.
 
 ## Signature
 

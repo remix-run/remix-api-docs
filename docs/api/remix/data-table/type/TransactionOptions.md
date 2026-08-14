@@ -1,13 +1,13 @@
 ---
 title: TransactionOptions
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/adapter.ts#L256
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/data-table/src/lib/driver.ts#L255
 ---
 
 # TransactionOptions
 
 ## Summary
 
-Transaction hints that adapters may apply when supported by the dialect.
+Transaction hints that database drivers may apply when supported by the dialect.
 
 ## Signature
 

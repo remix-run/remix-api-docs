@@ -1,0 +1,1 @@
+function e(e){return new Promise(t=>{setTimeout(t,e)})}export async function flashAttribute(t,n,r){t.setAttribute(n,`true`),await e(r),t.removeAttribute(n)}

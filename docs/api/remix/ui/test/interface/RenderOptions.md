@@ -1,6 +1,6 @@
 ---
 title: RenderOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/render.ts#L7
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/render.ts#L7
 ---
 
 # RenderOptions
@@ -17,11 +17,7 @@ interface RenderOptions {
   frame?: FrameHandle
   frameInit?: {
     loadModule?: (moduleUrl: string, exportName: string) => Function | Promise<Function>
-    resolveFrame: (
-      src: string,
-      signal?: AbortSignal,
-      target?: string,
-    ) => FrameContent | Promise<FrameContent>
+    resolveFrame: ResolveFrame
     src?: string
   }
   scheduler?: Scheduler

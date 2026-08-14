@@ -1,13 +1,13 @@
 ---
 title: DataManipulationResult
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/adapter.ts#L272
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/data-table/src/lib/driver.ts#L271
 ---
 
 # DataManipulationResult
 
 ## Summary
 
-Adapter data-manipulation result payload.
+Database data-manipulation result payload.
 
 ## Signature
 

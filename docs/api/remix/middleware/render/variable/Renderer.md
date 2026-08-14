@@ -1,6 +1,6 @@
 ---
 title: Renderer
-source: https://github.com/remix-run/remix/blob/main/packages/render-middleware/src/lib/render.ts#L6
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/render-middleware/src/lib/render.ts#L6
 ---
 
 # Renderer
@@ -13,6 +13,6 @@ The `renderWith()` middleware also installs the renderer as `context.render`.
 ## Signature
 
 ```ts
-let Renderer: ContextKey<AnyRenderer>
+let Renderer: { defaultValue?: AnyRenderer }
 
 ```

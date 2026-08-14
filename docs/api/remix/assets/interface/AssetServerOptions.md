@@ -1,6 +1,6 @@
 ---
 title: AssetServerOptions
-source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L72
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/assets/src/lib/asset-server.ts#L179
 ---
 
 # AssetServerOptions
@@ -13,12 +13,14 @@ Options used to construct an [`AssetServer`](/api/remix/assets/interface/AssetSe
 
 ```ts
 interface AssetServerOptions<transforms> {
-  allow: readonly string[]
+  allowFiles: readonly string[]
+  allowPackages?: readonly string[]
   basePath: string
-  deny?: readonly string[]
+  denyFiles?: readonly string[]
   fileMap: Readonly<Record<string, string>>
   files?: AssetServerFilesOptions<transforms>
   fingerprint?: FingerprintOptions
+  hmr?: BrowserHmrChannelFactory
   minify?: boolean
   onError?: (error: unknown) => void | Response | Promise<void | Response>
   rootDir?: string
@@ -33,15 +35,20 @@ interface AssetServerOptions<transforms> {
 
 ## Properties
 
-### `allow`
+### `allowFiles`
 
 Glob patterns or file paths that are allowed to be served. Relative values are resolved from `rootDir`.
+
+### `allowPackages`
+
+Exact package names whose files are allowed to be served. Dependencies and installed optional
+dependencies are allowed automatically. Package files must still match `fileMap`.
 
 ### `basePath`
 
 Public mount path for this asset server, e.g. `'/assets'`.
 
-### `deny`
+### `denyFiles`
 
 Glob patterns or file paths that are denied from being served. Relative values are resolved from `rootDir`.
 
@@ -61,6 +68,13 @@ Controls optional source-based URL fingerprinting for rewritten asset URLs.
 
 When omitted, all served assets use stable non-fingerprinted URLs with `Cache-Control: no-cache`.
 Cannot be used together with active watch mode. Set `watch: false` when fingerprinting.
+
+### `hmr`
+
+Enables `import.meta.hot` and coordinates browser updates through a server-level HMR runtime.
+
+HMR requires `watch` to be enabled. The factory is called once for this asset server. Returning
+`undefined` leaves HMR inactive; a returned channel is closed by `assetServer.close()`.
 
 ### `minify`
 

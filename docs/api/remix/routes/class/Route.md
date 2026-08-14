@@ -1,6 +1,6 @@
 ---
 title: Route
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-map.ts#L23
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/fetch-router/src/lib/route-map.ts#L23
 ---
 
 # Route
@@ -43,10 +43,10 @@ re-parsing the source string.
 
 ### `href(args: CreateHrefArgs<pattern>): string`
 
-Build a URL href for this route using the given parameters.
+Build a URL href for this route using the given route params and href options.
 
 #### Parameters
 
 ##### `args`
 
-The parameters to use for building the href
+Route params and href options

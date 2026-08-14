@@ -1,6 +1,6 @@
 ---
 title: JoinPatterns
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/types/join.ts#L5
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/route-pattern/src/lib/types/join.ts#L5
 ---
 
 # JoinPatterns

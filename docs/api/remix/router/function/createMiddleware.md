@@ -1,6 +1,6 @@
 ---
 title: createMiddleware
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/middleware.ts#L91
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/fetch-router/src/lib/middleware.ts#L91
 ---
 
 # createMiddleware

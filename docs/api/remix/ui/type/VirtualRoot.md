@@ -1,6 +1,6 @@
 ---
 title: VirtualRoot
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L28
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/vdom.ts#L30
 ---
 
 # VirtualRoot
@@ -15,6 +15,7 @@ Root controller returned by [`createRoot`](/api/remix/ui/function/createRoot/) a
 type VirtualRoot = TypedEventTarget<VirtualRootEventMap> & {
   dispose: () => void
   flush: () => void
+  reconcile: () => void
   render: (element: RemixNode) => void
 }
 

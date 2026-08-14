@@ -1,6 +1,6 @@
 ---
 title: Matcher
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/match.ts#L18
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/route-pattern/src/lib/match.ts#L27
 ---
 
 # Matcher
@@ -13,7 +13,7 @@ Matcher for a single route pattern.
 
 ```ts
 type Matcher<source> = {
-  match(url: string | URL): Match<source, undefined> | null
+  match(url: string | URL, options: MatchOptions): Match<source, undefined> | null
 }
 
 ```

@@ -195,7 +195,7 @@ const sectionLabelCss = css({
   lineHeight: '16px',
   fontWeight: 650,
   letterSpacing: 0,
-  color: 'rgba(16, 16, 16, 0.72)',
+  color: 'light-dark(rgb(16 16 16 / 0.72), rgb(236 236 236 / 0.72))',
 })
 
 const headerCss = css({
@@ -219,7 +219,7 @@ const labelCss = css({
   lineHeight: '14px',
   fontWeight: 600,
   letterSpacing: 0,
-  color: 'rgba(16, 16, 16, 0.58)',
+  color: 'light-dark(rgb(16 16 16 / 0.58), rgb(236 236 236 / 0.58))',
 })
 
 const stateLabelCss = css({
@@ -228,7 +228,7 @@ const stateLabelCss = css({
   lineHeight: '18px',
   fontWeight: 600,
   letterSpacing: 0,
-  color: '#101010',
+  color: 'light-dark(#151515, #ececec)',
 })
 
 const groupCss = css({
@@ -249,7 +249,7 @@ const optionCss = css({
   lineHeight: '18px',
   fontWeight: 500,
   letterSpacing: 0,
-  color: '#101010',
+  color: 'light-dark(#151515, #ececec)',
 })
 
 const nestedOptionsCss = css({

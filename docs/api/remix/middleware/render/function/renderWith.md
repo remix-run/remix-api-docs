@@ -1,6 +1,6 @@
 ---
 title: renderWith
-source: https://github.com/remix-run/remix/blob/main/packages/render-middleware/src/lib/render.ts#L36
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/render-middleware/src/lib/render.ts#L36
 ---
 
 # renderWith
@@ -14,7 +14,7 @@ Adds a renderer to request context.
 ```ts
 function renderWith<renderer extends AnyRenderer>(
   createRenderer: RendererFactory<renderer>,
-): Middleware<{ key: ContextKey<AnyRenderer>; property: 'render'; value: renderer }>
+): Middleware<{ key: { defaultValue?: AnyRenderer }; property: 'render'; value: renderer }>
 
 ```
 

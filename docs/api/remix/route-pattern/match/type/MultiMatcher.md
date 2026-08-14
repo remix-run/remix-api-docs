@@ -1,6 +1,6 @@
 ---
 title: MultiMatcher
-source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/match.ts#L46
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/route-pattern/src/lib/match.ts#L54
 ---
 
 # MultiMatcher
@@ -15,8 +15,8 @@ Matcher for a collection of route patterns with optional attached data.
 type MultiMatcher<data> = {
   ignoreCase: boolean
   add(pattern: string | RoutePattern<string>, data: data): void
-  match(url: string | URL): Match<string, data> | null
-  matchAll(url: string | URL): Match<string, data>[]
+  match(url: string | URL, options: MatchOptions): Match<string, data> | null
+  matchAll(url: string | URL, options: MatchOptions): Match<string, data>[]
 }
 
 ```

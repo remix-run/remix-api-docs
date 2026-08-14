@@ -1,0 +1,1 @@
+export function clientEntry(e,t){if(!e)throw Error(`clientEntry() requires an entry ID`);return t.$entry=!0,t.$entryId=e,t}export function isEntry(e){return!!(e&&typeof e==`function`&&e.$entry===!0)}export function logHydrationMismatch(...e){console.error(`Hydration mismatch:`,...e)}export function skipComments(e){for(;e&&e.nodeType===Node.COMMENT_NODE;)e=e.nextSibling;return e}

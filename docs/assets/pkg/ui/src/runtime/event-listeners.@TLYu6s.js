@@ -1,0 +1,1 @@
+export function addEventListeners(e,t,n){for(let r in n){let i=n[r];if(!i)continue;let a=null;t.addEventListener(`abort`,()=>{a?.abort()}),e.addEventListener(r,e=>{a?.abort();let t=e;i.length<2?(a=null,i(t)):(a=new AbortController,i(t,a.signal))},{signal:t})}}

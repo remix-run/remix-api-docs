@@ -1,6 +1,6 @@
 ---
 title: FileUpload
-source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L35
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/form-data-parser/src/lib/form-data.ts#L35
 ---
 
 # FileUpload
@@ -36,13 +36,13 @@ The name of the `<input>` field used to upload the file.
 
 ### `lastModified`
 
-The **`lastModified`** read-only property of the File interface provides the last modified date of the file as the number of milliseconds since the Unix epoch (January 1, 1970 at midnight).
+The **`lastModified`** read-only property of the File interface provides the last modified date of the file as the number of milliseconds since the Unix epoch (January 1, 1970 at midnight). Files without a known last modified date return the current date.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/lastModified)
 
 ### `name`
 
-The **`name`** read-only property of the File interface returns the name of the file represented by a File object.
+The **`name`** read-only property of the File interface returns the name of the file represented by a File object. For security reasons, the path is excluded from this property.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/name)
 
@@ -60,7 +60,7 @@ The **`type`** read-only property of the Blob interface returns the MIME type of
 
 ### `webkitRelativePath`
 
-The **`webkitRelativePath`** read-only property of the File interface contains a string which specifies the file's path relative to the directory selected by the user in an input element with its `webkitdirectory` attribute set.
+The **`webkitRelativePath`** read-only property of the File interface contains a string which specifies the file's path relative to the directory selected by the user in an <input> element with its webkitdirectory attribute set.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/webkitRelativePath)
 
@@ -84,7 +84,7 @@ The **`bytes()`** method of the Blob interface returns a Promise that resolves w
 
 ### `slice(start: number, end: number, contentType: string): Blob`
 
-The **`slice()`** method of the Blob interface creates and returns a new `Blob` object which contains data from a subset of the blob on which it's called.
+The **`slice()`** method of the Blob interface creates and returns a new Blob object which contains data from a subset of the blob on which it's called.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
 
@@ -92,7 +92,7 @@ The **`slice()`** method of the Blob interface creates and returns a new `Blob` 
 
 ### `stream(): ReadableStream<Uint8Array<ArrayBuffer>>`
 
-The **`stream()`** method of the Blob interface returns a ReadableStream which upon reading returns the data contained within the `Blob`.
+The **`stream()`** method of the Blob interface returns a ReadableStream which upon reading returns the data contained within the Blob.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream)
 
@@ -100,7 +100,7 @@ The **`stream()`** method of the Blob interface returns a ReadableStream which u
 
 ### `text(): Promise<string>`
 
-The **`text()`** method of the string containing the contents of the blob, interpreted as UTF-8.
+The **`text()`** method of the Blob interface returns a Promise that resolves with a string containing the contents of the blob, interpreted as UTF-8.
 
 [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
 

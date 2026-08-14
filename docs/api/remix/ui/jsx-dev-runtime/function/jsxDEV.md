@@ -1,6 +1,6 @@
 ---
 title: jsxDEV
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/jsx.ts#L100
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/jsx.ts#L100
 ---
 
 # jsxDEV
@@ -12,7 +12,7 @@ Creates a Remix virtual element.
 ## Signature
 
 ```ts
-function jsx(type: ElementType, props: ElementProps, key: string): RemixElement
+function jsx(type: ElementType, props: ElementProps, key: any): RemixElement
 
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: Cookie
-source: https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L50
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/cookie/src/lib/cookie.ts#L50
 ---
 
 # Cookie
@@ -23,7 +23,7 @@ class Cookie {
   // Accessors
   get domain(): string | undefined
   get expires(): Date | undefined
-  get httpOnly(): boolean
+  get httpOnly(): boolean | undefined
   get maxAge(): number | undefined
   get name(): string
   get partitioned(): boolean
@@ -67,7 +67,7 @@ The expiration date of the cookie.
 
 ### `httpOnly`
 
-True if the cookie is HTTP-only.
+Whether the cookie is HTTP-only, or `undefined` when the option was not configured.
 
 [MDN Reference](https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#httponly)
 

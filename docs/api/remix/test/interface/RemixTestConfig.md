@@ -1,16 +1,14 @@
 ---
 title: RemixTestConfig
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/config.ts#L207
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/test/src/lib/config.ts#L85
 ---
 
 # RemixTestConfig
 
 ## Summary
 
-User-facing configuration for the `remix-test` CLI. Every field is
-optional — unset fields fall back to runner defaults. The same shape can
-be exported from a config file (see `--config`) or passed inline to
-runRemixTest via the corresponding flags.
+User-facing configuration for the Remix test runner. Every field is optional, and unset fields
+fall back to runner defaults. Pass this shape to `runRemixTest()`.
 
 ## Signature
 
@@ -23,6 +21,7 @@ interface RemixTestConfig {
     | {
         branches?: string | number
         dir?: string
+        enabled?: boolean | 'inherit'
         exclude?: string | string[]
         functions?: string | number
         include?: string | string[]
@@ -37,7 +36,7 @@ interface RemixTestConfig {
   }
   only?: RemixTestOnlyPattern | RemixTestOnlyPattern[]
   playwrightConfig?: string | PlaywrightTestConfig
-  pool?: RemixTestPool
+  pool?: 'forks' | 'threads'
   project?: string | string[]
   quiet?: boolean
   reporter?: string
@@ -52,9 +51,7 @@ interface RemixTestConfig {
 
 ### `browser`
 
-Options for controlling the playwright browser
- - `browser.echo`: Echo browser console output to stdout (--browser.echo)
- - `browser.open`: Open browser window and keep open after test finish (--browser.open)
+Options for controlling Playwright browsers.
 
 ### `concurrency`
 
@@ -79,7 +76,7 @@ or an array of patterns; arrays are unioned during discovery.
 Regular expression pattern(s) to focus tests by their full name (--only).
 Matching suite names focus the whole suite, while matching test names focus
 the individual test. Plain string patterns are case-insensitive. Use a
-slash-delimited pattern or a `RegExp` in the config file to control flags
+slash-delimited pattern or a `RegExp` in programmatic options to control flags
 explicitly. `--only` may be repeated on the CLI.
 
 ### `playwrightConfig`

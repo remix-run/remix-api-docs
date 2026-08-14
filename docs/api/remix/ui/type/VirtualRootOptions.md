@@ -1,6 +1,6 @@
 ---
 title: VirtualRootOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/vdom.ts#L37
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/vdom.ts#L40
 ---
 
 # VirtualRootOptions
@@ -16,11 +16,7 @@ type VirtualRootOptions = {
   frame?: FrameHandle
   frameInit?: {
     loadModule?: (moduleUrl: string, exportName: string) => Promise<Function> | Function
-    resolveFrame: (
-      src: string,
-      signal?: AbortSignal,
-      target?: string,
-    ) => Promise<FrameContent> | FrameContent
+    resolveFrame: ResolveFrame
     src?: string
   }
   scheduler?: Scheduler

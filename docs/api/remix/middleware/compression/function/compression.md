@@ -1,6 +1,6 @@
 ---
 title: compression
-source: https://github.com/remix-run/remix/blob/main/packages/compression-middleware/src/lib/compression.ts#L63
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/compression-middleware/src/lib/compression.ts#L64
 ---
 
 # compression
@@ -9,7 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/compression-middle
 
 Creates a middleware handler that automatically compresses responses based on the
 client's Accept-Encoding header, along with an additional Content-Type filter
-by default to only apply compression to appropriate media types.
+by default to only apply compression to appropriate media types. Eligible responses
+vary on `Accept-Encoding`, including when identity is selected.
 
 ## Signature
 

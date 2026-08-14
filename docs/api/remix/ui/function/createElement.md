@@ -1,6 +1,6 @@
 ---
 title: createElement
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/create-element.ts#L13
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/create-element.ts#L13
 ---
 
 # createElement
@@ -12,7 +12,7 @@ Creates a Remix virtual element from a JSX-like call signature.
 ## Signature
 
 ```ts
-function createElement(type: ElementType, props: Record<string, any>, children: any[]): RemixElement
+function createElement(type: ElementType, props: ElementProps, children: unknown[]): RemixElement
 
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: MigrationTransactionMode
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations.ts#L8
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/data-table/src/lib/migrations.ts#L10
 ---
 
 # MigrationTransactionMode
@@ -9,8 +9,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib
 
 Controls how each migration is wrapped in transactions.
 
-- `auto` (default): wrap when the adapter supports transactional DDL.
-- `required`: wrap; throws when the adapter does not support transactional DDL.
+- `auto` (default): wrap when the database supports transactional DDL.
+- `required`: wrap; throws when the database does not support transactional DDL.
 - `none`: never wrap.
 
 ## Signature

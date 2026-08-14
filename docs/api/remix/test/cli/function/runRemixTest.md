@@ -1,17 +1,16 @@
 ---
 title: runRemixTest
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/cli.ts#L70
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/test/src/cli.ts#L67
 ---
 
 # runRemixTest
 
 ## Summary
 
-Programmatic entry point for the `remix-test` CLI. Loads the user's
-RemixTestConfig, discovers test files, and runs them through the
-server/browser/E2E pipelines configured by the project. In watch mode the
-promise resolves when the user terminates the runner; otherwise it resolves
-once the run finishes.
+Runs Remix tests using structured invocation options. The runner discovers test files and runs
+them through the server, browser, and E2E pipelines configured by the caller. In watch mode, the
+promise resolves when the user terminates the runner; otherwise, it resolves once the run
+finishes.
 
 ## Signature
 
@@ -23,10 +22,13 @@ function runRemixTest(options: RunRemixTestOptions): Promise<number>
 ## Example
 
 ```ts
-import { runRemixTest } from '@remix-run/test/cli'
+import { runRemixTest } from 'remix/test/cli'
 
-let exitCode = await runRemixTest()
-process.exit(exitCode)
+let exitCode = await runRemixTest({
+  concurrency: 1,
+  cwd: process.cwd(),
+  type: ['server'],
+})
 
 ```
 
@@ -34,9 +36,9 @@ process.exit(exitCode)
 
 ### `options`
 
-Optional overrides for the parsed argv and working directory.
+Configuration overrides and invocation paths.
 
 ## Returns
 
-The exit code the host process should use (`0` on success, `1` on
-         test failure or unrecoverable error).
+The exit code the host process should use (`0` on success, `1` on test failure or an
+         unrecoverable error).

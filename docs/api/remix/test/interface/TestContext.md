@@ -1,13 +1,13 @@
 ---
 title: TestContext
-source: https://github.com/remix-run/remix/blob/main/packages/test/src/lib/context.ts#L29
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/test/src/lib/context.ts#L29
 ---
 
 # TestContext
 
 ## Summary
 
-Test Context providing utilities for testing via `remix-test`.  The context is
+Test Context providing utilities for the Remix test runner. The context is
 passed as the first argument to the [`test`](/api/remix/test/function/test/)/[`it`](/api/remix/test/function/it/) functions.
 
 ## Signature

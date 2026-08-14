@@ -1,0 +1,1 @@
+export async function unwrapFrameResolution(e){return e instanceof Response?{content:e.body??await e.text(),redirectedTo:e.redirected&&e.url?e.url:void 0}:{content:e}}

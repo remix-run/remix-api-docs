@@ -1,0 +1,1 @@
+import{on as e}from"/assets/pkg/remix/src/ui.@UKsfrR.js";import{jsxs as t}from"/assets/pkg/remix/src/ui/jsx-runtime.@C-Vxpy.js";export default function n(n){let r=0;return()=>t(`button`,{mix:[e(`click`,()=>{r++,n.update()})],children:[`Ye ol' counter: `,r]})}

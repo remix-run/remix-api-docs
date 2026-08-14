@@ -1,6 +1,6 @@
 ---
 title: ParseMultipartOptions
-source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L81
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/multipart-parser/src/lib/multipart.ts#L81
 ---
 
 # ParseMultipartOptions
@@ -28,6 +28,7 @@ interface ParseMultipartOptions {
 
 The boundary string used to separate parts in the multipart message,
 e.g. the `boundary` parameter in the `Content-Type` header.
+Boundaries may not exceed 70 characters.
 
 ### `maxFileSize`
 

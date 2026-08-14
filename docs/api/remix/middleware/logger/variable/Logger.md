@@ -1,6 +1,6 @@
 ---
 title: Logger
-source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L19
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/logger-middleware/src/lib/logger.ts#L19
 ---
 
 # Logger
@@ -13,5 +13,5 @@ The `logger()` middleware also installs the logger as `context.logger`.
 ## Signature
 
 ```ts
-const Logger: ContextKey<LoggerFunction>
+const Logger: { defaultValue?: LoggerFunction }
 ```
