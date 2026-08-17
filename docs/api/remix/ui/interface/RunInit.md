@@ -1,6 +1,6 @@
 ---
 title: RunInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/run.ts#L14
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/ui/src/runtime/run.ts#L14
 ---
 
 # RunInit
@@ -32,5 +32,5 @@ Implementations usually call dynamic `import(moduleUrl)` and return
 
 Resolves browser-loaded `<Frame>` content.
 
-Omit this only when the runtime never needs to load or reload frames in the
-browser.
+Defaults to fetching the frame source as HTML with the submitted form data,
+method, encoding, and abort signal.

@@ -1,6 +1,6 @@
 ---
 title: DataManipulationOperation
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/data-table/src/lib/driver.ts#L137
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/data-table/src/lib/driver.ts#L137
 ---
 
 # DataManipulationOperation

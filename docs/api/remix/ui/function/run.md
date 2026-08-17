@@ -1,6 +1,6 @@
 ---
 title: run
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui/src/runtime/run.ts#L81
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/ui/src/runtime/run.ts#L125
 ---
 
 # run
@@ -20,7 +20,7 @@ function run(init: RunInit): AppRuntime
 
 ### `init`
 
-Runtime hooks for loading modules and resolving frames.
+Runtime options for loading modules and customizing frame resolution.
 
 ## Returns
 

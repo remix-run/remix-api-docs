@@ -1,6 +1,6 @@
 ---
 title: createSession
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/session/src/lib/session.ts#L185
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/session/src/lib/session.ts#L185
 ---
 
 # createSession

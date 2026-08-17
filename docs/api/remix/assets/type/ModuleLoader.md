@@ -1,6 +1,6 @@
 ---
 title: ModuleLoader
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/assets/src/lib/loaders.ts#L35
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/assets/src/lib/loaders.ts#L35
 ---
 
 # ModuleLoader

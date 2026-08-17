@@ -1,6 +1,6 @@
 ---
 title: Terminal
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/terminal/src/lib/terminal.ts#L53
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/terminal/src/lib/terminal.ts#L53
 ---
 
 # Terminal

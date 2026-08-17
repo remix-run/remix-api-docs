@@ -1,6 +1,6 @@
 ---
 title: __uiHmrServerRuntime__
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/ui-hmr/src/runtime/server.ts#L8
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/ui-hmr/src/runtime/server.ts#L8
 ---
 
 # __uiHmrServerRuntime__

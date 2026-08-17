@@ -1,6 +1,6 @@
 ---
 title: createController
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/fetch-router/src/lib/controller.ts#L137
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/fetch-router/src/lib/controller.ts#L137
 ---
 
 # createController

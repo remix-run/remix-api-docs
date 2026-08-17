@@ -1,6 +1,6 @@
 ---
 title: defineMimeType
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/mime/src/lib/define-mime-type.ts#L51
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/mime/src/lib/define-mime-type.ts#L51
 ---
 
 # defineMimeType

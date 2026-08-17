@@ -1,6 +1,6 @@
 ---
 title: VaryInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/headers/src/lib/vary.ts#L6
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/headers/src/lib/vary.ts#L6
 ---
 
 # VaryInit

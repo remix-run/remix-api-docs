@@ -1,0 +1,1 @@
+export*from"/assets/pkg/ui/src/tabs/index.@GuLIEn.js";

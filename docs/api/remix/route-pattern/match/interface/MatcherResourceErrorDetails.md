@@ -1,6 +1,6 @@
 ---
 title: MatcherResourceErrorDetails
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/route-pattern/src/lib/match/limits.ts#L14
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/route-pattern/src/lib/match/limits.ts#L14
 ---
 
 # MatcherResourceErrorDetails

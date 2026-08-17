@@ -1,6 +1,6 @@
 ---
 title: createMigrationRegistry
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/data-table/src/lib/migrations/registry.ts#L39
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/data-table/src/lib/migrations/registry.ts#L39
 ---
 
 # createMigrationRegistry

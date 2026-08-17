@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/menu/index.@c_Vmzd.js";

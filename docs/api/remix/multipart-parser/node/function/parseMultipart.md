@@ -1,6 +1,6 @@
 ---
 title: parseMultipart
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/multipart-parser/src/lib/multipart.node.ts#L23
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/multipart-parser/src/lib/multipart.node.ts#L23
 ---
 
 # parseMultipart

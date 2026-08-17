@@ -1,1 +1,0 @@
-import{createMixin as e,on as t}from"/assets/pkg/ui/src/index.@mOMcl4.js";export const onKeyDown=e(()=>(e,n)=>t(`keydown`,t=>{t.key===e&&(t.preventDefault(),n(t))}));

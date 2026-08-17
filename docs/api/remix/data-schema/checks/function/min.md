@@ -1,6 +1,6 @@
 ---
 title: min
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/data-schema/src/lib/checks.ts#L78
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/data-schema/src/lib/checks.ts#L78
 ---
 
 # min

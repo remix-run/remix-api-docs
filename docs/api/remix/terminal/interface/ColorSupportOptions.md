@@ -1,6 +1,6 @@
 ---
 title: ColorSupportOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/terminal/src/lib/env.ts#L9
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/terminal/src/lib/env.ts#L9
 ---
 
 # ColorSupportOptions

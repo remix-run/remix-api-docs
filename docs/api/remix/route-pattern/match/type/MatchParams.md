@@ -1,6 +1,6 @@
 ---
 title: MatchParams
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/route-pattern/src/lib/match/types.ts#L6
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/route-pattern/src/lib/match/types.ts#L6
 ---
 
 # MatchParams

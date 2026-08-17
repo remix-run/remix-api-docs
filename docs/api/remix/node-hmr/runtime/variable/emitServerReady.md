@@ -1,6 +1,6 @@
 ---
 title: emitServerReady
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.6/packages/node-hmr/src/runtime.ts#L32
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/node-hmr/src/runtime.ts#L32
 ---
 
 # emitServerReady
