@@ -1,6 +1,6 @@
 ---
 title: createGitHubAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/auth/src/lib/providers/github.ts#L69
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/github.ts#L69
 ---
 
 # createGitHubAuthProvider
@@ -14,7 +14,7 @@ Creates a GitHub OAuth App provider.
 ```ts
 function createGitHubAuthProvider(
   options: GitHubAuthProviderOptions,
-): OAuthProvider<GitHubAuthProfile, 'github', OAuthStandardTokens>
+): OAuthProvider<GitHubAuthProfile, 'github'>
 
 ```
 

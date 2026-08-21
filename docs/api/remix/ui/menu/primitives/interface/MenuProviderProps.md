@@ -1,6 +1,6 @@
 ---
 title: MenuProviderProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/ui/src/menu/primitives.tsx#L63
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/primitives.tsx#L63
 ---
 
 # MenuProviderProps

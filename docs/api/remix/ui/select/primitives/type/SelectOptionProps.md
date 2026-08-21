@@ -1,6 +1,6 @@
 ---
 title: SelectOptionProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/ui/src/select/primitives.tsx#L73
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/select/primitives.tsx#L73
 ---
 
 # SelectOptionProps

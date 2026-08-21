@@ -1,6 +1,6 @@
 ---
 title: RunRemixDbOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/data-table/src/cli.ts#L10
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/cli.ts#L37
 ---
 
 # RunRemixDbOptions
@@ -19,6 +19,7 @@ type RunRemixDbOptions =
       migrations: Migrations
       to?: string
     })
+  | RollbackCommandOptions
   | (DatabaseCommandOptions & {
       command: 'reset'
       journalTable?: string

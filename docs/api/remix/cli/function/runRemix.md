@@ -1,6 +1,6 @@
 ---
 title: runRemix
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/cli/src/lib/cli.ts#L43
+source: https://github.com/remix-run/remix/blob/main/packages/cli/src/lib/cli.ts#L43
 ---
 
 # runRemix

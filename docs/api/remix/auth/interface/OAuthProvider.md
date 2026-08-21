@@ -1,6 +1,6 @@
 ---
 title: OAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/auth/src/lib/provider.ts#L87
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/provider.ts#L52
 ---
 
 # OAuthProvider
@@ -23,7 +23,7 @@ interface OAuthProvider<_profile, provider, tokens> {
 
 ### `[oauthProviderTokens]`
 
-Phantom token marker used to preserve provider-specific token types.
+Preserves the provider-specific token type for external auth helpers.
 
 ### `name`
 

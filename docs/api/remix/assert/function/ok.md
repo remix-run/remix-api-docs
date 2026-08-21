@@ -1,6 +1,6 @@
 ---
 title: ok
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/assert/src/lib/assert.ts#L268
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L268
 ---
 
 # ok

@@ -1,6 +1,6 @@
 ---
 title: createSqliteDatabase
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/data-table-sqlite/src/lib/database.ts#L37
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite/src/lib/database.ts#L37
 ---
 
 # createSqliteDatabase

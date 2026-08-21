@@ -1,6 +1,6 @@
 ---
 title: transformComponentsForBrowser
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/ui-hmr/src/lib/transform.ts#L121
+source: https://github.com/remix-run/remix/blob/main/packages/ui-hmr/src/lib/transform.ts#L121
 ---
 
 # transformComponentsForBrowser

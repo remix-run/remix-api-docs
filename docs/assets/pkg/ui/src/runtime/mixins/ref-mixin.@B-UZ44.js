@@ -1,0 +1,1 @@
+import{createMixin as e}from"/assets/pkg/ui/src/runtime/mixins/mixin.@4ktpim.js";export const ref=e(e=>{let t;e.addEventListener(`insert`,e=>{t=new AbortController,n(e.node,t.signal)}),e.addEventListener(`remove`,()=>{t?.abort(new DOMException(``,`AbortError`)),t=void 0});let n=()=>{};return t=>(n=t,e.element)});

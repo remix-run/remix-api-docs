@@ -1,6 +1,6 @@
 ---
 title: createGoogleAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/auth/src/lib/providers/google.ts#L49
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/google.ts#L49
 ---
 
 # createGoogleAuthProvider
@@ -14,7 +14,7 @@ Creates a Google auth provider backed by the shared OIDC runtime.
 ```ts
 function createGoogleAuthProvider(
   options: GoogleAuthProviderOptions,
-): OAuthProvider<GoogleAuthProfile, 'google', OAuthStandardTokens>
+): OAuthProvider<GoogleAuthProfile, 'google'>
 
 ```
 

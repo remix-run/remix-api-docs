@@ -1,0 +1,1 @@
+export*from"/assets/pkg/ui/src/select/index.@riOA4c.js";

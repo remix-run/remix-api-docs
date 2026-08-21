@@ -1,6 +1,6 @@
 ---
 title: createAction
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/fetch-router/src/lib/controller.ts#L79
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/controller.ts#L79
 ---
 
 # createAction

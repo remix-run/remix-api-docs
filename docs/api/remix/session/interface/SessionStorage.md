@@ -1,6 +1,6 @@
 ---
 title: SessionStorage
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/session/src/lib/session-storage.ts#L10
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session-storage.ts#L10
 ---
 
 # SessionStorage

@@ -1,6 +1,6 @@
 ---
 title: createXAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/auth/src/lib/providers/x.ts#L63
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/x.ts#L63
 ---
 
 # createXAuthProvider
@@ -12,9 +12,7 @@ Creates an X auth provider using OAuth 2.0 Authorization Code with PKCE.
 ## Signature
 
 ```ts
-function createXAuthProvider(
-  options: XAuthProviderOptions,
-): OAuthProvider<XAuthProfile, 'x', OAuthStandardTokens>
+function createXAuthProvider(options: XAuthProviderOptions): OAuthProvider<XAuthProfile, 'x'>
 
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: ResolveFrameOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/ui/src/runtime/frame.ts#L85
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/frame.ts#L85
 ---
 
 # ResolveFrameOptions

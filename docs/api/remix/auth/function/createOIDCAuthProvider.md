@@ -1,6 +1,6 @@
 ---
 title: createOIDCAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-beta.10/packages/auth/src/lib/providers/oidc.ts#L127
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/oidc.ts#L127
 ---
 
 # createOIDCAuthProvider
@@ -14,7 +14,7 @@ Creates an OpenID Connect provider backed by discovery metadata or explicit endp
 ```ts
 function createOIDCAuthProvider<profile extends OIDCAuthProfile, provider extends string>(
   options: OIDCAuthProviderOptions<profile, provider>,
-): OAuthProvider<profile, provider, OAuthStandardTokens>
+): OAuthProvider<profile, provider>
 
 ```
 
