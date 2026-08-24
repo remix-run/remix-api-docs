@@ -1,6 +1,6 @@
 ---
 title: createAuth0AuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/auth0.ts#L36
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth/src/lib/providers/auth0.ts#L36
 ---
 
 # createAuth0AuthProvider

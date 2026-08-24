@@ -1,6 +1,6 @@
 ---
 title: logger
-source: https://github.com/remix-run/remix/blob/main/packages/logger-middleware/src/lib/logger.ts#L83
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/logger-middleware/src/lib/logger.ts#L83
 ---
 
 # logger

@@ -1,6 +1,6 @@
 ---
 title: boolean
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/coerce.ts#L54
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-schema/src/lib/coerce.ts#L54
 ---
 
 # boolean

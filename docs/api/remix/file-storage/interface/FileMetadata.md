@@ -1,6 +1,6 @@
 ---
 title: FileMetadata
-source: https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/file-storage.ts#L121
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/file-storage/src/lib/file-storage.ts#L121
 ---
 
 # FileMetadata

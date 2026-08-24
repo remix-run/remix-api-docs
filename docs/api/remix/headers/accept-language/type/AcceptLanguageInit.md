@@ -1,6 +1,6 @@
 ---
 title: AcceptLanguageInit
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept-language.ts#L8
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/headers/src/lib/accept-language.ts#L8
 ---
 
 # AcceptLanguageInit

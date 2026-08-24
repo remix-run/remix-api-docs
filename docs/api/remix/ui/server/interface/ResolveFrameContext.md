@@ -1,6 +1,6 @@
 ---
 title: ResolveFrameContext
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/server/stream.ts#L58
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/server/stream.ts#L58
 ---
 
 # ResolveFrameContext

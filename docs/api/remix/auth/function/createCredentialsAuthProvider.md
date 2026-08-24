@@ -1,6 +1,6 @@
 ---
 title: createCredentialsAuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/credentials.ts#L37
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth/src/lib/providers/credentials.ts#L37
 ---
 
 # createCredentialsAuthProvider

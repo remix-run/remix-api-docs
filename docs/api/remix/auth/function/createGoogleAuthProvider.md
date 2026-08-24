@@ -1,6 +1,6 @@
 ---
 title: createGoogleAuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/google.ts#L49
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth/src/lib/providers/google.ts#L49
 ---
 
 # createGoogleAuthProvider

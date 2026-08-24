@@ -1,6 +1,6 @@
 ---
 title: BrowserHmrChannel
-source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L58
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/assets/src/lib/asset-server.ts#L58
 ---
 
 # BrowserHmrChannel

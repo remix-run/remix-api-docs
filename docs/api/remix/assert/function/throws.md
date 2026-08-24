@@ -1,6 +1,6 @@
 ---
 title: throws
-source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L526
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/assert/src/lib/assert.ts#L526
 ---
 
 # throws

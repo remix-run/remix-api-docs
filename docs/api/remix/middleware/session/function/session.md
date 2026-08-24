@@ -1,6 +1,6 @@
 ---
 title: session
-source: https://github.com/remix-run/remix/blob/main/packages/session-middleware/src/lib/session.ts#L12
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/session-middleware/src/lib/session.ts#L12
 ---
 
 # session

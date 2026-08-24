@@ -1,6 +1,6 @@
 ---
 title: AccordionSingleProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/index.tsx#L21
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/accordion/index.tsx#L21
 ---
 
 # AccordionSingleProps

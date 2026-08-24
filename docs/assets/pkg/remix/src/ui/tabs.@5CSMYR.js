@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/tabs/index.@PR6TTO.js";

@@ -1,6 +1,6 @@
 ---
 title: Expect
-source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/expect.ts#L195
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/assert/src/lib/expect.ts#L195
 ---
 
 # Expect

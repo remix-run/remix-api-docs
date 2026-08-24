@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/accordion/index.@AwXyJ9.js";

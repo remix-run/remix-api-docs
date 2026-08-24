@@ -1,6 +1,6 @@
 ---
 title: Seed
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations.ts#L123
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table/src/lib/migrations.ts#L123
 ---
 
 # Seed

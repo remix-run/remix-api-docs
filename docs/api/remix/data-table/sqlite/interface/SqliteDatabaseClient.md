@@ -1,6 +1,6 @@
 ---
 title: SqliteDatabaseClient
-source: https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite/src/lib/driver.ts#L25
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table-sqlite/src/lib/driver.ts#L25
 ---
 
 # SqliteDatabaseClient

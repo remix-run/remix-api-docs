@@ -1,6 +1,6 @@
 ---
 title: isSafeHtml
-source: https://github.com/remix-run/remix/blob/main/packages/html-template/src/lib/safe-html.ts#L21
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/html-template/src/lib/safe-html.ts#L21
 ---
 
 # isSafeHtml

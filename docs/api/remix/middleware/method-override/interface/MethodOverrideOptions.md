@@ -1,6 +1,6 @@
 ---
 title: MethodOverrideOptions
-source: https://github.com/remix-run/remix/blob/main/packages/method-override-middleware/src/lib/method-override.ts#L7
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/method-override-middleware/src/lib/method-override.ts#L7
 ---
 
 # MethodOverrideOptions

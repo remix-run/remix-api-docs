@@ -1,6 +1,6 @@
 ---
 title: createRedirectResponse
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/redirect.ts#L9
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/response/src/lib/redirect.ts#L9
 ---
 
 # createRedirectResponse

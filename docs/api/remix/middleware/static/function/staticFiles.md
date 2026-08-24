@@ -1,6 +1,6 @@
 ---
 title: staticFiles
-source: https://github.com/remix-run/remix/blob/main/packages/static-middleware/src/lib/static.ts#L89
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/static-middleware/src/lib/static.ts#L89
 ---
 
 # staticFiles

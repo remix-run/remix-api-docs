@@ -1,6 +1,6 @@
 ---
 title: FileDigestFunction
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/file.ts#L44
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/response/src/lib/file.ts#L44
 ---
 
 # FileDigestFunction

@@ -1,6 +1,6 @@
 ---
 title: requireAuth
-source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/require-auth.ts#L20
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth-middleware/src/lib/require-auth.ts#L20
 ---
 
 # requireAuth

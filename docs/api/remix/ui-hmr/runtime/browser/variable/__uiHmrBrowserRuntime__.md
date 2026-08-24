@@ -1,6 +1,6 @@
 ---
 title: __uiHmrBrowserRuntime__
-source: https://github.com/remix-run/remix/blob/main/packages/ui-hmr/src/runtime/browser.ts#L19
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui-hmr/src/runtime/browser.ts#L19
 ---
 
 # __uiHmrBrowserRuntime__

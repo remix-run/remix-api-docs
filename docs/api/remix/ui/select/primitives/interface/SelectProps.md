@@ -1,6 +1,6 @@
 ---
 title: SelectProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/select/primitives.tsx#L66
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/select/primitives.tsx#L66
 ---
 
 # SelectProps

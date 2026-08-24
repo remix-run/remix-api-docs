@@ -1,6 +1,6 @@
 ---
 title: parse
-source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/raw-headers.ts#L16
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/headers/src/lib/raw-headers.ts#L16
 ---
 
 # parse

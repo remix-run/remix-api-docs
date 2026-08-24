@@ -1,6 +1,6 @@
 ---
 title: AccordionTriggerProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion/primitives.tsx#L131
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/accordion/primitives.tsx#L131
 ---
 
 # AccordionTriggerProps

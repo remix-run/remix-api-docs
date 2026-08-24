@@ -1,6 +1,6 @@
 ---
 title: mimeTypeToContentType
-source: https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/mime-type-to-content-type.ts#L31
+source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/mime/src/lib/mime-type-to-content-type.ts#L31
 ---
 
 # mimeTypeToContentType
