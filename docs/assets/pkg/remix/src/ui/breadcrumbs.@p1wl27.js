@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/breadcrumbs/index.@2ws3ZV.js";

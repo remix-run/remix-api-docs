@@ -1,0 +1,1 @@
+export*from"/assets/pkg/ui/src/breadcrumbs/index.@8UmCDF.js";
