@@ -1,6 +1,6 @@
 ---
 title: RequestBodyMethod
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/fetch-router/src/lib/request-methods.ts#L1
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/request-methods.ts#L1
 ---
 
 # RequestBodyMethod

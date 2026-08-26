@@ -1,6 +1,6 @@
 ---
 title: MenuListProps
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/menu/index.tsx#L208
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/index.tsx#L208
 ---
 
 # MenuListProps

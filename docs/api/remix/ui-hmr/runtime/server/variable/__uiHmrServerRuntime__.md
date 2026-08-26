@@ -1,6 +1,6 @@
 ---
 title: __uiHmrServerRuntime__
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui-hmr/src/runtime/server.ts#L8
+source: https://github.com/remix-run/remix/blob/main/packages/ui-hmr/src/runtime/server.ts#L8
 ---
 
 # __uiHmrServerRuntime__

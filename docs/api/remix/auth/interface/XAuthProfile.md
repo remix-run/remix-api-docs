@@ -1,6 +1,6 @@
 ---
 title: XAuthProfile
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth/src/lib/providers/x.ts#L36
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/x.ts#L36
 ---
 
 # XAuthProfile

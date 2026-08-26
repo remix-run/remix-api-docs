@@ -1,6 +1,6 @@
 ---
 title: startExternalAuth
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth/src/lib/start-external-auth.ts#L30
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/start-external-auth.ts#L30
 ---
 
 # startExternalAuth

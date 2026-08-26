@@ -1,6 +1,6 @@
 ---
 title: MysqlDatabaseInput
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table-mysql/src/lib/driver.ts#L39
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-mysql/src/lib/driver.ts#L39
 ---
 
 # MysqlDatabaseInput

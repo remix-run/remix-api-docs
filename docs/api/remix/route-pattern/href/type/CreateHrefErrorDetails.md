@@ -1,6 +1,6 @@
 ---
 title: CreateHrefErrorDetails
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/route-pattern/src/lib/href.ts#L269
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/href.ts#L269
 ---
 
 # CreateHrefErrorDetails

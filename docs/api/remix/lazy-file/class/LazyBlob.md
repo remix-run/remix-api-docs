@@ -1,6 +1,6 @@
 ---
 title: LazyBlob
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/lazy-file/src/lib/lazy-file.ts#L53
+source: https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib/lazy-file.ts#L53
 ---
 
 # LazyBlob

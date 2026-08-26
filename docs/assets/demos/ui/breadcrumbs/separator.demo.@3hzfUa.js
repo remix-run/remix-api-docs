@@ -1,0 +1,1 @@
+import{Breadcrumbs as e}from"/assets/pkg/remix/src/ui/breadcrumbs.@NWUlke.js";import{jsx as t}from"/assets/pkg/remix/src/ui/jsx-runtime.@w7_s7q.js";export default function n(){return()=>t(e,{items:[{href:`/`,label:`Workspace`},{href:`/projects`,label:`Projects`},{label:`Components`}],separator:`/`})}

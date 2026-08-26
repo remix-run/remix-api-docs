@@ -1,6 +1,6 @@
 ---
 title: ParseTarHeaderOptions
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/tar-parser/src/lib/tar.ts#L123
+source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L123
 ---
 
 # ParseTarHeaderOptions

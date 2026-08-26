@@ -1,6 +1,6 @@
 ---
 title: SuperHeadersInit
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/headers/src/lib/super-headers.ts#L116
+source: https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/super-headers.ts#L116
 ---
 
 # SuperHeadersInit

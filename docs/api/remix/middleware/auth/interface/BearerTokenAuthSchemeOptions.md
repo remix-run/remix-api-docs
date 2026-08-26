@@ -1,6 +1,6 @@
 ---
 title: BearerTokenAuthSchemeOptions
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth-middleware/src/lib/schemes/bearer.ts#L10
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/bearer.ts#L10
 ---
 
 # BearerTokenAuthSchemeOptions

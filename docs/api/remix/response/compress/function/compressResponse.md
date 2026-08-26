@@ -1,6 +1,6 @@
 ---
 title: compressResponse
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/response/src/lib/compress.ts#L89
+source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/compress.ts#L89
 ---
 
 # compressResponse

@@ -1,6 +1,6 @@
 ---
 title: ListboxRegisteredOption
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/listbox/index.ts#L62
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/listbox/index.ts#L62
 ---
 
 # ListboxRegisteredOption

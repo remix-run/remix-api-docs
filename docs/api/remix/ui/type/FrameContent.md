@@ -1,6 +1,6 @@
 ---
 title: FrameContent
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/runtime/component.ts#L141
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/component.ts#L141
 ---
 
 # FrameContent

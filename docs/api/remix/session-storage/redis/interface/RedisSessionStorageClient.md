@@ -1,6 +1,6 @@
 ---
 title: RedisSessionStorageClient
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/session-storage-redis/src/lib/redis-storage.ts#L9
+source: https://github.com/remix-run/remix/blob/main/packages/session-storage-redis/src/lib/redis-storage.ts#L9
 ---
 
 # RedisSessionStorageClient

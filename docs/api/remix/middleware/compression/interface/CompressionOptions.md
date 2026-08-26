@@ -1,6 +1,6 @@
 ---
 title: CompressionOptions
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/compression-middleware/src/lib/compression.ts#L11
+source: https://github.com/remix-run/remix/blob/main/packages/compression-middleware/src/lib/compression.ts#L11
 ---
 
 # CompressionOptions

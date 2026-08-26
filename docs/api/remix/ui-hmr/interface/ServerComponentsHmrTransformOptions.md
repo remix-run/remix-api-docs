@@ -1,6 +1,6 @@
 ---
 title: ServerComponentsHmrTransformOptions
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui-hmr/src/lib/transform.ts#L51
+source: https://github.com/remix-run/remix/blob/main/packages/ui-hmr/src/lib/transform.ts#L51
 ---
 
 # ServerComponentsHmrTransformOptions

@@ -1,6 +1,6 @@
 ---
 title: partialDeepEqual
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/assert/src/lib/assert.ts#L375
+source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L375
 ---
 
 # partialDeepEqual

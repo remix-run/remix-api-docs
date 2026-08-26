@@ -1,6 +1,6 @@
 ---
 title: DataTableDatabaseError
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table/src/lib/errors.ts#L82
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/errors.ts#L82
 ---
 
 # DataTableDatabaseError

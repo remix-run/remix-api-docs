@@ -1,6 +1,6 @@
 ---
 title: auth
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth-middleware/src/lib/auth.ts#L122
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/auth.ts#L122
 ---
 
 # auth

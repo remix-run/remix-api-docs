@@ -1,6 +1,6 @@
 ---
 title: JoinPatterns
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/route-pattern/src/lib/types/join.ts#L5
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/types/join.ts#L5
 ---
 
 # JoinPatterns

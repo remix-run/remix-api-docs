@@ -1,6 +1,6 @@
 ---
 title: MysqlDatabase
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table-mysql/src/lib/database.ts#L14
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-mysql/src/lib/database.ts#L14
 ---
 
 # MysqlDatabase

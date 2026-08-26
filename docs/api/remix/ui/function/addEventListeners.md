@@ -1,6 +1,6 @@
 ---
 title: addEventListeners
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/runtime/event-listeners.ts#L137
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/event-listeners.ts#L137
 ---
 
 # addEventListeners

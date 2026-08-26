@@ -1,6 +1,6 @@
 ---
 title: ne
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table/src/lib/operators.ts#L97
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L97
 ---
 
 # ne

@@ -1,6 +1,6 @@
 ---
 title: FsSessionStorageOptions
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/session/src/lib/session-storage/fs.ts#L11
+source: https://github.com/remix-run/remix/blob/main/packages/session/src/lib/session-storage/fs.ts#L11
 ---
 
 # FsSessionStorageOptions

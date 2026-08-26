@@ -1,6 +1,6 @@
 ---
 title: createPostgresDatabase
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table-postgres/src/lib/database.ts#L40
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-postgres/src/lib/database.ts#L40
 ---
 
 # createPostgresDatabase

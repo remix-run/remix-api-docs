@@ -1,6 +1,6 @@
 ---
 title: createMixin
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/runtime/mixins/mixin.ts#L254
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L254
 ---
 
 # createMixin

@@ -1,6 +1,6 @@
 ---
 title: Cookie
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/cookie/src/lib/cookie.ts#L50
+source: https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L50
 ---
 
 # Cookie

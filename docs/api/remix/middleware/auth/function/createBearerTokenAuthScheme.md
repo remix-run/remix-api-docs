@@ -1,6 +1,6 @@
 ---
 title: createBearerTokenAuthScheme
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth-middleware/src/lib/schemes/bearer.ts#L29
+source: https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/bearer.ts#L29
 ---
 
 # createBearerTokenAuthScheme

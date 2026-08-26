@@ -1,6 +1,6 @@
 ---
 title: ParseMultipartOptions
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/multipart-parser/src/lib/multipart.ts#L81
+source: https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L81
 ---
 
 # ParseMultipartOptions

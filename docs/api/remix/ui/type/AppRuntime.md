@@ -1,6 +1,6 @@
 ---
 title: AppRuntime
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/runtime/run.ts#L42
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/run.ts#L42
 ---
 
 # AppRuntime

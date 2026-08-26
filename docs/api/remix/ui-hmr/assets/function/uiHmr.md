@@ -1,6 +1,6 @@
 ---
 title: uiHmr
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui-hmr/src/lib/loaders.ts#L97
+source: https://github.com/remix-run/remix/blob/main/packages/ui-hmr/src/lib/loaders.ts#L97
 ---
 
 # uiHmr

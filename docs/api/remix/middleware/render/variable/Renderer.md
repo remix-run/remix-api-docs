@@ -1,6 +1,6 @@
 ---
 title: Renderer
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/render-middleware/src/lib/render.ts#L6
+source: https://github.com/remix-run/remix/blob/main/packages/render-middleware/src/lib/render.ts#L6
 ---
 
 # Renderer

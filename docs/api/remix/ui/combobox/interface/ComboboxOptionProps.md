@@ -1,6 +1,6 @@
 ---
 title: ComboboxOptionProps
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/ui/src/combobox/index.tsx#L25
+source: https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox/index.tsx#L25
 ---
 
 # ComboboxOptionProps

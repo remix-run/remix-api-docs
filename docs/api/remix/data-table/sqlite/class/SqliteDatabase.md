@@ -1,6 +1,6 @@
 ---
 title: SqliteDatabase
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/data-table-sqlite/src/lib/database.ts#L10
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite/src/lib/database.ts#L10
 ---
 
 # SqliteDatabase

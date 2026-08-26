@@ -1,6 +1,6 @@
 ---
 title: GitHubAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/brookslybrand/fix-css-range-media-queries/packages/auth/src/lib/providers/github.ts#L20
+source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/github.ts#L20
 ---
 
 # GitHubAuthProviderOptions
