@@ -1,6 +1,6 @@
 ---
 title: ComboboxProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox/primitives.tsx#L79
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/combobox/primitives.tsx#L79
 ---
 
 # ComboboxProps
@@ -107,7 +107,7 @@ interface ComboboxProps {
   itemType?: string
   key?: any
   lang?: string
-  mix?: MixinDescriptor<HTMLDivElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLDivElement, ElementProps>[]
   name?: string
   nonce?: string
   part?: string

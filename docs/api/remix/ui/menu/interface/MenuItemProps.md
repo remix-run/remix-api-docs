@@ -1,6 +1,6 @@
 ---
 title: MenuItemProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/index.tsx#L221
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/menu/index.tsx#L221
 ---
 
 # MenuItemProps
@@ -107,7 +107,7 @@ interface MenuItemProps {
   key?: any
   label?: string
   lang?: string
-  mix?: MixinDescriptor<HTMLDivElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLDivElement, ElementProps>[]
   name: string
   nonce?: string
   part?: string

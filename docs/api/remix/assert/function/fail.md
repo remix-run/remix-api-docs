@@ -1,6 +1,6 @@
 ---
 title: fail
-source: https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L425
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/assert/src/lib/assert.ts#L425
 ---
 
 # fail

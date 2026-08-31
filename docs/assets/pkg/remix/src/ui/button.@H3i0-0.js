@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/button/index.@WibC9y.js";export{default}from"/assets/pkg/ui/src/button/index.@WibC9y.js";

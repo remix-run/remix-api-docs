@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/anchor/index.@JNR8eT.js";

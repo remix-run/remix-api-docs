@@ -4,7 +4,6 @@ A gallery of small examples that mirror the package README snippets.
 
 ```tsx
 import {
-  addEventListeners,
   css,
   on,
   ref,
@@ -210,13 +209,15 @@ function KeyboardTracker(handle: Handle) {
   let keys: string[] = []
 
   handle.queueTask(() => {
-    addEventListeners(document, handle.signal, {
-      keydown: (event) => {
+    document.addEventListener(
+      'keydown',
+      (event) => {
         keys.push(event.key)
         if (keys.length > 10) keys.shift()
         handle.update()
       },
-    })
+      { signal: handle.signal },
+    )
   })
 
   return () => <div>Keys: {keys.join(', ') || '(press some keys)'}</div>
@@ -598,10 +599,8 @@ function ThemedContent(handle: Handle) {
   let theme = handle.context.get(ThemeProviderAdvanced)
 
   // Subscribe to theme changes and update when it changes
-  addEventListeners(theme, handle.signal, {
-    change() {
-      handle.update()
-    },
+  theme.addEventListener('change', () => handle.update(), {
+    signal: handle.signal,
   })
 
   return () => (

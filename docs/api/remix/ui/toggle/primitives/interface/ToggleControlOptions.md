@@ -1,6 +1,6 @@
 ---
 title: ToggleControlOptions
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/toggle/primitives.ts#L4
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/toggle/primitives.ts#L4
 ---
 
 # ToggleControlOptions

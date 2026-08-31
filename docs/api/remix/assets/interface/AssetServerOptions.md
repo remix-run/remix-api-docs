@@ -1,6 +1,6 @@
 ---
 title: AssetServerOptions
-source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L179
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/assets/src/lib/asset-server.ts#L184
 ---
 
 # AssetServerOptions
@@ -17,11 +17,11 @@ interface AssetServerOptions<transforms> {
   allowPackages?: readonly string[]
   basePath: string
   denyFiles?: readonly string[]
-  fileMap: Readonly<Record<string, string>>
   files?: AssetServerFilesOptions<transforms>
   fingerprint?: FingerprintOptions
   hmr?: BrowserHmrChannelFactory
   minify?: boolean
+  mounts?: Readonly<Record<string, string>>
   onError?: (error: unknown) => void | Response | Promise<void | Response>
   rootDir?: string
   scripts?: AssetServerScriptOptions
@@ -42,7 +42,7 @@ Glob patterns or file paths that are allowed to be served. Relative values are r
 ### `allowPackages`
 
 Exact package names whose files are allowed to be served. Dependencies and installed optional
-dependencies are allowed automatically. Package files must still match `fileMap`.
+dependencies are allowed automatically. Package files must still be within a configured mount.
 
 ### `basePath`
 
@@ -51,10 +51,6 @@ Public mount path for this asset server, e.g. `'/assets'`.
 ### `denyFiles`
 
 Glob patterns or file paths that are denied from being served. Relative values are resolved from `rootDir`.
-
-### `fileMap`
-
-File patterns keyed by public URL patterns.
 
 ### `files`
 
@@ -79,6 +75,14 @@ HMR requires `watch` to be enabled. The factory is called once for this asset se
 ### `minify`
 
 Minification setting for emitted scripts and styles.
+
+### `mounts`
+
+Directories to mount at public URL paths.
+
+Each key is a public URL path and its value is a directory relative to `rootDir`. Defaults to
+`{ app: 'app', npm: 'node_modules' }`. Public paths must not contain query strings, fragments,
+or encoded dot segments.
 
 ### `onError`
 

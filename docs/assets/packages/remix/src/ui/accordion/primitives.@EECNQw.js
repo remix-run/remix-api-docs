@@ -1,0 +1,1 @@
+export*from"/assets/packages/ui/src/accordion/primitives.@werYl2.js";

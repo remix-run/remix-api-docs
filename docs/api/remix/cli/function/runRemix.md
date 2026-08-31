@@ -1,6 +1,6 @@
 ---
 title: runRemix
-source: https://github.com/remix-run/remix/blob/main/packages/cli/src/lib/cli.ts#L43
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/cli/src/lib/cli.ts#L43
 ---
 
 # runRemix
@@ -8,7 +8,7 @@ source: https://github.com/remix-run/remix/blob/main/packages/cli/src/lib/cli.ts
 ## Summary
 
 Entry point for the `remix` CLI. Parses `argv`, dispatches to the matching
-subcommand (`new`, `db`, `doctor`, `routes`, `test`, `version`,
+subcommand (`new`, `assets`, `db`, `doctor`, `routes`, `test`, `version`,
 `completion`, `help`), and resolves with the exit code the process should
 use.
 

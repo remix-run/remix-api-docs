@@ -1,6 +1,6 @@
 ---
 title: LoadModule
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/frame.ts#L68
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/frame.ts#L68
 ---
 
 # LoadModule

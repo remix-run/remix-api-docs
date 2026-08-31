@@ -1,6 +1,6 @@
 ---
 title: TabProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs/index.tsx#L27
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/tabs/index.tsx#L27
 ---
 
 # TabProps
@@ -119,7 +119,7 @@ interface TabProps {
   itemType?: string
   key?: any
   lang?: string
-  mix?: MixinDescriptor<HTMLButtonElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLButtonElement, ElementProps>[]
   name: string
   nonce?: string
   part?: string

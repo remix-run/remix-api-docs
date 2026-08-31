@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/accordion/index.@1dPRBp.js";

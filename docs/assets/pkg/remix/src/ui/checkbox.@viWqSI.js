@@ -1,1 +1,0 @@
-export*from"/assets/pkg/ui/src/checkbox/index.@iFfSyZ.js";export{default}from"/assets/pkg/ui/src/checkbox/index.@iFfSyZ.js";

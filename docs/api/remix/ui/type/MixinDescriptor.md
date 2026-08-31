@@ -1,6 +1,6 @@
 ---
 title: MixinDescriptor
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L125
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/mixins/mixin.ts#L134
 ---
 
 # MixinDescriptor
@@ -15,7 +15,7 @@ Serializable descriptor stored in the `mix` prop.
 type MixinDescriptor<node, args, props> = {
   __node?: (node: node) => void
   args: args
-  type: MixinRuntimeType<args, node, props>
+  type: MixinDescriptorType<args, node, props>
 }
 
 ```

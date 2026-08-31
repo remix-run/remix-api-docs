@@ -1,6 +1,6 @@
 ---
 title: SubmenuProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/index.tsx#L232
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/menu/index.tsx#L232
 ---
 
 # SubmenuProps
@@ -108,7 +108,7 @@ interface SubmenuProps {
   lang?: string
   listProps?: MenuListChildProps
   menuLabel?: string
-  mix?: MixinDescriptor<HTMLDivElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLDivElement, ElementProps>[]
   nonce?: string
   part?: string
   popover?: boolean | "auto" | "hint" | "manual"

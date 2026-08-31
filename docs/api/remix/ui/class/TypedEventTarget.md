@@ -1,6 +1,6 @@
 ---
 title: TypedEventTarget
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/typed-event-target.ts#L4
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/typed-event-target.ts#L4
 ---
 
 # TypedEventTarget
@@ -14,9 +14,6 @@ An `EventTarget` subclass with typed event maps.
 ```ts
 class TypedEventTarget<eventMap> {
   constructor(): TypedEventTarget
-
-  // Properties
-  __eventMap?: eventMap
 
   // Methods
   addEventListener<type extends string>(
@@ -43,12 +40,6 @@ class TypedEventTarget<eventMap> {
 }
 
 ```
-
-## Properties
-
-### `__eventMap`
-
-Phantom property that carries the event map type on instances.
 
 ## Methods
 

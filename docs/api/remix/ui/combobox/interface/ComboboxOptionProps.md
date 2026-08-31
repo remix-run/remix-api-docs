@@ -1,6 +1,6 @@
 ---
 title: ComboboxOptionProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox/index.tsx#L25
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/combobox/index.tsx#L25
 ---
 
 # ComboboxOptionProps
@@ -106,7 +106,7 @@ interface ComboboxOptionProps {
   key?: any
   label: string
   lang?: string
-  mix?: MixinDescriptor<HTMLDivElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLDivElement, ElementProps>[]
   nonce?: string
   part?: string
   popover?: boolean | "auto" | "hint" | "manual"

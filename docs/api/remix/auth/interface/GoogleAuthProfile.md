@@ -1,6 +1,6 @@
 ---
 title: GoogleAuthProfile
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/google.ts#L41
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/auth/src/lib/providers/google.ts#L41
 ---
 
 # GoogleAuthProfile

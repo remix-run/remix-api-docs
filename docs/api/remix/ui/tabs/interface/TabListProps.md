@@ -1,6 +1,6 @@
 ---
 title: TabListProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs/index.tsx#L23
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/tabs/index.tsx#L23
 ---
 
 # TabListProps
@@ -104,7 +104,7 @@ interface TabListProps {
   itemType?: string
   key?: any
   lang?: string
-  mix?: MixinDescriptor<HTMLDivElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLDivElement, ElementProps>[]
   nonce?: string
   part?: string
   popover?: boolean | "auto" | "hint" | "manual"

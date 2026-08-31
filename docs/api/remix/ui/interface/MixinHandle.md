@@ -1,6 +1,6 @@
 ---
 title: MixinHandle
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L80
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/mixins/mixin.ts#L80
 ---
 
 # MixinHandle
@@ -18,7 +18,6 @@ the host subtree.
 
 ```ts
 interface MixinHandle<node, props> {
-  __eventMap?: MixinHandleEventMap<node>
   context: MixinContext
   element: MixinElement<node, props>
   frame: FrameHandle
@@ -50,22 +49,6 @@ interface MixinHandle<node, props> {
 }
 
 ```
-
-## Properties
-
-### `__eventMap`
-
-Phantom property that carries the event map type on instances.
-
-### `context`
-
-### `element`
-
-### `frame`
-
-### `id`
-
-### `signal`
 
 ## Methods
 

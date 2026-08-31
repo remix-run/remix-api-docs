@@ -1,6 +1,6 @@
 ---
 title: MixValue
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L163
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/mixins/mixin.ts#L181
 ---
 
 # MixValue
@@ -13,7 +13,7 @@ Accepted value shape for the `mix` prop.
 
 ```ts
 type MixValue<node, props> =
-  | MixinDescriptor<node, any, props>
-  | ReadonlyArray<MixinDescriptor<node, any, props>>
+  | MixinInputDescriptor<node, props>
+  | ReadonlyArray<MixinInputDescriptor<node, props>>
 
 ```

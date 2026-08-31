@@ -1,6 +1,6 @@
 ---
 title: MenuProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/index.tsx#L215
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/menu/index.tsx#L215
 ---
 
 # MenuProps
@@ -121,7 +121,7 @@ interface MenuProps {
   label: RemixNode
   lang?: string
   menuLabel?: string
-  mix?: MixinDescriptor<HTMLButtonElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLButtonElement, ElementProps>[]
   name?: string
   nonce?: string
   part?: string

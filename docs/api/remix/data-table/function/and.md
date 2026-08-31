@@ -1,26 +1,22 @@
 ---
 title: and
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L300
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/data-table/src/lib/operators.ts#L303
 ---
 
 # and
 
 ## Summary
 
-Combines predicates with logical `AND`.
+Combines where inputs with logical `AND`.
 
 ## Signature
 
 ```ts
-function and<column extends string>(predicates: Predicate<column>[]): Predicate<column>
+function and<inputs extends WhereInput<string>[]>(
+  inputs: inputs,
+): Predicate<WhereInputColumn<inputs[number]>>
 
 ```
-
-## Parameters
-
-### `predicates`
-
-Child predicates.
 
 ## Returns
 

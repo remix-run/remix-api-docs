@@ -1,6 +1,6 @@
 ---
 title: SelectProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/select/primitives.tsx#L66
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/select/primitives.tsx#L66
 ---
 
 # SelectProps
@@ -121,7 +121,7 @@ interface SelectProps {
   itemType?: string
   key?: any
   lang?: string
-  mix?: MixinDescriptor<HTMLButtonElement, any, ElementProps>[]
+  mix?: MixinInputDescriptor<HTMLButtonElement, ElementProps>[]
   name?: string
   nonce?: string
   part?: string
