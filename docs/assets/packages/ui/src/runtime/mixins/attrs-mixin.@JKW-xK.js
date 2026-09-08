@@ -1,1 +1,0 @@
-import{createMixin as e}from"/assets/packages/ui/src/runtime/mixins/mixin.@xouLOG.js";import{createElement as t}from"/assets/packages/ui/src/runtime/create-element.@XbXtb4.js";const n=e(e=>(n,r)=>{let i=r;for(let e in n)r[e]===void 0&&(i===r&&(i={...r}),i[e]=n[e]);return i===r?e.element:t(e.element,i)});export function attrs(e){return n(e)}

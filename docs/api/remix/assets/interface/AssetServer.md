@@ -1,6 +1,6 @@
 ---
 title: AssetServer
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/assets/src/lib/asset-server.ts#L289
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/assets/src/lib/asset-server.ts#L311
 ---
 
 # AssetServer
@@ -19,7 +19,9 @@ interface AssetServer<transforms> {
   getAssetDetails(input: string): Promise<AssetDetails>
   getAssets(): Promise<AssetDetails[]>
   getHref(filePath: string, options: AssetServerGetHrefOptions<transforms>): Promise<string>
+  getImportMap(filePath: string | readonly string[]): Promise<ScriptImportMap>
   getPreloads(filePath: string | readonly string[]): Promise<string[]>
+  getScriptEntry(filePath: string): Promise<ScriptEntry>
 }
 
 ```
@@ -59,7 +61,19 @@ Returns the request href for a served asset file.
 
 
 
+### `getImportMap(filePath: string | readonly string[]): Promise<ScriptImportMap>`
+
+Returns an import map for one or more script entry modules.
+
+
+
 ### `getPreloads(filePath: string | readonly string[]): Promise<string[]>`
 
 Returns preload URLs for one or more served asset files, ordered shallowest-first.
+
+
+
+### `getScriptEntry(filePath: string): Promise<ScriptEntry>`
+
+Returns the href, preload URLs, and import map for a script entry module.
 

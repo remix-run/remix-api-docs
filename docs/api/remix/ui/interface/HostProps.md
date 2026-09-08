@@ -1,6 +1,6 @@
 ---
 title: HostProps
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/dom.ts#L30
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/ui/src/runtime/dom.ts#L30
 ---
 
 # HostProps

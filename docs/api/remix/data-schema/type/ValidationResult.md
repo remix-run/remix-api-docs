@@ -1,6 +1,6 @@
 ---
 title: ValidationResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/data-schema/src/lib/schema.ts#L16
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/data-schema/src/lib/schema.ts#L16
 ---
 
 # ValidationResult

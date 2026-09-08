@@ -1,1 +1,0 @@
-import{getSpaResponseData as e}from"/assets/packages/ui/src/runtime/spa-response.@wICDR6.js";export async function unwrapFrameResolution(t){if(!(t instanceof Response))return{content:t};let n=e(t);return n?{content:n.node,redirectedTo:n.redirectedTo}:{content:t.body??await t.text(),redirectedTo:t.redirected&&t.url?t.url:void 0}}

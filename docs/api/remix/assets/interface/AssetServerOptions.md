@@ -1,6 +1,6 @@
 ---
 title: AssetServerOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/assets/src/lib/asset-server.ts#L184
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/assets/src/lib/asset-server.ts#L194
 ---
 
 # AssetServerOptions
@@ -18,8 +18,8 @@ interface AssetServerOptions<transforms> {
   basePath: string
   denyFiles?: readonly string[]
   files?: AssetServerFilesOptions<transforms>
-  fingerprint?: FingerprintOptions
-  hmr?: BrowserHmrChannelFactory
+  fingerprint?: boolean
+  hmr?: BrowserHmrChannelFactory | BrowserHmrOptions
   minify?: boolean
   mounts?: Readonly<Record<string, string>>
   onError?: (error: unknown) => void | Response | Promise<void | Response>
@@ -60,7 +60,7 @@ module extensions are not allowed here.
 
 ### `fingerprint`
 
-Controls optional source-based URL fingerprinting for rewritten asset URLs.
+Controls optional content-based URL fingerprinting for served asset URLs.
 
 When omitted, all served assets use stable non-fingerprinted URLs with `Cache-Control: no-cache`.
 Cannot be used together with active watch mode. Set `watch: false` when fingerprinting.

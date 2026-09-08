@@ -1,0 +1,1 @@
+import{css as e}from"remix/ui";import{animateEntrance as t}from"remix/ui/animation";import{jsx as n}from"remix/ui/jsx-runtime";export function TransitionOptions(){return()=>n(`div`,{mix:[e({width:100,height:100,borderRadius:`50%`,backgroundColor:`#9911ff`}),t({opacity:0,transform:`scale(0.5)`,duration:800,delay:500,easing:`cubic-bezier(0, 0.71, 0.2, 1.01)`})]})}

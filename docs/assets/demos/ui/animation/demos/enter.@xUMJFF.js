@@ -1,0 +1,1 @@
+import{css as e}from"remix/ui";import{animateEntrance as t,spring as n}from"remix/ui/animation";import{jsx as r}from"remix/ui/jsx-runtime";export function EnterAnimation(){return()=>r(`div`,{mix:[e({width:100,height:100,backgroundColor:`#dd00ee`,borderRadius:`50%`}),t({opacity:0,transform:`scale(0)`,...n({duration:400,bounce:.5})})]})}

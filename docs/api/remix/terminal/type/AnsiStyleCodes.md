@@ -1,6 +1,6 @@
 ---
 title: AnsiStyleCodes
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/terminal/src/lib/ansi.ts#L67
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/terminal/src/lib/ansi.ts#L67
 ---
 
 # AnsiStyleCodes

@@ -1,6 +1,6 @@
 ---
 title: RenderResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/render.ts#L18
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/ui/src/runtime/render.ts#L18
 ---
 
 # RenderResult

@@ -1,6 +1,6 @@
 ---
 title: FormDataObjectSchema
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/data-schema/src/lib/form-data.ts#L71
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/data-schema/src/lib/form-data.ts#L71
 ---
 
 # FormDataObjectSchema

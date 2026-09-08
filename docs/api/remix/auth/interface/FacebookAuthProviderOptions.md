@@ -1,6 +1,6 @@
 ---
 title: FacebookAuthProviderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/auth/src/lib/providers/facebook.ts#L19
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/auth/src/lib/providers/facebook.ts#L19
 ---
 
 # FacebookAuthProviderOptions

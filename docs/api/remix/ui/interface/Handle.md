@@ -1,6 +1,6 @@
 ---
 title: Handle
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/runtime/component.ts#L14
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/ui/src/runtime/component.ts#L14
 ---
 
 # Handle
@@ -67,6 +67,9 @@ Schedules a task to run after the next update.
 ### `update(): Promise<AbortSignal>`
 
 Schedules an update for the component to render again. Returns a promise
-that resolves with an AbortSignal after the update completes. The signal
-is aborted when the component re-renders or is removed.
+that resolves with an AbortSignal after the update completes. Call this
+from an event handler, queued task, or other work that runs after the
+component commits. The signal is aborted when the component re-renders or
+is removed. Calling this during setup warns and skips the extra render;
+the promise resolves after the initial commit.
 

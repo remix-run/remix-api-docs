@@ -1,1 +1,0 @@
-import{createMixin as e,on as t}from"/assets/packages/ui/src/index.@NCPoaa.js";export const onKeyDown=e(()=>(e,n)=>t(`keydown`,t=>{t.key===e&&(t.preventDefault(),n(t))}));

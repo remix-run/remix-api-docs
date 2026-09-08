@@ -1,6 +1,6 @@
 ---
 title: RenderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/render-middleware/src/lib/render-ui.ts#L47
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/render-middleware/src/lib/render-ui.ts#L47
 ---
 
 # RenderOptions
@@ -13,7 +13,7 @@ Options for the standard Remix UI renderer.
 
 ```ts
 interface RenderOptions {
-  assets?: Pick<AssetServer<{}>, 'getHref' | 'getPreloads'>
+  assets?: Pick<AssetServer<{}>, 'getScriptEntry'>
   onError?: (error: unknown) => void
 }
 
@@ -23,7 +23,7 @@ interface RenderOptions {
 
 ### `assets`
 
-Asset server used to turn source-based client entry IDs into browser module and preload URLs.
+Asset server used to turn source-based client entry IDs into browser module metadata.
 
 ### `onError`
 

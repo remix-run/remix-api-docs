@@ -1,6 +1,6 @@
 ---
 title: createOIDCAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/auth/src/lib/providers/oidc.ts#L127
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/auth/src/lib/providers/oidc.ts#L127
 ---
 
 # createOIDCAuthProvider

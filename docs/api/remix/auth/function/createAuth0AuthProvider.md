@@ -1,6 +1,6 @@
 ---
 title: createAuth0AuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/auth/src/lib/providers/auth0.ts#L36
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/auth/src/lib/providers/auth0.ts#L36
 ---
 
 # createAuth0AuthProvider

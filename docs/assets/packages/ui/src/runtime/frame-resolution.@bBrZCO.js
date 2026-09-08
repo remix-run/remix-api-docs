@@ -1,0 +1,1 @@
+import{getSpaResponseData as e}from"./spa-response.js";export async function unwrapFrameResolution(t){if(!(t instanceof Response))return{content:t};let n=e(t);return n?{content:n.node,redirectedTo:n.redirectedTo}:{content:t.body??await t.text(),redirectedTo:t.redirected&&t.url?t.url:void 0}}

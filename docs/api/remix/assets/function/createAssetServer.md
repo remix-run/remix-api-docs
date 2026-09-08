@@ -1,6 +1,6 @@
 ---
 title: createAssetServer
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/assets/src/lib/asset-server.ts#L381
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/assets/src/lib/asset-server.ts#L411
 ---
 
 # createAssetServer
@@ -10,7 +10,7 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/assets
 Create an asset server instance
 
 Compiles TypeScript/JavaScript scripts and CSS styles on demand with optional
-source-based URL fingerprinting, caching, and configurable directory mounts.
+content-based URL fingerprinting, caching, and configurable directory mounts.
 
 ## Signature
 

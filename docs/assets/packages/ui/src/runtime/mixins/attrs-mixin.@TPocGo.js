@@ -1,0 +1,1 @@
+import{createMixin as e}from"./mixin.js";import{createElement as t}from"../create-element.js";const n=e(e=>(n,r)=>{let i=r;for(let e in n)r[e]===void 0&&(i===r&&(i={...r}),i[e]=n[e]);return i===r?e.element:t(e.element,i)});export function attrs(e){return n(e)}

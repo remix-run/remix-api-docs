@@ -1,1 +1,0 @@
-import{on as e}from"/assets/packages/remix/src/ui.@Tw9oWG.js";import{jsxs as t}from"/assets/packages/remix/src/ui/jsx-runtime.@ApIchT.js";export default function n(n){let r=0;return()=>t(`button`,{mix:[e(`click`,()=>{r++,n.update()})],children:[`Ye ol' counter: `,r]})}

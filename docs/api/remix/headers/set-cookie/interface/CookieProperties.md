@@ -1,6 +1,6 @@
 ---
 title: CookieProperties
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/headers/src/lib/set-cookie.ts#L10
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/headers/src/lib/set-cookie.ts#L10
 ---
 
 # CookieProperties

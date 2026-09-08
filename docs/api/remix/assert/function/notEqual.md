@@ -1,6 +1,6 @@
 ---
 title: notEqual
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/assert/src/lib/assert.ts#L319
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/assert/src/lib/assert.ts#L319
 ---
 
 # notEqual

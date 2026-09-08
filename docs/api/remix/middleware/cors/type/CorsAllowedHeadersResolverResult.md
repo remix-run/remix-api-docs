@@ -1,6 +1,6 @@
 ---
 title: CorsAllowedHeadersResolverResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/cors-middleware/src/lib/cors.ts#L34
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/cors-middleware/src/lib/cors.ts#L34
 ---
 
 # CorsAllowedHeadersResolverResult

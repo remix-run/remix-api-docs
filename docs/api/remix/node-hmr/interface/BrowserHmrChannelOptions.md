@@ -1,6 +1,6 @@
 ---
 title: BrowserHmrChannelOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/node-hmr/src/index.ts#L30
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/node-hmr/src/index.ts#L30
 ---
 
 # BrowserHmrChannelOptions

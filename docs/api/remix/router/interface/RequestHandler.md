@@ -1,6 +1,6 @@
 ---
 title: RequestHandler
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/fetch-router/src/lib/controller.ts#L19
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/fetch-router/src/lib/controller.ts#L19
 ---
 
 # RequestHandler

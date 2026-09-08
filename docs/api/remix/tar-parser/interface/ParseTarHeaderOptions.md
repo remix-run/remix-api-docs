@@ -1,6 +1,6 @@
 ---
 title: ParseTarHeaderOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/tar-parser/src/lib/tar.ts#L123
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/tar-parser/src/lib/tar.ts#L123
 ---
 
 # ParseTarHeaderOptions

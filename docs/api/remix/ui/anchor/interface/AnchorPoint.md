@@ -1,6 +1,6 @@
 ---
 title: AnchorPoint
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/ui/src/anchor/index.ts#L27
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/ui/src/anchor/index.ts#L27
 ---
 
 # AnchorPoint

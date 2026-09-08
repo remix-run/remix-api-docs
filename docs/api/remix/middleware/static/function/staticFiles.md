@@ -1,6 +1,6 @@
 ---
 title: staticFiles
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/static-middleware/src/lib/static.ts#L89
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/static-middleware/src/lib/static.ts#L89
 ---
 
 # staticFiles

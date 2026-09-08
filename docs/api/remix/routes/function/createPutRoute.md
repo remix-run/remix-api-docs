@@ -1,6 +1,6 @@
 ---
 title: createPutRoute
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/fetch-router/src/lib/route-helpers/method.ts#L90
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/fetch-router/src/lib/route-helpers/method.ts#L90
 ---
 
 # createPutRoute

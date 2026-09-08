@@ -1,6 +1,6 @@
 ---
 title: Renderer
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/render-middleware/src/lib/render.ts#L6
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/render-middleware/src/lib/render.ts#L6
 ---
 
 # Renderer

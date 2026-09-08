@@ -1,6 +1,6 @@
 ---
 title: parseTar
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/tar-parser/src/lib/tar.ts#L244
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/tar-parser/src/lib/tar.ts#L244
 ---
 
 # parseTar

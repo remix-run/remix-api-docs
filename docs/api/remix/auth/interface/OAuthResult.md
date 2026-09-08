@@ -1,6 +1,6 @@
 ---
 title: OAuthResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/auth/src/lib/provider.ts#L34
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/auth/src/lib/provider.ts#L34
 ---
 
 # OAuthResult

@@ -1,6 +1,6 @@
 ---
 title: writeFile
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/fs/src/lib/fs.ts#L93
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/fs/src/lib/fs.ts#L93
 ---
 
 # writeFile

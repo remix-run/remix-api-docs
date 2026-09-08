@@ -1,0 +1,1 @@
+const e=typeof globalThis<`u`?globalThis:self;export{e as self};

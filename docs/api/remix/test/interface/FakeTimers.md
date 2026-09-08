@@ -1,6 +1,6 @@
 ---
 title: FakeTimers
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/test/src/lib/fake-timers.ts#L21
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/test/src/lib/fake-timers.ts#L21
 ---
 
 # FakeTimers

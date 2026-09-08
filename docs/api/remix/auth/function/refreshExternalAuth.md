@@ -1,6 +1,6 @@
 ---
 title: refreshExternalAuth
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.1/packages/auth/src/lib/refresh-external-auth.ts#L26
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/auth/src/lib/refresh-external-auth.ts#L26
 ---
 
 # refreshExternalAuth
