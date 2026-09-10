@@ -1,6 +1,6 @@
 ---
 title: CsrfTokenResolverResult
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/csrf-middleware/src/lib/csrf.ts#L43
+source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L43
 ---
 
 # CsrfTokenResolverResult

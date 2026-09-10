@@ -1,6 +1,6 @@
 ---
 title: AssetStatus
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/assets/src/lib/inspection.ts#L21
+source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/inspection.ts#L21
 ---
 
 # AssetStatus

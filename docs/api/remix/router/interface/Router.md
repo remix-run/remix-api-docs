@@ -1,6 +1,6 @@
 ---
 title: Router
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/fetch-router/src/lib/router.ts#L237
+source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/router.ts#L237
 ---
 
 # Router

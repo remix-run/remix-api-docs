@@ -1,6 +1,6 @@
 ---
 title: createMysqlDatabase
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/data-table-mysql/src/lib/database.ts#L41
+source: https://github.com/remix-run/remix/blob/main/packages/data-table-mysql/src/lib/database.ts#L41
 ---
 
 # createMysqlDatabase

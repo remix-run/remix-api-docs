@@ -1,6 +1,6 @@
 ---
 title: CsrfOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/csrf-middleware/src/lib/csrf.ts#L63
+source: https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L63
 ---
 
 # CsrfOptions
@@ -51,7 +51,7 @@ When omitted, requests are validated as same-origin.
 
 ### `safeMethods`
 
-Methods that do not require CSRF validation.
+Original request methods that do not require CSRF validation.
 
 ### `tokenKey`
 

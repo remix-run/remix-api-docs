@@ -1,6 +1,6 @@
 ---
 title: Seed
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/data-table/src/lib/migrations.ts#L123
+source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations.ts#L123
 ---
 
 # Seed

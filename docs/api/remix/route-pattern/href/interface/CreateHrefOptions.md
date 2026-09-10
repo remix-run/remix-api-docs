@@ -1,6 +1,6 @@
 ---
 title: CreateHrefOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/route-pattern/src/lib/href.ts#L28
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/href.ts#L28
 ---
 
 # CreateHrefOptions

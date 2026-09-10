@@ -1,6 +1,6 @@
 ---
 title: CorsOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/cors-middleware/src/lib/cors.ts#L52
+source: https://github.com/remix-run/remix/blob/main/packages/cors-middleware/src/lib/cors.ts#L52
 ---
 
 # CorsOptions
@@ -57,6 +57,9 @@ Allowed methods for preflight responses.
 ### `origin`
 
 Allowed origins. Defaults to '*'.
+
+The implicit default is not reflected when credentials are enabled. Configure an explicit
+origin policy for credentialed cross-origin requests.
 
 - `true` reflects the request Origin
 - `false` disables CORS headers

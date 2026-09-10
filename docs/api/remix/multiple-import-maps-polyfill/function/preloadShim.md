@@ -1,6 +1,6 @@
 ---
 title: preloadShim
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/multiple-import-maps-polyfill/src/lib/polyfill.ts#L74
+source: https://github.com/remix-run/remix/blob/main/packages/multiple-import-maps-polyfill/src/lib/polyfill.ts#L74
 ---
 
 # preloadShim

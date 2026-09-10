@@ -1,6 +1,6 @@
 ---
 title: ParseError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/route-pattern/src/lib/route-pattern/parse.ts#L304
+source: https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/route-pattern/parse.ts#L304
 ---
 
 # ParseError

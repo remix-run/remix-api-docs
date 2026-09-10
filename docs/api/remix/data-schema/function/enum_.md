@@ -1,6 +1,6 @@
 ---
 title: enum_
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/data-schema/src/lib/schema.ts#L480
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L537
 ---
 
 # enum_

@@ -1,6 +1,6 @@
 ---
 title: createSchema
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/data-schema/src/lib/schema.ts#L149
+source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L155
 ---
 
 # createSchema
@@ -13,10 +13,7 @@ Creates a sync Standard Schema-compatible schema from a validation function.
 
 ```ts
 function createSchema<input, output>(
-  validator: (
-    value: unknown,
-    context: { options?: ParseOptions; path: readonly (PropertyKey | PathSegment)[] },
-  ) => ValidationResult<output>,
+  validator: (value: unknown, context: ValidationContext) => ValidationResult<output>,
 ): Schema<input, output>
 
 ```

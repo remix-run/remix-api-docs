@@ -1,6 +1,6 @@
 ---
 title: NodeHmrRunner
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/node-hmr/src/index.ts#L62
+source: https://github.com/remix-run/remix/blob/main/packages/node-hmr/src/index.ts#L62
 ---
 
 # NodeHmrRunner

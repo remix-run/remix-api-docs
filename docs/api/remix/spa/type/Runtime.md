@@ -1,6 +1,6 @@
 ---
 title: Runtime
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/spa/src/lib/spa.ts#L41
+source: https://github.com/remix-run/remix/blob/main/packages/spa/src/lib/spa.ts#L41
 ---
 
 # Runtime

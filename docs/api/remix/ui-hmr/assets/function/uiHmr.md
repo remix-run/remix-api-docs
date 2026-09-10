@@ -1,6 +1,6 @@
 ---
 title: uiHmr
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.2/packages/ui-hmr/src/lib/loaders.ts#L97
+source: https://github.com/remix-run/remix/blob/main/packages/ui-hmr/src/lib/loaders.ts#L97
 ---
 
 # uiHmr
