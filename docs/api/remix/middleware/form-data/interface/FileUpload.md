@@ -1,6 +1,6 @@
 ---
 title: FileUpload
-source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L35
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/form-data-parser/src/lib/form-data.ts#L41
 ---
 
 # FileUpload
@@ -8,6 +8,10 @@ source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/s
 ## Summary
 
 A file that was uploaded as part of a `multipart/form-data` request.
+
+The `name` and `type` properties come from the submitted multipart metadata; they do not
+validate the file contents. Choose storage names and validate content types in your upload
+handler before using files in application-specific contexts.
 
 ## Signature
 

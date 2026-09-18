@@ -1,6 +1,6 @@
 ---
 title: LayoutAnimationConfig
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/dom.ts#L18
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/dom.ts#L19
 ---
 
 # LayoutAnimationConfig

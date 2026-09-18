@@ -1,6 +1,6 @@
 ---
 title: Cookie
-source: https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L50
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/cookie/src/lib/cookie.ts#L50
 ---
 
 # Cookie
@@ -29,7 +29,7 @@ class Cookie {
   get partitioned(): boolean
   get path(): string
   get sameSite(): SameSiteValue
-  get secure(): boolean
+  get secure(): boolean | undefined
   get signed(): boolean
 
   // Methods
@@ -103,7 +103,7 @@ The `SameSite` attribute of the cookie.
 
 ### `secure`
 
-True if the cookie is secure (only sent over HTTPS).
+Whether the cookie is only sent over HTTPS, or `undefined` when not configured.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure)
 

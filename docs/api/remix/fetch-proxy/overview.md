@@ -42,6 +42,23 @@ let title = text.match(/<title>([^<]+)<\/title>/)[1]
 assert(title.includes('Remix'))
 ```
 
+## Forwarding Headers
+
+Set `xForwardedHeaders: true` to set `X-Forwarded-Proto`, `X-Forwarded-Host`, and
+`X-Forwarded-Port` from the incoming request URL. When enabled, the proxy removes the `Forwarded`
+header and replaces any existing values for these three headers so the target receives a single set
+of URL metadata from the current proxy request.
+
+```ts
+let proxy = createFetchProxy('https://remix.run', {
+  xForwardedHeaders: true,
+})
+```
+
+The proxy also removes `X-Forwarded-For` when this option is enabled. Fetch requests do not expose the client's connection address, so the proxy cannot generate a replacement value. An upstream using `node-fetch-server` with `trustProxy: true` will fall back to the proxy's connection address.
+
+When `xForwardedHeaders` is disabled (the default), existing forwarding headers are passed through unchanged. If the target trusts these headers, the caller must supply them from a trusted source.
+
 ## Encoding and Framing Headers
 
 Since proxying is done via `fetch` rather than raw HTTP messages, some encoding and framing headers need to be removed.

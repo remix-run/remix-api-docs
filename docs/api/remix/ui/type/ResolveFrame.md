@@ -1,6 +1,6 @@
 ---
 title: ResolveFrame
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/frame.ts#L79
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/frame.ts#L116
 ---
 
 # ResolveFrame
@@ -8,6 +8,10 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/fra
 ## Summary
 
 Resolves content for a browser-loaded frame.
+
+Only return trusted application content. Remix does not sanitize HTML strings, streams, or
+response bodies before parsing and reconciling them into the current document. Frame HTML can
+select client-entry modules and contribute import maps, styles, and nested frames.
 
 ## Signature
 

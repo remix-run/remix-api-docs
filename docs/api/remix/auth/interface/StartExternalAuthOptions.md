@@ -1,6 +1,6 @@
 ---
 title: StartExternalAuthOptions
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/start-external-auth.ts#L15
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/auth/src/lib/start-external-auth.ts#L15
 ---
 
 # StartExternalAuthOptions
@@ -23,7 +23,7 @@ interface StartExternalAuthOptions {
 
 ### `returnTo`
 
-Optional post-auth redirect target to preserve in the OAuth transaction.
+Optional local path to normalize and preserve as the post-auth redirect target.
 
 ### `transactionKey`
 

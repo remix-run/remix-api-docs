@@ -1,6 +1,6 @@
 ---
 title: createScheduler
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/scheduler.ts#L61
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/scheduler.ts#L61
 ---
 
 # createScheduler

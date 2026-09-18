@@ -1,6 +1,6 @@
 ---
 title: render
-source: https://github.com/remix-run/remix/blob/main/packages/render-middleware/src/lib/render-ui.ts#L63
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/render-middleware/src/lib/render-ui.ts#L63
 ---
 
 # render

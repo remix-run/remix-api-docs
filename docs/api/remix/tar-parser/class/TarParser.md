@@ -1,6 +1,6 @@
 ---
 title: TarParser
-source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L273
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/tar-parser/src/lib/tar.ts#L443
 ---
 
 # TarParser
@@ -13,7 +13,12 @@ A parser for tar archives.
 
 ```ts
 class TarParser {
-  constructor(options: ParseTarHeaderOptions): TarParser
+  constructor(options: ParseTarOptions): TarParser
+
+  // Properties
+  maxEntries: number
+  maxEntrySize: number
+  maxTotalSize: number
 
   // Methods
   parse(archive: TarArchiveSource, handler: TarEntryHandler): Promise<void>
@@ -28,6 +33,20 @@ class TarParser {
 #### `options`
 
 Options that control how the tar archive is parsed
+
+## Properties
+
+### `maxEntries`
+
+Maximum number of entries, including PAX/GNU metadata entries.
+
+### `maxEntrySize`
+
+Maximum entry body size in bytes, including PAX/GNU metadata entries.
+
+### `maxTotalSize`
+
+Maximum archive input size in bytes, including headers, padding, and metadata.
 
 ## Methods
 

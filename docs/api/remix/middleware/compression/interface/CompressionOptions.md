@@ -1,6 +1,6 @@
 ---
 title: CompressionOptions
-source: https://github.com/remix-run/remix/blob/main/packages/compression-middleware/src/lib/compression.ts#L11
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/compression-middleware/src/lib/compression.ts#L11
 ---
 
 # CompressionOptions
@@ -28,6 +28,7 @@ interface CompressionOptions {
 
 node:zlib options for Brotli compression.
 Can be static or a function that returns options based on the response.
+HTML and SSE responses use `BROTLI_OPERATION_FLUSH` unless you explicitly set a flush value.
 
 See: https://nodejs.org/api/zlib.html#class-brotlioptions
 
@@ -52,5 +53,6 @@ Default: 1024
 
 node:zlib options for gzip/deflate compression.
 Can be static or a function that returns options based on the response.
+HTML and SSE responses use `Z_SYNC_FLUSH` unless you explicitly set a flush value.
 
 See: https://nodejs.org/api/zlib.html#class-options

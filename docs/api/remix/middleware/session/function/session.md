@@ -1,6 +1,6 @@
 ---
 title: session
-source: https://github.com/remix-run/remix/blob/main/packages/session-middleware/src/lib/session.ts#L12
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/session-middleware/src/lib/session.ts#L15
 ---
 
 # session
@@ -8,6 +8,9 @@ source: https://github.com/remix-run/remix/blob/main/packages/session-middleware
 ## Summary
 
 Middleware that manages request session state on request context.
+Session cookies default to HTTP-only and use Secure for HTTPS requests.
+Explicit cookie settings take precedence.
+Configured cookie lifetimes are also checked before loading session data.
 
 ## Signature
 

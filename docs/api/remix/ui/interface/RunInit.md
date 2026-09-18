@@ -1,6 +1,6 @@
 ---
 title: RunInit
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/run.ts#L15
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/run.ts#L15
 ---
 
 # RunInit
@@ -37,5 +37,7 @@ Processes module preloads discovered in late client entry responses before activ
 
 Resolves browser-loaded `<Frame>` content.
 
-Defaults to fetching the frame source as HTML with the submitted form data,
-method, encoding, and abort signal.
+Defaults to fetching the frame source as HTML with the submitted form data, method, encoding,
+and abort signal. The default resolver only fetches from the document origin, including
+redirects, but does not sanitize the returned HTML. Custom resolvers own their request,
+redirect, and content trust policies.

@@ -1,6 +1,6 @@
 ---
 title: ne
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L100
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table/src/lib/operators.ts#L94
 ---
 
 # ne
@@ -14,11 +14,8 @@ Builds an inequality predicate.
 ```ts
 function ne<
   left extends ColumnInput<`${string}.${string}`>,
-  right extends ColumnInput<`${string}.${string}`>,
->(
-  column: left,
-  value: right & (right extends `${string}@${string}` ? never : right),
-): Predicate<PredicateColumn<left> | PredicateColumn<right>>
+  right extends ColumnReferenceLike<`${string}.${string}`>,
+>(column: left, value: right): Predicate<PredicateColumn<left> | PredicateColumn<right>>
 
 function ne<column extends string | ColumnReferenceLike>(
   column: column,

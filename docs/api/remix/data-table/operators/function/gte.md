@@ -1,6 +1,6 @@
 ---
 title: gte
-source: https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L136
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table/src/lib/operators.ts#L124
 ---
 
 # gte
@@ -14,11 +14,8 @@ Builds a greater-than-or-equal predicate.
 ```ts
 function gte<
   left extends ColumnInput<`${string}.${string}`>,
-  right extends ColumnInput<`${string}.${string}`>,
->(
-  column: left,
-  value: right & (right extends `${string}@${string}` ? never : right),
-): Predicate<PredicateColumn<left> | PredicateColumn<right>>
+  right extends ColumnReferenceLike<`${string}.${string}`>,
+>(column: left, value: right): Predicate<PredicateColumn<left> | PredicateColumn<right>>
 
 function gte<column extends string | ColumnReferenceLike>(
   column: column,

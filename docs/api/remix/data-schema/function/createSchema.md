@@ -1,6 +1,6 @@
 ---
 title: createSchema
-source: https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L155
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-schema/src/lib/schema.ts#L155
 ---
 
 # createSchema

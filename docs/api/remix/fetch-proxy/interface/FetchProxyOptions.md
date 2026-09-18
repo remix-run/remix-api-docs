@@ -1,6 +1,6 @@
 ---
 title: FetchProxyOptions
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6
 ---
 
 # FetchProxyOptions
@@ -42,5 +42,7 @@ default the portion of the pathname that matches the proxy target's pathname wil
 
 ### `xForwardedHeaders`
 
-Set `true` to add `X-Forwarded-Proto`, `X-Forwarded-Host`, and `X-Forwarded-Port`
-headers to the proxied request.
+Set `true` to set `X-Forwarded-Proto`, `X-Forwarded-Host`, and `X-Forwarded-Port`
+headers on the proxied request from the incoming request URL. Existing values are replaced,
+and the `Forwarded` and `X-Forwarded-For` headers are removed. The client address is not
+available on a Fetch request. When disabled, existing forwarding headers are passed through.

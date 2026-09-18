@@ -1,6 +1,6 @@
 ---
 title: createMicrosoftAuthProvider
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/microsoft.ts#L38
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/auth/src/lib/providers/microsoft.ts#L38
 ---
 
 # createMicrosoftAuthProvider

@@ -1,6 +1,6 @@
 ---
 title: LoadModule
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/frame.ts#L70
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/frame.ts#L103
 ---
 
 # LoadModule
@@ -8,6 +8,9 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/fra
 ## Summary
 
 Loads a named client-entry export for hydration.
+
+Module specifiers from trusted document metadata are passed through unchanged. The loader
+controls resolution, including import maps, CDN URLs, and development server URLs.
 
 ## Signature
 

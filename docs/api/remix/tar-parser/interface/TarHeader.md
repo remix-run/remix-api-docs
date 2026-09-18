@@ -1,6 +1,6 @@
 ---
 title: TarHeader
-source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L31
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/tar-parser/src/lib/tar.ts#L70
 ---
 
 # TarHeader
@@ -51,6 +51,10 @@ Group name parsed from the header.
 ### `linkname`
 
 Linked path target for link entries, or `null` when not present.
+By default, symlink targets must stay within the archive when resolved relative to the
+link's parent, and hard-link targets when resolved relative to the archive root.
+Targets retain their relative spelling. Filesystem containment still requires consumer
+validation. The `preserve` path policy disables target checks.
 
 ### `mode`
 
@@ -63,6 +67,9 @@ Last modification time parsed from the header, or `null` when unavailable.
 ### `name`
 
 Entry path stored in the archive.
+By default, parsed names are relative paths without parent components, Windows drive
+prefixes, backslashes, or NULs. The `preserve` path policy disables these checks.
+Filesystem containment still requires consumer validation.
 
 ### `pax`
 
@@ -70,7 +77,7 @@ Decoded PAX metadata attached to the entry, or `null` when none is present.
 
 ### `size`
 
-Entry size in bytes.
+Entry size in bytes. Parsed sizes are non-negative safe integers.
 
 ### `type`
 

@@ -1,6 +1,6 @@
 ---
 title: createFileResponse
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/file.ts#L126
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/response/src/lib/file.ts#L129
 ---
 
 # createFileResponse
@@ -12,6 +12,9 @@ with full HTTP semantics including ETags, Last-Modified, conditional requests, a
 
 Accepts both native `File` objects and
 import('@remix-run/lazy-file').LazyFile values.
+Uses `file.type` for `Content-Type` and includes `X-Content-Type-Options: nosniff`.
+Uploaded file metadata does not validate the contents. Validate uploaded files before
+serving them inline, or set `Content-Disposition: attachment` on the returned response.
 
 ## Signature
 

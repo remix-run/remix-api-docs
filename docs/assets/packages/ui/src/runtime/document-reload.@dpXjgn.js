@@ -1,1 +1,0 @@
-const e=`remix-document-reload`;export function isDocumentReload(t){return t===e}export function reloadDocument(t,n=t.location.href){let r=t.defaultView?.navigation;r?r.navigate(n,{history:`replace`,info:e}):t.location.replace(n)}

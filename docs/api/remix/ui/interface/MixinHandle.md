@@ -1,6 +1,6 @@
 ---
 title: MixinHandle
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mixins/mixin.ts#L81
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/mixins/mixin.ts#L82
 ---
 
 # MixinHandle
@@ -10,7 +10,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/mix
 Runtime handle passed to mixin setup functions.
 
 The node type is covariant so a handle for a subtype host can be used by a mixin authored for
-its base type. Mixin render callbacks receive host props with `children` and `innerHTML` removed.
+its base type. Mixin render callbacks receive host props with children and raw HTML props
+removed.
 Returned mixin elements may patch host attributes and nested `mix`, but cannot replace
 the host subtree.
 

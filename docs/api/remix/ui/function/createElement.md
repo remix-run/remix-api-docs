@@ -1,6 +1,6 @@
 ---
 title: createElement
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/create-element.ts#L13
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/create-element.ts#L13
 ---
 
 # createElement

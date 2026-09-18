@@ -1,6 +1,6 @@
 ---
 title: FinishedExternalAuthResult
-source: https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/finish-external-auth.ts#L19
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/auth/src/lib/finish-external-auth.ts#L19
 ---
 
 # FinishedExternalAuthResult
@@ -27,4 +27,4 @@ Normalized OAuth or OIDC result returned by the provider runtime.
 
 ### `returnTo`
 
-Preserved post-auth redirect target, when one was stored in the transaction.
+Normalized local post-auth redirect path, when the stored target is valid.

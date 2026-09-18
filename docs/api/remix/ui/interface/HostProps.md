@@ -1,6 +1,6 @@
 ---
 title: HostProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/runtime/dom.ts#L30
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/runtime/dom.ts#L31
 ---
 
 # HostProps
@@ -14,7 +14,7 @@ Shared host-element props accepted by all built-in DOM element types.
 ```ts
 interface HostProps<eventTarget> {
   children?: RemixNode
-  innerHTML?: string
+  innerHTML?: UnsafeHTMLValue
   key?: any
   mix?: MixInput<eventTarget>
 }
@@ -29,9 +29,9 @@ Child nodes to render inside the element.
 
 ### `innerHTML`
 
-Set the innerHTML of the element directly.
-When provided, children are ignored.
-Use with caution as this can expose XSS vulnerabilities if the content is not sanitized.
+Raw HTML to insert into the element. Create this value with `unsafeHTML()`.
+
+When provided, children are ignored. Remix does not sanitize or otherwise modify the HTML.
 
 ### `key`
 

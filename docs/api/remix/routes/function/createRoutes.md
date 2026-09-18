@@ -1,6 +1,6 @@
 ---
 title: createRoutes
-source: https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-map.ts#L81
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/fetch-router/src/lib/route-map.ts#L81
 ---
 
 # createRoutes

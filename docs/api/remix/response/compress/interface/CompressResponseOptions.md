@@ -1,6 +1,6 @@
 ---
 title: CompressResponseOptions
-source: https://github.com/remix-run/remix/blob/main/packages/response/src/lib/compress.ts#L25
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/response/src/lib/compress.ts#L25
 ---
 
 # CompressResponseOptions
@@ -27,8 +27,9 @@ interface CompressResponseOptions {
 
 node:zlib options for Brotli compression.
 
-For SSE responses (text/event-stream), `flush: BROTLI_OPERATION_FLUSH` is
-automatically applied unless you explicitly set a flush value.
+For HTML and SSE responses (`text/html` and `text/event-stream`),
+`flush: BROTLI_OPERATION_FLUSH` is automatically applied unless you explicitly set a flush
+value.
 
 See: https://nodejs.org/api/zlib.html#class-brotlioptions
 
@@ -49,7 +50,7 @@ Default: 1024
 
 node:zlib options for gzip/deflate compression.
 
-For SSE responses (text/event-stream), `flush: Z_SYNC_FLUSH` is automatically
-applied unless you explicitly set a flush value.
+For HTML and SSE responses (`text/html` and `text/event-stream`),
+`flush: Z_SYNC_FLUSH` is automatically applied unless you explicitly set a flush value.
 
 See: https://nodejs.org/api/zlib.html#class-options

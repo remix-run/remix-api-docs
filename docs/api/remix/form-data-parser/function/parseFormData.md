@@ -1,6 +1,6 @@
 ---
 title: parseFormData
-source: https://github.com/remix-run/remix/blob/main/packages/form-data-parser/src/lib/form-data.ts#L222
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/form-data-parser/src/lib/form-data.ts#L231
 ---
 
 # parseFormData
@@ -15,6 +15,9 @@ This is a drop-in replacement for [the built-in `request.formData()` API](https:
 with the main difference being the ability to customize the handling of file uploads. Instead of
 keeping all files in memory, the `uploadHandler` allows you to store the file on disk or a
 cloud storage service.
+
+Accepts `multipart/*` and `application/x-www-form-urlencoded` media types.
+Unsupported media types throw [`FormDataParseError`](/api/remix/form-data-parser/class/FormDataParseError/) before the body is read.
 
 ## Signature
 

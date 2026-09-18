@@ -1,6 +1,6 @@
 ---
 title: TarEntry
-source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L506
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/tar-parser/src/lib/tar.ts#L763
 ---
 
 # TarEntry
@@ -59,6 +59,8 @@ The raw header info associated with this entry.
 ### `name`
 
 The name of this entry.
+Parsed names include ustar prefixes and GNU/PAX overrides and follow the same
+path policy as [`parseTarHeader`](/api/remix/tar-parser/function/parseTarHeader/).
 
 ### `size`
 
@@ -74,7 +76,8 @@ The content of this entry as an [`ArrayBuffer`](https://developer.mozilla.org/en
 
 ### `bytes(): Promise<Uint8Array<ArrayBufferLike>>`
 
-The content of this entry buffered into a single typed array.
+The content of this entry buffered into a single typed array using the bytes received.
+Rejects if parsing fails before the entry's body is complete.
 
 
 

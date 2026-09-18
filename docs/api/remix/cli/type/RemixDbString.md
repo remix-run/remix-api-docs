@@ -1,6 +1,6 @@
 ---
 title: RemixDbString
-source: https://github.com/remix-run/remix/blob/main/packages/cli/src/lib/remix-config.ts#L51
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/cli/src/lib/remix-config.ts#L51
 ---
 
 # RemixDbString

@@ -1,6 +1,6 @@
 ---
 title: SubmenuProps
-source: https://github.com/remix-run/remix/blob/main/packages/ui/src/menu/index.tsx#L232
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/ui/src/menu/index.tsx#L232
 ---
 
 # SubmenuProps
@@ -89,7 +89,7 @@ interface SubmenuProps {
   id?: string
   inert?: boolean
   inlist?: any
-  innerHTML?: string
+  innerHTML?: UnsafeHTMLValue
   inputmode?: string
   inputMode?: string
   is?: string
@@ -457,9 +457,9 @@ The `inlist` HTML attribute.
 
 ### `innerHTML`
 
-Set the innerHTML of the element directly.
-When provided, children are ignored.
-Use with caution as this can expose XSS vulnerabilities if the content is not sanitized.
+Raw HTML to insert into the element. Create this value with `unsafeHTML()`.
+
+When provided, children are ignored. Remix does not sanitize or otherwise modify the HTML.
 
 ### `inputmode`
 

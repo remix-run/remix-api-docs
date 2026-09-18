@@ -1,6 +1,6 @@
 ---
 title: ScriptImportMap
-source: https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/scripts/compiler.ts#L51
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/assets/src/lib/scripts/compiler.ts#L51
 ---
 
 # ScriptImportMap

@@ -1,6 +1,6 @@
 ---
 title: parseTarHeader
-source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L147
+source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/tar-parser/src/lib/tar.ts#L205
 ---
 
 # parseTarHeader
@@ -8,6 +8,8 @@ source: https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib
 ## Summary
 
 Parses a tar header block.
+With the default `relative` path policy, throws [`TarParseError`](/api/remix/tar-parser/class/TarParseError/) for invalid
+entry names or link targets, including paths that traverse above the archive root.
 
 ## Signature
 
