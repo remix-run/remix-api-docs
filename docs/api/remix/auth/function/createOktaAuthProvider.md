@@ -1,6 +1,6 @@
 ---
-title: createOktaAuthProvider
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/auth/src/lib/providers/okta.ts#L28
+title: "createOktaAuthProvider"
+source: "https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/okta.ts#L28"
 ---
 
 # createOktaAuthProvider

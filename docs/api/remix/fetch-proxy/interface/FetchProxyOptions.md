@@ -1,6 +1,6 @@
 ---
-title: FetchProxyOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/fetch-proxy/src/lib/fetch-proxy.ts#L6
+title: "FetchProxyOptions"
+source: "https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L21"
 ---
 
 # FetchProxyOptions
@@ -17,6 +17,7 @@ interface FetchProxyOptions {
     (input: RequestInfo | URL, init?: RequestInit): Promise<Response>
     (input: string | Request | URL, init?: RequestInit): Promise<Response>
   }
+  redirect?: RequestRedirect
   rewriteCookieDomain?: boolean
   rewriteCookiePath?: boolean
   xForwardedHeaders?: boolean
@@ -29,6 +30,12 @@ interface FetchProxyOptions {
 ### `fetch`
 
 The `fetch` function to use for the actual fetch.
+
+### `redirect`
+
+Controls upstream redirect handling. When omitted, the proxy changes the Fetch default of
+`follow` to `manual` so redirects reach the client. Input requests using `manual` or `error`
+retain those modes. A defined per-call `init.redirect` overrides this option.
 
 ### `rewriteCookieDomain`
 
@@ -45,4 +52,5 @@ default the portion of the pathname that matches the proxy target's pathname wil
 Set `true` to set `X-Forwarded-Proto`, `X-Forwarded-Host`, and `X-Forwarded-Port`
 headers on the proxied request from the incoming request URL. Existing values are replaced,
 and the `Forwarded` and `X-Forwarded-For` headers are removed. The client address is not
-available on a Fetch request. When disabled, existing forwarding headers are passed through.
+available on a Fetch request. When disabled, existing forwarding headers are passed through
+unless listed in `Connection`.

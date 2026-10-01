@@ -1,6 +1,6 @@
 ---
-title: createAssetServer
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/assets/src/lib/asset-server.ts#L411
+title: "createAssetServer"
+source: "https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/asset-server.ts#L411"
 ---
 
 # createAssetServer

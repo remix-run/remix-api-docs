@@ -1,6 +1,6 @@
 ---
-title: StaticFilesOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/static-middleware/src/lib/static.ts#L26
+title: "StaticFilesOptions"
+source: "https://github.com/remix-run/remix/blob/main/packages/static-middleware/src/lib/static.ts#L26"
 ---
 
 # StaticFilesOptions
@@ -86,3 +86,4 @@ Whether to include `Last-Modified` headers.
 
 Whether to return an HTML page listing the files in a directory when the request path
 targets a directory. If both this and `index` are set, `index` takes precedence.
+Listings show file sizes but omit folder sizes without reading subdirectory contents.

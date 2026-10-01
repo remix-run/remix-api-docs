@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/html-template
+type: "package"
+title: "remix/html-template"
 ---
 
 # remix/html-template

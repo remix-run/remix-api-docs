@@ -1,6 +1,6 @@
 ---
-title: RequestListenerOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/node-fetch-server/src/lib/request-listener.ts#L24
+title: "RequestListenerOptions"
+source: "https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L24"
 ---
 
 # RequestListenerOptions
@@ -26,7 +26,7 @@ interface RequestListenerOptions {
 ### `host`
 
 Overrides the host portion of the incoming request URL. By default the request URL host is
-derived from the HTTP `Host` header.
+derived from HTTP/2 `:authority`, falling back to the HTTP `Host` header.
 
 For example, if you have a `$HOST` environment variable that contains the hostname of your
 server, you can use it to set the host of all incoming request URLs like so:
@@ -37,8 +37,9 @@ createRequestListener(handler, { host: process.env.HOST })
 
 ### `onError`
 
-An error handler that determines the response when the request handler throws an error. By
-default a 500 Internal Server Error response will be sent.
+An error handler that determines the response when request construction or handling throws.
+If no response is returned, conflicting HTTP/2 authorities receive a 400 Bad Request response
+and other errors receive a 500 Internal Server Error response.
 
 ### `protocol`
 

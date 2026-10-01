@@ -1,6 +1,6 @@
 ---
-title: CookieOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/cookie/src/lib/cookie.ts#L9
+title: "CookieOptions"
+source: "https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L9"
 ---
 
 # CookieOptions
@@ -21,7 +21,7 @@ interface CookieOptions {
   maxAge?: number
   partitioned?: boolean
   path?: string
-  sameSite?: SameSiteValue
+  sameSite?: SameSiteInput
   secrets?: string[]
   secure?: boolean
 }
@@ -83,8 +83,9 @@ The path of the cookie. For example, `/` or `/admin`.
 
 ### `sameSite`
 
-The `SameSite` attribute of the cookie. This attribute lets servers require that a cookie shouldn't be sent with
-cross-site requests, which provides some protection against cross-site request forgery attacks.
+The `SameSite` attribute of the cookie. Values are case-insensitive. This attribute lets
+servers require that a cookie shouldn't be sent with cross-site requests, which provides some
+protection against cross-site request forgery attacks.
 
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value)
 

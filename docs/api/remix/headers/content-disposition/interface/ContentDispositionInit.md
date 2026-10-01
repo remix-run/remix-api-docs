@@ -1,6 +1,6 @@
 ---
-title: ContentDispositionInit
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/headers/src/lib/content-disposition.ts#L7
+title: "ContentDispositionInit"
+source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-disposition.ts#L7"
 ---
 
 # ContentDispositionInit
@@ -25,12 +25,14 @@ interface ContentDispositionInit {
 
 ### `filename`
 
-For file uploads, the name of the file that the user selected.
+The suggested filename for the content. Values received from clients are untrusted metadata
+and must not be used directly as filesystem paths.
 
 ### `filenameSplat`
 
-For file uploads, the name of the file that the user selected, encoded as a [RFC 8187](https://tools.ietf.org/html/rfc8187) `filename*` parameter.
-This parameter allows non-ASCII characters in filenames, and specifies the character encoding.
+The suggested filename encoded as an [RFC 8187](https://tools.ietf.org/html/rfc8187) `filename*` parameter.
+Values received from clients are untrusted metadata, even after decoding, and must not be
+used directly as filesystem paths.
 
 ### `name`
 

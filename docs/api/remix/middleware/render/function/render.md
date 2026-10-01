@@ -1,13 +1,13 @@
 ---
-title: render
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/render-middleware/src/lib/render-ui.ts#L63
+title: "render"
+source: "https://github.com/remix-run/remix/blob/main/packages/render-middleware/src/lib/render-ui.ts#L70"
 ---
 
 # render
 
 ## Summary
 
-Adds the standard Remix UI renderer to request context.
+Adds the standard Remix component renderer to request context.
 
 ## Signature
 

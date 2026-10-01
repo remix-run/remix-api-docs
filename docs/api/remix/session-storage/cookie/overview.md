@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/session-storage/cookie
+type: "package"
+title: "remix/session-storage/cookie"
 ---
 
 # remix/session-storage/cookie

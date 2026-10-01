@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/middleware/logger
+type: "package"
+title: "remix/middleware/logger"
 ---
 
 # remix/middleware/logger

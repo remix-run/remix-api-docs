@@ -1,6 +1,6 @@
 ---
-title: QuoteIdentifier
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table/src/lib/sql-helpers.ts#L6
+title: "QuoteIdentifier"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql-helpers.ts#L6"
 ---
 
 # QuoteIdentifier

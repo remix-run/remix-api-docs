@@ -1,6 +1,6 @@
 ---
-title: IfMatch
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/headers/src/lib/if-match.ts#L21
+title: "IfMatch"
+source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-match.ts#L21"
 ---
 
 # IfMatch

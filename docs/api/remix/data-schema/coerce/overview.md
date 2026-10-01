@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/data-schema/coerce
+type: "package"
+title: "remix/data-schema/coerce"
 ---
 
 # remix/data-schema/coerce

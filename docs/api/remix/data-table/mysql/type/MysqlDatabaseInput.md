@@ -1,6 +1,6 @@
 ---
-title: MysqlDatabaseInput
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table-mysql/src/lib/driver.ts#L39
+title: "MysqlDatabaseInput"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-table-mysql/src/lib/driver.ts#L39"
 ---
 
 # MysqlDatabaseInput

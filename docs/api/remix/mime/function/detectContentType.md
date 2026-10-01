@@ -1,6 +1,6 @@
 ---
-title: detectContentType
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/mime/src/lib/detect-content-type.ts#L20
+title: "detectContentType"
+source: "https://github.com/remix-run/remix/blob/main/packages/mime/src/lib/detect-content-type.ts#L20"
 ---
 
 # detectContentType

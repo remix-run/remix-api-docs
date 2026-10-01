@@ -1,6 +1,6 @@
 ---
-title: CreateHrefErrorDetails
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/route-pattern/src/lib/href.ts#L269
+title: "CreateHrefErrorDetails"
+source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/href.ts#L272"
 ---
 
 # CreateHrefErrorDetails
@@ -24,5 +24,6 @@ type CreateHrefErrorDetails =
   | { char: string; type: 'invalid-hostname-variable'; value: string }
   | { char: string; type: 'invalid-hostname-wildcard'; value: string }
   | { paramName: string; pattern: RoutePattern; type: 'invalid-pathname-variable'; value: string }
+  | { segment: string; type: 'invalid-pathname-wildcard'; value: string }
 
 ```

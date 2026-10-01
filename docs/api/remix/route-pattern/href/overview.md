@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/route-pattern/href
+type: "package"
+title: "remix/route-pattern/href"
 ---
 
 # remix/route-pattern/href
@@ -338,6 +338,8 @@ createHref('search', undefined, { searchParams })
 Common failures include missing required params, nameless wildcards, invalid hostname params, empty pathname variables, and origin patterns that specify a protocol or port without a concrete hostname.
 
 Hostname params reject URL structural characters, including backslashes. Hostname variables also reject dots; hostname wildcards allow dots to span labels.
+
+Pathname wildcards preserve internal slashes and dotted filenames, but reject standalone `.` and `..` segments with `error.details.type === 'invalid-pathname-wildcard'`. Generated pathnames have exactly one leading slash, including when the wildcard value starts with slashes. This normalization also applies to absolute URLs and happens before generating a relative href with `baseURL`.
 
 **Note:** optional groups without params are included in the generated href:
 

@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/node-tsx/load-module
+type: "package"
+title: "remix/node-tsx/load-module"
 ---
 
 # remix/node-tsx/load-module

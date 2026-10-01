@@ -1,6 +1,6 @@
 ---
-title: MultipartParseError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/multipart-parser/src/lib/multipart.ts#L16
+title: "MultipartParseError"
+source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L16"
 ---
 
 # MultipartParseError

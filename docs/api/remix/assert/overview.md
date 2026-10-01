@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/assert
+type: "package"
+title: "remix/assert"
 ---
 
 # remix/assert

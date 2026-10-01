@@ -1,1 +1,0 @@
-import{createMixin as e,on as t}from"@remix-run/ui";export const onKeyDown=e(()=>(e,n)=>t(`keydown`,t=>{t.key===e&&(t.preventDefault(),n(t))}));

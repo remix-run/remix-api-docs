@@ -1,6 +1,6 @@
 ---
-title: createFsFileStorage
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/file-storage/src/lib/backends/fs.ts#L29
+title: "createFsFileStorage"
+source: "https://github.com/remix-run/remix/blob/main/packages/file-storage/src/lib/backends/fs.ts#L29"
 ---
 
 # createFsFileStorage

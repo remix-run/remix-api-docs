@@ -1,6 +1,6 @@
 ---
-title: or
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table/src/lib/operators.ts#L300
+title: "or"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L300"
 ---
 
 # or

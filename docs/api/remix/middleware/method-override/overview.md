@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/middleware/method-override
+type: "package"
+title: "remix/middleware/method-override"
 ---
 
 # remix/middleware/method-override

@@ -1,6 +1,6 @@
 ---
-title: getCsrfToken
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/csrf-middleware/src/lib/csrf.ts#L178
+title: "getCsrfToken"
+source: "https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L180"
 ---
 
 # getCsrfToken

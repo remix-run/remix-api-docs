@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/file-storage
+type: "package"
+title: "remix/file-storage"
 ---
 
 # remix/file-storage

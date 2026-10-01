@@ -1,6 +1,6 @@
 ---
-title: ContentDisposition
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/headers/src/lib/content-disposition.ts#L34
+title: "ContentDisposition"
+source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-disposition.ts#L36"
 ---
 
 # ContentDisposition
@@ -39,11 +39,13 @@ class ContentDisposition {
 
 ### `filename`
 
-The `filename` parameter value.
+The `filename` parameter value. Values received from clients are untrusted metadata;
+no filesystem sanitization is applied. Do not use this value directly as a filesystem path.
 
 ### `filenameSplat`
 
-The RFC 8187-encoded `filename*` parameter value.
+The RFC 8187-encoded `filename*` parameter value. Values received from clients are untrusted
+metadata, even after decoding. Do not use this value directly as a filesystem path.
 
 ### `name`
 
@@ -57,14 +59,12 @@ The disposition type such as `attachment` or `inline`.
 
 ### `preferredFilename`
 
-The preferred filename for the content, using the `filename*` parameter if present, falling back to the `filename` parameter.
+The preferred filename for the content, using the decoded `filename*` parameter when available,
+falling back to the `filename` parameter, as described in [RFC 6266](https://tools.ietf.org/html/rfc6266).
 
-From [RFC 6266](https://tools.ietf.org/html/rfc6266):
-
-Many user agent implementations predating this specification do not understand the "filename*" parameter.
-Therefore, when both "filename" and "filename*" are present in a single header field value, recipients SHOULD
-pick "filename*" and ignore "filename". This way, senders can avoid special-casing specific user agents by
-sending both the more expressive "filename*" parameter, and the "filename" parameter as fallback for legacy recipients.
+This selects and decodes metadata without sanitizing it for filesystem use. Values received
+from clients are untrusted input and must not be used directly as filesystem paths. Generate
+a storage name in your application instead.
 
 ## Methods
 

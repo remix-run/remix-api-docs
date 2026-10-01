@@ -1,6 +1,6 @@
 ---
-title: createRequestListener
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/node-fetch-server/src/lib/request-listener.ts#L87
+title: "createRequestListener"
+source: "https://github.com/remix-run/remix/blob/main/packages/node-fetch-server/src/lib/request-listener.ts#L95"
 ---
 
 # createRequestListener
@@ -13,6 +13,9 @@ Wraps a fetch handler in a Node.js request listener that can be used with:
 - [`https.createServer()`](https://nodejs.org/api/https.html#httpscreateserveroptions-requestlistener)
 - [`http2.createServer()`](https://nodejs.org/api/http2.html#http2createserveroptions-onrequesthandler)
 - [`http2.createSecureServer()`](https://nodejs.org/api/http2.html#http2createsecureserveroptions-onrequesthandler)
+
+HTTP/2 requests with conflicting `Host` and `:authority` values are rejected before the handler
+is called. They receive a 400 response unless `onError` returns a custom response.
 
 Example:
 
@@ -34,6 +37,11 @@ server.listen(3000);
 ## Signature
 
 ```ts
+function createRequestListener(
+  handler: (request: Request) => Response | Promise<Response>,
+  options: RequestListenerOptions,
+): RequestListener
+
 function createRequestListener(
   handler: FetchHandler,
   options: RequestListenerOptions,

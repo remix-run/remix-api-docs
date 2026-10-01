@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/middleware/auth
+type: "package"
+title: "remix/middleware/auth"
 ---
 
 # remix/middleware/auth

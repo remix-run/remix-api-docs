@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/data-schema/checks
+type: "package"
+title: "remix/data-schema/checks"
 ---
 
 # remix/data-schema/checks

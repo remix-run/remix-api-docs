@@ -1,6 +1,6 @@
 ---
-title: ContentType
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/headers/src/lib/content-type.ts#L35
+title: "ContentType"
+source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/content-type.ts#L35"
 ---
 
 # ContentType
@@ -56,6 +56,8 @@ Returns the string representation of the header value.
 ### `from(value: string | ContentTypeInit | null): ContentType`
 
 Parse a Content-Type header value.
+
+Quoted parameter values extend to the end of the header if the closing quote is missing.
 
 #### Parameters
 

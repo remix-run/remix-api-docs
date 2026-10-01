@@ -1,0 +1,9 @@
+import "/assets/packages/component/src/runtime/jsx.js";
+import "/assets/packages/component/src/runtime/typed-event-target.js";
+import "/assets/packages/component/src/runtime/invariant.js";
+import "/assets/packages/component/src/style/style.js";
+import "/assets/packages/component/src/runtime/core/mix.js";
+import "/assets/packages/component/src/runtime/mixins/mixin.js";
+import "/assets/packages/component/src/style/index.js";
+import { ref as t } from "/assets/packages/component/src/runtime/mixins/ref-mixin.js";
+import { css as e } from "/assets/packages/component/src/style/css-mixin.js";import{anchor as n}from"@remix-run/ui/anchor";import { jsx as r, jsxs as i } from "/assets/packages/component/src/runtime/jsx.js";export default function a(){let e=null,a=null,c=()=>{};function l(){c(),e&&a&&(c=n(a,e,{placement:`bottom-start`,offset:8}))}function u(){c(),c=()=>{}}return()=>i(`div`,{mix:o,children:[r(`button`,{type:`button`,mix:[t((t,n)=>{t instanceof HTMLElement&&(e=t,l(),n.addEventListener(`abort`,()=>{e===t&&(e=null),u()}))})],children:`Anchor target`}),r(`div`,{mix:[s,t((e,t)=>{e instanceof HTMLElement&&(a=e,l(),t.addEventListener(`abort`,()=>{a===e&&(a=null),u()}))})],children:`Positioned surface`})]})}const o=e({display:`grid`,placeItems:`center`,minHeight:`9rem`,width:`min(100%, 24rem)`}),s=e({boxSizing:`border-box`,width:`12rem`,border:`1px solid light-dark(#d1d1d1, #444444)`,borderRadius:`8px`,background:`light-dark(#ffffff, #1a1a1a)`,boxShadow:`0 12px 32px rgba(0, 0, 0, 0.12)`,color:`light-dark(#151515, #ececec)`,fontFamily:`"Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif`,fontSize:`13px`,lineHeight:`18px`,fontWeight:500,letterSpacing:0,padding:`10px 12px`});

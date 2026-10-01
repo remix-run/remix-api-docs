@@ -1,0 +1,120 @@
+---
+title: "TypedEventTarget"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/typed-event-target.ts#L4"
+---
+
+# TypedEventTarget
+
+## Summary
+
+An `EventTarget` subclass with typed event maps.
+
+## Signature
+
+```ts
+class TypedEventTarget<eventMap> {
+  constructor(): TypedEventTarget
+
+  // Methods
+  addEventListener<type extends string>(
+    type: type,
+    listener: TypedEventListener<eventMap>[type],
+    options: AddEventListenerOptions,
+  ): void
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject | null,
+    options: boolean | AddEventListenerOptions,
+  ): void
+  dispatchEvent(event: Event): boolean
+  removeEventListener<type extends string>(
+    type: type,
+    listener: TypedEventListener<eventMap>[type],
+    options: EventListenerOptions,
+  ): void
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject | null,
+    options: EventListenerOptions,
+  ): void
+}
+
+```
+
+## Methods
+
+### `addEventListener<type extends string>(type: type, listener: TypedEventListener<eventMap>[type], options: AddEventListenerOptions): void`
+
+Adds a listener for a typed event name from the event map.
+
+#### Parameters
+
+##### `type`
+
+##### `listener`
+
+Listener to invoke when the event fires.
+
+##### `options`
+
+Listener registration options.
+
+### `addEventListener(type: string, listener: EventListenerOrEventListenerObject | null, options: boolean | AddEventListenerOptions): void`
+
+Adds a listener using the standard untyped `EventTarget` signature.
+
+#### Parameters
+
+##### `type`
+
+Event name to listen for.
+
+##### `listener`
+
+Listener to invoke when the event fires.
+
+##### `options`
+
+Listener registration options.
+
+### `dispatchEvent(event: Event): boolean`
+
+The **`dispatchEvent()`** method of the EventTarget sends an Event to the object, (synchronously) invoking the affected event listeners in the appropriate order. The normal event processing rules (including the capturing and optional bubbling phase) also apply to events dispatched manually with dispatchEvent().
+
+[MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
+
+
+
+### `removeEventListener<type extends string>(type: type, listener: TypedEventListener<eventMap>[type], options: EventListenerOptions): void`
+
+Removes a listener for a typed event name from the event map.
+
+#### Parameters
+
+##### `type`
+
+##### `listener`
+
+Previously registered listener.
+
+##### `options`
+
+Listener removal options.
+
+### `removeEventListener(type: string, listener: EventListenerOrEventListenerObject | null, options: EventListenerOptions): void`
+
+Removes a listener using the standard untyped `EventTarget` signature.
+
+#### Parameters
+
+##### `type`
+
+Event name to stop listening for.
+
+##### `listener`
+
+Previously registered listener.
+
+##### `options`
+
+Listener removal options.

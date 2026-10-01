@@ -1,6 +1,6 @@
 ---
-title: FetchProxy
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/fetch-proxy/src/lib/fetch-proxy.ts#L50
+title: "FetchProxy"
+source: "https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L74"
 ---
 
 # FetchProxy

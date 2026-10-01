@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/middleware/cors
+type: "package"
+title: "remix/middleware/cors"
 ---
 
 # remix/middleware/cors

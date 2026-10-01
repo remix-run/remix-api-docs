@@ -1,6 +1,6 @@
 ---
-title: startExternalAuth
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/auth/src/lib/start-external-auth.ts#L30
+title: "startExternalAuth"
+source: "https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/start-external-auth.ts#L30"
 ---
 
 # startExternalAuth

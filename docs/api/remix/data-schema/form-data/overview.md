@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/data-schema/form-data
+type: "package"
+title: "remix/data-schema/form-data"
 ---
 
 # remix/data-schema/form-data

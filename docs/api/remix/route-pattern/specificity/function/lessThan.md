@@ -1,6 +1,6 @@
 ---
-title: lessThan
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/route-pattern/src/lib/specificity.ts#L12
+title: "lessThan"
+source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/specificity.ts#L12"
 ---
 
 # lessThan

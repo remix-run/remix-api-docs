@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/session-storage/memcache
+type: "package"
+title: "remix/session-storage/memcache"
 ---
 
 # remix/session-storage/memcache

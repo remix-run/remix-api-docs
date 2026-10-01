@@ -1,6 +1,6 @@
 ---
-title: createAPIAuthScheme
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/auth-middleware/src/lib/schemes/api-key.ts#L23
+title: "createAPIAuthScheme"
+source: "https://github.com/remix-run/remix/blob/main/packages/auth-middleware/src/lib/schemes/api-key.ts#L23"
 ---
 
 # createAPIAuthScheme

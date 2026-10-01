@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/lazy-file
+type: "package"
+title: "remix/lazy-file"
 ---
 
 # remix/lazy-file

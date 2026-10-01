@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/file-storage/memory
+type: "package"
+title: "remix/file-storage/memory"
 ---
 
 # remix/file-storage/memory

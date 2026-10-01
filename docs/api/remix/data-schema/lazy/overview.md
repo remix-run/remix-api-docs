@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/data-schema/lazy
+type: "package"
+title: "remix/data-schema/lazy"
 ---
 
 # remix/data-schema/lazy

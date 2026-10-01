@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/mime
+type: "package"
+title: "remix/mime"
 ---
 
 # remix/mime

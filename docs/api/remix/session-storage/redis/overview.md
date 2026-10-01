@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/session-storage/redis
+type: "package"
+title: "remix/session-storage/redis"
 ---
 
 # remix/session-storage/redis

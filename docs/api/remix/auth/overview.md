@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/auth
+type: "package"
+title: "remix/auth"
 ---
 
 # remix/auth
@@ -372,6 +372,8 @@ Default scopes for OAuth providers that don't use OIDC discovery:
 - X: `tweet.read users.read`
 
 Pass `scopes` if you need a different set for a provider.
+
+GitHub uses the email returned in the profile when present. Otherwise, it selects a verified address from the email API, preferring the primary address, and leaves the email `null` or absent if none are verified. The provider account identity remains the GitHub user ID in `result.account.providerAccountId`.
 
 ## Custom Auth Providers
 

@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/tar-parser
+type: "package"
+title: "remix/tar-parser"
 ---
 
 # remix/tar-parser

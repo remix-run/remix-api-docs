@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/session-storage/fs
+type: "package"
+title: "remix/session-storage/fs"
 ---
 
 # remix/session-storage/fs

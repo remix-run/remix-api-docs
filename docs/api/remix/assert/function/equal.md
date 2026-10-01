@@ -1,6 +1,6 @@
 ---
-title: equal
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/assert/src/lib/assert.ts#L290
+title: "equal"
+source: "https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/assert.ts#L290"
 ---
 
 # equal

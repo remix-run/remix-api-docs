@@ -1,6 +1,6 @@
 ---
-title: MultipartPart
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/multipart-parser/src/lib/multipart.ts#L563
+title: "MultipartPart"
+source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L606"
 ---
 
 # MultipartPart
@@ -64,7 +64,10 @@ for reading the value of files that were uploaded using `<input type="file">` fi
 
 ### `filename`
 
-The filename of the part, if it is a file upload.
+The filename from the part's `Content-Disposition` header, preferring a decoded `filename*`
+over `filename` when available. This is untrusted client input without filesystem sanitization.
+Do not use it, or a `File.name` derived from it, directly as a filesystem path. Generate a
+storage name in your application instead.
 
 ### `headers`
 

@@ -1,0 +1,9 @@
+import "/assets/packages/component/src/runtime/jsx.js";
+import "/assets/packages/component/src/runtime/typed-event-target.js";
+import "/assets/packages/component/src/runtime/invariant.js";
+import "/assets/packages/component/src/style/style.js";
+import "/assets/packages/component/src/runtime/core/mix.js";
+import "/assets/packages/component/src/runtime/mixins/mixin.js";
+import { on as t } from "/assets/packages/component/src/runtime/mixins/on-mixin.js";
+import "/assets/packages/component/src/style/index.js";
+import { css as e } from "/assets/packages/component/src/style/css-mixin.js";import*as n from"@remix-run/ui/popover";import { jsx as r, jsxs as i } from "/assets/packages/component/src/runtime/jsx.js";export default function a(e){let a=!1;function l(t){a=t,e.update()}return()=>r(n.Context,{children:i(`div`,{mix:o,children:[r(`button`,{type:`button`,mix:[n.anchor({placement:`bottom-start`,offset:8}),n.focusOnHide(),t(`click`,()=>{l(!a)})],children:`View options`}),i(`div`,{mix:[s,n.surface({open:a,onHide(){l(!1)}})],children:[r(`button`,{type:`button`,mix:[n.focusOnShow(),t(`click`,()=>{l(!1)})],children:`Close`}),r(`div`,{mix:c,children:`Popover content stays app-owned.`})]})]})})}const o=e({display:`grid`,placeItems:`center`,minHeight:`10rem`,width:`min(100%, 24rem)`}),s=e({boxSizing:`border-box`,width:`14rem`,margin:0,border:`1px solid light-dark(#d1d1d1, #444444)`,borderRadius:`8px`,background:`light-dark(#ffffff, #1a1a1a)`,boxShadow:`0 16px 40px rgba(0, 0, 0, 0.14)`,color:`light-dark(#151515, #ececec)`,padding:`8px`,"&:popover-open":{display:`grid`,gap:`8px`}}),c=e({fontFamily:`"Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif`,fontSize:`13px`,lineHeight:`18px`,fontWeight:500,letterSpacing:0,color:`light-dark(#4f4f4f, #b3b3b3)`,padding:`2px 4px 4px`});

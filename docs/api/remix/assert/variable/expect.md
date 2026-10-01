@@ -1,6 +1,6 @@
 ---
-title: expect
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/assert/src/lib/expect.ts#L586
+title: "expect"
+source: "https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/expect.ts#L586"
 ---
 
 # expect

@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/file-storage/s3
+type: "package"
+title: "remix/file-storage/s3"
 ---
 
 # remix/file-storage/s3

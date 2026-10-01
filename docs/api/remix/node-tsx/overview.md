@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/node-tsx
+type: "package"
+title: "remix/node-tsx"
 ---
 
 # remix/node-tsx

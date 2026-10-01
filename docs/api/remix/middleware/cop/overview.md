@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/middleware/cop
+type: "package"
+title: "remix/middleware/cop"
 ---
 
 # remix/middleware/cop

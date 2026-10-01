@@ -1,6 +1,6 @@
 ---
-title: TarParser
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/tar-parser/src/lib/tar.ts#L443
+title: "TarParser"
+source: "https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L443"
 ---
 
 # TarParser

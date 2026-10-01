@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/middleware/session
+type: "package"
+title: "remix/middleware/session"
 ---
 
 # remix/middleware/session

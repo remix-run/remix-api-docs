@@ -1,6 +1,6 @@
 ---
-title: MultipartParser
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/multipart-parser/src/lib/multipart.ts#L215
+title: "MultipartParser"
+source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L218"
 ---
 
 # MultipartParser
@@ -67,16 +67,20 @@ Maximum aggregate content size allowed across all parts.
 
 ### `finish(): void`
 
-Should be called after all data has been written to the parser.
+Validate completion after all chunks have been written to the parser.
 
-Note: This will throw if the multipart message is incomplete or
-wasn't properly terminated.
+Throws if the message is incomplete or its closing delimiter is malformed,
+even if MultipartParser.write has already yielded the final part.
 
 
 
 ### `write(chunk: Uint8Array): Generator<MultipartPart, void, unknown>`
 
 Write a chunk of data to the parser.
+
+The final part is yielded when both closing hyphens arrive. Consume all chunks
+and call MultipartParser.finish to validate the complete message;
+malformed closing suffixes may throw after the final part has been yielded.
 
 #### Parameters
 

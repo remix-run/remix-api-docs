@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/assets
+type: "package"
+title: "remix/assets"
 ---
 
 # remix/assets
@@ -230,8 +230,8 @@ let { href, importMap, preloads } = await assetServer.getScriptEntry('app/assets
 This can be used when rendering a document shell:
 
 ```tsx
-import type { Handle, RemixNode } from 'remix/ui'
-import { ImportMap } from 'remix/ui/server'
+import type { Handle, RemixNode } from 'remix/component'
+import { ImportMap } from 'remix/component/server'
 import { assetServer } from './assets.ts'
 
 let { href, importMap, preloads } = await assetServer.getScriptEntry('app/assets/entry.tsx')
@@ -253,10 +253,10 @@ export function Document(handle: Handle<{ children: RemixNode }>) {
 }
 ```
 
-This can also be used for resolved client entries in [`remix/ui`](https://github.com/remix-run/remix/tree/main/packages/ui) when using `import.meta.url` as the client entry ID:
+This can also be used for resolved client entries in [`remix/component`](https://github.com/remix-run/remix/tree/main/packages/component) when using `import.meta.url` as the client entry ID:
 
 ```tsx
-import { renderToStream } from 'remix/ui/server'
+import { renderToStream } from 'remix/component/server'
 import { assetServer } from './assets.ts'
 
 let stream = renderToStream(<App />, {
@@ -329,7 +329,7 @@ let preloads = await assetServer.getPreloads([
 //   '/assets/app/actions/public/entry.ts',
 //   '/assets/app/search/public/search.tsx',
 //   '/assets/app/search/public/utils.ts',
-//   '/assets/npm/remix/ui/index.js',
+//   '/assets/npm/remix/component/index.js',
 //   ...etc
 // ]
 ```
@@ -419,6 +419,53 @@ let assetServer = createAssetServer({
   allowPackages: ['remix'],
   minify: true,
 })
+```
+
+## Optimizing Barrel File Imports
+
+The asset server rewrites named imports through eligible barrel files to the modules that provide their bindings. This avoids intermediary requests and unused dependency branches.
+
+An import can only be optimized if every module removed from its dependency graph is marked side-effect free by its owning `package.json`.
+
+```json
+{
+  "sideEffects": false
+}
+```
+
+If only some modules have side effects, `sideEffects` can be set to an array of file paths or glob patterns.
+
+```json
+{
+  "sideEffects": ["./register.ts"]
+}
+```
+
+For example, an application might import `css` from `remix/component`:
+
+```ts
+// entry.ts
+import { css } from 'remix/component'
+```
+
+That binding passes through two barrel files before reaching its implementation:
+
+```ts
+// remix/src/component.ts
+export * from '@remix-run/component'
+```
+
+```ts
+// @remix-run/component/dist/index.js
+export { css } from './style/css-mixin.js'
+// ...other exports
+```
+
+After optimization, the served `entry.ts` module imports the binding directly from its implementation and skips all other exports from the barrel file:
+
+```ts
+// entry.ts
+import { css } from '/assets/npm/@remix-run/component/dist/style/css-mixin.js'
 ```
 
 ## Script Options
@@ -612,21 +659,19 @@ let assetServer = createAssetServer({
 
 #### File transform caching
 
-Use `files.cache` to store transformed file outputs via a [`file-storage`](https://github.com/remix-run/remix/tree/main/packages/file-storage) backend. Without `files.cache`, transformed file outputs are recomputed per request.
+Transformed file outputs are recomputed per request unless you configure `files.cache`. Set it to `createFsFileCache()` to use the built-in disk cache in `node_modules/.cache/remix/assets`, relative to `process.cwd()`. This cache evicts the least recently used entries when it reaches 1,024 entries or 256 MiB of stored data. Each stored entry can be at most 4 MiB, including cache metadata. Reads and writes refresh recency. Larger outputs are served normally without caching. Omitting `files.cache` disables transformed-output caching.
 
-`files.cacheKey` scopes transformed file cache entries. Use a stable identifier, such as a commit SHA, when you want unchanged transformed files to be reused across server restarts for the same build.
+`files.cacheKey` namespaces transformed outputs. Use a stable identifier, such as a commit SHA, to reuse them across server restarts for the same build. Change it when sources or transform implementations change. Without it, each server instance uses a random namespace. A namespace identifies a set of cached outputs; it does not create a separate cache instance.
 
 ```ts
-import * as path from 'node:path'
-import { createAssetServer } from 'remix/assets'
-import { createFsFileStorage } from 'remix/file-storage/fs'
+import { createAssetServer, createFsFileCache } from 'remix/assets'
 
 let assetServer = createAssetServer({
   basePath: '/assets',
   allowFiles: ['app/routes.ts', 'app/**/public/**'],
   allowPackages: ['remix'],
   files: {
-    cache: createFsFileStorage(path.resolve('.tmp/assets-cache')),
+    cache: createFsFileCache(),
     cacheKey: process.env.GIT_COMMIT_SHA,
     extensions: ['.svg', '.png', '.jpg', '.jpeg', '.woff2'],
     transforms: {
@@ -635,6 +680,67 @@ let assetServer = createAssetServer({
   },
 })
 ```
+
+Call `createFsFileCache()` to use the default directory and limits. Pass an options object to customize them:
+
+```ts
+import { createAssetServer, createFsFileCache } from 'remix/assets'
+
+let assetServer = createAssetServer({
+  basePath: '/assets',
+  allowFiles: ['app/**/public/**'],
+  files: {
+    cache: createFsFileCache({
+      directory: '/var/cache/my-app/assets',
+      maxEntries: 2048,
+      maxFileSize: 8 * 1024 * 1024,
+      maxTotalSize: 512 * 1024 * 1024,
+    }),
+    cacheKey: process.env.GIT_COMMIT_SHA,
+    extensions: ['.svg', '.png'],
+    transforms: {
+      /*...*/
+    },
+  },
+})
+```
+
+Use a directory dedicated to this cache. Relative paths resolve from `process.cwd()` when the factory is called, independently of the asset server's `rootDir`. The directory is created on first use. All options are optional. Limits accept positive safe integers:
+
+| Option         | Default                              | Description                                        |
+| -------------- | ------------------------------------ | -------------------------------------------------- |
+| `directory`    | `'node_modules/.cache/remix/assets'` | Cache directory, relative to `process.cwd()`       |
+| `maxEntries`   | `1024`                               | Number of stored entries                           |
+| `maxFileSize`  | `4 * 1024 * 1024`                    | Bytes per entry, including cache metadata          |
+| `maxTotalSize` | `256 * 1024 * 1024`                  | Total stored entry bytes, including cache metadata |
+
+Storage metadata and filesystem overhead are additional to the byte budgets. All namespaces using a cache share its limits. Use one cache instance per directory. If multiple asset servers in one process need the same cache, pass them the same instance. For shared multi-process caching, supply a custom `FileCache`.
+
+The cache tracks recency and total size in memory. Reads refresh recency without writing to disk. On first use, it rebuilds the index from stored record sizes and write timestamps and enforces the configured limits. Cached files survive restarts, but read recency does not. An interrupted write or invalid accounting metadata resets the stored cache on recovery, and outputs are recomputed as needed.
+
+For custom persistence or eviction, supply a `FileCache` with `get` and `put` methods. Both may be synchronous or asynchronous. This pseudocode delegates to your own storage backend:
+
+```ts
+import { createAssetServer } from 'remix/assets'
+
+let assetServer = createAssetServer({
+  basePath: '/assets',
+  allowFiles: ['app/**/public/**'],
+  files: {
+    extensions: ['.svg', '.png'],
+    cache: {
+      async get(key) {
+        return backend.readFile(key) // Return a File, or null on a miss.
+      },
+      async put(key, file) {
+        await backend.writeFile(key, file)
+      },
+    },
+  },
+})
+```
+
+Keys are opaque strings. Your cache controls limits, eviction, and persistence, and must preserve each file's bytes and metadata. Existing `FileStorage` backends can also be passed directly to `files.cache`.
 
 #### Request transform limits
 
@@ -884,7 +990,7 @@ if (import.meta.hot) {
 
 - [`fetch-router`](https://github.com/remix-run/remix/tree/main/packages/fetch-router) - A Fetch-based router that pairs naturally with `assets`
 - [`node-hmr`](https://github.com/remix-run/remix/tree/main/packages/node-hmr) - Provides the server-side `import.meta.hot` runtime and browser HMR channel used by `hmr`
-- [`ui-hmr`](https://github.com/remix-run/remix/tree/main/packages/ui-hmr) - Provides a Remix UI component HMR loader for `scripts.loaders`
+- [`component-hmr`](https://github.com/remix-run/remix/tree/main/packages/component-hmr) - Provides a Remix component HMR loader for `scripts.loaders`
 
 ## License
 

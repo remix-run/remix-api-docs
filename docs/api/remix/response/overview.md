@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/response
+type: "package"
+title: "remix/response"
 ---
 
 # remix/response

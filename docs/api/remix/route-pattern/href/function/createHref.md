@@ -1,6 +1,6 @@
 ---
-title: createHref
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/route-pattern/src/lib/href.ts#L66
+title: "createHref"
+source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/href.ts#L69"
 ---
 
 # createHref
@@ -8,6 +8,9 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/route-
 ## Summary
 
 Generate an href from a route pattern and the supplied params.
+
+Pathname wildcards reject `.` and `..` segments. Generated pathnames have one leading
+slash; internal and trailing slashes are preserved.
 
 ## Signature
 

@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/session-storage/memory
+type: "package"
+title: "remix/session-storage/memory"
 ---
 
 # remix/session-storage/memory

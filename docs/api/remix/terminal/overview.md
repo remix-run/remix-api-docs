@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/terminal
+type: "package"
+title: "remix/terminal"
 ---
 
 # remix/terminal

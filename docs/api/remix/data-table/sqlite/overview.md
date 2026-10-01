@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/data-table/sqlite
+type: "package"
+title: "remix/data-table/sqlite"
 ---
 
 # remix/data-table/sqlite

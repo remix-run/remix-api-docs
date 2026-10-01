@@ -1,6 +1,6 @@
 ---
-title: inList
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table/src/lib/operators.ts#L168
+title: "inList"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/operators.ts#L168"
 ---
 
 # inList

@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/middleware/compression
+type: "package"
+title: "remix/middleware/compression"
 ---
 
 # remix/middleware/compression

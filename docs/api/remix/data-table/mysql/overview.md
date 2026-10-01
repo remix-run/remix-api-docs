@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/data-table/mysql
+type: "package"
+title: "remix/data-table/mysql"
 ---
 
 # remix/data-table/mysql

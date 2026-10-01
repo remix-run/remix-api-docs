@@ -1,6 +1,6 @@
 ---
-title: CsrfOptions
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/csrf-middleware/src/lib/csrf.ts#L63
+title: "CsrfOptions"
+source: "https://github.com/remix-run/remix/blob/main/packages/csrf-middleware/src/lib/csrf.ts#L63"
 ---
 
 # CsrfOptions
@@ -60,3 +60,4 @@ Session key used to store the server-generated CSRF token.
 ### `value`
 
 Custom function for extracting the submitted token.
+Replaces the default header and form field lookup.

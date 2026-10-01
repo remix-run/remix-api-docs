@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/headers/cache-control
+type: "package"
+title: "remix/headers/cache-control"
 ---
 
 # remix/headers/cache-control
@@ -293,6 +293,12 @@ headers.set(
   new ContentDisposition({ type: 'attachment', filename: 'example.pdf' }),
 )
 ```
+
+#### Filename Safety
+
+`Content-Disposition` filenames received from clients are untrusted input. `filename` and `filenameSplat` expose parsed parameter values; `preferredFilename` selects and decodes `filename*` when available, falling back to `filename`. These APIs preserve filename metadata without sanitizing it for filesystem use, so values can contain path separators, `..` segments, or absolute paths.
+
+Do not use any of these values, or a `File.name` derived from them, directly as a filesystem path or join them to an upload directory. Generate a storage name in your application, such as `crypto.randomUUID()`, within a directory you control, and keep the submitted filename only as metadata. The same rule applies to filenames received from remote servers. See [RFC 6266, section 4.3](https://www.rfc-editor.org/rfc/rfc6266.html#section-4.3) and [RFC 7578, section 4.2](https://www.rfc-editor.org/rfc/rfc7578.html#section-4.2).
 
 ### Content-Range
 

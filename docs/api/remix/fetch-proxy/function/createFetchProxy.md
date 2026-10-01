@@ -1,6 +1,6 @@
 ---
-title: createFetchProxy
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/fetch-proxy/src/lib/fetch-proxy.ts#L60
+title: "createFetchProxy"
+source: "https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/lib/fetch-proxy.ts#L87"
 ---
 
 # createFetchProxy
@@ -8,6 +8,9 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/fetch-
 ## Summary
 
 Creates a `fetch` function that forwards requests to another server.
+
+Removes connection-specific request headers and incoming `Content-Length` so the outgoing
+fetch can determine framing for the forwarded body.
 
 ## Signature
 

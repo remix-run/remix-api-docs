@@ -1,6 +1,6 @@
 ---
-title: parseMigrationDirectoryName
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table/src/lib/migrations/directory-name.ts#L10
+title: "parseMigrationDirectoryName"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/migrations/directory-name.ts#L13"
 ---
 
 # parseMigrationDirectoryName
@@ -9,7 +9,9 @@ source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-t
 
 Parses a migration directory name into `{ id, name }`.
 
-Expected format: `YYYYMMDDHHmmss_name`.
+Expected format: `<digits>_<name>`, such as `0001_create_users` or
+`20260228090000_create_users` (`YYYYMMDDHHmmss`).
+The prefix must contain 1 to 64 digits.
 
 ## Signature
 

@@ -1,6 +1,6 @@
 ---
-title: Accept
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/headers/src/lib/accept.ts#L17
+title: "Accept"
+source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/accept.ts#L17"
 ---
 
 # Accept

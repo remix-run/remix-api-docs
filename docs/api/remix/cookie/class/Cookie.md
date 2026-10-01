@@ -1,6 +1,6 @@
 ---
-title: Cookie
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/cookie/src/lib/cookie.ts#L50
+title: "Cookie"
+source: "https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L50"
 ---
 
 # Cookie
@@ -97,7 +97,7 @@ The path of the cookie.
 
 ### `sameSite`
 
-The `SameSite` attribute of the cookie.
+The `SameSite` attribute of the cookie, normalized to `Strict`, `Lax`, or `None`.
 
 [MDN Reference](https://developer.mozilla.org/en-US/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value)
 

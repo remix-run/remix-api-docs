@@ -1,6 +1,6 @@
 ---
-title: GitHubAuthProfile
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/auth/src/lib/providers/github.ts#L34
+title: "GitHubAuthProfile"
+source: "https://github.com/remix-run/remix/blob/main/packages/auth/src/lib/providers/github.ts#L34"
 ---
 
 # GitHubAuthProfile
@@ -31,7 +31,7 @@ Avatar image URL returned by GitHub, when available.
 
 ### `email`
 
-Primary email returned by GitHub, when available.
+Email returned in the GitHub profile, or a verified fallback address when available.
 
 ### `html_url`
 

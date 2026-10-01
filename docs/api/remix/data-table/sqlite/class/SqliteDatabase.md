@@ -1,6 +1,6 @@
 ---
-title: SqliteDatabase
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/data-table-sqlite/src/lib/database.ts#L10
+title: "SqliteDatabase"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite/src/lib/database.ts#L10"
 ---
 
 # SqliteDatabase

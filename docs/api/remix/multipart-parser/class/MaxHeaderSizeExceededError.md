@@ -1,6 +1,6 @@
 ---
-title: MaxHeaderSizeExceededError
-source: https://github.com/remix-run/remix/blob/remix@3.0.0-rc.3/packages/multipart-parser/src/lib/multipart.ts#L29
+title: "MaxHeaderSizeExceededError"
+source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.ts#L29"
 ---
 
 # MaxHeaderSizeExceededError

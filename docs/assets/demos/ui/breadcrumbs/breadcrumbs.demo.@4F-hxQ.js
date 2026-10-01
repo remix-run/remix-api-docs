@@ -1,1 +1,0 @@
-import{Breadcrumbs as e}from"remix/ui/breadcrumbs";import{jsx as t}from"remix/ui/jsx-runtime";export default function n(){return()=>t(e,{items:[{href:`/`,label:`Home`},{href:`/components`,label:`Components`},{label:`Breadcrumbs`}]})}

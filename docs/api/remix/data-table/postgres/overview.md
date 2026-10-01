@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/data-table/postgres
+type: "package"
+title: "remix/data-table/postgres"
 ---
 
 # remix/data-table/postgres

@@ -1,6 +1,6 @@
 ---
-type: package
-title: remix/cookie
+type: "package"
+title: "remix/cookie"
 ---
 
 # remix/cookie
