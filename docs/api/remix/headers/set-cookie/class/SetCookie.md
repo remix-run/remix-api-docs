@@ -1,6 +1,6 @@
 ---
 title: "SetCookie"
-source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/set-cookie.ts#L90"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/headers/src/lib/set-cookie.ts#L90"
 ---
 
 # SetCookie

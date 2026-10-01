@@ -1,6 +1,6 @@
 ---
 title: "isMultipartRequest"
-source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/src/lib/multipart.node.ts#L56"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/multipart-parser/src/lib/multipart.node.ts#L56"
 ---
 
 # isMultipartRequest

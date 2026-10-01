@@ -1,6 +1,6 @@
 ---
 title: "AssetDetails"
-source: "https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/inspection.ts#L30"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/assets/src/lib/inspection.ts#L30"
 ---
 
 # AssetDetails

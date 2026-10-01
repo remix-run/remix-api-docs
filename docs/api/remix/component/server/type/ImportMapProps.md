@@ -1,6 +1,6 @@
 ---
 title: "ImportMapProps"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/server/stream.ts#L132"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/server/stream.ts#L132"
 ---
 
 # ImportMapProps

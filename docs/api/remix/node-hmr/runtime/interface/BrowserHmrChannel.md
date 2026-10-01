@@ -1,6 +1,6 @@
 ---
 title: "BrowserHmrChannel"
-source: "https://github.com/remix-run/remix/blob/main/packages/node-hmr/src/lib/browser-events.ts#L80"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/node-hmr/src/lib/browser-events.ts#L80"
 ---
 
 # BrowserHmrChannel

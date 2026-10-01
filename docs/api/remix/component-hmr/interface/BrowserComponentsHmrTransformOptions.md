@@ -1,6 +1,6 @@
 ---
 title: "BrowserComponentsHmrTransformOptions"
-source: "https://github.com/remix-run/remix/blob/main/packages/component-hmr/src/lib/transform.ts#L26"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component-hmr/src/lib/transform.ts#L26"
 ---
 
 # BrowserComponentsHmrTransformOptions

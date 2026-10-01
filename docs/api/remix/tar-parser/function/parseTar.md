@@ -1,6 +1,6 @@
 ---
 title: "parseTar"
-source: "https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L414"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/tar-parser/src/lib/tar.ts#L414"
 ---
 
 # parseTar

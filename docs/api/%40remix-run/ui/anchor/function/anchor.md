@@ -1,6 +1,6 @@
 ---
 title: "anchor"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/anchor.ts#L716"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/ui/src/anchor.ts#L716"
 ---
 
 # anchor

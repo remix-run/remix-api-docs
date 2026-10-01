@@ -1,6 +1,6 @@
 ---
 title: "__componentHmrServerRuntime__"
-source: "https://github.com/remix-run/remix/blob/main/packages/component-hmr/src/runtime/server.ts#L8"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component-hmr/src/runtime/server.ts#L8"
 ---
 
 # __componentHmrServerRuntime__

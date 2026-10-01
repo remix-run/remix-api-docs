@@ -1,6 +1,6 @@
 ---
 title: "RemixDbAdapterConfig"
-source: "https://github.com/remix-run/remix/blob/main/packages/cli/src/lib/remix-config.ts#L53"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/cli/src/lib/remix-config.ts#L53"
 ---
 
 # RemixDbAdapterConfig

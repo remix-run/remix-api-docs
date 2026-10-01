@@ -1,6 +1,6 @@
 ---
 title: "FrameContent"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/component.ts#L170"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/runtime/component.ts#L170"
 ---
 
 # FrameContent

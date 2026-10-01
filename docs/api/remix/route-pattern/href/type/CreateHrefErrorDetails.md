@@ -1,6 +1,6 @@
 ---
 title: "CreateHrefErrorDetails"
-source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src/lib/href.ts#L272"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/route-pattern/src/lib/href.ts#L272"
 ---
 
 # CreateHrefErrorDetails

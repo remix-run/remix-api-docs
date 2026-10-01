@@ -1,6 +1,6 @@
 ---
 title: "createCookie"
-source: "https://github.com/remix-run/remix/blob/main/packages/cookie/src/lib/cookie.ts#L257"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/cookie/src/lib/cookie.ts#L257"
 ---
 
 # createCookie

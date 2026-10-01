@@ -1,6 +1,6 @@
 ---
 title: "createIssue"
-source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L368"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/data-schema/src/lib/schema.ts#L368"
 ---
 
 # createIssue

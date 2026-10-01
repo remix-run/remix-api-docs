@@ -1,6 +1,6 @@
 ---
 title: "componentHmr"
-source: "https://github.com/remix-run/remix/blob/main/packages/component-hmr/src/lib/loaders.ts#L96"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component-hmr/src/lib/loaders.ts#L96"
 ---
 
 # componentHmr

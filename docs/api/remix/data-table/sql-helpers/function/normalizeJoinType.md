@@ -1,6 +1,6 @@
 ---
 title: "normalizeJoinType"
-source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/lib/sql-helpers.ts#L32"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/data-table/src/lib/sql-helpers.ts#L32"
 ---
 
 # normalizeJoinType

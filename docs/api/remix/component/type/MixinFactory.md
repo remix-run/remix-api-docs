@@ -1,6 +1,6 @@
 ---
 title: "MixinFactory"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/mixins/mixin.ts#L217"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/runtime/mixins/mixin.ts#L217"
 ---
 
 # MixinFactory

@@ -1,6 +1,6 @@
 ---
 title: "FileCache"
-source: "https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/files/file-cache.ts#L5"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/assets/src/lib/files/file-cache.ts#L5"
 ---
 
 # FileCache

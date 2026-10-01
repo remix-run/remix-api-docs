@@ -1,6 +1,6 @@
 ---
 title: "__componentHmrBrowserRuntime__"
-source: "https://github.com/remix-run/remix/blob/main/packages/component-hmr/src/runtime/browser.ts#L19"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component-hmr/src/runtime/browser.ts#L19"
 ---
 
 # __componentHmrBrowserRuntime__

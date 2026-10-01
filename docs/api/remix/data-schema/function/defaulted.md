@@ -1,6 +1,6 @@
 ---
 title: "defaulted"
-source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L515"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/data-schema/src/lib/schema.ts#L515"
 ---
 
 # defaulted

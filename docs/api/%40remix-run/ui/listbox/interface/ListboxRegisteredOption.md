@@ -1,6 +1,6 @@
 ---
 title: "ListboxRegisteredOption"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/listbox.ts#L58"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/ui/src/listbox.ts#L58"
 ---
 
 # ListboxRegisteredOption

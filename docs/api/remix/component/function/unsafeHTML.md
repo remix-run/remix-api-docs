@@ -1,6 +1,6 @@
 ---
 title: "unsafeHTML"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/unsafe-html.ts#L32"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/runtime/unsafe-html.ts#L32"
 ---
 
 # unsafeHTML

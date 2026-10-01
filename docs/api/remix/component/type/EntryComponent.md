@@ -1,6 +1,6 @@
 ---
 title: "EntryComponent"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/client-entries.ts#L63"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/runtime/client-entries.ts#L63"
 ---
 
 # EntryComponent

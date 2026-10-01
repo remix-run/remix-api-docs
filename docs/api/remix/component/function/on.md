@@ -1,6 +1,6 @@
 ---
 title: "on"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/mixins/on-mixin.ts#L82"
+source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/runtime/mixins/on-mixin.ts#L82"
 ---
 
 # on
