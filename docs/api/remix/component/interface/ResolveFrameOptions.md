@@ -1,6 +1,6 @@
 ---
 title: "ResolveFrameOptions"
-source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/runtime/frame.ts#L124"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/frame.ts#L125"
 ---
 
 # ResolveFrameOptions
@@ -26,19 +26,19 @@ interface ResolveFrameOptions {
 
 ### `encType`
 
-Form encoding selected by the form and its submitter.
+Body encoding selected by the reload options or the form and its submitter.
 
 ### `formData`
 
-Form values submitted to the frame source for a non-GET submission.
+Form values submitted to the frame source for a POST reload or navigation.
 
 ### `method`
 
-HTTP method selected by the form and its submitter.
+HTTP method selected by the reload options or the form and its submitter.
 
 ### `signal`
 
-Aborts the reload when the navigation that started it is cancelled.
+Cancels the active frame request. Custom resolvers should forward this to `fetch()`.
 
 ### `target`
 

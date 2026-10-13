@@ -1,6 +1,6 @@
 ---
 title: "NavigationOptions"
-source: "https://github.com/remix-run/remix/blob/remix@3.0.0/packages/component/src/runtime/navigation.ts#L68"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/navigation.ts#L70"
 ---
 
 # NavigationOptions
@@ -14,7 +14,8 @@ Options for client-side frame-aware navigation.
 ```ts
 type NavigationOptions = {
   history?: 'push' | 'replace'
-  resetScroll?: boolean
+  resetFocus?: NavigationInterceptOptions['focusReset'] | boolean
+  resetScroll?: NavigationInterceptOptions['scroll'] | boolean
   src?: string
   target?: string
 }

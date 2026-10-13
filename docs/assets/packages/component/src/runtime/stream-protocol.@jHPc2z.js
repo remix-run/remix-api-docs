@@ -1,1 +1,0 @@
-const e=/<!--\s*rmx:flush\s+(document|fragment)\s*-->/g;export function appendFlushMarker(e,t){return`${e}<!-- rmx:flush ${t} -->`}export function stripFlushMarkers(t){return e.lastIndex=0,t.replace(e,``)}export function findFlushMarker(t,n){e.lastIndex=n;let r=e.exec(t);if(r)return{index:r.index,endIndex:e.lastIndex,kind:r[1]}}

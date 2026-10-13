@@ -1,0 +1,29 @@
+---
+title: "animateEntrance"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-mixins.ts#L266"
+---
+
+# animateEntrance
+
+## Summary
+
+Animates an element when it is inserted into the DOM.
+
+## Signature
+
+```ts
+function animateEntrance<target extends EventTarget>(
+  config: AnimationConfig,
+): MixinDescriptor<target, [AnimationConfig], ElementProps>
+
+```
+
+## Parameters
+
+### `config`
+
+Entrance animation configuration.
+
+## Returns
+
+A mixin descriptor for the target element.
