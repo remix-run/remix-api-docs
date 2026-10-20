@@ -1,6 +1,6 @@
 ---
 title: "renderToStream"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/server/stream.ts#L274"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/server/stream.ts#L272"
 ---
 
 # renderToStream

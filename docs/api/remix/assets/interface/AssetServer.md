@@ -77,3 +77,5 @@ Returns preload URLs for one or more served asset files, ordered shallowest-firs
 
 Returns the href, preload URLs, and import map for a script entry module.
 
+Results are cached until a watched file changes. Each call returns a separate copy.
+

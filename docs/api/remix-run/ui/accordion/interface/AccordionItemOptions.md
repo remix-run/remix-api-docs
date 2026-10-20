@@ -1,6 +1,6 @@
 ---
 title: "AccordionItemOptions"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion.tsx#L113"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion.tsx#L106"
 ---
 
 # AccordionItemOptions

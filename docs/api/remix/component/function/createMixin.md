@@ -1,6 +1,6 @@
 ---
 title: "createMixin"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/mixins/mixin.ts#L346"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/mixins/mixin.ts#L358"
 ---
 
 # createMixin
@@ -14,6 +14,7 @@ Creates a typed mixin factory that can be passed through the `mix` prop.
 ```ts
 function createMixin<node extends EventTarget, args extends unknown[], props extends ElementProps>(
   type: MixinType<node, args, props>,
+  options: MixinOptions,
 ): MixinFactory<node, args, props>
 
 ```
@@ -23,6 +24,10 @@ function createMixin<node extends EventTarget, args extends unknown[], props ext
 ### `type`
 
 Mixin setup function.
+
+### `options`
+
+Server rendering options.
 
 ## Returns
 

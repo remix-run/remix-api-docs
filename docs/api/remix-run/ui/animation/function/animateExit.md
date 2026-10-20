@@ -1,6 +1,6 @@
 ---
 title: "animateExit"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-mixins.ts#L282"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-mixins.ts#L286"
 ---
 
 # animateExit

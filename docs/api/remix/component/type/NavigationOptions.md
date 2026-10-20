@@ -1,6 +1,6 @@
 ---
 title: "NavigationOptions"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/navigation.ts#L70"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/navigation.ts#L120"
 ---
 
 # NavigationOptions

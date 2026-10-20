@@ -1,6 +1,6 @@
 ---
 title: "ComboboxOptionOptions"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox.tsx#L88"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox.tsx#L78"
 ---
 
 # ComboboxOptionOptions

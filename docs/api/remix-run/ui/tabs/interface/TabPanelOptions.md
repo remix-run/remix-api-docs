@@ -1,6 +1,6 @@
 ---
 title: "TabPanelOptions"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs.ts#L59"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/tabs.ts#L55"
 ---
 
 # TabPanelOptions

@@ -1,6 +1,6 @@
 ---
 title: "AccordionBaseContextProps"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion.tsx#L88"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion.tsx#L84"
 ---
 
 # AccordionBaseContextProps
@@ -11,7 +11,6 @@ source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion.
 interface AccordionBaseContextProps {
   children?: RemixNode
   disabled?: boolean
-  headingLevel?: AccordionHeadingLevel
 }
 
 ```

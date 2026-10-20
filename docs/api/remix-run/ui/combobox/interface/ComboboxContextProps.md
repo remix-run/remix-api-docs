@@ -1,6 +1,6 @@
 ---
 title: "ComboboxContextProps"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox.tsx#L71"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox.tsx#L70"
 ---
 
 # ComboboxContextProps

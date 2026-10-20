@@ -4,29 +4,25 @@ Headless switch behavior for native inputs and custom controls.
 
 ```tsx
 import { css } from 'remix/component'
-import * as toggle from '@remix-run/ui/toggle'
+import { toggle } from '@remix-run/ui/toggle'
 
 export default function Example() {
   return () => (
     <div mix={rootCss}>
       <label mix={optionCss}>
         <input
-          mix={[nativeControlCss, toggle.control({ defaultChecked: true })]}
+          mix={[nativeControlCss, toggle({ defaultChecked: true })]}
           name="notifications"
           type="checkbox"
         />
         Email notifications
       </label>
 
-      <button mix={[customControlCss, toggle.control({})]} type="button">
+      <button mix={[customControlCss, toggle()]} type="button">
         Desktop alerts
       </button>
 
-      <button
-        disabled
-        mix={[customControlCss, toggle.control({})]}
-        type="button"
-      >
+      <button disabled mix={[customControlCss, toggle()]} type="button">
         Weekly digest
       </button>
     </div>

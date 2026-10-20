@@ -1,6 +1,6 @@
 ---
 title: "SelectContextProps"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/select.tsx#L57"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/select.tsx#L56"
 ---
 
 # SelectContextProps

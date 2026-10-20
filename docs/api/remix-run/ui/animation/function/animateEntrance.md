@@ -1,6 +1,6 @@
 ---
 title: "animateEntrance"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-mixins.ts#L266"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/animate-mixins.ts#L270"
 ---
 
 # animateEntrance

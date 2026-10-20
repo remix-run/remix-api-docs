@@ -1,6 +1,6 @@
 ---
 title: "ComboboxOpenStrategy"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox.tsx#L58"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/combobox.tsx#L57"
 ---
 
 # ComboboxOpenStrategy

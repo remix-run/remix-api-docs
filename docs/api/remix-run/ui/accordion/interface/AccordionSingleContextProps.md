@@ -1,6 +1,6 @@
 ---
 title: "AccordionSingleContextProps"
-source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion.tsx#L94"
+source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/accordion.tsx#L89"
 ---
 
 # AccordionSingleContextProps
@@ -13,7 +13,6 @@ interface AccordionSingleContextProps {
   collapsible?: boolean
   defaultValue?: AccordionSingleValue
   disabled?: boolean
-  headingLevel?: AccordionHeadingLevel
   onValueChange?: (value: AccordionSingleValue) => void
   type?: 'single'
   value?: AccordionSingleValue
