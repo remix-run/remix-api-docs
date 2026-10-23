@@ -1,1 +1,0 @@
-export function getActiveHeadingIndex(e,t,n){if(e.length===0)return-1;if(n)return e.length-1;let r=0;for(let[n,i]of e.entries()){if(i>t)break;r=n}return r}

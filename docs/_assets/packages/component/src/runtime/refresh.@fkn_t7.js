@@ -1,1 +1,0 @@
-export let componentStalenessCheck=null;const t=new Set;export function setComponentStalenessCheck(t){componentStalenessCheck=t}export function registerRoot(e){t.add(e)}export function unregisterRoot(e){t.delete(e)}export function reconcileRoots(){for(let e of t)e.reconcile()}
