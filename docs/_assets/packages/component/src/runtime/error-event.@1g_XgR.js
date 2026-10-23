@@ -1,1 +1,0 @@
-export function createComponentErrorEvent(e){return new ErrorEvent(`error`,{error:e})}export function getComponentError(e){return e.error}
