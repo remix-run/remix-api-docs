@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/
 ## Summary
 
 Parse a multipart [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request)
-and yield each part as a [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) object. Useful in HTTP server contexts
+and yield each part as a [`MultipartPart`](/multipart-parser/class/MultipartPart/) object. Useful in HTTP server contexts
 for handling incoming `multipart/*` requests.
 
 ## Signature
@@ -34,4 +34,4 @@ and `maxTotalSize`
 
 ## Returns
 
-An async generator yielding [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) objects
+An async generator yielding [`MultipartPart`](/multipart-parser/class/MultipartPart/) objects

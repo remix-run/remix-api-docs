@@ -28,4 +28,4 @@ Options for the cookie
 
 ## Returns
 
-A new [`Cookie`](/api/remix/cookie/class/Cookie/) object
+A new [`Cookie`](/cookie/class/Cookie/) object

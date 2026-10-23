@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/as
 
 ## Summary
 
-Options used to construct an [`AssetServer`](/api/remix/assets/interface/AssetServer/) via [`createAssetServer`](/api/remix/assets/function/createAssetServer/).
+Options used to construct an [`AssetServer`](/assets/interface/AssetServer/) via [`createAssetServer`](/assets/function/createAssetServer/).
 
 ## Signature
 

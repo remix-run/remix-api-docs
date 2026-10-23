@@ -8,10 +8,10 @@ source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/
 ## Summary
 
 Parse a `multipart/*` Node.js `Readable` stream and yield each part as a
-[`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) object.
+[`MultipartPart`](/multipart-parser/class/MultipartPart/) object.
 
 Note: This is a low-level API that requires manual handling of the stream and boundary.
-If you're building a web server, consider using [`parseMultipartRequest`](/api/remix/multipart-parser/node/function/parseMultipartRequest/) instead.
+If you're building a web server, consider using [`parseMultipartRequest`](/multipart-parser/node/function/parseMultipartRequest/) instead.
 
 ## Signature
 
@@ -35,4 +35,4 @@ Options for the parser
 
 ## Returns
 
-An async generator yielding [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) objects
+An async generator yielding [`MultipartPart`](/multipart-parser/class/MultipartPart/) objects

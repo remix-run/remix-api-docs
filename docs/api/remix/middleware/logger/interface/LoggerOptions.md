@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/logger-middleware
 
 ## Summary
 
-Options for the [`logger`](/api/remix/middleware/logger/function/logger/) middleware.
+Options for the [`logger`](/middleware/logger/function/logger/) middleware.
 
 ## Signature
 

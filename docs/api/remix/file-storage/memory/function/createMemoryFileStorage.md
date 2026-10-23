@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/file-storage/src/
 
 ## Summary
 
-Creates a simple, in-memory implementation of the [`FileStorage`](/api/remix/file-storage/interface/FileStorage/) interface.
+Creates a simple, in-memory implementation of the [`FileStorage`](/file-storage/interface/FileStorage/) interface.
 
 ## Signature
 
@@ -18,4 +18,4 @@ function createMemoryFileStorage(): FileStorage<File>
 
 ## Returns
 
-A new in-memory [`FileStorage`](/api/remix/file-storage/interface/FileStorage/) instance
+A new in-memory [`FileStorage`](/file-storage/interface/FileStorage/) instance

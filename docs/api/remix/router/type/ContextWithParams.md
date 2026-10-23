@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/
 
 ## Summary
 
-Adds route params to a [`RequestContext`](/api/remix/router/class/RequestContext/) while preserving its existing context values.
+Adds route params to a [`RequestContext`](/router/class/RequestContext/) while preserving its existing context values.
 
 ## Signature
 

@@ -1,6 +1,6 @@
 ---
 title: "IfRange"
-source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-range.ts#L14"
+source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/if-range.ts#L19"
 ---
 
 # IfRange
@@ -13,7 +13,7 @@ The `If-Range` header can contain either an entity tag (ETag) or an HTTP date.
 
 [MDN `If-Range` Reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Range)
 
-[HTTP/1.1 Specification](https://datatracker.ietf.org/doc/html/rfc7233#section-3.2)
+[HTTP Semantics Specification](https://www.rfc-editor.org/rfc/rfc9110.html#section-13.1.5)
 
 ## Signature
 
@@ -46,12 +46,13 @@ Checks if the `If-Range` condition is satisfied for the current resource state.
 
 This method always returns `true` if the `If-Range` header is not present,
 meaning the range request should proceed unconditionally.
+Empty values also return `true` for compatibility. Other malformed values return `false`.
 
 The `If-Range` header can contain either:
 - An HTTP date (RFC 7231 IMF-fixdate format)
 - An entity tag (ETag)
 
-When comparing ETags, only strong entity tags are matched as per RFC 7233.
+When comparing ETags, only quoted strong entity tags are matched as per RFC 9110.
 Weak entity tags (prefixed with `W/`) are never considered a match.
 
 #### Parameters

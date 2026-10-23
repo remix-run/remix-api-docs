@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/ex
 
 ## Summary
 
-Object returned by [`expect`](/api/remix/assert/variable/expect/). Exposes the synchronous matcher set
+Object returned by [`expect`](/assert/variable/expect/). Exposes the synchronous matcher set
 directly on the object, plus the negation and async-resolution gateways
 needed for full jest/vitest-style assertions.
 

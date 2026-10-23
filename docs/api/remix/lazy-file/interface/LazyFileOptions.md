@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib
 
 ## Summary
 
-Options for creating a [`LazyFile`](/api/remix/lazy-file/class/LazyFile/).
+Options for creating a [`LazyFile`](/lazy-file/class/LazyFile/).
 
 ## Signature
 

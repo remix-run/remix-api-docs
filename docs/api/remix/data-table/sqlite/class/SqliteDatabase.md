@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite
 
 ## Summary
 
-A [`Database`](/api/remix/data-table/class/Database/) backed by SQLite.
+A [`Database`](/data-table/class/Database/) backed by SQLite.
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/li
 
 ## Summary
 
-Options for configuring a [`TarParser`](/api/remix/tar-parser/class/TarParser/).
+Options for configuring a [`TarParser`](/tar-parser/class/TarParser/).
 
 ## Signature
 

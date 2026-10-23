@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/node-fetch-server
 
 ## Summary
 
-Result returned by [`createTestServer`](/api/remix/node-fetch-server/test/function/createTestServer/).
+Result returned by [`createTestServer`](/node-fetch-server/test/function/createTestServer/).
 
 ## Signature
 

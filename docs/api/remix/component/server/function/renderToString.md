@@ -1,6 +1,6 @@
 ---
 title: "renderToString"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/server/stream.ts#L1820"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/server/stream.ts#L1838"
 ---
 
 # renderToString

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/test/src/lib/fram
 
 ## Summary
 
-Alias for [`afterAll`](/api/remix/test/function/afterAll/) — matches the `node:test` API.
+Alias for [`afterAll`](/test/function/afterAll/) — matches the `node:test` API.
 
 ## Signature
 

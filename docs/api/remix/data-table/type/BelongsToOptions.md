@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 ## Summary
 
-Options for defining a [`belongsTo`](/api/remix/data-table/function/belongsTo/) relation.
+Options for defining a [`belongsTo`](/data-table/function/belongsTo/) relation.
 
 ## Signature
 

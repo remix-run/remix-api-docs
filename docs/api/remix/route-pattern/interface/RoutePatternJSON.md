@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src
 
 ## Summary
 
-Serialized URL pattern parts returned by the [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/) `toJSON` method.
+Serialized URL pattern parts returned by the [`RoutePattern`](/route-pattern/class/RoutePattern/) `toJSON` method.
 
 ## Signature
 

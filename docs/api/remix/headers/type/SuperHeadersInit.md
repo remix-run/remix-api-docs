@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/s
 
 ## Summary
 
-Initializer for [`SuperHeaders`](/api/remix/headers/class/SuperHeaders/).
+Initializer for [`SuperHeaders`](/headers/class/SuperHeaders/).
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src
 
 ## Summary
 
-Search parameters accepted by [`createHref`](/api/remix/route-pattern/href/function/createHref/).
+Search parameters accepted by [`createHref`](/route-pattern/href/function/createHref/).
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 ## Summary
 
-Begin a [`Query`](/api/remix/data-table/class/Query/) against a `@remix-run/data-table` source. The returned
+Begin a [`Query`](/data-table/class/Query/) against a `@remix-run/data-table` source. The returned
 builder is in `'all'` execution mode and unbound; chain `select`, `where`,
 `orderBy`, etc. to refine the plan, and `await` it after binding it to a
 runtime to materialize results.
@@ -49,4 +49,4 @@ The table or source to query.
 
 ## Returns
 
-An unbound [`Query`](/api/remix/data-table/class/Query/) builder rooted at `table`.
+An unbound [`Query`](/data-table/class/Query/) builder rooted at `table`.

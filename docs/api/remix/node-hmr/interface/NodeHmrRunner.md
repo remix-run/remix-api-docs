@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/node-hmr/src/inde
 
 ## Summary
 
-Handle returned by [`run`](/api/remix/node-hmr/function/run/) for controlling the supervised process.
+Handle returned by [`run`](/node-hmr/function/run/) for controlling the supervised process.
 
 ## Signature
 

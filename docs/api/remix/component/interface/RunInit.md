@@ -1,19 +1,20 @@
 ---
 title: "RunInit"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/run.ts#L15"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/run.ts#L16"
 ---
 
 # RunInit
 
 ## Summary
 
-Options for starting the client runtime with [`run`](/api/remix/component/function/run/).
+Options for starting the client runtime with [`run`](/component/function/run/).
 
 ## Signature
 
 ```ts
 interface RunInit {
   loadModule: LoadModule
+  prefetch?: PrefetchFrame
   processClientEntryPreloads?: ProcessClientEntryPreloads
   resolveFrame?: ResolveFrame
 }
@@ -28,6 +29,13 @@ Loads the named browser module export for a hydrated `clientEntry()`.
 
 Implementations usually call dynamic `import(moduleUrl)` and return
 `mod[exportName]`.
+
+### `prefetch`
+
+Starts loading a page for `data-rmx-prefetch` links and `prefetch()` calls, replacing the
+default HTML fetch and asset prefetch hints. Use it with `resolveFrame` to reuse uncacheable HTML,
+for example to hold the response in memory until the next navigation to that URL and target.
+Named-frame links pass their target and use `data-rmx-src` as the source when specified.
 
 ### `processClientEntryPreloads`
 

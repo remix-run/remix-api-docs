@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/
 
 ## Summary
 
-Cubic-bezier control points used by [`tween`](/api/remix-run/ui/animation/function/tween/).
+Cubic-bezier control points used by [`tween`](/ui/animation/function/tween/).
 
 ## Signature
 

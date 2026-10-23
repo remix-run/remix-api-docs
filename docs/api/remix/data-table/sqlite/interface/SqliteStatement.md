@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table-sqlite
 
 ## Summary
 
-Prepared statement shape used by [`SqliteDatabaseClient`](/api/remix/data-table/sqlite/interface/SqliteDatabaseClient/).
+Prepared statement shape used by [`SqliteDatabaseClient`](/data-table/sqlite/interface/SqliteDatabaseClient/).
 
 ## Signature
 

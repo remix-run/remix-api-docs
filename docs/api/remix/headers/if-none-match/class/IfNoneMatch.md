@@ -55,6 +55,8 @@ The entity tag to check for
 
 Checks if this header matches the given entity tag.
 
+Uses weak comparison, so matching strong and weak entity tags are equivalent.
+
 #### Parameters
 
 ##### `tag`

@@ -1,13 +1,13 @@
 ---
 title: "RangeInit"
-source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/range.ts#L6"
+source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/range.ts#L45"
 ---
 
 # RangeInit
 
 ## Summary
 
-Initializer for a [`Range`](/api/remix/headers/range/class/Range/) header value.
+Initializer for a [`Range`](/headers/range/class/Range/) header value.
 
 ## Signature
 

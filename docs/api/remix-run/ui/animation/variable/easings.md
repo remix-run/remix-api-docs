@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/
 
 ## Summary
 
-Common cubic-bezier presets for [`tween`](/api/remix-run/ui/animation/function/tween/).
+Common cubic-bezier presets for [`tween`](/ui/animation/function/tween/).
 
 ## Signature
 

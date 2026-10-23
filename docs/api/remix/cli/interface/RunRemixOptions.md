@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/cli/src/lib/cli.t
 
 ## Summary
 
-Options accepted by [`runRemix`](/api/remix/cli/function/runRemix/).
+Options accepted by [`runRemix`](/cli/function/runRemix/).
 
 ## Signature
 

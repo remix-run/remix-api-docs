@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/li
 ## Summary
 
 Parses a tar header block.
-With the default `relative` path policy, throws [`TarParseError`](/api/remix/tar-parser/class/TarParseError/) for invalid
+With the default `relative` path policy, throws [`TarParseError`](/tar-parser/class/TarParseError/) for invalid
 entry names or link targets, including paths that traverse above the archive root.
 
 ## Signature

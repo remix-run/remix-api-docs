@@ -9,7 +9,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 High-level database runtime used to query and manage a database.
 
-Database dialects extend this class and provide a [`DatabaseDriver`](/api/remix/data-table/interface/DatabaseDriver/) to the constructor.
+Database dialects extend this class and provide a [`DatabaseDriver`](/data-table/interface/DatabaseDriver/) to the constructor.
 The driver owns SQL execution, transactions, and connection lifecycle while this class provides
 the shared query, persistence, and migration APIs.
 

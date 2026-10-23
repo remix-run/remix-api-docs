@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/response/src/lib/
 
 ## Summary
 
-Options for creating a file response with [`createFileResponse`](/api/remix/response/file/function/createFileResponse/).
+Options for creating a file response with [`createFileResponse`](/response/file/function/createFileResponse/).
 
 ## Signature
 

@@ -45,7 +45,7 @@ The test name shown in reporter output.
 
 ### `fn`
 
-The test body, receiving a [`TestContext`](/api/remix/test/interface/TestContext/) as its first argument.
+The test body, receiving a [`TestContext`](/test/interface/TestContext/) as its first argument.
 
 ### `meta`
 

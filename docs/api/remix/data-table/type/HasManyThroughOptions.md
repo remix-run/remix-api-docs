@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 ## Summary
 
-Options for defining a [`hasManyThrough`](/api/remix/data-table/function/hasManyThrough/) relation.
+Options for defining a [`hasManyThrough`](/data-table/function/hasManyThrough/) relation.
 
 ## Signature
 

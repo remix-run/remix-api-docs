@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/
 
 ## Summary
 
-Parse a `multipart/*` message stream and yield each part as a [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) object.
+Parse a `multipart/*` message stream and yield each part as a [`MultipartPart`](/multipart-parser/class/MultipartPart/) object.
 
 Note: This is a low-level API that requires manual handling of the content and boundary.
 If you're building a web server, consider using
@@ -35,4 +35,4 @@ Options for the parser
 
 ## Returns
 
-An async generator that yields [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) objects
+An async generator that yields [`MultipartPart`](/multipart-parser/class/MultipartPart/) objects

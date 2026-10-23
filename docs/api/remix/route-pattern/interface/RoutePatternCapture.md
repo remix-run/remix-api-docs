@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src
 
 ## Summary
 
-A variable (`:name`) or wildcard (`*name`) declared in a [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/).
+A variable (`:name`) or wildcard (`*name`) declared in a [`RoutePattern`](/route-pattern/class/RoutePattern/).
 
 ## Signature
 

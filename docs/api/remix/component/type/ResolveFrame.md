@@ -1,6 +1,6 @@
 ---
 title: "ResolveFrame"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/frame.ts#L117"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/frame.ts#L124"
 ---
 
 # ResolveFrame

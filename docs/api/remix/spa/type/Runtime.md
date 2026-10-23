@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/spa/src/lib/spa.t
 
 ## Summary
 
-Client runtime returned by [`run`](/api/remix/spa/function/run/).
+Client runtime returned by [`run`](/spa/function/run/).
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/run
 
 ## Summary
 
-Root controller returned by [`createRoot`](/api/remix/component/function/createRoot/) and [`createRangeRoot`](/api/remix/component/function/createRangeRoot/).
+Root controller returned by [`createRoot`](/component/function/createRoot/) and [`createRangeRoot`](/component/function/createRangeRoot/).
 
 ## Signature
 

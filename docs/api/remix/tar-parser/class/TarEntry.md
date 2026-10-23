@@ -1,6 +1,6 @@
 ---
 title: "TarEntry"
-source: "https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L763"
+source: "https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/lib/tar.ts#L771"
 ---
 
 # TarEntry
@@ -60,7 +60,7 @@ The raw header info associated with this entry.
 
 The name of this entry.
 Parsed names include ustar prefixes and GNU/PAX overrides and follow the same
-path policy as [`parseTarHeader`](/api/remix/tar-parser/function/parseTarHeader/).
+path policy as [`parseTarHeader`](/tar-parser/function/parseTarHeader/).
 
 ### `size`
 

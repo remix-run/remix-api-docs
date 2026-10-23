@@ -1,0 +1,27 @@
+---
+title: "min"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L78"
+---
+
+# min
+
+## Summary
+
+Require a number to be greater than or equal to `limit`.
+
+## Signature
+
+```ts
+function min(limit: number): Check<number>
+
+```
+
+## Parameters
+
+### `limit`
+
+The inclusive minimum value
+
+## Returns
+
+A [`Check`](/data-schema/type/Check/) that enforces the lower bound

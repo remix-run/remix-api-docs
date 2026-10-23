@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/animation/
 
 ## Summary
 
-Iterator returned by [`spring`](/api/remix-run/ui/animation/variable/spring/), decorated for CSS and WAAPI use.
+Iterator returned by [`spring`](/ui/animation/variable/spring/), decorated for CSS and WAAPI use.
 
 ## Signature
 

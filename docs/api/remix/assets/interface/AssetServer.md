@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/assets/src/lib/as
 ## Summary
 
 Serves compiled scripts and styles for asset requests routed to it.
-Construct with [`createAssetServer`](/api/remix/assets/function/createAssetServer/).
+Construct with [`createAssetServer`](/assets/function/createAssetServer/).
 
 ## Signature
 

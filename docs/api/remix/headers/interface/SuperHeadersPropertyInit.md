@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/s
 
 ## Summary
 
-Property-based initializer for [`SuperHeaders`](/api/remix/headers/class/SuperHeaders/).
+Property-based initializer for [`SuperHeaders`](/headers/class/SuperHeaders/).
 
 ## Signature
 

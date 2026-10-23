@@ -9,7 +9,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/run
 
 An opaque value that Remix may insert into an element without HTML escaping.
 
-Create values with [`unsafeHTML`](/api/remix/component/function/unsafeHTML/). Remix does not sanitize or otherwise modify the HTML.
+Create values with [`unsafeHTML`](/component/function/unsafeHTML/). Remix does not sanitize or otherwise modify the HTML.
 
 ## Signature
 

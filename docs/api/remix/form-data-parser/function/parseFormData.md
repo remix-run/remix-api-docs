@@ -17,7 +17,7 @@ keeping all files in memory, the `uploadHandler` allows you to store the file on
 cloud storage service.
 
 Accepts `multipart/*` and `application/x-www-form-urlencoded` media types.
-Unsupported media types throw [`FormDataParseError`](/api/remix/form-data-parser/class/FormDataParseError/) before the body is read.
+Unsupported media types throw [`FormDataParseError`](/form-data-parser/class/FormDataParseError/) before the body is read.
 
 ## Signature
 

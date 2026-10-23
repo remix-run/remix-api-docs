@@ -9,7 +9,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/node-fetch-server
 
 Starts an `http.Server` on a random localhost port that delegates to the
 given fetch-style handler. Intended for integration tests — pair the
-returned [`TestServer`](/api/remix/node-fetch-server/test/interface/TestServer/) with `t.serve()` from `@remix-run/test` to
+returned [`TestServer`](/node-fetch-server/test/interface/TestServer/) with `t.serve()` from `@remix-run/test` to
 drive it from a Playwright `Page`.
 
 ## Signature
@@ -30,4 +30,4 @@ A fetch-style `(request) => Response | Promise<Response>`
 
 ## Returns
 
-A promise that resolves to the running [`TestServer`](/api/remix/node-fetch-server/test/interface/TestServer/).
+A promise that resolves to the running [`TestServer`](/node-fetch-server/test/interface/TestServer/).

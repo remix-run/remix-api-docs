@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/fetch-proxy/src/l
 
 ## Summary
 
-Options for [`createFetchProxy`](/api/remix/fetch-proxy/function/createFetchProxy/).
+Options for [`createFetchProxy`](/fetch-proxy/function/createFetchProxy/).
 
 ## Signature
 

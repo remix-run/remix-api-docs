@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/static-middleware
 
 ## Summary
 
-Options for the [`staticFiles`](/api/remix/middleware/static/function/staticFiles/) middleware in addition to [`FileResponseOptions`](/api/remix/response/file/interface/FileResponseOptions/).
+Options for the [`staticFiles`](/middleware/static/function/staticFiles/) middleware in addition to [`FileResponseOptions`](/response/file/interface/FileResponseOptions/).
 
 ## Signature
 

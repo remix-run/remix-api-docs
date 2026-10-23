@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/session-storage-r
 
 ## Summary
 
-Minimal Redis client contract required by [`createRedisSessionStorage`](/api/remix/session-storage/redis/function/createRedisSessionStorage/).
+Minimal Redis client contract required by [`createRedisSessionStorage`](/session-storage/redis/function/createRedisSessionStorage/).
 
 ## Signature
 

@@ -1,0 +1,21 @@
+---
+title: "url"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/checks.ts#L57"
+---
+
+# url
+
+## Summary
+
+Require a string to be a valid URL.
+
+## Signature
+
+```ts
+function url(): Check<string>
+
+```
+
+## Returns
+
+A [`Check`](/data-schema/type/Check/) that validates URL-like strings

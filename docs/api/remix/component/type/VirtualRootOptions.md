@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/run
 
 ## Summary
 
-Options for creating a virtual DOM root with [`createRoot`](/api/remix/component/function/createRoot/) or [`createRangeRoot`](/api/remix/component/function/createRangeRoot/).
+Options for creating a virtual DOM root with [`createRoot`](/component/function/createRoot/) or [`createRangeRoot`](/component/function/createRangeRoot/).
 
 ## Signature
 

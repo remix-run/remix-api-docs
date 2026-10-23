@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/ui/src/menu.tsx#L
 
 ## Summary
 
-Placement and offsets used by [`anchor`](/api/remix-run/ui/anchor/function/anchor/).
+Placement and offsets used by [`anchor`](/ui/anchor/function/anchor/).
 
 ## Signature
 

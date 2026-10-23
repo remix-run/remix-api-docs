@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/spa/src/lib/spa.t
 
 ## Summary
 
-Minimal router contract used by [`run`](/api/remix/spa/function/run/).
+Minimal router contract used by [`run`](/spa/function/run/).
 
 ## Signature
 

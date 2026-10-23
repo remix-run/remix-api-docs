@@ -1,0 +1,29 @@
+---
+title: "optional"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L808"
+---
+
+# optional
+
+## Summary
+
+Allow `undefined` as an input value, short-circuiting validation when `undefined` is provided.
+
+## Signature
+
+```ts
+function optional<input, output>(
+  schema: Schema<input, output>,
+): Schema<input | undefined, output | undefined>
+
+```
+
+## Parameters
+
+### `schema`
+
+The wrapped schema
+
+## Returns
+
+A schema that accepts `undefined` in addition to the wrapped schema

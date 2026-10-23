@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/test/src/lib/cont
 ## Summary
 
 Test Context providing utilities for the Remix test runner. The context is
-passed as the first argument to the [`test`](/api/remix/test/function/test/)/[`it`](/api/remix/test/function/it/) functions.
+passed as the first argument to the [`test`](/test/function/test/)/[`it`](/test/function/it/) functions.
 
 ## Signature
 
@@ -27,7 +27,7 @@ interface TestContext {
 
 ### `mock`
 
-Mock tracker for the current test using [`mock`](/api/remix/test/variable/mock/). Mirrors the shape of Node's
+Mock tracker for the current test using [`mock`](/test/variable/mock/). Mirrors the shape of Node's
 `t.mock`. Method mocks created via `t.mock` are auto-restored on test completion.
 
 ### `signal`

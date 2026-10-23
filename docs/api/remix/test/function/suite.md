@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/test/src/lib/fram
 
 ## Summary
 
-Alias for [`describe`](/api/remix/test/function/describe/).
+Alias for [`describe`](/test/function/describe/).
 
 ## Signature
 

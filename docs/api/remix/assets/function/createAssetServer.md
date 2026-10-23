@@ -45,4 +45,4 @@ Server configuration
 
 ## Returns
 
-A [`AssetServer`](/api/remix/assets/interface/AssetServer/) with `fetch()`, `getHref()`, and `getPreloads()` methods
+A [`AssetServer`](/assets/interface/AssetServer/) with `fetch()`, `getHref()`, and `getPreloads()` methods

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 ## Summary
 
-Options for defining a [`hasMany`](/api/remix/data-table/function/hasMany/) relation.
+Options for defining a [`hasMany`](/data-table/function/hasMany/) relation.
 
 ## Signature
 

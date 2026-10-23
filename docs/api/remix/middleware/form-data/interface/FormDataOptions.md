@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/form-data-middlew
 
 ## Summary
 
-Options for the [`formData`](/api/remix/middleware/form-data/function/formData/) middleware.
+Options for the [`formData`](/middleware/form-data/function/formData/) middleware.
 
 ## Signature
 

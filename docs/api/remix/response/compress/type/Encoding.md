@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/response/src/lib/
 
 ## Summary
 
-Encodings supported by [`compressResponse`](/api/remix/response/compress/function/compressResponse/).
+Encodings supported by [`compressResponse`](/response/compress/function/compressResponse/).
 
 ## Signature
 

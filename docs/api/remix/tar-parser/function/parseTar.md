@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/tar-parser/src/li
 ## Summary
 
 Parse a tar archive and call the given handler for each entry it contains.
-Applies the configured path policy, as in [`parseTarHeader`](/api/remix/tar-parser/function/parseTarHeader/), before
+Applies the configured path policy, as in [`parseTarHeader`](/tar-parser/function/parseTarHeader/), before
 calling the handler.
 
 ```ts

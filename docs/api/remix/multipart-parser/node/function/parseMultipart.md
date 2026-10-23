@@ -7,10 +7,10 @@ source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/
 
 ## Summary
 
-Parse a `multipart/*` Node.js `Buffer` and yield each part as a [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) object.
+Parse a `multipart/*` Node.js `Buffer` and yield each part as a [`MultipartPart`](/multipart-parser/class/MultipartPart/) object.
 
 Note: This is a low-level API that requires manual handling of the content and boundary.
-If you're building a web server, consider using [`parseMultipartRequest`](/api/remix/multipart-parser/node/function/parseMultipartRequest/) instead.
+If you're building a web server, consider using [`parseMultipartRequest`](/multipart-parser/node/function/parseMultipartRequest/) instead.
 
 ## Signature
 
@@ -34,4 +34,4 @@ Options for the parser
 
 ## Returns
 
-A generator yielding [`MultipartPart`](/api/remix/multipart-parser/class/MultipartPart/) objects
+A generator yielding [`MultipartPart`](/multipart-parser/class/MultipartPart/) objects

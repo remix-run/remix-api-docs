@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 ## Summary
 
-Fully-typed table object returned by [`table`](/api/remix/data-table/function/table/).
+Fully-typed table object returned by [`table`](/data-table/function/table/).
 
 ## Signature
 

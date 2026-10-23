@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/html-template/src
 
 ## Summary
 
-Tagged template helper for creating [`SafeHtml`](/api/remix/html-template/type/SafeHtml/) values.
+Tagged template helper for creating [`SafeHtml`](/html-template/type/SafeHtml/) values.
 
 ```ts
 let unsafe = '<script>alert(1)</script>'

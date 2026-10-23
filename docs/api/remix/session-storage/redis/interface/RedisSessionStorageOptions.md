@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/session-storage-r
 
 ## Summary
 
-Options for Redis-backed session storage created by [`createRedisSessionStorage`](/api/remix/session-storage/redis/function/createRedisSessionStorage/).
+Options for Redis-backed session storage created by [`createRedisSessionStorage`](/session-storage/redis/function/createRedisSessionStorage/).
 
 ## Signature
 

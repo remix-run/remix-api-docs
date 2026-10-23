@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/ser
 
 ## Summary
 
-Props for [`ImportMap`](/api/remix/component/server/function/ImportMap/), including authored mappings and optional script attributes.
+Props for [`ImportMap`](/component/server/function/ImportMap/), including authored mappings and optional script attributes.
 The component owns the script's type and contents; external sources and children are excluded.
 
 ## Signature

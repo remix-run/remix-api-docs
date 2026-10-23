@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/l
 
 ## Summary
 
-Validate a value and return the typed output or throw a [`ValidationError`](/api/remix/data-schema/class/ValidationError/).
+Validate a value and return the typed output or throw a [`ValidationError`](/data-schema/class/ValidationError/).
 
 ## Signature
 

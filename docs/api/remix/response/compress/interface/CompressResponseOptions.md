@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/response/src/lib/
 
 ## Summary
 
-Configuration for negotiated response compression in [`compressResponse`](/api/remix/response/compress/function/compressResponse/).
+Configuration for negotiated response compression in [`compressResponse`](/response/compress/function/compressResponse/).
 
 ## Signature
 

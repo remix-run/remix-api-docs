@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/l
 
 ## Summary
 
-Error thrown by [`parse`](/api/remix/data-schema/function/parse/) when validation fails.
+Error thrown by [`parse`](/data-schema/function/parse/) when validation fails.
 
 ## Signature
 

@@ -9,9 +9,9 @@ source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src
 
 A parsed route pattern.
 
-Create one with the [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/) `parse` method. The constructor is public but takes a parsed
+Create one with the [`RoutePattern`](/route-pattern/class/RoutePattern/) `parse` method. The constructor is public but takes a parsed
 representation that is not part of the public API; prefer `RoutePattern.parse` instead. Use
-`source`, `toString()`, `toJSON()`, and [`getRoutePatternCaptures`](/api/remix/route-pattern/function/getRoutePatternCaptures/) for inspection.
+`source`, `toString()`, `toJSON()`, and [`getRoutePatternCaptures`](/route-pattern/function/getRoutePatternCaptures/) for inspection.
 
 ## Signature
 
@@ -38,7 +38,7 @@ class RoutePattern<source> {
 
 Create a new `RoutePattern` from its parsed parts.
 
-The parts are not part of the public API. Use the [`RoutePattern`](/api/remix/route-pattern/class/RoutePattern/) `parse` method to create a pattern
+The parts are not part of the public API. Use the [`RoutePattern`](/route-pattern/class/RoutePattern/) `parse` method to create a pattern
 from a source string.
 
 ### Parameters

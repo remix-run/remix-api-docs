@@ -9,8 +9,8 @@ source: "https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/
 
 A route builder registers routes into a router.
 
-Route builders are useful for composing route groups with [`RouteInstaller`](/api/remix/router/interface/RouteInstaller/). Unlike a
-[`Router`](/api/remix/router/interface/Router/), a route builder cannot dispatch requests.
+Route builders are useful for composing route groups with [`RouteInstaller`](/router/interface/RouteInstaller/). Unlike a
+[`Router`](/router/interface/Router/), a route builder cannot dispatch requests.
 
 ## Signature
 

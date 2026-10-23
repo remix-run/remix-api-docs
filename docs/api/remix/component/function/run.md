@@ -1,6 +1,6 @@
 ---
 title: "run"
-source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/run.ts#L147"
+source: "https://github.com/remix-run/remix/blob/main/packages/component/src/runtime/run.ts#L156"
 ---
 
 # run

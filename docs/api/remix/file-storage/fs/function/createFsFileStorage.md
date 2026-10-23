@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/file-storage/src/
 
 ## Summary
 
-Creates a [`FileStorage`](/api/remix/file-storage/interface/FileStorage/) that is backed by a filesystem directory using `node:fs`.
+Creates a [`FileStorage`](/file-storage/interface/FileStorage/) that is backed by a filesystem directory using `node:fs`.
 
 Important: No attempt is made to avoid overwriting existing files, so the directory used should
 be a new directory solely dedicated to this storage object.
@@ -32,4 +32,4 @@ The directory where files are stored
 
 ## Returns
 
-A new [`FileStorage`](/api/remix/file-storage/interface/FileStorage/) backed by a filesystem directory
+A new [`FileStorage`](/file-storage/interface/FileStorage/) backed by a filesystem directory

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/
 
 ## Summary
 
-A map of route names to [`Route`](/api/remix/routes/class/Route/) objects or nested route maps.
+A map of route names to [`Route`](/routes/class/Route/) objects or nested route maps.
 
 ## Signature
 

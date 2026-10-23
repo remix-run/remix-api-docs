@@ -1,0 +1,1040 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/favicon.ico" sizes="32x32" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" /><link data-rmx-key="preload:/_assets/app/actions/public/docs.@rpunQS.css" rel="preload" href="/_assets/app/actions/public/docs.@rpunQS.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/docs.@1vMcwc.css" rel="preload" href="/_assets/docs-shared/styles/public/docs.@1vMcwc.css" as="style" /><link data-rmx-key="preload:/_assets/app/actions/public/api.@Uen4ZC.css" rel="preload" href="/_assets/app/actions/public/api.@Uen4ZC.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/tokens.@-ww-FN.css" rel="preload" href="/_assets/docs-shared/styles/public/tokens.@-ww-FN.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/base.@a7CQ2G.css" rel="preload" href="/_assets/docs-shared/styles/public/base.@a7CQ2G.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/shell.@4hQxIl.css" rel="preload" href="/_assets/docs-shared/styles/public/shell.@4hQxIl.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/nav.@CfVW1g.css" rel="preload" href="/_assets/docs-shared/styles/public/nav.@CfVW1g.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/search.@ojqHaR.css" rel="preload" href="/_assets/docs-shared/styles/public/search.@ojqHaR.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/article.@L_BdiE.css" rel="preload" href="/_assets/docs-shared/styles/public/article.@L_BdiE.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/markdown.@skyZ4R.css" rel="preload" href="/_assets/docs-shared/styles/public/markdown.@skyZ4R.css" as="style" /><link data-rmx-key="preload:/_assets/docs-shared/styles/public/demo.@Y9Fnsd.css" rel="preload" href="/_assets/docs-shared/styles/public/demo.@Y9Fnsd.css" as="style" /><meta data-rmx-key="docs-robots" name="robots" content="nofollow" /><title data-rmx-key="docs-title">remix/route-pattern | Remix Docs</title><link data-rmx-key="docs-markdown-alternate" rel="alternate" type="text/markdown" href="/route-pattern.md" title="Markdown docs for remix/route-pattern" /><link data-rmx-key="docs-pagefind-stylesheet" href="/_assets/pagefind/pagefind-component-ui.css" rel="stylesheet" /><link data-rmx-key="docs-stylesheet" rel="stylesheet" href="/_assets/app/actions/public/docs.@rpunQS.css" /><script data-rmx-import-map type="importmap">{"imports":{"/_assets/packages/multiple-import-maps-polyfill/src/lib/polyfill.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/polyfill.@dOiShj.js","/_assets/packages/component/src/runtime/run.js":"/_assets/packages/component/src/runtime/run.@ndeAFp.js","/_assets/packages/multiple-import-maps-polyfill/src/lib/features.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/features.@HbXh_m.js","/_assets/packages/multiple-import-maps-polyfill/src/lib/native-resolve.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/native-resolve.@mBHfnj.js","/_assets/packages/multiple-import-maps-polyfill/src/lib/core.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/core.@bNEoon.js","/_assets/packages/component/src/style/stylesheet.js":"/_assets/packages/component/src/style/stylesheet.@Yw4upa.js","/_assets/packages/component/src/runtime/frame.js":"/_assets/packages/component/src/runtime/frame.@P73DqX.js","/_assets/packages/component/src/runtime/vdom.js":"/_assets/packages/component/src/runtime/vdom.@iY2s8a.js","/_assets/packages/component/src/runtime/error-event.js":"/_assets/packages/component/src/runtime/error-event.@1g_XgR.js","/_assets/packages/component/src/runtime/navigation.js":"/_assets/packages/component/src/runtime/navigation.@nmoOfy.js","/_assets/packages/component/src/runtime/prefetch.js":"/_assets/packages/component/src/runtime/prefetch.@90MBGd.js","/_assets/packages/component/src/runtime/typed-event-target.js":"/_assets/packages/component/src/runtime/typed-event-target.@HHE5hP.js","/_assets/docs-shared/hmr/public/server-update.js":"/_assets/docs-shared/hmr/public/server-update.@BnlDLw.js","/_assets/docs-shared/search/public/pagefind-search.js":"/_assets/docs-shared/search/public/pagefind-search.@ypcKyc.js","/_assets/packages/multiple-import-maps-polyfill/src/lib/env.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/env.@4EkdeH.js","/_assets/packages/multiple-import-maps-polyfill/src/lib/trusted-types.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/trusted-types.@YUwRJO.js","/_assets/packages/multiple-import-maps-polyfill/src/lib/resolve.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/resolve.@NoiiOU.js","/_assets/packages/component/src/runtime/prefetch-links.js":"/_assets/packages/component/src/runtime/prefetch-links.@ArMlKC.js","/_assets/packages/component/src/runtime/jsx.js":"/_assets/packages/component/src/runtime/jsx.@X1avvG.js","/_assets/packages/component/src/runtime/component.js":"/_assets/packages/component/src/runtime/component.@XazFgy.js","/_assets/packages/component/src/runtime/invariant.js":"/_assets/packages/component/src/runtime/invariant.@37Pp5R.js","/_assets/packages/component/src/runtime/diff-dom.js":"/_assets/packages/component/src/runtime/diff-dom.@w-to4b.js","/_assets/packages/component/src/runtime/stream-protocol.js":"/_assets/packages/component/src/runtime/stream-protocol.@JaGQ5O.js","/_assets/packages/component/src/runtime/module-preloader.js":"/_assets/packages/component/src/runtime/module-preloader.@EAc72Z.js","/_assets/packages/component/src/runtime/frame-resolution.js":"/_assets/packages/component/src/runtime/frame-resolution.@bBrZCO.js","/_assets/packages/component/src/runtime/client-entry-boundary.js":"/_assets/packages/component/src/runtime/client-entry-boundary.@Q07jk3.js","/_assets/packages/component/src/runtime/import-map-manager.js":"/_assets/packages/component/src/runtime/import-map-manager.@bVKmlq.js","/_assets/packages/component/src/runtime/document-reload.js":"/_assets/packages/component/src/runtime/document-reload.@6CG38G.js","/_assets/packages/component/src/runtime/scheduler.js":"/_assets/packages/component/src/runtime/scheduler.@0J--YU.js","/_assets/packages/component/src/runtime/reconcile.js":"/_assets/packages/component/src/runtime/reconcile.@wrffTo.js","/_assets/packages/component/src/runtime/to-vnode.js":"/_assets/packages/component/src/runtime/to-vnode.@hx4i6t.js","/_assets/packages/component/src/runtime/vnode.js":"/_assets/packages/component/src/runtime/vnode.@Em-7G_.js","/_assets/packages/component/src/runtime/diff-props.js":"/_assets/packages/component/src/runtime/diff-props.@nJ01u2.js","/_assets/packages/component/src/runtime/refresh.js":"/_assets/packages/component/src/runtime/refresh.@fkn_t7.js","/_assets/packages/component/src/style/layers.js":"/_assets/packages/component/src/style/layers.@_xzmKp.js","/_assets/packages/component/src/runtime/form-navigation.js":"/_assets/packages/component/src/runtime/form-navigation.@06cYkG.js","/_assets/packages/multiple-import-maps-polyfill/src/lib/self.js":"/_assets/packages/multiple-import-maps-polyfill/src/lib/self.@893yhP.js","/_assets/npm/.pnpm/es-module-lexer%402.0.0/node_modules/es-module-lexer/dist/lexer.js":"/_assets/npm/.pnpm/es-module-lexer%402.0.0/node_modules/es-module-lexer/dist/lexer.@lkWY9r.js","/_assets/packages/component/src/runtime/core/vnode.js":"/_assets/packages/component/src/runtime/core/vnode.@si3UOY.js","/_assets/packages/component/src/runtime/spa-response.js":"/_assets/packages/component/src/runtime/spa-response.@LQQXa0.js","/_assets/packages/component/src/runtime/document-state.js":"/_assets/packages/component/src/runtime/document-state.@X6hT0k.js","/_assets/packages/component/src/runtime/core/props.js":"/_assets/packages/component/src/runtime/core/props.@lBxJ4X.js","/_assets/packages/component/src/runtime/client-entries.js":"/_assets/packages/component/src/runtime/client-entries.@fcPmpr.js","/_assets/packages/component/src/runtime/mixins/mixin.js":"/_assets/packages/component/src/runtime/mixins/mixin.@yX2sHZ.js","/_assets/packages/component/src/runtime/mixins/on-mixin.js":"/_assets/packages/component/src/runtime/mixins/on-mixin.@Ei1JNw.js","/_assets/packages/component/src/runtime/core/children.js":"/_assets/packages/component/src/runtime/core/children.@R1EsVe.js","/_assets/packages/component/src/runtime/core/mix.js":"/_assets/packages/component/src/runtime/core/mix.@RRO8gP.js","/_assets/packages/component/src/runtime/unsafe-html.js":"/_assets/packages/component/src/runtime/unsafe-html.@mvmktw.js","/_assets/packages/component/src/runtime/core/attributes.js":"/_assets/packages/component/src/runtime/core/attributes.@Wpei5m.js","/_assets/packages/component/src/style/style.js":"/_assets/packages/component/src/style/style.@_a8vEt.js","/_assets/packages/component/src/runtime/svg-attributes.js":"/_assets/packages/component/src/runtime/svg-attributes.@1xXdCq.js","/_assets/packages/component/src/runtime/mixins/ref-mixin.js":"/_assets/packages/component/src/runtime/mixins/ref-mixin.@Kf8xx5.js","/_assets/docs-shared/ui/public/selection-indicator.js":"/_assets/docs-shared/ui/public/selection-indicator.@eQI_uP.js","/_assets/docs-shared/ui/public/table-of-contents-active.js":"/_assets/docs-shared/ui/public/table-of-contents-active.@8jY4VM.js"},"scopes":{"/_assets/app/":{"remix-docs-shared/hmr/browser":"/_assets/docs-shared/hmr/public/server-update.@BnlDLw.js","remix-docs-shared/search/browser":"/_assets/docs-shared/search/public/pagefind-search.@ypcKyc.js"},"/_assets/packages/multiple-import-maps-polyfill/":{"es-module-lexer":"/_assets/npm/.pnpm/es-module-lexer%402.0.0/node_modules/es-module-lexer/dist/lexer.@lkWY9r.js"}}}</script><link data-rmx-key="modulepreload:/_assets/app/actions/public/entry.@5HZHeA.tsx" rel="modulepreload" href="/_assets/app/actions/public/entry.@5HZHeA.js" /><link data-rmx-key="modulepreload:/_assets/packages/multiple-import-maps-polyfill/src/lib/polyfill.@dOiShj.ts" rel="modulepreload" href="/_assets/packages/multiple-import-maps-polyfill/src/lib/polyfill.@dOiShj.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/run.@ndeAFp.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/run.@ndeAFp.js" /><link data-rmx-key="modulepreload:/_assets/docs-shared/hmr/public/server-update.@BnlDLw.ts" rel="modulepreload" href="/_assets/docs-shared/hmr/public/server-update.@BnlDLw.js" /><link data-rmx-key="modulepreload:/_assets/docs-shared/search/public/pagefind-search.@ypcKyc.ts" rel="modulepreload" href="/_assets/docs-shared/search/public/pagefind-search.@ypcKyc.js" /><link data-rmx-key="modulepreload:/_assets/packages/multiple-import-maps-polyfill/src/lib/features.@HbXh_m.ts" rel="modulepreload" href="/_assets/packages/multiple-import-maps-polyfill/src/lib/features.@HbXh_m.js" /><link data-rmx-key="modulepreload:/_assets/packages/multiple-import-maps-polyfill/src/lib/native-resolve.@mBHfnj.ts" rel="modulepreload" href="/_assets/packages/multiple-import-maps-polyfill/src/lib/native-resolve.@mBHfnj.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/frame.@P73DqX.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/frame.@P73DqX.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/vdom.@iY2s8a.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/vdom.@iY2s8a.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/style/stylesheet.@Yw4upa.ts" rel="modulepreload" href="/_assets/packages/component/src/style/stylesheet.@Yw4upa.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/error-event.@1g_XgR.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/error-event.@1g_XgR.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/navigation.@nmoOfy.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/navigation.@nmoOfy.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/prefetch.@90MBGd.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/prefetch.@90MBGd.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/typed-event-target.@HHE5hP.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/typed-event-target.@HHE5hP.js" /><link data-rmx-key="modulepreload:/_assets/packages/multiple-import-maps-polyfill/src/lib/env.@4EkdeH.ts" rel="modulepreload" href="/_assets/packages/multiple-import-maps-polyfill/src/lib/env.@4EkdeH.js" /><link data-rmx-key="modulepreload:/_assets/packages/multiple-import-maps-polyfill/src/lib/trusted-types.@YUwRJO.ts" rel="modulepreload" href="/_assets/packages/multiple-import-maps-polyfill/src/lib/trusted-types.@YUwRJO.js" /><link data-rmx-key="modulepreload:/_assets/packages/multiple-import-maps-polyfill/src/lib/resolve.@NoiiOU.ts" rel="modulepreload" href="/_assets/packages/multiple-import-maps-polyfill/src/lib/resolve.@NoiiOU.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/prefetch-links.@ArMlKC.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/prefetch-links.@ArMlKC.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/jsx.@X1avvG.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/jsx.@X1avvG.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/component.@XazFgy.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/component.@XazFgy.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/invariant.@37Pp5R.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/invariant.@37Pp5R.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/diff-dom.@w-to4b.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/diff-dom.@w-to4b.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/stream-protocol.@JaGQ5O.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/stream-protocol.@JaGQ5O.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/module-preloader.@EAc72Z.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/module-preloader.@EAc72Z.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/frame-resolution.@bBrZCO.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/frame-resolution.@bBrZCO.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/client-entry-boundary.@Q07jk3.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/client-entry-boundary.@Q07jk3.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/import-map-manager.@bVKmlq.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/import-map-manager.@bVKmlq.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/document-reload.@6CG38G.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/document-reload.@6CG38G.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/scheduler.@0J--YU.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/scheduler.@0J--YU.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/reconcile.@wrffTo.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/reconcile.@wrffTo.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/to-vnode.@hx4i6t.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/to-vnode.@hx4i6t.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/vnode.@Em-7G_.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/vnode.@Em-7G_.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/diff-props.@nJ01u2.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/diff-props.@nJ01u2.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/refresh.@fkn_t7.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/refresh.@fkn_t7.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/style/layers.@_xzmKp.ts" rel="modulepreload" href="/_assets/packages/component/src/style/layers.@_xzmKp.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/form-navigation.@06cYkG.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/form-navigation.@06cYkG.js" /><link data-rmx-key="modulepreload:/_assets/packages/multiple-import-maps-polyfill/src/lib/self.@893yhP.ts" rel="modulepreload" href="/_assets/packages/multiple-import-maps-polyfill/src/lib/self.@893yhP.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/core/vnode.@si3UOY.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/core/vnode.@si3UOY.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/spa-response.@LQQXa0.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/spa-response.@LQQXa0.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/document-state.@X6hT0k.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/document-state.@X6hT0k.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/core/props.@lBxJ4X.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/core/props.@lBxJ4X.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/client-entries.@fcPmpr.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/client-entries.@fcPmpr.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/mixins/mixin.@yX2sHZ.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/mixins/mixin.@yX2sHZ.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/mixins/on-mixin.@Ei1JNw.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/mixins/on-mixin.@Ei1JNw.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/core/children.@R1EsVe.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/core/children.@R1EsVe.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/core/mix.@RRO8gP.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/core/mix.@RRO8gP.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/unsafe-html.@mvmktw.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/unsafe-html.@mvmktw.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/core/attributes.@Wpei5m.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/core/attributes.@Wpei5m.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/style/style.@_a8vEt.ts" rel="modulepreload" href="/_assets/packages/component/src/style/style.@_a8vEt.js" /><link data-rmx-key="modulepreload:/_assets/packages/component/src/runtime/svg-attributes.@1xXdCq.ts" rel="modulepreload" href="/_assets/packages/component/src/runtime/svg-attributes.@1xXdCq.js" /><script data-rmx-key="docs-client-entry" type="module" src="/_assets/app/actions/public/entry.@5HZHeA.js"></script><script data-rmx-key="docs-pagefind-client-entry" src="/_assets/pagefind/pagefind-component-ui.js" type="module"></script><link data-rmx-module-preload rel="modulepreload" href="/_assets/app/actions/public/api-nav.@3BrM_i.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/jsx.@X1avvG.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/typed-event-target.@HHE5hP.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/invariant.@37Pp5R.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/client-entries.@fcPmpr.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/core/mix.@RRO8gP.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/mixins/mixin.@yX2sHZ.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/mixins/on-mixin.@Ei1JNw.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/mixins/ref-mixin.@Kf8xx5.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/core/vnode.@si3UOY.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/docs-shared/ui/public/code-block-copy.@6o5PvJ.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/docs-shared/ui/public/table-of-contents.@CA303x.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/docs-shared/ui/public/selection-indicator.@eQI_uP.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/docs-shared/ui/public/table-of-contents-active.@8jY4VM.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/docs-shared/ui/public/docs-shell.@8D3Ep_.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/run.@ndeAFp.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/navigation.@nmoOfy.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/frame.@P73DqX.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/vdom.@iY2s8a.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/style/stylesheet.@Yw4upa.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/error-event.@1g_XgR.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/prefetch.@90MBGd.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/form-navigation.@06cYkG.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/document-reload.@6CG38G.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/prefetch-links.@ArMlKC.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/component.@XazFgy.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/diff-dom.@w-to4b.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/stream-protocol.@JaGQ5O.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/module-preloader.@EAc72Z.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/frame-resolution.@bBrZCO.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/client-entry-boundary.@Q07jk3.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/import-map-manager.@bVKmlq.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/scheduler.@0J--YU.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/reconcile.@wrffTo.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/to-vnode.@hx4i6t.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/vnode.@Em-7G_.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/diff-props.@nJ01u2.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/refresh.@fkn_t7.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/style/layers.@_xzmKp.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/spa-response.@LQQXa0.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/document-state.@X6hT0k.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/core/props.@lBxJ4X.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/core/children.@R1EsVe.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/unsafe-html.@mvmktw.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/core/attributes.@Wpei5m.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/style/style.@_a8vEt.js" /><link data-rmx-module-preload rel="modulepreload" href="/_assets/packages/component/src/runtime/svg-attributes.@1xXdCq.js" /><style data-rmx-style="rmxc-1xwhilq12q3xgz">@layer rmx.rmxc-1xwhilq12q3xgz { .rmxc-1xwhilq12q3xgz {
+  position: fixed;
+  top: var(--rmx-space-sm);
+  left: var(--rmx-space-sm);
+  z-index: 100;
+  padding: var(--rmx-space-sm) var(--rmx-space-md);
+  border-radius: var(--rmx-radius-md);
+  background: var(--rmx-surface-lvl0);
+  color: var(--rmx-color-text-primary);
+  transform: translateY(calc(-100% - var(--rmx-space-lg)));
+  &:focus {
+    transform: none;
+  }
+} }</style><style data-rmx-style="rmxc-8hztos1c0miu9">@layer rmx.rmxc-8hztos1c0miu9 { .rmxc-8hztos1c0miu9 {
+  position: relative;
+  inset: 0 0 auto;
+  z-index: 50;
+  display: block;
+  height: var(--site-header-height);
+  padding: 0;
+  border: 0;
+  border-bottom: var(--rmx-space-px) solid var(--rmx-color-border-subtle);
+  background: var(--docs-shell-background);
+}
+@media (width >= 900px) {
+  .rmxc-8hztos1c0miu9 {
+    position: fixed;
+    border-bottom: 0;
+  }
+} }</style><style data-rmx-style="rmxc-1tjm2ms1ug53lh">@layer rmx.rmxc-1tjm2ms1ug53lh { .rmxc-1tjm2ms1ug53lh {
+  position: absolute;
+  top: calc((var(--site-header-height) - 16px) / 2);
+  left: 24px;
+  display: block;
+  width: 163px;
+  height: 16px;
+  color: var(--rmx-color-text-primary);
+  text-decoration: none;
+}
+@media (width >= 900px) {
+  .rmxc-1tjm2ms1ug53lh {
+    left: var(--docs-sidebar-inline-start);
+    :root[data-docs-nav-collapsed] & {
+      width: 37px;
+    }
+  }
+} }</style><style data-rmx-style="rmxc-1t2jzglqblzq2">@layer rmx.rmxc-1t2jzglqblzq2 { .rmxc-1t2jzglqblzq2 {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: block;
+  width: auto;
+  height: 16px;
+  max-height: none;
+  pointer-events: none;
+}
+@media (prefers-color-scheme: dark) {
+  .rmxc-1t2jzglqblzq2 {
+    filter: invert(1);
+  }
+} }</style><style data-rmx-style="rmxc-12rz3ed994uwg">@layer rmx.rmxc-12rz3ed994uwg { .rmxc-12rz3ed994uwg {
+  opacity: 0;
+}
+@media (width >= 900px) {
+  .rmxc-12rz3ed994uwg {
+    opacity: var(--docs-nav-collapse);
+  }
+} }</style><style data-rmx-style="rmxc-1kwt8j21i2yff7">@layer rmx.rmxc-1kwt8j21i2yff7 { .rmxc-1kwt8j21i2yff7 {
+  opacity: 1;
+}
+@media (width >= 900px) {
+  .rmxc-1kwt8j21i2yff7 {
+    opacity: calc(1 - var(--docs-nav-collapse));
+  }
+} }</style><style data-rmx-style="rmxc-49ezxk1bdmat1">@layer rmx.rmxc-49ezxk1bdmat1 { .rmxc-49ezxk1bdmat1 {
+  position: fixed;
+  top: calc((var(--site-header-height) - 32px) / 2);
+  left: calc(var(--docs-sidebar-inline-start) + 97px);
+  z-index: 51;
+  display: none;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  visibility: hidden;
+  place-items: center;
+  border: 0;
+  border-radius: var(--rmx-radius-md);
+  color: var(--rmx-color-text-secondary);
+  background: transparent;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  &:hover, &:focus-visible {
+    background: var(--docs-nav-hover-background);
+  }
+  & svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+  :root[data-docs-nav-collapsed] & {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-49ezxk1bdmat1 {
+    display: grid;
+  }
+} }</style><style data-rmx-style="rmxc-7hu3axrlkslm">@layer rmx.rmxc-7hu3axrlkslm { .rmxc-7hu3axrlkslm {
+  appearance: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: var(--rmx-radius-md);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  &:focus-visible {
+    outline: 2px solid var(--rmx-color-focus-ring);
+    outline-offset: 2px;
+  }
+} }</style><style data-rmx-style="rmxc-1n6sscx10hdk2w">@layer rmx.rmxc-1n6sscx10hdk2w { .rmxc-1n6sscx10hdk2w {
+  &:hover, &:focus-visible {
+    background: var(--docs-nav-hover-background);
+  }
+} }</style><style data-rmx-style="rmxc-7lylmpzqemty">@layer rmx.rmxc-7lylmpzqemty { .rmxc-7lylmpzqemty {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 40px;
+  padding: 8px 10px;
+  cursor: pointer;
+  &:hover, &:focus-visible {
+    background: var(--docs-nav-hover-background);
+  }
+}
+@supports selector(:popover-open) {
+  .rmxc-7lylmpzqemty {
+    display: inline-flex;
+  }
+}
+@media (width >= 640px) {
+  .rmxc-7lylmpzqemty {
+    display: none;
+  }
+} }</style><style data-rmx-style="rmxc-90c7o7zg3hvm">@layer rmx.rmxc-90c7o7zg3hvm { .rmxc-90c7o7zg3hvm {
+  display: grid;
+  width: 16px;
+  gap: 3px;
+  & span {
+    display: block;
+    height: 1.5px;
+    border-radius: var(--rmx-radius-full);
+    background: currentColor;
+    transform-origin: center;
+  }
+  :where(header:has(#site-primary-navigation:popover-open)) & span:nth-child(1) {
+    transform: translateY(4.5px) rotate(45deg);
+  }
+  :where(header:has(#site-primary-navigation:popover-open)) & span:nth-child(2) {
+    opacity: 0;
+  }
+  :where(header:has(#site-primary-navigation:popover-open)) & span:nth-child(3) {
+    transform: translateY(-4.5px) rotate(-45deg);
+  }
+} }</style><style data-rmx-style="rmxc-d0bfyao9l8ut">@layer rmx.rmxc-d0bfyao9l8ut { .rmxc-d0bfyao9l8ut {
+  position: fixed;
+  inset: 64px 0 auto;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  gap: var(--docs-nav-item-gap);
+  margin: 0;
+  padding: 8px 16px 16px;
+  overflow: visible;
+  border: 0;
+  border-bottom: 1px solid var(--rmx-color-border-subtle);
+  background: var(--docs-shell-background);
+  box-shadow: var(--docs-menu-shadow);
+  font-size: var(--rmx-font-size-md);
+  flex-wrap: nowrap;
+}
+@media (width >= 640px) {
+  .rmxc-d0bfyao9l8ut {
+    position: absolute;
+    inset: 0 24px auto auto;
+    z-index: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    height: var(--site-header-height);
+    gap: 20px;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-d0bfyao9l8ut {
+    right: var(--docs-edge-inset);
+    gap: 24px;
+  }
+} }</style><style data-rmx-style="rmxc-1undn2ixeum01">@layer rmx.rmxc-1undn2ixeum01 { .rmxc-1undn2ixeum01 {
+  display: none;
+}
+@media (width >= 640px) {
+  .rmxc-1undn2ixeum01 {
+    display: flex;
+  }
+} }</style><style data-rmx-style="rmxc-1ts616j1m05fs6">@layer rmx.rmxc-1ts616j1m05fs6 { .rmxc-1ts616j1m05fs6 {
+  color: var(--docs-header-link);
+  opacity: 0.8;
+  text-decoration: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px var(--docs-nav-item-inset);
+  border-radius: var(--rmx-radius-md);
+  &:hover, &:focus-visible, &[aria-current] {
+    color: var(--docs-header-link-active);
+    opacity: 1;
+  }
+  &:hover, &:focus-visible {
+    background: var(--docs-nav-hover-background);
+  }
+}
+@media (width >= 640px) {
+  .rmxc-1ts616j1m05fs6 {
+    display: inline;
+    align-items: normal;
+    min-height: auto;
+    padding: 0;
+    border-radius: 0;
+    &:hover, &:focus-visible {
+      background: none;
+    }
+  }
+} }</style><style data-rmx-style="rmxc-lpuaye1ol0wxh">@layer rmx.rmxc-lpuaye1ol0wxh { .rmxc-lpuaye1ol0wxh {
+  display: none;
+}
+@supports selector(:popover-open) {
+  .rmxc-lpuaye1ol0wxh {
+    &:popover-open {
+      display: flex;
+    }
+  }
+}
+@media (width >= 640px) {
+  .rmxc-lpuaye1ol0wxh {
+    &, &:popover-open {
+      display: none;
+    }
+  }
+} }</style><style data-rmx-style="rmxc-e2zh191kw9g2">@layer rmx.rmxc-e2zh191kw9g2 { .rmxc-e2zh191kw9g2 {
+  position: absolute;
+  top: 16px;
+  left: min(211px, calc(100% - 125px));
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border: 0;
+  border-radius: var(--rmx-radius-md);
+  color: var(--rmx-color-text-secondary);
+  background: transparent;
+  font-size: var(--docs-font-size-ui);
+  opacity: 1;
+  cursor: pointer;
+  &:hover, &:focus-visible {
+    background: var(--docs-nav-hover-background);
+  }
+  & svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-e2zh191kw9g2 {
+    position: fixed;
+    top: var(--site-header-height);
+    left: var(--docs-sidebar-inline-start);
+    justify-content: space-between;
+    width: calc(var(--docs-sidebar-content-width) - 8px);
+    border: 1px solid var(--docs-nav-control-border);
+  }
+} }</style><style data-rmx-style="rmxc-6zadjgbactxj">@layer rmx.rmxc-6zadjgbactxj { @media (width >= 900px) {
+  .rmxc-6zadjgbactxj {
+    :root[data-docs-nav-collapsed] & {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(calc(-1 * var(--docs-sidebar-offset)));
+      pointer-events: none;
+    }
+  }
+} }</style><style data-rmx-style="rmxc-oelizq189zdst">@layer rmx.rmxc-oelizq189zdst { .rmxc-oelizq189zdst {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+@media (width >= 900px) {
+  .rmxc-oelizq189zdst {
+    gap: 12px;
+  }
+} }</style><style data-rmx-style="rmxc-s0lwyjjk0cgc">@layer rmx.rmxc-s0lwyjjk0cgc { .rmxc-s0lwyjjk0cgc {
+  display: none;
+}
+@media (width >= 900px) {
+  .rmxc-s0lwyjjk0cgc {
+    display: inline;
+    :root[data-docs-nav-collapsed] & {
+      display: none;
+    }
+  }
+} }</style><style data-rmx-style="rmxc-ae0cbpqoot1a">@layer rmx.rmxc-ae0cbpqoot1a { .rmxc-ae0cbpqoot1a {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+@media (width >= 900px) {
+  .rmxc-ae0cbpqoot1a {
+    display: flex;
+    :root[data-docs-nav-collapsed] & {
+      display: none;
+    }
+  }
+} }</style><style data-rmx-style="rmxc-1sbmq5r8p6n4g">@layer rmx.rmxc-1sbmq5r8p6n4g { .rmxc-1sbmq5r8p6n4g {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--docs-key-border);
+  border-radius: var(--rmx-radius-sm);
+  color: var(--rmx-color-text-muted);
+  background: var(--rmx-surface-lvl0);
+  font-family: var(--rmx-font-family-mono);
+  font-size: var(--docs-font-size-label);
+  line-height: 1;
+} }</style><style data-rmx-style="rmxc-1yenloplejkd2">@layer rmx.rmxc-1yenloplejkd2 { .rmxc-1yenloplejkd2 {
+  position: fixed;
+  top: calc((var(--site-header-height) - 32px) / 2);
+  left: calc(calc(var(--docs-sidebar-inline-start) + var(--docs-sidebar-content-width) - 32px) + (calc(var(--docs-sidebar-inline-start) + 61px) - calc(var(--docs-sidebar-inline-start) + var(--docs-sidebar-content-width) - 32px)) * var(--docs-nav-collapse));
+  z-index: 51;
+  display: none;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  place-items: center;
+  border: 0;
+  border-radius: var(--rmx-radius-md);
+  color: var(--rmx-color-text-secondary);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out;
+  &:hover, &:focus-visible {
+    background: var(--docs-nav-hover-background);
+  }
+  & svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-1yenloplejkd2 {
+    display: grid;
+  }
+} }</style><style data-rmx-style="rmxc-1w2xhmcno73n5">@layer rmx.rmxc-1w2xhmcno73n5 { .rmxc-1w2xhmcno73n5 {
+  position: fixed;
+  top: var(--docs-mobile-navigation-top, calc(var(--site-header-height) + 48px));
+  right: 0;
+  bottom: auto;
+  left: 0;
+  z-index: 70;
+  display: block;
+  width: auto;
+  max-width: none;
+  max-height: calc(100dvh - var(--docs-mobile-navigation-top, calc(var(--site-header-height) + 48px)));
+  margin-left: 0;
+  padding: var(--rmx-space-lg);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  visibility: hidden;
+  background: var(--docs-shell-background);
+  box-shadow: var(--docs-panel-shadow);
+  pointer-events: none;
+  :root[data-docs-mobile-panel="navigation"] & {
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-1w2xhmcno73n5 {
+    top: calc(var(--site-header-height) + 44px);
+    right: auto;
+    left: calc(var(--docs-sidebar-inline-start) - var(--docs-nav-item-inset));
+    z-index: 40;
+    width: calc(var(--docs-sidebar-content-width) + var(--docs-nav-item-inset));
+    max-height: calc(100dvh - var(--site-header-height) - 44px);
+    padding: 0;
+    overflow: visible;
+    overscroll-behavior-y: auto;
+    visibility: visible;
+    background: none;
+    box-shadow: none;
+    opacity: calc(1 - var(--docs-nav-collapse));
+    transform: translateX(calc(-1 * var(--docs-sidebar-offset) * var(--docs-nav-collapse)));
+    pointer-events: auto;
+    &[data-scrollable] {
+      width: calc(var(--docs-sidebar-content-width) + var(--docs-nav-item-inset) + 8px + var(--docs-navigation-scrollbar-width, 0px));
+      margin-left: -4px;
+      padding-block-end: var(--rmx-space-lg);
+      padding-inline: 4px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    :root[data-docs-nav-collapsed] & {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+}
+@media (width >= 900px) and (height <= 780px) {
+  .rmxc-1w2xhmcno73n5 {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+} }</style><style data-rmx-style="rmxc-i33rn87isci5">@layer rmx.rmxc-i33rn87isci5 { .rmxc-i33rn87isci5 {
+  display: none;
+}
+@media (width >= 900px) {
+  .rmxc-i33rn87isci5 {
+    position: fixed;
+    inset: var(--site-header-height) auto 0 0;
+    z-index: 30;
+    display: block;
+    width: var(--docs-content-offset);
+    background: var(--docs-shell-background);
+    pointer-events: none;
+  }
+} }</style><style data-rmx-style="rmxc-w4azs6iuv7x">@layer rmx.rmxc-w4azs6iuv7x { .rmxc-w4azs6iuv7x {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--rmx-space-md);
+  border-bottom: var(--rmx-space-px) solid var(--rmx-color-border-subtle);
+  background: var(--docs-shell-background);
+}
+@media (width >= 900px) {
+  .rmxc-w4azs6iuv7x {
+    display: none;
+  }
+} }</style><style data-rmx-style="rmxc-15orl501qij7hd">@layer rmx.rmxc-15orl501qij7hd { .rmxc-15orl501qij7hd {
+  min-width: 0;
+  min-height: 36px;
+  flex-shrink: 1;
+  padding-inline: var(--rmx-space-sm);
+  color: var(--rmx-color-text-link);
+  font-size: var(--rmx-font-size-sm);
+  &[aria-expanded="true"] {
+    background: var(--docs-nav-hover-background);
+  }
+  & svg {
+    display: block;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+  }
+  & > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+} }</style><style data-rmx-style="rmxc-1onaqy31e2sxq4">@layer rmx.rmxc-1onaqy31e2sxq4 { .rmxc-1onaqy31e2sxq4 {
+  position: fixed;
+  inset: var(--docs-mobile-navigation-top, calc(var(--site-header-height) + 48px)) 0 0;
+  z-index: 65;
+  display: block;
+  padding: 0;
+  visibility: hidden;
+  border: 0;
+  background: var(--docs-backdrop);
+  pointer-events: none;
+  :root[data-docs-mobile-panel] & {
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-1onaqy31e2sxq4 {
+    display: none;
+  }
+} }</style><style data-rmx-style="rmxc-m36zry1rrcqp5">@layer rmx.rmxc-m36zry1rrcqp5 { .rmxc-m36zry1rrcqp5 {
+  container-name: docs-main;
+  container-type: inline-size;
+  width: 100%;
+  min-height: calc(100vh - var(--site-header-height));
+  margin: 0;
+  padding: 24px;
+  outline: none;
+  background: var(--rmx-surface-lvl0);
+}
+@media (width >= 900px) {
+  .rmxc-m36zry1rrcqp5 {
+    width: calc(100% - var(--docs-content-offset));
+    margin: var(--site-header-height) 0 0 var(--docs-content-offset);
+    padding: var(--docs-main-padding);
+    padding-left: var(--docs-content-padding-start);
+    border-radius: 16px 0 0 16px;
+    &::before {
+      position: fixed;
+      top: var(--site-header-height);
+      left: var(--docs-content-offset);
+      z-index: 49;
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle at 100% 100%, transparent 15.5px, var(--docs-shell-background) 16px);
+      content: '';
+      pointer-events: none;
+    }
+  }
+} }</style><style data-rmx-style="rmxc-14ru1eu18e82ih">@layer rmx.rmxc-14ru1eu18e82ih { .rmxc-14ru1eu18e82ih {
+  position: fixed;
+  inset: var(--docs-mobile-navigation-top, calc(var(--site-header-height) + 48px)) 0 auto;
+  z-index: 70;
+  display: block;
+  align-self: start;
+  width: auto;
+  max-width: none;
+  max-height: calc(100dvh - var(--docs-mobile-navigation-top, calc(var(--site-header-height) + 48px)));
+  padding: var(--rmx-space-lg);
+  overflow-y: auto;
+  visibility: hidden;
+  background: var(--docs-shell-background);
+  box-shadow: var(--docs-panel-shadow);
+  pointer-events: none;
+  :root[data-docs-mobile-panel="secondary"] & {
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-14ru1eu18e82ih {
+    position: static;
+    inset: auto;
+    z-index: auto;
+    display: none;
+    max-height: none;
+    padding: 0;
+    overflow-y: visible;
+    visibility: visible;
+    background: none;
+    box-shadow: none;
+    pointer-events: auto;
+  }
+}
+@container docs-main (width >= 56rem) {
+  .rmxc-14ru1eu18e82ih {
+    position: sticky;
+    top: calc(var(--site-header-height) + var(--docs-main-padding));
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    max-height: calc(100dvh - var(--site-header-height) - var(--docs-main-padding) - var(--rmx-space-xl));
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+} }</style><style data-rmx-style="rmxc-1sir1kay06k47">@layer rmx.rmxc-1sir1kay06k47 { .rmxc-1sir1kay06k47 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+  padding: 48px 24px;
+  color: var(--rmx-color-text-secondary);
+  font-size: var(--rmx-font-size-md);
+  line-height: 24px;
+  text-align: center;
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+  & a:hover {
+    color: var(--rmx-color-text-primary);
+  }
+}
+@media (width >= 900px) {
+  .rmxc-1sir1kay06k47 {
+    flex-direction: row;
+    width: calc(100% - var(--docs-content-offset));
+    gap: 48px;
+    margin-left: var(--docs-content-offset);
+    padding: 48px var(--docs-main-padding);
+    padding-left: var(--docs-content-padding-start);
+    text-align: left;
+  }
+} }</style><style data-rmx-style="rmxc-m5z5v42vuxo3">@layer rmx.rmxc-m5z5v42vuxo3 { .rmxc-m5z5v42vuxo3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  color: var(--rmx-color-text-secondary);
+  flex-wrap: wrap;
+}
+@media (width >= 900px) {
+  .rmxc-m5z5v42vuxo3 {
+    justify-content: flex-start;
+  }
+} }</style><style data-rmx-style="rmxc-gjsg6u19f01m3">@layer rmx.rmxc-gjsg6u19f01m3 { .rmxc-gjsg6u19f01m3 {
+  display: flex;
+} }</style><style data-rmx-style="rmxc-1xd2wrc1ngqgwt">@layer rmx.rmxc-1xd2wrc1ngqgwt { .rmxc-1xd2wrc1ngqgwt {
+  display: block;
+  width: 0;
+  height: 12px;
+  padding-left: 122px;
+  background: currentColor;
+  mask: url('/remix-wordmark-light-mode.svg') left center / contain no-repeat;
+} }</style><style data-rmx-style="rmxc-2mfsd515plmfc">@layer rmx.rmxc-2mfsd515plmfc { .rmxc-2mfsd515plmfc {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+  }
+  & svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+} }</style><style data-rmx-style="rmxc-fjz81m447g2r">@layer rmx.rmxc-fjz81m447g2r { .rmxc-fjz81m447g2r {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2px;
+  text-align: center;
+  & p {
+    margin: 0;
+    font-family: var(--rmx-font-family-mono);
+    font-size: var(--rmx-font-size-xxxs);
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+@media (width >= 900px) {
+  .rmxc-fjz81m447g2r {
+    align-items: flex-end;
+    width: auto;
+    text-align: right;
+  }
+} }</style></head><body><a href="#main-content" class="rmxc-1xwhilq12q3xgz">Skip to content</a><header class="rmxc-8hztos1c0miu9"><a id="docs-brand" href="https://remix.run" aria-label="Remix Docs" class="rmxc-1tjm2ms1ug53lh"><img src="/remix-logo-light-mode.svg" alt width="37" height="16" class="rmxc-1t2jzglqblzq2 rmxc-12rz3ed994uwg" /><img src="/remix-wordmark-light-mode.svg" alt width="163" height="16" class="rmxc-1t2jzglqblzq2 rmxc-1kwt8j21i2yff7" /></a><button id="docs-search-compact" type="button" aria-label="Search" aria-hidden="true" aria-haspopup="dialog" aria-expanded="false" data-docs-collapsed-only class="rmxc-49ezxk1bdmat1"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#search"></use></svg></button><button id="site-menu-toggle" type="button" popovertarget="site-primary-navigation" class="rmxc-7hu3axrlkslm rmxc-1n6sscx10hdk2w rmxc-7lylmpzqemty"><span aria-hidden="true" class="rmxc-90c7o7zg3hvm"><span></span><span></span><span></span></span></button><nav aria-label="Primary" class="rmxc-d0bfyao9l8ut rmxc-1undn2ixeum01"><a href="https://guides.remix.run/" class="rmxc-1ts616j1m05fs6">Guides</a><a href="/" aria-current="page" class="rmxc-1ts616j1m05fs6">Docs</a><a href="https://github.com/remix-run/remix" class="rmxc-1ts616j1m05fs6">GitHub</a><a href="https://remix.run/blog" class="rmxc-1ts616j1m05fs6">Blog</a><a href="https://remix.run/newsletter" class="rmxc-1ts616j1m05fs6">Newsletter</a><a href="https://remix.run/jam/2026" class="rmxc-1ts616j1m05fs6">Jam</a><a href="https://shop.remix.run" class="rmxc-1ts616j1m05fs6">Store</a></nav><nav id="site-primary-navigation" aria-label="Primary" popover="auto" class="rmxc-d0bfyao9l8ut rmxc-lpuaye1ol0wxh"><a href="https://guides.remix.run/" class="rmxc-1ts616j1m05fs6">Guides</a><a href="/" aria-current="page" class="rmxc-1ts616j1m05fs6">Docs</a><a href="https://github.com/remix-run/remix" class="rmxc-1ts616j1m05fs6">GitHub</a><a href="https://remix.run/blog" class="rmxc-1ts616j1m05fs6">Blog</a><a href="https://remix.run/newsletter" class="rmxc-1ts616j1m05fs6">Newsletter</a><a href="https://remix.run/jam/2026" class="rmxc-1ts616j1m05fs6">Jam</a><a href="https://shop.remix.run" class="rmxc-1ts616j1m05fs6">Store</a></nav><button id="docs-search-button" type="button" aria-label="Search" aria-haspopup="dialog" aria-expanded="false" aria-keyshortcuts="Meta+K Control+K" data-docs-expanded-only class="rmxc-e2zh191kw9g2 rmxc-6zadjgbactxj"><span class="rmxc-oelizq189zdst"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#search"></use></svg><span class="rmxc-s0lwyjjk0cgc">Search</span></span><span aria-hidden="true" class="rmxc-ae0cbpqoot1a"><kbd class="rmxc-1sbmq5r8p6n4g">⌘</kbd><kbd class="rmxc-1sbmq5r8p6n4g">K</kbd></span></button></header><button id="docs-navigation-toggle" type="button" aria-controls="docs-navigation" aria-expanded="true" aria-label="Collapse API navigation" class="rmxc-1yenloplejkd2"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#layout-left"></use></svg></button><nav id="docs-navigation" aria-label="API reference" class="rmxc-1w2xhmcno73n5"><p class="docs-nav-heading docs-nav-title">Remix <span class="docs-nav-version">v3.0.0</span></p><!-- rmx:h:hda2369b5 --><div class="api-nav"><div data-api-nav-panel="before" inert class="api-nav-panel"><a href="/" class="docs-nav-item api-nav-row">Getting Started</a><h2 class="docs-nav-heading api-nav-heading">Packages</h2><ul class="api-nav-list"><li><a href="/assert/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">assert</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/assets/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">assets</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/auth/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">auth</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/cli/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">cli</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/component/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">component</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/component-hmr/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">component-hmr</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/cookie/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">cookie</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/data-schema/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">data-schema</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/data-table/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">data-table</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/fetch-proxy/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">fetch-proxy</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/file-storage/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">file-storage</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/form-data-parser/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">form-data-parser</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/fs/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">fs</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/headers/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">headers</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/html-template/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">html-template</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/lazy-file/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">lazy-file</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/middleware/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">middleware</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/mime/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">mime</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/multipart-parser/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">multipart-parser</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/multiple-import-maps-polyfill/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">multiple-import-maps-polyfill</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/node-fetch-server/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">node-fetch-server</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/node-hmr/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">node-hmr</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/node-tsx/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">node-tsx</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/response/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">response</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/route-pattern/" aria-current="true" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">route-pattern</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/router/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">router</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/routes/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">routes</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/session/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">session</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/session-storage/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">session-storage</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/spa/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">spa</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/tar-parser/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">tar-parser</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/terminal/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">terminal</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/test/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">test</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/ui/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">ui</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li></ul></div><div data-api-nav-panel="current" class="api-nav-panel"><a href="/" data-api-nav-back class="docs-nav-item api-nav-row api-nav-back"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg>All packages</a><a href="/route-pattern/" aria-current="page" class="docs-nav-item api-nav-row api-nav-heading-link api-nav-title"><span><span class="api-nav-path-segment">route-pattern</span></span></a><h2 class="docs-nav-heading api-nav-heading">Modules</h2><ul class="api-nav-list"><li><a href="/route-pattern/href/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">route-pattern/</span><wbr /><span class="api-nav-path-segment">href</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/route-pattern/join/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">route-pattern/</span><wbr /><span class="api-nav-path-segment">join</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/route-pattern/match/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">route-pattern/</span><wbr /><span class="api-nav-path-segment">match</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li><li><a href="/route-pattern/specificity/" class="docs-nav-item api-nav-row api-nav-node"><span><span class="api-nav-path-segment">route-pattern/</span><wbr /><span class="api-nav-path-segment">specificity</span></span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-r"></use></svg></a></li></ul><h2 class="docs-nav-heading api-nav-heading">API</h2><ul class="api-nav-list"><li><a href="/route-pattern/function/getRoutePatternCaptures/" class="docs-nav-item api-nav-row api-nav-symbol">getRoutePatternCaptures()</a></li><li><a href="/route-pattern/class/ParseError/" class="docs-nav-item api-nav-row api-nav-symbol">ParseError</a></li><li><a href="/route-pattern/class/RoutePattern/" class="docs-nav-item api-nav-row api-nav-symbol">RoutePattern</a></li></ul><h2 class="docs-nav-heading api-nav-heading">Types</h2><ul class="api-nav-list"><li><a href="/route-pattern/interface/RoutePatternCapture/" class="docs-nav-item api-nav-row api-nav-symbol">RoutePatternCapture</a></li><li><a href="/route-pattern/interface/RoutePatternJSON/" class="docs-nav-item api-nav-row api-nav-symbol">RoutePatternJSON</a></li></ul></div></div><!-- /rmx:h --></nav><div aria-hidden="true" class="rmxc-i33rn87isci5"></div><nav id="docs-mobile-navigation-bar" aria-label="Documentation navigation" class="rmxc-w4azs6iuv7x"><button id="docs-mobile-navigation-toggle" type="button" aria-controls="docs-navigation" aria-expanded="false" class="rmxc-7hu3axrlkslm rmxc-1n6sscx10hdk2w rmxc-15orl501qij7hd"><span>remix/route-pattern</span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-d"></use></svg></button><button id="docs-mobile-secondary-navigation-toggle" type="button" aria-controls="docs-secondary-navigation" aria-expanded="false" class="rmxc-7hu3axrlkslm rmxc-1n6sscx10hdk2w rmxc-15orl501qij7hd"><span>On this page</span><svg aria-hidden="true" focusable="false"><use href="/icons.svg#chevron-d"></use></svg></button></nav><button id="docs-mobile-navigation-backdrop" type="button" aria-label="Close navigation" tabindex="-1" class="rmxc-1onaqy31e2sxq4"></button><main id="main-content" data-docs-main tabindex="-1" data-pagefind-body class="rmxc-m36zry1rrcqp5"><div data-rmx-key="api-page-/route-pattern/" class="docs-layout"><article class="docs-article"><div id="s95ce43c3-94-content" class="api-page-content rmx-page-body docs-markdown"><header class="docs-page-header api-page-header"><div class="api-page-meta"><p class="docs-page-eyebrow">Package</p></div></header><div><h1 id="remixroute-pattern"><a class="docs-heading-link" href="#remixroute-pattern">remix/route-pattern</a></h1>
+<p>Type-safe URL matching and href generation for JavaScript. <code>route-pattern</code> supports path variables, wildcards, optionals, search constraints, and full-URL patterns with predictable ranking.</p>
+<section class="docs-section"><h2 id="features"><a class="docs-heading-link" href="#features">Features</a></h2>
+<ul>
+<li><strong>Type-safe</strong> - Infer params from patterns for compile-time correctness</li>
+<li><strong>Expressive</strong> - Variables, wildcards, optionals, and search constraints</li>
+<li><strong>Full URL support</strong> - Match protocol, hostname, port, pathname, and search</li>
+<li><strong>Simple &#x26; deterministic ranking</strong> - Predictable left-to-right priority for static, variable, and wildcard patterns</li>
+<li><strong>Fast</strong> - Indexed, bounded-state matching without variant expansion or regex backtracking</li>
+<li><strong>Modular</strong> - Import only the features you need to for smaller bundles</li>
+<li><strong>Runtime agnostic</strong> - Works across Node.js, Bun, Deno, Cloudflare Workers, and browsers</li>
+</ul>
+</section><section class="docs-section"><h2 id="installation"><a class="docs-heading-link" href="#installation">Installation</a></h2>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">npm</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> i</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> remix</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+</section><section class="docs-section"><h2 id="quick-example"><a class="docs-heading-link" href="#quick-example">Quick example</a></h2>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createMultiMatcher } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/match'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMultiMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;{ </span><span style="color:#E36209;--shiki-dark:#FFAB70">name</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }>()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog/:slug'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog-post'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:version)/*path'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'http(s)://:region.cdn.com/assets/*file.:ext'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { name: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'assets'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> match </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/blog/v3'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">match?.pattern.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toString</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// /blog/:slug</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">match?.params</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { slug: 'v3' }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">match?.data</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { name: 'blog-post' }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createHref } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/href'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog/:slug'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { slug: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'v3'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/blog/v3'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:version)/*path'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { version: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'2'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, path: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'users/profile'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/api/v2/users/profile'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'http(s)://:region.cdn.com/assets/*file.:ext'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  region: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'us-west'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  file: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'images/logo'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  ext: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'png'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">})</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// 'https://us-west.cdn.com/assets/images/logo.png'</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+</section><section class="docs-section"><h2 id="api-at-a-glance"><a class="docs-heading-link" href="#api-at-a-glance">API at a glance</a></h2>
+<table>
+<thead>
+<tr>
+<th>Import</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>remix/route-pattern</code></td>
+<td>Parse and stringify patterns.</td>
+</tr>
+<tr>
+<td><code>remix/route-pattern/href</code></td>
+<td>Generate hrefs for patterns with type safe params.</td>
+</tr>
+<tr>
+<td><code>remix/route-pattern/match</code></td>
+<td>Match against one pattern with type inference for params, or match against many patterns with deterministic ranking and attached data.</td>
+</tr>
+<tr>
+<td><code>remix/route-pattern/join</code></td>
+<td>Combine two patterns into one. Override protocol, hostname, port. Join pathnames. Merge search constraints.</td>
+</tr>
+<tr>
+<td><code>remix/route-pattern/specificity</code></td>
+<td>Rank matches by <a href="#ranking-matches-by-specificity">specificity</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>For in-depth reference, visit the <a href="https://api.remix.run/route-pattern/"><code>route-pattern</code> API docs</a></p>
+<p>Examples in this README use <code>remix/route-pattern/*</code> imports. The same APIs are also available from the direct package entrypoints: <code>@remix-run/route-pattern</code>, <code>@remix-run/route-pattern/href</code>, <code>@remix-run/route-pattern/match</code>, <code>@remix-run/route-pattern/join</code>, and <code>@remix-run/route-pattern/specificity</code>.</p>
+</section><section class="docs-section"><h2 id="pattern-syntax"><a class="docs-heading-link" href="#pattern-syntax">Pattern syntax</a></h2>
+<h3 id="protocol"><a class="docs-heading-link" href="#protocol">Protocol</a></h3>
+<p>Protocol must be <code>http</code>, <code>https</code>, or <code>http(s)</code>:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches https://example.com</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'http(s)://example.com'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches http://example.com, https://example.com</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<h3 id="hostname--pathname"><a class="docs-heading-link" href="#hostname--pathname">Hostname &#x26; pathname</a></h3>
+<p><strong>Variables</strong> capture dynamic segments using <code>:name</code>:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'users/:id'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /users/123</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog/:date/:slug'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /blog/2024-01-15/hello</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'files/:name.:ext'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /files/readme.md</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>Pathname variables possessively capture the largest non-empty run up to <code>/</code> or <code>.</code>. Hyphens are data, so UUIDs and slugs remain intact. A variable may have static text before it, but every path through following optionals must reach <code>/</code>, <code>.</code>, a wildcard, or the end of the hostname or pathname. Capture an inseparable value such as a date with one variable instead of <code>:year-:month-:day</code>.</p>
+<p>Raw <code>/</code> and <code>.</code> are structural delimiters. Their percent-encoded forms remain data and are decoded in the resulting param. Static pattern text may use either decoded text or percent encoding, so <code>/café</code> and <code>/caf%C3%A9</code> match the same pathname text.</p>
+<p><strong>Wildcards</strong> match multi-segment paths using <code>*name</code>:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'files/*path'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /files/images/logo.png</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'node_modules/*package/dist/index.js'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /node_modules/@remix-run/router/dist/index.js</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'files/*'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches any path under /files, but doesn't capture the wildcard value</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>Patterns may contain any number of wildcards when static text or a delimiter separates them. Adjacent wildcards such as <code>*left*right</code> are rejected because their capture boundary is ambiguous.</p>
+<p><strong>Optionals</strong> make parts optional using <code>()</code>:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:version)/users'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /api/users, /api/v2/users</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog/:slug(.html)'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /blog/hello, /blog/hello.html</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'docs(/guides/:category)'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /docs, /docs/guides/routing</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:major(.:minor))'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /api, /api/v2, /api/v2.1</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>Optionals compile as state branches rather than concrete variants, so independent and nested optionals do not cause exponential matcher construction. Empty optionals and adjacent optional branches that give the same URL different capture schemas are rejected.</p>
+<p>While variables, wildcards, and optionals are most prevalent in pathnames, you can also use them in hostnames:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">':tenant.example.com/dashboard'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches acme.example.com/dashboard</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'(www.)example.com/blog/:slug(.html)'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches example.com/blog/hello, www.example.com/blog/hello.html</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'*.example.com/files/*path'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches cdn.example.com/files/images/logo.png</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'(:locale.)example.com/docs(/:section)'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches en.example.com/docs, en.example.com/docs/guides</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>Capture names may repeat. <code>params</code> uses the last participating capture in pattern order, while <code>paramsMeta</code> retains every participating capture:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'/:id/:id'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> match </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/first/second'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">match?.params</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { id: 'second' }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">match?.paramsMeta.pathname.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">map</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(({ </span><span style="color:#E36209;--shiki-dark:#FFAB70">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#E36209;--shiki-dark:#FFAB70">value</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }) </span><span style="color:#D73A49;--shiki-dark:#F97583">=></span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ({ name, value }))</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// [{ name: 'id', value: 'first' }, { name: 'id', value: 'second' }]</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p><strong>Escape characters</strong> with <code>\</code>:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'time/12</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\\</span><span style="color:#032F62;--shiki-dark:#9ECBFF">:30'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /time/12:30</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'calculator/2</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\\</span><span style="color:#032F62;--shiki-dark:#9ECBFF">*3'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /calculator/2*3</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'wiki/Mercury_</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\\</span><span style="color:#032F62;--shiki-dark:#9ECBFF">(planet</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\\</span><span style="color:#032F62;--shiki-dark:#9ECBFF">)'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /wiki/Mercury_(planet)</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'wiki/AC</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\\</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/DC'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // matches /wiki/AC%2FDC</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<h3 id="search"><a class="docs-heading-link" href="#search">Search</a></h3>
+<p><strong>Search constraints</strong> narrow matches using <code>?key</code> or <code>?key=value</code>:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'search?q'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // key must be present</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">'search?q=routing'</span><span style="color:#6A737D;--shiki-dark:#6A737D"> // requires ?q=routing exactly</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+</section><section class="docs-section"><h2 id="match-urls"><a class="docs-heading-link" href="#match-urls">Match URLs</a></h2>
+<h3 id="match-against-a-single-pattern"><a class="docs-heading-link" href="#match-against-a-single-pattern">Match against a single pattern</a></h3>
+<p>Use <code>createMatcher</code> when you have one pattern and want params inferred from that exact pattern.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createMatcher } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/match'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">const</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> url</span><span style="color:#D73A49;--shiki-dark:#F97583">:</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> URL</span><span style="color:#D73A49;--shiki-dark:#F97583"> =</span><span style="color:#6A737D;--shiki-dark:#6A737D"> /* ... */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> blogMatcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog/:slug'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">blogMatcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(url)?.params</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// Type safe params     ^? { slug: string } | undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> docsMatcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'://(:tenant.)host.com/docs/*path.:ext'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">docsMatcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(url)?.params</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// Type safe params     ^? { tenant: string | undefined, path: string, ext: string } | undefined</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>Matchers accept absolute URL strings or <code>URL</code> objects. To match a relative URL reference, pass an absolute <code>baseURL</code>; the input is resolved with the same semantics as <code>new URL(input, baseURL)</code>, and the resolved URL is returned on the match.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> match </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> blogMatcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'../blog/v3'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  baseURL: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/admin/settings'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">match?.params</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { slug: 'v3' }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">match?.url.href</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// 'https://example.com/blog/v3'</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>This works for root-relative, path-relative, query-relative, and network-path references. Without <code>baseURL</code>, string inputs must still be absolute.</p>
+<h3 id="match-against-multiple-patterns"><a class="docs-heading-link" href="#match-against-multiple-patterns">Match against multiple patterns</a></h3>
+<p>Use <code>createMultiMatcher</code> when you need to match many patterns and attach your own data to each match.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createMultiMatcher } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/match'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMultiMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#005CC5;--shiki-dark:#79B8FF">string</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>()</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// Any data type you want!         👆</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'/'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'home'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog/:slug'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog-post'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:version)/*path'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/blog/v3'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { params: { slug: 'v3' }, data: 'blog-post' }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/api/v2/users/profile'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { params: { version: '2', path: 'users/profile' }, data: 'api' }</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>The matched pattern is only known at runtime, so matched <code>params</code> are not inferred when matching with <code>createMultiMatcher</code>.</p>
+<p>Each match returns:</p>
+<ul>
+<li><code>url</code>: the <code>URL</code> object that was matched</li>
+<li><code>pattern</code>: the matched <code>RoutePattern</code></li>
+<li><code>data</code>: the data attached with <code>matcher.add(pattern, data)</code></li>
+<li><code>params</code>: captured param values</li>
+<li><code>paramsMeta</code>: hostname and pathname param metadata</li>
+</ul>
+<p><code>paramsMeta.hostname</code> and <code>paramsMeta.pathname</code> are arrays of <code>{ type, name, value, begin, end }</code> entries. The offsets are measured after URL normalization. A pattern with no hostname matches any hostname, represented in <code>paramsMeta.hostname</code> as an unnamed wildcard entry.</p>
+<p>Set <code>ignoreCase: true</code> to make pathname matching case-insensitive. Hostname matching is always case-insensitive, and search constraints are always case-sensitive.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'/Docs/:slug'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { ignoreCase: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/docs/Intro'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)?.params</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { slug: 'Intro' }</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>Matchers limit individual pattern size, total matcher size, and the work performed by one match, including variable scans and comparisons between wildcard or optional captures. Pattern and matcher sizes are measured in UTF-8 bytes. Direct package consumers may lower or raise individual limits. Exceeding one throws <code>MatcherResourceError</code> with structured <code>details</code> instead of silently abandoning matching:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMultiMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  limits: { maxPatternSize: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">4096</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, maxMatchWork: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">100_000</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">})</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<h3 id="ranking-matches-by-specificity"><a class="docs-heading-link" href="#ranking-matches-by-specificity">Ranking matches by specificity</a></h3>
+<p>When multiple patterns match the same URL, <code>route-pattern</code> chooses the most specific match deterministically. Matches are ranked left-to-right, character-by-character:</p>
+<ul>
+<li>Explicit protocol and port constraints are more specific than omitted constraints.</li>
+<li>Static hostnames are more specific than dynamic hostnames, which are more specific than omitted hostnames.</li>
+<li>Static characters are more specific than variables.</li>
+<li>Variables are more specific than wildcards.</li>
+<li>Earliest difference decides the winner.</li>
+</ul>
+<p>This is the same ranking used by <code>createMultiMatcher</code>.</p>
+<p>For advanced use cases, <code>/specificity</code> provides comparison utilities: <code>lessThan</code>, <code>greaterThan</code>, <code>equal</code>, <code>descending</code>, <code>ascending</code>, <code>compare</code>. <code>lessThan(a, b)</code> returns <code>true</code> when match <code>a</code> is less specific than match <code>b</code>. For example:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createMultiMatcher } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/match'</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { descending } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/specificity'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> createMultiMatcher</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'files/*path'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">null</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'files/:name'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">null</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">add</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'files/readme'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">null</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matches </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> matcher.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">matchAll</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/files/readme'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">matches.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">sort</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(descending).</span><span style="color:#6F42C1;--shiki-dark:#B392F0">map</span><span style="color:#24292E;--shiki-dark:#E1E4E8">((</span><span style="color:#E36209;--shiki-dark:#FFAB70">match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">) </span><span style="color:#D73A49;--shiki-dark:#F97583">=></span><span style="color:#24292E;--shiki-dark:#E1E4E8"> match.pattern.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toString</span><span style="color:#24292E;--shiki-dark:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// ['/files/readme', '/files/:name', '/files/*path']</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+</section><section class="docs-section"><h2 id="generate-hrefs"><a class="docs-heading-link" href="#generate-hrefs">Generate hrefs</a></h2>
+<p><code>createHref</code> turns a pattern and params into a URL string. Required variables and wildcards must be provided, while params inside optional groups may be omitted.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { createHref } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/href'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'blog/:slug'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { slug: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'v3'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/blog/v3'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:version)/*path'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { path: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'users/profile'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/api/users/profile'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:version)/*path'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { version: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'2'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, path: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'users/profile'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/api/v2/users/profile'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'http(s)://:region.cdn.com/assets/*file.:ext'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  region: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'us-west'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  file: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'images/logo'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  ext: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'png'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">})</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// 'https://us-west.cdn.com/assets/images/logo.png'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  'blog/:slug?ref=docs'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  { slug: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'v3'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    searchParams: { utm_source: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'newsletter'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/blog/v3?utm_source=newsletter&#x26;ref=docs'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'users/:id'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { id: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'a.b'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/users/a%2Eb' (the encoded dot remains variable data when matched)</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>Pass <code>baseURL</code> to generate a path-relative reference to a same-origin route. Patterns with a different origin remain absolute.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> baseURL </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#D73A49;--shiki-dark:#F97583"> new</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> URL</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://example.com/admin/settings'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'users/:id'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { id: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'123'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }, { baseURL })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '../users/123'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'https://cdn.example.com/assets/*path'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { path: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'logo.svg'</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }, { baseURL })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// 'https://cdn.example.com/assets/logo.svg'</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>The <code>searchParams</code> option accepts a plain object or <code>URLSearchParams</code>. Use <code>URLSearchParams</code> when duplicate keys or their order matter:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> searchParams </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#D73A49;--shiki-dark:#F97583"> new</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> URLSearchParams</span><span style="color:#24292E;--shiki-dark:#E1E4E8">([</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'tag'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'featured'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'tag'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'popular'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'search'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">undefined</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, { searchParams })</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/search?tag=featured&#x26;tag=popular'</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p><code>createHref()</code> throws <code>CreateHrefError</code> when it cannot safely generate an href. The error exposes stable structured details on <code>error.details</code>; the string message is for humans.</p>
+<p>Common failures include missing required params, nameless wildcards, invalid hostname params, empty pathname variables, and origin patterns that specify a protocol or port without a concrete hostname.</p>
+<p>Hostname params reject URL structural characters, including backslashes. Hostname variables also reject dots; hostname wildcards allow dots to span labels.</p>
+<p>Pathname wildcards preserve internal slashes and dotted filenames, but reject standalone <code>.</code> and <code>..</code> segments with <code>error.details.type === 'invalid-pathname-wildcard'</code>. Generated pathnames have exactly one leading slash, including when the wildcard value starts with slashes. This normalization also applies to absolute URLs and happens before generating a relative href with <code>baseURL</code>.</p>
+<p><strong>Note:</strong> optional groups without params are included in the generated href:</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'todos(/new)'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/todos/new'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">createHref</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'products(.json)'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/products.json'</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+</section><section class="docs-section"><h2 id="parse--stringify-patterns"><a class="docs-heading-link" href="#parse--stringify-patterns">Parse &#x26; stringify patterns</a></h2>
+<p>You can explicitly parse and stringify patterns. Create a <code>RoutePattern</code> with <code>RoutePattern.parse</code> and use the methods and helpers below instead of reading parsed token internals.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { getRoutePatternCaptures, RoutePattern } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> pattern </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> RoutePattern.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">parse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'://:tenant.example.com/blog/:slug(/*path)'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//  ^? RoutePattern</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">pattern.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toString</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '://:tenant.example.com/blog/:slug(/*path)'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">pattern.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toJSON</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// { hostname: ':tenant.example.com', pathname: 'blog/:slug(/*path)', ... }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">getRoutePatternCaptures</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(pattern)</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// [</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   { part: 'hostname', type: ':', name: 'tenant', optional: false },</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   { part: 'pathname', type: ':', name: 'slug', optional: false },</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   { part: 'pathname', type: '*', name: 'path', optional: true },</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// ]</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<p>All APIs that take a <code>pattern</code> arg accept <code>string</code> or a parsed <code>RoutePattern</code>.</p>
+<p><strong>TIP:</strong> For high-performance scenarios, you can parse patterns ahead of time to avoid reparsing them on every call.</p>
+<p><code>RoutePattern.toJSON()</code> returns a <code>RoutePatternJSON</code> object with serialized <code>protocol</code>, <code>hostname</code>, <code>port</code>, <code>pathname</code>, and <code>search</code> fields. <code>RoutePattern.parse()</code> throws <code>ParseError</code> for malformed sources; the error exposes stable <code>type</code>, <code>source</code>, and <code>index</code> fields.</p>
+<p>The public support types are:</p>
+<ul>
+<li><code>RoutePatternCapture</code> from <code>remix/route-pattern</code></li>
+<li><code>RoutePatternJSON</code> from <code>remix/route-pattern</code></li>
+<li><code>CreateHrefErrorDetails</code> from <code>remix/route-pattern/href</code></li>
+<li><code>CreateHrefOptions</code> and <code>CreateHrefSearchParams</code> from <code>remix/route-pattern/href</code></li>
+<li><code>MatchParamMeta</code> from <code>remix/route-pattern/match</code></li>
+<li><code>MatchOptions</code> from <code>remix/route-pattern/match</code></li>
+<li><code>MatcherLimits</code> from <code>remix/route-pattern/match</code></li>
+<li><code>MatcherResourceError</code> and <code>MatcherResourceErrorDetails</code> from <code>remix/route-pattern/match</code></li>
+</ul>
+<p>Literal patterns are validated and infer named params until the type-level parser reaches its 64-step complexity budget. Larger runtime-valid patterns remain accepted and fall back to safe general pattern types instead of risking a TypeScript excessive-instantiation error.</p>
+</section><section class="docs-section"><h2 id="combine-patterns"><a class="docs-heading-link" href="#combine-patterns">Combine patterns</a></h2>
+<p><code>joinPatterns</code> builds a new pattern from a base pattern.</p>
+<div class="docs-code-block" data-code-block><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { joinPatterns } </span><span style="color:#D73A49;--shiki-dark:#F97583">from</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'remix/route-pattern/join'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> user </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> joinPatterns</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'users'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">':id'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">user.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toString</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '/users/:id'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> apiUser </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> joinPatterns</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'api(/v:version)'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'://remix.run/users/:id'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">apiUser.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toString</span><span style="color:#24292E;--shiki-dark:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// '://remix.run/api(/v:version)/users/:id'</span></span></code></pre><button class="docs-code-block__copy" type="button" data-code-block-copy aria-label="Copy code to clipboard"><span class="docs-code-block__copy-label">Copy code to clipboard</span></button></div>
+<ul>
+<li><strong>Protocol:</strong> if second pattern has a protocol, overrides base pattern</li>
+<li><strong>Hostname:</strong> if second pattern has a hostname, overrides base pattern</li>
+<li><strong>Port:</strong> if second pattern has a port, overrides base pattern</li>
+<li><strong>Pathname:</strong> concatenates pathnames, adding a <code>/</code> in between as necessary</li>
+<li><strong>Search constraints:</strong> merges search constraints by key</li>
+</ul>
+</section><section class="docs-section"><h2 id="benchmarks"><a class="docs-heading-link" href="#benchmarks">Benchmarks</a></h2>
+<p>Benchmarks live in <a href="./bench/"><code>bench/</code></a>.</p>
+</section><section class="docs-section"><h2 id="related-work"><a class="docs-heading-link" href="#related-work">Related Work</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/path-to-regexp"><code>path-to-regexp</code></a></li>
+<li><a href="https://github.com/delvedor/find-my-way"><code>find-my-way</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/URLPattern"><code>URLPattern</code></a></li>
+</ul>
+</section><section class="docs-section"><h2 id="license"><a class="docs-heading-link" href="#license">License</a></h2>
+<p>See <a href="https://github.com/remix-run/remix/blob/main/LICENSE">LICENSE</a></p></section></div></div><!-- rmx:h:h1743aa62 --><!-- /rmx:h --></article><aside id="docs-secondary-navigation" class="rmxc-14ru1eu18e82ih"><h2 class="docs-nav-heading docs-toc__heading">On this page</h2><ol id="s95ce43c3-98-list" class="docs-toc__list docs-selection-list"><li><a href="#features" aria-current="location" class="docs-nav-item">Features</a></li><li><a href="#installation" class="docs-nav-item">Installation</a></li><li><a href="#quick-example" class="docs-nav-item">Quick example</a></li><li><a href="#api-at-a-glance" class="docs-nav-item">API at a glance</a></li><li><a href="#pattern-syntax" class="docs-nav-item">Pattern syntax</a></li><li class="docs-toc__item--nested"><a href="#protocol" class="docs-nav-item">Protocol</a></li><li class="docs-toc__item--nested"><a href="#hostname--pathname" class="docs-nav-item">Hostname &#x26; pathname</a></li><li class="docs-toc__item--nested"><a href="#search" class="docs-nav-item">Search</a></li><li><a href="#match-urls" class="docs-nav-item">Match URLs</a></li><li class="docs-toc__item--nested"><a href="#match-against-a-single-pattern" class="docs-nav-item">Match against a single pattern</a></li><li class="docs-toc__item--nested"><a href="#match-against-multiple-patterns" class="docs-nav-item">Match against multiple patterns</a></li><li class="docs-toc__item--nested"><a href="#ranking-matches-by-specificity" class="docs-nav-item">Ranking matches by specificity</a></li><li><a href="#generate-hrefs" class="docs-nav-item">Generate hrefs</a></li><li><a href="#parse--stringify-patterns" class="docs-nav-item">Parse &#x26; stringify patterns</a></li><li><a href="#combine-patterns" class="docs-nav-item">Combine patterns</a></li><li><a href="#benchmarks" class="docs-nav-item">Benchmarks</a></li><li><a href="#related-work" class="docs-nav-item">Related Work</a></li><li><a href="#license" class="docs-nav-item">License</a></li></ol><script>
+{
+  let list = document.currentScript?.previousElementSibling
+  if (list instanceof HTMLOListElement) {
+    let entries = Array.from(list.querySelectorAll('a[href^="#"]')).flatMap((link) => {
+      let id = link.getAttribute('href')?.slice(1)
+      let heading = id ? document.getElementById(id) : null
+      return heading ? [{ heading, link }] : []
+    })
+    let activationLine = window.matchMedia('(width >= 900px)').matches ? 116 : 88
+    let activeIndex = 0
+    for (let [index, entry] of entries.entries()) {
+      if (entry.heading.getBoundingClientRect().top > activationLine) break
+      activeIndex = index
+    }
+    for (let [index, entry] of entries.entries()) {
+      if (index === activeIndex) {
+        entry.link.setAttribute('aria-current', 'location')
+      } else {
+        entry.link.removeAttribute('aria-current')
+      }
+    }
+  }
+}
+</script><!-- rmx:h:h841d55b8 --><!-- /rmx:h --></aside></div></main><footer aria-label="Site footer" class="rmxc-1sir1kay06k47"><div class="rmxc-m5z5v42vuxo3"><a href="https://remix.run" aria-label="Remix" class="rmxc-gjsg6u19f01m3"><img src="/remix-wordmark-light-mode.svg" alt class="rmxc-1xd2wrc1ngqgwt" /></a><nav aria-label="Find us on the web" class="rmxc-2mfsd515plmfc"><a href="https://github.com/remix-run" aria-label="GitHub"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#github"></use></svg></a><a href="https://x.com/remix_run" aria-label="X"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#x"></use></svg></a><a href="https://youtube.com/remix_run" aria-label="YouTube"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#youtube"></use></svg></a><a href="https://remix.run/discord" aria-label="Discord"><svg aria-hidden="true" focusable="false"><use href="/icons.svg#discord"></use></svg></a></nav></div><div class="rmxc-fjz81m447g2r"><p>docs and examples licensed under mit</p><p>©2026 Shopify, Inc.</p></div></footer><!-- rmx:h:h4233feba --><!-- /rmx:h --><pagefind-config base-url="/" bundle-path="/_assets/pagefind/"></pagefind-config><pagefind-modal data-rmx-key="pagefind-modal" data-rmx-preserve-dom reset-on-close></pagefind-modal><script type="application/json" id="rmx-data">{"h":{"hda2369b5":{"exportName":"ApiNav","moduleUrl":"/_assets/app/actions/public/api-nav.@3BrM_i.js","props":{"panels":[{"id":"root","content":[{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row","href":"/","children":"Getting Started"},"key":"home"},{"$rmx":true,"type":"h2","props":{"class":"docs-nav-heading api-nav-heading","children":"Packages"},"key":"packages-heading"},{"$rmx":true,"type":"ul","props":{"class":"api-nav-list","children":[{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/assert/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"assert"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/assert"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/assets/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"assets"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/assets"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/auth/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"auth"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/auth"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/cli/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"cli"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/cli"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/component/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"component"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/component"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/component-hmr/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"component-hmr"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/component-hmr"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/cookie/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"cookie"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/cookie"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/data-schema/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"data-schema"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/data-schema"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/data-table/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"data-table"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/data-table"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/fetch-proxy/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"fetch-proxy"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/fetch-proxy"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/file-storage/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"file-storage"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/file-storage"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/form-data-parser/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"form-data-parser"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/form-data-parser"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/fs/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"fs"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/fs"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/headers/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"headers"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/headers"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/html-template/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"html-template"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/html-template"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/lazy-file/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"lazy-file"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/lazy-file"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/middleware/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"middleware"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/middleware"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/mime/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"mime"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/mime"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/multipart-parser/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"multipart-parser"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/multipart-parser"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/multiple-import-maps-polyfill/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"multiple-import-maps-polyfill"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/multiple-import-maps-polyfill"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/node-fetch-server/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"node-fetch-server"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/node-fetch-server"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/node-hmr/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"node-hmr"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/node-hmr"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/node-tsx/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"node-tsx"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/node-tsx"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/response/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"response"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/response"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/route-pattern/","aria-current":"true","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"route-pattern"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/route-pattern"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/router/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"router"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/router"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/routes/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"routes"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/routes"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/session/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"session"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/session"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/session-storage/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"session-storage"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/session-storage"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/spa/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"spa"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/spa"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/tar-parser/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"tar-parser"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/tar-parser"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/terminal/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"terminal"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/terminal"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/test/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"test"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/test"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/ui/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"ui"},"key":"segment-0"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"@remix-run/ui"}]}}]},{"id":"remix/route-pattern","content":[{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-back","href":"/","data-api-nav-back":true,"children":[{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}},"All packages"]},"key":"back"},{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-heading-link api-nav-title","href":"/route-pattern/","aria-current":"page","children":{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"route-pattern"},"key":"segment-0"}]}}}},{"$rmx":true,"type":"h2","props":{"class":"docs-nav-heading api-nav-heading","children":"Modules"},"key":"modules-heading"},{"$rmx":true,"type":"ul","props":{"class":"api-nav-list","children":[{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/route-pattern/href/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":["route-pattern","/"]},"key":"segment-0"},{"$rmx":true,"type":"wbr","props":{},"key":"break-0"},{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"href"},"key":"segment-1"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/route-pattern/href"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/route-pattern/join/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":["route-pattern","/"]},"key":"segment-0"},{"$rmx":true,"type":"wbr","props":{},"key":"break-0"},{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"join"},"key":"segment-1"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/route-pattern/join"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/route-pattern/match/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":["route-pattern","/"]},"key":"segment-0"},{"$rmx":true,"type":"wbr","props":{},"key":"break-0"},{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"match"},"key":"segment-1"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/route-pattern/match"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-node","href":"/route-pattern/specificity/","children":[{"$rmx":true,"type":"span","props":{"children":[{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":["route-pattern","/"]},"key":"segment-0"},{"$rmx":true,"type":"wbr","props":{},"key":"break-0"},{"$rmx":true,"type":"span","props":{"class":"api-nav-path-segment","children":"specificity"},"key":"segment-1"}]}},{"$rmx":true,"type":"svg","props":{"aria-hidden":"true","focusable":"false","children":{"$rmx":true,"type":"use","props":{"href":"/icons.svg#chevron-r"}}}}]}}},"key":"remix/route-pattern/specificity"}]}},{"$rmx":true,"type":"h2","props":{"class":"docs-nav-heading api-nav-heading","children":"API"},"key":"API-heading"},{"$rmx":true,"type":"ul","props":{"class":"api-nav-list","children":[{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-symbol","href":"/route-pattern/function/getRoutePatternCaptures/","children":"getRoutePatternCaptures()"}}},"key":"/route-pattern/function/getRoutePatternCaptures/"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-symbol","href":"/route-pattern/class/ParseError/","children":"ParseError"}}},"key":"/route-pattern/class/ParseError/"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-symbol","href":"/route-pattern/class/RoutePattern/","children":"RoutePattern"}}},"key":"/route-pattern/class/RoutePattern/"}]},"key":"API"},{"$rmx":true,"type":"h2","props":{"class":"docs-nav-heading api-nav-heading","children":"Types"},"key":"Types-heading"},{"$rmx":true,"type":"ul","props":{"class":"api-nav-list","children":[{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-symbol","href":"/route-pattern/interface/RoutePatternCapture/","children":"RoutePatternCapture"}}},"key":"/route-pattern/interface/RoutePatternCapture/"},{"$rmx":true,"type":"li","props":{"children":{"$rmx":true,"type":"a","props":{"class":"docs-nav-item api-nav-row api-nav-symbol","href":"/route-pattern/interface/RoutePatternJSON/","children":"RoutePatternJSON"}}},"key":"/route-pattern/interface/RoutePatternJSON/"}]},"key":"Types"}]}]}},"h1743aa62":{"exportName":"CodeBlockCopyButtons","moduleUrl":"/_assets/docs-shared/ui/public/code-block-copy.@6o5PvJ.js","props":{"rootId":"s95ce43c3-94-content"}},"h841d55b8":{"exportName":"TableOfContentsBehavior","moduleUrl":"/_assets/docs-shared/ui/public/table-of-contents.@CA303x.js","props":{"listId":"s95ce43c3-98-list"}},"h4233feba":{"exportName":"DocsShellBehavior","moduleUrl":"/_assets/docs-shared/ui/public/docs-shell.@8D3Ep_.js","props":{"navigationName":"API navigation"}}}}</script></body></html><!-- rmx:flush document -->

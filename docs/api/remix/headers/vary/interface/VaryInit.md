@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/v
 
 ## Summary
 
-Object form for constructing a [`Vary`](/api/remix/headers/vary/class/Vary/) header value.
+Object form for constructing a [`Vary`](/headers/vary/class/Vary/) header value.
 
 ## Signature
 

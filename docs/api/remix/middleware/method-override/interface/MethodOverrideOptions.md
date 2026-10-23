@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/method-override-m
 
 ## Summary
 
-Options for the [`methodOverride`](/api/remix/middleware/method-override/function/methodOverride/) middleware.
+Options for the [`methodOverride`](/middleware/method-override/function/methodOverride/) middleware.
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/c
 
 ## Summary
 
-Initializer for a [`Cookie`](/api/remix/headers/cookie/class/Cookie/) header value.
+Initializer for a [`Cookie`](/headers/cookie/class/Cookie/) header value.
 
 ## Signature
 

@@ -11,7 +11,7 @@ Creates a reusable middleware chain while preserving its exact tuple type.
 
 Prefer plain inline arrays for `middleware` options on routers, controllers, and actions. Use
 this helper when a middleware chain is stored in a variable and its exact type must be preserved,
-such as when deriving [`MiddlewareContext`](/api/remix/router/type/MiddlewareContext/) from the chain, exporting the chain for reuse, or
+such as when deriving [`MiddlewareContext`](/router/type/MiddlewareContext/) from the chain, exporting the chain for reuse, or
 returning it from a factory.
 
 ## Signature

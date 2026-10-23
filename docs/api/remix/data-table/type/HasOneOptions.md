@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 ## Summary
 
-Options for defining a [`hasOne`](/api/remix/data-table/function/hasOne/) relation.
+Options for defining a [`hasOne`](/data-table/function/hasOne/) relation.
 
 ## Signature
 

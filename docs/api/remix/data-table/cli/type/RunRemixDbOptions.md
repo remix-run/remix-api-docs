@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/cl
 
 ## Summary
 
-Structured invocation options accepted by [`runRemixDb`](/api/remix/data-table/cli/function/runRemixDb/).
+Structured invocation options accepted by [`runRemixDb`](/data-table/cli/function/runRemixDb/).
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/multipart-parser/
 
 ## Summary
 
-Options for configuring a [`MultipartParser`](/api/remix/multipart-parser/class/MultipartParser/).
+Options for configuring a [`MultipartParser`](/multipart-parser/class/MultipartParser/).
 
 ## Signature
 

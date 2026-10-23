@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/run
 
 ## Summary
 
-Result returned by [`render`](/api/remix/component/test/function/render/).
+Result returned by [`render`](/component/test/function/render/).
 
 ## Signature
 
@@ -49,5 +49,5 @@ The element the component is mounted into.
 
 ### `root`
 
-The [`VirtualRoot`](/api/remix/component/type/VirtualRoot/) the component is rendered in. Use it to access the
+The [`VirtualRoot`](/component/type/VirtualRoot/) the component is rendered in. Use it to access the
 underlying scheduler or dispatch lifecycle events.

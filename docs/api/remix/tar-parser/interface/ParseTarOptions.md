@@ -39,21 +39,21 @@ The label (encoding) for filenames.
 
 Maximum number of entries, including PAX/GNU metadata entries. Padding and
 end-of-archive markers do not count. Checked before processing each entry;
-exceeding the limit throws a [`MaxEntriesExceededError`](/api/remix/tar-parser/class/MaxEntriesExceededError/). Defaults to 5000.
+exceeding the limit throws a [`MaxEntriesExceededError`](/tar-parser/class/MaxEntriesExceededError/). Defaults to 5000.
 Must be a non-negative safe integer, or `Infinity` to disable the limit.
 
 ### `maxEntrySize`
 
 Maximum entry body size in bytes, including PAX/GNU metadata entries.
 Checked before reading the body or calling the handler. Exceeding the limit
-throws a [`MaxEntrySizeExceededError`](/api/remix/tar-parser/class/MaxEntrySizeExceededError/). Defaults to 2 MiB (2097152 bytes).
+throws a [`MaxEntrySizeExceededError`](/tar-parser/class/MaxEntrySizeExceededError/). Defaults to 2 MiB (2097152 bytes).
 Must be a non-negative safe integer, or `Infinity` to disable the limit.
 
 ### `maxTotalSize`
 
 Maximum archive size in bytes, including headers, padding, and metadata.
 Counts all input bytes, after decompression if performed upstream. Exceeding
-the limit throws a [`MaxTotalSizeExceededError`](/api/remix/tar-parser/class/MaxTotalSizeExceededError/). Defaults to 20 MiB
+the limit throws a [`MaxTotalSizeExceededError`](/tar-parser/class/MaxTotalSizeExceededError/). Defaults to 20 MiB
 (20971520 bytes). Must be a non-negative safe integer, or `Infinity` to disable
 the limit.
 

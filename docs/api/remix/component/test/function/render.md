@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/run
 
 ## Summary
 
-Mounts a [`RemixNode`](/api/remix/component/jsx-dev-runtime/type/RemixNode/) into a DOM container for testing.
+Mounts a [`RemixNode`](/component/jsx-dev-runtime/type/RemixNode/) into a DOM container for testing.
 
 ## Signature
 
@@ -24,10 +24,10 @@ The node to render
 
 ### `opts`
 
-[`RenderOptions`](/api/remix/component/test/interface/RenderOptions/); pass `opts.container` to render into a specific
+[`RenderOptions`](/component/test/interface/RenderOptions/); pass `opts.container` to render into a specific
   element instead of a fresh `div` appended to `document.body`
 
 ## Returns
 
-A [`RenderResult`](/api/remix/component/test/interface/RenderResult/) with the container, root, and helpers for querying and
+A [`RenderResult`](/component/test/interface/RenderResult/) with the container, root, and helpers for querying and
   interacting with the rendered output.

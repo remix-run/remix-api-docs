@@ -7,9 +7,9 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/l
 
 ## Summary
 
-Options passed to [`parse`](/api/remix/data-schema/function/parse/) and [`parseSafe`](/api/remix/data-schema/function/parseSafe/).
+Options passed to [`parse`](/data-schema/function/parse/) and [`parseSafe`](/data-schema/function/parseSafe/).
 
-This mirrors [`ValidationOptions`](/api/remix/data-schema/type/ValidationOptions/), but also supports a convenience `abortEarly`
+This mirrors [`ValidationOptions`](/data-schema/type/ValidationOptions/), but also supports a convenience `abortEarly`
 option at the top level.
 
 ## Signature

@@ -1,0 +1,34 @@
+---
+title: "record"
+source: "https://github.com/remix-run/remix/blob/main/packages/data-schema/src/lib/schema.ts#L829"
+---
+
+# record
+
+## Summary
+
+Create a schema that validates a record (object map) by validating each key and value.
+
+## Signature
+
+```ts
+function record<keyInput, keyOutput extends PropertyKey, valueInput, valueOutput>(
+  keySchema: Schema<keyInput, keyOutput>,
+  valueSchema: Schema<valueInput, valueOutput>,
+): Schema<unknown, Record<keyOutput, valueOutput>>
+
+```
+
+## Parameters
+
+### `keySchema`
+
+Schema used to validate and transform each key
+
+### `valueSchema`
+
+Schema used to validate and transform each value
+
+## Returns
+
+A schema that produces a record of validated keys and values

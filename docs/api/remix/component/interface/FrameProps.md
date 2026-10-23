@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/run
 
 ## Summary
 
-Props accepted by the built-in [`Frame`](/api/remix/component/function/Frame/) component.
+Props accepted by the built-in [`Frame`](/component/function/Frame/) component.
 
 ## Signature
 

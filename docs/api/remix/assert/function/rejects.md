@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/as
 ## Summary
 
 Asserts that the promise returned by `fn` (or the promise itself) rejects.
-Accepts the same `expectedError` shapes as [`throws`](/api/remix/assert/function/throws/).
+Accepts the same `expectedError` shapes as [`throws`](/assert/function/throws/).
 
 ## Signature
 

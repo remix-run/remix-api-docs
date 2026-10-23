@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/test/src/lib/fram
 
 ## Summary
 
-Alias for [`it`](/api/remix/test/function/it/).
+Alias for [`it`](/test/function/it/).
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/
 
 ## Summary
 
-Appends context entries to an existing [`RequestContext`](/api/remix/router/class/RequestContext/).
+Appends context entries to an existing [`RequestContext`](/router/class/RequestContext/).
 This is useful when deriving a context shape without a middleware tuple.
 
 ## Signature

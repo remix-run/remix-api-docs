@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/lazy-file/src/lib
 
 ## Summary
 
-Options for creating a [`LazyBlob`](/api/remix/lazy-file/class/LazyBlob/).
+Options for creating a [`LazyBlob`](/lazy-file/class/LazyBlob/).
 
 ## Signature
 

@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 ## Summary
 
 Type-safe query builder for `@remix-run/data-table` sources. Construct via
-[`query`](/api/remix/data-table/function/query/) and chain calls (`select`, `where`, `orderBy`, etc.) to build
+[`query`](/data-table/function/query/) and chain calls (`select`, `where`, `orderBy`, etc.) to build
 up a plan; run it by `await`-ing on a runtime-bound query, or by passing an
 unbound one to a runtime.
 

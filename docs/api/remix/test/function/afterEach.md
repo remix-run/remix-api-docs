@@ -10,7 +10,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/test/src/lib/fram
 Registers a hook that runs after **each** test in the current suite (or
 globally if called outside a `describe`). Multiple calls are chained in
 reverse registration order.  To run logic after a singular test, use
-`t.after()` from the [`TestContext`](/api/remix/test/interface/TestContext/). Pass `{ timeout, signal }` after
+`t.after()` from the [`TestContext`](/test/interface/TestContext/). Pass `{ timeout, signal }` after
 the function to limit how long the hook may run.
 
 ## Signature

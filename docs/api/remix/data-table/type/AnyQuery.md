@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/data-table/src/li
 
 ## Summary
 
-Convenience alias for any [`Query`](/api/remix/data-table/class/Query/) regardless of its source, columns,
+Convenience alias for any [`Query`](/data-table/class/Query/) regardless of its source, columns,
 row shape, loaded relations, or execution phase. Use this in helper APIs
 that accept a query but don't care about the specific generic parameters.
 

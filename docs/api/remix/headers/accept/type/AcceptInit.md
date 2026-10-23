@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/headers/src/lib/a
 
 ## Summary
 
-Initializer for an [`Accept`](/api/remix/headers/accept/class/Accept/) header value.
+Initializer for an [`Accept`](/headers/accept/class/Accept/) header value.
 
 ## Signature
 

@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/
 
 ## Summary
 
-Build a [`Route`](/api/remix/routes/class/Route/) type from a request method and pattern.
+Build a [`Route`](/routes/class/Route/) type from a request method and pattern.
 
 ## Signature
 

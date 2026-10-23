@@ -8,7 +8,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/ex
 ## Summary
 
 jest/vitest-style expect API. Returns an object of matchers that throw
-[`AssertionError`](/api/remix/assert/class/AssertionError/) on failure. Supports `.not` for negation and
+[`AssertionError`](/assert/class/AssertionError/) on failure. Supports `.not` for negation and
 `.rejects` / `.resolves` for asserting on promises.
 
 Mock-aware matchers (`toHaveBeenCalled*`) read `received.mock.calls[i].arguments`,

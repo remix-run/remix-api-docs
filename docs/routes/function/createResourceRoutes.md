@@ -1,0 +1,20 @@
+---
+title: "createResourceRoutes"
+source: "https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/lib/route-helpers/resource.ts#L56"
+---
+
+# createResourceRoutes
+
+## Summary
+
+Create a route map with standard CRUD routes for a singleton resource.
+
+## Signature
+
+```ts
+function createResourceRoutes<base extends string, options extends ResourceOptions>(base: base | RoutePattern<base>, options: options): { [K in string]: { -readonly [name in string]: BuildResourceRoutes<options, options extends { only: readonly ResourceMethod[] } ? options["only"][number] : options extends { exclude: readonly ResourceMethod[] } ? Exclude<"new", (...)[(...)]> | Exclude<"show", (...)[(...)]> | Exclude<"create", (...)[(...)]> | Exclude<"edit", (...)[(...)]> | Exclude<"update", (...)[(...)]> | Exclude<"destroy", (...)[(...)]> : ResourceMethod>[name] extends Route<method, pattern> ? Route<method, JoinPatterns<base, pattern>> : BuildResourceRoutes<options, options extends { only: readonly ResourceMethod[] } ? options["only"][number] : options extends { exclude: readonly (...)[] } ? Exclude<(...), (...)> | Exclude<(...), (...)> | Exclude<(...), (...)> | Exclude<(...), (...)> | Exclude<(...), (...)> | Exclude<(...), (...)> : ResourceMethod>[name] extends RouteDef<string> ? BuildRouteWithBase<base, any[any]> : BuildResourceRoutes<options, options extends { only: readonly (...)[] } ? (...)[(...)][number] : options extends { exclude: ... } ? (...) | (...) | (...) | (...) | (...) | (...) : ResourceMethod>[name] extends RouteDefs ? { [K in string | number | symbol]: { -readonly [name in string | number | symbol]: (...)[(...)] extends Route<(...), (...)> ? Route<(...), (...)> : (...) extends (...) ? (...) : (...) }[K] } : never }[K] }
+```
+
+## Returns
+
+The route map with CRUD routes

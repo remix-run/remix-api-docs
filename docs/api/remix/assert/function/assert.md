@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/assert/src/lib/as
 
 ## Summary
 
-Alias for [`ok`](/api/remix/assert/function/ok/).
+Alias for [`ok`](/assert/function/ok/).
 
 ## Signature
 

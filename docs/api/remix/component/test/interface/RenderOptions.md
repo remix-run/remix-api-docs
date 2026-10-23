@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/component/src/run
 
 ## Summary
 
-Options for [`render`](/api/remix/component/test/function/render/).
+Options for [`render`](/component/test/function/render/).
 
 ## Signature
 

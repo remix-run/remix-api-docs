@@ -10,7 +10,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/spa/src/lib/spa.t
 Starts a client-rendered Remix application for the current document.
 
 The current URL and subsequent same-origin navigations are dispatched through `router`. Route
-handlers return responses created by the [`render`](/api/remix/spa/function/render/) middleware, and their associated nodes
+handlers return responses created by the [`render`](/spa/function/render/) middleware, and their associated nodes
 are rendered into the document's top frame.
 
 ## Signature

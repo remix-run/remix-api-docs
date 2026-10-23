@@ -7,7 +7,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/route-pattern/src
 
 ## Summary
 
-Structured details for a [`CreateHrefError`](/api/remix/route-pattern/href/class/CreateHrefError/).
+Structured details for a [`CreateHrefError`](/route-pattern/href/class/CreateHrefError/).
 
 ## Signature
 

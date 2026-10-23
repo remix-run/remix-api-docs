@@ -10,7 +10,7 @@ source: "https://github.com/remix-run/remix/blob/main/packages/fetch-router/src/
 An individual route action.
 
 Actions may be plain request handler functions or objects with optional action middleware.
-Most app code should use [`createAction`](/api/remix/router/function/createAction/); use this type directly when you need
+Most app code should use [`createAction`](/router/function/createAction/); use this type directly when you need
 to describe an action for an explicit RequestContext type.
 
 ## Signature
