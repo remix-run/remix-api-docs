@@ -1,0 +1,90 @@
+name: Deploy Remix API docs
+
+on:
+  # Triggered by the remix repo's publish workflow on each release
+  repository_dispatch:
+    types: [update-docs]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Remix release tag (e.g. remix@3.0.0), branch, or commit to deploy
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build API docs
+    permissions:
+      contents: read
+      pages: read
+    runs-on: ubuntu-latest
+    env:
+      # `tag` is the payload key older remix publish workflows sent.
+      REMIX_REF: ${{ github.event.client_payload.ref || github.event.client_payload.tag || inputs.ref }}
+    steps:
+      - name: Checkout Remix
+        uses: actions/checkout@v6
+        with:
+          repository: remix-run/remix
+          path: remix
+          ref: ${{ env.REMIX_REF }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: remix/pnpm-lock.yaml
+
+      - name: Install Remix dependencies
+        working-directory: remix
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Generate API docs
+        working-directory: remix/docs/api
+        run: pnpm run docs --tag "$REMIX_REF"
+
+      - name: Build demos
+        working-directory: remix/docs/api
+        run: pnpm run build
+
+      - name: Prerender API docs
+        working-directory: remix/docs/api
+        run: pnpm run prerender
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: remix/docs/api/build/site
+          # Prerendered npm assets live under `_assets/npm/.pnpm/`
+          include-hidden-files: true
+
+  deploy:
+    name: Deploy API docs
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
