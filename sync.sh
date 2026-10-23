@@ -12,11 +12,12 @@ TAG_NAME="$1"
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOCS_DIR="${REPO_ROOT}/docs"
 
-# Clear prior "latest" build so we don't leave stranded files for removed APIs
-rm -rf "${DOCS_DIR}/api"
-rm -rf "${DOCS_DIR}/assets"
-rm -rf "${DOCS_DIR}/fragment"
-rm -f "${DOCS_DIR}/index.html"
+# Clear the prior "latest" build so we don't leave stranded files for removed APIs.
+# Pages live in one top-level folder per package, so clear everything except the
+# Pages config files and versioned snapshots (v1.2.3/).
+find "${DOCS_DIR}" -mindepth 1 -maxdepth 1 \
+  ! -name CNAME ! -name .nojekyll ! -name 'v[0-9]*' \
+  -exec rm -rf {} +
 
 pushd "${REPO_ROOT}/../remix/docs/api"
 pnpm run docs --tag "${TAG_NAME}"
